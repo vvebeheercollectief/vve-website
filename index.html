@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="VvE Beheer Collectief — Persoonlijk, transparant en betrouwbaar VvE-beheer voor Zuid-Holland. 17+ jaar ervaring, 500+ VvE's in beheer." />
+<title>VvE Beheer Collectief — VvE-beheer Zuid-Holland</title>
+<link rel="icon" href="assets/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<style>
+:root {
+  --navy: #2B3544;
+  --navy-dark: #1E2530;
+  --white: #FFFFFF;
+  --gray-bg: #F0F2F5;
+  --teal-900: #064E50;
+  --teal-700: #0D7377;
+  --teal-500: #14B8A6;
+  --teal-300: #5EEAD4;
+  --teal-100: #CCFBF1;
+  --green: #059669;
+  --amber: #D97706;
+  --red: #DC2626;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --font: 'DM Sans', system-ui, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  color: var(--navy);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; cursor: pointer; }
+button { font-family: inherit; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+
+/* Container */
+.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px; border-radius: 10px; font-size: 15px;
+  font-weight: 600; border: 1px solid transparent;
+  transition: all .15s ease; cursor: pointer;
+  text-decoration: none; font-family: inherit; line-height: 1.2;
+}
+.btn-primary { background: var(--teal-700); color: white; }
+.btn-primary:hover { background: var(--teal-900); }
+.btn-secondary { background: transparent; color: var(--navy); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--teal-700); color: var(--teal-700); }
+.btn-dark { background: var(--navy); color: white; }
+.btn-dark:hover { background: var(--navy-dark); }
+.btn-ghost-light { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+.btn-ghost-light:hover { border-color: white; }
+.btn-lg { padding: 18px 28px; font-size: 16px; }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+
+/* Pill */
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal-100); color: var(--teal-900);
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; padding: 6px 12px; border-radius: 100px;
+}
+.pill-dark { background: rgba(255,255,255,0.1); color: white; }
+
+/* Section helpers */
+section { padding: 96px 0; }
+.section-narrow { padding: 64px 0; }
+.section-eyebrow {
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--teal-700); margin-bottom: 16px;
+}
+.section-title {
+  font-size: 40px; line-height: 1.1; font-weight: 700;
+  letter-spacing: -0.02em; color: var(--navy); margin: 0 0 16px;
+}
+.section-sub {
+  font-size: 18px; line-height: 1.5; color: var(--muted);
+  max-width: 640px; margin: 0;
+}
+
+/* Stats */
+.stat-num {
+  font-size: 48px; font-weight: 800; letter-spacing: -0.03em;
+  color: var(--teal-700); line-height: 1;
+}
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+/* Card */
+.card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px; transition: all .2s ease;
+}
+.card-hover:hover {
+  border-color: var(--teal-700); transform: translateY(-2px);
+  box-shadow: 0 12px 32px -16px rgba(43, 53, 68, 0.18);
+}
+
+/* Photo */
+.photo {
+  background: var(--gray-bg); background-size: cover;
+  background-position: center; position: relative; overflow: hidden;
+}
+
+/* Form */
+.field { margin-bottom: 18px; }
+.field label {
+  display: block; font-size: 13px; font-weight: 600;
+  margin-bottom: 6px; color: var(--navy);
+}
+.field input, .field textarea, .field select {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+  border-radius: 8px; font-family: inherit; font-size: 14px;
+  color: var(--navy); background: white; transition: border-color .15s ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none; border-color: var(--teal-700);
+}
+.field textarea { resize: vertical; min-height: 100px; }
+.field-error { font-size: 12px; color: var(--red); margin-top: 4px; }
+
+/* Site header */
+.site-header {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+}
+.site-header-inner {
+  display: flex; align-items: center; gap: 32px; padding: 18px 0;
+}
+.site-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 16px; letter-spacing: -0.01em;
+  color: var(--navy); cursor: pointer; white-space: nowrap;
+}
+.site-logo img { width: 32px; height: 32px; }
+.site-nav { display: flex; gap: 4px; align-items: center; }
+.site-nav a {
+  font-size: 14px; font-weight: 500; color: var(--navy);
+  padding: 8px 14px; border-radius: 6px; transition: color .15s;
+}
+.site-nav a:hover { color: var(--teal-700); }
+.site-nav a.active { color: var(--teal-700); font-weight: 600; }
+.site-header-cta {
+  margin-left: auto; display: flex; gap: 12px; align-items: center;
+}
+.site-header-phone {
+  font-size: 13px; color: var(--muted);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+
+/* Mobile menu */
+.mobile-toggle {
+  display: none; background: none; border: none;
+  font-size: 24px; color: var(--navy); padding: 4px;
+}
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: white; z-index: 100; flex-direction: column;
+  padding: 24px 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 32px;
+}
+.mobile-menu-close {
+  background: none; border: none; font-size: 24px;
+  color: var(--navy); cursor: pointer;
+}
+.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu nav a {
+  font-size: 18px; font-weight: 500; color: var(--navy);
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.mobile-menu nav a.active { color: var(--teal-700); font-weight: 600; }
+.mobile-menu .mobile-cta {
+  margin-top: 32px; display: flex; flex-direction: column; gap: 12px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy); color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+.site-footer h4 {
+  color: white; font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 18px;
+}
+.site-footer a { display: block; padding: 4px 0; font-size: 14px; transition: color .15s; }
+.site-footer a:hover { color: white; }
+.site-footer-grid {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+}
+.site-footer-brand img { width: 40px; margin-bottom: 16px; }
+.site-footer-brand p { font-size: 14px; line-height: 1.6; margin: 0 0 16px; max-width: 320px; }
+.site-footer-bottom {
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; font-size: 12px;
+  color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 12px;
+}
+.social-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.social-icon:hover { background: rgba(255,255,255,0.15); }
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .site-nav { display: none; }
+  .site-header-phone { display: none; }
+  .site-header-cta .btn { display: none; }
+  .mobile-toggle { display: block; margin-left: auto; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .hero-photo-col { order: -1; }
+  .hero-stat-card { display: none; }
+  .pillars-grid { grid-template-columns: 1fr 1fr !important; }
+  .diff-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr !important; }
+  .faq-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .cta-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px !important; }
+  .diensten-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .diensten-grid > div { direction: ltr !important; }
+  .compleet-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .overons-header-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .stats-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .werkwijze-grid { grid-template-columns: 1fr !important; }
+  .offerte-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .site-footer-grid { grid-template-columns: 1fr 1fr; }
+  .trust-strip { gap: 24px !important; }
+}
+
+@media (max-width: 767px) {
+  .container { padding: 0 16px; }
+  section { padding: 64px 0; }
+  .section-title { font-size: 28px; }
+  .section-sub { font-size: 16px; }
+  .hero-h1 { font-size: 36px !important; }
+  .hero-sub { max-width: 100% !important; }
+  .pillars-grid { grid-template-columns: 1fr !important; }
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+  .diff-usps { grid-template-columns: 1fr !important; }
+  .stats-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+  .cta-grid { padding: 28px !important; }
+  .cta-grid h2 { font-size: 28px !important; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
+  .hero-stats .stat-num { font-size: 32px !important; }
+  .compleet-features { grid-template-columns: 1fr !important; }
+  .offerte-services { grid-template-columns: 1fr !important; }
+  .site-footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .site-footer-bottom { flex-direction: column; text-align: center; }
+  .page-h1 { font-size: 36px !important; }
+  .btn-lg { padding: 14px 22px; font-size: 15px; }
+  .trust-strip { flex-direction: column; align-items: flex-start !important; gap: 16px !important; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #c8cdd4; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #a4adb8; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+/* ── Data ── */
+const PHOTOS = {
+  apartmentExterior: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80&auto=format&fit=crop',
+  apartmentExterior2: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format&fit=crop',
+  laptop: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop',
+  documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop',
+  blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
+  modernFacade: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80&auto=format&fit=crop',
+  portraitM: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80&auto=format&fit=crop',
+  portraitW: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80&auto=format&fit=crop',
+  portraitM2: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&auto=format&fit=crop',
+  portraitW2: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&q=80&auto=format&fit=crop',
+};
+
+const PILLARS = [
+  { icon: 'folders', title: 'Administratief beheer', desc: 'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.', bullets: ['ALV-organisatie & notulen', 'Ledenadministratie', 'Post & correspondentie', 'Splitsingsakte beheer'] },
+  { icon: 'chart-line-up', title: 'Financieel beheer', desc: 'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.', bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteuren'] },
+  { icon: 'wrench', title: 'Technisch beheer', desc: 'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.', bullets: ['Meerjaren-onderhoudsplan', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'] },
+];
+
+const TESTIMONIALS = [
+  { quote: 'Eindelijk een beheerder die ook écht reageert. Binnen een dag een terugkoppeling, en de jaarrekening was voor het eerst in jaren op tijd.', name: 'Marieke van der Berg', role: 'Voorzitter VvE Parklaan', location: 'Den Haag — 24 appartementen' },
+  { quote: 'De overstap vanaf onze vorige beheerder verliep verrassend soepel. Het klantenportaal geeft ons echt rust: alles staat erin, altijd inzichtelijk.', name: 'Joris Hendriks', role: 'Penningmeester VvE De Linden', location: 'Wateringen — 18 appartementen' },
+  { quote: 'Wat ons aansprak was de persoonlijke aandacht. We hebben één vast aanspreekpunt die ons gebouw écht kent. Dat scheelt enorm.', name: 'Saskia Bouman', role: 'Voorzitter VvE Westpoort', location: 'Rotterdam — 42 appartementen' },
+];
+
+const TRUST_BADGES = [
+  { label: 'VvE Belang lidmaatschap', icon: 'shield-check' },
+  { label: 'Branchevereniging VGM NL', icon: 'medal' },
+  { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
+  { label: 'KvK 12345678', icon: 'buildings' },
+];
+
+const FAQ_DATA = [
+  { q: 'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?', a: 'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.' },
+  { q: 'Wat houdt het Compleetpakket precies in?', a: 'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.' },
+  { q: 'Hebben wij één vast aanspreekpunt?', a: 'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.' },
+  { q: 'Hoe transparant is het klantenportaal?', a: 'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.' },
+  { q: 'Bieden jullie ook juridisch beheer?', a: 'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.' },
+];
+
+const STATS = [
+  { num: '17+', label: 'Jaar ervaring in VvE-beheer' },
+  { num: '500+', label: "VvE's onder ons beheer" },
+  { num: '12.000+', label: 'Eigenaren bediend' },
+  { num: '< 24u', label: 'Gemiddelde reactietijd' },
+];
+
+/* ── Helpers ── */
+function I({ name, size = 18, weight = 'regular', style = {}, className = '' }) {
+  const cls = weight === 'duotone' ? `ph-duotone ph-${name}` :
+              weight === 'fill' ? `ph-fill ph-${name}` :
+              `ph ph-${name}`;
+  return <i className={`${cls} ${className}`} style={{ fontSize: size, lineHeight: 1, ...style }} />;
+}
+
+function Photo({ src, alt, style = {}, children }) {
+  return (
+    <div className="photo" style={{ backgroundImage: `url(${src})`, ...style }} role="img" aria-label={alt}>
+      {children}
+    </div>
+  );
+}
+
+/* ── SiteHeader ── */
+function SiteHeader({ page, setPage }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const links = [
+    { id: 'home', label: 'Home' },
+    { id: 'diensten', label: 'Diensten' },
+    { id: 'overons', label: 'Over ons' },
+    { id: 'werkwijze', label: 'Werkwijze' },
+    { id: 'offerte', label: 'Offerte' },
+  ];
+  const nav = (isMobile) => links.map(l => (
+    <a key={l.id} className={page === l.id ? 'active' : ''} onClick={() => { setPage(l.id); if (isMobile) setMobileOpen(false); }}>
+      {l.label}
+    </a>
+  ));
+
+  return (
+    <>
+      <header className="site-header">
+        <div className="container site-header-inner">
+          <a className="site-logo" onClick={() => setPage('home')}>
+            <img src="assets/icoon-donker.png" alt="" />
+            <span>VvE Beheer Collectief</span>
+          </a>
+          <nav className="site-nav">{nav(false)}</nav>
+          <div className="site-header-cta">
+            <span className="site-header-phone"><I name="phone" size={14} /> 0174 — 123 456</span>
+            <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>Offerte aanvragen</button>
+          </div>
+          <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label="Menu openen">
+            <I name="list" size={24} />
+          </button>
+        </div>
+      </header>
+
+      <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <a className="site-logo" onClick={() => { setPage('home'); setMobileOpen(false); }}>
+            <img src="assets/icoon-donker.png" alt="" style={{ width: 32, height: 32 }} />
+            <span>VvE Beheer Collectief</span>
+          </a>
+          <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label="Menu sluiten">
+            <I name="x" size={24} />
+          </button>
+        </div>
+        <nav>{nav(true)}</nav>
+        <div className="mobile-cta">
+          <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>Offerte aanvragen</button>
+          <a style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <I name="phone" size={14} /> 0174 — 123 456
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ── SiteFooter ── */
+function SiteFooter({ setPage }) {
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <div className="site-footer-grid">
+          <div className="site-footer-brand">
+            <img src="assets/icoon-wit.png" alt="VvE Beheer Collectief" />
+            <p>Persoonlijk, transparant en betrouwbaar VvE-beheer voor Zuid-Holland en omstreken. 17 jaar ervaring, 500+ VvE's in beheer.</p>
+            <div style={{ display: 'flex', gap: 10 }}>
+              <a className="social-icon" aria-label="LinkedIn"><I name="linkedin-logo" size={16} /></a>
+              <a className="social-icon" aria-label="Facebook"><I name="facebook-logo" size={16} /></a>
+            </div>
+          </div>
+          <div>
+            <h4>Diensten</h4>
+            <a onClick={() => setPage('diensten')}>Administratief beheer</a>
+            <a onClick={() => setPage('diensten')}>Financieel beheer</a>
+            <a onClick={() => setPage('diensten')}>Technisch beheer</a>
+            <a onClick={() => setPage('diensten')}>Compleetpakket</a>
+          </div>
+          <div>
+            <h4>Bedrijf</h4>
+            <a onClick={() => setPage('overons')}>Over ons</a>
+            <a onClick={() => setPage('werkwijze')}>Werkwijze</a>
+            <a>Klantverhalen</a>
+            <a>Vacatures</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a>Wateringen, Zuid-Holland</a>
+            <a>0174 — 123 456</a>
+            <a>info@vvebeheercollectief.nl</a>
+            <a style={{ marginTop: 8 }} onClick={() => setPage('offerte')}>
+              <span style={{ color: 'var(--teal-300)', fontWeight: 600 }}>Offerte aanvragen →</span>
+            </a>
+          </div>
+        </div>
+        <div className="site-footer-bottom">
+          <div>© {new Date().getFullYear()} VvE Beheer Collectief. KvK 12345678.</div>
+          <div style={{ display: 'flex', gap: 24 }}>
+            <a>Privacy</a><a>Voorwaarden</a><a>Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ── Shared CTA block ── */
+function CTABlock({ setPage }) {
+  return (
+    <section style={{ background: 'var(--gray-bg)' }}>
+      <div className="container">
+        <div className="cta-grid" style={{ background: 'white', borderRadius: 16, padding: 64, display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 56, alignItems: 'center' }}>
+          <div>
+            <div className="section-eyebrow">Vrijblijvende offerte</div>
+            <h2 className="section-title">Klaar voor een<br />betere VvE-ervaring?</h2>
+            <p className="section-sub" style={{ marginBottom: 24 }}>
+              Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.
+            </p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
+                Offerte aanvragen <I name="arrow-right" size={16} />
+              </button>
+              <button className="btn btn-secondary btn-lg">Bel ons direct</button>
+            </div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE', 'Geen verplichtingen'].map(it => (
+              <div key={it} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'var(--gray-bg)', borderRadius: 10 }}>
+                <I name="check-circle" size={20} weight="fill" style={{ color: 'var(--teal-700)' }} />
+                <span style={{ fontSize: 14, fontWeight: 500 }}>{it}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   HOME PAGE
+   ══════════════════════════════════════════════ */
+
+function HeroSection({ setPage }) {
+  const stats = STATS.slice(0, 3);
+  return (
+    <section style={{ padding: '80px 0 96px' }}>
+      <div className="container">
+        <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div>
+            <span className="pill"><I name="map-pin" size={12} weight="fill" /> Wateringen · Zuid-Holland</span>
+            <h1 className="hero-h1" style={{ fontSize: 56, lineHeight: 1.05, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0', textWrap: 'pretty' }}>
+              Samen zorgen voor<br /><span>onbezorgd wonen.</span>
+            </h1>
+            <p className="hero-sub" style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 32px', maxWidth: 480 }}>
+              Specialist in VvE-beheer voor Zuid-Holland en omstreken.
+              Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal.
+            </p>
+            <div style={{ display: 'flex', gap: 14, marginBottom: 48, flexWrap: 'wrap' }}>
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
+                Volgende stap <I name="arrow-right" size={16} />
+              </button>
+              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}>Onze werkwijze</button>
+            </div>
+            <div className="hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, paddingTop: 32, borderTop: '1px solid var(--border)' }}>
+              {stats.map(s => (
+                <div key={s.label}>
+                  <div className="stat-num">{s.num}</div>
+                  <div className="stat-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="hero-photo-col" style={{ position: 'relative' }}>
+            <Photo src={PHOTOS.apartmentExterior} alt="Appartementencomplex" style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 14 }} />
+            <div className="hero-stat-card" style={{
+              position: 'absolute', bottom: 24, left: -32,
+              background: 'white', padding: '20px 24px', borderRadius: 12,
+              boxShadow: '0 24px 48px -16px rgba(43,53,68,0.18)',
+              display: 'flex', alignItems: 'center', gap: 16, minWidth: 280
+            }}>
+              <div style={{ width: 48, height: 48, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', background: 'var(--teal-700)' }}>
+                <I name="shield-check" size={22} weight="duotone" />
+              </div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)' }}>VvE Belang lid</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>Erkend branchespecialist sinds 2009</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PillarsSection({ setPage }) {
+  return (
+    <section style={{ background: 'var(--gray-bg)' }}>
+      <div className="container">
+        <div style={{ maxWidth: 720, marginBottom: 56 }}>
+          <div className="section-eyebrow">Onze dienstverlening</div>
+          <h2 className="section-title">Drie pijlers — één vast aanspreekpunt</h2>
+          <p className="section-sub">
+            Administratief, financieel en technisch beheer onder één dak. U krijgt geen
+            wisselende contactpersonen, maar één beheerder die uw gebouw kent.
+          </p>
+        </div>
+        <div className="pillars-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          {PILLARS.map(p => (
+            <div key={p.title} className="card card-hover">
+              <div style={{ width: 52, height: 52, borderRadius: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginBottom: 22, background: 'var(--teal-700)' }}>
+                <I name={p.icon} size={24} weight="duotone" />
+              </div>
+              <h3 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', letterSpacing: '-0.01em' }}>{p.title}</h3>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 20px' }}>{p.desc}</p>
+              <ul style={{ margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {p.bullets.map(b => (
+                  <li key={b} style={{ fontSize: 13.5, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--navy)' }}>
+                    <I name="check" size={14} style={{ color: 'var(--teal-700)' }} /> {b}
+                  </li>
+                ))}
+              </ul>
+              <a onClick={() => setPage('diensten')} style={{ fontSize: 13, fontWeight: 600, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--teal-700)' }}>
+                Lees meer <I name="arrow-right" size={12} />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DifferentiatorsSection() {
+  const items = [
+    { icon: 'monitor', title: 'Eigen klantenportaal', desc: 'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.' },
+    { icon: 'user-circle-check', title: 'Vast aanspreekpunt', desc: 'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.' },
+    { icon: 'clock-clockwise', title: 'Snelle reactietijd', desc: 'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.' },
+    { icon: 'package', title: 'Compleetpakket', desc: 'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
+  ];
+  return (
+    <section>
+      <div className="container">
+        <div className="diff-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div>
+            <div className="section-eyebrow">Wat ons onderscheidt</div>
+            <h2 className="section-title">Waarom 500+ VvE's voor ons kozen</h2>
+            <p className="section-sub" style={{ marginBottom: 32 }}>
+              Het beheer van een VvE staat of valt met transparantie en bereikbaarheid.
+              Wij bouwden daar een werkwijze omheen.
+            </p>
+            <div className="diff-usps" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}>
+              {items.map(it => (
+                <div key={it.title}>
+                  <div style={{ marginBottom: 12, color: 'var(--teal-700)' }}>
+                    <I name={it.icon} size={28} weight="duotone" />
+                  </div>
+                  <h4 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 6px' }}>{it.title}</h4>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--muted)', margin: 0 }}>{it.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <Photo src={PHOTOS.laptop} alt="Klantenportaal" style={{ width: '100%', aspectRatio: '5 / 6', borderRadius: 14 }} />
+            <div style={{
+              position: 'absolute', top: 24, left: -24,
+              background: 'white', padding: '14px 18px', borderRadius: 10,
+              boxShadow: '0 16px 32px -12px rgba(43,53,68,0.18)',
+              display: 'flex', alignItems: 'center', gap: 12, maxWidth: 240,
+            }}>
+              <div style={{ width: 36, height: 36, borderRadius: 18, background: 'var(--teal-100)', color: 'var(--teal-700)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <I name="check-circle" size={20} weight="fill" />
+              </div>
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 700 }}>MJOP geactualiseerd</div>
+                <div style={{ fontSize: 11, color: 'var(--muted)' }}>2 minuten geleden</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section style={{ background: 'var(--navy)', color: 'white' }}>
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <div className="section-eyebrow" style={{ color: 'var(--teal-300)' }}>Klantervaringen</div>
+          <h2 className="section-title" style={{ color: 'white' }}>Wat onze klanten zeggen</h2>
+        </div>
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          {TESTIMONIALS.map(t => (
+            <div key={t.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 14, padding: 28 }}>
+              <div style={{ color: 'var(--teal-300)', marginBottom: 16, display: 'flex', gap: 2 }}>
+                {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
+              </div>
+              <p style={{ fontSize: 15.5, lineHeight: 1.6, margin: '0 0 24px', color: 'rgba(255,255,255,0.92)' }}>
+                “{t.quote}”
+              </p>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 20 }}>
+                <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{t.role}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{t.location}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ textAlign: 'center', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.5)', marginBottom: 24 }}>
+            Lidmaatschappen & certificeringen
+          </div>
+          <div className="trust-strip" style={{ display: 'flex', justifyContent: 'center', gap: 56, flexWrap: 'wrap' }}>
+            {TRUST_BADGES.map(b => (
+              <div key={b.label} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.7)' }}>
+                <I name={b.icon} size={20} weight="duotone" style={{ color: 'var(--teal-300)' }} />
+                <span style={{ fontSize: 13, fontWeight: 500 }}>{b.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQSection() {
+  const [open, setOpen] = useState(0);
+  return (
+    <section>
+      <div className="container">
+        <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 80 }}>
+          <div>
+            <div className="section-eyebrow">Veelgestelde vragen</div>
+            <h2 className="section-title">Antwoorden op<br />de vragen die u stelt</h2>
+            <p className="section-sub" style={{ marginBottom: 32 }}>
+              Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.
+            </p>
+            <button className="btn btn-secondary"><I name="phone" size={14} /> 0174 — 123 456</button>
+          </div>
+          <div>
+            {FAQ_DATA.map((f, i) => (
+              <div key={f.q} style={{ borderBottom: '1px solid var(--border)' }}>
+                <button onClick={() => setOpen(open === i ? -1 : i)} style={{
+                  width: '100%', textAlign: 'left', padding: '20px 0', display: 'flex',
+                  alignItems: 'center', justifyContent: 'space-between',
+                  background: 'transparent', border: 'none',
+                  fontSize: 16, fontWeight: 600, color: 'var(--navy)', fontFamily: 'inherit',
+                  cursor: 'pointer', gap: 16,
+                }}>
+                  <span>{f.q}</span>
+                  <I name={open === i ? 'minus' : 'plus'} size={18} style={{ flexShrink: 0 }} />
+                </button>
+                {open === i && (
+                  <div style={{ paddingBottom: 20, fontSize: 14.5, lineHeight: 1.65, color: 'var(--muted)' }}>
+                    {f.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomePage({ setPage }) {
+  return (
+    <>
+      <HeroSection setPage={setPage} />
+      <PillarsSection setPage={setPage} />
+      <DifferentiatorsSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CTABlock setPage={setPage} />
+    </>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   DIENSTEN PAGE
+   ══════════════════════════════════════════════ */
+function DienstenPage({ setPage }) {
+  const pillarPhotos = [PHOTOS.documents, PHOTOS.laptop, PHOTOS.blueprint];
+  return (
+    <>
+      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
+        <div className="container">
+          <div className="section-eyebrow">Onze diensten</div>
+          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
+            VvE-beheer dat aansluit op úw behoefte
+          </h1>
+          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
+            Kies losse diensten of het Compleetpakket — volledige ontzorging in één vaste maandprijs.
+          </p>
+        </div>
+      </section>
+
+      {PILLARS.map((p, idx) => (
+        <section key={p.title} style={{ padding: '80px 0' }}>
+          <div className="container">
+            <div className="diensten-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', direction: idx % 2 === 1 ? 'rtl' : 'ltr' }}>
+              <div style={{ direction: 'ltr' }}>
+                <div style={{ width: 56, height: 56, borderRadius: 12, color: 'white', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, background: 'var(--teal-700)' }}>
+                  <I name={p.icon} size={28} weight="duotone" />
+                </div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 6 }}>PIJLER 0{idx + 1}</div>
+                <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px' }}>{p.title}</h2>
+                <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 28px', maxWidth: 480 }}>{p.desc}</p>
+                <ul style={{ margin: '0 0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                  {p.bullets.map(b => (
+                    <li key={b} style={{ fontSize: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <I name="check-circle" size={18} weight="fill" style={{ color: 'var(--teal-700)' }} /> {b}
+                    </li>
+                  ))}
+                </ul>
+                <button className="btn btn-secondary" onClick={() => setPage('offerte')}>
+                  Vraag een offerte aan <I name="arrow-right" size={14} />
+                </button>
+              </div>
+              <div style={{ direction: 'ltr' }}>
+                <Photo src={pillarPhotos[idx]} alt={p.title} style={{ width: '100%', aspectRatio: '5 / 4', borderRadius: 14 }} />
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section style={{ background: 'var(--navy)', color: 'white' }}>
+        <div className="container">
+          <div className="compleet-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 64, alignItems: 'center' }}>
+            <div>
+              <span className="pill pill-dark">Meest gekozen</span>
+              <h2 style={{ fontSize: 44, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0 16px', color: 'white' }}>Het Compleetpakket</h2>
+              <p style={{ fontSize: 17, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', margin: '0 0 28px', maxWidth: 460 }}>
+                Volledige ontzorging — administratief, financieel én technisch beheer in één vaste maandprijs. Geen verrassingen, geen meerwerk-facturen.
+              </p>
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
+                Offerte voor Compleetpakket <I name="arrow-right" size={16} />
+              </button>
+            </div>
+            <div className="compleet-features" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              {['Alle administratie', 'Volledige boekhouding', 'MJOP-onderhoud', 'ALV-organisatie', 'Vast aanspreekpunt', 'Klantenportaal', '24/7 schademeldingen', 'Jaarrekening op tijd'].map(f => (
+                <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', background: 'rgba(255,255,255,0.05)', borderRadius: 10 }}>
+                  <I name="check" size={16} style={{ color: 'var(--teal-300)' }} />
+                  <span style={{ fontSize: 13.5 }}>{f}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTABlock setPage={setPage} />
+    </>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   OVER ONS PAGE
+   ══════════════════════════════════════════════ */
+function OverOnsPage({ setPage }) {
+  const team = [
+    { name: 'Mark de Vries', role: 'Oprichter & Beheerder', img: PHOTOS.portraitM },
+    { name: 'Linda Janssen', role: 'Senior VvE-beheerder', img: PHOTOS.portraitW },
+    { name: 'Tim Bakker', role: 'Technisch beheerder', img: PHOTOS.portraitM2 },
+    { name: 'Eva van Loon', role: 'Financieel beheerder', img: PHOTOS.portraitW2 },
+  ];
+  return (
+    <>
+      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
+        <div className="container">
+          <div className="overons-header-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+            <div>
+              <div className="section-eyebrow">Over ons</div>
+              <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 24px' }}>
+                Gevestigd in Wateringen, actief in heel Zuid-Holland
+              </h1>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--muted)', margin: 0 }}>
+                VvE Beheer Collectief is opgericht in 2009 vanuit de overtuiging dat VvE-beheer
+                persoonlijker, transparanter en proactiever kan. In de afgelopen 17 jaar groeiden
+                we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE's onder beheer.
+              </p>
+            </div>
+            <Photo src={PHOTOS.modernFacade} alt="Kantoor Wateringen" style={{ width: '100%', aspectRatio: '4 / 3', borderRadius: 14 }} />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '64px 0' }}>
+        <div className="container">
+          <div className="stats-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, padding: '32px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+            {STATS.map(s => (
+              <div key={s.label}>
+                <div className="stat-num">{s.num}</div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="section-eyebrow">Het team</div>
+          <h2 className="section-title">De mensen achter uw VvE</h2>
+          <p className="section-sub" style={{ marginBottom: 48 }}>
+            Een klein team van ervaren specialisten. Elke VvE krijgt één vaste beheerder toegewezen.
+          </p>
+          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            {team.map(m => (
+              <div key={m.name}>
+                <Photo src={m.img} alt={m.name} style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 12, marginBottom: 16 }} />
+                <div style={{ fontSize: 16, fontWeight: 700 }}>{m.name}</div>
+                <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 4 }}>{m.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: 'var(--gray-bg)' }}>
+        <div className="container">
+          <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
+            <div className="section-eyebrow">Onze missie</div>
+            <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 24px' }}>
+              “VvE-beheer dat ontzorgt in plaats van compliceert.”
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
+              Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles
+              per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers,
+              geen automatische antwoorden — wel een team dat uw gebouw kent.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <CTABlock setPage={setPage} />
+    </>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   WERKWIJZE PAGE
+   ══════════════════════════════════════════════ */
+function WerkwijzePage({ setPage }) {
+  const steps = [
+    { num: '01', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
+    { num: '02', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
+    { num: '03', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
+    { num: '04', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud — meteen inzichtelijk.' },
+    { num: '05', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
+    { num: '06', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
+  ];
+  return (
+    <>
+      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
+        <div className="container">
+          <div className="section-eyebrow">Werkwijze</div>
+          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
+            Van offerte tot doorlopend beheer
+          </h1>
+          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, lineHeight: 1.55 }}>
+            Een complete overstap regelen we doorgaans in 6 tot 8 weken. Zo ziet dat eruit:
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="werkwijze-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32 }}>
+            {steps.map(s => (
+              <div key={s.num} style={{ padding: 32, borderTop: '2px solid var(--navy)' }}>
+                <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.05em', color: 'var(--teal-700)' }}>STAP {s.num}</div>
+                <h3 style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.01em', margin: '12px 0 12px' }}>{s.title}</h3>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABlock setPage={setPage} />
+    </>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   OFFERTE PAGE
+   ══════════════════════════════════════════════ */
+function OffertePage() {
+  const [step, setStep] = useState(1);
+  const [submitted, setSubmitted] = useState(false);
+  const next = () => setStep(Math.min(4, step + 1));
+  const back = () => setStep(Math.max(1, step - 1));
+
+  if (submitted) {
+    return (
+      <section style={{ padding: '96px 0', background: 'var(--gray-bg)', minHeight: 500 }}>
+        <div className="container" style={{ maxWidth: 640, textAlign: 'center' }}>
+          <div style={{ width: 64, height: 64, borderRadius: 32, background: 'var(--teal-100)', color: 'var(--teal-700)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
+            <I name="check-circle" size={32} weight="fill" />
+          </div>
+          <h1 style={{ fontSize: 36, fontWeight: 700, margin: '0 0 16px' }}>Bedankt voor uw aanvraag</h1>
+          <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6 }}>
+            Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section style={{ padding: '64px 0 96px', background: 'var(--gray-bg)', minHeight: 700 }}>
+      <div className="container" style={{ maxWidth: 1080 }}>
+        <div className="offerte-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 56 }}>
+          <div>
+            <div className="section-eyebrow">Offerte aanvragen</div>
+            <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 20px' }}>
+              Vrijblijvend & op maat van uw VvE
+            </h1>
+            <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 32 }}>
+              Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch
+              afgestemd zodat hij echt past bij uw situatie.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              {[
+                ['shield-check', 'Vrijblijvend & gratis'],
+                ['clock', 'Binnen 2 werkdagen reactie'],
+                ['user-circle', 'Direct contact met een beheerder'],
+                ['lock', 'Uw gegevens blijven van u'],
+              ].map(([ic, label]) => (
+                <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                  <I name={ic} size={18} weight="duotone" style={{ color: 'var(--teal-700)' }} />
+                  <span style={{ fontSize: 14 }}>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card" style={{ padding: 36 }}>
+            <div style={{ display: 'flex', gap: 8, marginBottom: 28 }}>
+              {[1,2,3,4].map(n => (
+                <div key={n} style={{ flex: 1, height: 4, borderRadius: 4, background: n <= step ? 'var(--teal-700)' : 'var(--border)' }} />
+              ))}
+            </div>
+            <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6 }}>Stap {step} van 4</div>
+            <h3 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px' }}>
+              {step === 1 && 'Vertel ons over uw VvE'}
+              {step === 2 && 'Welke diensten zoekt u?'}
+              {step === 3 && 'Uw huidige situatie'}
+              {step === 4 && 'Uw contactgegevens'}
+            </h3>
+
+            {step === 1 && (
+              <>
+                <div className="field"><label>Naam van de VvE</label><input placeholder="bv. VvE Parkzicht" /></div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div className="field"><label>Aantal appartementen</label><input type="number" placeholder="bv. 24" /></div>
+                  <div className="field"><label>Bouwjaar</label><input type="number" placeholder="bv. 1998" /></div>
+                </div>
+                <div className="field"><label>Adres / locatie</label><input placeholder="Plaats" /></div>
+              </>
+            )}
+
+            {step === 2 && (
+              <div className="offerte-services" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                {[
+                  ['package', 'Compleetpakket', 'Alle 3 pijlers in één prijs'],
+                  ['folders', 'Administratief', 'ALV, notulen, post'],
+                  ['chart-line-up', 'Financieel', 'Boekhouding, jaarrekening'],
+                  ['wrench', 'Technisch', 'MJOP, onderhoud'],
+                ].map(([ic, t, d]) => (
+                  <label key={t} style={{ display: 'block', padding: 18, border: '1.5px solid var(--border)', borderRadius: 10, cursor: 'pointer', transition: 'border-color .15s' }}>
+                    <input type="checkbox" style={{ marginBottom: 10 }} />
+                    <I name={ic} size={22} weight="duotone" style={{ color: 'var(--teal-700)', display: 'block', marginBottom: 8 }} />
+                    <div style={{ fontSize: 14, fontWeight: 700 }}>{t}</div>
+                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{d}</div>
+                  </label>
+                ))}
+              </div>
+            )}
+
+            {step === 3 && (
+              <>
+                <div className="field"><label>Heeft u nu al een beheerder?</label>
+                  <select><option>Ja, ik wil overstappen</option><option>Nee, voor het eerst</option><option>Zelfbeheer, we zoeken hulp</option></select>
+                </div>
+                <div className="field"><label>Wat is voor u het belangrijkst?</label>
+                  <textarea placeholder="bv. snellere reactie, betere transparantie, lagere kosten…" />
+                </div>
+              </>
+            )}
+
+            {step === 4 && (
+              <>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div className="field"><label>Voornaam</label><input /></div>
+                  <div className="field"><label>Achternaam</label><input /></div>
+                </div>
+                <div className="field"><label>Functie binnen VvE</label>
+                  <select><option>Voorzitter</option><option>Penningmeester</option><option>Secretaris</option><option>Bestuurslid</option><option>Eigenaar / lid</option></select>
+                </div>
+                <div className="field"><label>E-mail</label><input type="email" /></div>
+                <div className="field"><label>Telefoonnummer</label><input type="tel" /></div>
+              </>
+            )}
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
+              <button className="btn btn-secondary" onClick={back} disabled={step === 1} style={{ opacity: step === 1 ? 0.4 : 1 }}>
+                <I name="arrow-left" size={14} /> Terug
+              </button>
+              {step < 4 ? (
+                <button className="btn btn-primary" onClick={next}>Volgende stap <I name="arrow-right" size={14} /></button>
+              ) : (
+                <button className="btn btn-primary" onClick={() => setSubmitted(true)}>Aanvraag versturen <I name="paper-plane-tilt" size={14} /></button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════
+   APP
+   ══════════════════════════════════════════════ */
+function App() {
+  const [page, setPageRaw] = useState('home');
+
+  const setPage = (p) => {
+    setPageRaw(p);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const titles = {
+      home: 'VvE Beheer Collectief — VvE-beheer Zuid-Holland',
+      diensten: 'Diensten — VvE Beheer Collectief',
+      overons: 'Over ons — VvE Beheer Collectief',
+      werkwijze: 'Werkwijze — VvE Beheer Collectief',
+      offerte: 'Offerte aanvragen — VvE Beheer Collectief',
+    };
+    document.title = titles[page] || titles.home;
+  }, [page]);
+
+  return (
+    <>
+      <SiteHeader page={page} setPage={setPage} />
+      {page === 'home' && <HomePage setPage={setPage} />}
+      {page === 'diensten' && <DienstenPage setPage={setPage} />}
+      {page === 'overons' && <OverOnsPage setPage={setPage} />}
+      {page === 'werkwijze' && <WerkwijzePage setPage={setPage} />}
+      {page === 'offerte' && <OffertePage />}
+      <SiteFooter setPage={setPage} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
