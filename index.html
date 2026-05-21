@@ -302,7 +302,7 @@ const { useState, useEffect, useRef } = React;
 /* ── Data ── */
 const PHOTOS = {
   hero: 'assets/hero.png',
-  laptop: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop',
+  lobby: 'assets/lobby.png',
   documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop',
   blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
   modernFacade: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80&auto=format&fit=crop',
@@ -486,7 +486,7 @@ function SiteHeader({ page, setPage }) {
           </a>
           <nav className="site-nav">{nav(false)}</nav>
           <div className="site-header-cta">
-            <span className="site-header-phone"><I name="phone" size={14} /> 0174 — 123 456</span>
+            <span className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</span>
             <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>Offerte aanvragen</button>
           </div>
           <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label="Menu openen">
@@ -509,7 +509,7 @@ function SiteHeader({ page, setPage }) {
         <div className="mobile-cta">
           <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>Offerte aanvragen</button>
           <a style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <I name="phone" size={14} /> 0174 — 123 456
+            <I name="phone" size={14} /> (085)-800 0605
           </a>
         </div>
       </div>
@@ -548,7 +548,7 @@ function SiteFooter({ setPage }) {
           <div>
             <h4>Contact</h4>
             <a>Wateringen, Zuid-Holland</a>
-            <a>0174 — 123 456</a>
+            <a>(085)-800 0605</a>
             <a>info@vvebeheercollectief.nl</a>
             <a style={{ marginTop: 8 }} onClick={() => setPage('offerte')}>
               <span style={{ color: 'var(--teal-300)', fontWeight: 600 }}>Offerte aanvragen →</span>
@@ -725,7 +725,7 @@ function DifferentiatorsSection() {
             </div>
           </div>
           <div style={{ position: 'relative' }}>
-            <Photo src={PHOTOS.laptop} alt="Klantenportaal" style={{ width: '100%', aspectRatio: '5 / 6', borderRadius: 14 }} />
+            <Photo src={PHOTOS.lobby} alt="Klantenportaal" style={{ width: '100%', aspectRatio: '5 / 6', borderRadius: 14 }} />
             <div style={{
               position: 'absolute', top: 24, left: -24,
               background: 'white', padding: '14px 18px', borderRadius: 10,
@@ -803,7 +803,7 @@ function FAQSection() {
             <p className="section-sub" style={{ marginBottom: 32 }}>
               Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.
             </p>
-            <button className="btn btn-secondary"><I name="phone" size={14} /> 0174 — 123 456</button>
+            <button className="btn btn-secondary"><I name="phone" size={14} /> (085)-800 0605</button>
           </div>
           <div>
             {FAQ_DATA.map((f, i) => (
@@ -849,7 +849,7 @@ function HomePage({ setPage }) {
    DIENSTEN PAGE
    ══════════════════════════════════════════════ */
 function DienstenPage({ setPage }) {
-  const pillarPhotos = [PHOTOS.documents, PHOTOS.laptop, PHOTOS.blueprint];
+  const pillarPhotos = [PHOTOS.documents, PHOTOS.lobby, PHOTOS.blueprint];
   return (
     <>
       <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
@@ -1116,7 +1116,7 @@ function PakkettenPage({ setPage }) {
                   Vraag een offerte aan <I name="arrow-right" size={14} />
                 </button>
                 <button className="btn btn-secondary">
-                  <I name="phone" size={14} /> 0174 — 123 456
+                  <I name="phone" size={14} /> (085)-800 0605
                 </button>
               </div>
             </div>
