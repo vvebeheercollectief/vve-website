@@ -136,9 +136,10 @@ section { padding: 96px 0; }
 .field textarea { resize: vertical; min-height: 100px; }
 .field-error { font-size: 12px; color: var(--red); margin-top: 4px; }
 
-/* Site header */
+/* Site header — navy variant */
 .site-header {
-  background: var(--white); border-bottom: 1px solid var(--border);
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   position: sticky; top: 0; z-index: 50;
 }
 .site-header-inner {
@@ -147,28 +148,28 @@ section { padding: 96px 0; }
 .site-logo {
   display: flex; align-items: center; gap: 10px;
   font-weight: 800; font-size: 16px; letter-spacing: -0.01em;
-  color: var(--navy); cursor: pointer; white-space: nowrap;
+  color: white; cursor: pointer; white-space: nowrap;
 }
 .site-logo img { width: 32px; height: 32px; }
 .site-nav { display: flex; gap: 4px; align-items: center; }
 .site-nav a {
-  font-size: 14px; font-weight: 500; color: var(--navy);
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.78);
   padding: 8px 14px; border-radius: 6px; transition: color .15s;
 }
-.site-nav a:hover { color: var(--teal-700); }
-.site-nav a.active { color: var(--teal-700); font-weight: 600; }
+.site-nav a:hover { color: white; }
+.site-nav a.active { color: white; font-weight: 600; }
 .site-header-cta {
   margin-left: auto; display: flex; gap: 12px; align-items: center;
 }
 .site-header-phone {
-  font-size: 13px; color: var(--muted);
+  font-size: 13px; color: rgba(255,255,255,0.6);
   display: inline-flex; align-items: center; gap: 6px;
 }
 
 /* Mobile menu */
 .mobile-toggle {
   display: none; background: none; border: none;
-  font-size: 24px; color: var(--navy); padding: 4px;
+  font-size: 24px; color: white; padding: 4px;
 }
 .mobile-menu {
   display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -248,6 +249,11 @@ section { padding: 96px 0; }
   .offerte-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .site-footer-grid { grid-template-columns: 1fr 1fr; }
   .trust-strip { gap: 24px !important; }
+  .pakketten-cards { grid-template-columns: 1fr !important; }
+  .pakketten-cards > div:last-child { transform: none !important; }
+  .matrix-grid { font-size: 13px !important; }
+  .hulp-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .hulp-cards { grid-template-columns: 1fr 1fr !important; }
 }
 
 @media (max-width: 767px) {
@@ -272,6 +278,9 @@ section { padding: 96px 0; }
   .page-h1 { font-size: 36px !important; }
   .btn-lg { padding: 14px 22px; font-size: 15px; }
   .trust-strip { flex-direction: column; align-items: flex-start !important; gap: 16px !important; }
+  .pakketten-cards > div { padding: 28px !important; }
+  .matrix-header, .matrix-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; }
+  .hulp-cards { grid-template-columns: 1fr !important; }
 }
 
 /* Scrollbar */
@@ -288,12 +297,11 @@ section { padding: 96px 0; }
 <div id="root"></div>
 
 <script type="text/babel">
-const { useState, useEffect } = React;
+const { useState, useEffect, useRef } = React;
 
 /* ── Data ── */
 const PHOTOS = {
-  apartmentExterior: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80&auto=format&fit=crop',
-  apartmentExterior2: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format&fit=crop',
+  hero: 'assets/hero.png',
   laptop: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop',
   documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop',
   blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
@@ -338,6 +346,50 @@ const STATS = [
   { num: '< 24u', label: 'Gemiddelde reactietijd' },
 ];
 
+const PACKAGE_MATRIX = [
+  { group: 'Bestuurlijk', rows: [
+    { label: 'Voorbereiden en bijwonen ALV', start: true, startPlus: true, compleet: true },
+    { label: 'Notuleren ALV', start: false, startPlus: true, compleet: true },
+    { label: 'Bestuursvergaderingen bijwonen', start: false, startPlus: '1× p/j', compleet: 'Onbeperkt' },
+    { label: 'Opstellen huishoudelijk reglement', start: false, startPlus: false, compleet: true },
+    { label: 'Bemiddeling bij geschillen', start: false, startPlus: false, compleet: true },
+  ]},
+  { group: 'Secretarieel', rows: [
+    { label: 'Ledenadministratie', start: true, startPlus: true, compleet: true },
+    { label: 'Correspondentie bewoners', start: true, startPlus: true, compleet: true },
+    { label: 'Inschrijving KvK', start: true, startPlus: true, compleet: true },
+    { label: 'Beheer splitsingsakte', start: false, startPlus: true, compleet: true },
+    { label: 'Verzekeringsbeheer', start: false, startPlus: true, compleet: true },
+    { label: 'Juridische coördinatie', start: false, startPlus: false, compleet: true },
+  ]},
+  { group: 'Financieel', rows: [
+    { label: 'Boekhouding & jaarafrekening', start: true, startPlus: true, compleet: true },
+    { label: 'Opstellen begroting', start: true, startPlus: true, compleet: true },
+    { label: 'Incasso VvE-bijdragen', start: true, startPlus: true, compleet: true },
+    { label: 'Betalingsverkeer', start: true, startPlus: true, compleet: true },
+    { label: 'Reservefondsbeheer', start: false, startPlus: true, compleet: true },
+    { label: 'Meerjarenbegroting', start: false, startPlus: true, compleet: true },
+    { label: 'Debiteurbeheer & aanmaningen', start: false, startPlus: false, compleet: true },
+    { label: 'Fiscale aangiften', start: false, startPlus: false, compleet: true },
+  ]},
+  { group: 'Technisch dagelijks onderhoud', rows: [
+    { label: 'Coördinatie klein onderhoud', start: false, startPlus: true, compleet: true },
+    { label: 'Schademeldingen afhandelen', start: false, startPlus: true, compleet: true },
+    { label: 'Sleutelbeheer', start: false, startPlus: true, compleet: true },
+    { label: 'Offerte-aanvragen onderhoud', start: false, startPlus: false, compleet: true },
+    { label: '24/7 calamiteitenservice', start: false, startPlus: false, compleet: true },
+  ]},
+  { group: 'Technisch planmatig onderhoud', rows: [
+    { label: 'Meerjaren-onderhoudsplan (MJOP)', start: false, startPlus: false, compleet: true },
+    { label: 'Jaarlijkse inspectie', start: false, startPlus: false, compleet: true },
+    { label: 'Begeleiding groot onderhoud', start: false, startPlus: false, compleet: true },
+    { label: 'Aanbesteding onderhoud', start: false, startPlus: false, compleet: true },
+    { label: 'Toezicht uitvoering', start: false, startPlus: false, compleet: true },
+    { label: 'Oplevering & nazorg', start: false, startPlus: false, compleet: true },
+    { label: 'Verduurzamingsadvies', start: false, startPlus: false, compleet: true },
+  ]},
+];
+
 /* ── Helpers ── */
 function I({ name, size = 18, weight = 'regular', style = {}, className = '' }) {
   const cls = weight === 'duotone' ? `ph-duotone ph-${name}` :
@@ -354,14 +406,68 @@ function Photo({ src, alt, style = {}, children }) {
   );
 }
 
-/* ── SiteHeader ── */
+function CountUp({ value, duration = 1800 }) {
+  const match = String(value).match(/^(\D*?)([\d.]+)(.*)$/);
+  if (!match) return <>{value}</>;
+  const prefix = match[1];
+  const numStr = match[2];
+  const suffix = match[3];
+  const target = parseInt(numStr.replace(/\./g, ''), 10) || 0;
+  const hasThousandSep = /\d\.\d{3}/.test(numStr);
+
+  const [n, setN] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    let raf;
+    let started = false;
+    let startTs;
+
+    const run = () => {
+      if (started) return;
+      started = true;
+      const step = (t) => {
+        if (startTs == null) startTs = t;
+        const p = Math.min(1, (t - startTs) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setN(Math.round(eased * target));
+        if (p < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    };
+
+    const el = ref.current;
+    let io;
+    if (el && 'IntersectionObserver' in window) {
+      io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) run(); });
+      }, { threshold: 0.2 });
+      io.observe(el);
+    } else {
+      run();
+    }
+    return () => { if (raf) cancelAnimationFrame(raf); if (io) io.disconnect(); };
+  }, [target, duration]);
+
+  const formatted = hasThousandSep ? n.toLocaleString('nl-NL') : String(n);
+  return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
+}
+
+function PkgCheck({ value }) {
+  if (value === true) return <I name="check-circle" size={18} weight="fill" style={{ color: 'var(--teal-700)' }} />;
+  if (value === false) return <I name="minus-circle" size={18} weight="regular" style={{ color: 'var(--border)' }} />;
+  return <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--navy)' }}>{value}</span>;
+}
+
+/* ── SiteHeader (navy) ── */
 function SiteHeader({ page, setPage }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const links = [
     { id: 'home', label: 'Home' },
     { id: 'diensten', label: 'Diensten' },
-    { id: 'overons', label: 'Over ons' },
+    { id: 'pakketten', label: 'Pakketten' },
     { id: 'werkwijze', label: 'Werkwijze' },
+    { id: 'overons', label: 'Over ons' },
     { id: 'offerte', label: 'Offerte' },
   ];
   const nav = (isMobile) => links.map(l => (
@@ -375,7 +481,7 @@ function SiteHeader({ page, setPage }) {
       <header className="site-header">
         <div className="container site-header-inner">
           <a className="site-logo" onClick={() => setPage('home')}>
-            <img src="assets/icoon-donker.png" alt="" />
+            <img src="assets/icoon-wit.png" alt="" />
             <span>VvE Beheer Collectief</span>
           </a>
           <nav className="site-nav">{nav(false)}</nav>
@@ -391,7 +497,7 @@ function SiteHeader({ page, setPage }) {
 
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
-          <a className="site-logo" onClick={() => { setPage('home'); setMobileOpen(false); }}>
+          <a className="site-logo" onClick={() => { setPage('home'); setMobileOpen(false); }} style={{ color: 'var(--navy)' }}>
             <img src="assets/icoon-donker.png" alt="" style={{ width: 32, height: 32 }} />
             <span>VvE Beheer Collectief</span>
           </a>
@@ -521,14 +627,14 @@ function HeroSection({ setPage }) {
             <div className="hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, paddingTop: 32, borderTop: '1px solid var(--border)' }}>
               {stats.map(s => (
                 <div key={s.label}>
-                  <div className="stat-num">{s.num}</div>
+                  <div className="stat-num"><CountUp value={s.num} /></div>
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
           <div className="hero-photo-col" style={{ position: 'relative' }}>
-            <Photo src={PHOTOS.apartmentExterior} alt="Appartementencomplex" style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 14 }} />
+            <Photo src={PHOTOS.hero} alt="Overleg met VvE-bestuur" style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 14 }} />
             <div className="hero-stat-card" style={{
               position: 'absolute', bottom: 24, left: -32,
               background: 'white', padding: '20px 24px', borderRadius: 12,
@@ -656,7 +762,7 @@ function TestimonialsSection() {
                 {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
               </div>
               <p style={{ fontSize: 15.5, lineHeight: 1.6, margin: '0 0 24px', color: 'rgba(255,255,255,0.92)' }}>
-                “{t.quote}”
+                "{t.quote}"
               </p>
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 20 }}>
                 <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
@@ -819,6 +925,225 @@ function DienstenPage({ setPage }) {
 }
 
 /* ══════════════════════════════════════════════
+   PAKKETTEN PAGE — NIEUW
+   ══════════════════════════════════════════════ */
+function PakkettenPage({ setPage }) {
+  const packages = [
+    {
+      id: 'start', name: 'Start', dark: false,
+      tagline: 'Administratief en financieel basisbeheer voor VvE\'s die de basis goed willen regelen.',
+      price: '92,95', priceLabel: 'per appartementsrecht per jaar · excl. btw',
+      features: [
+        { label: 'ALV-organisatie', active: true },
+        { label: 'Ledenadministratie', active: true },
+        { label: 'Boekhouding & jaarafrekening', active: true },
+        { label: 'Incasso VvE-bijdragen', active: true },
+        { label: 'Betalingsverkeer', active: true },
+        { label: 'Technisch beheer', active: false },
+        { label: 'MJOP-onderhoud', active: false },
+        { label: 'Calamiteitenservice', active: false },
+      ],
+    },
+    {
+      id: 'start-aanvullend', name: 'Start aanvullend', dark: false,
+      tagline: 'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.',
+      price: '147,95', priceLabel: 'per appartementsrecht per jaar · excl. btw',
+      features: [
+        { label: 'ALV-organisatie & notulen', active: true },
+        { label: 'Ledenadministratie', active: true },
+        { label: 'Volledige boekhouding', active: true },
+        { label: 'Reservefondsbeheer', active: true },
+        { label: 'Verzekeringsbeheer', active: true },
+        { label: 'Coördinatie klein onderhoud', active: true },
+        { label: 'Schademeldingen', active: true },
+        { label: 'Planmatig onderhoud', active: false },
+      ],
+    },
+    {
+      id: 'compleet', name: 'Compleet', dark: true,
+      tagline: 'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.',
+      price: null, priceLabel: 'per appartementsrecht per jaar · excl. btw',
+      features: [
+        { label: 'Alles uit Start aanvullend', active: true },
+        { label: 'Bestuursvergaderingen onbeperkt', active: true },
+        { label: 'Juridische coördinatie', active: true },
+        { label: 'Debiteurbeheer & aanmaningen', active: true },
+        { label: 'MJOP & planmatig onderhoud', active: true },
+        { label: '24/7 calamiteitenservice', active: true },
+        { label: 'Jaarlijkse inspectie', active: true },
+        { label: 'Verduurzamingsadvies', active: true },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {/* Hero */}
+      <section style={{ background: 'var(--gray-bg)', padding: '64px 0 56px' }}>
+        <div className="container">
+          <div className="section-eyebrow">Onze pakketten</div>
+          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
+            Drie manieren waarop wij u ontzorgen
+          </h1>
+          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
+            Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing cards */}
+      <section style={{ paddingTop: 0, marginTop: -32 }}>
+        <div className="container">
+          <div className="pakketten-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'stretch' }}>
+            {packages.map(pkg => (
+              <div key={pkg.id} style={{
+                position: 'relative', padding: '36px 32px 32px', borderRadius: 16,
+                background: pkg.dark ? 'var(--navy)' : 'white',
+                color: pkg.dark ? 'white' : 'var(--navy)',
+                border: pkg.dark ? 'none' : '1px solid var(--border)',
+                transform: pkg.dark ? 'translateY(-8px)' : 'none',
+                boxShadow: pkg.dark ? '0 28px 56px -20px rgba(43,53,68,0.35)' : '0 4px 16px -8px rgba(43,53,68,0.1)',
+                display: 'flex', flexDirection: 'column',
+              }}>
+                {pkg.dark && (
+                  <span className="pill" style={{ position: 'absolute', top: -14, left: 32 }}>Meest gekozen</span>
+                )}
+                <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: pkg.dark ? 'var(--teal-300)' : 'var(--teal-700)', marginBottom: 8 }}>PAKKET</div>
+                <h2 style={{ fontSize: 30, fontWeight: 700, margin: '0 0 8px', color: pkg.dark ? 'white' : 'var(--navy)' }}>{pkg.name}</h2>
+                <p style={{ fontSize: 14.5, lineHeight: 1.55, color: pkg.dark ? 'rgba(255,255,255,0.75)' : 'var(--muted)', minHeight: 64, margin: '0 0 24px' }}>{pkg.tagline}</p>
+
+                <div style={{ borderTop: `1px solid ${pkg.dark ? 'rgba(255,255,255,0.12)' : 'var(--border)'}`, paddingTop: 24, marginBottom: 24 }}>
+                  {pkg.price ? (
+                    <>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                        <span style={{ fontSize: 14, color: pkg.dark ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}>vanaf</span>
+                        <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 4 }}>€</span>
+                        <span style={{ fontSize: 44, fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>{pkg.price}</span>
+                      </div>
+                      <div style={{ fontSize: 13, color: pkg.dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pkg.priceLabel}</div>
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.02em' }}>Op aanvraag</div>
+                      <div style={{ fontSize: 13, color: pkg.dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pkg.priceLabel}</div>
+                    </>
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 28, flex: 1 }}>
+                  {pkg.features.map(f => (
+                    <div key={f.label} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      {f.active
+                        ? <I name="check" size={16} style={{ color: pkg.dark ? 'var(--teal-300)' : 'var(--teal-700)', flexShrink: 0 }} />
+                        : <I name="minus" size={16} style={{ color: pkg.dark ? 'rgba(255,255,255,0.25)' : 'var(--border)', flexShrink: 0 }} />
+                      }
+                      <span style={{
+                        fontSize: 14,
+                        color: f.active ? (pkg.dark ? 'rgba(255,255,255,0.9)' : 'var(--navy)') : (pkg.dark ? 'rgba(255,255,255,0.35)' : 'var(--muted)'),
+                        textDecoration: f.active ? 'none' : 'line-through',
+                      }}>{f.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  className={`btn ${pkg.dark ? 'btn-primary' : 'btn-secondary'}`}
+                  style={{ width: '100%', justifyContent: 'center' }}
+                  onClick={() => setPage('offerte')}
+                >
+                  Offerte voor {pkg.name} <I name="arrow-right" size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--muted)', marginTop: 24, fontStyle: 'italic' }}>
+            Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.
+          </p>
+        </div>
+      </section>
+
+      {/* Comparison matrix */}
+      <section>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div className="section-eyebrow">Vergelijking</div>
+            <h2 className="section-title" style={{ margin: '0 auto' }}>Wat zit er in elk pakket?</h2>
+          </div>
+          <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden' }}>
+            {/* Matrix header */}
+            <div className="matrix-header" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', background: 'var(--gray-bg)', padding: '18px 24px', gap: 0 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)' }}>Functie</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>Start</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>Start aanv.</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--teal-700)', textAlign: 'center' }}>Compleet</div>
+            </div>
+
+            {PACKAGE_MATRIX.map(group => (
+              <div key={group.group}>
+                <div style={{ padding: '20px 24px 10px', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--teal-700)' }}>
+                  {group.group}
+                </div>
+                {group.rows.map((row, ri) => (
+                  <div className="matrix-row" key={row.label} style={{
+                    display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr',
+                    padding: '14px 24px', borderTop: '1px solid var(--border)',
+                    fontSize: 14, alignItems: 'center',
+                  }}>
+                    <div style={{ color: 'var(--navy)' }}>{row.label}</div>
+                    <div style={{ textAlign: 'center' }}><PkgCheck value={row.start} /></div>
+                    <div style={{ textAlign: 'center' }}><PkgCheck value={row.startPlus} /></div>
+                    <div style={{ textAlign: 'center', background: 'rgba(13,115,119,0.04)', margin: '-14px 0', padding: '14px 0' }}><PkgCheck value={row.compleet} /></div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hulp bij keuze */}
+      <section style={{ background: 'var(--gray-bg)' }}>
+        <div className="container">
+          <div className="hulp-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+            <div>
+              <div className="section-eyebrow">Hulp bij uw keuze</div>
+              <h2 className="section-title">Welk pakket past bij onze VvE?</h2>
+              <p className="section-sub" style={{ marginBottom: 28 }}>
+                De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.
+              </p>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <button className="btn btn-primary" onClick={() => setPage('offerte')}>
+                  Vraag een offerte aan <I name="arrow-right" size={14} />
+                </button>
+                <button className="btn btn-secondary">
+                  <I name="phone" size={14} /> 0174 — 123 456
+                </button>
+              </div>
+            </div>
+            <div className="hulp-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              {[
+                { icon: 'users-three', title: 'Kleine VvE (< 12)', desc: 'Start of Start aanvullend is vaak voldoende voor kleinere complexen.' },
+                { icon: 'buildings', title: 'Middelgrote VvE', desc: 'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.' },
+                { icon: 'buildings', title: 'Grote VvE (> 40)', desc: 'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.' },
+                { icon: 'wrench', title: 'Achterstallig onderhoud', desc: 'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.' },
+              ].map(h => (
+                <div key={h.title} style={{ background: 'white', padding: 20, borderRadius: 12, border: '1px solid var(--border)' }}>
+                  <I name={h.icon} size={22} weight="duotone" style={{ color: 'var(--teal-700)', marginBottom: 12, display: 'block' }} />
+                  <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{h.title}</div>
+                  <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5 }}>{h.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTABlock setPage={setPage} />
+    </>
+  );
+}
+
+/* ══════════════════════════════════════════════
    OVER ONS PAGE
    ══════════════════════════════════════════════ */
 function OverOnsPage({ setPage }) {
@@ -854,7 +1179,7 @@ function OverOnsPage({ setPage }) {
           <div className="stats-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, padding: '32px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
             {STATS.map(s => (
               <div key={s.label}>
-                <div className="stat-num">{s.num}</div>
+                <div className="stat-num"><CountUp value={s.num} /></div>
                 <div className="stat-label">{s.label}</div>
               </div>
             ))}
@@ -886,7 +1211,7 @@ function OverOnsPage({ setPage }) {
           <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
             <div className="section-eyebrow">Onze missie</div>
             <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 24px' }}>
-              “VvE-beheer dat ontzorgt in plaats van compliceert.”
+              "VvE-beheer dat ontzorgt in plaats van compliceert."
             </h2>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
               Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles
@@ -1100,6 +1425,7 @@ function App() {
     const titles = {
       home: 'VvE Beheer Collectief — VvE-beheer Zuid-Holland',
       diensten: 'Diensten — VvE Beheer Collectief',
+      pakketten: 'Pakketten — VvE Beheer Collectief',
       overons: 'Over ons — VvE Beheer Collectief',
       werkwijze: 'Werkwijze — VvE Beheer Collectief',
       offerte: 'Offerte aanvragen — VvE Beheer Collectief',
@@ -1112,6 +1438,7 @@ function App() {
       <SiteHeader page={page} setPage={setPage} />
       {page === 'home' && <HomePage setPage={setPage} />}
       {page === 'diensten' && <DienstenPage setPage={setPage} />}
+      {page === 'pakketten' && <PakkettenPage setPage={setPage} />}
       {page === 'overons' && <OverOnsPage setPage={setPage} />}
       {page === 'werkwijze' && <WerkwijzePage setPage={setPage} />}
       {page === 'offerte' && <OffertePage />}
