@@ -232,8 +232,11 @@ section { padding: 96px 0; }
   .site-header-cta .btn { display: none; }
   .mobile-toggle { display: block; margin-left: auto; }
   .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .hero-photo-col { order: -1; }
-  .hero-stat-card { display: none; }
+  .hero-photo-col .photo { aspect-ratio: 16 / 9 !important; }
+  .hero-stat-card {
+    position: relative !important; bottom: auto !important; left: auto !important;
+    margin-top: 16px; max-width: 100% !important;
+  }
   .pillars-grid { grid-template-columns: 1fr 1fr !important; }
   .diff-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .testimonials-grid { grid-template-columns: 1fr 1fr !important; }
@@ -263,6 +266,8 @@ section { padding: 96px 0; }
   .section-sub { font-size: 16px; }
   .hero-h1 { font-size: 36px !important; }
   .hero-sub { max-width: 100% !important; }
+  .hero-buttons { flex-direction: column !important; }
+  .hero-buttons .btn { width: 100% !important; justify-content: center; }
   .pillars-grid { grid-template-columns: 1fr !important; }
   .testimonials-grid { grid-template-columns: 1fr !important; }
   .diff-usps { grid-template-columns: 1fr !important; }
@@ -281,6 +286,27 @@ section { padding: 96px 0; }
   .pakketten-cards > div { padding: 28px !important; }
   .matrix-header, .matrix-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; }
   .hulp-cards { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 479px) {
+  .hero-h1 { font-size: 32px !important; }
+  .hero-stats .stat-num { font-size: 28px !important; }
+  .hero-stats { gap: 12px !important; }
+}
+
+/* Subtle background patterns */
+.bg-subtle {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(43,53,68,0.04) 1px, transparent 1px),
+    radial-gradient(ellipse at 30% 80%, #FFFFFF 0%, #F7F8FA 100%);
+  background-size: 24px 24px, 100% 100%;
+}
+.bg-subtle-hero {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(43,53,68,0.04) 1px, transparent 1px),
+    radial-gradient(ellipse at 85% 15%, rgba(13,115,119,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 80%, #FFFFFF 0%, #F7F8FA 100%);
+  background-size: 24px 24px, 100% 100%, 100% 100%;
 }
 
 /* Scrollbar */
@@ -325,7 +351,7 @@ const TESTIMONIALS = [
 ];
 
 const TRUST_BADGES = [
-  { label: 'VvE Belang lidmaatschap', icon: 'shield-check' },
+  { label: '17+ jaar ervaring', icon: 'calendar-check' },
   { label: 'Branchevereniging VGM NL', icon: 'medal' },
   { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
   { label: 'KvK 12345678', icon: 'buildings' },
@@ -606,7 +632,7 @@ function CTABlock({ setPage }) {
 function HeroSection({ setPage }) {
   const stats = STATS.slice(0, 3);
   return (
-    <section style={{ padding: '80px 0 96px' }}>
+    <section className="bg-subtle-hero" style={{ padding: '80px 0 96px' }}>
       <div className="container">
         <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
           <div>
@@ -618,7 +644,7 @@ function HeroSection({ setPage }) {
               Specialist in VvE-beheer voor Zuid-Holland en omstreken.
               Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal.
             </p>
-            <div style={{ display: 'flex', gap: 14, marginBottom: 48, flexWrap: 'wrap' }}>
+            <div className="hero-buttons" style={{ display: 'flex', gap: 14, marginBottom: 48, flexWrap: 'wrap' }}>
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
                 Volgende stap <I name="arrow-right" size={16} />
               </button>
@@ -639,15 +665,16 @@ function HeroSection({ setPage }) {
               position: 'absolute', bottom: 24, left: -32,
               background: 'white', padding: '20px 24px', borderRadius: 12,
               boxShadow: '0 24px 48px -16px rgba(43,53,68,0.18)',
-              display: 'flex', alignItems: 'center', gap: 16, minWidth: 280
+              maxWidth: 300
             }}>
-              <div style={{ width: 48, height: 48, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', background: 'var(--teal-700)' }}>
-                <I name="shield-check" size={22} weight="duotone" />
+              <div style={{ color: 'var(--teal-700)', marginBottom: 8, display: 'flex', gap: 2 }}>
+                {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
               </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)' }}>VvE Belang lid</div>
-                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>Erkend branchespecialist sinds 2009</div>
-              </div>
+              <p style={{ fontSize: 13.5, lineHeight: 1.5, color: 'var(--navy)', margin: '0 0 12px', fontStyle: 'italic' }}>
+                "Eindelijk een beheerder die écht reageert"
+              </p>
+              <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--navy)' }}>Marieke van der Berg</div>
+              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>Voorzitter VvE Parklaan</div>
             </div>
           </div>
         </div>
@@ -702,7 +729,7 @@ function DifferentiatorsSection() {
     { icon: 'package', title: 'Compleetpakket', desc: 'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
   ];
   return (
-    <section>
+    <section className="bg-subtle">
       <div className="container">
         <div className="diff-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
           <div>
@@ -794,7 +821,7 @@ function TestimonialsSection() {
 function FAQSection() {
   const [open, setOpen] = useState(0);
   return (
-    <section>
+    <section className="bg-subtle">
       <div className="container">
         <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 80 }}>
           <div>
