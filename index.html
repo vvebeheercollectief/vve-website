@@ -29,6 +29,7 @@
   --muted: #64748B;
   --border: #E2E8F0;
   --font: 'DM Sans', system-ui, Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -232,11 +233,6 @@ section { padding: 96px 0; }
   .site-header-cta .btn { display: none; }
   .mobile-toggle { display: block; margin-left: auto; font-size: 28px !important; padding: 8px !important; }
   .site-header-inner { padding: 16px 0 !important; }
-  .hero-skyline { width: 45%; opacity: 0.35; }
-  .hero-testimonial-card {
-    position: relative !important; top: auto !important; right: auto !important;
-    margin-top: 24px; max-width: 100% !important;
-  }
   .hero-stats-bar { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; padding: 24px 28px !important; }
   .pillars-grid { grid-template-columns: 1fr 1fr !important; }
   .diff-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
@@ -271,8 +267,6 @@ section { padding: 96px 0; }
   .hero-sub { max-width: 100% !important; }
   .hero-buttons { flex-direction: column !important; }
   .hero-buttons .btn { width: 100% !important; justify-content: center; }
-  .hero-skyline { width: 60%; opacity: 0.25; bottom: -20px; }
-  .hero-testimonial-card { display: none !important; }
   .hero-stats-bar { grid-template-columns: 1fr 1fr !important; gap: 16px !important; padding: 20px !important; border-radius: 12px !important; }
   .hero-stats-bar .hero-stat-icon { width: 36px; height: 36px; border-radius: 10px; }
   .hero-stats-bar .stat-num { font-size: 24px !important; }
@@ -296,7 +290,6 @@ section { padding: 96px 0; }
 
 @media (max-width: 479px) {
   .hero-h1 { font-size: 32px !important; }
-  .hero-skyline { width: 70%; opacity: 0.18; }
   .hero-stats-bar { grid-template-columns: 1fr 1fr !important; }
   .hero-stats-bar .stat-num { font-size: 22px !important; }
 }
@@ -308,101 +301,20 @@ section { padding: 96px 0; }
     radial-gradient(ellipse at 30% 80%, #FFFFFF 0%, #F7F8FA 100%);
   background-size: 24px 24px, 100% 100%;
 }
-.bg-subtle-hero {
-  background:
-    radial-gradient(ellipse at 75% 40%, rgba(13,115,119,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 90% 80%, rgba(20,184,166,0.06) 0%, transparent 50%),
-    linear-gradient(135deg, #FFFFFF 0%, #F7F8FA 35%, #F0F5F5 60%, #E8F4F3 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hero skyline background image */
-.hero-skyline {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 55%;
-  max-width: 720px;
-  height: auto;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
-  object-fit: contain;
-  object-position: right bottom;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%),
-                      linear-gradient(to top, transparent 0%, black 15%);
-  -webkit-mask-composite: destination-in;
-  mask-image: linear-gradient(to right, transparent 0%, black 25%),
-              linear-gradient(to top, transparent 0%, black 15%);
-  mask-composite: intersect;
-}
-
-.hero-content-layer {
-  position: relative;
-  z-index: 1;
-}
-
-/* Hero stats bar (frosted glass strip) */
-.hero-stats-bar {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
-  padding: 28px 40px;
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-
-.hero-stats-bar .hero-stat-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.hero-stats-bar .hero-stat-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--teal-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--teal-700);
-}
-
-.hero-stats-bar .stat-num {
-  font-size: 28px;
+/* Hero stat number & label base styles */
+.stat-num {
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--teal-700);
   line-height: 1.1;
 }
 
-.hero-stats-bar .stat-label {
+.stat-label {
   font-size: 12.5px;
   color: var(--muted);
   margin-top: 2px;
   line-height: 1.3;
-}
-
-/* Testimonial card floating in hero */
-.hero-testimonial-card {
-  position: absolute;
-  top: 40px;
-  right: 48px;
-  background: white;
-  padding: 24px 28px;
-  border-radius: 14px;
-  box-shadow: 0 24px 48px -16px rgba(43,53,68,0.18);
-  max-width: 320px;
-  z-index: 2;
 }
 
 /* Scrollbar */
@@ -726,81 +638,136 @@ function CTABlock({ setPage }) {
    HOME PAGE
    ══════════════════════════════════════════════ */
 
+const HERO_STATS = [
+  { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
+  { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
+  { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
+  { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
+];
+
 function HeroSection({ setPage }) {
-  const heroStats = [
-    { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
-    { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
-    { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
-    { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
-  ];
+  const statIcons = ['hourglass-medium', 'buildings', 'users-three', 'lightning'];
 
   return (
-    <section className="bg-subtle-hero" style={{ padding: '80px 0 48px' }}>
-      <img src={PHOTOS.skyline} alt="" className="hero-skyline" aria-hidden="true" />
+    <section style={{
+      position: 'relative',
+      padding: 0,
+      background: 'var(--gray-bg)',
+      marginBottom: 0,
+    }}>
+      {/* Inner clipper: gradient + skyline get clipped here */}
+      <div style={{
+        position: 'relative',
+        overflow: 'hidden',
+        background: `
+          radial-gradient(ellipse 70% 80% at 80% 90%, rgba(13,115,119,0.22) 0%, rgba(13,115,119,0) 60%),
+          radial-gradient(ellipse 60% 50% at 15% 10%, rgba(244,239,229,0.9) 0%, rgba(244,239,229,0) 70%),
+          linear-gradient(120deg, #F6F2EA 0%, #E7EFEF 45%, #C5DBDC 100%)
+        `,
+      }}>
+        {/* Skyline image */}
+        <img
+          src={PHOTOS.skyline}
+          alt="Den Haag skyline"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            width: 'min(62%, 880px)',
+            maxHeight: '94%',
+            objectFit: 'contain',
+            objectPosition: 'bottom right',
+            pointerEvents: 'none',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 32%, black 100%), linear-gradient(to right, transparent 0%, black 42%, black 100%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 32%, black 100%), linear-gradient(to right, transparent 0%, black 42%, black 100%)',
+            WebkitMaskComposite: 'source-in',
+            maskComposite: 'intersect',
+            filter: 'drop-shadow(0 8px 16px rgba(43,53,68,0.10))',
+            zIndex: 1,
+          }}
+        />
 
-      <div className="container hero-content-layer">
-        <div style={{ position: 'relative' }}>
-          <div style={{ maxWidth: 600 }}>
+        <div className="container" style={{
+          position: 'relative',
+          padding: '96px 32px 140px',
+          minHeight: 640,
+          zIndex: 2,
+        }}>
+          <div style={{ maxWidth: 560 }}>
             <h1 className="hero-h1" style={{
-              fontSize: 56, lineHeight: 1.05, fontWeight: 700,
-              letterSpacing: '-0.025em', margin: '20px 0', textWrap: 'pretty'
+              fontSize: 62, lineHeight: 1.04, fontWeight: 700,
+              letterSpacing: '-0.028em', margin: '0 0 24px',
+              textWrap: 'pretty', color: 'var(--navy)',
             }}>
-              Samen zorgen voor<br />
-              <span style={{ color: 'var(--teal-700)' }}>onbezorgd wonen.</span>
+              Samen zorgen voor{' '}
+              <span style={{
+                fontFamily: 'var(--font-serif)',
+                fontStyle: 'italic',
+                fontWeight: 500,
+                color: 'var(--teal-900)',
+              }}>
+                onbezorgd wonen.
+              </span>
             </h1>
             <p className="hero-sub" style={{
-              fontSize: 18, lineHeight: 1.6, color: 'var(--muted)',
-              margin: '0 0 32px', maxWidth: 540
+              fontSize: 18, lineHeight: 1.6, color: '#475569',
+              margin: '0 0 36px', maxWidth: 480,
             }}>
               Specialist in VvE-beheer voor Den Haag en heel Zuid-Holland.
               Eén vast aanspreekpunt, volledige transparantie via uw eigen
               klantenportaal — wij regelen het, u woont onbezorgd.
             </p>
-            <div className="hero-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <div className="hero-buttons" style={{ display: 'flex', gap: 14 }}>
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
                 Vrijblijvende offerte <I name="arrow-right" size={16} />
               </button>
-              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}>
+              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
+                style={{
+                  background: 'rgba(255,255,255,0.55)',
+                  backdropFilter: 'blur(6px)',
+                  WebkitBackdropFilter: 'blur(6px)',
+                  borderColor: 'rgba(43,53,68,0.12)',
+                }}>
                 Onze werkwijze
               </button>
             </div>
           </div>
-
-          <div className="hero-testimonial-card">
-            <div style={{ color: 'var(--teal-700)', marginBottom: 10, display: 'flex', gap: 2 }}>
-              {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
-            </div>
-            <p style={{
-              fontSize: 13.5, lineHeight: 1.5, color: 'var(--navy)',
-              margin: '0 0 14px', fontStyle: 'italic'
-            }}>
-              "Eindelijk een beheerder die opneemt, doet wat hij belooft en alles
-              netjes vastlegt. Een verademing."
-            </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{
-                width: 32, height: 32, borderRadius: '50%',
-                background: 'var(--teal-100)', color: 'var(--teal-700)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 12, fontWeight: 700
-              }}>MK</div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)' }}>Marieke K.</div>
-                <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 1 }}>Voorzitter VvE Parkzicht</div>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
 
-        <div className="hero-stats-bar">
-          {heroStats.map(s => (
-            <div key={s.label} className="hero-stat-item">
-              <div className="hero-stat-icon">
-                <I name={s.icon} size={22} weight="duotone" />
+      {/* Stats card — outside the clipper, inside the section */}
+      <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+        <div className="hero-stats-bar" style={{
+          background: 'white',
+          borderRadius: 16,
+          boxShadow: '0 24px 56px -20px rgba(43,53,68,0.22)',
+          padding: '20px 8px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 0,
+          marginTop: -56,
+        }}>
+          {HERO_STATS.map((s, i) => (
+            <div key={s.label} style={{
+              display: 'flex', alignItems: 'center', gap: 14,
+              padding: '8px 20px',
+              borderLeft: i === 0 ? 'none' : '1px solid var(--border)',
+            }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 10,
+                background: 'var(--teal-100)', color: 'var(--teal-900)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0,
+              }}>
+                <I name={statIcons[i]} size={22} weight="duotone" />
               </div>
               <div>
-                <div className="stat-num"><CountUp value={s.num} /></div>
-                <div className="stat-label">{s.label}</div>
+                <div className="stat-num" style={{ fontSize: 26 }}>
+                  <CountUp value={s.num} />
+                </div>
+                <div className="stat-label" style={{ marginTop: 2 }}>{s.label}</div>
               </div>
             </div>
           ))}
