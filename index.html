@@ -230,13 +230,14 @@ section { padding: 96px 0; }
   .site-nav { display: none; }
   .site-header-phone { display: none; }
   .site-header-cta .btn { display: none; }
-  .mobile-toggle { display: block; margin-left: auto; }
-  .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .hero-photo-col .photo { aspect-ratio: 16 / 9 !important; }
-  .hero-stat-card {
-    position: relative !important; bottom: auto !important; left: auto !important;
-    margin-top: 16px; max-width: 100% !important;
+  .mobile-toggle { display: block; margin-left: auto; font-size: 28px !important; padding: 8px !important; }
+  .site-header-inner { padding: 16px 0 !important; }
+  .hero-skyline { width: 45%; opacity: 0.35; }
+  .hero-testimonial-card {
+    position: relative !important; top: auto !important; right: auto !important;
+    margin-top: 24px; max-width: 100% !important;
   }
+  .hero-stats-bar { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; padding: 24px 28px !important; }
   .pillars-grid { grid-template-columns: 1fr 1fr !important; }
   .diff-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .testimonials-grid { grid-template-columns: 1fr 1fr !important; }
@@ -264,18 +265,23 @@ section { padding: 96px 0; }
   section { padding: 64px 0; }
   .section-title { font-size: 28px; }
   .section-sub { font-size: 16px; }
+  .site-logo { font-size: 15px !important; }
+  .site-logo img { width: 30px !important; height: 30px !important; }
   .hero-h1 { font-size: 36px !important; }
   .hero-sub { max-width: 100% !important; }
   .hero-buttons { flex-direction: column !important; }
   .hero-buttons .btn { width: 100% !important; justify-content: center; }
+  .hero-skyline { width: 60%; opacity: 0.25; bottom: -20px; }
+  .hero-testimonial-card { display: none !important; }
+  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; gap: 16px !important; padding: 20px !important; border-radius: 12px !important; }
+  .hero-stats-bar .hero-stat-icon { width: 36px; height: 36px; border-radius: 10px; }
+  .hero-stats-bar .stat-num { font-size: 24px !important; }
   .pillars-grid { grid-template-columns: 1fr !important; }
   .testimonials-grid { grid-template-columns: 1fr !important; }
   .diff-usps { grid-template-columns: 1fr !important; }
   .stats-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
   .cta-grid { padding: 28px !important; }
   .cta-grid h2 { font-size: 28px !important; }
-  .hero-stats { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
-  .hero-stats .stat-num { font-size: 32px !important; }
   .compleet-features { grid-template-columns: 1fr !important; }
   .offerte-services { grid-template-columns: 1fr !important; }
   .site-footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -290,8 +296,9 @@ section { padding: 96px 0; }
 
 @media (max-width: 479px) {
   .hero-h1 { font-size: 32px !important; }
-  .hero-stats .stat-num { font-size: 28px !important; }
-  .hero-stats { gap: 12px !important; }
+  .hero-skyline { width: 70%; opacity: 0.18; }
+  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; }
+  .hero-stats-bar .stat-num { font-size: 22px !important; }
 }
 
 /* Subtle background patterns */
@@ -303,10 +310,99 @@ section { padding: 96px 0; }
 }
 .bg-subtle-hero {
   background:
-    radial-gradient(circle at 50% 50%, rgba(43,53,68,0.04) 1px, transparent 1px),
-    radial-gradient(ellipse at 85% 15%, rgba(13,115,119,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 80%, #FFFFFF 0%, #F7F8FA 100%);
-  background-size: 24px 24px, 100% 100%, 100% 100%;
+    radial-gradient(ellipse at 75% 40%, rgba(13,115,119,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 90% 80%, rgba(20,184,166,0.06) 0%, transparent 50%),
+    linear-gradient(135deg, #FFFFFF 0%, #F7F8FA 35%, #F0F5F5 60%, #E8F4F3 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero skyline background image */
+.hero-skyline {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  max-width: 720px;
+  height: auto;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  object-fit: contain;
+  object-position: right bottom;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%),
+                      linear-gradient(to top, transparent 0%, black 15%);
+  -webkit-mask-composite: destination-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 25%),
+              linear-gradient(to top, transparent 0%, black 15%);
+  mask-composite: intersect;
+}
+
+.hero-content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero stats bar (frosted glass strip) */
+.hero-stats-bar {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 28px 40px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.hero-stats-bar .hero-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-stats-bar .hero-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--teal-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--teal-700);
+}
+
+.hero-stats-bar .stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--teal-700);
+  line-height: 1.1;
+}
+
+.hero-stats-bar .stat-label {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* Testimonial card floating in hero */
+.hero-testimonial-card {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  background: white;
+  padding: 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px -16px rgba(43,53,68,0.18);
+  max-width: 320px;
+  z-index: 2;
 }
 
 /* Scrollbar */
@@ -328,6 +424,7 @@ const { useState, useEffect, useRef } = React;
 /* ── Data ── */
 const PHOTOS = {
   hero: 'assets/hero.png',
+  skyline: 'assets/skyline.png',
   lobby: 'assets/lobby.png',
   documents: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop',
   blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
@@ -630,53 +727,83 @@ function CTABlock({ setPage }) {
    ══════════════════════════════════════════════ */
 
 function HeroSection({ setPage }) {
-  const stats = STATS.slice(0, 3);
+  const heroStats = [
+    { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
+    { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
+    { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
+    { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
+  ];
+
   return (
-    <section className="bg-subtle-hero" style={{ padding: '80px 0 96px' }}>
-      <div className="container">
-        <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
-          <div>
-            <span className="pill"><I name="map-pin" size={12} weight="fill" /> Wateringen · Zuid-Holland</span>
-            <h1 className="hero-h1" style={{ fontSize: 56, lineHeight: 1.05, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0', textWrap: 'pretty' }}>
-              Samen zorgen voor<br /><span>onbezorgd wonen.</span>
-            </h1>
-            <p className="hero-sub" style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 32px', maxWidth: 480 }}>
-              Specialist in VvE-beheer voor Zuid-Holland en omstreken.
-              Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal.
-            </p>
-            <div className="hero-buttons" style={{ display: 'flex', gap: 14, marginBottom: 48, flexWrap: 'wrap' }}>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                Volgende stap <I name="arrow-right" size={16} />
-              </button>
-              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}>Onze werkwijze</button>
-            </div>
-            <div className="hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, paddingTop: 32, borderTop: '1px solid var(--border)' }}>
-              {stats.map(s => (
-                <div key={s.label}>
-                  <div className="stat-num"><CountUp value={s.num} /></div>
-                  <div className="stat-label">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hero-photo-col" style={{ position: 'relative' }}>
-            <Photo src={PHOTOS.hero} alt="Overleg met VvE-bestuur" style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 14 }} />
-            <div className="hero-stat-card" style={{
-              position: 'absolute', bottom: 24, left: -32,
-              background: 'white', padding: '20px 24px', borderRadius: 12,
-              boxShadow: '0 24px 48px -16px rgba(43,53,68,0.18)',
-              maxWidth: 300
+    <section className="bg-subtle-hero" style={{ padding: '80px 0 48px' }}>
+      <img src={PHOTOS.skyline} alt="" className="hero-skyline" aria-hidden="true" />
+
+      <div className="container hero-content-layer">
+        <div style={{ position: 'relative' }}>
+          <div style={{ maxWidth: 600 }}>
+            <h1 className="hero-h1" style={{
+              fontSize: 56, lineHeight: 1.05, fontWeight: 700,
+              letterSpacing: '-0.025em', margin: '20px 0', textWrap: 'pretty'
             }}>
-              <div style={{ color: 'var(--teal-700)', marginBottom: 8, display: 'flex', gap: 2 }}>
-                {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
-              </div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.5, color: 'var(--navy)', margin: '0 0 12px', fontStyle: 'italic' }}>
-                "Eindelijk een beheerder die écht reageert"
-              </p>
-              <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--navy)' }}>Marieke van der Berg</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>Voorzitter VvE Parklaan</div>
+              Samen zorgen voor<br />
+              <span style={{ color: 'var(--teal-700)' }}>onbezorgd wonen.</span>
+            </h1>
+            <p className="hero-sub" style={{
+              fontSize: 18, lineHeight: 1.6, color: 'var(--muted)',
+              margin: '0 0 32px', maxWidth: 540
+            }}>
+              Specialist in VvE-beheer voor Den Haag en heel Zuid-Holland.
+              Eén vast aanspreekpunt, volledige transparantie via uw eigen
+              klantenportaal — wij regelen het, u woont onbezorgd.
+            </p>
+            <div className="hero-buttons" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
+                Vrijblijvende offerte <I name="arrow-right" size={16} />
+              </button>
+              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}>
+                Onze werkwijze
+              </button>
             </div>
           </div>
+
+          <div className="hero-testimonial-card">
+            <div style={{ color: 'var(--teal-700)', marginBottom: 10, display: 'flex', gap: 2 }}>
+              {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
+            </div>
+            <p style={{
+              fontSize: 13.5, lineHeight: 1.5, color: 'var(--navy)',
+              margin: '0 0 14px', fontStyle: 'italic'
+            }}>
+              "Eindelijk een beheerder die opneemt, doet wat hij belooft en alles
+              netjes vastlegt. Een verademing."
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: '50%',
+                background: 'var(--teal-100)', color: 'var(--teal-700)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 12, fontWeight: 700
+              }}>MK</div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--navy)' }}>Marieke K.</div>
+                <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 1 }}>Voorzitter VvE Parkzicht</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-stats-bar">
+          {heroStats.map(s => (
+            <div key={s.label} className="hero-stat-item">
+              <div className="hero-stat-icon">
+                <I name={s.icon} size={22} weight="duotone" />
+              </div>
+              <div>
+                <div className="stat-num"><CountUp value={s.num} /></div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
