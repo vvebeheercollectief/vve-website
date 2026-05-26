@@ -267,7 +267,17 @@ section { padding: 96px 0; }
   .hero-sub { max-width: 100% !important; }
   .hero-buttons { flex-direction: column !important; }
   .hero-buttons .btn { width: 100% !important; justify-content: center; }
-  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; gap: 16px !important; padding: 20px !important; border-radius: 12px !important; }
+  .hero-skyline { display: none !important; }
+  .hero-content { padding: 48px 16px 80px !important; min-height: auto !important; }
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 80% 70% at 60% 80%, rgba(13,115,119,0.18) 0%, rgba(13,115,119,0) 60%),
+      radial-gradient(ellipse 70% 60% at 30% 20%, rgba(244,239,229,0.85) 0%, rgba(244,239,229,0) 70%),
+      linear-gradient(150deg, #F6F2EA 0%, #E7EFEF 50%, #C5DBDC 100%) !important;
+  }
+  .hero-stats-wrapper .hero-stats-bar { margin-top: -28px !important; }
+  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; gap: 12px !important; padding: 16px !important; border-radius: 12px !important; }
+  .hero-stat-item { border-left: none !important; background: var(--gray-bg); border-radius: 10px; padding: 12px 14px !important; }
   .hero-stats-bar .hero-stat-icon { width: 36px; height: 36px; border-radius: 10px; }
   .hero-stats-bar .stat-num { font-size: 24px !important; }
   .pillars-grid { grid-template-columns: 1fr !important; }
@@ -656,7 +666,7 @@ function HeroSection({ setPage }) {
       marginBottom: 0,
     }}>
       {/* Inner clipper: gradient + skyline get clipped here */}
-      <div style={{
+      <div className="hero-bg" style={{
         position: 'relative',
         overflow: 'hidden',
         background: `
@@ -667,6 +677,7 @@ function HeroSection({ setPage }) {
       }}>
         {/* Skyline image */}
         <img
+          className="hero-skyline"
           src={PHOTOS.skyline}
           alt="Den Haag skyline"
           style={{
@@ -689,7 +700,7 @@ function HeroSection({ setPage }) {
           }}
         />
 
-        <div className="container" style={{
+        <div className="container hero-content" style={{
           position: 'relative',
           padding: '96px 32px 140px',
           minHeight: 640,
@@ -738,7 +749,7 @@ function HeroSection({ setPage }) {
       </div>
 
       {/* Stats card — outside the clipper, inside the section */}
-      <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+      <div className="container hero-stats-wrapper" style={{ position: 'relative', zIndex: 3 }}>
         <div className="hero-stats-bar" style={{
           background: 'white',
           borderRadius: 16,
@@ -750,7 +761,7 @@ function HeroSection({ setPage }) {
           marginTop: -56,
         }}>
           {HERO_STATS.map((s, i) => (
-            <div key={s.label} style={{
+            <div key={s.label} className="hero-stat-item" style={{
               display: 'flex', alignItems: 'center', gap: 14,
               padding: '8px 20px',
               borderLeft: i === 0 ? 'none' : '1px solid var(--border)',
