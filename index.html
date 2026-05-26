@@ -373,7 +373,7 @@ const TRUST_BADGES = [
   { label: '17+ jaar ervaring', icon: 'calendar-check' },
   { label: 'Branchevereniging VGM NL', icon: 'medal' },
   { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
-  { label: 'KvK 12345678', icon: 'buildings' },
+  { label: 'KvK 51721139', icon: 'buildings' },
 ];
 
 const FAQ_DATA = [
@@ -531,7 +531,7 @@ function SiteHeader({ page, setPage }) {
           </a>
           <nav className="site-nav">{nav(false)}</nav>
           <div className="site-header-cta">
-            <span className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</span>
+            <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
             <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>Offerte aanvragen</button>
           </div>
           <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label="Menu openen">
@@ -553,7 +553,7 @@ function SiteHeader({ page, setPage }) {
         <nav>{nav(true)}</nav>
         <div className="mobile-cta">
           <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>Offerte aanvragen</button>
-          <a style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
+          <a href="tel:+31858000605" style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
             <I name="phone" size={14} /> (085)-800 0605
           </a>
         </div>
@@ -593,7 +593,7 @@ function SiteFooter({ setPage }) {
           <div>
             <h4>Contact</h4>
             <a>Wateringen, Zuid-Holland</a>
-            <a>(085)-800 0605</a>
+            <a href="tel:+31858000605">(085)-800 0605</a>
             <a>info@vvebeheercollectief.nl</a>
             <a style={{ marginTop: 8 }} onClick={() => setPage('offerte')}>
               <span style={{ color: 'var(--teal-300)', fontWeight: 600 }}>Offerte aanvragen →</span>
@@ -601,9 +601,11 @@ function SiteFooter({ setPage }) {
           </div>
         </div>
         <div className="site-footer-bottom">
-          <div>© {new Date().getFullYear()} VvE Beheer Collectief. KvK 12345678.</div>
+          <div>© {new Date().getFullYear()} VvE Beheer Collectief. KvK 51721139.</div>
           <div style={{ display: 'flex', gap: 24 }}>
-            <a>Privacy</a><a>Voorwaarden</a><a>Cookies</a>
+            <a onClick={() => setPage('privacy')} style={{ cursor: 'pointer' }}>Privacy</a>
+            <a onClick={() => setPage('voorwaarden')} style={{ cursor: 'pointer' }}>Voorwaarden</a>
+            <a onClick={() => setPage('cookies')} style={{ cursor: 'pointer' }}>Cookies</a>
           </div>
         </div>
       </div>
@@ -627,7 +629,7 @@ function CTABlock({ setPage }) {
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
                 Offerte aanvragen <I name="arrow-right" size={16} />
               </button>
-              <button className="btn btn-secondary btn-lg">Bel ons direct</button>
+              <a href="tel:+31858000605" className="btn btn-secondary btn-lg">Bel ons direct</a>
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -935,7 +937,7 @@ function FAQSection() {
             <p className="section-sub" style={{ marginBottom: 32 }}>
               Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.
             </p>
-            <button className="btn btn-secondary"><I name="phone" size={14} /> (085)-800 0605</button>
+            <a href="tel:+31858000605" className="btn btn-secondary"><I name="phone" size={14} /> (085)-800 0605</a>
           </div>
           <div>
             {FAQ_DATA.map((f, i) => (
@@ -1247,9 +1249,9 @@ function PakkettenPage({ setPage }) {
                 <button className="btn btn-primary" onClick={() => setPage('offerte')}>
                   Vraag een offerte aan <I name="arrow-right" size={14} />
                 </button>
-                <button className="btn btn-secondary">
+                <a href="tel:+31858000605" className="btn btn-secondary">
                   <I name="phone" size={14} /> (085)-800 0605
-                </button>
+                </a>
               </div>
             </div>
             <div className="hulp-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
@@ -1543,6 +1545,178 @@ function OffertePage() {
 }
 
 /* ══════════════════════════════════════════════
+   LEGAL PAGES
+   ══════════════════════════════════════════════ */
+
+function LegalPageLayout({ title, children }) {
+  return (
+    <section style={{ padding: '64px 0 96px', background: 'var(--gray-bg)', minHeight: 600 }}>
+      <div className="container" style={{ maxWidth: 820 }}>
+        <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 32px' }}>{title}</h1>
+        <div style={{ background: 'white', borderRadius: 14, border: '1px solid var(--border)', padding: '40px 48px' }}>
+          <div style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--navy)' }}>
+            {children}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LegalH2({ children }) {
+  return <h2 style={{ fontSize: 20, fontWeight: 700, margin: '32px 0 12px', color: 'var(--navy)' }}>{children}</h2>;
+}
+function LegalH3({ children }) {
+  return <h3 style={{ fontSize: 16, fontWeight: 700, margin: '20px 0 8px', color: 'var(--navy)' }}>{children}</h3>;
+}
+function LegalP({ children }) {
+  return <p style={{ margin: '0 0 12px' }}>{children}</p>;
+}
+function LegalUl({ children }) {
+  return <ul style={{ margin: '8px 0 16px', paddingLeft: 24, listStyle: 'disc', display: 'flex', flexDirection: 'column', gap: 4 }}>{children}</ul>;
+}
+
+function PrivacyPage() {
+  return (
+    <LegalPageLayout title="Privacyverklaring">
+      <LegalP>VvE Beheer Collectief, gevestigd te Wateringen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</LegalP>
+
+      <LegalH2>Contactgegevens</LegalH2>
+      <LegalP>
+        VvE Beheer Collectief<br />
+        Wateringen, Zuid-Holland<br />
+        <a href="tel:+31858000605" style={{ color: 'var(--teal-700)' }}>(085)-800 0605</a><br />
+        <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a><br />
+        KvK: 51721139
+      </LegalP>
+
+      <LegalH2>Persoonsgegevens die wij verwerken</LegalH2>
+      <LegalP>VvE Beheer Collectief verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten en/of omdat u deze zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</LegalP>
+      <LegalUl>
+        <li>Voor- en achternaam</li>
+        <li>Telefoonnummer</li>
+        <li>E-mailadres</li>
+        <li>Naam en adres van uw VvE</li>
+        <li>Functie binnen de VvE</li>
+        <li>Overige gegevens die u actief verstrekt, bijvoorbeeld via correspondentie of het offerteformulier</li>
+      </LegalUl>
+
+      <LegalH2>Met welk doel wij persoonsgegevens verwerken</LegalH2>
+      <LegalP>VvE Beheer Collectief verwerkt uw persoonsgegevens voor de volgende doelen:</LegalP>
+      <LegalUl>
+        <li>Het afhandelen van uw offerteaanvraag</li>
+        <li>U te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren</li>
+        <li>Het uitvoeren van VvE-beheerdiensten waarvoor u ons heeft ingeschakeld</li>
+        <li>U te informeren over wijzigingen van onze diensten</li>
+      </LegalUl>
+
+      <LegalH2>Hoe lang we persoonsgegevens bewaren</LegalH2>
+      <LegalP>VvE Beheer Collectief bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Gegevens uit offerteaanvragen worden maximaal 12 maanden bewaard indien er geen overeenkomst volgt. Bij een actieve beheerovereenkomst worden gegevens bewaard gedurende de looptijd en tot 7 jaar daarna (wettelijke bewaartermijn financiële administratie).</LegalP>
+
+      <LegalH2>Delen van persoonsgegevens met derden</LegalH2>
+      <LegalP>VvE Beheer Collectief verstrekt uw gegevens niet aan derden, tenzij dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.</LegalP>
+
+      <LegalH2>Gegevens inzien, aanpassen of verwijderen</LegalH2>
+      <LegalP>U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking. U kunt een verzoek tot inzage, correctie, verwijdering of overdracht van uw persoonsgegevens sturen naar <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+
+      <LegalH2>Beveiliging</LegalH2>
+      <LegalP>VvE Beheer Collectief neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als u de indruk heeft dat uw gegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact met ons op via <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+
+      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
+        Laatst bijgewerkt: mei 2025
+      </div>
+    </LegalPageLayout>
+  );
+}
+
+function VoorwaardenPage() {
+  return (
+    <LegalPageLayout title="Algemene voorwaarden">
+      <LegalH2>Artikel 1 — Definities</LegalH2>
+      <LegalUl>
+        <li><strong>Opdrachtnemer:</strong> VvE Beheer Collectief, gevestigd te Wateringen, ingeschreven bij de KvK onder nummer 51721139.</li>
+        <li><strong>Opdrachtgever:</strong> de Vereniging van Eigenaars (VvE) die een overeenkomst aangaat met Opdrachtnemer.</li>
+        <li><strong>Overeenkomst:</strong> de beheerovereenkomst tussen Opdrachtgever en Opdrachtnemer.</li>
+      </LegalUl>
+
+      <LegalH2>Artikel 2 — Toepasselijkheid</LegalH2>
+      <LegalP>Deze algemene voorwaarden zijn van toepassing op elk aanbod van Opdrachtnemer en op elke tot stand gekomen overeenkomst. Afwijkingen van deze voorwaarden zijn slechts geldig indien deze uitdrukkelijk schriftelijk zijn overeengekomen.</LegalP>
+
+      <LegalH2>Artikel 3 — Aanbod en offertes</LegalH2>
+      <LegalP>Alle offertes van VvE Beheer Collectief zijn vrijblijvend en geldig voor een periode van 30 dagen, tenzij anders vermeld. Een overeenkomst komt tot stand na schriftelijke bevestiging door beide partijen of door een besluit van de ALV.</LegalP>
+
+      <LegalH2>Artikel 4 — Uitvoering van de overeenkomst</LegalH2>
+      <LegalP>VvE Beheer Collectief zal de overeenkomst naar beste inzicht en vermogen uitvoeren, overeenkomstig de eisen van goed vakmanschap. De beheerder heeft een inspanningsverplichting en geen resultaatsverplichting.</LegalP>
+
+      <LegalH2>Artikel 5 — Duur en opzegging</LegalH2>
+      <LegalP>De beheerovereenkomst wordt aangegaan voor de duur zoals vermeld in de overeenkomst. Opzegging geschiedt schriftelijk met inachtneming van een opzegtermijn van 3 maanden voor het einde van de contractperiode, tenzij anders overeengekomen.</LegalP>
+
+      <LegalH2>Artikel 6 — Tarieven en betaling</LegalH2>
+      <LegalP>Alle genoemde tarieven zijn exclusief btw, tenzij uitdrukkelijk anders vermeld. Betaling dient te geschieden binnen 30 dagen na factuurdatum. Bij niet-tijdige betaling is Opdrachtgever van rechtswege in verzuim en is wettelijke rente verschuldigd.</LegalP>
+
+      <LegalH2>Artikel 7 — Aansprakelijkheid</LegalH2>
+      <LegalP>De aansprakelijkheid van VvE Beheer Collectief is beperkt tot het bedrag dat in het desbetreffende geval door de beroepsaansprakelijkheidsverzekering wordt uitbetaald, vermeerderd met het eigen risico. Indien de verzekering niet uitkeert, is de aansprakelijkheid beperkt tot het bedrag van de vergoeding die Opdrachtnemer voor zijn werkzaamheden in het kader van de overeenkomst heeft ontvangen over de periode van 12 maanden voorafgaand aan het schadeveroorzakende feit.</LegalP>
+
+      <LegalH2>Artikel 8 — Geheimhouding</LegalH2>
+      <LegalP>Beide partijen zijn verplicht tot geheimhouding van alle vertrouwelijke informatie die zij in het kader van de overeenkomst van elkaar hebben verkregen. Deze verplichting geldt ook na beëindiging van de overeenkomst.</LegalP>
+
+      <LegalH2>Artikel 9 — Klachten</LegalH2>
+      <LegalP>Klachten over de uitvoering van de overeenkomst moeten tijdig, volledig en duidelijk omschreven worden ingediend bij VvE Beheer Collectief. Klachten worden binnen 14 dagen na ontvangst in behandeling genomen.</LegalP>
+
+      <LegalH2>Artikel 10 — Toepasselijk recht</LegalH2>
+      <LegalP>Op alle overeenkomsten tussen Opdrachtgever en VvE Beheer Collectief is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement Den Haag.</LegalP>
+
+      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
+        Laatst bijgewerkt: mei 2025
+      </div>
+    </LegalPageLayout>
+  );
+}
+
+function CookiesPage() {
+  return (
+    <LegalPageLayout title="Cookieverklaring">
+      <LegalP>Deze website van VvE Beheer Collectief maakt gebruik van cookies. In deze cookieverklaring leest u wat cookies zijn, welke cookies wij gebruiken en hoe u deze kunt beheren.</LegalP>
+
+      <LegalH2>Wat zijn cookies?</LegalH2>
+      <LegalP>Cookies zijn kleine tekstbestanden die door uw browser worden opgeslagen wanneer u een website bezoekt. Ze worden gebruikt om websites goed te laten functioneren, om het gebruik van de website te analyseren en om de gebruikerservaring te verbeteren.</LegalP>
+
+      <LegalH2>Welke cookies gebruiken wij?</LegalH2>
+
+      <LegalH3>Functionele cookies</LegalH3>
+      <LegalP>Deze cookies zijn noodzakelijk voor het functioneren van de website. Ze zorgen er bijvoorbeeld voor dat uw voorkeuren worden onthouden. Deze cookies worden niet gebruikt voor marketingdoeleinden.</LegalP>
+
+      <LegalH3>Analytische cookies</LegalH3>
+      <LegalP>Wij kunnen analytische cookies gebruiken om het gebruik van onze website te meten en te verbeteren. Deze gegevens worden anoniem verzameld en niet gedeeld met derden voor commerciële doeleinden.</LegalP>
+
+      <LegalH2>Cookies beheren</LegalH2>
+      <LegalP>U kunt uw cookievoorkeuren op elk moment wijzigen via de instellingen van uw browser. Houd er rekening mee dat het blokkeren van bepaalde cookies de functionaliteit van de website kan beïnvloeden.</LegalP>
+      <LegalP>De meeste browsers bieden de mogelijkheid om:</LegalP>
+      <LegalUl>
+        <li>Alle cookies te bekijken die zijn opgeslagen</li>
+        <li>Cookies individueel of geheel te verwijderen</li>
+        <li>Cookies van bepaalde websites te blokkeren</li>
+        <li>Alle cookies te blokkeren</li>
+        <li>Alle cookies te verwijderen wanneer u de browser sluit</li>
+      </LegalUl>
+
+      <LegalH2>Cookies van derden</LegalH2>
+      <LegalP>Onze website kan gebruik maken van diensten van derden, zoals Google Fonts voor typografie. Deze diensten kunnen hun eigen cookies plaatsen. Wij hebben geen controle over het plaatsen en gebruik van cookies door deze derden. Raadpleeg het privacybeleid van de betreffende derde partij voor meer informatie.</LegalP>
+
+      <LegalH2>Wijzigingen</LegalH2>
+      <LegalP>VvE Beheer Collectief behoudt zich het recht voor om deze cookieverklaring te wijzigen. Wijzigingen worden op deze pagina gepubliceerd.</LegalP>
+
+      <LegalH2>Contact</LegalH2>
+      <LegalP>Heeft u vragen over ons cookiebeleid? Neem contact met ons op via <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+
+      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
+        Laatst bijgewerkt: mei 2025
+      </div>
+    </LegalPageLayout>
+  );
+}
+
+/* ══════════════════════════════════════════════
    APP
    ══════════════════════════════════════════════ */
 function App() {
@@ -1561,6 +1735,9 @@ function App() {
       overons: 'Over ons — VvE Beheer Collectief',
       werkwijze: 'Werkwijze — VvE Beheer Collectief',
       offerte: 'Offerte aanvragen — VvE Beheer Collectief',
+      privacy: 'Privacyverklaring — VvE Beheer Collectief',
+      voorwaarden: 'Algemene voorwaarden — VvE Beheer Collectief',
+      cookies: 'Cookieverklaring — VvE Beheer Collectief',
     };
     document.title = titles[page] || titles.home;
   }, [page]);
@@ -1574,6 +1751,9 @@ function App() {
       {page === 'overons' && <OverOnsPage setPage={setPage} />}
       {page === 'werkwijze' && <WerkwijzePage setPage={setPage} />}
       {page === 'offerte' && <OffertePage />}
+      {page === 'privacy' && <PrivacyPage />}
+      {page === 'voorwaarden' && <VoorwaardenPage />}
+      {page === 'cookies' && <CookiesPage />}
       <SiteFooter setPage={setPage} />
     </>
   );
