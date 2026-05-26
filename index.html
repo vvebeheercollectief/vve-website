@@ -226,8 +226,61 @@ section { padding: 96px 0; }
 }
 .social-icon:hover { background: rgba(255,255,255,0.15); }
 
+/* Language switcher */
+.lang-switcher {
+  position: relative;
+}
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: white; font-size: 13px; font-weight: 600;
+  padding: 7px 12px; border-radius: 8px; cursor: pointer;
+  font-family: inherit; transition: all .15s ease;
+  white-space: nowrap;
+}
+.lang-toggle:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.25); }
+.lang-dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  background: white; border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 16px 40px -12px rgba(43,53,68,0.25);
+  min-width: 200px; padding: 6px; z-index: 200;
+  opacity: 0; pointer-events: none; transform: translateY(-4px);
+  transition: all .15s ease;
+}
+.lang-dropdown.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+.lang-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 8px; cursor: pointer;
+  font-size: 14px; color: var(--navy); transition: background .1s;
+  border: none; background: none; width: 100%; text-align: left;
+  font-family: inherit;
+}
+.lang-option:hover { background: var(--gray-bg); }
+.lang-option.active { background: var(--teal-100); color: var(--teal-900); font-weight: 600; }
+.lang-option-code { font-size: 11px; color: var(--muted); margin-left: auto; font-weight: 600; }
+
+/* Mobile lang switcher */
+.mobile-lang-switcher {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding-bottom: 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-lang-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; border-radius: 8px; font-size: 13px;
+  font-weight: 500; border: 1px solid var(--border);
+  background: white; color: var(--navy); cursor: pointer;
+  font-family: inherit; transition: all .15s;
+}
+.mobile-lang-btn:hover { border-color: var(--teal-700); }
+.mobile-lang-btn.active {
+  background: var(--teal-100); border-color: var(--teal-700);
+  color: var(--teal-900); font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 1023px) {
+  .lang-switcher { display: none; }
   .site-nav { display: none; }
   .site-header-phone { display: none; }
   .site-header-cta .btn { display: none; }
@@ -435,6 +488,472 @@ const PACKAGE_MATRIX = [
   ]},
 ];
 
+/* ── Language system ── */
+const LANGUAGES = [
+  { code: 'nl', flag: '🇳🇱', label: 'Nederlands' },
+  { code: 'en', flag: '🇬🇧', label: 'English' },
+  { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
+  { code: 'pl', flag: '🇵🇱', label: 'Polski' },
+  { code: 'tr', flag: '🇹🇷', label: 'Türkçe' },
+  { code: 'ar', flag: '🇸🇦', label: 'العربية', dir: 'rtl' },
+  { code: 'es', flag: '🇪🇸', label: 'Español' },
+  { code: 'ru', flag: '🇷🇺', label: 'Русский' },
+  { code: 'uk', flag: '🇺🇦', label: 'Українська' },
+];
+
+const NL = {
+  meta: { lang: 'nl', dir: 'ltr', label: 'Nederlands' },
+  nav: {
+    home: 'Home',
+    diensten: 'Diensten',
+    pakketten: 'Pakketten',
+    werkwijze: 'Werkwijze',
+    overons: 'Over ons',
+    offerte: 'Offerte',
+    bel: 'Bel ons',
+    offerte_btn: 'Offerte aanvragen',
+    menu_open: 'Menu openen',
+    menu_close: 'Menu sluiten',
+  },
+  hero: {
+    title_1: 'Samen zorgen voor',
+    title_2: 'onbezorgd wonen.',
+    subtitle: 'Specialist in VvE-beheer voor Den Haag en heel Zuid-Holland. Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal — wij regelen het, u woont onbezorgd.',
+    cta_primary: 'Vrijblijvende offerte',
+    cta_secondary: 'Onze werkwijze',
+  },
+  hero_stats: [
+    { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
+    { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
+    { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
+    { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
+  ],
+  pillars_section: {
+    eyebrow: 'Onze dienstverlening',
+    title: 'Drie pijlers — één vast aanspreekpunt',
+    subtitle: 'Administratief, financieel en technisch beheer onder één dak. U krijgt geen wisselende contactpersonen, maar één beheerder die uw gebouw kent.',
+    read_more: 'Lees meer',
+  },
+  pillars: [
+    { icon: 'folders', title: 'Administratief beheer', desc: 'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.', bullets: ['ALV-organisatie & notulen', 'Ledenadministratie', 'Post & correspondentie', 'Splitsingsakte beheer'] },
+    { icon: 'chart-line-up', title: 'Financieel beheer', desc: 'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.', bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteuren'] },
+    { icon: 'wrench', title: 'Technisch beheer', desc: 'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.', bullets: ['Meerjaren-onderhoudsplan', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'] },
+  ],
+  diff_section: {
+    eyebrow: 'Wat ons onderscheidt',
+    title: "Waarom 500+ VvE's voor ons kozen",
+    subtitle: 'Het beheer van een VvE staat of valt met transparantie en bereikbaarheid. Wij bouwden daar een werkwijze omheen.',
+  },
+  diff_items: [
+    { icon: 'monitor', title: 'Eigen klantenportaal', desc: 'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.' },
+    { icon: 'user-circle-check', title: 'Vast aanspreekpunt', desc: 'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.' },
+    { icon: 'clock-clockwise', title: 'Snelle reactietijd', desc: 'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.' },
+    { icon: 'package', title: 'Compleetpakket', desc: 'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
+  ],
+  diff_floating: { title: 'MJOP geactualiseerd', time: '2 minuten geleden' },
+  testimonials_section: {
+    eyebrow: 'Klantervaringen',
+    title: 'Wat onze klanten zeggen',
+    trust_label: 'Lidmaatschappen & certificeringen',
+  },
+  testimonials: [
+    { quote: 'Eindelijk een beheerder die ook écht reageert. Binnen een dag een terugkoppeling, en de jaarrekening was voor het eerst in jaren op tijd.', name: 'Marieke van der Berg', role: 'Voorzitter VvE Parklaan', location: 'Den Haag — 24 appartementen' },
+    { quote: 'De overstap vanaf onze vorige beheerder verliep verrassend soepel. Het klantenportaal geeft ons echt rust: alles staat erin, altijd inzichtelijk.', name: 'Joris Hendriks', role: 'Penningmeester VvE De Linden', location: 'Wateringen — 18 appartementen' },
+    { quote: 'Wat ons aansprak was de persoonlijke aandacht. We hebben één vast aanspreekpunt die ons gebouw écht kent. Dat scheelt enorm.', name: 'Saskia Bouman', role: 'Voorzitter VvE Westpoort', location: 'Rotterdam — 42 appartementen' },
+  ],
+  trust_badges: [
+    { label: '17+ jaar ervaring', icon: 'calendar-check' },
+    { label: 'Branchevereniging VGM NL', icon: 'medal' },
+    { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
+    { label: 'KvK 51721139', icon: 'buildings' },
+  ],
+  faq_section: {
+    eyebrow: 'Veelgestelde vragen',
+    title: 'Antwoorden op de vragen die u stelt',
+    subtitle: 'Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.',
+  },
+  faq: [
+    { q: 'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?', a: 'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.' },
+    { q: 'Wat houdt het Compleetpakket precies in?', a: 'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.' },
+    { q: 'Hebben wij één vast aanspreekpunt?', a: 'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.' },
+    { q: 'Hoe transparant is het klantenportaal?', a: 'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.' },
+    { q: 'Bieden jullie ook juridisch beheer?', a: 'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.' },
+  ],
+  cta: {
+    eyebrow: 'Vrijblijvende offerte',
+    title_1: 'Klaar voor een',
+    title_2: 'betere VvE-ervaring?',
+    subtitle: 'Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.',
+    btn_primary: 'Offerte aanvragen',
+    btn_secondary: 'Bel ons direct',
+    usps: ['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE', 'Geen verplichtingen'],
+  },
+  stats: [
+    { num: '17+', label: 'Jaar ervaring in VvE-beheer' },
+    { num: '500+', label: "VvE's onder ons beheer" },
+    { num: '12.000+', label: 'Eigenaren bediend' },
+    { num: '< 24u', label: 'Gemiddelde reactietijd' },
+  ],
+  diensten_page: {
+    eyebrow: 'Onze diensten',
+    title: 'VvE-beheer dat aansluit op úw behoefte',
+    subtitle: 'Kies losse diensten of het Compleetpakket — volledige ontzorging in één vaste maandprijs.',
+    pillar_label: 'PIJLER',
+    offerte_btn: 'Vraag een offerte aan',
+    compleet_pill: 'Meest gekozen',
+    compleet_title: 'Het Compleetpakket',
+    compleet_desc: 'Volledige ontzorging — administratief, financieel én technisch beheer in één vaste maandprijs. Geen verrassingen, geen meerwerk-facturen.',
+    compleet_btn: 'Offerte voor Compleetpakket',
+    compleet_features: ['Alle administratie', 'Volledige boekhouding', 'MJOP-onderhoud', 'ALV-organisatie', 'Vast aanspreekpunt', 'Klantenportaal', '24/7 schademeldingen', 'Jaarrekening op tijd'],
+  },
+  pakketten_page: {
+    eyebrow: 'Onze pakketten',
+    title: 'Drie manieren waarop wij u ontzorgen',
+    subtitle: 'Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.',
+    pakket_label: 'PAKKET',
+    meest_gekozen: 'Meest gekozen',
+    vanaf: 'vanaf',
+    op_aanvraag: 'Op aanvraag',
+    prijs_label: 'per appartementsrecht per jaar · excl. btw',
+    prijs_note: 'Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.',
+    offerte_voor: 'Offerte voor',
+    vergelijking_eyebrow: 'Vergelijking',
+    vergelijking_title: 'Wat zit er in elk pakket?',
+    matrix_functie: 'Functie',
+    matrix_start: 'Start',
+    matrix_start_aanv: 'Start aanv.',
+    matrix_compleet: 'Compleet',
+    packages: [
+      {
+        id: 'start', name: 'Start',
+        tagline: "Administratief en financieel basisbeheer voor VvE's die de basis goed willen regelen.",
+        price: '92,95',
+        features: [
+          { label: 'ALV-organisatie', active: true },
+          { label: 'Ledenadministratie', active: true },
+          { label: 'Boekhouding & jaarafrekening', active: true },
+          { label: 'Incasso VvE-bijdragen', active: true },
+          { label: 'Betalingsverkeer', active: true },
+          { label: 'Technisch beheer', active: false },
+          { label: 'MJOP-onderhoud', active: false },
+          { label: 'Calamiteitenservice', active: false },
+        ],
+      },
+      {
+        id: 'start-aanvullend', name: 'Start aanvullend',
+        tagline: 'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.',
+        price: '147,95',
+        features: [
+          { label: 'ALV-organisatie & notulen', active: true },
+          { label: 'Ledenadministratie', active: true },
+          { label: 'Volledige boekhouding', active: true },
+          { label: 'Reservefondsbeheer', active: true },
+          { label: 'Verzekeringsbeheer', active: true },
+          { label: 'Coördinatie klein onderhoud', active: true },
+          { label: 'Schademeldingen', active: true },
+          { label: 'Planmatig onderhoud', active: false },
+        ],
+      },
+      {
+        id: 'compleet', name: 'Compleet',
+        tagline: 'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.',
+        price: null,
+        features: [
+          { label: 'Alles uit Start aanvullend', active: true },
+          { label: 'Bestuursvergaderingen onbeperkt', active: true },
+          { label: 'Juridische coördinatie', active: true },
+          { label: 'Debiteurbeheer & aanmaningen', active: true },
+          { label: 'MJOP & planmatig onderhoud', active: true },
+          { label: '24/7 calamiteitenservice', active: true },
+          { label: 'Jaarlijkse inspectie', active: true },
+          { label: 'Verduurzamingsadvies', active: true },
+        ],
+      },
+    ],
+    matrix: [
+      { group: 'Bestuurlijk', rows: [
+        { label: 'Voorbereiden en bijwonen ALV', start: true, startPlus: true, compleet: true },
+        { label: 'Notuleren ALV', start: false, startPlus: true, compleet: true },
+        { label: 'Bestuursvergaderingen bijwonen', start: false, startPlus: '1× p/j', compleet: 'Onbeperkt' },
+        { label: 'Opstellen huishoudelijk reglement', start: false, startPlus: false, compleet: true },
+        { label: 'Bemiddeling bij geschillen', start: false, startPlus: false, compleet: true },
+      ]},
+      { group: 'Secretarieel', rows: [
+        { label: 'Ledenadministratie', start: true, startPlus: true, compleet: true },
+        { label: 'Correspondentie bewoners', start: true, startPlus: true, compleet: true },
+        { label: 'Inschrijving KvK', start: true, startPlus: true, compleet: true },
+        { label: 'Beheer splitsingsakte', start: false, startPlus: true, compleet: true },
+        { label: 'Verzekeringsbeheer', start: false, startPlus: true, compleet: true },
+        { label: 'Juridische coördinatie', start: false, startPlus: false, compleet: true },
+      ]},
+      { group: 'Financieel', rows: [
+        { label: 'Boekhouding & jaarafrekening', start: true, startPlus: true, compleet: true },
+        { label: 'Opstellen begroting', start: true, startPlus: true, compleet: true },
+        { label: 'Incasso VvE-bijdragen', start: true, startPlus: true, compleet: true },
+        { label: 'Betalingsverkeer', start: true, startPlus: true, compleet: true },
+        { label: 'Reservefondsbeheer', start: false, startPlus: true, compleet: true },
+        { label: 'Meerjarenbegroting', start: false, startPlus: true, compleet: true },
+        { label: 'Debiteurbeheer & aanmaningen', start: false, startPlus: false, compleet: true },
+        { label: 'Fiscale aangiften', start: false, startPlus: false, compleet: true },
+      ]},
+      { group: 'Technisch dagelijks onderhoud', rows: [
+        { label: 'Coördinatie klein onderhoud', start: false, startPlus: true, compleet: true },
+        { label: 'Schademeldingen afhandelen', start: false, startPlus: true, compleet: true },
+        { label: 'Sleutelbeheer', start: false, startPlus: true, compleet: true },
+        { label: 'Offerte-aanvragen onderhoud', start: false, startPlus: false, compleet: true },
+        { label: '24/7 calamiteitenservice', start: false, startPlus: false, compleet: true },
+      ]},
+      { group: 'Technisch planmatig onderhoud', rows: [
+        { label: 'Meerjaren-onderhoudsplan (MJOP)', start: false, startPlus: false, compleet: true },
+        { label: 'Jaarlijkse inspectie', start: false, startPlus: false, compleet: true },
+        { label: 'Begeleiding groot onderhoud', start: false, startPlus: false, compleet: true },
+        { label: 'Aanbesteding onderhoud', start: false, startPlus: false, compleet: true },
+        { label: 'Toezicht uitvoering', start: false, startPlus: false, compleet: true },
+        { label: 'Oplevering & nazorg', start: false, startPlus: false, compleet: true },
+        { label: 'Verduurzamingsadvies', start: false, startPlus: false, compleet: true },
+      ]},
+    ],
+    hulp_eyebrow: 'Hulp bij uw keuze',
+    hulp_title: 'Welk pakket past bij onze VvE?',
+    hulp_subtitle: 'De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.',
+    hulp_btn: 'Vraag een offerte aan',
+    hulp_cards: [
+      { icon: 'users-three', title: 'Kleine VvE (< 12)', desc: 'Start of Start aanvullend is vaak voldoende voor kleinere complexen.' },
+      { icon: 'buildings', title: 'Middelgrote VvE', desc: 'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.' },
+      { icon: 'buildings', title: 'Grote VvE (> 40)', desc: 'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.' },
+      { icon: 'wrench', title: 'Achterstallig onderhoud', desc: 'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.' },
+    ],
+  },
+  overons_page: {
+    eyebrow: 'Over ons',
+    title: 'Gevestigd in Wateringen, actief in heel Zuid-Holland',
+    desc: 'VvE Beheer Collectief is opgericht in 2009 vanuit de overtuiging dat VvE-beheer persoonlijker, transparanter en proactiever kan. In de afgelopen 17 jaar groeiden we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE\'s onder beheer.',
+    team_eyebrow: 'Het team',
+    team_title: 'De mensen achter uw VvE',
+    team_subtitle: 'Een klein team van ervaren specialisten. Elke VvE krijgt één vaste beheerder toegewezen.',
+    team: [
+      { name: 'Mark de Vries', role: 'Oprichter & Beheerder' },
+      { name: 'Linda Janssen', role: 'Senior VvE-beheerder' },
+      { name: 'Tim Bakker', role: 'Technisch beheerder' },
+      { name: 'Eva van Loon', role: 'Financieel beheerder' },
+    ],
+    missie_eyebrow: 'Onze missie',
+    missie_quote: 'VvE-beheer dat ontzorgt in plaats van compliceert.',
+    missie_desc: 'Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers, geen automatische antwoorden — wel een team dat uw gebouw kent.',
+  },
+  werkwijze_page: {
+    eyebrow: 'Werkwijze',
+    title: 'Van offerte tot doorlopend beheer',
+    subtitle: 'Een complete overstap regelen we doorgaans in 6 tot 8 weken. Zo ziet dat eruit:',
+    stap: 'STAP',
+    steps: [
+      { num: '01', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
+      { num: '02', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
+      { num: '03', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
+      { num: '04', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud — meteen inzichtelijk.' },
+      { num: '05', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
+      { num: '06', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
+    ],
+  },
+  offerte_page: {
+    eyebrow: 'Offerte aanvragen',
+    title: 'Vrijblijvend & op maat van uw VvE',
+    intro: 'Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch afgestemd zodat hij echt past bij uw situatie.',
+    usps: [
+      ['shield-check', 'Vrijblijvend & gratis'],
+      ['clock', 'Binnen 2 werkdagen reactie'],
+      ['user-circle', 'Direct contact met een beheerder'],
+      ['lock', 'Uw gegevens blijven van u'],
+    ],
+    stap_van: 'van',
+    step_titles: [
+      'Vertel ons over uw VvE',
+      'Welke diensten zoekt u?',
+      'Uw huidige situatie',
+      'Uw contactgegevens',
+    ],
+    step1: {
+      vve_naam: 'Naam van de VvE',
+      vve_naam_ph: 'bv. VvE Parkzicht',
+      aantal: 'Aantal appartementen',
+      aantal_ph: 'bv. 24',
+      bouwjaar: 'Bouwjaar',
+      bouwjaar_ph: 'bv. 1998',
+      adres: 'Adres / locatie',
+      adres_ph: 'Plaats',
+    },
+    step2: {
+      services: [
+        ['package', 'Compleetpakket', 'Alle 3 pijlers in één prijs'],
+        ['folders', 'Administratief', 'ALV, notulen, post'],
+        ['chart-line-up', 'Financieel', 'Boekhouding, jaarrekening'],
+        ['wrench', 'Technisch', 'MJOP, onderhoud'],
+      ],
+    },
+    step3: {
+      beheerder_label: 'Heeft u nu al een beheerder?',
+      beheerder_options: ['Ja, ik wil overstappen', 'Nee, voor het eerst', 'Zelfbeheer, we zoeken hulp'],
+      belangrijk_label: 'Wat is voor u het belangrijkst?',
+      belangrijk_ph: 'bv. snellere reactie, betere transparantie, lagere kosten…',
+    },
+    step4: {
+      voornaam: 'Voornaam',
+      achternaam: 'Achternaam',
+      functie: 'Functie binnen VvE',
+      functie_options: ['Voorzitter', 'Penningmeester', 'Secretaris', 'Bestuurslid', 'Eigenaar / lid'],
+      email: 'E-mail',
+      telefoon: 'Telefoonnummer',
+    },
+    btn_terug: 'Terug',
+    btn_volgende: 'Volgende stap',
+    btn_versturen: 'Aanvraag versturen',
+    success_title: 'Bedankt voor uw aanvraag',
+    success_desc: 'Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.',
+  },
+  privacy_page: {
+    title: 'Privacyverklaring',
+    intro: 'VvE Beheer Collectief, gevestigd te Wateringen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.',
+    h2_contact: 'Contactgegevens',
+    h2_gegevens: 'Persoonsgegevens die wij verwerken',
+    gegevens_intro: 'VvE Beheer Collectief verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten en/of omdat u deze zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:',
+    gegevens_items: ['Voor- en achternaam', 'Telefoonnummer', 'E-mailadres', 'Naam en adres van uw VvE', 'Functie binnen de VvE', 'Overige gegevens die u actief verstrekt, bijvoorbeeld via correspondentie of het offerteformulier'],
+    h2_doel: 'Met welk doel wij persoonsgegevens verwerken',
+    doel_intro: 'VvE Beheer Collectief verwerkt uw persoonsgegevens voor de volgende doelen:',
+    doel_items: ['Het afhandelen van uw offerteaanvraag', 'U te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren', 'Het uitvoeren van VvE-beheerdiensten waarvoor u ons heeft ingeschakeld', 'U te informeren over wijzigingen van onze diensten'],
+    h2_bewaren: 'Hoe lang we persoonsgegevens bewaren',
+    bewaren_text: 'VvE Beheer Collectief bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Gegevens uit offerteaanvragen worden maximaal 12 maanden bewaard indien er geen overeenkomst volgt. Bij een actieve beheerovereenkomst worden gegevens bewaard gedurende de looptijd en tot 7 jaar daarna (wettelijke bewaartermijn financiële administratie).',
+    h2_derden: 'Delen van persoonsgegevens met derden',
+    derden_text: 'VvE Beheer Collectief verstrekt uw gegevens niet aan derden, tenzij dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.',
+    h2_inzien: 'Gegevens inzien, aanpassen of verwijderen',
+    inzien_text: 'U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking. U kunt een verzoek tot inzage, correctie, verwijdering of overdracht van uw persoonsgegevens sturen naar info@vvebeheercollectief.nl.',
+    h2_beveiliging: 'Beveiliging',
+    beveiliging_text: 'VvE Beheer Collectief neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als u de indruk heeft dat uw gegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact met ons op via info@vvebeheercollectief.nl.',
+    updated: 'Laatst bijgewerkt: mei 2025',
+  },
+  voorwaarden_page: {
+    title: 'Algemene voorwaarden',
+    articles: [
+      { h2: 'Artikel 1 — Definities', items: [
+        'Opdrachtnemer: VvE Beheer Collectief, gevestigd te Wateringen, ingeschreven bij de KvK onder nummer 51721139.',
+        'Opdrachtgever: de Vereniging van Eigenaars (VvE) die een overeenkomst aangaat met Opdrachtnemer.',
+        'Overeenkomst: de beheerovereenkomst tussen Opdrachtgever en Opdrachtnemer.',
+      ]},
+      { h2: 'Artikel 2 — Toepasselijkheid', p: 'Deze algemene voorwaarden zijn van toepassing op elk aanbod van Opdrachtnemer en op elke tot stand gekomen overeenkomst. Afwijkingen van deze voorwaarden zijn slechts geldig indien deze uitdrukkelijk schriftelijk zijn overeengekomen.' },
+      { h2: 'Artikel 3 — Aanbod en offertes', p: 'Alle offertes van VvE Beheer Collectief zijn vrijblijvend en geldig voor een periode van 30 dagen, tenzij anders vermeld. Een overeenkomst komt tot stand na schriftelijke bevestiging door beide partijen of door een besluit van de ALV.' },
+      { h2: 'Artikel 4 — Uitvoering van de overeenkomst', p: 'VvE Beheer Collectief zal de overeenkomst naar beste inzicht en vermogen uitvoeren, overeenkomstig de eisen van goed vakmanschap. De beheerder heeft een inspanningsverplichting en geen resultaatsverplichting.' },
+      { h2: 'Artikel 5 — Duur en opzegging', p: 'De beheerovereenkomst wordt aangegaan voor de duur zoals vermeld in de overeenkomst. Opzegging geschiedt schriftelijk met inachtneming van een opzegtermijn van 3 maanden voor het einde van de contractperiode, tenzij anders overeengekomen.' },
+      { h2: 'Artikel 6 — Tarieven en betaling', p: 'Alle genoemde tarieven zijn exclusief btw, tenzij uitdrukkelijk anders vermeld. Betaling dient te geschieden binnen 30 dagen na factuurdatum. Bij niet-tijdige betaling is Opdrachtgever van rechtswege in verzuim en is wettelijke rente verschuldigd.' },
+      { h2: 'Artikel 7 — Aansprakelijkheid', p: 'De aansprakelijkheid van VvE Beheer Collectief is beperkt tot het bedrag dat in het desbetreffende geval door de beroepsaansprakelijkheidsverzekering wordt uitbetaald, vermeerderd met het eigen risico. Indien de verzekering niet uitkeert, is de aansprakelijkheid beperkt tot het bedrag van de vergoeding die Opdrachtnemer voor zijn werkzaamheden in het kader van de overeenkomst heeft ontvangen over de periode van 12 maanden voorafgaand aan het schadeveroorzakende feit.' },
+      { h2: 'Artikel 8 — Geheimhouding', p: 'Beide partijen zijn verplicht tot geheimhouding van alle vertrouwelijke informatie die zij in het kader van de overeenkomst van elkaar hebben verkregen. Deze verplichting geldt ook na beëindiging van de overeenkomst.' },
+      { h2: 'Artikel 9 — Klachten', p: 'Klachten over de uitvoering van de overeenkomst moeten tijdig, volledig en duidelijk omschreven worden ingediend bij VvE Beheer Collectief. Klachten worden binnen 14 dagen na ontvangst in behandeling genomen.' },
+      { h2: 'Artikel 10 — Toepasselijk recht', p: 'Op alle overeenkomsten tussen Opdrachtgever en VvE Beheer Collectief is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement Den Haag.' },
+    ],
+    updated: 'Laatst bijgewerkt: mei 2025',
+  },
+  cookies_page: {
+    title: 'Cookieverklaring',
+    intro: 'Deze website van VvE Beheer Collectief maakt gebruik van cookies. In deze cookieverklaring leest u wat cookies zijn, welke cookies wij gebruiken en hoe u deze kunt beheren.',
+    h2_wat: 'Wat zijn cookies?',
+    wat_text: 'Cookies zijn kleine tekstbestanden die door uw browser worden opgeslagen wanneer u een website bezoekt. Ze worden gebruikt om websites goed te laten functioneren, om het gebruik van de website te analyseren en om de gebruikerservaring te verbeteren.',
+    h2_welke: 'Welke cookies gebruiken wij?',
+    h3_functioneel: 'Functionele cookies',
+    functioneel_text: 'Deze cookies zijn noodzakelijk voor het functioneren van de website. Ze zorgen er bijvoorbeeld voor dat uw voorkeuren worden onthouden. Deze cookies worden niet gebruikt voor marketingdoeleinden.',
+    h3_analytisch: 'Analytische cookies',
+    analytisch_text: 'Wij kunnen analytische cookies gebruiken om het gebruik van onze website te meten en te verbeteren. Deze gegevens worden anoniem verzameld en niet gedeeld met derden voor commerciële doeleinden.',
+    h2_beheren: 'Cookies beheren',
+    beheren_intro: 'U kunt uw cookievoorkeuren op elk moment wijzigen via de instellingen van uw browser. Houd er rekening mee dat het blokkeren van bepaalde cookies de functionaliteit van de website kan beïnvloeden.',
+    beheren_text: 'De meeste browsers bieden de mogelijkheid om:',
+    beheren_items: [
+      'Alle cookies te bekijken die zijn opgeslagen',
+      'Cookies individueel of geheel te verwijderen',
+      'Cookies van bepaalde websites te blokkeren',
+      'Alle cookies te blokkeren',
+      'Alle cookies te verwijderen wanneer u de browser sluit',
+    ],
+    h2_derden: 'Cookies van derden',
+    derden_text: 'Onze website kan gebruik maken van diensten van derden, zoals Google Fonts voor typografie. Deze diensten kunnen hun eigen cookies plaatsen. Wij hebben geen controle over het plaatsen en gebruik van cookies door deze derden. Raadpleeg het privacybeleid van de betreffende derde partij voor meer informatie.',
+    h2_wijzigingen: 'Wijzigingen',
+    wijzigingen_text: 'VvE Beheer Collectief behoudt zich het recht voor om deze cookieverklaring te wijzigen. Wijzigingen worden op deze pagina gepubliceerd.',
+    h2_contact: 'Contact',
+    contact_text: 'Heeft u vragen over ons cookiebeleid? Neem contact met ons op via info@vvebeheercollectief.nl.',
+    updated: 'Laatst bijgewerkt: mei 2025',
+  },
+  footer: {
+    brand_desc: "Persoonlijk, transparant en betrouwbaar VvE-beheer voor Zuid-Holland en omstreken. 17 jaar ervaring, 500+ VvE's in beheer.",
+    h_diensten: 'Diensten',
+    diensten_links: ['Administratief beheer', 'Financieel beheer', 'Technisch beheer', 'Compleetpakket'],
+    h_bedrijf: 'Bedrijf',
+    bedrijf_links: ['Over ons', 'Werkwijze', 'Klantverhalen', 'Vacatures'],
+    h_contact: 'Contact',
+    locatie: 'Wateringen, Zuid-Holland',
+    offerte_link: 'Offerte aanvragen →',
+    bottom_kvk: 'VvE Beheer Collectief. KvK 51721139.',
+    privacy: 'Privacy',
+    voorwaarden: 'Voorwaarden',
+    cookies: 'Cookies',
+  },
+  titles: {
+    home: 'VvE Beheer Collectief — VvE-beheer Zuid-Holland',
+    diensten: 'Diensten — VvE Beheer Collectief',
+    pakketten: 'Pakketten — VvE Beheer Collectief',
+    overons: 'Over ons — VvE Beheer Collectief',
+    werkwijze: 'Werkwijze — VvE Beheer Collectief',
+    offerte: 'Offerte aanvragen — VvE Beheer Collectief',
+    privacy: 'Privacyverklaring — VvE Beheer Collectief',
+    voorwaarden: 'Algemene voorwaarden — VvE Beheer Collectief',
+    cookies: 'Cookieverklaring — VvE Beheer Collectief',
+  },
+};
+
+function useLanguage() {
+  const [lang, setLangRaw] = useState(() => localStorage.getItem('lang') || 'nl');
+  const [translations, setTranslations] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const setLang = (code) => {
+    setLangRaw(code);
+    localStorage.setItem('lang', code);
+    document.documentElement.lang = code;
+    const langDef = LANGUAGES.find(l => l.code === code);
+    document.documentElement.dir = langDef?.dir || 'ltr';
+  };
+
+  useEffect(() => {
+    if (lang === 'nl') {
+      document.documentElement.lang = 'nl';
+      document.documentElement.dir = 'ltr';
+      return;
+    }
+    if (translations[lang]) return;
+    setLoading(true);
+    fetch(`lang/${lang}.json`)
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(data => {
+        setTranslations(prev => ({ ...prev, [lang]: data }));
+        setLoading(false);
+      })
+      .catch(() => {
+        setLangRaw('nl');
+        localStorage.setItem('lang', 'nl');
+        document.documentElement.lang = 'nl';
+        document.documentElement.dir = 'ltr';
+        setLoading(false);
+      });
+  }, [lang]);
+
+  const t = (section, key) => {
+    const source = lang === 'nl' ? NL : (translations[lang] || NL);
+    const val = source[section];
+    if (val === undefined) return key ? NL[section]?.[key] : NL[section];
+    if (key === undefined) return val;
+    return val[key] !== undefined ? val[key] : NL[section]?.[key];
+  };
+
+  const isRtl = LANGUAGES.find(l => l.code === lang)?.dir === 'rtl';
+
+  return { lang, setLang, t, isRtl, loading };
+}
+
 /* ── Helpers ── */
 function I({ name, size = 18, weight = 'regular', style = {}, className = '' }) {
   const cls = weight === 'duotone' ? `ph-duotone ph-${name}` :
@@ -504,16 +1023,63 @@ function PkgCheck({ value }) {
   return <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--navy)' }}>{value}</span>;
 }
 
+function LanguageSwitcher({ lang, setLang }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const current = LANGUAGES.find(l => l.code === lang) || LANGUAGES[0];
+
+  useEffect(() => {
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', close);
+    return () => document.removeEventListener('mousedown', close);
+  }, []);
+
+  return (
+    <div className="lang-switcher" ref={ref}>
+      <button className="lang-toggle" onClick={() => setOpen(!open)}>
+        <span>{current.flag}</span>
+        <span>{current.code.toUpperCase()}</span>
+        <I name={open ? 'caret-up' : 'caret-down'} size={12} />
+      </button>
+      <div className={`lang-dropdown ${open ? 'open' : ''}`}>
+        {LANGUAGES.map(l => (
+          <button key={l.code} className={`lang-option ${l.code === lang ? 'active' : ''}`}
+            onClick={() => { setLang(l.code); setOpen(false); }}>
+            <span>{l.flag}</span>
+            <span>{l.label}</span>
+            <span className="lang-option-code">{l.code.toUpperCase()}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MobileLangSwitcher({ lang, setLang }) {
+  return (
+    <div className="mobile-lang-switcher">
+      {LANGUAGES.map(l => (
+        <button key={l.code} className={`mobile-lang-btn ${l.code === lang ? 'active' : ''}`}
+          onClick={() => setLang(l.code)}>
+          <span>{l.flag}</span>
+          <span>{l.code.toUpperCase()}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 /* ── SiteHeader (navy) ── */
-function SiteHeader({ page, setPage }) {
+function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navT = t('nav');
   const links = [
-    { id: 'home', label: 'Home' },
-    { id: 'diensten', label: 'Diensten' },
-    { id: 'pakketten', label: 'Pakketten' },
-    { id: 'werkwijze', label: 'Werkwijze' },
-    { id: 'overons', label: 'Over ons' },
-    { id: 'offerte', label: 'Offerte' },
+    { id: 'home', label: navT.home },
+    { id: 'diensten', label: navT.diensten },
+    { id: 'pakketten', label: navT.pakketten },
+    { id: 'werkwijze', label: navT.werkwijze },
+    { id: 'overons', label: navT.overons },
+    { id: 'offerte', label: navT.offerte },
   ];
   const nav = (isMobile) => links.map(l => (
     <a key={l.id} className={page === l.id ? 'active' : ''} onClick={() => { setPage(l.id); if (isMobile) setMobileOpen(false); }}>
@@ -532,9 +1098,10 @@ function SiteHeader({ page, setPage }) {
           <nav className="site-nav">{nav(false)}</nav>
           <div className="site-header-cta">
             <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
-            <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>Offerte aanvragen</button>
+            <LanguageSwitcher lang={lang} setLang={setLang} />
+            <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>{navT.offerte_btn}</button>
           </div>
-          <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label="Menu openen">
+          <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label={navT.menu_open}>
             <I name="list" size={24} />
           </button>
         </div>
@@ -546,13 +1113,14 @@ function SiteHeader({ page, setPage }) {
             <img src="assets/icoon-donker.png" alt="" style={{ width: 32, height: 32 }} />
             <span>VvE Beheer Collectief</span>
           </a>
-          <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label="Menu sluiten">
+          <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label={navT.menu_close}>
             <I name="x" size={24} />
           </button>
         </div>
+        <MobileLangSwitcher lang={lang} setLang={setLang} />
         <nav>{nav(true)}</nav>
         <div className="mobile-cta">
-          <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>Offerte aanvragen</button>
+          <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>{navT.offerte_btn}</button>
           <a href="tel:+31858000605" style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
             <I name="phone" size={14} /> (085)-800 0605
           </a>
@@ -563,49 +1131,49 @@ function SiteHeader({ page, setPage }) {
 }
 
 /* ── SiteFooter ── */
-function SiteFooter({ setPage }) {
+function SiteFooter({ setPage, t, isRtl }) {
+  const ft = t('footer');
   return (
     <footer className="site-footer">
       <div className="container">
         <div className="site-footer-grid">
           <div className="site-footer-brand">
             <img src="assets/icoon-wit.png" alt="VvE Beheer Collectief" />
-            <p>Persoonlijk, transparant en betrouwbaar VvE-beheer voor Zuid-Holland en omstreken. 17 jaar ervaring, 500+ VvE's in beheer.</p>
+            <p>{ft.brand_desc}</p>
             <div style={{ display: 'flex', gap: 10 }}>
               <a className="social-icon" aria-label="LinkedIn"><I name="linkedin-logo" size={16} /></a>
               <a className="social-icon" aria-label="Facebook"><I name="facebook-logo" size={16} /></a>
             </div>
           </div>
           <div>
-            <h4>Diensten</h4>
-            <a onClick={() => setPage('diensten')}>Administratief beheer</a>
-            <a onClick={() => setPage('diensten')}>Financieel beheer</a>
-            <a onClick={() => setPage('diensten')}>Technisch beheer</a>
-            <a onClick={() => setPage('diensten')}>Compleetpakket</a>
+            <h4>{ft.h_diensten}</h4>
+            {ft.diensten_links.map(label => (
+              <a key={label} onClick={() => setPage('diensten')}>{label}</a>
+            ))}
           </div>
           <div>
-            <h4>Bedrijf</h4>
-            <a onClick={() => setPage('overons')}>Over ons</a>
-            <a onClick={() => setPage('werkwijze')}>Werkwijze</a>
-            <a>Klantverhalen</a>
-            <a>Vacatures</a>
+            <h4>{ft.h_bedrijf}</h4>
+            <a onClick={() => setPage('overons')}>{ft.bedrijf_links[0]}</a>
+            <a onClick={() => setPage('werkwijze')}>{ft.bedrijf_links[1]}</a>
+            <a>{ft.bedrijf_links[2]}</a>
+            <a>{ft.bedrijf_links[3]}</a>
           </div>
           <div>
-            <h4>Contact</h4>
-            <a>Wateringen, Zuid-Holland</a>
+            <h4>{ft.h_contact}</h4>
+            <a>{ft.locatie}</a>
             <a href="tel:+31858000605">(085)-800 0605</a>
             <a>info@vvebeheercollectief.nl</a>
             <a style={{ marginTop: 8 }} onClick={() => setPage('offerte')}>
-              <span style={{ color: 'var(--teal-300)', fontWeight: 600 }}>Offerte aanvragen →</span>
+              <span style={{ color: 'var(--teal-300)', fontWeight: 600 }}>{ft.offerte_link}</span>
             </a>
           </div>
         </div>
         <div className="site-footer-bottom">
-          <div>© {new Date().getFullYear()} VvE Beheer Collectief. KvK 51721139.</div>
+          <div>&copy; {new Date().getFullYear()} {ft.bottom_kvk}</div>
           <div style={{ display: 'flex', gap: 24 }}>
-            <a onClick={() => setPage('privacy')} style={{ cursor: 'pointer' }}>Privacy</a>
-            <a onClick={() => setPage('voorwaarden')} style={{ cursor: 'pointer' }}>Voorwaarden</a>
-            <a onClick={() => setPage('cookies')} style={{ cursor: 'pointer' }}>Cookies</a>
+            <a onClick={() => setPage('privacy')} style={{ cursor: 'pointer' }}>{ft.privacy}</a>
+            <a onClick={() => setPage('voorwaarden')} style={{ cursor: 'pointer' }}>{ft.voorwaarden}</a>
+            <a onClick={() => setPage('cookies')} style={{ cursor: 'pointer' }}>{ft.cookies}</a>
           </div>
         </div>
       </div>
@@ -614,29 +1182,28 @@ function SiteFooter({ setPage }) {
 }
 
 /* ── Shared CTA block ── */
-function CTABlock({ setPage }) {
+function CTABlock({ setPage, t, isRtl }) {
+  const ct = t('cta');
   return (
     <section style={{ background: 'var(--gray-bg)' }}>
       <div className="container">
         <div className="cta-grid" style={{ background: 'white', borderRadius: 16, padding: 64, display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 56, alignItems: 'center' }}>
           <div>
-            <div className="section-eyebrow">Vrijblijvende offerte</div>
-            <h2 className="section-title">Klaar voor een<br />betere VvE-ervaring?</h2>
-            <p className="section-sub" style={{ marginBottom: 24 }}>
-              Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.
-            </p>
+            <div className="section-eyebrow">{ct.eyebrow}</div>
+            <h2 className="section-title">{ct.title_1}<br />{ct.title_2}</h2>
+            <p className="section-sub" style={{ marginBottom: 24 }}>{ct.subtitle}</p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                Offerte aanvragen <I name="arrow-right" size={16} />
+                {ct.btn_primary} <I name="arrow-right" size={16} />
               </button>
-              <a href="tel:+31858000605" className="btn btn-secondary btn-lg">Bel ons direct</a>
+              <a href="tel:+31858000605" className="btn btn-secondary btn-lg">{ct.btn_secondary}</a>
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE', 'Geen verplichtingen'].map(it => (
-              <div key={it} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'var(--gray-bg)', borderRadius: 10 }}>
+            {ct.usps.map(item => (
+              <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'var(--gray-bg)', borderRadius: 10 }}>
                 <I name="check-circle" size={20} weight="fill" style={{ color: 'var(--teal-700)' }} />
-                <span style={{ fontSize: 14, fontWeight: 500 }}>{it}</span>
+                <span style={{ fontSize: 14, fontWeight: 500 }}>{item}</span>
               </div>
             ))}
           </div>
@@ -966,7 +1533,7 @@ function FAQSection() {
   );
 }
 
-function HomePage({ setPage }) {
+function HomePage({ setPage, t, isRtl }) {
   return (
     <>
       <HeroSection setPage={setPage} />
@@ -974,7 +1541,7 @@ function HomePage({ setPage }) {
       <DifferentiatorsSection />
       <TestimonialsSection />
       <FAQSection />
-      <CTABlock setPage={setPage} />
+      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
@@ -982,7 +1549,7 @@ function HomePage({ setPage }) {
 /* ══════════════════════════════════════════════
    DIENSTEN PAGE
    ══════════════════════════════════════════════ */
-function DienstenPage({ setPage }) {
+function DienstenPage({ setPage, t, isRtl }) {
   const pillarPhotos = [PHOTOS.documents, PHOTOS.lobby, PHOTOS.blueprint];
   return (
     <>
@@ -1053,7 +1620,7 @@ function DienstenPage({ setPage }) {
         </div>
       </section>
 
-      <CTABlock setPage={setPage} />
+      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
@@ -1061,7 +1628,7 @@ function DienstenPage({ setPage }) {
 /* ══════════════════════════════════════════════
    PAKKETTEN PAGE — NIEUW
    ══════════════════════════════════════════════ */
-function PakkettenPage({ setPage }) {
+function PakkettenPage({ setPage, t, isRtl }) {
   const packages = [
     {
       id: 'start', name: 'Start', dark: false,
@@ -1272,7 +1839,7 @@ function PakkettenPage({ setPage }) {
         </div>
       </section>
 
-      <CTABlock setPage={setPage} />
+      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
@@ -1280,7 +1847,7 @@ function PakkettenPage({ setPage }) {
 /* ══════════════════════════════════════════════
    OVER ONS PAGE
    ══════════════════════════════════════════════ */
-function OverOnsPage({ setPage }) {
+function OverOnsPage({ setPage, t, isRtl }) {
   const team = [
     { name: 'Mark de Vries', role: 'Oprichter & Beheerder', img: PHOTOS.portraitM },
     { name: 'Linda Janssen', role: 'Senior VvE-beheerder', img: PHOTOS.portraitW },
@@ -1356,7 +1923,7 @@ function OverOnsPage({ setPage }) {
         </div>
       </section>
 
-      <CTABlock setPage={setPage} />
+      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
@@ -1364,7 +1931,7 @@ function OverOnsPage({ setPage }) {
 /* ══════════════════════════════════════════════
    WERKWIJZE PAGE
    ══════════════════════════════════════════════ */
-function WerkwijzePage({ setPage }) {
+function WerkwijzePage({ setPage, t, isRtl }) {
   const steps = [
     { num: '01', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
     { num: '02', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
@@ -1401,7 +1968,7 @@ function WerkwijzePage({ setPage }) {
         </div>
       </section>
 
-      <CTABlock setPage={setPage} />
+      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
@@ -1409,7 +1976,7 @@ function WerkwijzePage({ setPage }) {
 /* ══════════════════════════════════════════════
    OFFERTE PAGE
    ══════════════════════════════════════════════ */
-function OffertePage() {
+function OffertePage({ t, isRtl }) {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const next = () => setStep(Math.min(4, step + 1));
@@ -1576,7 +2143,7 @@ function LegalUl({ children }) {
   return <ul style={{ margin: '8px 0 16px', paddingLeft: 24, listStyle: 'disc', display: 'flex', flexDirection: 'column', gap: 4 }}>{children}</ul>;
 }
 
-function PrivacyPage() {
+function PrivacyPage({ t, isRtl }) {
   return (
     <LegalPageLayout title="Privacyverklaring">
       <LegalP>VvE Beheer Collectief, gevestigd te Wateringen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</LegalP>
@@ -1629,7 +2196,7 @@ function PrivacyPage() {
   );
 }
 
-function VoorwaardenPage() {
+function VoorwaardenPage({ t, isRtl }) {
   return (
     <LegalPageLayout title="Algemene voorwaarden">
       <LegalH2>Artikel 1 — Definities</LegalH2>
@@ -1673,7 +2240,7 @@ function VoorwaardenPage() {
   );
 }
 
-function CookiesPage() {
+function CookiesPage({ t, isRtl }) {
   return (
     <LegalPageLayout title="Cookieverklaring">
       <LegalP>Deze website van VvE Beheer Collectief maakt gebruik van cookies. In deze cookieverklaring leest u wat cookies zijn, welke cookies wij gebruiken en hoe u deze kunt beheren.</LegalP>
@@ -1721,6 +2288,7 @@ function CookiesPage() {
    ══════════════════════════════════════════════ */
 function App() {
   const [page, setPageRaw] = useState('home');
+  const { lang, setLang, t, isRtl, loading } = useLanguage();
 
   const setPage = (p) => {
     setPageRaw(p);
@@ -1728,33 +2296,23 @@ function App() {
   };
 
   useEffect(() => {
-    const titles = {
-      home: 'VvE Beheer Collectief — VvE-beheer Zuid-Holland',
-      diensten: 'Diensten — VvE Beheer Collectief',
-      pakketten: 'Pakketten — VvE Beheer Collectief',
-      overons: 'Over ons — VvE Beheer Collectief',
-      werkwijze: 'Werkwijze — VvE Beheer Collectief',
-      offerte: 'Offerte aanvragen — VvE Beheer Collectief',
-      privacy: 'Privacyverklaring — VvE Beheer Collectief',
-      voorwaarden: 'Algemene voorwaarden — VvE Beheer Collectief',
-      cookies: 'Cookieverklaring — VvE Beheer Collectief',
-    };
+    const titles = t('titles');
     document.title = titles[page] || titles.home;
-  }, [page]);
+  }, [page, lang]);
 
   return (
     <>
-      <SiteHeader page={page} setPage={setPage} />
-      {page === 'home' && <HomePage setPage={setPage} />}
-      {page === 'diensten' && <DienstenPage setPage={setPage} />}
-      {page === 'pakketten' && <PakkettenPage setPage={setPage} />}
-      {page === 'overons' && <OverOnsPage setPage={setPage} />}
-      {page === 'werkwijze' && <WerkwijzePage setPage={setPage} />}
-      {page === 'offerte' && <OffertePage />}
-      {page === 'privacy' && <PrivacyPage />}
-      {page === 'voorwaarden' && <VoorwaardenPage />}
-      {page === 'cookies' && <CookiesPage />}
-      <SiteFooter setPage={setPage} />
+      <SiteHeader page={page} setPage={setPage} lang={lang} setLang={setLang} t={t} isRtl={isRtl} />
+      {page === 'home' && <HomePage setPage={setPage} t={t} isRtl={isRtl} />}
+      {page === 'diensten' && <DienstenPage setPage={setPage} t={t} isRtl={isRtl} />}
+      {page === 'pakketten' && <PakkettenPage setPage={setPage} t={t} isRtl={isRtl} />}
+      {page === 'overons' && <OverOnsPage setPage={setPage} t={t} isRtl={isRtl} />}
+      {page === 'werkwijze' && <WerkwijzePage setPage={setPage} t={t} isRtl={isRtl} />}
+      {page === 'offerte' && <OffertePage t={t} isRtl={isRtl} />}
+      {page === 'privacy' && <PrivacyPage t={t} isRtl={isRtl} />}
+      {page === 'voorwaarden' && <VoorwaardenPage t={t} isRtl={isRtl} />}
+      {page === 'cookies' && <CookiesPage t={t} isRtl={isRtl} />}
+      <SiteFooter setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
 }
