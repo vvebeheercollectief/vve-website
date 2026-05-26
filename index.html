@@ -410,84 +410,6 @@ const PHOTOS = {
   portraitW2: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&q=80&auto=format&fit=crop',
 };
 
-const PILLARS = [
-  { icon: 'folders', title: 'Administratief beheer', desc: 'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.', bullets: ['ALV-organisatie & notulen', 'Ledenadministratie', 'Post & correspondentie', 'Splitsingsakte beheer'] },
-  { icon: 'chart-line-up', title: 'Financieel beheer', desc: 'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.', bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteuren'] },
-  { icon: 'wrench', title: 'Technisch beheer', desc: 'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.', bullets: ['Meerjaren-onderhoudsplan', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'] },
-];
-
-const TESTIMONIALS = [
-  { quote: 'Eindelijk een beheerder die ook écht reageert. Binnen een dag een terugkoppeling, en de jaarrekening was voor het eerst in jaren op tijd.', name: 'Marieke van der Berg', role: 'Voorzitter VvE Parklaan', location: 'Den Haag — 24 appartementen' },
-  { quote: 'De overstap vanaf onze vorige beheerder verliep verrassend soepel. Het klantenportaal geeft ons echt rust: alles staat erin, altijd inzichtelijk.', name: 'Joris Hendriks', role: 'Penningmeester VvE De Linden', location: 'Wateringen — 18 appartementen' },
-  { quote: 'Wat ons aansprak was de persoonlijke aandacht. We hebben één vast aanspreekpunt die ons gebouw écht kent. Dat scheelt enorm.', name: 'Saskia Bouman', role: 'Voorzitter VvE Westpoort', location: 'Rotterdam — 42 appartementen' },
-];
-
-const TRUST_BADGES = [
-  { label: '17+ jaar ervaring', icon: 'calendar-check' },
-  { label: 'Branchevereniging VGM NL', icon: 'medal' },
-  { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
-  { label: 'KvK 51721139', icon: 'buildings' },
-];
-
-const FAQ_DATA = [
-  { q: 'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?', a: 'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.' },
-  { q: 'Wat houdt het Compleetpakket precies in?', a: 'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.' },
-  { q: 'Hebben wij één vast aanspreekpunt?', a: 'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.' },
-  { q: 'Hoe transparant is het klantenportaal?', a: 'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.' },
-  { q: 'Bieden jullie ook juridisch beheer?', a: 'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.' },
-];
-
-const STATS = [
-  { num: '17+', label: 'Jaar ervaring in VvE-beheer' },
-  { num: '500+', label: "VvE's onder ons beheer" },
-  { num: '12.000+', label: 'Eigenaren bediend' },
-  { num: '< 24u', label: 'Gemiddelde reactietijd' },
-];
-
-const PACKAGE_MATRIX = [
-  { group: 'Bestuurlijk', rows: [
-    { label: 'Voorbereiden en bijwonen ALV', start: true, startPlus: true, compleet: true },
-    { label: 'Notuleren ALV', start: false, startPlus: true, compleet: true },
-    { label: 'Bestuursvergaderingen bijwonen', start: false, startPlus: '1× p/j', compleet: 'Onbeperkt' },
-    { label: 'Opstellen huishoudelijk reglement', start: false, startPlus: false, compleet: true },
-    { label: 'Bemiddeling bij geschillen', start: false, startPlus: false, compleet: true },
-  ]},
-  { group: 'Secretarieel', rows: [
-    { label: 'Ledenadministratie', start: true, startPlus: true, compleet: true },
-    { label: 'Correspondentie bewoners', start: true, startPlus: true, compleet: true },
-    { label: 'Inschrijving KvK', start: true, startPlus: true, compleet: true },
-    { label: 'Beheer splitsingsakte', start: false, startPlus: true, compleet: true },
-    { label: 'Verzekeringsbeheer', start: false, startPlus: true, compleet: true },
-    { label: 'Juridische coördinatie', start: false, startPlus: false, compleet: true },
-  ]},
-  { group: 'Financieel', rows: [
-    { label: 'Boekhouding & jaarafrekening', start: true, startPlus: true, compleet: true },
-    { label: 'Opstellen begroting', start: true, startPlus: true, compleet: true },
-    { label: 'Incasso VvE-bijdragen', start: true, startPlus: true, compleet: true },
-    { label: 'Betalingsverkeer', start: true, startPlus: true, compleet: true },
-    { label: 'Reservefondsbeheer', start: false, startPlus: true, compleet: true },
-    { label: 'Meerjarenbegroting', start: false, startPlus: true, compleet: true },
-    { label: 'Debiteurbeheer & aanmaningen', start: false, startPlus: false, compleet: true },
-    { label: 'Fiscale aangiften', start: false, startPlus: false, compleet: true },
-  ]},
-  { group: 'Technisch dagelijks onderhoud', rows: [
-    { label: 'Coördinatie klein onderhoud', start: false, startPlus: true, compleet: true },
-    { label: 'Schademeldingen afhandelen', start: false, startPlus: true, compleet: true },
-    { label: 'Sleutelbeheer', start: false, startPlus: true, compleet: true },
-    { label: 'Offerte-aanvragen onderhoud', start: false, startPlus: false, compleet: true },
-    { label: '24/7 calamiteitenservice', start: false, startPlus: false, compleet: true },
-  ]},
-  { group: 'Technisch planmatig onderhoud', rows: [
-    { label: 'Meerjaren-onderhoudsplan (MJOP)', start: false, startPlus: false, compleet: true },
-    { label: 'Jaarlijkse inspectie', start: false, startPlus: false, compleet: true },
-    { label: 'Begeleiding groot onderhoud', start: false, startPlus: false, compleet: true },
-    { label: 'Aanbesteding onderhoud', start: false, startPlus: false, compleet: true },
-    { label: 'Toezicht uitvoering', start: false, startPlus: false, compleet: true },
-    { label: 'Oplevering & nazorg', start: false, startPlus: false, compleet: true },
-    { label: 'Verduurzamingsadvies', start: false, startPlus: false, compleet: true },
-  ]},
-];
-
 /* ── Language system ── */
 const LANGUAGES = [
   { code: 'nl', flag: '🇳🇱', label: 'Nederlands' },
@@ -1217,14 +1139,9 @@ function CTABlock({ setPage, t, isRtl }) {
    HOME PAGE
    ══════════════════════════════════════════════ */
 
-const HERO_STATS = [
-  { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
-  { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
-  { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
-  { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
-];
-
-function HeroSection({ setPage }) {
+function HeroSection({ setPage, t, isRtl }) {
+  const heroT = t('hero');
+  const heroStats = t('hero_stats');
   const statIcons = ['hourglass-medium', 'buildings', 'users-three', 'lightning'];
 
   return (
@@ -1281,27 +1198,25 @@ function HeroSection({ setPage }) {
               letterSpacing: '-0.028em', margin: '0 0 24px',
               textWrap: 'pretty', color: 'var(--navy)',
             }}>
-              Samen zorgen voor{' '}
+              {heroT.title_1}{' '}
               <span style={{
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontWeight: 500,
                 color: 'var(--teal-900)',
               }}>
-                onbezorgd wonen.
+                {heroT.title_2}
               </span>
             </h1>
             <p className="hero-sub" style={{
               fontSize: 18, lineHeight: 1.6, color: '#475569',
               margin: '0 0 36px', maxWidth: 480,
             }}>
-              Specialist in VvE-beheer voor Den Haag en heel Zuid-Holland.
-              Eén vast aanspreekpunt, volledige transparantie via uw eigen
-              klantenportaal — wij regelen het, u woont onbezorgd.
+              {heroT.subtitle}
             </p>
             <div className="hero-buttons" style={{ display: 'flex', gap: 14 }}>
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                Vrijblijvende offerte <I name="arrow-right" size={16} />
+                {heroT.cta_primary} <I name="arrow-right" size={16} />
               </button>
               <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
                 style={{
@@ -1310,7 +1225,7 @@ function HeroSection({ setPage }) {
                   WebkitBackdropFilter: 'blur(6px)',
                   borderColor: 'rgba(43,53,68,0.12)',
                 }}>
-                Onze werkwijze
+                {heroT.cta_secondary}
               </button>
             </div>
           </div>
@@ -1329,7 +1244,7 @@ function HeroSection({ setPage }) {
           gap: 0,
           marginTop: -56,
         }}>
-          {HERO_STATS.map((s, i) => (
+          {heroStats.map((s, i) => (
             <div key={s.label} className="hero-stat-item" style={{
               display: 'flex', alignItems: 'center', gap: 14,
               padding: '8px 20px',
@@ -1357,20 +1272,21 @@ function HeroSection({ setPage }) {
   );
 }
 
-function PillarsSection({ setPage }) {
+function PillarsSection({ setPage, t, isRtl }) {
+  const ps = t('pillars_section');
+  const pillars = t('pillars');
   return (
     <section style={{ background: 'var(--gray-bg)' }}>
       <div className="container">
         <div style={{ maxWidth: 720, marginBottom: 56 }}>
-          <div className="section-eyebrow">Onze dienstverlening</div>
-          <h2 className="section-title">Drie pijlers — één vast aanspreekpunt</h2>
+          <div className="section-eyebrow">{ps.eyebrow}</div>
+          <h2 className="section-title">{ps.title}</h2>
           <p className="section-sub">
-            Administratief, financieel en technisch beheer onder één dak. U krijgt geen
-            wisselende contactpersonen, maar één beheerder die uw gebouw kent.
+            {ps.subtitle}
           </p>
         </div>
         <div className="pillars-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {PILLARS.map(p => (
+          {pillars.map(p => (
             <div key={p.title} className="card card-hover">
               <div style={{ width: 52, height: 52, borderRadius: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginBottom: 22, background: 'var(--teal-700)' }}>
                 <I name={p.icon} size={24} weight="duotone" />
@@ -1385,7 +1301,7 @@ function PillarsSection({ setPage }) {
                 ))}
               </ul>
               <a onClick={() => setPage('diensten')} style={{ fontSize: 13, fontWeight: 600, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--teal-700)' }}>
-                Lees meer <I name="arrow-right" size={12} />
+                {ps.read_more} <I name="arrow-right" size={12} />
               </a>
             </div>
           ))}
@@ -1395,26 +1311,22 @@ function PillarsSection({ setPage }) {
   );
 }
 
-function DifferentiatorsSection() {
-  const items = [
-    { icon: 'monitor', title: 'Eigen klantenportaal', desc: 'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.' },
-    { icon: 'user-circle-check', title: 'Vast aanspreekpunt', desc: 'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.' },
-    { icon: 'clock-clockwise', title: 'Snelle reactietijd', desc: 'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.' },
-    { icon: 'package', title: 'Compleetpakket', desc: 'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
-  ];
+function DifferentiatorsSection({ t, isRtl }) {
+  const ds = t('diff_section');
+  const diffItems = t('diff_items');
+  const fl = t('diff_floating');
   return (
     <section className="bg-subtle">
       <div className="container">
         <div className="diff-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
           <div>
-            <div className="section-eyebrow">Wat ons onderscheidt</div>
-            <h2 className="section-title">Waarom 500+ VvE's voor ons kozen</h2>
+            <div className="section-eyebrow">{ds.eyebrow}</div>
+            <h2 className="section-title">{ds.title}</h2>
             <p className="section-sub" style={{ marginBottom: 32 }}>
-              Het beheer van een VvE staat of valt met transparantie en bereikbaarheid.
-              Wij bouwden daar een werkwijze omheen.
+              {ds.subtitle}
             </p>
             <div className="diff-usps" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}>
-              {items.map(it => (
+              {diffItems.map(it => (
                 <div key={it.title}>
                   <div style={{ marginBottom: 12, color: 'var(--teal-700)' }}>
                     <I name={it.icon} size={28} weight="duotone" />
@@ -1437,8 +1349,8 @@ function DifferentiatorsSection() {
                 <I name="check-circle" size={20} weight="fill" />
               </div>
               <div>
-                <div style={{ fontSize: 12, fontWeight: 700 }}>MJOP geactualiseerd</div>
-                <div style={{ fontSize: 11, color: 'var(--muted)' }}>2 minuten geleden</div>
+                <div style={{ fontSize: 12, fontWeight: 700 }}>{fl.title}</div>
+                <div style={{ fontSize: 11, color: 'var(--muted)' }}>{fl.time}</div>
               </div>
             </div>
           </div>
@@ -1448,27 +1360,30 @@ function DifferentiatorsSection() {
   );
 }
 
-function TestimonialsSection() {
+function TestimonialsSection({ t, isRtl }) {
+  const ts = t('testimonials_section');
+  const testimonials = t('testimonials');
+  const badges = t('trust_badges');
   return (
     <section style={{ background: 'var(--navy)', color: 'white' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div className="section-eyebrow" style={{ color: 'var(--teal-300)' }}>Klantervaringen</div>
-          <h2 className="section-title" style={{ color: 'white' }}>Wat onze klanten zeggen</h2>
+          <div className="section-eyebrow" style={{ color: 'var(--teal-300)' }}>{ts.eyebrow}</div>
+          <h2 className="section-title" style={{ color: 'white' }}>{ts.title}</h2>
         </div>
         <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {TESTIMONIALS.map(t => (
-            <div key={t.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 14, padding: 28 }}>
+          {testimonials.map(item => (
+            <div key={item.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 14, padding: 28 }}>
               <div style={{ color: 'var(--teal-300)', marginBottom: 16, display: 'flex', gap: 2 }}>
                 {[1,2,3,4,5].map(i => <I key={i} name="star" size={14} weight="fill" />)}
               </div>
               <p style={{ fontSize: 15.5, lineHeight: 1.6, margin: '0 0 24px', color: 'rgba(255,255,255,0.92)' }}>
-                "{t.quote}"
+                "{item.quote}"
               </p>
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 20 }}>
-                <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{t.role}</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{t.location}</div>
+                <div style={{ fontSize: 14, fontWeight: 600 }}>{item.name}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginTop: 2 }}>{item.role}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{item.location}</div>
               </div>
             </div>
           ))}
@@ -1476,10 +1391,10 @@ function TestimonialsSection() {
 
         <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ textAlign: 'center', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.5)', marginBottom: 24 }}>
-            Lidmaatschappen & certificeringen
+            {ts.trust_label}
           </div>
           <div className="trust-strip" style={{ display: 'flex', justifyContent: 'center', gap: 56, flexWrap: 'wrap' }}>
-            {TRUST_BADGES.map(b => (
+            {badges.map(b => (
               <div key={b.label} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.7)' }}>
                 <I name={b.icon} size={20} weight="duotone" style={{ color: 'var(--teal-300)' }} />
                 <span style={{ fontSize: 13, fontWeight: 500 }}>{b.label}</span>
@@ -1492,22 +1407,24 @@ function TestimonialsSection() {
   );
 }
 
-function FAQSection() {
+function FAQSection({ t, isRtl }) {
   const [open, setOpen] = useState(-1);
+  const fs = t('faq_section');
+  const faqItems = t('faq');
   return (
     <section className="bg-subtle">
       <div className="container">
         <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 80 }}>
           <div>
-            <div className="section-eyebrow">Veelgestelde vragen</div>
-            <h2 className="section-title">Antwoorden op<br />de vragen die u stelt</h2>
+            <div className="section-eyebrow">{fs.eyebrow}</div>
+            <h2 className="section-title">{fs.title}</h2>
             <p className="section-sub" style={{ marginBottom: 32 }}>
-              Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.
+              {fs.subtitle}
             </p>
             <a href="tel:+31858000605" className="btn btn-secondary"><I name="phone" size={14} /> (085)-800 0605</a>
           </div>
           <div>
-            {FAQ_DATA.map((f, i) => (
+            {faqItems.map((f, i) => (
               <div key={f.q} style={{ borderBottom: '1px solid var(--border)' }}>
                 <button onClick={() => setOpen(open === i ? -1 : i)} style={{
                   width: '100%', textAlign: 'left', padding: '20px 0', display: 'flex',
@@ -1536,11 +1453,11 @@ function FAQSection() {
 function HomePage({ setPage, t, isRtl }) {
   return (
     <>
-      <HeroSection setPage={setPage} />
-      <PillarsSection setPage={setPage} />
-      <DifferentiatorsSection />
-      <TestimonialsSection />
-      <FAQSection />
+      <HeroSection setPage={setPage} t={t} isRtl={isRtl} />
+      <PillarsSection setPage={setPage} t={t} isRtl={isRtl} />
+      <DifferentiatorsSection t={t} isRtl={isRtl} />
+      <TestimonialsSection t={t} isRtl={isRtl} />
+      <FAQSection t={t} isRtl={isRtl} />
       <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
     </>
   );
@@ -1550,22 +1467,24 @@ function HomePage({ setPage, t, isRtl }) {
    DIENSTEN PAGE
    ══════════════════════════════════════════════ */
 function DienstenPage({ setPage, t, isRtl }) {
+  const dp = t('diensten_page');
+  const pillars = t('pillars');
   const pillarPhotos = [PHOTOS.documents, PHOTOS.lobby, PHOTOS.blueprint];
   return (
     <>
       <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
         <div className="container">
-          <div className="section-eyebrow">Onze diensten</div>
+          <div className="section-eyebrow">{dp.eyebrow}</div>
           <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            VvE-beheer dat aansluit op úw behoefte
+            {dp.title}
           </h1>
           <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
-            Kies losse diensten of het Compleetpakket — volledige ontzorging in één vaste maandprijs.
+            {dp.subtitle}
           </p>
         </div>
       </section>
 
-      {PILLARS.map((p, idx) => (
+      {pillars.map((p, idx) => (
         <section key={p.title} style={{ padding: '80px 0' }}>
           <div className="container">
             <div className="diensten-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', direction: idx % 2 === 1 ? 'rtl' : 'ltr' }}>
@@ -1573,7 +1492,7 @@ function DienstenPage({ setPage, t, isRtl }) {
                 <div style={{ width: 56, height: 56, borderRadius: 12, color: 'white', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, background: 'var(--teal-700)' }}>
                   <I name={p.icon} size={28} weight="duotone" />
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 6 }}>PIJLER 0{idx + 1}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 6 }}>{dp.pillar_label} 0{idx + 1}</div>
                 <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px' }}>{p.title}</h2>
                 <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 28px', maxWidth: 480 }}>{p.desc}</p>
                 <ul style={{ margin: '0 0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -1584,7 +1503,7 @@ function DienstenPage({ setPage, t, isRtl }) {
                   ))}
                 </ul>
                 <button className="btn btn-secondary" onClick={() => setPage('offerte')}>
-                  Vraag een offerte aan <I name="arrow-right" size={14} />
+                  {dp.offerte_btn} <I name="arrow-right" size={14} />
                 </button>
               </div>
               <div style={{ direction: 'ltr' }}>
@@ -1599,17 +1518,17 @@ function DienstenPage({ setPage, t, isRtl }) {
         <div className="container">
           <div className="compleet-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 64, alignItems: 'center' }}>
             <div>
-              <span className="pill pill-dark">Meest gekozen</span>
-              <h2 style={{ fontSize: 44, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0 16px', color: 'white' }}>Het Compleetpakket</h2>
+              <span className="pill pill-dark">{dp.compleet_pill}</span>
+              <h2 style={{ fontSize: 44, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0 16px', color: 'white' }}>{dp.compleet_title}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', margin: '0 0 28px', maxWidth: 460 }}>
-                Volledige ontzorging — administratief, financieel én technisch beheer in één vaste maandprijs. Geen verrassingen, geen meerwerk-facturen.
+                {dp.compleet_desc}
               </p>
               <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                Offerte voor Compleetpakket <I name="arrow-right" size={16} />
+                {dp.compleet_btn} <I name="arrow-right" size={16} />
               </button>
             </div>
             <div className="compleet-features" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {['Alle administratie', 'Volledige boekhouding', 'MJOP-onderhoud', 'ALV-organisatie', 'Vast aanspreekpunt', 'Klantenportaal', '24/7 schademeldingen', 'Jaarrekening op tijd'].map(f => (
+              {dp.compleet_features.map(f => (
                 <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', background: 'rgba(255,255,255,0.05)', borderRadius: 10 }}>
                   <I name="check" size={16} style={{ color: 'var(--teal-300)' }} />
                   <span style={{ fontSize: 13.5 }}>{f}</span>
@@ -1629,65 +1548,20 @@ function DienstenPage({ setPage, t, isRtl }) {
    PAKKETTEN PAGE — NIEUW
    ══════════════════════════════════════════════ */
 function PakkettenPage({ setPage, t, isRtl }) {
-  const packages = [
-    {
-      id: 'start', name: 'Start', dark: false,
-      tagline: 'Administratief en financieel basisbeheer voor VvE\'s die de basis goed willen regelen.',
-      price: '92,95', priceLabel: 'per appartementsrecht per jaar · excl. btw',
-      features: [
-        { label: 'ALV-organisatie', active: true },
-        { label: 'Ledenadministratie', active: true },
-        { label: 'Boekhouding & jaarafrekening', active: true },
-        { label: 'Incasso VvE-bijdragen', active: true },
-        { label: 'Betalingsverkeer', active: true },
-        { label: 'Technisch beheer', active: false },
-        { label: 'MJOP-onderhoud', active: false },
-        { label: 'Calamiteitenservice', active: false },
-      ],
-    },
-    {
-      id: 'start-aanvullend', name: 'Start aanvullend', dark: false,
-      tagline: 'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.',
-      price: '147,95', priceLabel: 'per appartementsrecht per jaar · excl. btw',
-      features: [
-        { label: 'ALV-organisatie & notulen', active: true },
-        { label: 'Ledenadministratie', active: true },
-        { label: 'Volledige boekhouding', active: true },
-        { label: 'Reservefondsbeheer', active: true },
-        { label: 'Verzekeringsbeheer', active: true },
-        { label: 'Coördinatie klein onderhoud', active: true },
-        { label: 'Schademeldingen', active: true },
-        { label: 'Planmatig onderhoud', active: false },
-      ],
-    },
-    {
-      id: 'compleet', name: 'Compleet', dark: true,
-      tagline: 'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.',
-      price: null, priceLabel: 'per appartementsrecht per jaar · excl. btw',
-      features: [
-        { label: 'Alles uit Start aanvullend', active: true },
-        { label: 'Bestuursvergaderingen onbeperkt', active: true },
-        { label: 'Juridische coördinatie', active: true },
-        { label: 'Debiteurbeheer & aanmaningen', active: true },
-        { label: 'MJOP & planmatig onderhoud', active: true },
-        { label: '24/7 calamiteitenservice', active: true },
-        { label: 'Jaarlijkse inspectie', active: true },
-        { label: 'Verduurzamingsadvies', active: true },
-      ],
-    },
-  ];
+  const pp = t('pakketten_page');
+  const packages = pp.packages;
 
   return (
     <>
       {/* Hero */}
       <section style={{ background: 'var(--gray-bg)', padding: '64px 0 56px' }}>
         <div className="container">
-          <div className="section-eyebrow">Onze pakketten</div>
+          <div className="section-eyebrow">{pp.eyebrow}</div>
           <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            Drie manieren waarop wij u ontzorgen
+            {pp.title}
           </h1>
           <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
-            Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.
+            {pp.subtitle}
           </p>
         </div>
       </section>
@@ -1696,37 +1570,39 @@ function PakkettenPage({ setPage, t, isRtl }) {
       <section style={{ paddingTop: 0, marginTop: -32 }}>
         <div className="container">
           <div className="pakketten-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'stretch' }}>
-            {packages.map(pkg => (
+            {packages.map(pkg => {
+              const dark = pkg.id === 'compleet';
+              return (
               <div key={pkg.id} style={{
                 position: 'relative', padding: '36px 32px 32px', borderRadius: 16,
-                background: pkg.dark ? 'var(--navy)' : 'white',
-                color: pkg.dark ? 'white' : 'var(--navy)',
-                border: pkg.dark ? 'none' : '1px solid var(--border)',
-                transform: pkg.dark ? 'translateY(-8px)' : 'none',
-                boxShadow: pkg.dark ? '0 28px 56px -20px rgba(43,53,68,0.35)' : '0 4px 16px -8px rgba(43,53,68,0.1)',
+                background: dark ? 'var(--navy)' : 'white',
+                color: dark ? 'white' : 'var(--navy)',
+                border: dark ? 'none' : '1px solid var(--border)',
+                transform: dark ? 'translateY(-8px)' : 'none',
+                boxShadow: dark ? '0 28px 56px -20px rgba(43,53,68,0.35)' : '0 4px 16px -8px rgba(43,53,68,0.1)',
                 display: 'flex', flexDirection: 'column',
               }}>
-                {pkg.dark && (
-                  <span className="pill" style={{ position: 'absolute', top: -14, left: 32 }}>Meest gekozen</span>
+                {dark && (
+                  <span className="pill" style={{ position: 'absolute', top: -14, left: 32 }}>{pp.meest_gekozen}</span>
                 )}
-                <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: pkg.dark ? 'var(--teal-300)' : 'var(--teal-700)', marginBottom: 8 }}>PAKKET</div>
-                <h2 style={{ fontSize: 30, fontWeight: 700, margin: '0 0 8px', color: pkg.dark ? 'white' : 'var(--navy)' }}>{pkg.name}</h2>
-                <p style={{ fontSize: 14.5, lineHeight: 1.55, color: pkg.dark ? 'rgba(255,255,255,0.75)' : 'var(--muted)', minHeight: 64, margin: '0 0 24px' }}>{pkg.tagline}</p>
+                <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: dark ? 'var(--teal-300)' : 'var(--teal-700)', marginBottom: 8 }}>{pp.pakket_label}</div>
+                <h2 style={{ fontSize: 30, fontWeight: 700, margin: '0 0 8px', color: dark ? 'white' : 'var(--navy)' }}>{pkg.name}</h2>
+                <p style={{ fontSize: 14.5, lineHeight: 1.55, color: dark ? 'rgba(255,255,255,0.75)' : 'var(--muted)', minHeight: 64, margin: '0 0 24px' }}>{pkg.tagline}</p>
 
-                <div style={{ borderTop: `1px solid ${pkg.dark ? 'rgba(255,255,255,0.12)' : 'var(--border)'}`, paddingTop: 24, marginBottom: 24 }}>
+                <div style={{ borderTop: `1px solid ${dark ? 'rgba(255,255,255,0.12)' : 'var(--border)'}`, paddingTop: 24, marginBottom: 24 }}>
                   {pkg.price ? (
                     <>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
-                        <span style={{ fontSize: 14, color: pkg.dark ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}>vanaf</span>
+                        <span style={{ fontSize: 14, color: dark ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}>{pp.vanaf}</span>
                         <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 4 }}>€</span>
                         <span style={{ fontSize: 44, fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>{pkg.price}</span>
                       </div>
-                      <div style={{ fontSize: 13, color: pkg.dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pkg.priceLabel}</div>
+                      <div style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pp.prijs_label}</div>
                     </>
                   ) : (
                     <>
-                      <div style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.02em' }}>Op aanvraag</div>
-                      <div style={{ fontSize: 13, color: pkg.dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pkg.priceLabel}</div>
+                      <div style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.02em' }}>{pp.op_aanvraag}</div>
+                      <div style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pp.prijs_label}</div>
                     </>
                   )}
                 </div>
@@ -1735,12 +1611,12 @@ function PakkettenPage({ setPage, t, isRtl }) {
                   {pkg.features.map(f => (
                     <div key={f.label} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                       {f.active
-                        ? <I name="check" size={16} style={{ color: pkg.dark ? 'var(--teal-300)' : 'var(--teal-700)', flexShrink: 0 }} />
-                        : <I name="minus" size={16} style={{ color: pkg.dark ? 'rgba(255,255,255,0.25)' : 'var(--border)', flexShrink: 0 }} />
+                        ? <I name="check" size={16} style={{ color: dark ? 'var(--teal-300)' : 'var(--teal-700)', flexShrink: 0 }} />
+                        : <I name="minus" size={16} style={{ color: dark ? 'rgba(255,255,255,0.25)' : 'var(--border)', flexShrink: 0 }} />
                       }
                       <span style={{
                         fontSize: 14,
-                        color: f.active ? (pkg.dark ? 'rgba(255,255,255,0.9)' : 'var(--navy)') : (pkg.dark ? 'rgba(255,255,255,0.35)' : 'var(--muted)'),
+                        color: f.active ? (dark ? 'rgba(255,255,255,0.9)' : 'var(--navy)') : (dark ? 'rgba(255,255,255,0.35)' : 'var(--muted)'),
                         textDecoration: f.active ? 'none' : 'line-through',
                       }}>{f.label}</span>
                     </div>
@@ -1748,17 +1624,18 @@ function PakkettenPage({ setPage, t, isRtl }) {
                 </div>
 
                 <button
-                  className={`btn ${pkg.dark ? 'btn-primary' : 'btn-secondary'}`}
+                  className={`btn ${dark ? 'btn-primary' : 'btn-secondary'}`}
                   style={{ width: '100%', justifyContent: 'center' }}
                   onClick={() => setPage('offerte')}
                 >
-                  Offerte voor {pkg.name} <I name="arrow-right" size={14} />
+                  {pp.offerte_voor} {pkg.name} <I name="arrow-right" size={14} />
                 </button>
               </div>
-            ))}
+              );
+            })}
           </div>
           <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--muted)', marginTop: 24, fontStyle: 'italic' }}>
-            Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.
+            {pp.prijs_note}
           </p>
         </div>
       </section>
@@ -1767,19 +1644,19 @@ function PakkettenPage({ setPage, t, isRtl }) {
       <section>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div className="section-eyebrow">Vergelijking</div>
-            <h2 className="section-title" style={{ margin: '0 auto' }}>Wat zit er in elk pakket?</h2>
+            <div className="section-eyebrow">{pp.vergelijking_eyebrow}</div>
+            <h2 className="section-title" style={{ margin: '0 auto' }}>{pp.vergelijking_title}</h2>
           </div>
           <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden' }}>
             {/* Matrix header */}
             <div className="matrix-header" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', background: 'var(--gray-bg)', padding: '18px 24px', gap: 0 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)' }}>Functie</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>Start</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>Start aanv.</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--teal-700)', textAlign: 'center' }}>Compleet</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)' }}>{pp.matrix_functie}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>{pp.matrix_start}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>{pp.matrix_start_aanv}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--teal-700)', textAlign: 'center' }}>{pp.matrix_compleet}</div>
             </div>
 
-            {PACKAGE_MATRIX.map(group => (
+            {pp.matrix.map(group => (
               <div key={group.group}>
                 <div style={{ padding: '20px 24px 10px', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--teal-700)' }}>
                   {group.group}
@@ -1807,14 +1684,14 @@ function PakkettenPage({ setPage, t, isRtl }) {
         <div className="container">
           <div className="hulp-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             <div>
-              <div className="section-eyebrow">Hulp bij uw keuze</div>
-              <h2 className="section-title">Welk pakket past bij onze VvE?</h2>
+              <div className="section-eyebrow">{pp.hulp_eyebrow}</div>
+              <h2 className="section-title">{pp.hulp_title}</h2>
               <p className="section-sub" style={{ marginBottom: 28 }}>
-                De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.
+                {pp.hulp_subtitle}
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <button className="btn btn-primary" onClick={() => setPage('offerte')}>
-                  Vraag een offerte aan <I name="arrow-right" size={14} />
+                  {pp.hulp_btn} <I name="arrow-right" size={14} />
                 </button>
                 <a href="tel:+31858000605" className="btn btn-secondary">
                   <I name="phone" size={14} /> (085)-800 0605
@@ -1822,12 +1699,7 @@ function PakkettenPage({ setPage, t, isRtl }) {
               </div>
             </div>
             <div className="hulp-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {[
-                { icon: 'users-three', title: 'Kleine VvE (< 12)', desc: 'Start of Start aanvullend is vaak voldoende voor kleinere complexen.' },
-                { icon: 'buildings', title: 'Middelgrote VvE', desc: 'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.' },
-                { icon: 'buildings', title: 'Grote VvE (> 40)', desc: 'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.' },
-                { icon: 'wrench', title: 'Achterstallig onderhoud', desc: 'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.' },
-              ].map(h => (
+              {pp.hulp_cards.map(h => (
                 <div key={h.title} style={{ background: 'white', padding: 20, borderRadius: 12, border: '1px solid var(--border)' }}>
                   <I name={h.icon} size={22} weight="duotone" style={{ color: 'var(--teal-700)', marginBottom: 12, display: 'block' }} />
                   <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{h.title}</div>
@@ -1848,26 +1720,22 @@ function PakkettenPage({ setPage, t, isRtl }) {
    OVER ONS PAGE
    ══════════════════════════════════════════════ */
 function OverOnsPage({ setPage, t, isRtl }) {
-  const team = [
-    { name: 'Mark de Vries', role: 'Oprichter & Beheerder', img: PHOTOS.portraitM },
-    { name: 'Linda Janssen', role: 'Senior VvE-beheerder', img: PHOTOS.portraitW },
-    { name: 'Tim Bakker', role: 'Technisch beheerder', img: PHOTOS.portraitM2 },
-    { name: 'Eva van Loon', role: 'Financieel beheerder', img: PHOTOS.portraitW2 },
-  ];
+  const op = t('overons_page');
+  const stats = t('stats');
+  const teamImgs = [PHOTOS.portraitM, PHOTOS.portraitW, PHOTOS.portraitM2, PHOTOS.portraitW2];
+  const teamData = op.team.map((m, i) => ({ ...m, img: teamImgs[i] }));
   return (
     <>
       <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
         <div className="container">
           <div className="overons-header-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
-              <div className="section-eyebrow">Over ons</div>
+              <div className="section-eyebrow">{op.eyebrow}</div>
               <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 24px' }}>
-                Gevestigd in Wateringen, actief in heel Zuid-Holland
+                {op.title}
               </h1>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--muted)', margin: 0 }}>
-                VvE Beheer Collectief is opgericht in 2009 vanuit de overtuiging dat VvE-beheer
-                persoonlijker, transparanter en proactiever kan. In de afgelopen 17 jaar groeiden
-                we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE's onder beheer.
+                {op.desc}
               </p>
             </div>
             <Photo src={PHOTOS.modernFacade} alt="Kantoor Wateringen" style={{ width: '100%', aspectRatio: '4 / 3', borderRadius: 14 }} />
@@ -1878,7 +1746,7 @@ function OverOnsPage({ setPage, t, isRtl }) {
       <section style={{ padding: '64px 0' }}>
         <div className="container">
           <div className="stats-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, padding: '32px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-            {STATS.map(s => (
+            {stats.map(s => (
               <div key={s.label}>
                 <div className="stat-num"><CountUp value={s.num} /></div>
                 <div className="stat-label">{s.label}</div>
@@ -1890,13 +1758,13 @@ function OverOnsPage({ setPage, t, isRtl }) {
 
       <section>
         <div className="container">
-          <div className="section-eyebrow">Het team</div>
-          <h2 className="section-title">De mensen achter uw VvE</h2>
+          <div className="section-eyebrow">{op.team_eyebrow}</div>
+          <h2 className="section-title">{op.team_title}</h2>
           <p className="section-sub" style={{ marginBottom: 48 }}>
-            Een klein team van ervaren specialisten. Elke VvE krijgt één vaste beheerder toegewezen.
+            {op.team_subtitle}
           </p>
           <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-            {team.map(m => (
+            {teamData.map(m => (
               <div key={m.name}>
                 <Photo src={m.img} alt={m.name} style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 12, marginBottom: 16 }} />
                 <div style={{ fontSize: 16, fontWeight: 700 }}>{m.name}</div>
@@ -1910,14 +1778,12 @@ function OverOnsPage({ setPage, t, isRtl }) {
       <section style={{ background: 'var(--gray-bg)' }}>
         <div className="container">
           <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
-            <div className="section-eyebrow">Onze missie</div>
+            <div className="section-eyebrow">{op.missie_eyebrow}</div>
             <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 24px' }}>
-              "VvE-beheer dat ontzorgt in plaats van compliceert."
+              "{op.missie_quote}"
             </h2>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
-              Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles
-              per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers,
-              geen automatische antwoorden — wel een team dat uw gebouw kent.
+              {op.missie_desc}
             </p>
           </div>
         </div>
@@ -1932,24 +1798,17 @@ function OverOnsPage({ setPage, t, isRtl }) {
    WERKWIJZE PAGE
    ══════════════════════════════════════════════ */
 function WerkwijzePage({ setPage, t, isRtl }) {
-  const steps = [
-    { num: '01', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
-    { num: '02', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
-    { num: '03', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
-    { num: '04', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud — meteen inzichtelijk.' },
-    { num: '05', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
-    { num: '06', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
-  ];
+  const wp = t('werkwijze_page');
   return (
     <>
       <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
         <div className="container">
-          <div className="section-eyebrow">Werkwijze</div>
+          <div className="section-eyebrow">{wp.eyebrow}</div>
           <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            Van offerte tot doorlopend beheer
+            {wp.title}
           </h1>
           <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, lineHeight: 1.55 }}>
-            Een complete overstap regelen we doorgaans in 6 tot 8 weken. Zo ziet dat eruit:
+            {wp.subtitle}
           </p>
         </div>
       </section>
@@ -1957,9 +1816,9 @@ function WerkwijzePage({ setPage, t, isRtl }) {
       <section>
         <div className="container">
           <div className="werkwijze-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32 }}>
-            {steps.map(s => (
+            {wp.steps.map(s => (
               <div key={s.num} style={{ padding: 32, borderTop: '2px solid var(--navy)' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.05em', color: 'var(--teal-700)' }}>STAP {s.num}</div>
+                <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.05em', color: 'var(--teal-700)' }}>{wp.stap} {s.num}</div>
                 <h3 style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.01em', margin: '12px 0 12px' }}>{s.title}</h3>
                 <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{s.desc}</p>
               </div>
@@ -1981,6 +1840,7 @@ function OffertePage({ t, isRtl }) {
   const [submitted, setSubmitted] = useState(false);
   const next = () => setStep(Math.min(4, step + 1));
   const back = () => setStep(Math.max(1, step - 1));
+  const ofp = t('offerte_page');
 
   if (submitted) {
     return (
@@ -1989,9 +1849,9 @@ function OffertePage({ t, isRtl }) {
           <div style={{ width: 64, height: 64, borderRadius: 32, background: 'var(--teal-100)', color: 'var(--teal-700)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
             <I name="check-circle" size={32} weight="fill" />
           </div>
-          <h1 style={{ fontSize: 36, fontWeight: 700, margin: '0 0 16px' }}>Bedankt voor uw aanvraag</h1>
+          <h1 style={{ fontSize: 36, fontWeight: 700, margin: '0 0 16px' }}>{ofp.success_title}</h1>
           <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6 }}>
-            Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.
+            {ofp.success_desc}
           </p>
         </div>
       </section>
@@ -2003,21 +1863,15 @@ function OffertePage({ t, isRtl }) {
       <div className="container" style={{ maxWidth: 1080 }}>
         <div className="offerte-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 56 }}>
           <div>
-            <div className="section-eyebrow">Offerte aanvragen</div>
+            <div className="section-eyebrow">{ofp.eyebrow}</div>
             <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 20px' }}>
-              Vrijblijvend & op maat van uw VvE
+              {ofp.title}
             </h1>
             <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 32 }}>
-              Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch
-              afgestemd zodat hij echt past bij uw situatie.
+              {ofp.intro}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              {[
-                ['shield-check', 'Vrijblijvend & gratis'],
-                ['clock', 'Binnen 2 werkdagen reactie'],
-                ['user-circle', 'Direct contact met een beheerder'],
-                ['lock', 'Uw gegevens blijven van u'],
-              ].map(([ic, label]) => (
+              {ofp.usps.map(([ic, label]) => (
                 <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                   <I name={ic} size={18} weight="duotone" style={{ color: 'var(--teal-700)' }} />
                   <span style={{ fontSize: 14 }}>{label}</span>
@@ -2032,38 +1886,30 @@ function OffertePage({ t, isRtl }) {
                 <div key={n} style={{ flex: 1, height: 4, borderRadius: 4, background: n <= step ? 'var(--teal-700)' : 'var(--border)' }} />
               ))}
             </div>
-            <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6 }}>Stap {step} van 4</div>
+            <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6 }}>{step} {ofp.stap_van} 4</div>
             <h3 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px' }}>
-              {step === 1 && 'Vertel ons over uw VvE'}
-              {step === 2 && 'Welke diensten zoekt u?'}
-              {step === 3 && 'Uw huidige situatie'}
-              {step === 4 && 'Uw contactgegevens'}
+              {ofp.step_titles[step - 1]}
             </h3>
 
             {step === 1 && (
               <>
-                <div className="field"><label>Naam van de VvE</label><input placeholder="bv. VvE Parkzicht" /></div>
+                <div className="field"><label>{ofp.step1.vve_naam}</label><input placeholder={ofp.step1.vve_naam_ph} /></div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                  <div className="field"><label>Aantal appartementen</label><input type="number" placeholder="bv. 24" /></div>
-                  <div className="field"><label>Bouwjaar</label><input type="number" placeholder="bv. 1998" /></div>
+                  <div className="field"><label>{ofp.step1.aantal}</label><input type="number" placeholder={ofp.step1.aantal_ph} /></div>
+                  <div className="field"><label>{ofp.step1.bouwjaar}</label><input type="number" placeholder={ofp.step1.bouwjaar_ph} /></div>
                 </div>
-                <div className="field"><label>Adres / locatie</label><input placeholder="Plaats" /></div>
+                <div className="field"><label>{ofp.step1.adres}</label><input placeholder={ofp.step1.adres_ph} /></div>
               </>
             )}
 
             {step === 2 && (
               <div className="offerte-services" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                {[
-                  ['package', 'Compleetpakket', 'Alle 3 pijlers in één prijs'],
-                  ['folders', 'Administratief', 'ALV, notulen, post'],
-                  ['chart-line-up', 'Financieel', 'Boekhouding, jaarrekening'],
-                  ['wrench', 'Technisch', 'MJOP, onderhoud'],
-                ].map(([ic, t, d]) => (
-                  <label key={t} style={{ display: 'block', padding: 18, border: '1.5px solid var(--border)', borderRadius: 10, cursor: 'pointer', transition: 'border-color .15s' }}>
+                {ofp.step2.services.map(([ic, svcLabel, desc]) => (
+                  <label key={svcLabel} style={{ display: 'block', padding: 18, border: '1.5px solid var(--border)', borderRadius: 10, cursor: 'pointer', transition: 'border-color .15s' }}>
                     <input type="checkbox" style={{ marginBottom: 10 }} />
                     <I name={ic} size={22} weight="duotone" style={{ color: 'var(--teal-700)', display: 'block', marginBottom: 8 }} />
-                    <div style={{ fontSize: 14, fontWeight: 700 }}>{t}</div>
-                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{d}</div>
+                    <div style={{ fontSize: 14, fontWeight: 700 }}>{svcLabel}</div>
+                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{desc}</div>
                   </label>
                 ))}
               </div>
@@ -2071,11 +1917,11 @@ function OffertePage({ t, isRtl }) {
 
             {step === 3 && (
               <>
-                <div className="field"><label>Heeft u nu al een beheerder?</label>
-                  <select><option>Ja, ik wil overstappen</option><option>Nee, voor het eerst</option><option>Zelfbeheer, we zoeken hulp</option></select>
+                <div className="field"><label>{ofp.step3.beheerder_label}</label>
+                  <select>{ofp.step3.beheerder_options.map(opt => <option key={opt}>{opt}</option>)}</select>
                 </div>
-                <div className="field"><label>Wat is voor u het belangrijkst?</label>
-                  <textarea placeholder="bv. snellere reactie, betere transparantie, lagere kosten…" />
+                <div className="field"><label>{ofp.step3.belangrijk_label}</label>
+                  <textarea placeholder={ofp.step3.belangrijk_ph} />
                 </div>
               </>
             )}
@@ -2083,25 +1929,25 @@ function OffertePage({ t, isRtl }) {
             {step === 4 && (
               <>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                  <div className="field"><label>Voornaam</label><input /></div>
-                  <div className="field"><label>Achternaam</label><input /></div>
+                  <div className="field"><label>{ofp.step4.voornaam}</label><input /></div>
+                  <div className="field"><label>{ofp.step4.achternaam}</label><input /></div>
                 </div>
-                <div className="field"><label>Functie binnen VvE</label>
-                  <select><option>Voorzitter</option><option>Penningmeester</option><option>Secretaris</option><option>Bestuurslid</option><option>Eigenaar / lid</option></select>
+                <div className="field"><label>{ofp.step4.functie}</label>
+                  <select>{ofp.step4.functie_options.map(opt => <option key={opt}>{opt}</option>)}</select>
                 </div>
-                <div className="field"><label>E-mail</label><input type="email" /></div>
-                <div className="field"><label>Telefoonnummer</label><input type="tel" /></div>
+                <div className="field"><label>{ofp.step4.email}</label><input type="email" /></div>
+                <div className="field"><label>{ofp.step4.telefoon}</label><input type="tel" /></div>
               </>
             )}
 
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
               <button className="btn btn-secondary" onClick={back} disabled={step === 1} style={{ opacity: step === 1 ? 0.4 : 1 }}>
-                <I name="arrow-left" size={14} /> Terug
+                <I name="arrow-left" size={14} /> {ofp.btn_terug}
               </button>
               {step < 4 ? (
-                <button className="btn btn-primary" onClick={next}>Volgende stap <I name="arrow-right" size={14} /></button>
+                <button className="btn btn-primary" onClick={next}>{ofp.btn_volgende} <I name="arrow-right" size={14} /></button>
               ) : (
-                <button className="btn btn-primary" onClick={() => setSubmitted(true)}>Aanvraag versturen <I name="paper-plane-tilt" size={14} /></button>
+                <button className="btn btn-primary" onClick={() => setSubmitted(true)}>{ofp.btn_versturen} <I name="paper-plane-tilt" size={14} /></button>
               )}
             </div>
           </div>
@@ -2144,11 +1990,12 @@ function LegalUl({ children }) {
 }
 
 function PrivacyPage({ t, isRtl }) {
+  const pp = t('privacy_page');
   return (
-    <LegalPageLayout title="Privacyverklaring">
-      <LegalP>VvE Beheer Collectief, gevestigd te Wateringen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</LegalP>
+    <LegalPageLayout title={pp.title}>
+      <LegalP>{pp.intro}</LegalP>
 
-      <LegalH2>Contactgegevens</LegalH2>
+      <LegalH2>{pp.h2_contact}</LegalH2>
       <LegalP>
         VvE Beheer Collectief<br />
         Wateringen, Zuid-Holland<br />
@@ -2157,127 +2004,96 @@ function PrivacyPage({ t, isRtl }) {
         KvK: 51721139
       </LegalP>
 
-      <LegalH2>Persoonsgegevens die wij verwerken</LegalH2>
-      <LegalP>VvE Beheer Collectief verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten en/of omdat u deze zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</LegalP>
+      <LegalH2>{pp.h2_gegevens}</LegalH2>
+      <LegalP>{pp.gegevens_intro}</LegalP>
       <LegalUl>
-        <li>Voor- en achternaam</li>
-        <li>Telefoonnummer</li>
-        <li>E-mailadres</li>
-        <li>Naam en adres van uw VvE</li>
-        <li>Functie binnen de VvE</li>
-        <li>Overige gegevens die u actief verstrekt, bijvoorbeeld via correspondentie of het offerteformulier</li>
+        {pp.gegevens_items.map(item => <li key={item}>{item}</li>)}
       </LegalUl>
 
-      <LegalH2>Met welk doel wij persoonsgegevens verwerken</LegalH2>
-      <LegalP>VvE Beheer Collectief verwerkt uw persoonsgegevens voor de volgende doelen:</LegalP>
+      <LegalH2>{pp.h2_doel}</LegalH2>
+      <LegalP>{pp.doel_intro}</LegalP>
       <LegalUl>
-        <li>Het afhandelen van uw offerteaanvraag</li>
-        <li>U te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren</li>
-        <li>Het uitvoeren van VvE-beheerdiensten waarvoor u ons heeft ingeschakeld</li>
-        <li>U te informeren over wijzigingen van onze diensten</li>
+        {pp.doel_items.map(item => <li key={item}>{item}</li>)}
       </LegalUl>
 
-      <LegalH2>Hoe lang we persoonsgegevens bewaren</LegalH2>
-      <LegalP>VvE Beheer Collectief bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Gegevens uit offerteaanvragen worden maximaal 12 maanden bewaard indien er geen overeenkomst volgt. Bij een actieve beheerovereenkomst worden gegevens bewaard gedurende de looptijd en tot 7 jaar daarna (wettelijke bewaartermijn financiële administratie).</LegalP>
+      <LegalH2>{pp.h2_bewaren}</LegalH2>
+      <LegalP>{pp.bewaren_text}</LegalP>
 
-      <LegalH2>Delen van persoonsgegevens met derden</LegalH2>
-      <LegalP>VvE Beheer Collectief verstrekt uw gegevens niet aan derden, tenzij dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.</LegalP>
+      <LegalH2>{pp.h2_derden}</LegalH2>
+      <LegalP>{pp.derden_text}</LegalP>
 
-      <LegalH2>Gegevens inzien, aanpassen of verwijderen</LegalH2>
-      <LegalP>U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking. U kunt een verzoek tot inzage, correctie, verwijdering of overdracht van uw persoonsgegevens sturen naar <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+      <LegalH2>{pp.h2_inzien}</LegalH2>
+      <LegalP>{pp.inzien_text}</LegalP>
 
-      <LegalH2>Beveiliging</LegalH2>
-      <LegalP>VvE Beheer Collectief neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als u de indruk heeft dat uw gegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact met ons op via <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+      <LegalH2>{pp.h2_beveiliging}</LegalH2>
+      <LegalP>{pp.beveiliging_text}</LegalP>
 
       <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        Laatst bijgewerkt: mei 2025
+        {pp.updated}
       </div>
     </LegalPageLayout>
   );
 }
 
 function VoorwaardenPage({ t, isRtl }) {
+  const vw = t('voorwaarden_page');
   return (
-    <LegalPageLayout title="Algemene voorwaarden">
-      <LegalH2>Artikel 1 — Definities</LegalH2>
-      <LegalUl>
-        <li><strong>Opdrachtnemer:</strong> VvE Beheer Collectief, gevestigd te Wateringen, ingeschreven bij de KvK onder nummer 51721139.</li>
-        <li><strong>Opdrachtgever:</strong> de Vereniging van Eigenaars (VvE) die een overeenkomst aangaat met Opdrachtnemer.</li>
-        <li><strong>Overeenkomst:</strong> de beheerovereenkomst tussen Opdrachtgever en Opdrachtnemer.</li>
-      </LegalUl>
-
-      <LegalH2>Artikel 2 — Toepasselijkheid</LegalH2>
-      <LegalP>Deze algemene voorwaarden zijn van toepassing op elk aanbod van Opdrachtnemer en op elke tot stand gekomen overeenkomst. Afwijkingen van deze voorwaarden zijn slechts geldig indien deze uitdrukkelijk schriftelijk zijn overeengekomen.</LegalP>
-
-      <LegalH2>Artikel 3 — Aanbod en offertes</LegalH2>
-      <LegalP>Alle offertes van VvE Beheer Collectief zijn vrijblijvend en geldig voor een periode van 30 dagen, tenzij anders vermeld. Een overeenkomst komt tot stand na schriftelijke bevestiging door beide partijen of door een besluit van de ALV.</LegalP>
-
-      <LegalH2>Artikel 4 — Uitvoering van de overeenkomst</LegalH2>
-      <LegalP>VvE Beheer Collectief zal de overeenkomst naar beste inzicht en vermogen uitvoeren, overeenkomstig de eisen van goed vakmanschap. De beheerder heeft een inspanningsverplichting en geen resultaatsverplichting.</LegalP>
-
-      <LegalH2>Artikel 5 — Duur en opzegging</LegalH2>
-      <LegalP>De beheerovereenkomst wordt aangegaan voor de duur zoals vermeld in de overeenkomst. Opzegging geschiedt schriftelijk met inachtneming van een opzegtermijn van 3 maanden voor het einde van de contractperiode, tenzij anders overeengekomen.</LegalP>
-
-      <LegalH2>Artikel 6 — Tarieven en betaling</LegalH2>
-      <LegalP>Alle genoemde tarieven zijn exclusief btw, tenzij uitdrukkelijk anders vermeld. Betaling dient te geschieden binnen 30 dagen na factuurdatum. Bij niet-tijdige betaling is Opdrachtgever van rechtswege in verzuim en is wettelijke rente verschuldigd.</LegalP>
-
-      <LegalH2>Artikel 7 — Aansprakelijkheid</LegalH2>
-      <LegalP>De aansprakelijkheid van VvE Beheer Collectief is beperkt tot het bedrag dat in het desbetreffende geval door de beroepsaansprakelijkheidsverzekering wordt uitbetaald, vermeerderd met het eigen risico. Indien de verzekering niet uitkeert, is de aansprakelijkheid beperkt tot het bedrag van de vergoeding die Opdrachtnemer voor zijn werkzaamheden in het kader van de overeenkomst heeft ontvangen over de periode van 12 maanden voorafgaand aan het schadeveroorzakende feit.</LegalP>
-
-      <LegalH2>Artikel 8 — Geheimhouding</LegalH2>
-      <LegalP>Beide partijen zijn verplicht tot geheimhouding van alle vertrouwelijke informatie die zij in het kader van de overeenkomst van elkaar hebben verkregen. Deze verplichting geldt ook na beëindiging van de overeenkomst.</LegalP>
-
-      <LegalH2>Artikel 9 — Klachten</LegalH2>
-      <LegalP>Klachten over de uitvoering van de overeenkomst moeten tijdig, volledig en duidelijk omschreven worden ingediend bij VvE Beheer Collectief. Klachten worden binnen 14 dagen na ontvangst in behandeling genomen.</LegalP>
-
-      <LegalH2>Artikel 10 — Toepasselijk recht</LegalH2>
-      <LegalP>Op alle overeenkomsten tussen Opdrachtgever en VvE Beheer Collectief is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement Den Haag.</LegalP>
+    <LegalPageLayout title={vw.title}>
+      {vw.articles.map(art => (
+        <React.Fragment key={art.h2}>
+          <LegalH2>{art.h2}</LegalH2>
+          {art.items ? (
+            <LegalUl>
+              {art.items.map(item => <li key={item}>{item}</li>)}
+            </LegalUl>
+          ) : (
+            <LegalP>{art.p}</LegalP>
+          )}
+        </React.Fragment>
+      ))}
 
       <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        Laatst bijgewerkt: mei 2025
+        {vw.updated}
       </div>
     </LegalPageLayout>
   );
 }
 
 function CookiesPage({ t, isRtl }) {
+  const cp = t('cookies_page');
   return (
-    <LegalPageLayout title="Cookieverklaring">
-      <LegalP>Deze website van VvE Beheer Collectief maakt gebruik van cookies. In deze cookieverklaring leest u wat cookies zijn, welke cookies wij gebruiken en hoe u deze kunt beheren.</LegalP>
+    <LegalPageLayout title={cp.title}>
+      <LegalP>{cp.intro}</LegalP>
 
-      <LegalH2>Wat zijn cookies?</LegalH2>
-      <LegalP>Cookies zijn kleine tekstbestanden die door uw browser worden opgeslagen wanneer u een website bezoekt. Ze worden gebruikt om websites goed te laten functioneren, om het gebruik van de website te analyseren en om de gebruikerservaring te verbeteren.</LegalP>
+      <LegalH2>{cp.h2_wat}</LegalH2>
+      <LegalP>{cp.wat_text}</LegalP>
 
-      <LegalH2>Welke cookies gebruiken wij?</LegalH2>
+      <LegalH2>{cp.h2_welke}</LegalH2>
 
-      <LegalH3>Functionele cookies</LegalH3>
-      <LegalP>Deze cookies zijn noodzakelijk voor het functioneren van de website. Ze zorgen er bijvoorbeeld voor dat uw voorkeuren worden onthouden. Deze cookies worden niet gebruikt voor marketingdoeleinden.</LegalP>
+      <LegalH3>{cp.h3_functioneel}</LegalH3>
+      <LegalP>{cp.functioneel_text}</LegalP>
 
-      <LegalH3>Analytische cookies</LegalH3>
-      <LegalP>Wij kunnen analytische cookies gebruiken om het gebruik van onze website te meten en te verbeteren. Deze gegevens worden anoniem verzameld en niet gedeeld met derden voor commerciële doeleinden.</LegalP>
+      <LegalH3>{cp.h3_analytisch}</LegalH3>
+      <LegalP>{cp.analytisch_text}</LegalP>
 
-      <LegalH2>Cookies beheren</LegalH2>
-      <LegalP>U kunt uw cookievoorkeuren op elk moment wijzigen via de instellingen van uw browser. Houd er rekening mee dat het blokkeren van bepaalde cookies de functionaliteit van de website kan beïnvloeden.</LegalP>
-      <LegalP>De meeste browsers bieden de mogelijkheid om:</LegalP>
+      <LegalH2>{cp.h2_beheren}</LegalH2>
+      <LegalP>{cp.beheren_intro}</LegalP>
+      <LegalP>{cp.beheren_text}</LegalP>
       <LegalUl>
-        <li>Alle cookies te bekijken die zijn opgeslagen</li>
-        <li>Cookies individueel of geheel te verwijderen</li>
-        <li>Cookies van bepaalde websites te blokkeren</li>
-        <li>Alle cookies te blokkeren</li>
-        <li>Alle cookies te verwijderen wanneer u de browser sluit</li>
+        {cp.beheren_items.map(item => <li key={item}>{item}</li>)}
       </LegalUl>
 
-      <LegalH2>Cookies van derden</LegalH2>
-      <LegalP>Onze website kan gebruik maken van diensten van derden, zoals Google Fonts voor typografie. Deze diensten kunnen hun eigen cookies plaatsen. Wij hebben geen controle over het plaatsen en gebruik van cookies door deze derden. Raadpleeg het privacybeleid van de betreffende derde partij voor meer informatie.</LegalP>
+      <LegalH2>{cp.h2_derden}</LegalH2>
+      <LegalP>{cp.derden_text}</LegalP>
 
-      <LegalH2>Wijzigingen</LegalH2>
-      <LegalP>VvE Beheer Collectief behoudt zich het recht voor om deze cookieverklaring te wijzigen. Wijzigingen worden op deze pagina gepubliceerd.</LegalP>
+      <LegalH2>{cp.h2_wijzigingen}</LegalH2>
+      <LegalP>{cp.wijzigingen_text}</LegalP>
 
-      <LegalH2>Contact</LegalH2>
-      <LegalP>Heeft u vragen over ons cookiebeleid? Neem contact met ons op via <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a>.</LegalP>
+      <LegalH2>{cp.h2_contact}</LegalH2>
+      <LegalP>{cp.contact_text}</LegalP>
 
       <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        Laatst bijgewerkt: mei 2025
+        {cp.updated}
       </div>
     </LegalPageLayout>
   );
