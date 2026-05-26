@@ -1,0 +1,277 @@
+{
+  "meta": { "lang": "en", "dir": "ltr", "label": "English" },
+  "nav": {
+    "home": "Home",
+    "diensten": "Services",
+    "pakketten": "Packages",
+    "werkwijze": "Approach",
+    "overons": "About us",
+    "offerte": "Quote",
+    "bel": "Call us",
+    "offerte_btn": "Request a quote",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
+  },
+  "hero": {
+    "title_1": "Together ensuring",
+    "title_2": "carefree living.",
+    "subtitle": "Specialist in VvE management for The Hague and all of South Holland. One dedicated contact person, full transparency through your own client portal — we take care of it, you live carefree.",
+    "cta_primary": "Free quote",
+    "cta_secondary": "Our approach"
+  },
+  "hero_stats": [
+    { "icon": "users-three", "num": "17+", "label": "Years of experience in VvE management" },
+    { "icon": "buildings", "num": "500+", "label": "VvE's under our management" },
+    { "icon": "users", "num": "12.000+", "label": "Owners served" },
+    { "icon": "lightning", "num": "< 24u", "label": "Average response time" }
+  ],
+  "pillars_section": {
+    "eyebrow": "Our services",
+    "title": "Three pillars — one dedicated contact person",
+    "subtitle": "Administrative, financial and technical management under one roof. You won't get changing contact persons, but one manager who knows your building.",
+    "read_more": "Read more"
+  },
+  "pillars": [
+    { "icon": "folders", "title": "Administrative management", "desc": "ALV organisation, member administration, minutes and clear correspondence.", "bullets": ["ALV organisation & minutes", "Member administration", "Mail & correspondence", "Deed of division management"] },
+    { "icon": "chart-line-up", "title": "Financial management", "desc": "Accounting, budget, reserve fund and annual accounts — always transparent.", "bullets": ["Accounting & annual accounts", "Budget & VvE contribution", "Reserve fund management", "Collection & debtors"] },
+    { "icon": "wrench", "title": "Technical management", "desc": "Maintenance, MJOP, quotations and inspections — proactive and well negotiated.", "bullets": ["Multi-year maintenance plan", "Quotations & tendering", "Damage reports 24/7", "Inspections & handover"] }
+  ],
+  "diff_section": {
+    "eyebrow": "What sets us apart",
+    "title": "Why 500+ VvE's chose us",
+    "subtitle": "The management of a VvE depends on transparency and accessibility. We built our approach around that."
+  },
+  "diff_items": [
+    { "icon": "monitor", "title": "Own client portal", "desc": "All documents, finances and maintenance — accessible 24/7 for every owner." },
+    { "icon": "user-circle-check", "title": "Dedicated contact person", "desc": "One manager who knows your building, residents and history. No changing contact persons." },
+    { "icon": "clock-clockwise", "title": "Fast response time", "desc": "Response to your enquiry within 24 hours, urgent damage reports immediately." },
+    { "icon": "package", "title": "Complete package", "desc": "Full-service management at one fixed monthly fee. No surprises on the final bill." }
+  ],
+  "diff_floating": { "title": "MJOP updated", "time": "2 minutes ago" },
+  "testimonials_section": {
+    "eyebrow": "Client experiences",
+    "title": "What our clients say",
+    "trust_label": "Memberships & certifications"
+  },
+  "testimonials": [
+    { "quote": "Finally a manager who actually responds. A reply within a day, and the annual accounts were on time for the first time in years.", "name": "Marieke van der Berg", "role": "Chair VvE Parklaan", "location": "The Hague — 24 apartments" },
+    { "quote": "The switch from our previous manager went surprisingly smoothly. The client portal gives us real peace of mind: everything is in there, always accessible.", "name": "Joris Hendriks", "role": "Treasurer VvE De Linden", "location": "Wateringen — 18 apartments" },
+    { "quote": "What appealed to us was the personal attention. We have one dedicated contact person who truly knows our building. That makes a huge difference.", "name": "Saskia Bouman", "role": "Chair VvE Westpoort", "location": "Rotterdam — 42 apartments" }
+  ],
+  "trust_badges": [
+    { "label": "17+ years of experience", "icon": "calendar-check" },
+    { "label": "Industry association VGM NL", "icon": "medal" },
+    { "label": "NEN-EN ISO 9001 certified", "icon": "certificate" },
+    { "label": "KvK 51721139", "icon": "buildings" }
+  ],
+  "faq_section": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Answers to the questions you ask",
+    "subtitle": "Can't find your question? Feel free to call us or schedule a no-obligation introductory meeting."
+  },
+  "faq": [
+    { "q": "How long does it take to switch to VvE Beheer Collectief?", "a": "We usually arrange a complete switch within 6 to 8 weeks. We handle the administrative transfer entirely — from terminating with the current manager to setting up your client portal." },
+    { "q": "What exactly does the Complete package include?", "a": "The Complete package combines administrative, financial and technical management in one fixed monthly fee. Including ALV organisation, annual accounts, MJOP maintenance, 24/7 damage reporting and a dedicated contact person." },
+    { "q": "Do we get one dedicated contact person?", "a": "Yes. Every VvE is assigned a dedicated manager who knows your building, residents and history. In case of absence, there is always a substitute who is familiar with your file." },
+    { "q": "How transparent is the client portal?", "a": "Fully. All owners can see their own financial position, all meeting documents, the MJOP, outstanding maintenance items and the VvE's cash flow — available 24/7, without needing to contact us." },
+    { "q": "Do you also offer legal management?", "a": "No. For legal matters we work with specialised VvE lawyers whom we are happy to introduce you to. This way you keep one contact point for coordination, while receiving genuine specialist expertise for the legal work." }
+  ],
+  "cta": {
+    "eyebrow": "Free quote",
+    "title_1": "Ready for a",
+    "title_2": "better VvE experience?",
+    "subtitle": "Request a no-obligation quote tailored to your VvE. You will receive a response within 2 business days.",
+    "btn_primary": "Request a quote",
+    "btn_secondary": "Call us directly",
+    "usps": ["No-obligation & free", "Response within 2 business days", "Fully tailored to your VvE", "No commitments"]
+  },
+  "stats": [
+    { "num": "17+", "label": "Years of experience in VvE management" },
+    { "num": "500+", "label": "VvE's under our management" },
+    { "num": "12.000+", "label": "Owners served" },
+    { "num": "< 24u", "label": "Average response time" }
+  ],
+  "diensten_page": {
+    "eyebrow": "Our services",
+    "title": "VvE management tailored to your needs",
+    "subtitle": "Choose individual services or the Complete package — full-service management at one fixed monthly fee.",
+    "pillar_label": "PILLAR",
+    "offerte_btn": "Request a quote",
+    "compleet_pill": "Most popular",
+    "compleet_title": "The Complete Package",
+    "compleet_desc": "Full-service management — administrative, financial and technical management at one fixed monthly fee. No surprises, no additional invoices.",
+    "compleet_btn": "Quote for Complete Package",
+    "compleet_features": ["All administration", "Full accounting", "MJOP maintenance", "ALV organisation", "Dedicated contact person", "Client portal", "24/7 damage reports", "Annual accounts on time"]
+  },
+  "pakketten_page": {
+    "eyebrow": "Our packages",
+    "title": "Three ways we take care of you",
+    "subtitle": "From basic management to full-service. Choose the package that suits the size and needs of your VvE — or request a tailored quote.",
+    "pakket_label": "PACKAGE",
+    "meest_gekozen": "Most popular",
+    "vanaf": "from",
+    "op_aanvraag": "On request",
+    "prijs_label": "per apartment right per year · excl. VAT",
+    "prijs_note": "Rates excl. 21% VAT. You will always receive a tailored quote for your VvE — no obligation.",
+    "offerte_voor": "Quote for",
+    "vergelijking_eyebrow": "Comparison",
+    "vergelijking_title": "What is included in each package?",
+    "matrix_functie": "Feature",
+    "matrix_start": "Start",
+    "matrix_start_aanv": "Start Plus",
+    "matrix_compleet": "Complete",
+    "packages": [
+      { "id": "start", "name": "Start", "tagline": "Administrative and financial basic management for VvE's that want to get the basics right.", "price": "92,95", "features": [{"label":"ALV organisation","active":true},{"label":"Member administration","active":true},{"label":"Accounting & annual settlement","active":true},{"label":"Collection of VvE contributions","active":true},{"label":"Payment transactions","active":true},{"label":"Technical management","active":false},{"label":"MJOP maintenance","active":false},{"label":"Emergency service","active":false}] },
+      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Extended administrative, financial and basic technical management under one roof.", "price": "147,95", "features": [{"label":"ALV organisation & minutes","active":true},{"label":"Member administration","active":true},{"label":"Full accounting","active":true},{"label":"Reserve fund management","active":true},{"label":"Insurance management","active":true},{"label":"Coordination of minor maintenance","active":true},{"label":"Damage reports","active":true},{"label":"Planned maintenance","active":false}] },
+      { "id": "compleet", "name": "Complete", "tagline": "Full-service management — administrative, financial and technical at one fixed fee.", "price": null, "features": [{"label":"Everything from Start Plus","active":true},{"label":"Board meetings unlimited","active":true},{"label":"Legal coordination","active":true},{"label":"Debtor management & reminders","active":true},{"label":"MJOP & planned maintenance","active":true},{"label":"24/7 emergency service","active":true},{"label":"Annual inspection","active":true},{"label":"Sustainability advice","active":true}] }
+    ],
+    "matrix": [
+      {"group":"Board matters","rows":[{"label":"Preparing and attending ALV","start":true,"startPlus":true,"compleet":true},{"label":"Taking ALV minutes","start":false,"startPlus":true,"compleet":true},{"label":"Attending board meetings","start":false,"startPlus":"1× p/y","compleet":"Unlimited"},{"label":"Drafting house rules","start":false,"startPlus":false,"compleet":true},{"label":"Mediation in disputes","start":false,"startPlus":false,"compleet":true}]},
+      {"group":"Secretarial","rows":[{"label":"Member administration","start":true,"startPlus":true,"compleet":true},{"label":"Correspondence with residents","start":true,"startPlus":true,"compleet":true},{"label":"Registration at KvK","start":true,"startPlus":true,"compleet":true},{"label":"Deed of division management","start":false,"startPlus":true,"compleet":true},{"label":"Insurance management","start":false,"startPlus":true,"compleet":true},{"label":"Legal coordination","start":false,"startPlus":false,"compleet":true}]},
+      {"group":"Financial","rows":[{"label":"Accounting & annual settlement","start":true,"startPlus":true,"compleet":true},{"label":"Drafting budget","start":true,"startPlus":true,"compleet":true},{"label":"Collection of VvE contributions","start":true,"startPlus":true,"compleet":true},{"label":"Payment transactions","start":true,"startPlus":true,"compleet":true},{"label":"Reserve fund management","start":false,"startPlus":true,"compleet":true},{"label":"Multi-year budget","start":false,"startPlus":true,"compleet":true},{"label":"Debtor management & reminders","start":false,"startPlus":false,"compleet":true},{"label":"Tax returns","start":false,"startPlus":false,"compleet":true}]},
+      {"group":"Technical daily maintenance","rows":[{"label":"Coordination of minor maintenance","start":false,"startPlus":true,"compleet":true},{"label":"Handling damage reports","start":false,"startPlus":true,"compleet":true},{"label":"Key management","start":false,"startPlus":true,"compleet":true},{"label":"Maintenance quotation requests","start":false,"startPlus":false,"compleet":true},{"label":"24/7 emergency service","start":false,"startPlus":false,"compleet":true}]},
+      {"group":"Technical planned maintenance","rows":[{"label":"Multi-year maintenance plan (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Annual inspection","start":false,"startPlus":false,"compleet":true},{"label":"Supervision of major maintenance","start":false,"startPlus":false,"compleet":true},{"label":"Maintenance tendering","start":false,"startPlus":false,"compleet":true},{"label":"Execution supervision","start":false,"startPlus":false,"compleet":true},{"label":"Handover & aftercare","start":false,"startPlus":false,"compleet":true},{"label":"Sustainability advice","start":false,"startPlus":false,"compleet":true}]}
+    ],
+    "hulp_eyebrow": "Help with your choice",
+    "hulp_title": "Which package suits our VvE?",
+    "hulp_subtitle": "The right choice depends on the size of your VvE, the current situation and your wishes. We are happy to advise you — no obligation.",
+    "hulp_btn": "Request a quote",
+    "hulp_cards": [
+      {"icon":"users-three","title":"Small VvE (< 12)","desc":"Start or Start Plus is usually sufficient for smaller complexes."},
+      {"icon":"buildings","title":"Medium VvE","desc":"Start Plus offers the right balance between independence and full service."},
+      {"icon":"buildings","title":"Large VvE (> 40)","desc":"The Complete Package prevents you from still having to arrange technical management yourself."},
+      {"icon":"wrench","title":"Deferred maintenance","desc":"In case of deferred maintenance, we recommend the Complete Package with MJOP approach."}
+    ]
+  },
+  "overons_page": {
+    "eyebrow": "About us",
+    "title": "Based in Wateringen, active throughout South Holland",
+    "desc": "VvE Beheer Collectief was founded in 2009 with the conviction that VvE management can be more personal, more transparent and more proactive. Over the past 17 years, we have grown into one of the established names in the region, with more than 500 VvE's under management.",
+    "team_eyebrow": "The team",
+    "team_title": "The people behind your VvE",
+    "team_subtitle": "A small team of experienced specialists. Every VvE is assigned one dedicated manager.",
+    "team": [
+      {"name":"Mark de Vries","role":"Founder & Manager"},
+      {"name":"Linda Janssen","role":"Senior VvE Manager"},
+      {"name":"Tim Bakker","role":"Technical Manager"},
+      {"name":"Eva van Loon","role":"Financial Manager"}
+    ],
+    "missie_eyebrow": "Our mission",
+    "missie_quote": "VvE management that relieves rather than complicates.",
+    "missie_desc": "We see VvE management as a relationship of trust. That is why we invest in small portfolios per manager, our own client portal and short lines of communication. No call centres, no automated responses — just a team that knows your building."
+  },
+  "werkwijze_page": {
+    "eyebrow": "Approach",
+    "title": "From quote to ongoing management",
+    "subtitle": "We usually arrange a complete switch within 6 to 8 weeks. This is how it works:",
+    "stap": "STEP",
+    "steps": [
+      {"num":"01","title":"No-obligation quote","desc":"You fill in the quote form or call us. Within 2 business days you receive a tailored quote for your VvE."},
+      {"num":"02","title":"Introductory meeting","desc":"We visit your VvE, review the deed of division and the MJOP, and discuss your wishes and concerns."},
+      {"num":"03","title":"Hassle-free switch","desc":"We arrange the complete transfer from your current manager — termination, documents, finances. You don't have to do anything."},
+      {"num":"04","title":"Client portal setup","desc":"All owners get access to their own client portal. All documents, finances and maintenance — immediately accessible."},
+      {"num":"05","title":"First ALV","desc":"We organise your first ALV under our management and introduce you to your dedicated contact person."},
+      {"num":"06","title":"Ongoing management","desc":"From that point on, we take care of everything. You stay in control via the portal and receive proactive updates."}
+    ]
+  },
+  "offerte_page": {
+    "eyebrow": "Request a quote",
+    "title": "No-obligation & tailored to your VvE",
+    "intro": "Fill in the form. Within 2 business days you will receive a tailored quote — discussed by phone so it truly fits your situation.",
+    "usps": [["shield-check","No-obligation & free"],["clock","Response within 2 business days"],["user-circle","Direct contact with a manager"],["lock","Your data remains yours"]],
+    "stap_van": "of",
+    "step_titles": ["Tell us about your VvE","Which services are you looking for?","Your current situation","Your contact details"],
+    "step1": {"vve_naam":"Name of the VvE","vve_naam_ph":"e.g. VvE Parkzicht","aantal":"Number of apartments","aantal_ph":"e.g. 24","bouwjaar":"Year of construction","bouwjaar_ph":"e.g. 1998","adres":"Address / location","adres_ph":"City"},
+    "step2": {"services":[["package","Complete Package","All 3 pillars at one price"],["folders","Administrative","ALV, minutes, mail"],["chart-line-up","Financial","Accounting, annual accounts"],["wrench","Technical","MJOP, maintenance"]]},
+    "step3": {"beheerder_label":"Do you currently have a manager?","beheerder_options":["Yes, I want to switch","No, this is the first time","Self-management, we need help"],"belangrijk_label":"What is most important to you?","belangrijk_ph":"e.g. faster response, better transparency, lower costs..."},
+    "step4": {"voornaam":"First name","achternaam":"Last name","functie":"Role within VvE","functie_options":["Chair","Treasurer","Secretary","Board member","Owner / member"],"email":"Email","telefoon":"Phone number"},
+    "btn_terug": "Back",
+    "btn_volgende": "Next step",
+    "btn_versturen": "Submit request",
+    "success_title": "Thank you for your request",
+    "success_desc": "We have received your quote request and will contact you within 2 business days."
+  },
+  "privacy_page": {
+    "title":"Privacy statement",
+    "intro":"VvE Beheer Collectief, based in Wateringen, is responsible for the processing of personal data as set out in this privacy statement.",
+    "h2_contact":"Contact details",
+    "h2_gegevens":"Personal data we process",
+    "gegevens_intro":"VvE Beheer Collectief processes your personal data because you use our services and/or because you provide this data to us yourself. Below you will find an overview of the personal data we process:",
+    "gegevens_items":["First and last name","Phone number","Email address","Name and address of your VvE","Role within the VvE","Other data you actively provide, for example via correspondence or the quote form"],
+    "h2_doel":"Purpose of processing personal data",
+    "doel_intro":"VvE Beheer Collectief processes your personal data for the following purposes:",
+    "doel_items":["Handling your quote request","To be able to call or email you if necessary to carry out our services","Performing VvE management services for which you have engaged us","To inform you about changes to our services"],
+    "h2_bewaren":"How long we retain personal data",
+    "bewaren_text":"VvE Beheer Collectief does not retain your personal data longer than strictly necessary to achieve the purposes for which your data is collected. Data from quote requests is retained for a maximum of 12 months if no agreement follows. In the case of an active management agreement, data is retained for the duration and up to 7 years thereafter (statutory retention period for financial administration).",
+    "h2_derden":"Sharing personal data with third parties",
+    "derden_text":"VvE Beheer Collectief does not share your data with third parties unless this is necessary for the execution of our agreement with you or to comply with a legal obligation.",
+    "h2_inzien":"Viewing, amending or deleting data",
+    "inzien_text":"You have the right to view, correct or delete your personal data. You also have the right to withdraw any consent for data processing or to object to the processing. You can send a request for access, correction, deletion or transfer of your personal data to info@vvebeheercollectief.nl.",
+    "h2_beveiliging":"Security",
+    "beveiliging_text":"VvE Beheer Collectief takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorised access, unwanted disclosure and unauthorised modification. If you feel that your data is not properly secured or there are indications of misuse, please contact us at info@vvebeheercollectief.nl.",
+    "updated":"Last updated: May 2025"
+  },
+  "voorwaarden_page": {
+    "title":"General terms and conditions",
+    "articles":[
+      {"h2":"Article 1 — Definitions","items":["Contractor: VvE Beheer Collectief, based in Wateringen, registered at the KvK under number 51721139.","Client: the Association of Owners (VvE) entering into an agreement with the Contractor.","Agreement: the management agreement between the Client and the Contractor."]},
+      {"h2":"Article 2 — Applicability","p":"These general terms and conditions apply to every offer by the Contractor and to every agreement entered into. Deviations from these terms and conditions are only valid if expressly agreed upon in writing."},
+      {"h2":"Article 3 — Offers and quotes","p":"All quotes from VvE Beheer Collectief are without obligation and valid for a period of 30 days, unless stated otherwise. An agreement is concluded upon written confirmation by both parties or by a resolution of the ALV."},
+      {"h2":"Article 4 — Execution of the agreement","p":"VvE Beheer Collectief will execute the agreement to the best of its knowledge and ability, in accordance with the requirements of good workmanship. The manager has an obligation of effort and not an obligation of result."},
+      {"h2":"Article 5 — Duration and termination","p":"The management agreement is entered into for the duration as stated in the agreement. Termination is done in writing, observing a notice period of 3 months before the end of the contract period, unless otherwise agreed."},
+      {"h2":"Article 6 — Rates and payment","p":"All stated rates are exclusive of VAT, unless expressly stated otherwise. Payment must be made within 30 days after the invoice date. In case of late payment, the Client is in default by operation of law and statutory interest is due."},
+      {"h2":"Article 7 — Liability","p":"The liability of VvE Beheer Collectief is limited to the amount paid out by the professional liability insurance in the case concerned, plus the deductible. If the insurance does not pay out, the liability is limited to the amount of the fee that the Contractor received for its work under the agreement over the period of 12 months prior to the event causing the damage."},
+      {"h2":"Article 8 — Confidentiality","p":"Both parties are obliged to maintain confidentiality of all confidential information obtained from each other in the context of the agreement. This obligation also applies after termination of the agreement."},
+      {"h2":"Article 9 — Complaints","p":"Complaints about the execution of the agreement must be submitted to VvE Beheer Collectief in a timely, complete and clearly described manner. Complaints are processed within 14 days of receipt."},
+      {"h2":"Article 10 — Applicable law","p":"Dutch law applies to all agreements between the Client and VvE Beheer Collectief. Disputes are submitted to the competent court in the district of The Hague."}
+    ],
+    "updated":"Last updated: May 2025"
+  },
+  "cookies_page": {
+    "title":"Cookie statement",
+    "intro":"This website of VvE Beheer Collectief uses cookies. In this cookie statement you can read what cookies are, which cookies we use and how you can manage them.",
+    "h2_wat":"What are cookies?",
+    "wat_text":"Cookies are small text files that are stored by your browser when you visit a website. They are used to make websites function properly, to analyse website usage and to improve the user experience.",
+    "h2_welke":"Which cookies do we use?",
+    "h3_functioneel":"Functional cookies",
+    "functioneel_text":"These cookies are necessary for the website to function. They ensure, for example, that your preferences are remembered. These cookies are not used for marketing purposes.",
+    "h3_analytisch":"Analytical cookies",
+    "analytisch_text":"We may use analytical cookies to measure and improve the use of our website. This data is collected anonymously and is not shared with third parties for commercial purposes.",
+    "h2_beheren":"Managing cookies",
+    "beheren_intro":"You can change your cookie preferences at any time via your browser settings. Please note that blocking certain cookies may affect the functionality of the website.",
+    "beheren_text":"Most browsers offer the option to:",
+    "beheren_items":["View all stored cookies","Delete cookies individually or entirely","Block cookies from certain websites","Block all cookies","Delete all cookies when you close the browser"],
+    "h2_derden":"Third-party cookies",
+    "derden_text":"Our website may use third-party services, such as Google Fonts for typography. These services may place their own cookies. We have no control over the placement and use of cookies by these third parties. Please refer to the privacy policy of the relevant third party for more information.",
+    "h2_wijzigingen":"Changes",
+    "wijzigingen_text":"VvE Beheer Collectief reserves the right to amend this cookie statement. Changes will be published on this page.",
+    "h2_contact":"Contact",
+    "contact_text":"Do you have questions about our cookie policy? Contact us at info@vvebeheercollectief.nl.",
+    "updated":"Last updated: May 2025"
+  },
+  "footer": {
+    "brand_desc":"Personal, transparent and reliable VvE management for South Holland and surroundings. 17 years of experience, 500+ VvE's under management.",
+    "h_diensten":"Services",
+    "diensten_links":["Administrative management","Financial management","Technical management","Complete Package"],
+    "h_bedrijf":"Company",
+    "bedrijf_links":["About us","Approach","Client stories","Vacancies"],
+    "h_contact":"Contact",
+    "locatie":"Wateringen, South Holland",
+    "offerte_link":"Request a quote →",
+    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
+    "privacy":"Privacy",
+    "voorwaarden":"Terms & conditions",
+    "cookies":"Cookies"
+  },
+  "titles": {
+    "home":"VvE Beheer Collectief — VvE management South Holland",
+    "diensten":"Services — VvE Beheer Collectief",
+    "pakketten":"Packages — VvE Beheer Collectief",
+    "overons":"About us — VvE Beheer Collectief",
+    "werkwijze":"Approach — VvE Beheer Collectief",
+    "offerte":"Request a quote — VvE Beheer Collectief",
+    "privacy":"Privacy statement — VvE Beheer Collectief",
+    "voorwaarden":"General terms and conditions — VvE Beheer Collectief",
+    "cookies":"Cookie statement — VvE Beheer Collectief"
+  }
+}
