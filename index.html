@@ -143,11 +143,17 @@ section { padding: 96px 0; }
 .field textarea { resize: vertical; min-height: 100px; }
 .field-error { font-size: 12px; color: var(--red); margin-top: 4px; }
 
-/* Site header — navy variant */
+/* Site header — light glass variant */
 .site-header {
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(251,252,253,0.8);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
   position: sticky; top: 0; z-index: 50;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.site-header.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 0 rgba(43,53,68,0.02), 0 8px 24px -18px rgba(43,53,68,0.35);
 }
 .site-header-inner {
   display: flex; align-items: center; gap: 24px; padding: 18px 0;
@@ -155,22 +161,22 @@ section { padding: 96px 0; }
 .site-logo {
   display: flex; align-items: center; gap: 10px;
   font-weight: 800; font-size: 16px; letter-spacing: -0.01em;
-  color: white; cursor: pointer; white-space: nowrap;
+  color: var(--navy); cursor: pointer; white-space: nowrap;
 }
 .site-logo img { width: 32px; height: 32px; }
-.site-nav { display: flex; gap: 4px; align-items: center; }
+.site-nav { display: flex; gap: 2px; align-items: center; }
 .site-nav a {
-  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.78);
-  padding: 8px 12px; border-radius: 6px; transition: color .15s;
+  font-size: 14px; font-weight: 500; color: var(--ink);
+  padding: 9px 15px; border-radius: 999px; transition: all .15s ease;
   white-space: nowrap;
 }
-.site-nav a:hover { color: white; }
-.site-nav a.active { color: white; font-weight: 600; }
+.site-nav a:hover { background: rgba(13,115,119,0.06); color: var(--teal-900); }
+.site-nav a.active { background: var(--navy); color: #fff; font-weight: 600; }
 .site-header-cta {
   margin-left: auto; display: flex; gap: 12px; align-items: center;
 }
 .site-header-phone {
-  font-size: 13px; color: rgba(255,255,255,0.6);
+  font-size: 13px; color: var(--muted);
   display: inline-flex; align-items: center; gap: 6px;
   white-space: nowrap;
 }
@@ -178,7 +184,7 @@ section { padding: 96px 0; }
 /* Mobile menu */
 .mobile-toggle {
   display: none; background: none; border: none;
-  font-size: 24px; color: white; padding: 4px;
+  font-size: 24px; color: var(--navy); padding: 4px;
 }
 .mobile-menu {
   display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -240,13 +246,13 @@ section { padding: 96px 0; }
 }
 .lang-toggle {
   display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  color: white; font-size: 13px; font-weight: 600;
+  background: #fff; border: 1px solid var(--border);
+  color: var(--navy); font-size: 13px; font-weight: 600;
   padding: 7px 12px; border-radius: 8px; cursor: pointer;
   font-family: inherit; transition: all .15s ease;
   white-space: nowrap;
 }
-.lang-toggle:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.25); }
+.lang-toggle:hover { border-color: var(--teal-700); color: var(--teal-900); }
 .lang-dropdown {
   position: absolute; top: calc(100% + 8px); right: 0;
   background: white; border: 1px solid var(--border);
@@ -1266,6 +1272,13 @@ function MobileLangSwitcher({ lang, setLang }) {
 /* ── SiteHeader (navy) ── */
 function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const navT = t('nav');
   const links = [
     { id: 'home', label: navT.home },
@@ -1283,17 +1296,17 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
 
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container site-header-inner">
           <a className="site-logo" onClick={() => setPage('home')}>
-            <img src="assets/icoon-wit.png" alt="" />
+            <img src="assets/icoon-donker.png" alt="" />
             <span>VvE Beheer Collectief</span>
           </a>
           <nav className="site-nav">{nav(false)}</nav>
           <div className="site-header-cta">
             <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
             <LanguageSwitcher lang={lang} setLang={setLang} />
-            <a className="btn btn-ghost-light btn-sm" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer"><I name="sign-in" size={14} /> {navT.portaal_btn}</a>
+            <a className="btn btn-secondary btn-sm" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer"><I name="sign-in" size={14} /> {navT.portaal_btn}</a>
           </div>
           <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label={navT.menu_open}>
             <I name="list" size={24} />
