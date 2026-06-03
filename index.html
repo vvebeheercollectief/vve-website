@@ -28,6 +28,12 @@
   --red: #DC2626;
   --muted: #64748B;
   --border: #E2E8F0;
+  --teal-50: #EAF7F5;
+  --ink: #404B5A;
+  --border-2: rgba(43,53,68,0.08);
+  --sh-sm: 0 2px 8px rgba(43,53,68,0.05);
+  --sh-md: 0 18px 40px -24px rgba(43,53,68,0.28);
+  --sh-lg: 0 40px 80px -44px rgba(43,53,68,0.40);
   --font: 'DM Sans', system-ui, Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
 }
@@ -398,6 +404,143 @@ section { padding: 96px 0; }
   .hero-stats-bar .stat-num { font-size: 22px !important; }
 }
 
+/* ════════════════════════════════════════════════════════════
+   NIEUW ONTWERP — Hero (home), Diensten & Werkwijze (richting "Helder")
+   ════════════════════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ── Hero ── */
+.dz-hero { padding: clamp(20px,3vw,40px) 0 0; background: var(--white); }
+.dz-panel {
+  position: relative; overflow: hidden;
+  border-radius: clamp(24px,3vw,36px); border: 1px solid var(--border-2);
+  background:
+    radial-gradient(60% 70% at 88% 96%, rgba(13,115,119,0.16) 0%, rgba(13,115,119,0) 60%),
+    radial-gradient(46% 50% at 6% 6%, rgba(94,234,212,0.18) 0%, rgba(94,234,212,0) 62%),
+    linear-gradient(155deg,#EEF5F4 0%, #F4F8F8 46%, #E9F2F1 100%);
+  box-shadow: var(--sh-lg);
+}
+.dz-sky {
+  position: absolute; bottom: 0; right: 0; width: min(50%,640px); max-height: 86%;
+  object-fit: contain; object-position: bottom right; z-index: 1; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 46%,#000 100%);
+  mask-image: linear-gradient(to right,transparent 0%,#000 46%,#000 100%);
+  filter: drop-shadow(0 12px 26px rgba(43,53,68,0.14));
+}
+.dz-panel-inner { position: relative; z-index: 2; padding: clamp(40px,5vw,72px) clamp(28px,4vw,64px); }
+.dz-panel-inner > div { max-width: 600px; }
+.dz-pill {
+  display: inline-flex; align-items: center; gap: 8px; background: #fff;
+  border: 1px solid var(--border); color: var(--teal-900); font-size: 12.5px;
+  font-weight: 600; padding: 8px 15px; border-radius: 999px; box-shadow: var(--sh-sm); white-space: nowrap;
+}
+.dz-pill i { color: var(--teal-700); }
+.dz-h1 { font-size: clamp(38px,5.4vw,64px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; color: var(--navy); margin: 20px 0 22px; text-wrap: balance; }
+.dz-h1 span { color: var(--teal-900); }
+.dz-lead { font-size: clamp(16px,1.5vw,19px); line-height: 1.6; color: var(--ink); max-width: 460px; margin: 0 0 30px; }
+.dz-ctas { display: flex; gap: 13px; flex-wrap: wrap; }
+.dz-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.dz-tchip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.7); border: 1px solid var(--border-2); border-radius: 999px; padding: 9px 15px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.dz-tchip i { color: var(--teal-700); font-size: 17px; }
+
+/* ── Section / page head ── */
+.dz-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal-700); text-transform: uppercase; }
+.dz-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal-700); }
+.dz-head { max-width: 720px; }
+.dz-head.center { margin: 0 auto; text-align: center; }
+.dz-head.center .dz-eyebrow { justify-content: center; }
+.dz-head h2 { font-size: clamp(34px,4.6vw,56px); line-height: 1.05; font-weight: 800; letter-spacing: -0.03em; color: var(--navy); margin: 16px 0 0; text-wrap: balance; }
+.dz-head h2 span { color: var(--teal-900); }
+.dz-head p { font-size: clamp(16px,1.4vw,18px); line-height: 1.6; color: var(--muted); margin: 18px 0 0; }
+.dz-head.center p { margin-left: auto; margin-right: auto; max-width: 680px; }
+
+/* ── Diensten detail rows ── */
+.dz-drow { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,76px); align-items: center; padding: clamp(36px,4vw,60px) 0; }
+.dz-drow + .dz-drow { border-top: 1px solid var(--border); }
+.dz-dchip { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.dz-dchip .ic { width: 54px; height: 54px; border-radius: 15px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dz-dchip .nm { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal-700); text-transform: uppercase; }
+.dz-drow h3 { font-size: clamp(25px,3vw,34px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 14px; }
+.dz-intro { font-size: 16.5px; line-height: 1.65; color: var(--ink); max-width: 470px; margin: 0 0 22px; }
+.dz-result { display: flex; gap: 13px; background: var(--teal-50); border: 1px solid rgba(13,115,119,0.14); border-radius: 16px; padding: 16px 18px; max-width: 470px; margin-bottom: 24px; }
+.dz-result i { color: var(--teal-700); flex-shrink: 0; margin-top: 1px; font-size: 22px; }
+.dz-result b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-900); margin-bottom: 3px; }
+.dz-result span { font-size: 14.5px; line-height: 1.5; color: var(--teal-900); }
+.dz-checklist { background: #fff; border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--sh-md); overflow: hidden; }
+.dz-ch-head { padding: 20px 26px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); }
+.dz-ch-head i { color: var(--teal-700); font-size: 20px; }
+.dz-checklist ul { list-style: none; margin: 0; padding: 8px 26px; }
+.dz-checklist li { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-top: 1px solid var(--border); font-size: 15.5px; font-weight: 500; color: var(--navy); }
+.dz-checklist li:first-child { border-top: none; }
+.dz-checklist li i { color: var(--teal-700); flex-shrink: 0; font-size: 22px; }
+.dz-ch-foot { padding: 16px 26px; background: var(--gray-bg); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.dz-ch-foot .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.dz-ch-foot .tag i { color: var(--teal-700); }
+.dz-ch-foot a { font-size: 13px; font-weight: 600; color: var(--teal-700); display: inline-flex; align-items: center; gap: 6px; }
+
+/* ── Compleet-pakket blok ── */
+.dz-compleet { background: linear-gradient(150deg,var(--navy) 0%,var(--navy-dark) 100%); color: #fff; border-radius: 28px; padding: clamp(34px,4vw,56px); display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px,4vw,54px); align-items: center; position: relative; overflow: hidden; box-shadow: var(--sh-lg); }
+.dz-compleet::after { content: ""; position: absolute; top: -130px; right: -110px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle,rgba(13,115,119,0.45),transparent 70%); }
+.dz-compleet h2 { color: #fff; font-size: clamp(28px,3.4vw,42px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin: 18px 0 14px; position: relative; }
+.dz-compleet > div > p { color: rgba(255,255,255,0.78); font-size: 16.5px; line-height: 1.6; margin: 0 0 26px; position: relative; max-width: 380px; }
+.dz-compleet .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; }
+.dz-compleet .grid2 div { display: flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 13px 15px; font-size: 13.5px; }
+.dz-compleet .grid2 i { color: var(--teal-300); flex-shrink: 0; }
+.dz-pill-dark { background: rgba(255,255,255,0.12); border: none; color: #fff; box-shadow: none; }
+.dz-pill-dark i { color: var(--teal-300); }
+
+/* ── Werkwijze tijdlijn ── */
+.dz-tl { position: relative; max-width: 780px; margin: 0 auto; padding-left: 78px; }
+.dz-rail { position: absolute; left: 27px; top: 6px; bottom: 6px; width: 2px; background: var(--border); border-radius: 2px; }
+.dz-rail-fill { position: absolute; left: 0; top: 0; width: 100%; height: 0; background: linear-gradient(180deg,var(--teal-500),var(--teal-700)); border-radius: 2px; }
+.dz-tstep { position: relative; padding-bottom: 22px; }
+.dz-tstep:last-child { padding-bottom: 0; }
+.dz-tnode { position: absolute; left: -78px; top: 0; width: 56px; height: 56px; border-radius: 17px; background: #fff; border: 1px solid var(--border); box-shadow: var(--sh-sm); display: flex; align-items: center; justify-content: center; color: var(--muted); transition: .3s; z-index: 2; }
+.dz-tstep.on .dz-tnode { background: var(--navy); color: #fff; border-color: var(--navy); transform: scale(1.04); }
+.dz-tcard { background: #fff; border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--sh-sm); padding: 24px 28px; transition: .3s; }
+.dz-tstep.on .dz-tcard { box-shadow: var(--sh-md); border-color: rgba(13,115,119,0.2); }
+.dz-tmeta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.dz-tnum { font-size: 13px; font-weight: 700; color: var(--teal-700); }
+.dz-twhen { background: var(--teal-50); color: var(--teal-900); text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; }
+.dz-tcard h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 0 0 8px; }
+.dz-tcard p { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
+
+/* ── Reassure kaarten ── */
+.dz-reassure { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin: 54px auto 0; max-width: 980px; }
+.dz-reassure > div { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 26px; box-shadow: var(--sh-sm); }
+.dz-reassure i { color: var(--teal-700); font-size: 27px; }
+.dz-reassure b { display: block; font-size: 17px; font-weight: 700; color: var(--navy); margin: 13px 0 6px; }
+.dz-reassure p { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 0; }
+
+/* ── Gedeeld CTA-blok (Diensten/Werkwijze) ── */
+.dz-cta { background: #fff; border: 1px solid var(--border); border-radius: 28px; padding: clamp(34px,4vw,56px); display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px,4vw,54px); align-items: center; box-shadow: var(--sh-md); }
+.dz-cta h2 { font-size: clamp(28px,3.4vw,40px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; color: var(--navy); margin: 14px 0; }
+.dz-cta > div > p { font-size: 16.5px; color: var(--ink); line-height: 1.6; margin: 0 0 24px; max-width: 380px; }
+.dz-cta-list { display: flex; flex-direction: column; gap: 12px; }
+.dz-cta-list div { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: var(--gray-bg); border-radius: 14px; font-size: 14px; font-weight: 500; color: var(--navy); }
+.dz-cta-list i { color: var(--teal-700); font-size: 20px; }
+
+/* ── Responsive (nieuw ontwerp) ── */
+@media (max-width: 1023px) {
+  .dz-drow { grid-template-columns: 1fr !important; gap: 40px !important; direction: ltr !important; }
+  .dz-drow > div { direction: ltr !important; }
+  .dz-compleet { grid-template-columns: 1fr !important; }
+  .dz-cta { grid-template-columns: 1fr !important; }
+  .dz-reassure { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 767px) {
+  .dz-sky { opacity: .42; width: 64%; }
+  .dz-tl { padding-left: 60px; }
+  .dz-rail { left: 21px; }
+  .dz-tnode { left: -60px; width: 46px; height: 46px; border-radius: 14px; }
+  .dz-ctas .btn { width: 100%; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .dz-compleet .grid2 { grid-template-columns: 1fr; }
+}
+
 /* Subtle background patterns */
 .bg-subtle {
   background:
@@ -489,11 +632,13 @@ const NL = {
     menu_close: 'Menu sluiten',
   },
   hero: {
+    pill: 'VvE-beheer · Den Haag & Zuid-Holland',
     title_1: 'Samen zorgen voor',
     title_2: 'onbezorgd wonen.',
-    subtitle: 'Specialist in VvE-beheer voor Den Haag en heel Zuid-Holland. Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal — wij regelen het, u woont onbezorgd.',
-    cta_primary: 'Vrijblijvende offerte',
+    subtitle: 'Eén vast aanspreekpunt, volledige transparantie via uw eigen klantenportaal. Wij regelen het administratieve, financiële en technische beheer — u woont onbezorgd.',
+    cta_primary: 'Bekijk onze diensten',
     cta_secondary: 'Onze werkwijze',
+    trust: ['17+ jaar ervaring', "500+ VvE's", 'Reactie < 24 uur'],
   },
   hero_stats: [
     { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
@@ -569,15 +714,48 @@ const NL = {
   ],
   diensten_page: {
     eyebrow: 'Onze diensten',
-    title: 'VvE-beheer dat aansluit op úw behoefte',
-    subtitle: 'Kies losse diensten of het Compleetpakket — volledige ontzorging in één vaste maandprijs.',
-    pillar_label: 'PIJLER',
+    title_1: 'VvE-beheer dat aansluit op',
+    title_2: 'úw behoefte',
+    subtitle: 'Drie pijlers — administratief, financieel en technisch — onder één dak en met één vast aanspreekpunt. Kies losse diensten of laat ons álles uit handen nemen.',
+    pillar_label: 'Pijler',
+    result_label: 'Het resultaat',
+    checklist_head: 'Wat wij voor u regelen',
     offerte_btn: 'Vraag een offerte aan',
+    offerte_short: 'Offerte',
+    rows: [
+      {
+        title: 'Uw administratie strak en vindbaar',
+        intro: 'Wij voeren de volledige administratie van uw VvE — van ledenregister en correspondentie tot het organiseren en notuleren van de ALV. Alles centraal vastgelegd en direct terug te vinden.',
+        result: 'Een VvE die administratief volledig op orde is, zonder dat het bestuur er omkijken naar heeft.',
+        bullets: ['ALV-organisatie & notulen', 'Ledenadministratie & register', 'Post & correspondentie', 'Splitsingsakte & reglementen'],
+        tag: 'Inbegrepen in elk pakket',
+      },
+      {
+        title: 'Financieel inzicht, geen verrassingen',
+        intro: 'Van boekhouding en incasso tot begroting, reservefonds en jaarrekening. Wij houden de cijfers actueel en bewaken de gezondheid van uw reservefonds.',
+        result: 'Op elk moment inzicht in de financiële positie — en een jaarrekening die op tijd klaar is.',
+        bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteurenbeheer'],
+        tag: 'Inbegrepen in elk pakket',
+      },
+      {
+        title: 'Onderhoud dat vóórblijft op problemen',
+        intro: 'Wij stellen het MJOP op en houden het actueel, vragen offertes op en onderhandelen scherp, en coördineren onderhoud en schade — bij urgentie schakelen we direct.',
+        result: 'Goed onderhouden vastgoed, scherp ingekochte offertes en facturen die kloppen.',
+        bullets: ['Meerjaren-onderhoudsplan (MJOP)', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'],
+        tag: 'Inbegrepen in het Compleet-pakket',
+      },
+    ],
     compleet_pill: 'Meest gekozen',
-    compleet_title: 'Het Compleetpakket',
-    compleet_desc: 'Volledige ontzorging — administratief, financieel én technisch beheer in één vaste maandprijs. Geen verrassingen, geen meerwerk-facturen.',
-    compleet_btn: 'Offerte voor Compleetpakket',
-    compleet_features: ['Alle administratie', 'Volledige boekhouding', 'MJOP-onderhoud', 'ALV-organisatie', 'Vast aanspreekpunt', 'Klantenportaal', '24/7 schademeldingen', 'Jaarrekening op tijd'],
+    compleet_title_1: 'Alles in één hand:',
+    compleet_title_2: 'het Compleet-pakket',
+    compleet_desc: 'Combineer alle drie de pijlers in één vaste maandprijs. Volledige ontzorging — geen verrassingen, geen meerwerk-facturen.',
+    compleet_btn: 'Zo verloopt de overstap',
+    compleet_features: ['Alle administratie & ALV', 'Volledige boekhouding', 'Jaarrekening op tijd', 'MJOP & onderhoud', '24/7 schademeldingen', 'Eigen klantenportaal', 'Eén vast aanspreekpunt', 'Scherpe offertes'],
+    cta_eyebrow: 'Vrijblijvende offerte',
+    cta_title: 'Benieuwd wat dit voor úw VvE betekent?',
+    cta_desc: 'Vraag een vrijblijvende offerte aan op maat. U ontvangt binnen 2 werkdagen reactie van een vaste beheerder.',
+    cta_btn: 'Offerte aanvragen',
+    cta_list: ['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE'],
   },
   pakketten_page: {
     eyebrow: 'Onze pakketten',
@@ -716,17 +894,28 @@ const NL = {
   },
   werkwijze_page: {
     eyebrow: 'Werkwijze',
-    title: 'Van offerte tot doorlopend beheer',
-    subtitle: 'Een complete overstap regelen we doorgaans in 6 tot 8 weken. Zo ziet dat eruit:',
-    stap: 'STAP',
+    title_1: 'Van offerte tot',
+    title_2: 'doorlopend beheer',
+    subtitle: 'Van de eerste kennismaking tot doorlopend beheer nemen wij de volledige overstap uit handen — u hoeft er nauwelijks iets voor te doen. In zes stappen ziet dat er zo uit.',
+    stap: 'Stap',
     steps: [
-      { num: '01', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
-      { num: '02', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
-      { num: '03', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
-      { num: '04', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud — meteen inzichtelijk.' },
-      { num: '05', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
-      { num: '06', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
+      { when: 'Dag 1–2', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
+      { when: 'Week 1', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
+      { when: 'Week 1–6', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
+      { when: 'Week 6', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud meteen inzichtelijk.' },
+      { when: 'Week 7–8', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
+      { when: 'Doorlopend', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
     ],
+    reassure: [
+      { title: 'U doet vrijwel niets', desc: 'Wij coördineren de volledige overstap, inclusief opzegging bij uw huidige beheerder.' },
+      { title: 'Geen risico', desc: 'Vrijblijvend kennismaken. Pas bij akkoord starten we de overdracht.' },
+      { title: 'Vast aanspreekpunt', desc: 'Vanaf dag één weet u bij wie u terecht kunt — een beheerder die uw gebouw kent.' },
+    ],
+    cta_eyebrow: 'Vrijblijvende offerte',
+    cta_title: 'Klaar om de overstap te maken?',
+    cta_desc: 'Vraag een vrijblijvende offerte aan. Wij regelen daarna de volledige overdracht — u woont onbezorgd.',
+    cta_btn: 'Offerte aanvragen',
+    cta_list: ['Overstap in 6–8 weken', 'Wij zeggen op bij uw huidige beheerder', 'Geen risico, vrijblijvend'],
   },
   offerte_page: {
     eyebrow: 'Offerte aanvragen',
@@ -990,6 +1179,28 @@ function CountUp({ value, duration = 1800 }) {
   return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
 }
 
+function Reveal({ children, className = '', style = {}, as = 'div', onClick }) {
+  const ref = useRef(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { setShown(true); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } });
+    }, { threshold: 0.12 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const Tag = as;
+  return (
+    <Tag ref={ref} onClick={onClick} className={`reveal ${shown ? 'in' : ''} ${className}`} style={style}>
+      {children}
+    </Tag>
+  );
+}
+
 function PkgCheck({ value }) {
   if (value === true) return <I name="check-circle" size={18} weight="fill" style={{ color: 'var(--teal-700)' }} />;
   if (value === false) return <I name="minus-circle" size={18} weight="regular" style={{ color: 'var(--border)' }} />;
@@ -1198,138 +1409,65 @@ function CTABlock({ setPage, t, isRtl }) {
   );
 }
 
+/* Gedeeld CTA-blok voor Diensten & Werkwijze (nieuw ontwerp) */
+function DzCTA({ data, setPage }) {
+  return (
+    <Reveal className="dz-cta">
+      <div>
+        <span className="dz-eyebrow">{data.cta_eyebrow}</span>
+        <h2>{data.cta_title}</h2>
+        <p>{data.cta_desc}</p>
+        <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
+          {data.cta_btn} <I name="arrow-right" size={16} />
+        </button>
+      </div>
+      <div className="dz-cta-list">
+        {(data.cta_list || []).map(item => (
+          <div key={item}><I name="check-circle" size={20} weight="fill" /> {item}</div>
+        ))}
+      </div>
+    </Reveal>
+  );
+}
+
 /* ══════════════════════════════════════════════
    HOME PAGE
    ══════════════════════════════════════════════ */
 
 function HeroSection({ setPage, t, isRtl }) {
   const heroT = t('hero');
-  const heroStats = t('hero_stats');
-  const statIcons = ['hourglass-medium', 'buildings', 'users-three', 'lightning'];
+  const trust = heroT.trust || [];
+  const trustIcons = ['hourglass-medium', 'buildings', 'lightning'];
 
   return (
-    <section style={{
-      position: 'relative',
-      padding: 0,
-      background: 'var(--gray-bg)',
-      marginBottom: 0,
-    }}>
-      {/* Inner clipper: gradient + skyline get clipped here */}
-      <div className="hero-bg" style={{
-        position: 'relative',
-        overflow: 'hidden',
-        background: `
-          radial-gradient(ellipse 70% 80% at 80% 90%, rgba(13,115,119,0.22) 0%, rgba(13,115,119,0) 60%),
-          radial-gradient(ellipse 60% 50% at 15% 10%, rgba(244,239,229,0.9) 0%, rgba(244,239,229,0) 70%),
-          linear-gradient(120deg, #F6F2EA 0%, #E7EFEF 45%, #C5DBDC 100%)
-        `,
-      }}>
-        {/* Skyline image */}
-        <img
-          className="hero-skyline"
-          src={PHOTOS.skyline}
-          alt="Den Haag skyline"
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            width: 'min(62%, 880px)',
-            maxHeight: '94%',
-            objectFit: 'contain',
-            objectPosition: 'bottom right',
-            pointerEvents: 'none',
-            WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, black 32%, black 100%), linear-gradient(to right, transparent 0%, black 42%, black 100%)',
-            maskImage:
-              'linear-gradient(to bottom, transparent 0%, black 32%, black 100%), linear-gradient(to right, transparent 0%, black 42%, black 100%)',
-            WebkitMaskComposite: 'source-in',
-            maskComposite: 'intersect',
-            filter: 'drop-shadow(0 8px 16px rgba(43,53,68,0.10))',
-            zIndex: 1,
-          }}
-        />
-
-        <div className="container hero-content" style={{
-          position: 'relative',
-          padding: '96px 32px 140px',
-          minHeight: 640,
-          zIndex: 2,
-        }}>
-          <div style={{ maxWidth: 560 }}>
-            <h1 className="hero-h1" style={{
-              fontSize: 62, lineHeight: 1.04, fontWeight: 700,
-              letterSpacing: '-0.028em', margin: '0 0 24px',
-              textWrap: 'pretty', color: 'var(--navy)',
-            }}>
-              {heroT.title_1}{' '}
-              <span style={{
-                fontFamily: 'var(--font-serif)',
-                fontStyle: 'italic',
-                fontWeight: 500,
-                color: 'var(--teal-900)',
-              }}>
-                {heroT.title_2}
-              </span>
-            </h1>
-            <p className="hero-sub" style={{
-              fontSize: 18, lineHeight: 1.6, color: '#475569',
-              margin: '0 0 36px', maxWidth: 480,
-            }}>
-              {heroT.subtitle}
-            </p>
-            <div className="hero-buttons" style={{ display: 'flex', gap: 14 }}>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                {heroT.cta_primary} <I name="arrow-right" size={16} />
-              </button>
-              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
-                style={{
-                  background: 'rgba(255,255,255,0.55)',
-                  backdropFilter: 'blur(6px)',
-                  WebkitBackdropFilter: 'blur(6px)',
-                  borderColor: 'rgba(43,53,68,0.12)',
-                }}>
-                {heroT.cta_secondary}
-              </button>
+    <section className="dz-hero">
+      <div className="container">
+        <Reveal className="dz-panel">
+          <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
+          <div className="dz-panel-inner">
+            <div>
+              <span className="dz-pill"><I name="house-line" size={15} weight="fill" /> {heroT.pill}</span>
+              <h1 className="dz-h1">{heroT.title_1} <span>{heroT.title_2}</span></h1>
+              <p className="dz-lead">{heroT.subtitle}</p>
+              <div className="dz-ctas">
+                <button className="btn btn-primary btn-lg" onClick={() => setPage('diensten')}>
+                  {heroT.cta_primary} <I name="arrow-right" size={16} />
+                </button>
+                <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
+                  style={{ background: '#fff', borderColor: 'var(--border)' }}>
+                  {heroT.cta_secondary}
+                </button>
+              </div>
+              <div className="dz-trust">
+                {trust.map((label, i) => (
+                  <span key={label} className="dz-tchip">
+                    <I name={trustIcons[i] || 'check'} size={17} weight="duotone" /> {label}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Stats card — outside the clipper, inside the section */}
-      <div className="container hero-stats-wrapper" style={{ position: 'relative', zIndex: 3 }}>
-        <div className="hero-stats-bar" style={{
-          background: 'white',
-          borderRadius: 16,
-          boxShadow: '0 24px 56px -20px rgba(43,53,68,0.22)',
-          padding: '20px 8px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 0,
-          marginTop: -56,
-        }}>
-          {heroStats.map((s, i) => (
-            <div key={s.label} className="hero-stat-item" style={{
-              display: 'flex', alignItems: 'center', gap: 14,
-              padding: '8px 20px',
-              borderLeft: i === 0 ? 'none' : '1px solid var(--border)',
-            }}>
-              <div style={{
-                width: 44, height: 44, borderRadius: 10,
-                background: 'var(--teal-100)', color: 'var(--teal-900)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexShrink: 0,
-              }}>
-                <I name={statIcons[i]} size={22} weight="duotone" />
-              </div>
-              <div>
-                <div className="stat-num" style={{ fontSize: 26 }}>
-                  <CountUp value={s.num} />
-                </div>
-                <div className="stat-label" style={{ marginTop: 2 }}>{s.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -1531,78 +1669,87 @@ function HomePage({ setPage, t, isRtl }) {
    ══════════════════════════════════════════════ */
 function DienstenPage({ setPage, t, isRtl }) {
   const dp = t('diensten_page');
-  const pillars = t('pillars');
-  const pillarPhotos = [PHOTOS.documents, PHOTOS.lobby, PHOTOS.blueprint];
+  const rows = dp.rows || [];
+  const rowIcons = ['folders', 'chart-line-up', 'wrench'];
   return (
     <>
-      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
+      {/* Paginakop */}
+      <section style={{ paddingBottom: 'clamp(28px,3vw,44px)' }}>
         <div className="container">
-          <div className="section-eyebrow">{dp.eyebrow}</div>
-          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            {dp.title}
-          </h1>
-          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
-            {dp.subtitle}
-          </p>
+          <Reveal className="dz-head">
+            <span className="dz-eyebrow">{dp.eyebrow}</span>
+            <h2>{dp.title_1} <span>{dp.title_2}</span></h2>
+            <p>{dp.subtitle}</p>
+          </Reveal>
         </div>
       </section>
 
-      {pillars.map((p, idx) => (
-        <section key={p.title} style={{ padding: '80px 0' }}>
-          <div className="container">
-            <div className="diensten-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', direction: idx % 2 === 1 ? 'rtl' : 'ltr' }}>
+      {/* Drie dienst-detailrijen (alternerend) */}
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          {rows.map((r, idx) => (
+            <Reveal key={idx} className="dz-drow" style={{ direction: idx % 2 === 1 ? 'rtl' : 'ltr' }}>
               <div style={{ direction: 'ltr' }}>
-                <div style={{ width: 56, height: 56, borderRadius: 12, color: 'white', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, background: 'var(--teal-700)' }}>
-                  <I name={p.icon} size={28} weight="duotone" />
+                <div className="dz-dchip">
+                  <div className="ic"><I name={rowIcons[idx] || 'folders'} size={26} weight="duotone" /></div>
+                  <span className="nm">{dp.pillar_label} 0{idx + 1}</span>
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 6 }}>{dp.pillar_label} 0{idx + 1}</div>
-                <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px' }}>{p.title}</h2>
-                <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 28px', maxWidth: 480 }}>{p.desc}</p>
-                <ul style={{ margin: '0 0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                  {p.bullets.map(b => (
-                    <li key={b} style={{ fontSize: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <I name="check-circle" size={18} weight="fill" style={{ color: 'var(--teal-700)' }} /> {b}
-                    </li>
-                  ))}
-                </ul>
+                <h3>{r.title}</h3>
+                <p className="dz-intro">{r.intro}</p>
+                <div className="dz-result">
+                  <I name="seal-check" size={22} weight="fill" />
+                  <div><b>{dp.result_label}</b><span>{r.result}</span></div>
+                </div>
                 <button className="btn btn-secondary" onClick={() => setPage('offerte')}>
                   {dp.offerte_btn} <I name="arrow-right" size={14} />
                 </button>
               </div>
               <div style={{ direction: 'ltr' }}>
-                <Photo src={pillarPhotos[idx]} alt={p.title} style={{ width: '100%', aspectRatio: '5 / 4', borderRadius: 14 }} />
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      <section style={{ background: 'var(--navy)', color: 'white' }}>
-        <div className="container">
-          <div className="compleet-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 64, alignItems: 'center' }}>
-            <div>
-              <span className="pill pill-dark">{dp.compleet_pill}</span>
-              <h2 style={{ fontSize: 44, fontWeight: 700, letterSpacing: '-0.025em', margin: '20px 0 16px', color: 'white' }}>{dp.compleet_title}</h2>
-              <p style={{ fontSize: 17, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', margin: '0 0 28px', maxWidth: 460 }}>
-                {dp.compleet_desc}
-              </p>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                {dp.compleet_btn} <I name="arrow-right" size={16} />
-              </button>
-            </div>
-            <div className="compleet-features" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {dp.compleet_features.map(f => (
-                <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', background: 'rgba(255,255,255,0.05)', borderRadius: 10 }}>
-                  <I name="check" size={16} style={{ color: 'var(--teal-300)' }} />
-                  <span style={{ fontSize: 13.5 }}>{f}</span>
+                <div className="dz-checklist">
+                  <div className="dz-ch-head"><I name="list-checks" size={20} /> {dp.checklist_head}</div>
+                  <ul>
+                    {(r.bullets || []).map(b => (
+                      <li key={b}><I name="check-circle" size={22} weight="fill" /> {b}</li>
+                    ))}
+                  </ul>
+                  <div className="dz-ch-foot">
+                    <span className="tag"><I name="package" size={18} weight="duotone" /> {r.tag}</span>
+                    <a onClick={() => setPage('offerte')}>{dp.offerte_short} <I name="arrow-right" size={14} /></a>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
+      {/* Compleet-pakket */}
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <Reveal className="dz-compleet">
+            <div>
+              <span className="dz-pill dz-pill-dark"><I name="star" size={14} weight="fill" /> {dp.compleet_pill}</span>
+              <h2>{dp.compleet_title_1}<br />{dp.compleet_title_2}</h2>
+              <p>{dp.compleet_desc}</p>
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('werkwijze')}>
+                {dp.compleet_btn} <I name="arrow-right" size={16} />
+              </button>
+            </div>
+            <div className="grid2">
+              {(dp.compleet_features || []).map(f => (
+                <div key={f}><I name="check" size={16} /> {f}</div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <DzCTA data={dp} setPage={setPage} />
+        </div>
+      </section>
     </>
   );
 }
@@ -1862,35 +2009,93 @@ function OverOnsPage({ setPage, t, isRtl }) {
    ══════════════════════════════════════════════ */
 function WerkwijzePage({ setPage, t, isRtl }) {
   const wp = t('werkwijze_page');
+  const steps = wp.steps || [];
+  const reassure = wp.reassure || [];
+  const stepIcons = ['note-pencil', 'chats-circle', 'arrows-left-right', 'monitor', 'users-three', 'shield-check'];
+  const reassureIcons = ['hand-palm', 'lock-key', 'user-circle-check'];
+  const railRef = useRef(null);
+  const fillRef = useRef(null);
+  const stepRefs = useRef([]);
+
+  useEffect(() => {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      stepRefs.current.forEach(el => el && el.classList.add('on'));
+      if (fillRef.current) fillRef.current.style.height = '100%';
+      return;
+    }
+    const onScroll = () => {
+      const vh = window.innerHeight;
+      stepRefs.current.forEach(el => {
+        if (el) el.classList.toggle('on', el.getBoundingClientRect().top < vh * 0.55);
+      });
+      const rail = railRef.current, fill = fillRef.current;
+      if (rail && fill) {
+        const r = rail.getBoundingClientRect();
+        const p = (vh * 0.5 - r.top) / (r.height || 1);
+        fill.style.height = Math.max(0, Math.min(1, p)) * 100 + '%';
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [steps.length]);
+
   return (
     <>
-      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
+      {/* Paginakop (gecentreerd) */}
+      <section style={{ paddingBottom: 'clamp(28px,3vw,48px)' }}>
         <div className="container">
-          <div className="section-eyebrow">{wp.eyebrow}</div>
-          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            {wp.title}
-          </h1>
-          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, lineHeight: 1.55 }}>
-            {wp.subtitle}
-          </p>
+          <Reveal className="dz-head center">
+            <span className="dz-eyebrow">{wp.eyebrow}</span>
+            <h2>{wp.title_1} <span>{wp.title_2}</span></h2>
+            <p>{wp.subtitle}</p>
+          </Reveal>
         </div>
       </section>
 
-      <section>
+      {/* Verticale tijdlijn + reassure */}
+      <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="werkwijze-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 32 }}>
-            {wp.steps.map(s => (
-              <div key={s.num} style={{ padding: 32, borderTop: '2px solid var(--navy)' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.05em', color: 'var(--teal-700)' }}>{wp.stap} {s.num}</div>
-                <h3 style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.01em', margin: '12px 0 12px' }}>{s.title}</h3>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{s.desc}</p>
+          <div className="dz-tl">
+            <div className="dz-rail" ref={railRef}><div className="dz-rail-fill" ref={fillRef} /></div>
+            {steps.map((s, idx) => (
+              <div key={idx} className="dz-tstep" ref={el => { stepRefs.current[idx] = el; }}>
+                <div className="dz-tnode"><I name={stepIcons[idx] || 'check'} size={24} weight="duotone" /></div>
+                <div className="dz-tcard">
+                  <div className="dz-tmeta">
+                    <span className="dz-tnum">{wp.stap} 0{idx + 1}</span>
+                    <span className="dz-twhen">{s.when}</span>
+                  </div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div className="dz-reassure">
+            {reassure.map((r, idx) => (
+              <Reveal key={idx}>
+                <I name={reassureIcons[idx] || 'check'} size={27} weight="duotone" />
+                <b>{r.title}</b>
+                <p>{r.desc}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
+      {/* CTA */}
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <DzCTA data={wp} setPage={setPage} />
+        </div>
+      </section>
     </>
   );
 }

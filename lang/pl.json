@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "pl", "dir": "ltr", "label": "Polski" },
+  "meta": {
+    "lang": "pl",
+    "dir": "ltr",
+    "label": "Polski"
+  },
   "nav": {
     "home": "Strona główna",
     "diensten": "Usługi",
@@ -14,17 +18,39 @@
     "menu_close": "Zamknij menu"
   },
   "hero": {
+    "pill": "Zarządzanie VvE · Haga i Holandia Południowa",
     "title_1": "Razem dbamy o",
     "title_2": "beztroski komfort mieszkania.",
-    "subtitle": "Specjalista w zarządzaniu VvE w Hadze i całej Holandii Południowej. Jeden stały opiekun, pełna przejrzystość dzięki własnemu portalowi klienta — my się zajmujemy, Państwo mieszkają bez trosk.",
-    "cta_primary": "Bezpłatna wycena",
-    "cta_secondary": "Nasza metoda pracy"
+    "subtitle": "Jeden stały opiekun, pełna przejrzystość dzięki własnemu portalowi klienta. Zajmujemy się zarządzaniem administracyjnym, finansowym i technicznym — Państwo mieszkają bez trosk.",
+    "cta_primary": "Zobacz nasze usługi",
+    "cta_secondary": "Nasza metoda pracy",
+    "trust": [
+      "17+ lat doświadczenia",
+      "500+ VvE",
+      "Odpowiedź < 24 godz."
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "Lat doświadczenia w zarządzaniu VvE" },
-    { "icon": "buildings", "num": "500+", "label": "VvE pod naszym zarządem" },
-    { "icon": "users", "num": "12.000+", "label": "Obsłużonych właścicieli" },
-    { "icon": "lightning", "num": "< 24u", "label": "Średni czas reakcji" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "Lat doświadczenia w zarządzaniu VvE"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "VvE pod naszym zarządem"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "Obsłużonych właścicieli"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "Średni czas reakcji"
+    }
   ],
   "pillars_section": {
     "eyebrow": "Nasze usługi",
@@ -33,9 +59,39 @@
     "read_more": "Czytaj więcej"
   },
   "pillars": [
-    { "icon": "folders", "title": "Zarządzanie administracyjne", "desc": "Organizacja ALV, administracja członków, protokoły i przejrzysta korespondencja.", "bullets": ["Organizacja ALV i protokoły", "Administracja członków", "Poczta i korespondencja", "Zarządzanie aktem podziału"] },
-    { "icon": "chart-line-up", "title": "Zarządzanie finansowe", "desc": "Księgowość, budżet, fundusz rezerwowy i sprawozdanie roczne — zawsze przejrzyste.", "bullets": ["Księgowość i sprawozdanie roczne", "Budżet i składka VvE", "Zarządzanie funduszem rezerwowym", "Windykacja i dłużnicy"] },
-    { "icon": "wrench", "title": "Zarządzanie techniczne", "desc": "Konserwacja, MJOP, oferty i inspekcje — proaktywnie i dobrze wynegocjowane.", "bullets": ["Wieloletni plan konserwacji", "Oferty i przetargi", "Zgłoszenia szkód 24/7", "Inspekcje i odbiory"] }
+    {
+      "icon": "folders",
+      "title": "Zarządzanie administracyjne",
+      "desc": "Organizacja ALV, administracja członków, protokoły i przejrzysta korespondencja.",
+      "bullets": [
+        "Organizacja ALV i protokoły",
+        "Administracja członków",
+        "Poczta i korespondencja",
+        "Zarządzanie aktem podziału"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "Zarządzanie finansowe",
+      "desc": "Księgowość, budżet, fundusz rezerwowy i sprawozdanie roczne — zawsze przejrzyste.",
+      "bullets": [
+        "Księgowość i sprawozdanie roczne",
+        "Budżet i składka VvE",
+        "Zarządzanie funduszem rezerwowym",
+        "Windykacja i dłużnicy"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Zarządzanie techniczne",
+      "desc": "Konserwacja, MJOP, oferty i inspekcje — proaktywnie i dobrze wynegocjowane.",
+      "bullets": [
+        "Wieloletni plan konserwacji",
+        "Oferty i przetargi",
+        "Zgłoszenia szkód 24/7",
+        "Inspekcje i odbiory"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "Co nas wyróżnia",
@@ -43,27 +99,73 @@
     "subtitle": "Zarządzanie VvE opiera się na przejrzystości i dostępności. Wokół tego zbudowaliśmy naszą metodę pracy."
   },
   "diff_items": [
-    { "icon": "monitor", "title": "Własny portal klienta", "desc": "Wszystkie dokumenty, finanse i konserwacja — dostępne 24/7 dla każdego właściciela." },
-    { "icon": "user-circle-check", "title": "Stały opiekun", "desc": "Jeden zarządca, który zna Państwa budynek, mieszkańców i historię. Bez zmieniających się osób kontaktowych." },
-    { "icon": "clock-clockwise", "title": "Szybki czas reakcji", "desc": "Odpowiedź na Państwa zapytanie w ciągu 24 godzin, pilne zgłoszenia szkód natychmiast." },
-    { "icon": "package", "title": "Pakiet kompleksowy", "desc": "Pełna obsługa w jednej stałej cenie miesięcznej. Bez niespodzianek w końcowym rozliczeniu." }
+    {
+      "icon": "monitor",
+      "title": "Własny portal klienta",
+      "desc": "Wszystkie dokumenty, finanse i konserwacja — dostępne 24/7 dla każdego właściciela."
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "Stały opiekun",
+      "desc": "Jeden zarządca, który zna Państwa budynek, mieszkańców i historię. Bez zmieniających się osób kontaktowych."
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "Szybki czas reakcji",
+      "desc": "Odpowiedź na Państwa zapytanie w ciągu 24 godzin, pilne zgłoszenia szkód natychmiast."
+    },
+    {
+      "icon": "package",
+      "title": "Pakiet kompleksowy",
+      "desc": "Pełna obsługa w jednej stałej cenie miesięcznej. Bez niespodzianek w końcowym rozliczeniu."
+    }
   ],
-  "diff_floating": { "title": "MJOP zaktualizowany", "time": "2 minuty temu" },
+  "diff_floating": {
+    "title": "MJOP zaktualizowany",
+    "time": "2 minuty temu"
+  },
   "testimonials_section": {
     "eyebrow": "Opinie klientów",
     "title": "Co mówią nasi klienci",
     "trust_label": "Członkostwa i certyfikaty"
   },
   "testimonials": [
-    { "quote": "Wreszcie zarządca, który naprawdę reaguje. Odpowiedź w ciągu jednego dnia, a sprawozdanie roczne było po raz pierwszy od lat na czas.", "name": "Marieke van der Berg", "role": "Przewodnicząca VvE Parklaan", "location": "Haga — 24 mieszkania" },
-    { "quote": "Przejście od naszego poprzedniego zarządcy przebiegło zaskakująco sprawnie. Portal klienta daje nam prawdziwy spokój: wszystko jest tam, zawsze dostępne.", "name": "Joris Hendriks", "role": "Skarbnik VvE De Linden", "location": "Wateringen — 18 mieszkań" },
-    { "quote": "To, co nas przekonało, to osobiste podejście. Mamy jednego stałego opiekuna, który naprawdę zna nasz budynek. To robi ogromną różnicę.", "name": "Saskia Bouman", "role": "Przewodnicząca VvE Westpoort", "location": "Rotterdam — 42 mieszkania" }
+    {
+      "quote": "Wreszcie zarządca, który naprawdę reaguje. Odpowiedź w ciągu jednego dnia, a sprawozdanie roczne było po raz pierwszy od lat na czas.",
+      "name": "Marieke van der Berg",
+      "role": "Przewodnicząca VvE Parklaan",
+      "location": "Haga — 24 mieszkania"
+    },
+    {
+      "quote": "Przejście od naszego poprzedniego zarządcy przebiegło zaskakująco sprawnie. Portal klienta daje nam prawdziwy spokój: wszystko jest tam, zawsze dostępne.",
+      "name": "Joris Hendriks",
+      "role": "Skarbnik VvE De Linden",
+      "location": "Wateringen — 18 mieszkań"
+    },
+    {
+      "quote": "To, co nas przekonało, to osobiste podejście. Mamy jednego stałego opiekuna, który naprawdę zna nasz budynek. To robi ogromną różnicę.",
+      "name": "Saskia Bouman",
+      "role": "Przewodnicząca VvE Westpoort",
+      "location": "Rotterdam — 42 mieszkania"
+    }
   ],
   "trust_badges": [
-    { "label": "17+ lat doświadczenia", "icon": "calendar-check" },
-    { "label": "Stowarzyszenie branżowe VGM NL", "icon": "medal" },
-    { "label": "Certyfikat NEN-EN ISO 9001", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17+ lat doświadczenia",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "Stowarzyszenie branżowe VGM NL",
+      "icon": "medal"
+    },
+    {
+      "label": "Certyfikat NEN-EN ISO 9001",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "Najczęściej zadawane pytania",
@@ -71,11 +173,26 @@
     "subtitle": "Nie znaleźli Państwo swojego pytania? Zadzwońcie do nas lub umówcie się na niezobowiązującą rozmowę zapoznawczą."
   },
   "faq": [
-    { "q": "Jak długo trwa przejście do VvE Beheer Collectief?", "a": "Pełne przejście organizujemy zazwyczaj w ciągu 6 do 8 tygodni. Przejmujemy całość transferu administracyjnego — od wypowiedzenia obecnemu zarządcy po uruchomienie Państwa portalu klienta." },
-    { "q": "Co dokładnie obejmuje pakiet Kompleksowy?", "a": "Pakiet Kompleksowy łączy zarządzanie administracyjne, finansowe i techniczne w jednej stałej cenie miesięcznej. Obejmuje organizację ALV, sprawozdanie roczne, konserwację MJOP, zgłaszanie szkód 24/7 i stałego opiekuna." },
-    { "q": "Czy mamy jednego stałego opiekuna?", "a": "Tak. Każdemu VvE przydzielany jest stały zarządca, który zna Państwa budynek, mieszkańców i historię. W przypadku nieobecności zawsze jest zastępca zaznajomiony z Państwa aktami." },
-    { "q": "Jak przejrzysty jest portal klienta?", "a": "Całkowicie. Wszyscy właściciele widzą swoją pozycję finansową, wszystkie dokumenty ze zgromadzeń, MJOP, otwarte punkty konserwacji oraz przepływy pieniężne VvE — dostępne 24/7, bez konieczności kontaktowania się z nami." },
-    { "q": "Czy oferujecie również zarządzanie prawne?", "a": "Nie. W sprawach prawnych współpracujemy z wyspecjalizowanymi prawnikami VvE, których chętnie Państwu przedstawimy. Dzięki temu mają Państwo jednego opiekuna do koordynacji, a jednocześnie otrzymują prawdziwą specjalistyczną wiedzę w zakresie pracy prawnej." }
+    {
+      "q": "Jak długo trwa przejście do VvE Beheer Collectief?",
+      "a": "Pełne przejście organizujemy zazwyczaj w ciągu 6 do 8 tygodni. Przejmujemy całość transferu administracyjnego — od wypowiedzenia obecnemu zarządcy po uruchomienie Państwa portalu klienta."
+    },
+    {
+      "q": "Co dokładnie obejmuje pakiet Kompleksowy?",
+      "a": "Pakiet Kompleksowy łączy zarządzanie administracyjne, finansowe i techniczne w jednej stałej cenie miesięcznej. Obejmuje organizację ALV, sprawozdanie roczne, konserwację MJOP, zgłaszanie szkód 24/7 i stałego opiekuna."
+    },
+    {
+      "q": "Czy mamy jednego stałego opiekuna?",
+      "a": "Tak. Każdemu VvE przydzielany jest stały zarządca, który zna Państwa budynek, mieszkańców i historię. W przypadku nieobecności zawsze jest zastępca zaznajomiony z Państwa aktami."
+    },
+    {
+      "q": "Jak przejrzysty jest portal klienta?",
+      "a": "Całkowicie. Wszyscy właściciele widzą swoją pozycję finansową, wszystkie dokumenty ze zgromadzeń, MJOP, otwarte punkty konserwacji oraz przepływy pieniężne VvE — dostępne 24/7, bez konieczności kontaktowania się z nami."
+    },
+    {
+      "q": "Czy oferujecie również zarządzanie prawne?",
+      "a": "Nie. W sprawach prawnych współpracujemy z wyspecjalizowanymi prawnikami VvE, których chętnie Państwu przedstawimy. Dzięki temu mają Państwo jednego opiekuna do koordynacji, a jednocześnie otrzymują prawdziwą specjalistyczną wiedzę w zakresie pracy prawnej."
+    }
   ],
   "cta": {
     "eyebrow": "Bezpłatna wycena",
@@ -84,25 +201,103 @@
     "subtitle": "Poproś o niezobowiązującą wycenę dostosowaną do Państwa VvE. Odpowiedź otrzymają Państwo w ciągu 2 dni roboczych.",
     "btn_primary": "Poproś o wycenę",
     "btn_secondary": "Zadzwoń do nas bezpośrednio",
-    "usps": ["Niezobowiązująco i bezpłatnie", "Odpowiedź w ciągu 2 dni roboczych", "W pełni dostosowane do Państwa VvE", "Bez zobowiązań"]
+    "usps": [
+      "Niezobowiązująco i bezpłatnie",
+      "Odpowiedź w ciągu 2 dni roboczych",
+      "W pełni dostosowane do Państwa VvE",
+      "Bez zobowiązań"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "Lat doświadczenia w zarządzaniu VvE" },
-    { "num": "500+", "label": "VvE pod naszym zarządem" },
-    { "num": "12.000+", "label": "Obsłużonych właścicieli" },
-    { "num": "< 24u", "label": "Średni czas reakcji" }
+    {
+      "num": "17+",
+      "label": "Lat doświadczenia w zarządzaniu VvE"
+    },
+    {
+      "num": "500+",
+      "label": "VvE pod naszym zarządem"
+    },
+    {
+      "num": "12.000+",
+      "label": "Obsłużonych właścicieli"
+    },
+    {
+      "num": "< 24u",
+      "label": "Średni czas reakcji"
+    }
   ],
   "diensten_page": {
     "eyebrow": "Nasze usługi",
-    "title": "Zarządzanie VvE dopasowane do Państwa potrzeb",
-    "subtitle": "Wybierz pojedyncze usługi lub pakiet Kompleksowy — pełna obsługa w jednej stałej cenie miesięcznej.",
-    "pillar_label": "FILAR",
+    "title_1": "Zarządzanie VvE dopasowane do",
+    "title_2": "Państwa potrzeb",
+    "subtitle": "Trzy filary — administracyjny, finansowy i techniczny — pod jednym dachem i z jednym stałym opiekunem. Wybierz pojedyncze usługi lub pozwól nam przejąć wszystko.",
+    "pillar_label": "Filar",
+    "result_label": "Rezultat",
+    "checklist_head": "Czym się dla Państwa zajmujemy",
     "offerte_btn": "Poproś o wycenę",
+    "offerte_short": "Wycena",
+    "rows": [
+      {
+        "title": "Państwa administracja uporządkowana i łatwo dostępna",
+        "intro": "Prowadzimy pełną administrację Państwa VvE — od rejestru członków i korespondencji po organizację i protokołowanie ALV. Wszystko zapisane centralnie i od razu do odnalezienia.",
+        "result": "VvE w pełni uporządkowane administracyjnie, bez konieczności zajmowania się tym przez zarząd.",
+        "bullets": [
+          "Organizacja ALV i protokoły",
+          "Administracja członków i rejestr",
+          "Poczta i korespondencja",
+          "Akt podziału i regulaminy"
+        ],
+        "tag": "Wliczone w każdy pakiet"
+      },
+      {
+        "title": "Wgląd w finanse, żadnych niespodzianek",
+        "intro": "Od księgowości i windykacji po budżet, fundusz rezerwowy i sprawozdanie roczne. Utrzymujemy aktualne liczby i czuwamy nad kondycją Państwa funduszu rezerwowego.",
+        "result": "W każdej chwili wgląd w sytuację finansową — i sprawozdanie roczne gotowe na czas.",
+        "bullets": [
+          "Księgowość i sprawozdanie roczne",
+          "Budżet i składka VvE",
+          "Zarządzanie funduszem rezerwowym",
+          "Windykacja i zarządzanie dłużnikami"
+        ],
+        "tag": "Wliczone w każdy pakiet"
+      },
+      {
+        "title": "Konserwacja, która wyprzedza problemy",
+        "intro": "Opracowujemy MJOP i utrzymujemy go aktualnym, zbieramy oferty i twardo negocjujemy oraz koordynujemy konserwację i szkody — w nagłych przypadkach reagujemy natychmiast.",
+        "result": "Dobrze utrzymana nieruchomość, korzystnie zakupione oferty i faktury, które się zgadzają.",
+        "bullets": [
+          "Wieloletni plan konserwacji (MJOP)",
+          "Oferty i przetargi",
+          "Zgłoszenia szkód 24/7",
+          "Inspekcje i odbiory"
+        ],
+        "tag": "Wliczone w pakiet Kompleksowy"
+      }
+    ],
     "compleet_pill": "Najczęściej wybierany",
-    "compleet_title": "Pakiet Kompleksowy",
-    "compleet_desc": "Pełna obsługa — zarządzanie administracyjne, finansowe i techniczne w jednej stałej cenie miesięcznej. Bez niespodzianek, bez dodatkowych faktur.",
-    "compleet_btn": "Wycena pakietu Kompleksowego",
-    "compleet_features": ["Cała administracja", "Pełna księgowość", "Konserwacja MJOP", "Organizacja ALV", "Stały opiekun", "Portal klienta", "Zgłoszenia szkód 24/7", "Sprawozdanie roczne na czas"]
+    "compleet_title_1": "Wszystko w jednych rękach:",
+    "compleet_title_2": "pakiet Kompleksowy",
+    "compleet_desc": "Połącz wszystkie trzy filary w jednej stałej cenie miesięcznej. Pełna obsługa — bez niespodzianek, bez faktur za dodatkowe prace.",
+    "compleet_btn": "Tak przebiega przejście",
+    "compleet_features": [
+      "Cała administracja i ALV",
+      "Pełna księgowość",
+      "Sprawozdanie roczne na czas",
+      "MJOP i konserwacja",
+      "Zgłoszenia szkód 24/7",
+      "Własny portal klienta",
+      "Jeden stały opiekun",
+      "Korzystne oferty"
+    ],
+    "cta_eyebrow": "Niezobowiązująca wycena",
+    "cta_title": "Ciekawi, co to oznacza dla Państwa VvE?",
+    "cta_desc": "Poproś o niezobowiązującą wycenę na miarę. Odpowiedź od stałego zarządcy otrzymają Państwo w ciągu 2 dni roboczych.",
+    "cta_btn": "Poproś o wycenę",
+    "cta_list": [
+      "Niezobowiązująco i bezpłatnie",
+      "Odpowiedź w ciągu 2 dni roboczych",
+      "W pełni dopasowane do Państwa VvE"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "Nasze pakiety",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "Kompleksowy",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "Podstawowe zarządzanie administracyjne i finansowe dla VvE, które chcą dobrze uregulować podstawy.", "price": "92,95", "features": [{"label":"Organizacja ALV","active":true},{"label":"Administracja członków","active":true},{"label":"Księgowość i rozliczenie roczne","active":true},{"label":"Inkaso składek VvE","active":true},{"label":"Obsługa płatności","active":true},{"label":"Zarządzanie techniczne","active":false},{"label":"Konserwacja MJOP","active":false},{"label":"Serwis awaryjny","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Rozszerzone zarządzanie administracyjne, finansowe i podstawowe techniczne pod jednym dachem.", "price": "147,95", "features": [{"label":"Organizacja ALV i protokoły","active":true},{"label":"Administracja członków","active":true},{"label":"Pełna księgowość","active":true},{"label":"Zarządzanie funduszem rezerwowym","active":true},{"label":"Zarządzanie ubezpieczeniami","active":true},{"label":"Koordynacja drobnych napraw","active":true},{"label":"Zgłoszenia szkód","active":true},{"label":"Planowa konserwacja","active":false}] },
-      { "id": "compleet", "name": "Kompleksowy", "tagline": "Pełna obsługa — administracyjna, finansowa i techniczna w jednej stałej cenie.", "price": null, "features": [{"label":"Wszystko z pakietu Start Plus","active":true},{"label":"Posiedzenia zarządu bez ograniczeń","active":true},{"label":"Koordynacja prawna","active":true},{"label":"Zarządzanie dłużnikami i upomnienia","active":true},{"label":"MJOP i planowa konserwacja","active":true},{"label":"Serwis awaryjny 24/7","active":true},{"label":"Roczna inspekcja","active":true},{"label":"Doradztwo w zakresie zrównoważonego rozwoju","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "Podstawowe zarządzanie administracyjne i finansowe dla VvE, które chcą dobrze uregulować podstawy.",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "Organizacja ALV",
+            "active": true
+          },
+          {
+            "label": "Administracja członków",
+            "active": true
+          },
+          {
+            "label": "Księgowość i rozliczenie roczne",
+            "active": true
+          },
+          {
+            "label": "Inkaso składek VvE",
+            "active": true
+          },
+          {
+            "label": "Obsługa płatności",
+            "active": true
+          },
+          {
+            "label": "Zarządzanie techniczne",
+            "active": false
+          },
+          {
+            "label": "Konserwacja MJOP",
+            "active": false
+          },
+          {
+            "label": "Serwis awaryjny",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "Rozszerzone zarządzanie administracyjne, finansowe i podstawowe techniczne pod jednym dachem.",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "Organizacja ALV i protokoły",
+            "active": true
+          },
+          {
+            "label": "Administracja członków",
+            "active": true
+          },
+          {
+            "label": "Pełna księgowość",
+            "active": true
+          },
+          {
+            "label": "Zarządzanie funduszem rezerwowym",
+            "active": true
+          },
+          {
+            "label": "Zarządzanie ubezpieczeniami",
+            "active": true
+          },
+          {
+            "label": "Koordynacja drobnych napraw",
+            "active": true
+          },
+          {
+            "label": "Zgłoszenia szkód",
+            "active": true
+          },
+          {
+            "label": "Planowa konserwacja",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "Kompleksowy",
+        "tagline": "Pełna obsługa — administracyjna, finansowa i techniczna w jednej stałej cenie.",
+        "price": null,
+        "features": [
+          {
+            "label": "Wszystko z pakietu Start Plus",
+            "active": true
+          },
+          {
+            "label": "Posiedzenia zarządu bez ograniczeń",
+            "active": true
+          },
+          {
+            "label": "Koordynacja prawna",
+            "active": true
+          },
+          {
+            "label": "Zarządzanie dłużnikami i upomnienia",
+            "active": true
+          },
+          {
+            "label": "MJOP i planowa konserwacja",
+            "active": true
+          },
+          {
+            "label": "Serwis awaryjny 24/7",
+            "active": true
+          },
+          {
+            "label": "Roczna inspekcja",
+            "active": true
+          },
+          {
+            "label": "Doradztwo w zakresie zrównoważonego rozwoju",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"Sprawy zarządu","rows":[{"label":"Przygotowanie i udział w ALV","start":true,"startPlus":true,"compleet":true},{"label":"Protokołowanie ALV","start":false,"startPlus":true,"compleet":true},{"label":"Udział w posiedzeniach zarządu","start":false,"startPlus":"1× r/r","compleet":"Bez ograniczeń"},{"label":"Opracowanie regulaminu","start":false,"startPlus":false,"compleet":true},{"label":"Mediacja w sporach","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Sekretariat","rows":[{"label":"Administracja członków","start":true,"startPlus":true,"compleet":true},{"label":"Korespondencja z mieszkańcami","start":true,"startPlus":true,"compleet":true},{"label":"Rejestracja w KvK","start":true,"startPlus":true,"compleet":true},{"label":"Zarządzanie aktem podziału","start":false,"startPlus":true,"compleet":true},{"label":"Zarządzanie ubezpieczeniami","start":false,"startPlus":true,"compleet":true},{"label":"Koordynacja prawna","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Finansowe","rows":[{"label":"Księgowość i rozliczenie roczne","start":true,"startPlus":true,"compleet":true},{"label":"Opracowanie budżetu","start":true,"startPlus":true,"compleet":true},{"label":"Inkaso składek VvE","start":true,"startPlus":true,"compleet":true},{"label":"Obsługa płatności","start":true,"startPlus":true,"compleet":true},{"label":"Zarządzanie funduszem rezerwowym","start":false,"startPlus":true,"compleet":true},{"label":"Budżet wieloletni","start":false,"startPlus":true,"compleet":true},{"label":"Zarządzanie dłużnikami i upomnienia","start":false,"startPlus":false,"compleet":true},{"label":"Deklaracje podatkowe","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Bieżąca konserwacja techniczna","rows":[{"label":"Koordynacja drobnych napraw","start":false,"startPlus":true,"compleet":true},{"label":"Obsługa zgłoszeń szkód","start":false,"startPlus":true,"compleet":true},{"label":"Zarządzanie kluczami","start":false,"startPlus":true,"compleet":true},{"label":"Zapytania ofertowe dotyczące konserwacji","start":false,"startPlus":false,"compleet":true},{"label":"Serwis awaryjny 24/7","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Planowa konserwacja techniczna","rows":[{"label":"Wieloletni plan konserwacji (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Roczna inspekcja","start":false,"startPlus":false,"compleet":true},{"label":"Nadzór nad dużymi naprawami","start":false,"startPlus":false,"compleet":true},{"label":"Przetarg na konserwację","start":false,"startPlus":false,"compleet":true},{"label":"Nadzór nad wykonaniem","start":false,"startPlus":false,"compleet":true},{"label":"Odbiór i obsługa pogwarancyjna","start":false,"startPlus":false,"compleet":true},{"label":"Doradztwo w zakresie zrównoważonego rozwoju","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "Sprawy zarządu",
+        "rows": [
+          {
+            "label": "Przygotowanie i udział w ALV",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Protokołowanie ALV",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Udział w posiedzeniach zarządu",
+            "start": false,
+            "startPlus": "1× r/r",
+            "compleet": "Bez ograniczeń"
+          },
+          {
+            "label": "Opracowanie regulaminu",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Mediacja w sporach",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Sekretariat",
+        "rows": [
+          {
+            "label": "Administracja członków",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Korespondencja z mieszkańcami",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Rejestracja w KvK",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zarządzanie aktem podziału",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zarządzanie ubezpieczeniami",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Koordynacja prawna",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Finansowe",
+        "rows": [
+          {
+            "label": "Księgowość i rozliczenie roczne",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Opracowanie budżetu",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Inkaso składek VvE",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Obsługa płatności",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zarządzanie funduszem rezerwowym",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Budżet wieloletni",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zarządzanie dłużnikami i upomnienia",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Deklaracje podatkowe",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Bieżąca konserwacja techniczna",
+        "rows": [
+          {
+            "label": "Koordynacja drobnych napraw",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Obsługa zgłoszeń szkód",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zarządzanie kluczami",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zapytania ofertowe dotyczące konserwacji",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Serwis awaryjny 24/7",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Planowa konserwacja techniczna",
+        "rows": [
+          {
+            "label": "Wieloletni plan konserwacji (MJOP)",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Roczna inspekcja",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Nadzór nad dużymi naprawami",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Przetarg na konserwację",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Nadzór nad wykonaniem",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Odbiór i obsługa pogwarancyjna",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Doradztwo w zakresie zrównoważonego rozwoju",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "Pomoc w wyborze",
     "hulp_title": "Który pakiet pasuje do naszego VvE?",
     "hulp_subtitle": "Właściwy wybór zależy od wielkości Państwa VvE, aktualnej sytuacji i Państwa potrzeb. Chętnie doradzimy — niezobowiązująco.",
     "hulp_btn": "Poproś o wycenę",
     "hulp_cards": [
-      {"icon":"users-three","title":"Małe VvE (< 12)","desc":"Start lub Start Plus jest zazwyczaj wystarczający dla mniejszych kompleksów."},
-      {"icon":"buildings","title":"Średnie VvE","desc":"Start Plus oferuje odpowiednią równowagę między samodzielnością a pełną obsługą."},
-      {"icon":"buildings","title":"Duże VvE (> 40)","desc":"Pakiet Kompleksowy zapobiega konieczności samodzielnego organizowania zarządzania technicznego."},
-      {"icon":"wrench","title":"Zaległości konserwacyjne","desc":"W przypadku zaległości konserwacyjnych zalecamy pakiet Kompleksowy z podejściem MJOP."}
+      {
+        "icon": "users-three",
+        "title": "Małe VvE (< 12)",
+        "desc": "Start lub Start Plus jest zazwyczaj wystarczający dla mniejszych kompleksów."
+      },
+      {
+        "icon": "buildings",
+        "title": "Średnie VvE",
+        "desc": "Start Plus oferuje odpowiednią równowagę między samodzielnością a pełną obsługą."
+      },
+      {
+        "icon": "buildings",
+        "title": "Duże VvE (> 40)",
+        "desc": "Pakiet Kompleksowy zapobiega konieczności samodzielnego organizowania zarządzania technicznego."
+      },
+      {
+        "icon": "wrench",
+        "title": "Zaległości konserwacyjne",
+        "desc": "W przypadku zaległości konserwacyjnych zalecamy pakiet Kompleksowy z podejściem MJOP."
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "Ludzie stojący za Państwa VvE",
     "team_subtitle": "Mały zespół doświadczonych specjalistów. Każdemu VvE przydzielany jest jeden stały zarządca.",
     "team": [
-      {"name":"Mark de Vries","role":"Założyciel i zarządca"},
-      {"name":"Linda Janssen","role":"Starszy zarządca VvE"},
-      {"name":"Tim Bakker","role":"Zarządca techniczny"},
-      {"name":"Eva van Loon","role":"Zarządca finansowy"}
+      {
+        "name": "Mark de Vries",
+        "role": "Założyciel i zarządca"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "Starszy zarządca VvE"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "Zarządca techniczny"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "Zarządca finansowy"
+      }
     ],
     "missie_eyebrow": "Nasza misja",
     "missie_quote": "Zarządzanie VvE, które odciąża zamiast komplikować.",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "Metoda pracy",
-    "title": "Od wyceny do bieżącego zarządzania",
-    "subtitle": "Pełne przejście organizujemy zazwyczaj w ciągu 6 do 8 tygodni. Tak to wygląda:",
-    "stap": "KROK",
+    "title_1": "Od wyceny do",
+    "title_2": "bieżącego zarządzania",
+    "subtitle": "Od pierwszego kontaktu po bieżące zarządzanie przejmujemy całe przejście — Państwo nie muszą prawie nic robić. W sześciu krokach wygląda to tak.",
+    "stap": "Krok",
     "steps": [
-      {"num":"01","title":"Niezobowiązująca wycena","desc":"Wypełniają Państwo formularz wyceny lub dzwonią do nas. W ciągu 2 dni roboczych otrzymają Państwo wycenę dostosowaną do Państwa VvE."},
-      {"num":"02","title":"Spotkanie zapoznawcze","desc":"Odwiedzamy Państwa VvE, przeglądamy akt podziału i MJOP oraz omawiamy Państwa potrzeby i obawy."},
-      {"num":"03","title":"Bezproblemowe przejście","desc":"Organizujemy kompletny transfer od Państwa obecnego zarządcy — wypowiedzenie, dokumenty, finanse. Nie muszą Państwo nic robić."},
-      {"num":"04","title":"Uruchomienie portalu klienta","desc":"Wszyscy właściciele otrzymują dostęp do własnego portalu klienta. Wszystkie dokumenty, finanse i konserwacja — natychmiast dostępne."},
-      {"num":"05","title":"Pierwsze ALV","desc":"Organizujemy Państwa pierwsze ALV pod naszym zarządem i przedstawiamy Państwu stałą osobę kontaktową."},
-      {"num":"06","title":"Bieżące zarządzanie","desc":"Od tego momentu zajmujemy się wszystkim. Państwo zachowują kontrolę poprzez portal i otrzymują proaktywne aktualizacje."}
+      {
+        "when": "Dzień 1–2",
+        "title": "Niezobowiązująca wycena",
+        "desc": "Wypełniają Państwo formularz wyceny lub dzwonią do nas. W ciągu 2 dni roboczych otrzymają Państwo wycenę dostosowaną do Państwa VvE."
+      },
+      {
+        "when": "Tydzień 1",
+        "title": "Spotkanie zapoznawcze",
+        "desc": "Odwiedzamy Państwa VvE, przeglądamy akt podziału i MJOP oraz omawiamy Państwa potrzeby i obawy."
+      },
+      {
+        "when": "Tydzień 1–6",
+        "title": "Przejście bez kłopotów",
+        "desc": "Organizujemy kompletny transfer od Państwa obecnego zarządcy — wypowiedzenie, dokumenty, finanse. Nie muszą Państwo nic robić."
+      },
+      {
+        "when": "Tydzień 6",
+        "title": "Uruchomienie portalu klienta",
+        "desc": "Wszyscy właściciele otrzymują dostęp do własnego portalu klienta. Wszystkie dokumenty, finanse i konserwacja od razu dostępne."
+      },
+      {
+        "when": "Tydzień 7–8",
+        "title": "Pierwsze ALV",
+        "desc": "Organizujemy Państwa pierwsze ALV pod naszym zarządem i przedstawiamy Państwu stałą osobę kontaktową."
+      },
+      {
+        "when": "Na bieżąco",
+        "title": "Bieżące zarządzanie",
+        "desc": "Od tego momentu zajmujemy się wszystkim. Państwo zachowują kontrolę poprzez portal i otrzymują proaktywne aktualizacje."
+      }
+    ],
+    "reassure": [
+      {
+        "title": "Państwo prawie nic nie robią",
+        "desc": "Koordynujemy całe przejście, łącznie z wypowiedzeniem u Państwa obecnego zarządcy."
+      },
+      {
+        "title": "Bez ryzyka",
+        "desc": "Niezobowiązujące zapoznanie. Transfer rozpoczynamy dopiero po Państwa akceptacji."
+      },
+      {
+        "title": "Stały opiekun",
+        "desc": "Od pierwszego dnia wiedzą Państwo, do kogo się zwrócić — zarządca, który zna Państwa budynek."
+      }
+    ],
+    "cta_eyebrow": "Niezobowiązująca wycena",
+    "cta_title": "Gotowi na przejście?",
+    "cta_desc": "Poproś o niezobowiązującą wycenę. Następnie zajmiemy się całym transferem — Państwo mieszkają bez trosk.",
+    "cta_btn": "Poproś o wycenę",
+    "cta_list": [
+      "Przejście w 6–8 tygodni",
+      "Wypowiadamy umowę u Państwa obecnego zarządcy",
+      "Bez ryzyka, niezobowiązująco"
     ]
   },
   "offerte_page": {
     "eyebrow": "Poproś o wycenę",
     "title": "Niezobowiązująco i na miarę Państwa VvE",
     "intro": "Wypełnij formularz. W ciągu 2 dni roboczych otrzymają Państwo wycenę na miarę — omówioną telefonicznie, aby naprawdę pasowała do Państwa sytuacji.",
-    "usps": [["shield-check","Niezobowiązująco i bezpłatnie"],["clock","Odpowiedź w ciągu 2 dni roboczych"],["user-circle","Bezpośredni kontakt z zarządcą"],["lock","Państwa dane pozostają u Państwa"]],
+    "usps": [
+      [
+        "shield-check",
+        "Niezobowiązująco i bezpłatnie"
+      ],
+      [
+        "clock",
+        "Odpowiedź w ciągu 2 dni roboczych"
+      ],
+      [
+        "user-circle",
+        "Bezpośredni kontakt z zarządcą"
+      ],
+      [
+        "lock",
+        "Państwa dane pozostają u Państwa"
+      ]
+    ],
     "stap_van": "z",
-    "step_titles": ["Opowiedz nam o swoim VvE","Jakich usług szukasz?","Twoja obecna sytuacja","Twoje dane kontaktowe"],
-    "step1": {"vve_naam":"Nazwa VvE","vve_naam_ph":"np. VvE Parkzicht","aantal":"Liczba mieszkań","aantal_ph":"np. 24","bouwjaar":"Rok budowy","bouwjaar_ph":"np. 1998","adres":"Adres / lokalizacja","adres_ph":"Miejscowość"},
-    "step2": {"services":[["package","Pakiet Kompleksowy","Wszystkie 3 filary w jednej cenie"],["folders","Administracyjne","ALV, protokoły, poczta"],["chart-line-up","Finansowe","Księgowość, sprawozdanie roczne"],["wrench","Techniczne","MJOP, konserwacja"]]},
-    "step3": {"beheerder_label":"Czy mają Państwo obecnie zarządcę?","beheerder_options":["Tak, chcę zmienić","Nie, po raz pierwszy","Samozarządzanie, szukamy pomocy"],"belangrijk_label":"Co jest dla Państwa najważniejsze?","belangrijk_ph":"np. szybsza reakcja, lepsza przejrzystość, niższe koszty..."},
-    "step4": {"voornaam":"Imię","achternaam":"Nazwisko","functie":"Funkcja w VvE","functie_options":["Przewodniczący","Skarbnik","Sekretarz","Członek zarządu","Właściciel / członek"],"email":"E-mail","telefoon":"Numer telefonu"},
+    "step_titles": [
+      "Opowiedz nam o swoim VvE",
+      "Jakich usług szukasz?",
+      "Twoja obecna sytuacja",
+      "Twoje dane kontaktowe"
+    ],
+    "step1": {
+      "vve_naam": "Nazwa VvE",
+      "vve_naam_ph": "np. VvE Parkzicht",
+      "aantal": "Liczba mieszkań",
+      "aantal_ph": "np. 24",
+      "bouwjaar": "Rok budowy",
+      "bouwjaar_ph": "np. 1998",
+      "adres": "Adres / lokalizacja",
+      "adres_ph": "Miejscowość"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "Pakiet Kompleksowy",
+          "Wszystkie 3 filary w jednej cenie"
+        ],
+        [
+          "folders",
+          "Administracyjne",
+          "ALV, protokoły, poczta"
+        ],
+        [
+          "chart-line-up",
+          "Finansowe",
+          "Księgowość, sprawozdanie roczne"
+        ],
+        [
+          "wrench",
+          "Techniczne",
+          "MJOP, konserwacja"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "Czy mają Państwo obecnie zarządcę?",
+      "beheerder_options": [
+        "Tak, chcę zmienić",
+        "Nie, po raz pierwszy",
+        "Samozarządzanie, szukamy pomocy"
+      ],
+      "belangrijk_label": "Co jest dla Państwa najważniejsze?",
+      "belangrijk_ph": "np. szybsza reakcja, lepsza przejrzystość, niższe koszty..."
+    },
+    "step4": {
+      "voornaam": "Imię",
+      "achternaam": "Nazwisko",
+      "functie": "Funkcja w VvE",
+      "functie_options": [
+        "Przewodniczący",
+        "Skarbnik",
+        "Sekretarz",
+        "Członek zarządu",
+        "Właściciel / członek"
+      ],
+      "email": "E-mail",
+      "telefoon": "Numer telefonu"
+    },
     "btn_terug": "Wstecz",
     "btn_volgende": "Następny krok",
     "btn_versturen": "Wyślij zapytanie",
@@ -193,86 +863,148 @@
     "success_desc": "Otrzymaliśmy Państwa zapytanie o wycenę i skontaktujemy się w ciągu 2 dni roboczych."
   },
   "privacy_page": {
-    "title":"Polityka prywatności",
-    "intro":"VvE Beheer Collectief z siedzibą w Wateringen jest odpowiedzialny za przetwarzanie danych osobowych, jak opisano w niniejszej polityce prywatności.",
-    "h2_contact":"Dane kontaktowe",
-    "h2_gegevens":"Dane osobowe, które przetwarzamy",
-    "gegevens_intro":"VvE Beheer Collectief przetwarza Państwa dane osobowe, ponieważ korzystają Państwo z naszych usług i/lub ponieważ sami Państwo nam je udostępnili. Poniżej znajdą Państwo przegląd przetwarzanych przez nas danych osobowych:",
-    "gegevens_items":["Imię i nazwisko","Numer telefonu","Adres e-mail","Nazwa i adres Państwa VvE","Funkcja w VvE","Inne dane, które Państwo aktywnie udostępniają, np. poprzez korespondencję lub formularz wyceny"],
-    "h2_doel":"Cel przetwarzania danych osobowych",
-    "doel_intro":"VvE Beheer Collectief przetwarza Państwa dane osobowe w następujących celach:",
-    "doel_items":["Obsługa Państwa zapytania o wycenę","Aby móc do Państwa zadzwonić lub napisać e-mail, jeśli jest to konieczne do wykonania naszych usług","Realizacja usług zarządzania VvE, do których nas Państwo zaangażowali","Informowanie Państwa o zmianach w naszych usługach"],
-    "h2_bewaren":"Jak długo przechowujemy dane osobowe",
-    "bewaren_text":"VvE Beheer Collectief nie przechowuje Państwa danych osobowych dłużej, niż jest to ściśle konieczne do osiągnięcia celów, dla których Państwa dane są gromadzone. Dane z zapytań o wycenę są przechowywane maksymalnie przez 12 miesięcy, jeśli nie dochodzi do zawarcia umowy. W przypadku aktywnej umowy o zarządzanie dane są przechowywane przez czas trwania umowy oraz do 7 lat po jej zakończeniu (ustawowy okres przechowywania administracji finansowej).",
-    "h2_derden":"Udostępnianie danych osobowych osobom trzecim",
-    "derden_text":"VvE Beheer Collectief nie udostępnia Państwa danych osobom trzecim, chyba że jest to konieczne do realizacji naszej umowy z Państwem lub do wypełnienia obowiązku prawnego.",
-    "h2_inzien":"Przeglądanie, zmiana lub usunięcie danych",
-    "inzien_text":"Mają Państwo prawo do wglądu, korekty lub usunięcia swoich danych osobowych. Ponadto mają Państwo prawo do cofnięcia ewentualnej zgody na przetwarzanie danych lub do wniesienia sprzeciwu wobec przetwarzania. Wniosek o wgląd, korektę, usunięcie lub przeniesienie danych osobowych mogą Państwo wysłać na adres info@vvebeheercollectief.nl.",
-    "h2_beveiliging":"Bezpieczeństwo",
-    "beveiliging_text":"VvE Beheer Collectief poważnie traktuje ochronę Państwa danych i podejmuje odpowiednie środki w celu zapobiegania nadużyciom, utracie, nieuprawnionemu dostępowi, niechcianemu ujawnieniu i nieautoryzowanym zmianom. Jeśli mają Państwo wrażenie, że Państwa dane nie są odpowiednio zabezpieczone lub istnieją przesłanki nadużycia, prosimy o kontakt pod adresem info@vvebeheercollectief.nl.",
-    "updated":"Ostatnia aktualizacja: maj 2025"
+    "title": "Polityka prywatności",
+    "intro": "VvE Beheer Collectief z siedzibą w Wateringen jest odpowiedzialny za przetwarzanie danych osobowych, jak opisano w niniejszej polityce prywatności.",
+    "h2_contact": "Dane kontaktowe",
+    "h2_gegevens": "Dane osobowe, które przetwarzamy",
+    "gegevens_intro": "VvE Beheer Collectief przetwarza Państwa dane osobowe, ponieważ korzystają Państwo z naszych usług i/lub ponieważ sami Państwo nam je udostępnili. Poniżej znajdą Państwo przegląd przetwarzanych przez nas danych osobowych:",
+    "gegevens_items": [
+      "Imię i nazwisko",
+      "Numer telefonu",
+      "Adres e-mail",
+      "Nazwa i adres Państwa VvE",
+      "Funkcja w VvE",
+      "Inne dane, które Państwo aktywnie udostępniają, np. poprzez korespondencję lub formularz wyceny"
+    ],
+    "h2_doel": "Cel przetwarzania danych osobowych",
+    "doel_intro": "VvE Beheer Collectief przetwarza Państwa dane osobowe w następujących celach:",
+    "doel_items": [
+      "Obsługa Państwa zapytania o wycenę",
+      "Aby móc do Państwa zadzwonić lub napisać e-mail, jeśli jest to konieczne do wykonania naszych usług",
+      "Realizacja usług zarządzania VvE, do których nas Państwo zaangażowali",
+      "Informowanie Państwa o zmianach w naszych usługach"
+    ],
+    "h2_bewaren": "Jak długo przechowujemy dane osobowe",
+    "bewaren_text": "VvE Beheer Collectief nie przechowuje Państwa danych osobowych dłużej, niż jest to ściśle konieczne do osiągnięcia celów, dla których Państwa dane są gromadzone. Dane z zapytań o wycenę są przechowywane maksymalnie przez 12 miesięcy, jeśli nie dochodzi do zawarcia umowy. W przypadku aktywnej umowy o zarządzanie dane są przechowywane przez czas trwania umowy oraz do 7 lat po jej zakończeniu (ustawowy okres przechowywania administracji finansowej).",
+    "h2_derden": "Udostępnianie danych osobowych osobom trzecim",
+    "derden_text": "VvE Beheer Collectief nie udostępnia Państwa danych osobom trzecim, chyba że jest to konieczne do realizacji naszej umowy z Państwem lub do wypełnienia obowiązku prawnego.",
+    "h2_inzien": "Przeglądanie, zmiana lub usunięcie danych",
+    "inzien_text": "Mają Państwo prawo do wglądu, korekty lub usunięcia swoich danych osobowych. Ponadto mają Państwo prawo do cofnięcia ewentualnej zgody na przetwarzanie danych lub do wniesienia sprzeciwu wobec przetwarzania. Wniosek o wgląd, korektę, usunięcie lub przeniesienie danych osobowych mogą Państwo wysłać na adres info@vvebeheercollectief.nl.",
+    "h2_beveiliging": "Bezpieczeństwo",
+    "beveiliging_text": "VvE Beheer Collectief poważnie traktuje ochronę Państwa danych i podejmuje odpowiednie środki w celu zapobiegania nadużyciom, utracie, nieuprawnionemu dostępowi, niechcianemu ujawnieniu i nieautoryzowanym zmianom. Jeśli mają Państwo wrażenie, że Państwa dane nie są odpowiednio zabezpieczone lub istnieją przesłanki nadużycia, prosimy o kontakt pod adresem info@vvebeheercollectief.nl.",
+    "updated": "Ostatnia aktualizacja: maj 2025"
   },
   "voorwaarden_page": {
-    "title":"Ogólne warunki handlowe",
-    "articles":[
-      {"h2":"Artykuł 1 — Definicje","items":["Zleceniobiorca: VvE Beheer Collectief z siedzibą w Wateringen, zarejestrowany w KvK pod numerem 51721139.","Zleceniodawca: Stowarzyszenie Właścicieli (VvE), które zawiera umowę ze Zleceniobiorcą.","Umowa: umowa o zarządzanie między Zleceniodawcą a Zleceniobiorcą."]},
-      {"h2":"Artykuł 2 — Zastosowanie","p":"Niniejsze ogólne warunki handlowe mają zastosowanie do każdej oferty Zleceniobiorcy oraz do każdej zawartej umowy. Odstępstwa od niniejszych warunków są ważne wyłącznie wtedy, gdy zostały wyraźnie uzgodnione na piśmie."},
-      {"h2":"Artykuł 3 — Oferty i wyceny","p":"Wszystkie oferty VvE Beheer Collectief są niezobowiązujące i ważne przez okres 30 dni, chyba że wskazano inaczej. Umowa zostaje zawarta po pisemnym potwierdzeniu przez obie strony lub na podstawie uchwały ALV."},
-      {"h2":"Artykuł 4 — Realizacja umowy","p":"VvE Beheer Collectief realizuje umowę zgodnie z najlepszą wiedzą i umiejętnościami, zgodnie z wymogami rzetelnej praktyki zawodowej. Zarządca ma obowiązek starannego działania, a nie obowiązek osiągnięcia rezultatu."},
-      {"h2":"Artykuł 5 — Czas trwania i wypowiedzenie","p":"Umowa o zarządzanie jest zawierana na czas określony w umowie. Wypowiedzenie następuje na piśmie z zachowaniem 3-miesięcznego okresu wypowiedzenia przed końcem okresu umownego, chyba że uzgodniono inaczej."},
-      {"h2":"Artykuł 6 — Stawki i płatności","p":"Wszystkie podane stawki są cenami netto bez VAT, chyba że wyraźnie wskazano inaczej. Płatność następuje w ciągu 30 dni od daty wystawienia faktury. W przypadku nieterminowej płatności Zleceniodawca popada w zwłokę z mocy prawa i należą się odsetki ustawowe."},
-      {"h2":"Artykuł 7 — Odpowiedzialność","p":"Odpowiedzialność VvE Beheer Collectief jest ograniczona do kwoty wypłaconej przez ubezpieczenie od odpowiedzialności zawodowej w danym przypadku, powiększonej o udział własny. Jeśli ubezpieczenie nie wypłaci odszkodowania, odpowiedzialność jest ograniczona do kwoty wynagrodzenia otrzymanego przez Zleceniobiorcę za jego pracę w ramach umowy w okresie 12 miesięcy poprzedzających zdarzenie powodujące szkodę."},
-      {"h2":"Artykuł 8 — Poufność","p":"Obie strony są zobowiązane do zachowania poufności wszystkich informacji poufnych uzyskanych od siebie nawzajem w ramach umowy. Zobowiązanie to obowiązuje również po rozwiązaniu umowy."},
-      {"h2":"Artykuł 9 — Reklamacje","p":"Reklamacje dotyczące realizacji umowy należy składać w VvE Beheer Collectief terminowo, w pełni i w jasno opisany sposób. Reklamacje są rozpatrywane w ciągu 14 dni od ich otrzymania."},
-      {"h2":"Artykuł 10 — Prawo właściwe","p":"Do wszystkich umów między Zleceniodawcą a VvE Beheer Collectief ma zastosowanie prawo holenderskie. Spory są rozstrzygane przez właściwy sąd w okręgu Haga."}
+    "title": "Ogólne warunki handlowe",
+    "articles": [
+      {
+        "h2": "Artykuł 1 — Definicje",
+        "items": [
+          "Zleceniobiorca: VvE Beheer Collectief z siedzibą w Wateringen, zarejestrowany w KvK pod numerem 51721139.",
+          "Zleceniodawca: Stowarzyszenie Właścicieli (VvE), które zawiera umowę ze Zleceniobiorcą.",
+          "Umowa: umowa o zarządzanie między Zleceniodawcą a Zleceniobiorcą."
+        ]
+      },
+      {
+        "h2": "Artykuł 2 — Zastosowanie",
+        "p": "Niniejsze ogólne warunki handlowe mają zastosowanie do każdej oferty Zleceniobiorcy oraz do każdej zawartej umowy. Odstępstwa od niniejszych warunków są ważne wyłącznie wtedy, gdy zostały wyraźnie uzgodnione na piśmie."
+      },
+      {
+        "h2": "Artykuł 3 — Oferty i wyceny",
+        "p": "Wszystkie oferty VvE Beheer Collectief są niezobowiązujące i ważne przez okres 30 dni, chyba że wskazano inaczej. Umowa zostaje zawarta po pisemnym potwierdzeniu przez obie strony lub na podstawie uchwały ALV."
+      },
+      {
+        "h2": "Artykuł 4 — Realizacja umowy",
+        "p": "VvE Beheer Collectief realizuje umowę zgodnie z najlepszą wiedzą i umiejętnościami, zgodnie z wymogami rzetelnej praktyki zawodowej. Zarządca ma obowiązek starannego działania, a nie obowiązek osiągnięcia rezultatu."
+      },
+      {
+        "h2": "Artykuł 5 — Czas trwania i wypowiedzenie",
+        "p": "Umowa o zarządzanie jest zawierana na czas określony w umowie. Wypowiedzenie następuje na piśmie z zachowaniem 3-miesięcznego okresu wypowiedzenia przed końcem okresu umownego, chyba że uzgodniono inaczej."
+      },
+      {
+        "h2": "Artykuł 6 — Stawki i płatności",
+        "p": "Wszystkie podane stawki są cenami netto bez VAT, chyba że wyraźnie wskazano inaczej. Płatność następuje w ciągu 30 dni od daty wystawienia faktury. W przypadku nieterminowej płatności Zleceniodawca popada w zwłokę z mocy prawa i należą się odsetki ustawowe."
+      },
+      {
+        "h2": "Artykuł 7 — Odpowiedzialność",
+        "p": "Odpowiedzialność VvE Beheer Collectief jest ograniczona do kwoty wypłaconej przez ubezpieczenie od odpowiedzialności zawodowej w danym przypadku, powiększonej o udział własny. Jeśli ubezpieczenie nie wypłaci odszkodowania, odpowiedzialność jest ograniczona do kwoty wynagrodzenia otrzymanego przez Zleceniobiorcę za jego pracę w ramach umowy w okresie 12 miesięcy poprzedzających zdarzenie powodujące szkodę."
+      },
+      {
+        "h2": "Artykuł 8 — Poufność",
+        "p": "Obie strony są zobowiązane do zachowania poufności wszystkich informacji poufnych uzyskanych od siebie nawzajem w ramach umowy. Zobowiązanie to obowiązuje również po rozwiązaniu umowy."
+      },
+      {
+        "h2": "Artykuł 9 — Reklamacje",
+        "p": "Reklamacje dotyczące realizacji umowy należy składać w VvE Beheer Collectief terminowo, w pełni i w jasno opisany sposób. Reklamacje są rozpatrywane w ciągu 14 dni od ich otrzymania."
+      },
+      {
+        "h2": "Artykuł 10 — Prawo właściwe",
+        "p": "Do wszystkich umów między Zleceniodawcą a VvE Beheer Collectief ma zastosowanie prawo holenderskie. Spory są rozstrzygane przez właściwy sąd w okręgu Haga."
+      }
     ],
-    "updated":"Ostatnia aktualizacja: maj 2025"
+    "updated": "Ostatnia aktualizacja: maj 2025"
   },
   "cookies_page": {
-    "title":"Polityka plików cookie",
-    "intro":"Niniejsza strona internetowa VvE Beheer Collectief wykorzystuje pliki cookie. W niniejszej polityce cookie mogą Państwo przeczytać, czym są pliki cookie, jakich plików cookie używamy i jak mogą Państwo nimi zarządzać.",
-    "h2_wat":"Czym są pliki cookie?",
-    "wat_text":"Pliki cookie to małe pliki tekstowe zapisywane przez przeglądarkę podczas odwiedzania strony internetowej. Służą do prawidłowego funkcjonowania stron internetowych, analizowania użytkowania strony oraz poprawy doświadczenia użytkownika.",
-    "h2_welke":"Jakich plików cookie używamy?",
-    "h3_functioneel":"Funkcjonalne pliki cookie",
-    "functioneel_text":"Te pliki cookie są niezbędne do funkcjonowania strony internetowej. Zapewniają na przykład zapamiętanie Państwa preferencji. Te pliki cookie nie są wykorzystywane do celów marketingowych.",
-    "h3_analytisch":"Analityczne pliki cookie",
-    "analytisch_text":"Możemy używać analitycznych plików cookie do mierzenia i ulepszania korzystania z naszej strony internetowej. Dane te są zbierane anonimowo i nie są udostępniane osobom trzecim w celach komercyjnych.",
-    "h2_beheren":"Zarządzanie plikami cookie",
-    "beheren_intro":"Mogą Państwo zmienić swoje preferencje dotyczące plików cookie w dowolnym momencie za pośrednictwem ustawień przeglądarki. Prosimy pamiętać, że blokowanie niektórych plików cookie może wpłynąć na funkcjonalność strony internetowej.",
-    "beheren_text":"Większość przeglądarek oferuje możliwość:",
-    "beheren_items":["Przeglądania wszystkich zapisanych plików cookie","Usuwania plików cookie pojedynczo lub całkowicie","Blokowania plików cookie z określonych stron","Blokowania wszystkich plików cookie","Usuwania wszystkich plików cookie po zamknięciu przeglądarki"],
-    "h2_derden":"Pliki cookie stron trzecich",
-    "derden_text":"Nasza strona internetowa może korzystać z usług stron trzecich, takich jak Google Fonts do typografii. Usługi te mogą umieszczać własne pliki cookie. Nie mamy kontroli nad umieszczaniem i wykorzystywaniem plików cookie przez te strony trzecie. Więcej informacji można znaleźć w polityce prywatności odpowiedniej strony trzeciej.",
-    "h2_wijzigingen":"Zmiany",
-    "wijzigingen_text":"VvE Beheer Collectief zastrzega sobie prawo do zmiany niniejszej polityki cookie. Zmiany zostaną opublikowane na tej stronie.",
-    "h2_contact":"Kontakt",
-    "contact_text":"Mają Państwo pytania dotyczące naszej polityki plików cookie? Prosimy o kontakt pod adresem info@vvebeheercollectief.nl.",
-    "updated":"Ostatnia aktualizacja: maj 2025"
+    "title": "Polityka plików cookie",
+    "intro": "Niniejsza strona internetowa VvE Beheer Collectief wykorzystuje pliki cookie. W niniejszej polityce cookie mogą Państwo przeczytać, czym są pliki cookie, jakich plików cookie używamy i jak mogą Państwo nimi zarządzać.",
+    "h2_wat": "Czym są pliki cookie?",
+    "wat_text": "Pliki cookie to małe pliki tekstowe zapisywane przez przeglądarkę podczas odwiedzania strony internetowej. Służą do prawidłowego funkcjonowania stron internetowych, analizowania użytkowania strony oraz poprawy doświadczenia użytkownika.",
+    "h2_welke": "Jakich plików cookie używamy?",
+    "h3_functioneel": "Funkcjonalne pliki cookie",
+    "functioneel_text": "Te pliki cookie są niezbędne do funkcjonowania strony internetowej. Zapewniają na przykład zapamiętanie Państwa preferencji. Te pliki cookie nie są wykorzystywane do celów marketingowych.",
+    "h3_analytisch": "Analityczne pliki cookie",
+    "analytisch_text": "Możemy używać analitycznych plików cookie do mierzenia i ulepszania korzystania z naszej strony internetowej. Dane te są zbierane anonimowo i nie są udostępniane osobom trzecim w celach komercyjnych.",
+    "h2_beheren": "Zarządzanie plikami cookie",
+    "beheren_intro": "Mogą Państwo zmienić swoje preferencje dotyczące plików cookie w dowolnym momencie za pośrednictwem ustawień przeglądarki. Prosimy pamiętać, że blokowanie niektórych plików cookie może wpłynąć na funkcjonalność strony internetowej.",
+    "beheren_text": "Większość przeglądarek oferuje możliwość:",
+    "beheren_items": [
+      "Przeglądania wszystkich zapisanych plików cookie",
+      "Usuwania plików cookie pojedynczo lub całkowicie",
+      "Blokowania plików cookie z określonych stron",
+      "Blokowania wszystkich plików cookie",
+      "Usuwania wszystkich plików cookie po zamknięciu przeglądarki"
+    ],
+    "h2_derden": "Pliki cookie stron trzecich",
+    "derden_text": "Nasza strona internetowa może korzystać z usług stron trzecich, takich jak Google Fonts do typografii. Usługi te mogą umieszczać własne pliki cookie. Nie mamy kontroli nad umieszczaniem i wykorzystywaniem plików cookie przez te strony trzecie. Więcej informacji można znaleźć w polityce prywatności odpowiedniej strony trzeciej.",
+    "h2_wijzigingen": "Zmiany",
+    "wijzigingen_text": "VvE Beheer Collectief zastrzega sobie prawo do zmiany niniejszej polityki cookie. Zmiany zostaną opublikowane na tej stronie.",
+    "h2_contact": "Kontakt",
+    "contact_text": "Mają Państwo pytania dotyczące naszej polityki plików cookie? Prosimy o kontakt pod adresem info@vvebeheercollectief.nl.",
+    "updated": "Ostatnia aktualizacja: maj 2025"
   },
   "footer": {
-    "brand_desc":"Osobiste, przejrzyste i niezawodne zarządzanie VvE w Holandii Południowej i okolicach. 17 lat doświadczenia, 500+ VvE pod zarządem.",
-    "h_diensten":"Usługi",
-    "diensten_links":["Zarządzanie administracyjne","Zarządzanie finansowe","Zarządzanie techniczne","Pakiet Kompleksowy"],
-    "h_bedrijf":"Firma",
-    "bedrijf_links":["O nas","Metoda pracy","Historie klientów","Oferty pracy"],
-    "h_contact":"Kontakt",
-    "locatie":"Wateringen, Holandia Południowa",
-    "offerte_link":"Poproś o wycenę →",
-    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
-    "privacy":"Prywatność",
-    "voorwaarden":"Warunki",
-    "cookies":"Pliki cookie"
+    "brand_desc": "Osobiste, przejrzyste i niezawodne zarządzanie VvE w Holandii Południowej i okolicach. 17 lat doświadczenia, 500+ VvE pod zarządem.",
+    "h_diensten": "Usługi",
+    "diensten_links": [
+      "Zarządzanie administracyjne",
+      "Zarządzanie finansowe",
+      "Zarządzanie techniczne",
+      "Pakiet Kompleksowy"
+    ],
+    "h_bedrijf": "Firma",
+    "bedrijf_links": [
+      "O nas",
+      "Metoda pracy",
+      "Historie klientów",
+      "Oferty pracy"
+    ],
+    "h_contact": "Kontakt",
+    "locatie": "Wateringen, Holandia Południowa",
+    "offerte_link": "Poproś o wycenę →",
+    "bottom_kvk": "VvE Beheer Collectief. KvK 51721139.",
+    "privacy": "Prywatność",
+    "voorwaarden": "Warunki",
+    "cookies": "Pliki cookie"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — Zarządzanie VvE Holandia Południowa",
-    "diensten":"Usługi — VvE Beheer Collectief",
-    "pakketten":"Pakiety — VvE Beheer Collectief",
-    "overons":"O nas — VvE Beheer Collectief",
-    "werkwijze":"Metoda pracy — VvE Beheer Collectief",
-    "offerte":"Poproś o wycenę — VvE Beheer Collectief",
-    "privacy":"Polityka prywatności — VvE Beheer Collectief",
-    "voorwaarden":"Ogólne warunki handlowe — VvE Beheer Collectief",
-    "cookies":"Polityka plików cookie — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — Zarządzanie VvE Holandia Południowa",
+    "diensten": "Usługi — VvE Beheer Collectief",
+    "pakketten": "Pakiety — VvE Beheer Collectief",
+    "overons": "O nas — VvE Beheer Collectief",
+    "werkwijze": "Metoda pracy — VvE Beheer Collectief",
+    "offerte": "Poproś o wycenę — VvE Beheer Collectief",
+    "privacy": "Polityka prywatności — VvE Beheer Collectief",
+    "voorwaarden": "Ogólne warunki handlowe — VvE Beheer Collectief",
+    "cookies": "Polityka plików cookie — VvE Beheer Collectief"
   }
 }

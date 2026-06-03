@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "hu", "dir": "ltr", "label": "Magyar" },
+  "meta": {
+    "lang": "hu",
+    "dir": "ltr",
+    "label": "Magyar"
+  },
   "nav": {
     "home": "Kezdőlap",
     "diensten": "Szolgáltatások",
@@ -14,17 +18,39 @@
     "menu_close": "Menü bezárása"
   },
   "hero": {
+    "pill": "VvE-kezelés · Hága & Dél-Hollandia",
     "title_1": "Együtt biztosítjuk",
     "title_2": "a gondtalan lakhatást.",
-    "subtitle": "VvE-kezelési szakértő Hága és egész Dél-Hollandia területén. Egy dedikált kapcsolattartó, teljes átláthatóság saját ügyfélportálon keresztül — mi gondoskodunk mindenről, Ön pedig gondtalanul élhet.",
-    "cta_primary": "Ingyenes árajánlat",
-    "cta_secondary": "Munkamódszerünk"
+    "subtitle": "Egy dedikált kapcsolattartó, teljes átláthatóság saját ügyfélportálon keresztül. Az adminisztratív, pénzügyi és műszaki kezelést mi intézzük — Ön pedig gondtalanul élhet.",
+    "cta_primary": "Tekintse meg szolgáltatásainkat",
+    "cta_secondary": "Munkamódszerünk",
+    "trust": [
+      "17+ év tapasztalat",
+      "500+ VvE",
+      "Válasz < 24 óra"
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "Év tapasztalat a VvE-kezelésben" },
-    { "icon": "buildings", "num": "500+", "label": "VvE a kezelésünk alatt" },
-    { "icon": "users", "num": "12.000+", "label": "Kiszolgált tulajdonos" },
-    { "icon": "lightning", "num": "< 24u", "label": "Átlagos válaszidő" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "Év tapasztalat a VvE-kezelésben"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "VvE a kezelésünk alatt"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "Kiszolgált tulajdonos"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "Átlagos válaszidő"
+    }
   ],
   "pillars_section": {
     "eyebrow": "Szolgáltatásaink",
@@ -33,9 +59,39 @@
     "read_more": "Tovább"
   },
   "pillars": [
-    { "icon": "folders", "title": "Adminisztratív kezelés", "desc": "ALV-szervezés, tagnyilvántartás, jegyzőkönyvek és átlátható levelezés.", "bullets": ["ALV-szervezés és jegyzőkönyvek", "Tagnyilvántartás", "Posta és levelezés", "Megosztási okirat kezelése"] },
-    { "icon": "chart-line-up", "title": "Pénzügyi kezelés", "desc": "Könyvelés, költségvetés, tartalékalap és éves beszámolók — mindig átláthatóan.", "bullets": ["Könyvelés és éves beszámolók", "Költségvetés és VvE-hozzájárulás", "Tartalékalap kezelése", "Behajtás és kintlévőségek"] },
-    { "icon": "wrench", "title": "Műszaki kezelés", "desc": "Karbantartás, MJOP, árajánlatok és ellenőrzések — proaktívan és jól megtárgyalva.", "bullets": ["Többéves karbantartási terv", "Árajánlatok és tenderkiírás", "Kárbejelentések 24/7", "Ellenőrzések és átadás"] }
+    {
+      "icon": "folders",
+      "title": "Adminisztratív kezelés",
+      "desc": "ALV-szervezés, tagnyilvántartás, jegyzőkönyvek és átlátható levelezés.",
+      "bullets": [
+        "ALV-szervezés és jegyzőkönyvek",
+        "Tagnyilvántartás",
+        "Posta és levelezés",
+        "Megosztási okirat kezelése"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "Pénzügyi kezelés",
+      "desc": "Könyvelés, költségvetés, tartalékalap és éves beszámolók — mindig átláthatóan.",
+      "bullets": [
+        "Könyvelés és éves beszámolók",
+        "Költségvetés és VvE-hozzájárulás",
+        "Tartalékalap kezelése",
+        "Behajtás és kintlévőségek"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Műszaki kezelés",
+      "desc": "Karbantartás, MJOP, árajánlatok és ellenőrzések — proaktívan és jól megtárgyalva.",
+      "bullets": [
+        "Többéves karbantartási terv",
+        "Árajánlatok és tenderkiírás",
+        "Kárbejelentések 24/7",
+        "Ellenőrzések és átadás"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "Ami megkülönböztet minket",
@@ -43,27 +99,73 @@
     "subtitle": "Egy VvE kezelése az átláthatóságon és az elérhetőségen múlik. Erre építettük fel a megközelítésünket."
   },
   "diff_items": [
-    { "icon": "monitor", "title": "Saját ügyfélportál", "desc": "Minden dokumentum, pénzügy és karbantartás — 24/7 elérhető minden tulajdonos számára." },
-    { "icon": "user-circle-check", "title": "Dedikált kapcsolattartó", "desc": "Egy kezelő, aki ismeri az épületét, a lakókat és az előzményeket. Nincsenek cserélődő kapcsolattartók." },
-    { "icon": "clock-clockwise", "title": "Gyors válaszidő", "desc": "Megkeresésére 24 órán belül válaszolunk, a sürgős kárbejelentésekre azonnal." },
-    { "icon": "package", "title": "Teljes körű csomag", "desc": "Teljes körű kezelés egyetlen fix havidíjért. Nincsenek meglepetések a végszámlán." }
+    {
+      "icon": "monitor",
+      "title": "Saját ügyfélportál",
+      "desc": "Minden dokumentum, pénzügy és karbantartás — 24/7 elérhető minden tulajdonos számára."
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "Dedikált kapcsolattartó",
+      "desc": "Egy kezelő, aki ismeri az épületét, a lakókat és az előzményeket. Nincsenek cserélődő kapcsolattartók."
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "Gyors válaszidő",
+      "desc": "Megkeresésére 24 órán belül válaszolunk, a sürgős kárbejelentésekre azonnal."
+    },
+    {
+      "icon": "package",
+      "title": "Teljes körű csomag",
+      "desc": "Teljes körű kezelés egyetlen fix havidíjért. Nincsenek meglepetések a végszámlán."
+    }
   ],
-  "diff_floating": { "title": "MJOP frissítve", "time": "2 perccel ezelőtt" },
+  "diff_floating": {
+    "title": "MJOP frissítve",
+    "time": "2 perccel ezelőtt"
+  },
   "testimonials_section": {
     "eyebrow": "Ügyféltapasztalatok",
     "title": "Mit mondanak ügyfeleink",
     "trust_label": "Tagságok és tanúsítványok"
   },
   "testimonials": [
-    { "quote": "Végre egy kezelő, aki valóban reagál. Egy napon belül válasz érkezik, és az éves beszámoló évek óta először időben elkészült.", "name": "Marieke van der Berg", "role": "A VvE Parklaan elnöke", "location": "Hága — 24 lakás" },
-    { "quote": "Az előző kezelőnktől való váltás meglepően zökkenőmentesen ment. Az ügyfélportál valódi nyugalmat ad: minden benne van, mindig elérhető.", "name": "Joris Hendriks", "role": "A VvE De Linden pénztárosa", "location": "Wateringen — 18 lakás" },
-    { "quote": "Ami megfogott minket, az a személyes odafigyelés volt. Van egy dedikált kapcsolattartónk, aki valóban ismeri az épületünket. Ez óriási különbséget jelent.", "name": "Saskia Bouman", "role": "A VvE Westpoort elnöke", "location": "Rotterdam — 42 lakás" }
+    {
+      "quote": "Végre egy kezelő, aki valóban reagál. Egy napon belül válasz érkezik, és az éves beszámoló évek óta először időben elkészült.",
+      "name": "Marieke van der Berg",
+      "role": "A VvE Parklaan elnöke",
+      "location": "Hága — 24 lakás"
+    },
+    {
+      "quote": "Az előző kezelőnktől való váltás meglepően zökkenőmentesen ment. Az ügyfélportál valódi nyugalmat ad: minden benne van, mindig elérhető.",
+      "name": "Joris Hendriks",
+      "role": "A VvE De Linden pénztárosa",
+      "location": "Wateringen — 18 lakás"
+    },
+    {
+      "quote": "Ami megfogott minket, az a személyes odafigyelés volt. Van egy dedikált kapcsolattartónk, aki valóban ismeri az épületünket. Ez óriási különbséget jelent.",
+      "name": "Saskia Bouman",
+      "role": "A VvE Westpoort elnöke",
+      "location": "Rotterdam — 42 lakás"
+    }
   ],
   "trust_badges": [
-    { "label": "17+ év tapasztalat", "icon": "calendar-check" },
-    { "label": "VGM NL szakmai szövetség", "icon": "medal" },
-    { "label": "NEN-EN ISO 9001 tanúsítvány", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17+ év tapasztalat",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "VGM NL szakmai szövetség",
+      "icon": "medal"
+    },
+    {
+      "label": "NEN-EN ISO 9001 tanúsítvány",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "Gyakran ismételt kérdések",
@@ -71,11 +173,26 @@
     "subtitle": "Nem találja a kérdését? Nyugodtan hívjon minket, vagy foglaljon egy kötelezettség nélküli bemutatkozó beszélgetést."
   },
   "faq": [
-    { "q": "Mennyi időbe telik a váltás a VvE Beheer Collectiefhez?", "a": "A teljes váltást általában 6-8 héten belül elintézzük. Az adminisztratív átállást teljes egészében mi kezeljük — a jelenlegi kezelőtől való felmondástól az ügyfélportál beállításáig." },
-    { "q": "Pontosan mit tartalmaz a Teljes csomag?", "a": "A Teljes csomag az adminisztratív, pénzügyi és műszaki kezelést egyesíti egy fix havidíjban. Beleértve az ALV-szervezést, az éves beszámolókat, az MJOP-karbantartást, a 24/7-es kárbejelentést és egy dedikált kapcsolattartót." },
-    { "q": "Kapunk egy dedikált kapcsolattartót?", "a": "Igen. Minden VvE kap egy dedikált kezelőt, aki ismeri az épületét, a lakókat és az előzményeket. Távollét esetén mindig van egy helyettes, aki ismeri az aktáját." },
-    { "q": "Mennyire átlátható az ügyfélportál?", "a": "Teljesen. Minden tulajdonos láthatja a saját pénzügyi helyzetét, az összes ülésdokumentumot, az MJOP-t, a függőben lévő karbantartási tételeket és a VvE pénzforgalmát — 24/7 elérhető, anélkül, hogy kapcsolatba kellene lépnie velünk." },
-    { "q": "Jogi kezelést is nyújtanak?", "a": "Nem. Jogi ügyekben szakosodott VvE-ügyvédekkel dolgozunk együtt, akiket szívesen bemutatunk Önnek. Így egy kapcsolattartója marad a koordinációra, miközben valódi szakértői segítséget kap a jogi munkához." }
+    {
+      "q": "Mennyi időbe telik a váltás a VvE Beheer Collectiefhez?",
+      "a": "A teljes váltást általában 6-8 héten belül elintézzük. Az adminisztratív átállást teljes egészében mi kezeljük — a jelenlegi kezelőtől való felmondástól az ügyfélportál beállításáig."
+    },
+    {
+      "q": "Pontosan mit tartalmaz a Teljes csomag?",
+      "a": "A Teljes csomag az adminisztratív, pénzügyi és műszaki kezelést egyesíti egy fix havidíjban. Beleértve az ALV-szervezést, az éves beszámolókat, az MJOP-karbantartást, a 24/7-es kárbejelentést és egy dedikált kapcsolattartót."
+    },
+    {
+      "q": "Kapunk egy dedikált kapcsolattartót?",
+      "a": "Igen. Minden VvE kap egy dedikált kezelőt, aki ismeri az épületét, a lakókat és az előzményeket. Távollét esetén mindig van egy helyettes, aki ismeri az aktáját."
+    },
+    {
+      "q": "Mennyire átlátható az ügyfélportál?",
+      "a": "Teljesen. Minden tulajdonos láthatja a saját pénzügyi helyzetét, az összes ülésdokumentumot, az MJOP-t, a függőben lévő karbantartási tételeket és a VvE pénzforgalmát — 24/7 elérhető, anélkül, hogy kapcsolatba kellene lépnie velünk."
+    },
+    {
+      "q": "Jogi kezelést is nyújtanak?",
+      "a": "Nem. Jogi ügyekben szakosodott VvE-ügyvédekkel dolgozunk együtt, akiket szívesen bemutatunk Önnek. Így egy kapcsolattartója marad a koordinációra, miközben valódi szakértői segítséget kap a jogi munkához."
+    }
   ],
   "cta": {
     "eyebrow": "Ingyenes árajánlat",
@@ -84,25 +201,103 @@
     "subtitle": "Kérjen kötelezettség nélküli, az Ön VvE-jére szabott árajánlatot. 2 munkanapon belül választ kap.",
     "btn_primary": "Árajánlat kérése",
     "btn_secondary": "Hívjon közvetlenül",
-    "usps": ["Kötelezettség nélkül és ingyenes", "Válasz 2 munkanapon belül", "Teljesen az Ön VvE-jére szabva", "Nincs elköteleződés"]
+    "usps": [
+      "Kötelezettség nélkül és ingyenes",
+      "Válasz 2 munkanapon belül",
+      "Teljesen az Ön VvE-jére szabva",
+      "Nincs elköteleződés"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "Év tapasztalat a VvE-kezelésben" },
-    { "num": "500+", "label": "VvE a kezelésünk alatt" },
-    { "num": "12.000+", "label": "Kiszolgált tulajdonos" },
-    { "num": "< 24u", "label": "Átlagos válaszidő" }
+    {
+      "num": "17+",
+      "label": "Év tapasztalat a VvE-kezelésben"
+    },
+    {
+      "num": "500+",
+      "label": "VvE a kezelésünk alatt"
+    },
+    {
+      "num": "12.000+",
+      "label": "Kiszolgált tulajdonos"
+    },
+    {
+      "num": "< 24u",
+      "label": "Átlagos válaszidő"
+    }
   ],
   "diensten_page": {
     "eyebrow": "Szolgáltatásaink",
-    "title": "Az Ön igényeire szabott VvE-kezelés",
-    "subtitle": "Válasszon egyedi szolgáltatásokat vagy a Teljes csomagot — teljes körű kezelés egyetlen fix havidíjért.",
-    "pillar_label": "PILLÉR",
+    "title_1": "VvE-kezelés, amely igazodik",
+    "title_2": "az Ön igényeihez",
+    "subtitle": "Három pillér — adminisztratív, pénzügyi és műszaki — egy kézben, egyetlen dedikált kapcsolattartóval. Válasszon egyedi szolgáltatásokat, vagy bízzon ránk mindent.",
+    "pillar_label": "Pillér",
+    "result_label": "Az eredmény",
+    "checklist_head": "Mit intézünk Ön helyett",
     "offerte_btn": "Árajánlat kérése",
+    "offerte_short": "Árajánlat",
+    "rows": [
+      {
+        "title": "Rendezett és könnyen visszakereshető adminisztráció",
+        "intro": "A VvE-je teljes adminisztrációját mi végezzük — a tagnyilvántartástól és levelezéstől az ALV megszervezéséig és jegyzőkönyvezéséig. Minden központilag rögzítve és azonnal visszakereshető.",
+        "result": "Adminisztratív szempontból teljesen rendben lévő VvE, amellyel a vezetőségnek nem kell foglalkoznia.",
+        "bullets": [
+          "ALV-szervezés és jegyzőkönyvek",
+          "Tagnyilvántartás és regiszter",
+          "Posta és levelezés",
+          "Megosztási okirat és szabályzatok"
+        ],
+        "tag": "Minden csomagban benne van"
+      },
+      {
+        "title": "Pénzügyi áttekintés, meglepetések nélkül",
+        "intro": "A könyveléstől és behajtástól a költségvetésig, a tartalékalapig és az éves beszámolóig. Naprakészen tartjuk a számokat, és figyeljük a tartalékalap egészségét.",
+        "result": "Bármikor áttekintés a pénzügyi helyzetről — és időben elkészülő éves beszámoló.",
+        "bullets": [
+          "Könyvelés és éves beszámoló",
+          "Költségvetés és VvE-hozzájárulás",
+          "Tartalékalap kezelése",
+          "Behajtás és kintlévőség-kezelés"
+        ],
+        "tag": "Minden csomagban benne van"
+      },
+      {
+        "title": "Karbantartás, amely megelőzi a problémákat",
+        "intro": "Elkészítjük az MJOP-t és naprakészen tartjuk, árajánlatokat kérünk és keményen alkudunk, valamint koordináljuk a karbantartást és a károkat — sürgős esetben azonnal intézkedünk.",
+        "result": "Jól karbantartott ingatlan, kedvező áron beszerzett árajánlatok és helytálló számlák.",
+        "bullets": [
+          "Többéves karbantartási terv (MJOP)",
+          "Árajánlatok és tenderkiírás",
+          "Kárbejelentések 24/7",
+          "Ellenőrzések és átadás"
+        ],
+        "tag": "A Teljes csomagban benne van"
+      }
+    ],
     "compleet_pill": "Legnépszerűbb",
-    "compleet_title": "A Teljes csomag",
-    "compleet_desc": "Teljes körű kezelés — adminisztratív, pénzügyi és műszaki kezelés egyetlen fix havidíjért. Nincsenek meglepetések, nincsenek pótszámlák.",
-    "compleet_btn": "Árajánlat a Teljes csomagra",
-    "compleet_features": ["Teljes adminisztráció", "Teljes könyvelés", "MJOP-karbantartás", "ALV-szervezés", "Dedikált kapcsolattartó", "Ügyfélportál", "24/7 kárbejelentések", "Éves beszámolók időben"]
+    "compleet_title_1": "Minden egy kézben:",
+    "compleet_title_2": "a Teljes csomag",
+    "compleet_desc": "Egyesítse mind a három pillért egyetlen fix havidíjban. Teljes körű tehermentesítés — nincsenek meglepetések, nincsenek pótmunka-számlák.",
+    "compleet_btn": "Így zajlik a váltás",
+    "compleet_features": [
+      "Teljes adminisztráció és ALV",
+      "Teljes könyvelés",
+      "Éves beszámoló időben",
+      "MJOP és karbantartás",
+      "24/7 kárbejelentések",
+      "Saját ügyfélportál",
+      "Egy dedikált kapcsolattartó",
+      "Kedvező árajánlatok"
+    ],
+    "cta_eyebrow": "Ingyenes árajánlat",
+    "cta_title": "Kíváncsi, mit jelent ez az Ön VvE-je számára?",
+    "cta_desc": "Kérjen ingyenes, személyre szabott árajánlatot. 2 munkanapon belül választ kap egy dedikált kezelőtől.",
+    "cta_btn": "Árajánlat kérése",
+    "cta_list": [
+      "Kötelezettség nélkül és ingyenes",
+      "Válasz 2 munkanapon belül",
+      "Teljesen az Ön VvE-jére szabva"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "Csomagjaink",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "Teljes",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "Adminisztratív és pénzügyi alapkezelés azoknak a VvE-knek, amelyek az alapokat szeretnék rendben tudni.", "price": "92,95", "features": [{"label":"ALV-szervezés","active":true},{"label":"Tagnyilvántartás","active":true},{"label":"Könyvelés és éves elszámolás","active":true},{"label":"VvE-hozzájárulások behajtása","active":true},{"label":"Fizetési tranzakciók","active":true},{"label":"Műszaki kezelés","active":false},{"label":"MJOP-karbantartás","active":false},{"label":"Ügyeleti szolgálat","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Kibővített adminisztratív, pénzügyi és műszaki alapkezelés egy kézben.", "price": "147,95", "features": [{"label":"ALV-szervezés és jegyzőkönyvek","active":true},{"label":"Tagnyilvántartás","active":true},{"label":"Teljes könyvelés","active":true},{"label":"Tartalékalap kezelése","active":true},{"label":"Biztosításkezelés","active":true},{"label":"Kisebb karbantartások koordinálása","active":true},{"label":"Kárbejelentések","active":true},{"label":"Tervezett karbantartás","active":false}] },
-      { "id": "compleet", "name": "Teljes", "tagline": "Teljes körű kezelés — adminisztratív, pénzügyi és műszaki egyetlen fix díjért.", "price": null, "features": [{"label":"Minden a Start Plusból","active":true},{"label":"Vezetőségi ülések korlátlanul","active":true},{"label":"Jogi koordináció","active":true},{"label":"Kintlévőség-kezelés és felszólítások","active":true},{"label":"MJOP és tervezett karbantartás","active":true},{"label":"24/7 ügyeleti szolgálat","active":true},{"label":"Éves ellenőrzés","active":true},{"label":"Fenntarthatósági tanácsadás","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "Adminisztratív és pénzügyi alapkezelés azoknak a VvE-knek, amelyek az alapokat szeretnék rendben tudni.",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "ALV-szervezés",
+            "active": true
+          },
+          {
+            "label": "Tagnyilvántartás",
+            "active": true
+          },
+          {
+            "label": "Könyvelés és éves elszámolás",
+            "active": true
+          },
+          {
+            "label": "VvE-hozzájárulások behajtása",
+            "active": true
+          },
+          {
+            "label": "Fizetési tranzakciók",
+            "active": true
+          },
+          {
+            "label": "Műszaki kezelés",
+            "active": false
+          },
+          {
+            "label": "MJOP-karbantartás",
+            "active": false
+          },
+          {
+            "label": "Ügyeleti szolgálat",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "Kibővített adminisztratív, pénzügyi és műszaki alapkezelés egy kézben.",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "ALV-szervezés és jegyzőkönyvek",
+            "active": true
+          },
+          {
+            "label": "Tagnyilvántartás",
+            "active": true
+          },
+          {
+            "label": "Teljes könyvelés",
+            "active": true
+          },
+          {
+            "label": "Tartalékalap kezelése",
+            "active": true
+          },
+          {
+            "label": "Biztosításkezelés",
+            "active": true
+          },
+          {
+            "label": "Kisebb karbantartások koordinálása",
+            "active": true
+          },
+          {
+            "label": "Kárbejelentések",
+            "active": true
+          },
+          {
+            "label": "Tervezett karbantartás",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "Teljes",
+        "tagline": "Teljes körű kezelés — adminisztratív, pénzügyi és műszaki egyetlen fix díjért.",
+        "price": null,
+        "features": [
+          {
+            "label": "Minden a Start Plusból",
+            "active": true
+          },
+          {
+            "label": "Vezetőségi ülések korlátlanul",
+            "active": true
+          },
+          {
+            "label": "Jogi koordináció",
+            "active": true
+          },
+          {
+            "label": "Kintlévőség-kezelés és felszólítások",
+            "active": true
+          },
+          {
+            "label": "MJOP és tervezett karbantartás",
+            "active": true
+          },
+          {
+            "label": "24/7 ügyeleti szolgálat",
+            "active": true
+          },
+          {
+            "label": "Éves ellenőrzés",
+            "active": true
+          },
+          {
+            "label": "Fenntarthatósági tanácsadás",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"Vezetőségi ügyek","rows":[{"label":"ALV előkészítése és részvétel","start":true,"startPlus":true,"compleet":true},{"label":"ALV-jegyzőkönyv készítése","start":false,"startPlus":true,"compleet":true},{"label":"Vezetőségi üléseken való részvétel","start":false,"startPlus":"évente 1×","compleet":"Korlátlan"},{"label":"Házirend megfogalmazása","start":false,"startPlus":false,"compleet":true},{"label":"Közvetítés vitákban","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Titkársági","rows":[{"label":"Tagnyilvántartás","start":true,"startPlus":true,"compleet":true},{"label":"Levelezés a lakókkal","start":true,"startPlus":true,"compleet":true},{"label":"KvK-bejegyzés","start":true,"startPlus":true,"compleet":true},{"label":"Megosztási okirat kezelése","start":false,"startPlus":true,"compleet":true},{"label":"Biztosításkezelés","start":false,"startPlus":true,"compleet":true},{"label":"Jogi koordináció","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Pénzügyi","rows":[{"label":"Könyvelés és éves elszámolás","start":true,"startPlus":true,"compleet":true},{"label":"Költségvetés készítése","start":true,"startPlus":true,"compleet":true},{"label":"VvE-hozzájárulások behajtása","start":true,"startPlus":true,"compleet":true},{"label":"Fizetési tranzakciók","start":true,"startPlus":true,"compleet":true},{"label":"Tartalékalap kezelése","start":false,"startPlus":true,"compleet":true},{"label":"Többéves költségvetés","start":false,"startPlus":true,"compleet":true},{"label":"Kintlévőség-kezelés és felszólítások","start":false,"startPlus":false,"compleet":true},{"label":"Adóbevallások","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Műszaki napi karbantartás","rows":[{"label":"Kisebb karbantartások koordinálása","start":false,"startPlus":true,"compleet":true},{"label":"Kárbejelentések kezelése","start":false,"startPlus":true,"compleet":true},{"label":"Kulcskezelés","start":false,"startPlus":true,"compleet":true},{"label":"Karbantartási árajánlatkérések","start":false,"startPlus":false,"compleet":true},{"label":"24/7 ügyeleti szolgálat","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Műszaki tervezett karbantartás","rows":[{"label":"Többéves karbantartási terv (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Éves ellenőrzés","start":false,"startPlus":false,"compleet":true},{"label":"Nagyobb karbantartások felügyelete","start":false,"startPlus":false,"compleet":true},{"label":"Karbantartási tenderkiírás","start":false,"startPlus":false,"compleet":true},{"label":"Kivitelezés felügyelete","start":false,"startPlus":false,"compleet":true},{"label":"Átadás és utógondozás","start":false,"startPlus":false,"compleet":true},{"label":"Fenntarthatósági tanácsadás","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "Vezetőségi ügyek",
+        "rows": [
+          {
+            "label": "ALV előkészítése és részvétel",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "ALV-jegyzőkönyv készítése",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Vezetőségi üléseken való részvétel",
+            "start": false,
+            "startPlus": "évente 1×",
+            "compleet": "Korlátlan"
+          },
+          {
+            "label": "Házirend megfogalmazása",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Közvetítés vitákban",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Titkársági",
+        "rows": [
+          {
+            "label": "Tagnyilvántartás",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Levelezés a lakókkal",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "KvK-bejegyzés",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Megosztási okirat kezelése",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Biztosításkezelés",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Jogi koordináció",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Pénzügyi",
+        "rows": [
+          {
+            "label": "Könyvelés és éves elszámolás",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Költségvetés készítése",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "VvE-hozzájárulások behajtása",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Fizetési tranzakciók",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Tartalékalap kezelése",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Többéves költségvetés",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Kintlévőség-kezelés és felszólítások",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Adóbevallások",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Műszaki napi karbantartás",
+        "rows": [
+          {
+            "label": "Kisebb karbantartások koordinálása",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Kárbejelentések kezelése",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Kulcskezelés",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Karbantartási árajánlatkérések",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "24/7 ügyeleti szolgálat",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Műszaki tervezett karbantartás",
+        "rows": [
+          {
+            "label": "Többéves karbantartási terv (MJOP)",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Éves ellenőrzés",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Nagyobb karbantartások felügyelete",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Karbantartási tenderkiírás",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Kivitelezés felügyelete",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Átadás és utógondozás",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Fenntarthatósági tanácsadás",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "Segítség a választáshoz",
     "hulp_title": "Melyik csomag illik a VvE-nkhez?",
     "hulp_subtitle": "A helyes választás a VvE-je méretétől, a jelenlegi helyzettől és az Ön kívánságaitól függ. Szívesen tanácsot adunk — kötelezettség nélkül.",
     "hulp_btn": "Árajánlat kérése",
     "hulp_cards": [
-      {"icon":"users-three","title":"Kis VvE (< 12)","desc":"Kisebb komplexumokhoz általában elegendő a Start vagy a Start Plus."},
-      {"icon":"buildings","title":"Közepes VvE","desc":"A Start Plus megfelelő egyensúlyt kínál a függetlenség és a teljes körű szolgáltatás között."},
-      {"icon":"buildings","title":"Nagy VvE (> 40)","desc":"A Teljes csomag megakadályozza, hogy a műszaki kezelést mégis Önnek kelljen intéznie."},
-      {"icon":"wrench","title":"Elhalasztott karbantartás","desc":"Elhalasztott karbantartás esetén a Teljes csomagot javasoljuk MJOP-megközelítéssel."}
+      {
+        "icon": "users-three",
+        "title": "Kis VvE (< 12)",
+        "desc": "Kisebb komplexumokhoz általában elegendő a Start vagy a Start Plus."
+      },
+      {
+        "icon": "buildings",
+        "title": "Közepes VvE",
+        "desc": "A Start Plus megfelelő egyensúlyt kínál a függetlenség és a teljes körű szolgáltatás között."
+      },
+      {
+        "icon": "buildings",
+        "title": "Nagy VvE (> 40)",
+        "desc": "A Teljes csomag megakadályozza, hogy a műszaki kezelést mégis Önnek kelljen intéznie."
+      },
+      {
+        "icon": "wrench",
+        "title": "Elhalasztott karbantartás",
+        "desc": "Elhalasztott karbantartás esetén a Teljes csomagot javasoljuk MJOP-megközelítéssel."
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "A VvE-je mögött álló emberek",
     "team_subtitle": "Tapasztalt szakemberek kis csapata. Minden VvE egy dedikált kezelőt kap.",
     "team": [
-      {"name":"Mark de Vries","role":"Alapító és kezelő"},
-      {"name":"Linda Janssen","role":"Vezető VvE-kezelő"},
-      {"name":"Tim Bakker","role":"Műszaki kezelő"},
-      {"name":"Eva van Loon","role":"Pénzügyi kezelő"}
+      {
+        "name": "Mark de Vries",
+        "role": "Alapító és kezelő"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "Vezető VvE-kezelő"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "Műszaki kezelő"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "Pénzügyi kezelő"
+      }
     ],
     "missie_eyebrow": "Küldetésünk",
     "missie_quote": "VvE-kezelés, amely tehermentesít, nem pedig bonyolít.",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "Munkamódszer",
-    "title": "Az árajánlattól a folyamatos kezelésig",
-    "subtitle": "A teljes váltást általában 6-8 héten belül elintézzük. Így működik:",
-    "stap": "LÉPÉS",
+    "title_1": "Az árajánlattól a",
+    "title_2": "folyamatos kezelésig",
+    "subtitle": "Az első bemutatkozástól a folyamatos kezelésig a teljes váltást mi intézzük Ön helyett — Önnek alig kell bármit is tennie. Hat lépésben ez így néz ki.",
+    "stap": "Lépés",
     "steps": [
-      {"num":"01","title":"Kötelezettség nélküli árajánlat","desc":"Kitölti az árajánlatkérő űrlapot, vagy felhív minket. 2 munkanapon belül személyre szabott árajánlatot kap a VvE-jére."},
-      {"num":"02","title":"Bemutatkozó beszélgetés","desc":"Meglátogatjuk a VvE-jét, áttekintjük a megosztási okiratot és az MJOP-t, és megbeszéljük az Ön kívánságait és aggályait."},
-      {"num":"03","title":"Gondtalan váltás","desc":"Elintézzük a teljes átállást a jelenlegi kezelőtől — felmondás, dokumentumok, pénzügyek. Önnek semmit sem kell tennie."},
-      {"num":"04","title":"Ügyfélportál beállítása","desc":"Minden tulajdonos hozzáférést kap a saját ügyfélportáljához. Minden dokumentum, pénzügy és karbantartás — azonnal elérhető."},
-      {"num":"05","title":"Első ALV","desc":"Megszervezzük az első ALV-t a kezelésünk alatt, és bemutatjuk Önnek a dedikált kapcsolattartóját."},
-      {"num":"06","title":"Folyamatos kezelés","desc":"Ettől a ponttól kezdve mi gondoskodunk mindenről. Ön a portálon keresztül megtartja az irányítást, és proaktív frissítéseket kap."}
+      {
+        "when": "1–2. nap",
+        "title": "Kötelezettség nélküli árajánlat",
+        "desc": "Kitölti az árajánlatkérő űrlapot, vagy felhív minket. 2 munkanapon belül személyre szabott árajánlatot kap a VvE-jére."
+      },
+      {
+        "when": "1. hét",
+        "title": "Bemutatkozó beszélgetés",
+        "desc": "Meglátogatjuk a VvE-jét, áttekintjük a megosztási okiratot és az MJOP-t, és megbeszéljük az Ön kívánságait és aggályait."
+      },
+      {
+        "when": "1–6. hét",
+        "title": "Gondtalan váltás",
+        "desc": "Elintézzük a teljes átállást a jelenlegi kezelőtől — felmondás, dokumentumok, pénzügyek. Önnek semmit sem kell tennie."
+      },
+      {
+        "when": "6. hét",
+        "title": "Ügyfélportál beállítása",
+        "desc": "Minden tulajdonos hozzáférést kap a saját ügyfélportáljához. Minden dokumentum, pénzügy és karbantartás azonnal elérhető."
+      },
+      {
+        "when": "7–8. hét",
+        "title": "Első ALV",
+        "desc": "Megszervezzük az első ALV-t a kezelésünk alatt, és bemutatjuk Önnek a dedikált kapcsolattartóját."
+      },
+      {
+        "when": "Folyamatosan",
+        "title": "Folyamatos kezelés",
+        "desc": "Ettől a ponttól kezdve mi gondoskodunk mindenről. Ön a portálon keresztül megtartja az irányítást, és proaktív frissítéseket kap."
+      }
+    ],
+    "reassure": [
+      {
+        "title": "Önnek szinte semmit sem kell tennie",
+        "desc": "A teljes váltást mi koordináljuk, beleértve a jelenlegi kezelőjénél történő felmondást is."
+      },
+      {
+        "title": "Nincs kockázat",
+        "desc": "Kötelezettség nélküli bemutatkozás. Csak megegyezés esetén kezdjük el az átállást."
+      },
+      {
+        "title": "Dedikált kapcsolattartó",
+        "desc": "Az első naptól tudja, kihez fordulhat — egy kezelőhöz, aki ismeri az épületét."
+      }
+    ],
+    "cta_eyebrow": "Ingyenes árajánlat",
+    "cta_title": "Készen áll a váltásra?",
+    "cta_desc": "Kérjen kötelezettség nélküli árajánlatot. A teljes átállást ezután mi intézzük — Ön pedig gondtalanul élhet.",
+    "cta_btn": "Árajánlat kérése",
+    "cta_list": [
+      "Váltás 6–8 hét alatt",
+      "Mi mondunk fel a jelenlegi kezelőjénél",
+      "Nincs kockázat, kötelezettség nélkül"
     ]
   },
   "offerte_page": {
     "eyebrow": "Árajánlat kérése",
     "title": "Kötelezettség nélkül és az Ön VvE-jére szabva",
     "intro": "Töltse ki az űrlapot. 2 munkanapon belül személyre szabott árajánlatot kap — telefonon megbeszélve, hogy valóban illeszkedjen a helyzetéhez.",
-    "usps": [["shield-check","Kötelezettség nélkül és ingyenes"],["clock","Válasz 2 munkanapon belül"],["user-circle","Közvetlen kapcsolat egy kezelővel"],["lock","Az adatai az Ön tulajdonában maradnak"]],
+    "usps": [
+      [
+        "shield-check",
+        "Kötelezettség nélkül és ingyenes"
+      ],
+      [
+        "clock",
+        "Válasz 2 munkanapon belül"
+      ],
+      [
+        "user-circle",
+        "Közvetlen kapcsolat egy kezelővel"
+      ],
+      [
+        "lock",
+        "Az adatai az Ön tulajdonában maradnak"
+      ]
+    ],
     "stap_van": "/",
-    "step_titles": ["Meséljen a VvE-jéről","Milyen szolgáltatásokat keres?","Az Ön jelenlegi helyzete","Az Ön elérhetőségei"],
-    "step1": {"vve_naam":"A VvE neve","vve_naam_ph":"pl. VvE Parkzicht","aantal":"Lakások száma","aantal_ph":"pl. 24","bouwjaar":"Építés éve","bouwjaar_ph":"pl. 1998","adres":"Cím / helyszín","adres_ph":"Város"},
-    "step2": {"services":[["package","Teljes csomag","Mind a 3 pillér egy áron"],["folders","Adminisztratív","ALV, jegyzőkönyvek, posta"],["chart-line-up","Pénzügyi","Könyvelés, éves beszámolók"],["wrench","Műszaki","MJOP, karbantartás"]]},
-    "step3": {"beheerder_label":"Van jelenleg kezelője?","beheerder_options":["Igen, váltani szeretnék","Nem, ez az első alkalom","Önkezelés, segítségre van szükségünk"],"belangrijk_label":"Mi a legfontosabb Önnek?","belangrijk_ph":"pl. gyorsabb válasz, jobb átláthatóság, alacsonyabb költségek..."},
-    "step4": {"voornaam":"Keresztnév","achternaam":"Vezetéknév","functie":"Szerep a VvE-ben","functie_options":["Elnök","Pénztáros","Titkár","Vezetőségi tag","Tulajdonos / tag"],"email":"E-mail","telefoon":"Telefonszám"},
+    "step_titles": [
+      "Meséljen a VvE-jéről",
+      "Milyen szolgáltatásokat keres?",
+      "Az Ön jelenlegi helyzete",
+      "Az Ön elérhetőségei"
+    ],
+    "step1": {
+      "vve_naam": "A VvE neve",
+      "vve_naam_ph": "pl. VvE Parkzicht",
+      "aantal": "Lakások száma",
+      "aantal_ph": "pl. 24",
+      "bouwjaar": "Építés éve",
+      "bouwjaar_ph": "pl. 1998",
+      "adres": "Cím / helyszín",
+      "adres_ph": "Város"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "Teljes csomag",
+          "Mind a 3 pillér egy áron"
+        ],
+        [
+          "folders",
+          "Adminisztratív",
+          "ALV, jegyzőkönyvek, posta"
+        ],
+        [
+          "chart-line-up",
+          "Pénzügyi",
+          "Könyvelés, éves beszámolók"
+        ],
+        [
+          "wrench",
+          "Műszaki",
+          "MJOP, karbantartás"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "Van jelenleg kezelője?",
+      "beheerder_options": [
+        "Igen, váltani szeretnék",
+        "Nem, ez az első alkalom",
+        "Önkezelés, segítségre van szükségünk"
+      ],
+      "belangrijk_label": "Mi a legfontosabb Önnek?",
+      "belangrijk_ph": "pl. gyorsabb válasz, jobb átláthatóság, alacsonyabb költségek..."
+    },
+    "step4": {
+      "voornaam": "Keresztnév",
+      "achternaam": "Vezetéknév",
+      "functie": "Szerep a VvE-ben",
+      "functie_options": [
+        "Elnök",
+        "Pénztáros",
+        "Titkár",
+        "Vezetőségi tag",
+        "Tulajdonos / tag"
+      ],
+      "email": "E-mail",
+      "telefoon": "Telefonszám"
+    },
     "btn_terug": "Vissza",
     "btn_volgende": "Következő lépés",
     "btn_versturen": "Kérés elküldése",
@@ -193,86 +863,148 @@
     "success_desc": "Megkaptuk az árajánlatkérését, és 2 munkanapon belül felvesszük Önnel a kapcsolatot."
   },
   "privacy_page": {
-    "title":"Adatvédelmi nyilatkozat",
-    "intro":"A Wateringenben székelő VvE Beheer Collectief felelős a személyes adatok kezeléséért az ebben az adatvédelmi nyilatkozatban leírtak szerint.",
-    "h2_contact":"Elérhetőségek",
-    "h2_gegevens":"Az általunk kezelt személyes adatok",
-    "gegevens_intro":"A VvE Beheer Collectief azért kezeli az Ön személyes adatait, mert igénybe veszi szolgáltatásainkat és/vagy mert Ön maga adja meg nekünk ezeket az adatokat. Az alábbiakban áttekintést talál az általunk kezelt személyes adatokról:",
-    "gegevens_items":["Kereszt- és vezetéknév","Telefonszám","E-mail cím","A VvE neve és címe","Szerep a VvE-ben","Egyéb adatok, amelyeket Ön aktívan megad, például levelezés vagy az árajánlatkérő űrlap útján"],
-    "h2_doel":"A személyes adatok kezelésének célja",
-    "doel_intro":"A VvE Beheer Collectief az alábbi célokból kezeli az Ön személyes adatait:",
-    "doel_items":["Az árajánlatkérésének kezelése","Hogy szükség esetén felhívhassuk vagy e-mailt küldhessünk Önnek szolgáltatásaink elvégzéséhez","A VvE-kezelési szolgáltatások elvégzése, amelyekre megbízott minket","Hogy tájékoztassuk Önt a szolgáltatásaink változásairól"],
-    "h2_bewaren":"Meddig őrizzük a személyes adatokat",
-    "bewaren_text":"A VvE Beheer Collectief nem őrzi tovább az Ön személyes adatait, mint ami feltétlenül szükséges azon célok eléréséhez, amelyekhez az adatait gyűjtik. Az árajánlatkérésekből származó adatokat legfeljebb 12 hónapig őrizzük, ha nem köttetik megállapodás. Aktív kezelési szerződés esetén az adatokat annak időtartama alatt és azt követően legfeljebb 7 évig őrizzük (a pénzügyi adminisztráció törvényes megőrzési ideje).",
-    "h2_derden":"Személyes adatok megosztása harmadik felekkel",
-    "derden_text":"A VvE Beheer Collectief nem osztja meg az Ön adatait harmadik felekkel, kivéve, ha ez szükséges az Önnel kötött megállapodásunk teljesítéséhez vagy jogi kötelezettség teljesítéséhez.",
-    "h2_inzien":"Adatok megtekintése, módosítása vagy törlése",
-    "inzien_text":"Önnek joga van megtekinteni, helyesbíteni vagy törölni a személyes adatait. Joga van továbbá visszavonni az adatkezeléshez adott esetleges hozzájárulását, vagy tiltakozni az adatkezelés ellen. Személyes adatainak megtekintésére, helyesbítésére, törlésére vagy átadására vonatkozó kérelmét az info@vvebeheercollectief.nl címre küldheti.",
-    "h2_beveiliging":"Biztonság",
-    "beveiliging_text":"A VvE Beheer Collectief komolyan veszi az Ön adatainak védelmét, és megfelelő intézkedéseket tesz a visszaélés, elvesztés, jogosulatlan hozzáférés, nemkívánatos nyilvánosságra hozatal és jogosulatlan módosítás megakadályozására. Ha úgy érzi, hogy az adatai nincsenek megfelelően védve, vagy visszaélésre utaló jelek vannak, kérjük, vegye fel velünk a kapcsolatot az info@vvebeheercollectief.nl címen.",
-    "updated":"Utoljára frissítve: 2025. május"
+    "title": "Adatvédelmi nyilatkozat",
+    "intro": "A Wateringenben székelő VvE Beheer Collectief felelős a személyes adatok kezeléséért az ebben az adatvédelmi nyilatkozatban leírtak szerint.",
+    "h2_contact": "Elérhetőségek",
+    "h2_gegevens": "Az általunk kezelt személyes adatok",
+    "gegevens_intro": "A VvE Beheer Collectief azért kezeli az Ön személyes adatait, mert igénybe veszi szolgáltatásainkat és/vagy mert Ön maga adja meg nekünk ezeket az adatokat. Az alábbiakban áttekintést talál az általunk kezelt személyes adatokról:",
+    "gegevens_items": [
+      "Kereszt- és vezetéknév",
+      "Telefonszám",
+      "E-mail cím",
+      "A VvE neve és címe",
+      "Szerep a VvE-ben",
+      "Egyéb adatok, amelyeket Ön aktívan megad, például levelezés vagy az árajánlatkérő űrlap útján"
+    ],
+    "h2_doel": "A személyes adatok kezelésének célja",
+    "doel_intro": "A VvE Beheer Collectief az alábbi célokból kezeli az Ön személyes adatait:",
+    "doel_items": [
+      "Az árajánlatkérésének kezelése",
+      "Hogy szükség esetén felhívhassuk vagy e-mailt küldhessünk Önnek szolgáltatásaink elvégzéséhez",
+      "A VvE-kezelési szolgáltatások elvégzése, amelyekre megbízott minket",
+      "Hogy tájékoztassuk Önt a szolgáltatásaink változásairól"
+    ],
+    "h2_bewaren": "Meddig őrizzük a személyes adatokat",
+    "bewaren_text": "A VvE Beheer Collectief nem őrzi tovább az Ön személyes adatait, mint ami feltétlenül szükséges azon célok eléréséhez, amelyekhez az adatait gyűjtik. Az árajánlatkérésekből származó adatokat legfeljebb 12 hónapig őrizzük, ha nem köttetik megállapodás. Aktív kezelési szerződés esetén az adatokat annak időtartama alatt és azt követően legfeljebb 7 évig őrizzük (a pénzügyi adminisztráció törvényes megőrzési ideje).",
+    "h2_derden": "Személyes adatok megosztása harmadik felekkel",
+    "derden_text": "A VvE Beheer Collectief nem osztja meg az Ön adatait harmadik felekkel, kivéve, ha ez szükséges az Önnel kötött megállapodásunk teljesítéséhez vagy jogi kötelezettség teljesítéséhez.",
+    "h2_inzien": "Adatok megtekintése, módosítása vagy törlése",
+    "inzien_text": "Önnek joga van megtekinteni, helyesbíteni vagy törölni a személyes adatait. Joga van továbbá visszavonni az adatkezeléshez adott esetleges hozzájárulását, vagy tiltakozni az adatkezelés ellen. Személyes adatainak megtekintésére, helyesbítésére, törlésére vagy átadására vonatkozó kérelmét az info@vvebeheercollectief.nl címre küldheti.",
+    "h2_beveiliging": "Biztonság",
+    "beveiliging_text": "A VvE Beheer Collectief komolyan veszi az Ön adatainak védelmét, és megfelelő intézkedéseket tesz a visszaélés, elvesztés, jogosulatlan hozzáférés, nemkívánatos nyilvánosságra hozatal és jogosulatlan módosítás megakadályozására. Ha úgy érzi, hogy az adatai nincsenek megfelelően védve, vagy visszaélésre utaló jelek vannak, kérjük, vegye fel velünk a kapcsolatot az info@vvebeheercollectief.nl címen.",
+    "updated": "Utoljára frissítve: 2025. május"
   },
   "voorwaarden_page": {
-    "title":"Általános szerződési feltételek",
-    "articles":[
-      {"h2":"1. cikk — Fogalommeghatározások","items":["Vállalkozó: VvE Beheer Collectief, székhelye Wateringen, KvK-szám: 51721139.","Megbízó: a Vállalkozóval szerződést kötő Tulajdonosok Egyesülete (VvE).","Megállapodás: a Megbízó és a Vállalkozó közötti kezelési szerződés."]},
-      {"h2":"2. cikk — Alkalmazhatóság","p":"Ezek az általános szerződési feltételek a Vállalkozó minden ajánlatára és minden megkötött megállapodásra vonatkoznak. A jelen feltételektől való eltérés csak akkor érvényes, ha azt írásban kifejezetten megállapodták."},
-      {"h2":"3. cikk — Ajánlatok és árajánlatok","p":"A VvE Beheer Collectief minden árajánlata kötelezettség nélküli, és eltérő rendelkezés hiányában 30 napig érvényes. A megállapodás mindkét fél írásbeli megerősítésével vagy az ALV határozatával jön létre."},
-      {"h2":"4. cikk — A megállapodás teljesítése","p":"A VvE Beheer Collectief a megállapodást legjobb tudása és képessége szerint, a szakszerűség követelményeinek megfelelően teljesíti. A kezelőnek gondossági és nem eredménykötelezettsége van."},
-      {"h2":"5. cikk — Időtartam és felmondás","p":"A kezelési szerződést a megállapodásban megadott időtartamra kötik. A felmondás írásban történik, a szerződéses időszak vége előtt 3 hónapos felmondási idő betartásával, eltérő megállapodás hiányában."},
-      {"h2":"6. cikk — Díjak és fizetés","p":"Minden megadott díj ÁFA nélkül értendő, kivéve, ha kifejezetten másként van feltüntetve. A fizetést a számla keltétől számított 30 napon belül kell teljesíteni. Késedelmes fizetés esetén a Megbízó a törvény erejénél fogva késedelembe esik, és törvényes kamat jár."},
-      {"h2":"7. cikk — Felelősség","p":"A VvE Beheer Collectief felelőssége az adott esetben a szakmai felelősségbiztosítás által kifizetett összegre, valamint az önrészre korlátozódik. Ha a biztosítás nem fizet, a felelősség azon díj összegére korlátozódik, amelyet a Vállalkozó a megállapodás keretében végzett munkájáért a kárt okozó esemény előtti 12 hónapos időszakban kapott."},
-      {"h2":"8. cikk — Titoktartás","p":"Mindkét fél köteles titokban tartani minden bizalmas információt, amelyet a megállapodás keretében egymástól szerzett. Ez a kötelezettség a megállapodás megszűnése után is fennáll."},
-      {"h2":"9. cikk — Panaszok","p":"A megállapodás teljesítésével kapcsolatos panaszokat időben, teljes körűen és egyértelműen leírva kell benyújtani a VvE Beheer Collectiefnek. A panaszokat a kézhezvételtől számított 14 napon belül feldolgozzuk."},
-      {"h2":"10. cikk — Alkalmazandó jog","p":"A Megbízó és a VvE Beheer Collectief közötti minden megállapodásra a holland jog vonatkozik. A vitákat a hágai körzet illetékes bírósága elé terjesztik."}
+    "title": "Általános szerződési feltételek",
+    "articles": [
+      {
+        "h2": "1. cikk — Fogalommeghatározások",
+        "items": [
+          "Vállalkozó: VvE Beheer Collectief, székhelye Wateringen, KvK-szám: 51721139.",
+          "Megbízó: a Vállalkozóval szerződést kötő Tulajdonosok Egyesülete (VvE).",
+          "Megállapodás: a Megbízó és a Vállalkozó közötti kezelési szerződés."
+        ]
+      },
+      {
+        "h2": "2. cikk — Alkalmazhatóság",
+        "p": "Ezek az általános szerződési feltételek a Vállalkozó minden ajánlatára és minden megkötött megállapodásra vonatkoznak. A jelen feltételektől való eltérés csak akkor érvényes, ha azt írásban kifejezetten megállapodták."
+      },
+      {
+        "h2": "3. cikk — Ajánlatok és árajánlatok",
+        "p": "A VvE Beheer Collectief minden árajánlata kötelezettség nélküli, és eltérő rendelkezés hiányában 30 napig érvényes. A megállapodás mindkét fél írásbeli megerősítésével vagy az ALV határozatával jön létre."
+      },
+      {
+        "h2": "4. cikk — A megállapodás teljesítése",
+        "p": "A VvE Beheer Collectief a megállapodást legjobb tudása és képessége szerint, a szakszerűség követelményeinek megfelelően teljesíti. A kezelőnek gondossági és nem eredménykötelezettsége van."
+      },
+      {
+        "h2": "5. cikk — Időtartam és felmondás",
+        "p": "A kezelési szerződést a megállapodásban megadott időtartamra kötik. A felmondás írásban történik, a szerződéses időszak vége előtt 3 hónapos felmondási idő betartásával, eltérő megállapodás hiányában."
+      },
+      {
+        "h2": "6. cikk — Díjak és fizetés",
+        "p": "Minden megadott díj ÁFA nélkül értendő, kivéve, ha kifejezetten másként van feltüntetve. A fizetést a számla keltétől számított 30 napon belül kell teljesíteni. Késedelmes fizetés esetén a Megbízó a törvény erejénél fogva késedelembe esik, és törvényes kamat jár."
+      },
+      {
+        "h2": "7. cikk — Felelősség",
+        "p": "A VvE Beheer Collectief felelőssége az adott esetben a szakmai felelősségbiztosítás által kifizetett összegre, valamint az önrészre korlátozódik. Ha a biztosítás nem fizet, a felelősség azon díj összegére korlátozódik, amelyet a Vállalkozó a megállapodás keretében végzett munkájáért a kárt okozó esemény előtti 12 hónapos időszakban kapott."
+      },
+      {
+        "h2": "8. cikk — Titoktartás",
+        "p": "Mindkét fél köteles titokban tartani minden bizalmas információt, amelyet a megállapodás keretében egymástól szerzett. Ez a kötelezettség a megállapodás megszűnése után is fennáll."
+      },
+      {
+        "h2": "9. cikk — Panaszok",
+        "p": "A megállapodás teljesítésével kapcsolatos panaszokat időben, teljes körűen és egyértelműen leírva kell benyújtani a VvE Beheer Collectiefnek. A panaszokat a kézhezvételtől számított 14 napon belül feldolgozzuk."
+      },
+      {
+        "h2": "10. cikk — Alkalmazandó jog",
+        "p": "A Megbízó és a VvE Beheer Collectief közötti minden megállapodásra a holland jog vonatkozik. A vitákat a hágai körzet illetékes bírósága elé terjesztik."
+      }
     ],
-    "updated":"Utoljára frissítve: 2025. május"
+    "updated": "Utoljára frissítve: 2025. május"
   },
   "cookies_page": {
-    "title":"Cookie-nyilatkozat",
-    "intro":"A VvE Beheer Collectief jelen weboldala cookie-kat használ. Ebben a cookie-nyilatkozatban elolvashatja, mik a cookie-k, melyeket használunk, és hogyan kezelheti őket.",
-    "h2_wat":"Mik azok a cookie-k?",
-    "wat_text":"A cookie-k kis szövegfájlok, amelyeket a böngészője tárol, amikor meglátogat egy weboldalt. Arra szolgálnak, hogy a weboldalak megfelelően működjenek, hogy elemezzék a weboldal használatát, és hogy javítsák a felhasználói élményt.",
-    "h2_welke":"Milyen cookie-kat használunk?",
-    "h3_functioneel":"Funkcionális cookie-k",
-    "functioneel_text":"Ezek a cookie-k szükségesek a weboldal működéséhez. Gondoskodnak például arról, hogy megjegyezzük a beállításait. Ezeket a cookie-kat nem használjuk marketing célokra.",
-    "h3_analytisch":"Analitikai cookie-k",
-    "analytisch_text":"Analitikai cookie-kat használhatunk weboldalunk használatának mérésére és javítására. Ezeket az adatokat névtelenül gyűjtjük, és nem osztjuk meg harmadik felekkel kereskedelmi célokra.",
-    "h2_beheren":"Cookie-k kezelése",
-    "beheren_intro":"Cookie-beállításait bármikor módosíthatja a böngésző beállításain keresztül. Kérjük, vegye figyelembe, hogy bizonyos cookie-k letiltása befolyásolhatja a weboldal működését.",
-    "beheren_text":"A legtöbb böngésző lehetőséget kínál az alábbiakra:",
-    "beheren_items":["Az összes tárolt cookie megtekintése","Cookie-k egyenkénti vagy teljes törlése","Bizonyos weboldalak cookie-jainak letiltása","Az összes cookie letiltása","Az összes cookie törlése a böngésző bezárásakor"],
-    "h2_derden":"Harmadik felek cookie-jai",
-    "derden_text":"Weboldalunk harmadik felek szolgáltatásait használhatja, például a Google Fontsot a tipográfiához. Ezek a szolgáltatások saját cookie-kat helyezhetnek el. Nincs befolyásunk e harmadik felek cookie-jainak elhelyezésére és használatára. További információért kérjük, tekintse meg az adott harmadik fél adatvédelmi szabályzatát.",
-    "h2_wijzigingen":"Változások",
-    "wijzigingen_text":"A VvE Beheer Collectief fenntartja a jogot e cookie-nyilatkozat módosítására. A változásokat ezen az oldalon tesszük közzé.",
-    "h2_contact":"Kapcsolat",
-    "contact_text":"Kérdése van a cookie-szabályzatunkkal kapcsolatban? Vegye fel velünk a kapcsolatot az info@vvebeheercollectief.nl címen.",
-    "updated":"Utoljára frissítve: 2025. május"
+    "title": "Cookie-nyilatkozat",
+    "intro": "A VvE Beheer Collectief jelen weboldala cookie-kat használ. Ebben a cookie-nyilatkozatban elolvashatja, mik a cookie-k, melyeket használunk, és hogyan kezelheti őket.",
+    "h2_wat": "Mik azok a cookie-k?",
+    "wat_text": "A cookie-k kis szövegfájlok, amelyeket a böngészője tárol, amikor meglátogat egy weboldalt. Arra szolgálnak, hogy a weboldalak megfelelően működjenek, hogy elemezzék a weboldal használatát, és hogy javítsák a felhasználói élményt.",
+    "h2_welke": "Milyen cookie-kat használunk?",
+    "h3_functioneel": "Funkcionális cookie-k",
+    "functioneel_text": "Ezek a cookie-k szükségesek a weboldal működéséhez. Gondoskodnak például arról, hogy megjegyezzük a beállításait. Ezeket a cookie-kat nem használjuk marketing célokra.",
+    "h3_analytisch": "Analitikai cookie-k",
+    "analytisch_text": "Analitikai cookie-kat használhatunk weboldalunk használatának mérésére és javítására. Ezeket az adatokat névtelenül gyűjtjük, és nem osztjuk meg harmadik felekkel kereskedelmi célokra.",
+    "h2_beheren": "Cookie-k kezelése",
+    "beheren_intro": "Cookie-beállításait bármikor módosíthatja a böngésző beállításain keresztül. Kérjük, vegye figyelembe, hogy bizonyos cookie-k letiltása befolyásolhatja a weboldal működését.",
+    "beheren_text": "A legtöbb böngésző lehetőséget kínál az alábbiakra:",
+    "beheren_items": [
+      "Az összes tárolt cookie megtekintése",
+      "Cookie-k egyenkénti vagy teljes törlése",
+      "Bizonyos weboldalak cookie-jainak letiltása",
+      "Az összes cookie letiltása",
+      "Az összes cookie törlése a böngésző bezárásakor"
+    ],
+    "h2_derden": "Harmadik felek cookie-jai",
+    "derden_text": "Weboldalunk harmadik felek szolgáltatásait használhatja, például a Google Fontsot a tipográfiához. Ezek a szolgáltatások saját cookie-kat helyezhetnek el. Nincs befolyásunk e harmadik felek cookie-jainak elhelyezésére és használatára. További információért kérjük, tekintse meg az adott harmadik fél adatvédelmi szabályzatát.",
+    "h2_wijzigingen": "Változások",
+    "wijzigingen_text": "A VvE Beheer Collectief fenntartja a jogot e cookie-nyilatkozat módosítására. A változásokat ezen az oldalon tesszük közzé.",
+    "h2_contact": "Kapcsolat",
+    "contact_text": "Kérdése van a cookie-szabályzatunkkal kapcsolatban? Vegye fel velünk a kapcsolatot az info@vvebeheercollectief.nl címen.",
+    "updated": "Utoljára frissítve: 2025. május"
   },
   "footer": {
-    "brand_desc":"Személyes, átlátható és megbízható VvE-kezelés Dél-Hollandia és környéke számára. 17 év tapasztalat, 500+ VvE a kezelésünk alatt.",
-    "h_diensten":"Szolgáltatások",
-    "diensten_links":["Adminisztratív kezelés","Pénzügyi kezelés","Műszaki kezelés","Teljes csomag"],
-    "h_bedrijf":"Vállalat",
-    "bedrijf_links":["Rólunk","Munkamódszer","Ügyféltörténetek","Állásajánlatok"],
-    "h_contact":"Kapcsolat",
-    "locatie":"Wateringen, Dél-Hollandia",
-    "offerte_link":"Árajánlat kérése →",
-    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
-    "privacy":"Adatvédelem",
-    "voorwaarden":"Szerződési feltételek",
-    "cookies":"Cookie-k"
+    "brand_desc": "Személyes, átlátható és megbízható VvE-kezelés Dél-Hollandia és környéke számára. 17 év tapasztalat, 500+ VvE a kezelésünk alatt.",
+    "h_diensten": "Szolgáltatások",
+    "diensten_links": [
+      "Adminisztratív kezelés",
+      "Pénzügyi kezelés",
+      "Műszaki kezelés",
+      "Teljes csomag"
+    ],
+    "h_bedrijf": "Vállalat",
+    "bedrijf_links": [
+      "Rólunk",
+      "Munkamódszer",
+      "Ügyféltörténetek",
+      "Állásajánlatok"
+    ],
+    "h_contact": "Kapcsolat",
+    "locatie": "Wateringen, Dél-Hollandia",
+    "offerte_link": "Árajánlat kérése →",
+    "bottom_kvk": "VvE Beheer Collectief. KvK 51721139.",
+    "privacy": "Adatvédelem",
+    "voorwaarden": "Szerződési feltételek",
+    "cookies": "Cookie-k"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — VvE-kezelés Dél-Hollandia",
-    "diensten":"Szolgáltatások — VvE Beheer Collectief",
-    "pakketten":"Csomagok — VvE Beheer Collectief",
-    "overons":"Rólunk — VvE Beheer Collectief",
-    "werkwijze":"Munkamódszer — VvE Beheer Collectief",
-    "offerte":"Árajánlat kérése — VvE Beheer Collectief",
-    "privacy":"Adatvédelmi nyilatkozat — VvE Beheer Collectief",
-    "voorwaarden":"Általános szerződési feltételek — VvE Beheer Collectief",
-    "cookies":"Cookie-nyilatkozat — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — VvE-kezelés Dél-Hollandia",
+    "diensten": "Szolgáltatások — VvE Beheer Collectief",
+    "pakketten": "Csomagok — VvE Beheer Collectief",
+    "overons": "Rólunk — VvE Beheer Collectief",
+    "werkwijze": "Munkamódszer — VvE Beheer Collectief",
+    "offerte": "Árajánlat kérése — VvE Beheer Collectief",
+    "privacy": "Adatvédelmi nyilatkozat — VvE Beheer Collectief",
+    "voorwaarden": "Általános szerződési feltételek — VvE Beheer Collectief",
+    "cookies": "Cookie-nyilatkozat — VvE Beheer Collectief"
   }
 }

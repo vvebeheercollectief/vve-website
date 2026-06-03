@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "bs", "dir": "ltr", "label": "Bosanski" },
+  "meta": {
+    "lang": "bs",
+    "dir": "ltr",
+    "label": "Bosanski"
+  },
   "nav": {
     "home": "Početna",
     "diensten": "Usluge",
@@ -14,17 +18,39 @@
     "menu_close": "Zatvori meni"
   },
   "hero": {
+    "pill": "Upravljanje VvE · Den Haag i Južna Holandija",
     "title_1": "Zajedno osiguravamo",
     "title_2": "bezbrižno stanovanje.",
-    "subtitle": "Specijalist za upravljanje VvE za Den Haag i cijelu Južnu Holandiju. Jedna posvećena kontakt-osoba, potpuna transparentnost putem vlastitog klijentskog portala — mi se brinemo, vi živite bezbrižno.",
-    "cta_primary": "Besplatna ponuda",
-    "cta_secondary": "Naš pristup"
+    "subtitle": "Jedna posvećena kontakt-osoba, potpuna transparentnost putem vlastitog klijentskog portala. Mi obavljamo administrativno, finansijsko i tehničko upravljanje — vi živite bezbrižno.",
+    "cta_primary": "Pogledajte naše usluge",
+    "cta_secondary": "Naš pristup",
+    "trust": [
+      "17+ godina iskustva",
+      "500+ VvE",
+      "Odgovor < 24 sata"
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "Godina iskustva u upravljanju VvE" },
-    { "icon": "buildings", "num": "500+", "label": "VvE pod našim upravljanjem" },
-    { "icon": "users", "num": "12.000+", "label": "Opsluženih vlasnika" },
-    { "icon": "lightning", "num": "< 24u", "label": "Prosječno vrijeme odgovora" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "Godina iskustva u upravljanju VvE"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "VvE pod našim upravljanjem"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "Opsluženih vlasnika"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "Prosječno vrijeme odgovora"
+    }
   ],
   "pillars_section": {
     "eyebrow": "Naše usluge",
@@ -33,9 +59,39 @@
     "read_more": "Saznajte više"
   },
   "pillars": [
-    { "icon": "folders", "title": "Administrativno upravljanje", "desc": "Organizacija skupštine (ALV), evidencija članova, zapisnici i jasna korespondencija.", "bullets": ["Organizacija skupštine i zapisnici", "Evidencija članova", "Pošta i korespondencija", "Upravljanje aktom o podjeli"] },
-    { "icon": "chart-line-up", "title": "Finansijsko upravljanje", "desc": "Računovodstvo, budžet, rezervni fond i godišnji obračun — uvijek transparentno.", "bullets": ["Računovodstvo i godišnji obračun", "Budžet i VvE doprinos", "Upravljanje rezervnim fondom", "Naplata i dužnici"] },
-    { "icon": "wrench", "title": "Tehničko upravljanje", "desc": "Održavanje, MJOP, ponude i inspekcije — proaktivno i dobro ispregovarano.", "bullets": ["Višegodišnji plan održavanja", "Ponude i tenderi", "Prijave šteta 24/7", "Inspekcije i primopredaja"] }
+    {
+      "icon": "folders",
+      "title": "Administrativno upravljanje",
+      "desc": "Organizacija skupštine (ALV), evidencija članova, zapisnici i jasna korespondencija.",
+      "bullets": [
+        "Organizacija skupštine i zapisnici",
+        "Evidencija članova",
+        "Pošta i korespondencija",
+        "Upravljanje aktom o podjeli"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "Finansijsko upravljanje",
+      "desc": "Računovodstvo, budžet, rezervni fond i godišnji obračun — uvijek transparentno.",
+      "bullets": [
+        "Računovodstvo i godišnji obračun",
+        "Budžet i VvE doprinos",
+        "Upravljanje rezervnim fondom",
+        "Naplata i dužnici"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Tehničko upravljanje",
+      "desc": "Održavanje, MJOP, ponude i inspekcije — proaktivno i dobro ispregovarano.",
+      "bullets": [
+        "Višegodišnji plan održavanja",
+        "Ponude i tenderi",
+        "Prijave šteta 24/7",
+        "Inspekcije i primopredaja"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "Ono što nas izdvaja",
@@ -43,27 +99,73 @@
     "subtitle": "Upravljanje jednom VvE zavisi od transparentnosti i dostupnosti. Oko toga smo izgradili svoj pristup."
   },
   "diff_items": [
-    { "icon": "monitor", "title": "Vlastiti klijentski portal", "desc": "Svi dokumenti, finansije i održavanje — dostupni 24/7 svakom vlasniku." },
-    { "icon": "user-circle-check", "title": "Posvećena kontakt-osoba", "desc": "Jedan upravnik koji poznaje vašu zgradu, stanare i historiju. Bez kontakt-osoba koje se mijenjaju." },
-    { "icon": "clock-clockwise", "title": "Brzo vrijeme odgovora", "desc": "Odgovor na vaš upit u roku od 24 sata, hitne prijave šteta odmah." },
-    { "icon": "package", "title": "Kompletan paket", "desc": "Upravljanje punog opsega po jednoj fiksnoj mjesečnoj naknadi. Bez iznenađenja na konačnom računu." }
+    {
+      "icon": "monitor",
+      "title": "Vlastiti klijentski portal",
+      "desc": "Svi dokumenti, finansije i održavanje — dostupni 24/7 svakom vlasniku."
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "Posvećena kontakt-osoba",
+      "desc": "Jedan upravnik koji poznaje vašu zgradu, stanare i historiju. Bez kontakt-osoba koje se mijenjaju."
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "Brzo vrijeme odgovora",
+      "desc": "Odgovor na vaš upit u roku od 24 sata, hitne prijave šteta odmah."
+    },
+    {
+      "icon": "package",
+      "title": "Kompletan paket",
+      "desc": "Upravljanje punog opsega po jednoj fiksnoj mjesečnoj naknadi. Bez iznenađenja na konačnom računu."
+    }
   ],
-  "diff_floating": { "title": "MJOP ažuriran", "time": "prije 2 minute" },
+  "diff_floating": {
+    "title": "MJOP ažuriran",
+    "time": "prije 2 minute"
+  },
   "testimonials_section": {
     "eyebrow": "Iskustva klijenata",
     "title": "Šta kažu naši klijenti",
     "trust_label": "Članstva i certifikati"
   },
   "testimonials": [
-    { "quote": "Konačno upravnik koji zaista odgovara. Odgovor u roku od jednog dana, a godišnji obračun je prvi put nakon godina bio na vrijeme.", "name": "Marieke van der Berg", "role": "Predsjednica VvE Parklaan", "location": "Den Haag — 24 stana" },
-    { "quote": "Prelazak sa našeg prethodnog upravnika protekao je iznenađujuće glatko. Klijentski portal nam daje istinski mir: sve je u njemu, uvijek dostupno.", "name": "Joris Hendriks", "role": "Blagajnik VvE De Linden", "location": "Wateringen — 18 stanova" },
-    { "quote": "Ono što nas je privuklo bila je lična pažnja. Imamo jednu posvećenu kontakt-osobu koja istinski poznaje našu zgradu. To čini ogromnu razliku.", "name": "Saskia Bouman", "role": "Predsjednica VvE Westpoort", "location": "Rotterdam — 42 stana" }
+    {
+      "quote": "Konačno upravnik koji zaista odgovara. Odgovor u roku od jednog dana, a godišnji obračun je prvi put nakon godina bio na vrijeme.",
+      "name": "Marieke van der Berg",
+      "role": "Predsjednica VvE Parklaan",
+      "location": "Den Haag — 24 stana"
+    },
+    {
+      "quote": "Prelazak sa našeg prethodnog upravnika protekao je iznenađujuće glatko. Klijentski portal nam daje istinski mir: sve je u njemu, uvijek dostupno.",
+      "name": "Joris Hendriks",
+      "role": "Blagajnik VvE De Linden",
+      "location": "Wateringen — 18 stanova"
+    },
+    {
+      "quote": "Ono što nas je privuklo bila je lična pažnja. Imamo jednu posvećenu kontakt-osobu koja istinski poznaje našu zgradu. To čini ogromnu razliku.",
+      "name": "Saskia Bouman",
+      "role": "Predsjednica VvE Westpoort",
+      "location": "Rotterdam — 42 stana"
+    }
   ],
   "trust_badges": [
-    { "label": "17+ godina iskustva", "icon": "calendar-check" },
-    { "label": "Strukovno udruženje VGM NL", "icon": "medal" },
-    { "label": "NEN-EN ISO 9001 certificiran", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17+ godina iskustva",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "Strukovno udruženje VGM NL",
+      "icon": "medal"
+    },
+    {
+      "label": "NEN-EN ISO 9001 certificiran",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "Često postavljana pitanja",
@@ -71,11 +173,26 @@
     "subtitle": "Ne možete pronaći svoje pitanje? Slobodno nas pozovite ili zakažite neobavezujući uvodni sastanak."
   },
   "faq": [
-    { "q": "Koliko traje prelazak na VvE Beheer Collectief?", "a": "Obično organizujemo potpuni prelazak u roku od 6 do 8 sedmica. Administrativni prijenos obavljamo u potpunosti — od raskida ugovora sa trenutnim upravnikom do postavljanja vašeg klijentskog portala." },
-    { "q": "Šta tačno uključuje Kompletan paket?", "a": "Kompletan paket objedinjuje administrativno, finansijsko i tehničko upravljanje u jednoj fiksnoj mjesečnoj naknadi. Uključujući organizaciju skupštine, godišnji obračun, MJOP održavanje, prijavu šteta 24/7 i posvećenu kontakt-osobu." },
-    { "q": "Dobijamo li jednu posvećenu kontakt-osobu?", "a": "Da. Svakoj VvE dodjeljuje se posvećeni upravnik koji poznaje vašu zgradu, stanare i historiju. U slučaju odsustva, uvijek postoji zamjena koja je upoznata sa vašim predmetom." },
-    { "q": "Koliko je transparentan klijentski portal?", "a": "Potpuno. Svi vlasnici mogu vidjeti vlastiti finansijski položaj, sve dokumente sa sastanaka, MJOP, neriješene stavke održavanja i tok novca VvE — dostupno 24/7, bez potrebe da nas kontaktiraju." },
-    { "q": "Nudite li i pravno upravljanje?", "a": "Ne. Za pravna pitanja sarađujemo sa specijalizovanim advokatima za VvE koje vam rado predstavljamo. Tako zadržavate jednu kontakt-tačku za koordinaciju, a istovremeno dobijate istinsku stručnost za pravne poslove." }
+    {
+      "q": "Koliko traje prelazak na VvE Beheer Collectief?",
+      "a": "Obično organizujemo potpuni prelazak u roku od 6 do 8 sedmica. Administrativni prijenos obavljamo u potpunosti — od raskida ugovora sa trenutnim upravnikom do postavljanja vašeg klijentskog portala."
+    },
+    {
+      "q": "Šta tačno uključuje Kompletan paket?",
+      "a": "Kompletan paket objedinjuje administrativno, finansijsko i tehničko upravljanje u jednoj fiksnoj mjesečnoj naknadi. Uključujući organizaciju skupštine, godišnji obračun, MJOP održavanje, prijavu šteta 24/7 i posvećenu kontakt-osobu."
+    },
+    {
+      "q": "Dobijamo li jednu posvećenu kontakt-osobu?",
+      "a": "Da. Svakoj VvE dodjeljuje se posvećeni upravnik koji poznaje vašu zgradu, stanare i historiju. U slučaju odsustva, uvijek postoji zamjena koja je upoznata sa vašim predmetom."
+    },
+    {
+      "q": "Koliko je transparentan klijentski portal?",
+      "a": "Potpuno. Svi vlasnici mogu vidjeti vlastiti finansijski položaj, sve dokumente sa sastanaka, MJOP, neriješene stavke održavanja i tok novca VvE — dostupno 24/7, bez potrebe da nas kontaktiraju."
+    },
+    {
+      "q": "Nudite li i pravno upravljanje?",
+      "a": "Ne. Za pravna pitanja sarađujemo sa specijalizovanim advokatima za VvE koje vam rado predstavljamo. Tako zadržavate jednu kontakt-tačku za koordinaciju, a istovremeno dobijate istinsku stručnost za pravne poslove."
+    }
   ],
   "cta": {
     "eyebrow": "Besplatna ponuda",
@@ -84,25 +201,103 @@
     "subtitle": "Zatražite neobavezujuću ponudu prilagođenu vašoj VvE. Odgovor ćete dobiti u roku od 2 radna dana.",
     "btn_primary": "Zatražite ponudu",
     "btn_secondary": "Pozovite nas direktno",
-    "usps": ["Neobavezujuće i besplatno", "Odgovor u roku od 2 radna dana", "Potpuno prilagođeno vašoj VvE", "Bez obaveza"]
+    "usps": [
+      "Neobavezujuće i besplatno",
+      "Odgovor u roku od 2 radna dana",
+      "Potpuno prilagođeno vašoj VvE",
+      "Bez obaveza"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "Godina iskustva u upravljanju VvE" },
-    { "num": "500+", "label": "VvE pod našim upravljanjem" },
-    { "num": "12.000+", "label": "Opsluženih vlasnika" },
-    { "num": "< 24u", "label": "Prosječno vrijeme odgovora" }
+    {
+      "num": "17+",
+      "label": "Godina iskustva u upravljanju VvE"
+    },
+    {
+      "num": "500+",
+      "label": "VvE pod našim upravljanjem"
+    },
+    {
+      "num": "12.000+",
+      "label": "Opsluženih vlasnika"
+    },
+    {
+      "num": "< 24u",
+      "label": "Prosječno vrijeme odgovora"
+    }
   ],
   "diensten_page": {
     "eyebrow": "Naše usluge",
-    "title": "Upravljanje VvE prilagođeno vašim potrebama",
-    "subtitle": "Odaberite pojedinačne usluge ili Kompletan paket — upravljanje punog opsega po jednoj fiksnoj mjesečnoj naknadi.",
-    "pillar_label": "STUB",
+    "title_1": "Upravljanje VvE prilagođeno",
+    "title_2": "vašim potrebama",
+    "subtitle": "Tri stuba — administrativni, finansijski i tehnički — pod jednim krovom i sa jednom posvećenom kontakt-osobom. Odaberite pojedinačne usluge ili nam prepustite baš sve.",
+    "pillar_label": "Stub",
+    "result_label": "Rezultat",
+    "checklist_head": "Šta sve uređujemo za vas",
     "offerte_btn": "Zatražite ponudu",
+    "offerte_short": "Ponuda",
+    "rows": [
+      {
+        "title": "Vaša administracija uredna i lako dostupna",
+        "intro": "Vodimo kompletnu administraciju vaše VvE — od evidencije članova i korespondencije do organizacije i vođenja zapisnika skupštine. Sve je centralno zabilježeno i odmah dostupno.",
+        "result": "VvE koja je administrativno potpuno sređena, a da se odbor o tome ne mora brinuti.",
+        "bullets": [
+          "Organizacija skupštine i zapisnici",
+          "Administracija članova i evidencija",
+          "Pošta i korespondencija",
+          "Akt o podjeli i pravilnici"
+        ],
+        "tag": "Uključeno u svaki paket"
+      },
+      {
+        "title": "Finansijska jasnoća, bez iznenađenja",
+        "intro": "Od računovodstva i naplate do budžeta, rezervnog fonda i godišnjeg obračuna. Brojke održavamo aktuelnim i pazimo na zdravlje vašeg rezervnog fonda.",
+        "result": "U svakom trenutku uvid u finansijski položaj — i godišnji obračun koji je gotov na vrijeme.",
+        "bullets": [
+          "Računovodstvo i godišnji obračun",
+          "Budžet i VvE doprinos",
+          "Upravljanje rezervnim fondom",
+          "Naplata i upravljanje dužnicima"
+        ],
+        "tag": "Uključeno u svaki paket"
+      },
+      {
+        "title": "Održavanje koje je korak ispred problema",
+        "intro": "Izrađujemo MJOP i održavamo ga aktuelnim, tražimo ponude i oštro pregovaramo te koordiniramo održavanje i štete — u hitnim slučajevima reagujemo odmah.",
+        "result": "Dobro održavana nekretnina, povoljno ugovorene ponude i računi koji su ispravni.",
+        "bullets": [
+          "Višegodišnji plan održavanja (MJOP)",
+          "Ponude i tenderi",
+          "Prijave šteta 24/7",
+          "Inspekcije i primopredaja"
+        ],
+        "tag": "Uključeno u Kompletan paket"
+      }
+    ],
     "compleet_pill": "Najpopularnije",
-    "compleet_title": "Kompletan paket",
-    "compleet_desc": "Upravljanje punog opsega — administrativno, finansijsko i tehničko upravljanje po jednoj fiksnoj mjesečnoj naknadi. Bez iznenađenja, bez dodatnih računa.",
-    "compleet_btn": "Ponuda za Kompletan paket",
-    "compleet_features": ["Sva administracija", "Potpuno računovodstvo", "MJOP održavanje", "Organizacija skupštine", "Posvećena kontakt-osoba", "Klijentski portal", "Prijave šteta 24/7", "Godišnji obračun na vrijeme"]
+    "compleet_title_1": "Sve u jednoj ruci:",
+    "compleet_title_2": "Kompletan paket",
+    "compleet_desc": "Objedinite sva tri stuba u jednoj fiksnoj mjesečnoj cijeni. Potpuno rasterećenje — bez iznenađenja, bez računa za dodatne radove.",
+    "compleet_btn": "Ovako teče prelazak",
+    "compleet_features": [
+      "Sva administracija i skupština",
+      "Potpuno računovodstvo",
+      "Godišnji obračun na vrijeme",
+      "MJOP i održavanje",
+      "Prijave šteta 24/7",
+      "Vlastiti klijentski portal",
+      "Jedna posvećena kontakt-osoba",
+      "Povoljne ponude"
+    ],
+    "cta_eyebrow": "Besplatna ponuda",
+    "cta_title": "Zanima vas šta ovo znači za vašu VvE?",
+    "cta_desc": "Zatražite neobavezujuću ponudu po mjeri. Odgovor ćete dobiti u roku od 2 radna dana od stalnog upravnika.",
+    "cta_btn": "Zatražite ponudu",
+    "cta_list": [
+      "Neobavezujuće i besplatno",
+      "Odgovor u roku od 2 radna dana",
+      "Potpuno prilagođeno vašoj VvE"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "Naši paketi",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "Kompletan",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "Administrativno i finansijsko osnovno upravljanje za VvE koje žele dobro postaviti osnove.", "price": "92,95", "features": [{"label":"Organizacija skupštine","active":true},{"label":"Evidencija članova","active":true},{"label":"Računovodstvo i godišnji obračun","active":true},{"label":"Naplata VvE doprinosa","active":true},{"label":"Platni promet","active":true},{"label":"Tehničko upravljanje","active":false},{"label":"MJOP održavanje","active":false},{"label":"Hitna služba","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Prošireno administrativno, finansijsko i osnovno tehničko upravljanje pod jednim krovom.", "price": "147,95", "features": [{"label":"Organizacija skupštine i zapisnici","active":true},{"label":"Evidencija članova","active":true},{"label":"Potpuno računovodstvo","active":true},{"label":"Upravljanje rezervnim fondom","active":true},{"label":"Upravljanje osiguranjem","active":true},{"label":"Koordinacija manjeg održavanja","active":true},{"label":"Prijave šteta","active":true},{"label":"Planirano održavanje","active":false}] },
-      { "id": "compleet", "name": "Kompletan", "tagline": "Upravljanje punog opsega — administrativno, finansijsko i tehničko po jednoj fiksnoj naknadi.", "price": null, "features": [{"label":"Sve iz Start Plus","active":true},{"label":"Neograničeni sastanci odbora","active":true},{"label":"Pravna koordinacija","active":true},{"label":"Upravljanje dužnicima i opomene","active":true},{"label":"MJOP i planirano održavanje","active":true},{"label":"Hitna služba 24/7","active":true},{"label":"Godišnja inspekcija","active":true},{"label":"Savjeti o održivosti","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "Administrativno i finansijsko osnovno upravljanje za VvE koje žele dobro postaviti osnove.",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "Organizacija skupštine",
+            "active": true
+          },
+          {
+            "label": "Evidencija članova",
+            "active": true
+          },
+          {
+            "label": "Računovodstvo i godišnji obračun",
+            "active": true
+          },
+          {
+            "label": "Naplata VvE doprinosa",
+            "active": true
+          },
+          {
+            "label": "Platni promet",
+            "active": true
+          },
+          {
+            "label": "Tehničko upravljanje",
+            "active": false
+          },
+          {
+            "label": "MJOP održavanje",
+            "active": false
+          },
+          {
+            "label": "Hitna služba",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "Prošireno administrativno, finansijsko i osnovno tehničko upravljanje pod jednim krovom.",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "Organizacija skupštine i zapisnici",
+            "active": true
+          },
+          {
+            "label": "Evidencija članova",
+            "active": true
+          },
+          {
+            "label": "Potpuno računovodstvo",
+            "active": true
+          },
+          {
+            "label": "Upravljanje rezervnim fondom",
+            "active": true
+          },
+          {
+            "label": "Upravljanje osiguranjem",
+            "active": true
+          },
+          {
+            "label": "Koordinacija manjeg održavanja",
+            "active": true
+          },
+          {
+            "label": "Prijave šteta",
+            "active": true
+          },
+          {
+            "label": "Planirano održavanje",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "Kompletan",
+        "tagline": "Upravljanje punog opsega — administrativno, finansijsko i tehničko po jednoj fiksnoj naknadi.",
+        "price": null,
+        "features": [
+          {
+            "label": "Sve iz Start Plus",
+            "active": true
+          },
+          {
+            "label": "Neograničeni sastanci odbora",
+            "active": true
+          },
+          {
+            "label": "Pravna koordinacija",
+            "active": true
+          },
+          {
+            "label": "Upravljanje dužnicima i opomene",
+            "active": true
+          },
+          {
+            "label": "MJOP i planirano održavanje",
+            "active": true
+          },
+          {
+            "label": "Hitna služba 24/7",
+            "active": true
+          },
+          {
+            "label": "Godišnja inspekcija",
+            "active": true
+          },
+          {
+            "label": "Savjeti o održivosti",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"Pitanja odbora","rows":[{"label":"Priprema i prisustvo skupštini","start":true,"startPlus":true,"compleet":true},{"label":"Vođenje zapisnika skupštine","start":false,"startPlus":true,"compleet":true},{"label":"Prisustvo sastancima odbora","start":false,"startPlus":"1× godišnje","compleet":"Neograničeno"},{"label":"Izrada kućnog reda","start":false,"startPlus":false,"compleet":true},{"label":"Posredovanje u sporovima","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Sekretarski poslovi","rows":[{"label":"Evidencija članova","start":true,"startPlus":true,"compleet":true},{"label":"Korespondencija sa stanarima","start":true,"startPlus":true,"compleet":true},{"label":"Registracija pri KvK","start":true,"startPlus":true,"compleet":true},{"label":"Upravljanje aktom o podjeli","start":false,"startPlus":true,"compleet":true},{"label":"Upravljanje osiguranjem","start":false,"startPlus":true,"compleet":true},{"label":"Pravna koordinacija","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Finansije","rows":[{"label":"Računovodstvo i godišnji obračun","start":true,"startPlus":true,"compleet":true},{"label":"Izrada budžeta","start":true,"startPlus":true,"compleet":true},{"label":"Naplata VvE doprinosa","start":true,"startPlus":true,"compleet":true},{"label":"Platni promet","start":true,"startPlus":true,"compleet":true},{"label":"Upravljanje rezervnim fondom","start":false,"startPlus":true,"compleet":true},{"label":"Višegodišnji budžet","start":false,"startPlus":true,"compleet":true},{"label":"Upravljanje dužnicima i opomene","start":false,"startPlus":false,"compleet":true},{"label":"Poreske prijave","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Tehničko svakodnevno održavanje","rows":[{"label":"Koordinacija manjeg održavanja","start":false,"startPlus":true,"compleet":true},{"label":"Obrada prijava šteta","start":false,"startPlus":true,"compleet":true},{"label":"Upravljanje ključevima","start":false,"startPlus":true,"compleet":true},{"label":"Zahtjevi za ponude za održavanje","start":false,"startPlus":false,"compleet":true},{"label":"Hitna služba 24/7","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Tehničko planirano održavanje","rows":[{"label":"Višegodišnji plan održavanja (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Godišnja inspekcija","start":false,"startPlus":false,"compleet":true},{"label":"Nadzor nad velikim održavanjem","start":false,"startPlus":false,"compleet":true},{"label":"Tenderi za održavanje","start":false,"startPlus":false,"compleet":true},{"label":"Nadzor nad izvođenjem","start":false,"startPlus":false,"compleet":true},{"label":"Primopredaja i naknadna briga","start":false,"startPlus":false,"compleet":true},{"label":"Savjeti o održivosti","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "Pitanja odbora",
+        "rows": [
+          {
+            "label": "Priprema i prisustvo skupštini",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Vođenje zapisnika skupštine",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Prisustvo sastancima odbora",
+            "start": false,
+            "startPlus": "1× godišnje",
+            "compleet": "Neograničeno"
+          },
+          {
+            "label": "Izrada kućnog reda",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Posredovanje u sporovima",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Sekretarski poslovi",
+        "rows": [
+          {
+            "label": "Evidencija članova",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Korespondencija sa stanarima",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Registracija pri KvK",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Upravljanje aktom o podjeli",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Upravljanje osiguranjem",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Pravna koordinacija",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Finansije",
+        "rows": [
+          {
+            "label": "Računovodstvo i godišnji obračun",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Izrada budžeta",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Naplata VvE doprinosa",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Platni promet",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Upravljanje rezervnim fondom",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Višegodišnji budžet",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Upravljanje dužnicima i opomene",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Poreske prijave",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Tehničko svakodnevno održavanje",
+        "rows": [
+          {
+            "label": "Koordinacija manjeg održavanja",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Obrada prijava šteta",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Upravljanje ključevima",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Zahtjevi za ponude za održavanje",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Hitna služba 24/7",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Tehničko planirano održavanje",
+        "rows": [
+          {
+            "label": "Višegodišnji plan održavanja (MJOP)",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Godišnja inspekcija",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Nadzor nad velikim održavanjem",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Tenderi za održavanje",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Nadzor nad izvođenjem",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Primopredaja i naknadna briga",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Savjeti o održivosti",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "Pomoć pri odabiru",
     "hulp_title": "Koji paket odgovara našoj VvE?",
     "hulp_subtitle": "Pravi izbor zavisi od veličine vaše VvE, trenutne situacije i vaših želja. Rado vas savjetujemo — bez obaveze.",
     "hulp_btn": "Zatražite ponudu",
     "hulp_cards": [
-      {"icon":"users-three","title":"Mala VvE (< 12)","desc":"Start ili Start Plus obično je dovoljan za manje komplekse."},
-      {"icon":"buildings","title":"Srednja VvE","desc":"Start Plus nudi pravu ravnotežu između samostalnosti i punog opsega."},
-      {"icon":"buildings","title":"Velika VvE (> 40)","desc":"Kompletan paket sprečava da i dalje sami morate organizovati tehničko upravljanje."},
-      {"icon":"wrench","title":"Odloženo održavanje","desc":"U slučaju odloženog održavanja preporučujemo Kompletan paket sa MJOP pristupom."}
+      {
+        "icon": "users-three",
+        "title": "Mala VvE (< 12)",
+        "desc": "Start ili Start Plus obično je dovoljan za manje komplekse."
+      },
+      {
+        "icon": "buildings",
+        "title": "Srednja VvE",
+        "desc": "Start Plus nudi pravu ravnotežu između samostalnosti i punog opsega."
+      },
+      {
+        "icon": "buildings",
+        "title": "Velika VvE (> 40)",
+        "desc": "Kompletan paket sprečava da i dalje sami morate organizovati tehničko upravljanje."
+      },
+      {
+        "icon": "wrench",
+        "title": "Odloženo održavanje",
+        "desc": "U slučaju odloženog održavanja preporučujemo Kompletan paket sa MJOP pristupom."
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "Ljudi iza vaše VvE",
     "team_subtitle": "Mali tim iskusnih specijalista. Svakoj VvE dodjeljuje se jedan posvećeni upravnik.",
     "team": [
-      {"name":"Mark de Vries","role":"Osnivač i upravnik"},
-      {"name":"Linda Janssen","role":"Viši upravnik VvE"},
-      {"name":"Tim Bakker","role":"Tehnički upravnik"},
-      {"name":"Eva van Loon","role":"Finansijski upravnik"}
+      {
+        "name": "Mark de Vries",
+        "role": "Osnivač i upravnik"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "Viši upravnik VvE"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "Tehnički upravnik"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "Finansijski upravnik"
+      }
     ],
     "missie_eyebrow": "Naša misija",
     "missie_quote": "Upravljanje VvE koje rasterećuje, a ne komplikuje.",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "Pristup",
-    "title": "Od ponude do tekućeg upravljanja",
-    "subtitle": "Obično organizujemo potpuni prelazak u roku od 6 do 8 sedmica. Evo kako to funkcioniše:",
-    "stap": "KORAK",
+    "title_1": "Od ponude do",
+    "title_2": "tekućeg upravljanja",
+    "subtitle": "Od prvog upoznavanja do tekućeg upravljanja preuzimamo cijeli prelazak — vi gotovo da ništa ne morate učiniti. U šest koraka to izgleda ovako.",
+    "stap": "Korak",
     "steps": [
-      {"num":"01","title":"Neobavezujuća ponuda","desc":"Popunite obrazac za ponudu ili nas pozovite. U roku od 2 radna dana dobijate ponudu prilagođenu vašoj VvE."},
-      {"num":"02","title":"Uvodni sastanak","desc":"Posjećujemo vašu VvE, pregledamo akt o podjeli i MJOP te razgovaramo o vašim željama i brigama."},
-      {"num":"03","title":"Bezbrižan prelazak","desc":"Organizujemo potpuni prijenos sa vašeg trenutnog upravnika — raskid, dokumenti, finansije. Ne morate raditi ništa."},
-      {"num":"04","title":"Postavljanje klijentskog portala","desc":"Svi vlasnici dobijaju pristup vlastitom klijentskom portalu. Svi dokumenti, finansije i održavanje — odmah dostupni."},
-      {"num":"05","title":"Prva skupština","desc":"Organizujemo vašu prvu skupštinu pod našim upravljanjem i predstavljamo vam vašu posvećenu kontakt-osobu."},
-      {"num":"06","title":"Tekuće upravljanje","desc":"Od tog trenutka brinemo se o svemu. Ostajete u kontroli putem portala i dobijate proaktivna ažuriranja."}
+      {
+        "when": "Dan 1–2",
+        "title": "Neobavezujuća ponuda",
+        "desc": "Popunite obrazac za ponudu ili nas pozovite. U roku od 2 radna dana dobijate ponudu prilagođenu vašoj VvE."
+      },
+      {
+        "when": "Sedmica 1",
+        "title": "Uvodni sastanak",
+        "desc": "Posjećujemo vašu VvE, pregledamo akt o podjeli i MJOP te razgovaramo o vašim željama i brigama."
+      },
+      {
+        "when": "Sedmica 1–6",
+        "title": "Prelazak bez gnjavaže",
+        "desc": "Organizujemo potpuni prijenos sa vašeg trenutnog upravnika — raskid, dokumenti, finansije. Ne morate raditi ništa."
+      },
+      {
+        "when": "Sedmica 6",
+        "title": "Postavljanje klijentskog portala",
+        "desc": "Svi vlasnici dobijaju pristup vlastitom klijentskom portalu. Svi dokumenti, finansije i održavanje odmah dostupni."
+      },
+      {
+        "when": "Sedmica 7–8",
+        "title": "Prva skupština",
+        "desc": "Organizujemo vašu prvu skupštinu pod našim upravljanjem i predstavljamo vam vašu stalnu kontakt-osobu."
+      },
+      {
+        "when": "Tekuće",
+        "title": "Tekuće upravljanje",
+        "desc": "Od tog trenutka brinemo se o svemu. Ostajete u kontroli putem portala i dobijate proaktivna ažuriranja."
+      }
+    ],
+    "reassure": [
+      {
+        "title": "Vi gotovo ništa ne radite",
+        "desc": "Mi koordiniramo cijeli prelazak, uključujući raskid kod vašeg trenutnog upravnika."
+      },
+      {
+        "title": "Bez rizika",
+        "desc": "Neobavezujuće upoznavanje. Prijenos započinjemo tek nakon vaše saglasnosti."
+      },
+      {
+        "title": "Posvećena kontakt-osoba",
+        "desc": "Od prvog dana znate kome se obratiti — upravnik koji poznaje vašu zgradu."
+      }
+    ],
+    "cta_eyebrow": "Besplatna ponuda",
+    "cta_title": "Spremni za prelazak?",
+    "cta_desc": "Zatražite neobavezujuću ponudu. Mi zatim organizujemo cijeli prijenos — vi živite bezbrižno.",
+    "cta_btn": "Zatražite ponudu",
+    "cta_list": [
+      "Prelazak za 6–8 sedmica",
+      "Mi raskidamo kod vašeg trenutnog upravnika",
+      "Bez rizika, neobavezujuće"
     ]
   },
   "offerte_page": {
     "eyebrow": "Zatražite ponudu",
     "title": "Neobavezujuće i prilagođeno vašoj VvE",
     "intro": "Popunite obrazac. U roku od 2 radna dana dobit ćete prilagođenu ponudu — razgovaranu telefonom kako bi istinski odgovarala vašoj situaciji.",
-    "usps": [["shield-check","Neobavezujuće i besplatno"],["clock","Odgovor u roku od 2 radna dana"],["user-circle","Direktan kontakt sa upravnikom"],["lock","Vaši podaci ostaju vaši"]],
+    "usps": [
+      [
+        "shield-check",
+        "Neobavezujuće i besplatno"
+      ],
+      [
+        "clock",
+        "Odgovor u roku od 2 radna dana"
+      ],
+      [
+        "user-circle",
+        "Direktan kontakt sa upravnikom"
+      ],
+      [
+        "lock",
+        "Vaši podaci ostaju vaši"
+      ]
+    ],
     "stap_van": "od",
-    "step_titles": ["Recite nam o vašoj VvE","Koje usluge tražite?","Vaša trenutna situacija","Vaši kontakt-podaci"],
-    "step1": {"vve_naam":"Naziv VvE","vve_naam_ph":"npr. VvE Parkzicht","aantal":"Broj stanova","aantal_ph":"npr. 24","bouwjaar":"Godina izgradnje","bouwjaar_ph":"npr. 1998","adres":"Adresa / lokacija","adres_ph":"Grad"},
-    "step2": {"services":[["package","Kompletan paket","Sva 3 stuba po jednoj cijeni"],["folders","Administrativno","Skupština, zapisnici, pošta"],["chart-line-up","Finansijsko","Računovodstvo, godišnji obračun"],["wrench","Tehničko","MJOP, održavanje"]]},
-    "step3": {"beheerder_label":"Imate li trenutno upravnika?","beheerder_options":["Da, želim promijeniti","Ne, ovo je prvi put","Samoupravljanje, treba nam pomoć"],"belangrijk_label":"Šta vam je najvažnije?","belangrijk_ph":"npr. brži odgovor, bolja transparentnost, niži troškovi..."},
-    "step4": {"voornaam":"Ime","achternaam":"Prezime","functie":"Uloga unutar VvE","functie_options":["Predsjednik","Blagajnik","Sekretar","Član odbora","Vlasnik / član"],"email":"E-mail","telefoon":"Broj telefona"},
+    "step_titles": [
+      "Recite nam o vašoj VvE",
+      "Koje usluge tražite?",
+      "Vaša trenutna situacija",
+      "Vaši kontakt-podaci"
+    ],
+    "step1": {
+      "vve_naam": "Naziv VvE",
+      "vve_naam_ph": "npr. VvE Parkzicht",
+      "aantal": "Broj stanova",
+      "aantal_ph": "npr. 24",
+      "bouwjaar": "Godina izgradnje",
+      "bouwjaar_ph": "npr. 1998",
+      "adres": "Adresa / lokacija",
+      "adres_ph": "Grad"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "Kompletan paket",
+          "Sva 3 stuba po jednoj cijeni"
+        ],
+        [
+          "folders",
+          "Administrativno",
+          "Skupština, zapisnici, pošta"
+        ],
+        [
+          "chart-line-up",
+          "Finansijsko",
+          "Računovodstvo, godišnji obračun"
+        ],
+        [
+          "wrench",
+          "Tehničko",
+          "MJOP, održavanje"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "Imate li trenutno upravnika?",
+      "beheerder_options": [
+        "Da, želim promijeniti",
+        "Ne, ovo je prvi put",
+        "Samoupravljanje, treba nam pomoć"
+      ],
+      "belangrijk_label": "Šta vam je najvažnije?",
+      "belangrijk_ph": "npr. brži odgovor, bolja transparentnost, niži troškovi..."
+    },
+    "step4": {
+      "voornaam": "Ime",
+      "achternaam": "Prezime",
+      "functie": "Uloga unutar VvE",
+      "functie_options": [
+        "Predsjednik",
+        "Blagajnik",
+        "Sekretar",
+        "Član odbora",
+        "Vlasnik / član"
+      ],
+      "email": "E-mail",
+      "telefoon": "Broj telefona"
+    },
     "btn_terug": "Nazad",
     "btn_volgende": "Sljedeći korak",
     "btn_versturen": "Pošalji zahtjev",
@@ -193,86 +863,148 @@
     "success_desc": "Primili smo vaš zahtjev za ponudu i kontaktirat ćemo vas u roku od 2 radna dana."
   },
   "privacy_page": {
-    "title":"Izjava o privatnosti",
-    "intro":"VvE Beheer Collectief, sa sjedištem u Wateringenu, odgovoran je za obradu ličnih podataka kako je navedeno u ovoj izjavi o privatnosti.",
-    "h2_contact":"Kontakt-podaci",
-    "h2_gegevens":"Lični podaci koje obrađujemo",
-    "gegevens_intro":"VvE Beheer Collectief obrađuje vaše lične podatke jer koristite naše usluge i/ili jer nam te podatke sami dostavljate. U nastavku ćete pronaći pregled ličnih podataka koje obrađujemo:",
-    "gegevens_items":["Ime i prezime","Broj telefona","E-mail adresa","Naziv i adresa vaše VvE","Uloga unutar VvE","Ostali podaci koje aktivno dostavljate, na primjer putem korespondencije ili obrasca za ponudu"],
-    "h2_doel":"Svrha obrade ličnih podataka",
-    "doel_intro":"VvE Beheer Collectief obrađuje vaše lične podatke u sljedeće svrhe:",
-    "doel_items":["Obrada vašeg zahtjeva za ponudu","Da bismo vas mogli pozvati ili poslati e-mail ako je potrebno za izvođenje naših usluga","Pružanje usluga upravljanja VvE za koje ste nas angažovali","Da bismo vas informisali o promjenama u našim uslugama"],
-    "h2_bewaren":"Koliko dugo čuvamo lične podatke",
-    "bewaren_text":"VvE Beheer Collectief ne čuva vaše lične podatke duže nego što je strogo neophodno za postizanje svrha za koje su vaši podaci prikupljeni. Podaci iz zahtjeva za ponudu čuvaju se najviše 12 mjeseci ako ne uslijedi ugovor. U slučaju aktivnog ugovora o upravljanju, podaci se čuvaju za vrijeme trajanja i do 7 godina nakon toga (zakonski rok čuvanja za finansijsku administraciju).",
-    "h2_derden":"Dijeljenje ličnih podataka sa trećim stranama",
-    "derden_text":"VvE Beheer Collectief ne dijeli vaše podatke sa trećim stranama osim ako je to neophodno za izvršenje našeg ugovora sa vama ili radi ispunjavanja zakonske obaveze.",
-    "h2_inzien":"Uvid, izmjena ili brisanje podataka",
-    "inzien_text":"Imate pravo na uvid, ispravku ili brisanje vaših ličnih podataka. Također imate pravo povući bilo koju saglasnost za obradu podataka ili uložiti prigovor na obradu. Zahtjev za uvid, ispravku, brisanje ili prijenos vaših ličnih podataka možete poslati na info@vvebeheercollectief.nl.",
-    "h2_beveiliging":"Sigurnost",
-    "beveiliging_text":"VvE Beheer Collectief ozbiljno shvata zaštitu vaših podataka i poduzima odgovarajuće mjere za sprečavanje zloupotrebe, gubitka, neovlaštenog pristupa, neželjenog otkrivanja i neovlaštene izmjene. Ako smatrate da vaši podaci nisu ispravno osigurani ili postoje naznake zloupotrebe, kontaktirajte nas na info@vvebeheercollectief.nl.",
-    "updated":"Posljednje ažuriranje: maj 2025."
+    "title": "Izjava o privatnosti",
+    "intro": "VvE Beheer Collectief, sa sjedištem u Wateringenu, odgovoran je za obradu ličnih podataka kako je navedeno u ovoj izjavi o privatnosti.",
+    "h2_contact": "Kontakt-podaci",
+    "h2_gegevens": "Lični podaci koje obrađujemo",
+    "gegevens_intro": "VvE Beheer Collectief obrađuje vaše lične podatke jer koristite naše usluge i/ili jer nam te podatke sami dostavljate. U nastavku ćete pronaći pregled ličnih podataka koje obrađujemo:",
+    "gegevens_items": [
+      "Ime i prezime",
+      "Broj telefona",
+      "E-mail adresa",
+      "Naziv i adresa vaše VvE",
+      "Uloga unutar VvE",
+      "Ostali podaci koje aktivno dostavljate, na primjer putem korespondencije ili obrasca za ponudu"
+    ],
+    "h2_doel": "Svrha obrade ličnih podataka",
+    "doel_intro": "VvE Beheer Collectief obrađuje vaše lične podatke u sljedeće svrhe:",
+    "doel_items": [
+      "Obrada vašeg zahtjeva za ponudu",
+      "Da bismo vas mogli pozvati ili poslati e-mail ako je potrebno za izvođenje naših usluga",
+      "Pružanje usluga upravljanja VvE za koje ste nas angažovali",
+      "Da bismo vas informisali o promjenama u našim uslugama"
+    ],
+    "h2_bewaren": "Koliko dugo čuvamo lične podatke",
+    "bewaren_text": "VvE Beheer Collectief ne čuva vaše lične podatke duže nego što je strogo neophodno za postizanje svrha za koje su vaši podaci prikupljeni. Podaci iz zahtjeva za ponudu čuvaju se najviše 12 mjeseci ako ne uslijedi ugovor. U slučaju aktivnog ugovora o upravljanju, podaci se čuvaju za vrijeme trajanja i do 7 godina nakon toga (zakonski rok čuvanja za finansijsku administraciju).",
+    "h2_derden": "Dijeljenje ličnih podataka sa trećim stranama",
+    "derden_text": "VvE Beheer Collectief ne dijeli vaše podatke sa trećim stranama osim ako je to neophodno za izvršenje našeg ugovora sa vama ili radi ispunjavanja zakonske obaveze.",
+    "h2_inzien": "Uvid, izmjena ili brisanje podataka",
+    "inzien_text": "Imate pravo na uvid, ispravku ili brisanje vaših ličnih podataka. Također imate pravo povući bilo koju saglasnost za obradu podataka ili uložiti prigovor na obradu. Zahtjev za uvid, ispravku, brisanje ili prijenos vaših ličnih podataka možete poslati na info@vvebeheercollectief.nl.",
+    "h2_beveiliging": "Sigurnost",
+    "beveiliging_text": "VvE Beheer Collectief ozbiljno shvata zaštitu vaših podataka i poduzima odgovarajuće mjere za sprečavanje zloupotrebe, gubitka, neovlaštenog pristupa, neželjenog otkrivanja i neovlaštene izmjene. Ako smatrate da vaši podaci nisu ispravno osigurani ili postoje naznake zloupotrebe, kontaktirajte nas na info@vvebeheercollectief.nl.",
+    "updated": "Posljednje ažuriranje: maj 2025."
   },
   "voorwaarden_page": {
-    "title":"Opći uslovi poslovanja",
-    "articles":[
-      {"h2":"Član 1 — Definicije","items":["Izvođač: VvE Beheer Collectief, sa sjedištem u Wateringenu, registrovan pri KvK pod brojem 51721139.","Naručilac: Udruženje vlasnika (VvE) koje sklapa ugovor sa Izvođačem.","Ugovor: ugovor o upravljanju između Naručioca i Izvođača."]},
-      {"h2":"Član 2 — Primjenjivost","p":"Ovi opći uslovi poslovanja primjenjuju se na svaku ponudu Izvođača i na svaki sklopljeni ugovor. Odstupanja od ovih uslova važe samo ako je to izričito pisano dogovoreno."},
-      {"h2":"Član 3 — Ponude i predračuni","p":"Sve ponude VvE Beheer Collectief su neobavezujuće i važe u periodu od 30 dana, osim ako nije drugačije navedeno. Ugovor se zaključuje pisanom potvrdom obje strane ili odlukom skupštine."},
-      {"h2":"Član 4 — Izvršenje ugovora","p":"VvE Beheer Collectief će ugovor izvršiti najbolje prema svom znanju i mogućnostima, u skladu sa zahtjevima dobre stručne prakse. Upravnik ima obavezu ulaganja napora, a ne obavezu rezultata."},
-      {"h2":"Član 5 — Trajanje i raskid","p":"Ugovor o upravljanju sklapa se na rok naveden u ugovoru. Raskid se vrši pisanim putem, uz poštivanje otkaznog roka od 3 mjeseca prije isteka ugovornog perioda, osim ako nije drugačije dogovoreno."},
-      {"h2":"Član 6 — Cijene i plaćanje","p":"Sve navedene cijene su bez PDV-a, osim ako je izričito navedeno drugačije. Plaćanje se mora izvršiti u roku od 30 dana od datuma fakture. U slučaju kašnjenja u plaćanju, Naručilac je u zakašnjenju po sili zakona i duguje zakonsku zateznu kamatu."},
-      {"h2":"Član 7 — Odgovornost","p":"Odgovornost VvE Beheer Collectief ograničena je na iznos koji u datom slučaju isplati osiguranje od profesionalne odgovornosti, uvećan za franšizu. Ako osiguranje ne izvrši isplatu, odgovornost je ograničena na iznos naknade koju je Izvođač primio za svoj rad po ugovoru u periodu od 12 mjeseci prije događaja koji je prouzrokovao štetu."},
-      {"h2":"Član 8 — Povjerljivost","p":"Obje strane obavezne su čuvati povjerljivost svih povjerljivih informacija dobijenih jedna od druge u kontekstu ugovora. Ova obaveza važi i nakon raskida ugovora."},
-      {"h2":"Član 9 — Prigovori","p":"Prigovori na izvršenje ugovora moraju se podnijeti VvE Beheer Collectief blagovremeno, potpuno i jasno opisani. Prigovori se obrađuju u roku od 14 dana od prijema."},
-      {"h2":"Član 10 — Mjerodavno pravo","p":"Na sve ugovore između Naručioca i VvE Beheer Collectief primjenjuje se holandsko pravo. Sporovi se podnose nadležnom sudu u okrugu Den Haag."}
+    "title": "Opći uslovi poslovanja",
+    "articles": [
+      {
+        "h2": "Član 1 — Definicije",
+        "items": [
+          "Izvođač: VvE Beheer Collectief, sa sjedištem u Wateringenu, registrovan pri KvK pod brojem 51721139.",
+          "Naručilac: Udruženje vlasnika (VvE) koje sklapa ugovor sa Izvođačem.",
+          "Ugovor: ugovor o upravljanju između Naručioca i Izvođača."
+        ]
+      },
+      {
+        "h2": "Član 2 — Primjenjivost",
+        "p": "Ovi opći uslovi poslovanja primjenjuju se na svaku ponudu Izvođača i na svaki sklopljeni ugovor. Odstupanja od ovih uslova važe samo ako je to izričito pisano dogovoreno."
+      },
+      {
+        "h2": "Član 3 — Ponude i predračuni",
+        "p": "Sve ponude VvE Beheer Collectief su neobavezujuće i važe u periodu od 30 dana, osim ako nije drugačije navedeno. Ugovor se zaključuje pisanom potvrdom obje strane ili odlukom skupštine."
+      },
+      {
+        "h2": "Član 4 — Izvršenje ugovora",
+        "p": "VvE Beheer Collectief će ugovor izvršiti najbolje prema svom znanju i mogućnostima, u skladu sa zahtjevima dobre stručne prakse. Upravnik ima obavezu ulaganja napora, a ne obavezu rezultata."
+      },
+      {
+        "h2": "Član 5 — Trajanje i raskid",
+        "p": "Ugovor o upravljanju sklapa se na rok naveden u ugovoru. Raskid se vrši pisanim putem, uz poštivanje otkaznog roka od 3 mjeseca prije isteka ugovornog perioda, osim ako nije drugačije dogovoreno."
+      },
+      {
+        "h2": "Član 6 — Cijene i plaćanje",
+        "p": "Sve navedene cijene su bez PDV-a, osim ako je izričito navedeno drugačije. Plaćanje se mora izvršiti u roku od 30 dana od datuma fakture. U slučaju kašnjenja u plaćanju, Naručilac je u zakašnjenju po sili zakona i duguje zakonsku zateznu kamatu."
+      },
+      {
+        "h2": "Član 7 — Odgovornost",
+        "p": "Odgovornost VvE Beheer Collectief ograničena je na iznos koji u datom slučaju isplati osiguranje od profesionalne odgovornosti, uvećan za franšizu. Ako osiguranje ne izvrši isplatu, odgovornost je ograničena na iznos naknade koju je Izvođač primio za svoj rad po ugovoru u periodu od 12 mjeseci prije događaja koji je prouzrokovao štetu."
+      },
+      {
+        "h2": "Član 8 — Povjerljivost",
+        "p": "Obje strane obavezne su čuvati povjerljivost svih povjerljivih informacija dobijenih jedna od druge u kontekstu ugovora. Ova obaveza važi i nakon raskida ugovora."
+      },
+      {
+        "h2": "Član 9 — Prigovori",
+        "p": "Prigovori na izvršenje ugovora moraju se podnijeti VvE Beheer Collectief blagovremeno, potpuno i jasno opisani. Prigovori se obrađuju u roku od 14 dana od prijema."
+      },
+      {
+        "h2": "Član 10 — Mjerodavno pravo",
+        "p": "Na sve ugovore između Naručioca i VvE Beheer Collectief primjenjuje se holandsko pravo. Sporovi se podnose nadležnom sudu u okrugu Den Haag."
+      }
     ],
-    "updated":"Posljednje ažuriranje: maj 2025."
+    "updated": "Posljednje ažuriranje: maj 2025."
   },
   "cookies_page": {
-    "title":"Izjava o kolačićima",
-    "intro":"Ova web stranica VvE Beheer Collectief koristi kolačiće. U ovoj izjavi o kolačićima možete pročitati šta su kolačići, koje kolačiće koristimo i kako njima možete upravljati.",
-    "h2_wat":"Šta su kolačići?",
-    "wat_text":"Kolačići su male tekstualne datoteke koje vaš pretraživač pohranjuje kada posjetite web stranicu. Koriste se za ispravno funkcionisanje web stranica, analizu korištenja stranice i poboljšanje korisničkog iskustva.",
-    "h2_welke":"Koje kolačiće koristimo?",
-    "h3_functioneel":"Funkcionalni kolačići",
-    "functioneel_text":"Ovi kolačići su neophodni za funkcionisanje web stranice. Oni, na primjer, osiguravaju da se vaše postavke pamte. Ovi kolačići se ne koriste u marketinške svrhe.",
-    "h3_analytisch":"Analitički kolačići",
-    "analytisch_text":"Možemo koristiti analitičke kolačiće za mjerenje i poboljšanje korištenja naše web stranice. Ovi podaci se prikupljaju anonimno i ne dijele se sa trećim stranama u komercijalne svrhe.",
-    "h2_beheren":"Upravljanje kolačićima",
-    "beheren_intro":"Svoje postavke kolačića možete promijeniti u bilo kojem trenutku putem postavki vašeg pretraživača. Imajte na umu da blokiranje određenih kolačića može uticati na funkcionalnost web stranice.",
-    "beheren_text":"Većina pretraživača nudi mogućnost da:",
-    "beheren_items":["Pregledate sve pohranjene kolačiće","Obrišete kolačiće pojedinačno ili u potpunosti","Blokirate kolačiće sa određenih web stranica","Blokirate sve kolačiće","Obrišete sve kolačiće kada zatvorite pretraživač"],
-    "h2_derden":"Kolačići trećih strana",
-    "derden_text":"Naša web stranica može koristiti usluge trećih strana, kao što je Google Fonts za tipografiju. Ove usluge mogu postaviti vlastite kolačiće. Nemamo kontrolu nad postavljanjem i korištenjem kolačića od strane ovih trećih strana. Za više informacija pogledajte politiku privatnosti odgovarajuće treće strane.",
-    "h2_wijzigingen":"Izmjene",
-    "wijzigingen_text":"VvE Beheer Collectief zadržava pravo izmjene ove izjave o kolačićima. Izmjene će biti objavljene na ovoj stranici.",
-    "h2_contact":"Kontakt",
-    "contact_text":"Imate pitanja o našoj politici kolačića? Kontaktirajte nas na info@vvebeheercollectief.nl.",
-    "updated":"Posljednje ažuriranje: maj 2025."
+    "title": "Izjava o kolačićima",
+    "intro": "Ova web stranica VvE Beheer Collectief koristi kolačiće. U ovoj izjavi o kolačićima možete pročitati šta su kolačići, koje kolačiće koristimo i kako njima možete upravljati.",
+    "h2_wat": "Šta su kolačići?",
+    "wat_text": "Kolačići su male tekstualne datoteke koje vaš pretraživač pohranjuje kada posjetite web stranicu. Koriste se za ispravno funkcionisanje web stranica, analizu korištenja stranice i poboljšanje korisničkog iskustva.",
+    "h2_welke": "Koje kolačiće koristimo?",
+    "h3_functioneel": "Funkcionalni kolačići",
+    "functioneel_text": "Ovi kolačići su neophodni za funkcionisanje web stranice. Oni, na primjer, osiguravaju da se vaše postavke pamte. Ovi kolačići se ne koriste u marketinške svrhe.",
+    "h3_analytisch": "Analitički kolačići",
+    "analytisch_text": "Možemo koristiti analitičke kolačiće za mjerenje i poboljšanje korištenja naše web stranice. Ovi podaci se prikupljaju anonimno i ne dijele se sa trećim stranama u komercijalne svrhe.",
+    "h2_beheren": "Upravljanje kolačićima",
+    "beheren_intro": "Svoje postavke kolačića možete promijeniti u bilo kojem trenutku putem postavki vašeg pretraživača. Imajte na umu da blokiranje određenih kolačića može uticati na funkcionalnost web stranice.",
+    "beheren_text": "Većina pretraživača nudi mogućnost da:",
+    "beheren_items": [
+      "Pregledate sve pohranjene kolačiće",
+      "Obrišete kolačiće pojedinačno ili u potpunosti",
+      "Blokirate kolačiće sa određenih web stranica",
+      "Blokirate sve kolačiće",
+      "Obrišete sve kolačiće kada zatvorite pretraživač"
+    ],
+    "h2_derden": "Kolačići trećih strana",
+    "derden_text": "Naša web stranica može koristiti usluge trećih strana, kao što je Google Fonts za tipografiju. Ove usluge mogu postaviti vlastite kolačiće. Nemamo kontrolu nad postavljanjem i korištenjem kolačića od strane ovih trećih strana. Za više informacija pogledajte politiku privatnosti odgovarajuće treće strane.",
+    "h2_wijzigingen": "Izmjene",
+    "wijzigingen_text": "VvE Beheer Collectief zadržava pravo izmjene ove izjave o kolačićima. Izmjene će biti objavljene na ovoj stranici.",
+    "h2_contact": "Kontakt",
+    "contact_text": "Imate pitanja o našoj politici kolačića? Kontaktirajte nas na info@vvebeheercollectief.nl.",
+    "updated": "Posljednje ažuriranje: maj 2025."
   },
   "footer": {
-    "brand_desc":"Lično, transparentno i pouzdano upravljanje VvE za Južnu Holandiju i okolinu. 17 godina iskustva, 500+ VvE pod upravljanjem.",
-    "h_diensten":"Usluge",
-    "diensten_links":["Administrativno upravljanje","Finansijsko upravljanje","Tehničko upravljanje","Kompletan paket"],
-    "h_bedrijf":"Kompanija",
-    "bedrijf_links":["O nama","Pristup","Priče klijenata","Slobodna radna mjesta"],
-    "h_contact":"Kontakt",
-    "locatie":"Wateringen, Južna Holandija",
-    "offerte_link":"Zatražite ponudu →",
-    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
-    "privacy":"Privatnost",
-    "voorwaarden":"Uslovi poslovanja",
-    "cookies":"Kolačići"
+    "brand_desc": "Lično, transparentno i pouzdano upravljanje VvE za Južnu Holandiju i okolinu. 17 godina iskustva, 500+ VvE pod upravljanjem.",
+    "h_diensten": "Usluge",
+    "diensten_links": [
+      "Administrativno upravljanje",
+      "Finansijsko upravljanje",
+      "Tehničko upravljanje",
+      "Kompletan paket"
+    ],
+    "h_bedrijf": "Kompanija",
+    "bedrijf_links": [
+      "O nama",
+      "Pristup",
+      "Priče klijenata",
+      "Slobodna radna mjesta"
+    ],
+    "h_contact": "Kontakt",
+    "locatie": "Wateringen, Južna Holandija",
+    "offerte_link": "Zatražite ponudu →",
+    "bottom_kvk": "VvE Beheer Collectief. KvK 51721139.",
+    "privacy": "Privatnost",
+    "voorwaarden": "Uslovi poslovanja",
+    "cookies": "Kolačići"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — Upravljanje VvE Južna Holandija",
-    "diensten":"Usluge — VvE Beheer Collectief",
-    "pakketten":"Paketi — VvE Beheer Collectief",
-    "overons":"O nama — VvE Beheer Collectief",
-    "werkwijze":"Pristup — VvE Beheer Collectief",
-    "offerte":"Zatražite ponudu — VvE Beheer Collectief",
-    "privacy":"Izjava o privatnosti — VvE Beheer Collectief",
-    "voorwaarden":"Opći uslovi poslovanja — VvE Beheer Collectief",
-    "cookies":"Izjava o kolačićima — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — Upravljanje VvE Južna Holandija",
+    "diensten": "Usluge — VvE Beheer Collectief",
+    "pakketten": "Paketi — VvE Beheer Collectief",
+    "overons": "O nama — VvE Beheer Collectief",
+    "werkwijze": "Pristup — VvE Beheer Collectief",
+    "offerte": "Zatražite ponudu — VvE Beheer Collectief",
+    "privacy": "Izjava o privatnosti — VvE Beheer Collectief",
+    "voorwaarden": "Opći uslovi poslovanja — VvE Beheer Collectief",
+    "cookies": "Izjava o kolačićima — VvE Beheer Collectief"
   }
 }

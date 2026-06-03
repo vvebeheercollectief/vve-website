@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "zh", "dir": "ltr", "label": "中文" },
+  "meta": {
+    "lang": "zh",
+    "dir": "ltr",
+    "label": "中文"
+  },
   "nav": {
     "home": "首页",
     "diensten": "服务",
@@ -14,17 +18,39 @@
     "menu_close": "关闭菜单"
   },
   "hero": {
+    "pill": "VvE管理 · 海牙及南荷兰省",
     "title_1": "携手共建",
     "title_2": "无忧居住生活。",
-    "subtitle": "海牙及整个南荷兰省的VvE管理专家。一位专属联系人，通过您专属的客户门户实现全面透明——我们悉心打理，您安心居住。",
-    "cta_primary": "免费报价",
-    "cta_secondary": "我们的工作方式"
+    "subtitle": "一位专属联系人，通过您专属的客户门户实现全面透明。行政、财务与技术管理皆由我们打理——您安心居住。",
+    "cta_primary": "查看我们的服务",
+    "cta_secondary": "我们的工作方式",
+    "trust": [
+      "17年以上经验",
+      "500+ VvE",
+      "24小时内响应"
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "VvE管理领域的从业经验（年）" },
-    { "icon": "buildings", "num": "500+", "label": "由我们管理的VvE" },
-    { "icon": "users", "num": "12.000+", "label": "已服务的业主" },
-    { "icon": "lightning", "num": "< 24u", "label": "平均响应时间" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "VvE管理领域的从业经验（年）"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "由我们管理的VvE"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "已服务的业主"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "平均响应时间"
+    }
   ],
   "pillars_section": {
     "eyebrow": "我们的服务",
@@ -33,9 +59,39 @@
     "read_more": "了解更多"
   },
   "pillars": [
-    { "icon": "folders", "title": "行政管理", "desc": "ALV会议组织、成员管理、会议记录及清晰的往来沟通。", "bullets": ["ALV会议组织与记录", "成员管理", "邮件与往来沟通", "分契约管理"] },
-    { "icon": "chart-line-up", "title": "财务管理", "desc": "记账、预算、储备金及年度账目——始终透明。", "bullets": ["记账与年度账目", "预算与VvE会费", "储备金管理", "催收与欠款管理"] },
-    { "icon": "wrench", "title": "技术管理", "desc": "维护、MJOP、报价及验收——主动作为、议价得当。", "bullets": ["多年期维护计划", "报价与招标", "全天候24/7报损", "验收与移交"] }
+    {
+      "icon": "folders",
+      "title": "行政管理",
+      "desc": "ALV会议组织、成员管理、会议记录及清晰的往来沟通。",
+      "bullets": [
+        "ALV会议组织与记录",
+        "成员管理",
+        "邮件与往来沟通",
+        "分契约管理"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "财务管理",
+      "desc": "记账、预算、储备金及年度账目——始终透明。",
+      "bullets": [
+        "记账与年度账目",
+        "预算与VvE会费",
+        "储备金管理",
+        "催收与欠款管理"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "技术管理",
+      "desc": "维护、MJOP、报价及验收——主动作为、议价得当。",
+      "bullets": [
+        "多年期维护计划",
+        "报价与招标",
+        "全天候24/7报损",
+        "验收与移交"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "我们的独到之处",
@@ -43,27 +99,73 @@
     "subtitle": "VvE的管理离不开透明与便捷。我们正是围绕这一点构建了我们的工作方式。"
   },
   "diff_items": [
-    { "icon": "monitor", "title": "专属客户门户", "desc": "所有文件、财务与维护信息——每位业主全天候24/7随时可查。" },
-    { "icon": "user-circle-check", "title": "专属联系人", "desc": "一位了解您楼宇、住户和历史情况的经理。绝不频繁更换联系人。" },
-    { "icon": "clock-clockwise", "title": "快速响应", "desc": "24小时内回复您的咨询，紧急报损即时处理。" },
-    { "icon": "package", "title": "全包套餐", "desc": "全方位管理服务，每月固定费用一价全包。账单绝无意外。" }
+    {
+      "icon": "monitor",
+      "title": "专属客户门户",
+      "desc": "所有文件、财务与维护信息——每位业主全天候24/7随时可查。"
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "专属联系人",
+      "desc": "一位了解您楼宇、住户和历史情况的经理。绝不频繁更换联系人。"
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "快速响应",
+      "desc": "24小时内回复您的咨询，紧急报损即时处理。"
+    },
+    {
+      "icon": "package",
+      "title": "全包套餐",
+      "desc": "全方位管理服务，每月固定费用一价全包。账单绝无意外。"
+    }
   ],
-  "diff_floating": { "title": "MJOP已更新", "time": "2分钟前" },
+  "diff_floating": {
+    "title": "MJOP已更新",
+    "time": "2分钟前"
+  },
   "testimonials_section": {
     "eyebrow": "客户体验",
     "title": "客户怎么说",
     "trust_label": "会员资格与认证"
   },
   "testimonials": [
-    { "quote": "终于遇到一位真正会回应的经理。一天内就有回复，年度账目多年来第一次按时完成。", "name": "Marieke van der Berg", "role": "VvE Parklaan 主席", "location": "海牙——24套公寓" },
-    { "quote": "从原先的经理切换过来出乎意料地顺利。客户门户让我们真正安心：一切尽在其中，随时可查。", "name": "Joris Hendriks", "role": "VvE De Linden 司库", "location": "瓦特林根——18套公寓" },
-    { "quote": "打动我们的是那份个性化的关注。我们有一位真正了解我们楼宇的专属联系人。这带来了巨大的不同。", "name": "Saskia Bouman", "role": "VvE Westpoort 主席", "location": "鹿特丹——42套公寓" }
+    {
+      "quote": "终于遇到一位真正会回应的经理。一天内就有回复，年度账目多年来第一次按时完成。",
+      "name": "Marieke van der Berg",
+      "role": "VvE Parklaan 主席",
+      "location": "海牙——24套公寓"
+    },
+    {
+      "quote": "从原先的经理切换过来出乎意料地顺利。客户门户让我们真正安心：一切尽在其中，随时可查。",
+      "name": "Joris Hendriks",
+      "role": "VvE De Linden 司库",
+      "location": "瓦特林根——18套公寓"
+    },
+    {
+      "quote": "打动我们的是那份个性化的关注。我们有一位真正了解我们楼宇的专属联系人。这带来了巨大的不同。",
+      "name": "Saskia Bouman",
+      "role": "VvE Westpoort 主席",
+      "location": "鹿特丹——42套公寓"
+    }
   ],
   "trust_badges": [
-    { "label": "17年以上从业经验", "icon": "calendar-check" },
-    { "label": "行业协会 VGM NL", "icon": "medal" },
-    { "label": "NEN-EN ISO 9001 认证", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17年以上从业经验",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "行业协会 VGM NL",
+      "icon": "medal"
+    },
+    {
+      "label": "NEN-EN ISO 9001 认证",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "常见问题",
@@ -71,11 +173,26 @@
     "subtitle": "没有找到您的问题？欢迎致电我们或预约一次无义务的初步洽谈。"
   },
   "faq": [
-    { "q": "切换到 VvE Beheer Collectief 需要多长时间？", "a": "我们通常在6至8周内完成全面切换。我们全程负责行政交接——从向现任经理终止合同到设置您的客户门户。" },
-    { "q": "全包套餐具体包含哪些内容？", "a": "全包套餐将行政、财务与技术管理整合于每月固定费用之中。包括ALV会议组织、年度账目、MJOP维护、全天候24/7报损以及一位专属联系人。" },
-    { "q": "我们会有一位专属联系人吗？", "a": "是的。每家VvE都会指派一位了解您楼宇、住户和历史情况的专属经理。如遇缺勤，始终会有一位熟悉您档案的替补人员。" },
-    { "q": "客户门户的透明度如何？", "a": "完全透明。所有业主都可以查看自己的财务状况、所有会议文件、MJOP、待办维护事项以及VvE的现金流——全天候24/7可用，无需联系我们。" },
-    { "q": "你们也提供法律方面的管理吗？", "a": "不提供。对于法律事务，我们与专业的VvE律师合作，并乐于为您引荐。这样您只需对接一个联系点进行协调，同时又能在法律工作上获得真正的专业支持。" }
+    {
+      "q": "切换到 VvE Beheer Collectief 需要多长时间？",
+      "a": "我们通常在6至8周内完成全面切换。我们全程负责行政交接——从向现任经理终止合同到设置您的客户门户。"
+    },
+    {
+      "q": "全包套餐具体包含哪些内容？",
+      "a": "全包套餐将行政、财务与技术管理整合于每月固定费用之中。包括ALV会议组织、年度账目、MJOP维护、全天候24/7报损以及一位专属联系人。"
+    },
+    {
+      "q": "我们会有一位专属联系人吗？",
+      "a": "是的。每家VvE都会指派一位了解您楼宇、住户和历史情况的专属经理。如遇缺勤，始终会有一位熟悉您档案的替补人员。"
+    },
+    {
+      "q": "客户门户的透明度如何？",
+      "a": "完全透明。所有业主都可以查看自己的财务状况、所有会议文件、MJOP、待办维护事项以及VvE的现金流——全天候24/7可用，无需联系我们。"
+    },
+    {
+      "q": "你们也提供法律方面的管理吗？",
+      "a": "不提供。对于法律事务，我们与专业的VvE律师合作，并乐于为您引荐。这样您只需对接一个联系点进行协调，同时又能在法律工作上获得真正的专业支持。"
+    }
   ],
   "cta": {
     "eyebrow": "免费报价",
@@ -84,25 +201,103 @@
     "subtitle": "申请一份为您的VvE量身定制的无义务报价。您将在2个工作日内收到回复。",
     "btn_primary": "申请报价",
     "btn_secondary": "直接致电我们",
-    "usps": ["无义务且免费", "2个工作日内回复", "完全为您的VvE量身定制", "无任何约束"]
+    "usps": [
+      "无义务且免费",
+      "2个工作日内回复",
+      "完全为您的VvE量身定制",
+      "无任何约束"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "VvE管理领域的从业经验（年）" },
-    { "num": "500+", "label": "由我们管理的VvE" },
-    { "num": "12.000+", "label": "已服务的业主" },
-    { "num": "< 24u", "label": "平均响应时间" }
+    {
+      "num": "17+",
+      "label": "VvE管理领域的从业经验（年）"
+    },
+    {
+      "num": "500+",
+      "label": "由我们管理的VvE"
+    },
+    {
+      "num": "12.000+",
+      "label": "已服务的业主"
+    },
+    {
+      "num": "< 24u",
+      "label": "平均响应时间"
+    }
   ],
   "diensten_page": {
     "eyebrow": "我们的服务",
-    "title": "为您量身定制的VvE管理",
-    "subtitle": "选择单项服务或全包套餐——全方位管理服务，每月固定费用一价全包。",
+    "title_1": "契合您需求的",
+    "title_2": "VvE管理",
+    "subtitle": "三大支柱——行政、财务与技术——一站式整合，配备一位专属联系人。可选择单项服务，也可让我们为您全权代劳。",
     "pillar_label": "支柱",
+    "result_label": "成效",
+    "checklist_head": "我们为您打理的事务",
     "offerte_btn": "申请报价",
+    "offerte_short": "报价",
+    "rows": [
+      {
+        "title": "您的行政事务井然有序、随手可查",
+        "intro": "我们承担您VvE的全部行政事务——从成员名册、往来沟通到ALV会议的组织与记录。一切集中存档，即刻可查。",
+        "result": "一个行政事务完全井然有序的VvE，董事会无需为此费心。",
+        "bullets": [
+          "ALV会议组织与记录",
+          "成员管理与名册",
+          "邮件与往来沟通",
+          "分契约与各项规章"
+        ],
+        "tag": "每个套餐均含"
+      },
+      {
+        "title": "财务清晰透明，绝无意外",
+        "intro": "从记账、催收到预算、储备金和年度账目。我们让数据保持实时更新，并守护您储备金的健康状况。",
+        "result": "随时掌握财务状况——年度账目也能按时完成。",
+        "bullets": [
+          "记账与年度账目",
+          "预算与VvE会费",
+          "储备金管理",
+          "催收与欠款管理"
+        ],
+        "tag": "每个套餐均含"
+      },
+      {
+        "title": "防患于未然的维护",
+        "intro": "我们编制并实时更新MJOP，索取报价并据理力争地议价，统筹维护与报损——遇紧急情况立即响应。",
+        "result": "保养良好的物业、议价得当的报价，以及准确无误的账单。",
+        "bullets": [
+          "多年期维护计划（MJOP）",
+          "报价与招标",
+          "全天候24/7报损",
+          "验收与移交"
+        ],
+        "tag": "全包套餐含"
+      }
+    ],
     "compleet_pill": "最受欢迎",
-    "compleet_title": "全包套餐",
-    "compleet_desc": "全方位管理服务——行政、财务与技术管理，每月固定费用一价全包。绝无意外，绝无额外账单。",
-    "compleet_btn": "全包套餐报价",
-    "compleet_features": ["全部行政事务", "完整记账", "MJOP维护", "ALV会议组织", "专属联系人", "客户门户", "全天候24/7报损", "年度账目按时完成"]
+    "compleet_title_1": "一手包办：",
+    "compleet_title_2": "全包套餐",
+    "compleet_desc": "将三大支柱合并为每月一个固定价格。全面省心——绝无意外，绝无额外工程账单。",
+    "compleet_btn": "切换流程如下",
+    "compleet_features": [
+      "全部行政事务与ALV",
+      "完整记账",
+      "年度账目按时完成",
+      "MJOP与维护",
+      "全天候24/7报损",
+      "专属客户门户",
+      "一位专属联系人",
+      "议价得当的报价"
+    ],
+    "cta_eyebrow": "免费报价",
+    "cta_title": "想了解这对您的VvE意味着什么？",
+    "cta_desc": "申请一份量身定制的免费报价。您将在2个工作日内收到一位固定管理员的回复。",
+    "cta_btn": "申请报价",
+    "cta_list": [
+      "无义务且免费",
+      "2个工作日内回复",
+      "完全为您的VvE量身定制"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "我们的套餐",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "全包",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "面向希望打好基础的VvE的行政与财务基础管理。", "price": "92,95", "features": [{"label":"ALV会议组织","active":true},{"label":"成员管理","active":true},{"label":"记账与年度结算","active":true},{"label":"VvE会费催收","active":true},{"label":"付款交易处理","active":true},{"label":"技术管理","active":false},{"label":"MJOP维护","active":false},{"label":"紧急服务","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "行政、财务及基础技术管理一站式扩展服务。", "price": "147,95", "features": [{"label":"ALV会议组织与记录","active":true},{"label":"成员管理","active":true},{"label":"完整记账","active":true},{"label":"储备金管理","active":true},{"label":"保险管理","active":true},{"label":"小型维护协调","active":true},{"label":"报损处理","active":true},{"label":"计划性维护","active":false}] },
-      { "id": "compleet", "name": "全包", "tagline": "全方位管理服务——行政、财务与技术，一价固定费用全包。", "price": null, "features": [{"label":"包含 Start Plus 的全部内容","active":true},{"label":"无限次董事会会议","active":true},{"label":"法律协调","active":true},{"label":"欠款管理与催缴","active":true},{"label":"MJOP与计划性维护","active":true},{"label":"全天候24/7紧急服务","active":true},{"label":"年度检查","active":true},{"label":"可持续性建议","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "面向希望打好基础的VvE的行政与财务基础管理。",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "ALV会议组织",
+            "active": true
+          },
+          {
+            "label": "成员管理",
+            "active": true
+          },
+          {
+            "label": "记账与年度结算",
+            "active": true
+          },
+          {
+            "label": "VvE会费催收",
+            "active": true
+          },
+          {
+            "label": "付款交易处理",
+            "active": true
+          },
+          {
+            "label": "技术管理",
+            "active": false
+          },
+          {
+            "label": "MJOP维护",
+            "active": false
+          },
+          {
+            "label": "紧急服务",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "行政、财务及基础技术管理一站式扩展服务。",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "ALV会议组织与记录",
+            "active": true
+          },
+          {
+            "label": "成员管理",
+            "active": true
+          },
+          {
+            "label": "完整记账",
+            "active": true
+          },
+          {
+            "label": "储备金管理",
+            "active": true
+          },
+          {
+            "label": "保险管理",
+            "active": true
+          },
+          {
+            "label": "小型维护协调",
+            "active": true
+          },
+          {
+            "label": "报损处理",
+            "active": true
+          },
+          {
+            "label": "计划性维护",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "全包",
+        "tagline": "全方位管理服务——行政、财务与技术，一价固定费用全包。",
+        "price": null,
+        "features": [
+          {
+            "label": "包含 Start Plus 的全部内容",
+            "active": true
+          },
+          {
+            "label": "无限次董事会会议",
+            "active": true
+          },
+          {
+            "label": "法律协调",
+            "active": true
+          },
+          {
+            "label": "欠款管理与催缴",
+            "active": true
+          },
+          {
+            "label": "MJOP与计划性维护",
+            "active": true
+          },
+          {
+            "label": "全天候24/7紧急服务",
+            "active": true
+          },
+          {
+            "label": "年度检查",
+            "active": true
+          },
+          {
+            "label": "可持续性建议",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"董事会事务","rows":[{"label":"准备并出席ALV","start":true,"startPlus":true,"compleet":true},{"label":"撰写ALV会议记录","start":false,"startPlus":true,"compleet":true},{"label":"出席董事会会议","start":false,"startPlus":"每年1次","compleet":"无限"},{"label":"起草内部规章","start":false,"startPlus":false,"compleet":true},{"label":"纠纷调解","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"文秘事务","rows":[{"label":"成员管理","start":true,"startPlus":true,"compleet":true},{"label":"与住户的往来沟通","start":true,"startPlus":true,"compleet":true},{"label":"在KvK的注册登记","start":true,"startPlus":true,"compleet":true},{"label":"分契约管理","start":false,"startPlus":true,"compleet":true},{"label":"保险管理","start":false,"startPlus":true,"compleet":true},{"label":"法律协调","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"财务事务","rows":[{"label":"记账与年度结算","start":true,"startPlus":true,"compleet":true},{"label":"编制预算","start":true,"startPlus":true,"compleet":true},{"label":"VvE会费催收","start":true,"startPlus":true,"compleet":true},{"label":"付款交易处理","start":true,"startPlus":true,"compleet":true},{"label":"储备金管理","start":false,"startPlus":true,"compleet":true},{"label":"多年期预算","start":false,"startPlus":true,"compleet":true},{"label":"欠款管理与催缴","start":false,"startPlus":false,"compleet":true},{"label":"纳税申报","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"技术日常维护","rows":[{"label":"小型维护协调","start":false,"startPlus":true,"compleet":true},{"label":"报损处理","start":false,"startPlus":true,"compleet":true},{"label":"钥匙管理","start":false,"startPlus":true,"compleet":true},{"label":"维护报价申请","start":false,"startPlus":false,"compleet":true},{"label":"全天候24/7紧急服务","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"技术计划性维护","rows":[{"label":"多年期维护计划（MJOP）","start":false,"startPlus":false,"compleet":true},{"label":"年度检查","start":false,"startPlus":false,"compleet":true},{"label":"大型维护监督","start":false,"startPlus":false,"compleet":true},{"label":"维护招标","start":false,"startPlus":false,"compleet":true},{"label":"施工监督","start":false,"startPlus":false,"compleet":true},{"label":"移交与售后","start":false,"startPlus":false,"compleet":true},{"label":"可持续性建议","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "董事会事务",
+        "rows": [
+          {
+            "label": "准备并出席ALV",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "撰写ALV会议记录",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "出席董事会会议",
+            "start": false,
+            "startPlus": "每年1次",
+            "compleet": "无限"
+          },
+          {
+            "label": "起草内部规章",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "纠纷调解",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "文秘事务",
+        "rows": [
+          {
+            "label": "成员管理",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "与住户的往来沟通",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "在KvK的注册登记",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "分契约管理",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "保险管理",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "法律协调",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "财务事务",
+        "rows": [
+          {
+            "label": "记账与年度结算",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "编制预算",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "VvE会费催收",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "付款交易处理",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "储备金管理",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "多年期预算",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "欠款管理与催缴",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "纳税申报",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "技术日常维护",
+        "rows": [
+          {
+            "label": "小型维护协调",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "报损处理",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "钥匙管理",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "维护报价申请",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "全天候24/7紧急服务",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "技术计划性维护",
+        "rows": [
+          {
+            "label": "多年期维护计划（MJOP）",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "年度检查",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "大型维护监督",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "维护招标",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "施工监督",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "移交与售后",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "可持续性建议",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "助您选择",
     "hulp_title": "哪个套餐适合我们的VvE？",
     "hulp_subtitle": "正确的选择取决于您VvE的规模、当前状况以及您的诉求。我们乐于为您提供建议——无义务。",
     "hulp_btn": "申请报价",
     "hulp_cards": [
-      {"icon":"users-three","title":"小型VvE（< 12）","desc":"对于较小的物业，Start 或 Start Plus 通常已足够。"},
-      {"icon":"buildings","title":"中型VvE","desc":"Start Plus 在自主管理与全方位服务之间提供了恰当的平衡。"},
-      {"icon":"buildings","title":"大型VvE（> 40）","desc":"全包套餐让您免于仍需自行安排技术管理。"},
-      {"icon":"wrench","title":"积压的维护","desc":"如存在积压的维护，我们建议选择含MJOP方案的全包套餐。"}
+      {
+        "icon": "users-three",
+        "title": "小型VvE（< 12）",
+        "desc": "对于较小的物业，Start 或 Start Plus 通常已足够。"
+      },
+      {
+        "icon": "buildings",
+        "title": "中型VvE",
+        "desc": "Start Plus 在自主管理与全方位服务之间提供了恰当的平衡。"
+      },
+      {
+        "icon": "buildings",
+        "title": "大型VvE（> 40）",
+        "desc": "全包套餐让您免于仍需自行安排技术管理。"
+      },
+      {
+        "icon": "wrench",
+        "title": "积压的维护",
+        "desc": "如存在积压的维护，我们建议选择含MJOP方案的全包套餐。"
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "您VvE背后的团队",
     "team_subtitle": "一支由经验丰富的专家组成的精干团队。每家VvE都会指派一位专属经理。",
     "team": [
-      {"name":"Mark de Vries","role":"创始人兼经理"},
-      {"name":"Linda Janssen","role":"高级VvE经理"},
-      {"name":"Tim Bakker","role":"技术经理"},
-      {"name":"Eva van Loon","role":"财务经理"}
+      {
+        "name": "Mark de Vries",
+        "role": "创始人兼经理"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "高级VvE经理"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "技术经理"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "财务经理"
+      }
     ],
     "missie_eyebrow": "我们的使命",
     "missie_quote": "让VvE管理成为减负，而非添乱。",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "工作方式",
-    "title": "从报价到持续管理",
-    "subtitle": "我们通常在6至8周内完成全面切换。流程如下：",
+    "title_1": "从报价到",
+    "title_2": "持续管理",
+    "subtitle": "从初次洽谈到持续管理，我们全程包办整个切换——您几乎无需操心。整个流程分为六个步骤，如下所示。",
     "stap": "步骤",
     "steps": [
-      {"num":"01","title":"无义务报价","desc":"您填写报价表单或致电我们。2个工作日内您将收到为您VvE量身定制的报价。"},
-      {"num":"02","title":"初步洽谈","desc":"我们将拜访您的VvE，查阅分契约与MJOP，并讨论您的诉求与顾虑。"},
-      {"num":"03","title":"省心切换","desc":"我们负责从现任经理处的全面交接——终止合同、文件、财务。您无需操心任何事。"},
-      {"num":"04","title":"客户门户设置","desc":"所有业主均可访问各自的客户门户。所有文件、财务与维护信息——即刻可查。"},
-      {"num":"05","title":"首次ALV","desc":"我们将组织在我们管理下的首次ALV，并为您引荐您的专属联系人。"},
-      {"num":"06","title":"持续管理","desc":"从那时起，我们将悉心打理一切。您通过门户保持掌控，并收到主动的进度更新。"}
+      {
+        "when": "第1–2天",
+        "title": "无义务报价",
+        "desc": "您填写报价表单或致电我们。2个工作日内您将收到为您VvE量身定制的报价。"
+      },
+      {
+        "when": "第1周",
+        "title": "初步洽谈",
+        "desc": "我们将拜访您的VvE，查阅分契约与MJOP，并讨论您的诉求与顾虑。"
+      },
+      {
+        "when": "第1–6周",
+        "title": "省心切换",
+        "desc": "我们负责从现任经理处的全面交接——终止合同、文件、财务。您无需操心任何事。"
+      },
+      {
+        "when": "第6周",
+        "title": "客户门户设置",
+        "desc": "所有业主均可访问各自的客户门户。所有文件、财务与维护信息即刻可查。"
+      },
+      {
+        "when": "第7–8周",
+        "title": "首次ALV",
+        "desc": "我们将组织在我们管理下的首次ALV，并为您引荐您的固定联系人。"
+      },
+      {
+        "when": "持续",
+        "title": "持续管理",
+        "desc": "从那时起，我们将悉心打理一切。您通过门户保持掌控，并收到主动的进度更新。"
+      }
+    ],
+    "reassure": [
+      {
+        "title": "您几乎无需操心",
+        "desc": "我们统筹整个切换，包括向您现任经理终止合同。"
+      },
+      {
+        "title": "毫无风险",
+        "desc": "初步洽谈无义务。只有在您同意后我们才启动交接。"
+      },
+      {
+        "title": "专属联系人",
+        "desc": "从第一天起，您就知道该找谁——一位了解您楼宇的经理。"
+      }
+    ],
+    "cta_eyebrow": "免费报价",
+    "cta_title": "准备好切换了吗？",
+    "cta_desc": "申请一份无义务报价。之后我们将负责全面交接——您安心居住。",
+    "cta_btn": "申请报价",
+    "cta_list": [
+      "6–8周完成切换",
+      "我们为您向现任经理终止合同",
+      "毫无风险，无义务"
     ]
   },
   "offerte_page": {
     "eyebrow": "申请报价",
     "title": "无义务且为您的VvE量身定制",
     "intro": "请填写表单。2个工作日内您将收到一份量身定制的报价——并通过电话沟通，确保真正契合您的实际情况。",
-    "usps": [["shield-check","无义务且免费"],["clock","2个工作日内回复"],["user-circle","与经理直接对接"],["lock","您的数据始终归您所有"]],
+    "usps": [
+      [
+        "shield-check",
+        "无义务且免费"
+      ],
+      [
+        "clock",
+        "2个工作日内回复"
+      ],
+      [
+        "user-circle",
+        "与经理直接对接"
+      ],
+      [
+        "lock",
+        "您的数据始终归您所有"
+      ]
+    ],
     "stap_van": "/",
-    "step_titles": ["介绍一下您的VvE","您正在寻找哪些服务？","您当前的状况","您的联系方式"],
-    "step1": {"vve_naam":"VvE的名称","vve_naam_ph":"例如 VvE Parkzicht","aantal":"公寓数量","aantal_ph":"例如 24","bouwjaar":"建造年份","bouwjaar_ph":"例如 1998","adres":"地址 / 位置","adres_ph":"城市"},
-    "step2": {"services":[["package","全包套餐","三大支柱一价全包"],["folders","行政","ALV、会议记录、邮件"],["chart-line-up","财务","记账、年度账目"],["wrench","技术","MJOP、维护"]]},
-    "step3": {"beheerder_label":"您目前有经理吗？","beheerder_options":["有，我想切换","没有，这是第一次","自主管理，我们需要帮助"],"belangrijk_label":"什么对您最重要？","belangrijk_ph":"例如更快的响应、更好的透明度、更低的成本……"},
-    "step4": {"voornaam":"名","achternaam":"姓","functie":"在VvE中的职务","functie_options":["主席","司库","秘书","董事会成员","业主 / 成员"],"email":"电子邮箱","telefoon":"电话号码"},
+    "step_titles": [
+      "介绍一下您的VvE",
+      "您正在寻找哪些服务？",
+      "您当前的状况",
+      "您的联系方式"
+    ],
+    "step1": {
+      "vve_naam": "VvE的名称",
+      "vve_naam_ph": "例如 VvE Parkzicht",
+      "aantal": "公寓数量",
+      "aantal_ph": "例如 24",
+      "bouwjaar": "建造年份",
+      "bouwjaar_ph": "例如 1998",
+      "adres": "地址 / 位置",
+      "adres_ph": "城市"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "全包套餐",
+          "三大支柱一价全包"
+        ],
+        [
+          "folders",
+          "行政",
+          "ALV、会议记录、邮件"
+        ],
+        [
+          "chart-line-up",
+          "财务",
+          "记账、年度账目"
+        ],
+        [
+          "wrench",
+          "技术",
+          "MJOP、维护"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "您目前有经理吗？",
+      "beheerder_options": [
+        "有，我想切换",
+        "没有，这是第一次",
+        "自主管理，我们需要帮助"
+      ],
+      "belangrijk_label": "什么对您最重要？",
+      "belangrijk_ph": "例如更快的响应、更好的透明度、更低的成本……"
+    },
+    "step4": {
+      "voornaam": "名",
+      "achternaam": "姓",
+      "functie": "在VvE中的职务",
+      "functie_options": [
+        "主席",
+        "司库",
+        "秘书",
+        "董事会成员",
+        "业主 / 成员"
+      ],
+      "email": "电子邮箱",
+      "telefoon": "电话号码"
+    },
     "btn_terug": "返回",
     "btn_volgende": "下一步",
     "btn_versturen": "提交申请",
@@ -193,86 +863,148 @@
     "success_desc": "我们已收到您的报价申请，并将在2个工作日内与您联系。"
   },
   "privacy_page": {
-    "title":"隐私声明",
-    "intro":"位于瓦特林根的 VvE Beheer Collectief 负责本隐私声明所述个人数据的处理。",
-    "h2_contact":"联系方式",
-    "h2_gegevens":"我们处理的个人数据",
-    "gegevens_intro":"VvE Beheer Collectief 处理您的个人数据，是因为您使用了我们的服务，和/或因为您自行向我们提供了这些数据。以下是我们所处理的个人数据概览：",
-    "gegevens_items":["姓名","电话号码","电子邮箱地址","您VvE的名称和地址","在VvE中的职务","您主动提供的其他数据，例如通过往来沟通或报价表单提供的数据"],
-    "h2_doel":"处理个人数据的目的",
-    "doel_intro":"VvE Beheer Collectief 出于以下目的处理您的个人数据：",
-    "doel_items":["处理您的报价申请","在必要时致电或发送电子邮件以履行我们的服务","履行您委托我们提供的VvE管理服务","就我们服务的变更通知您"],
-    "h2_bewaren":"我们保留个人数据的期限",
-    "bewaren_text":"VvE Beheer Collectief 保留您个人数据的期限，不会超过实现数据收集目的所必需的严格限度。若报价申请未达成协议，相关数据最多保留12个月。在管理协议有效的情况下，数据将在协议存续期间以及其后最长7年内予以保留（财务账务的法定保留期限）。",
-    "h2_derden":"向第三方分享个人数据",
-    "derden_text":"除非为履行我们与您之间的协议所必需，或为遵守法律义务所必需，VvE Beheer Collectief 不会向第三方分享您的数据。",
-    "h2_inzien":"查阅、修改或删除数据",
-    "inzien_text":"您有权查阅、更正或删除您的个人数据。您还有权撤回对数据处理的任何同意，或对处理提出异议。您可将查阅、更正、删除或转移个人数据的请求发送至 info@vvebeheercollectief.nl。",
-    "h2_beveiliging":"安全",
-    "beveiliging_text":"VvE Beheer Collectief 高度重视对您数据的保护，并采取适当措施防止滥用、丢失、未经授权的访问、不当披露以及未经授权的修改。如您认为您的数据未得到妥善保护或存在滥用迹象，请通过 info@vvebeheercollectief.nl 与我们联系。",
-    "updated":"最后更新：2025年5月"
+    "title": "隐私声明",
+    "intro": "位于瓦特林根的 VvE Beheer Collectief 负责本隐私声明所述个人数据的处理。",
+    "h2_contact": "联系方式",
+    "h2_gegevens": "我们处理的个人数据",
+    "gegevens_intro": "VvE Beheer Collectief 处理您的个人数据，是因为您使用了我们的服务，和/或因为您自行向我们提供了这些数据。以下是我们所处理的个人数据概览：",
+    "gegevens_items": [
+      "姓名",
+      "电话号码",
+      "电子邮箱地址",
+      "您VvE的名称和地址",
+      "在VvE中的职务",
+      "您主动提供的其他数据，例如通过往来沟通或报价表单提供的数据"
+    ],
+    "h2_doel": "处理个人数据的目的",
+    "doel_intro": "VvE Beheer Collectief 出于以下目的处理您的个人数据：",
+    "doel_items": [
+      "处理您的报价申请",
+      "在必要时致电或发送电子邮件以履行我们的服务",
+      "履行您委托我们提供的VvE管理服务",
+      "就我们服务的变更通知您"
+    ],
+    "h2_bewaren": "我们保留个人数据的期限",
+    "bewaren_text": "VvE Beheer Collectief 保留您个人数据的期限，不会超过实现数据收集目的所必需的严格限度。若报价申请未达成协议，相关数据最多保留12个月。在管理协议有效的情况下，数据将在协议存续期间以及其后最长7年内予以保留（财务账务的法定保留期限）。",
+    "h2_derden": "向第三方分享个人数据",
+    "derden_text": "除非为履行我们与您之间的协议所必需，或为遵守法律义务所必需，VvE Beheer Collectief 不会向第三方分享您的数据。",
+    "h2_inzien": "查阅、修改或删除数据",
+    "inzien_text": "您有权查阅、更正或删除您的个人数据。您还有权撤回对数据处理的任何同意，或对处理提出异议。您可将查阅、更正、删除或转移个人数据的请求发送至 info@vvebeheercollectief.nl。",
+    "h2_beveiliging": "安全",
+    "beveiliging_text": "VvE Beheer Collectief 高度重视对您数据的保护，并采取适当措施防止滥用、丢失、未经授权的访问、不当披露以及未经授权的修改。如您认为您的数据未得到妥善保护或存在滥用迹象，请通过 info@vvebeheercollectief.nl 与我们联系。",
+    "updated": "最后更新：2025年5月"
   },
   "voorwaarden_page": {
-    "title":"通用条款与条件",
-    "articles":[
-      {"h2":"第1条 — 定义","items":["承包方：VvE Beheer Collectief，位于瓦特林根，在KvK注册，注册号为 51721139。","委托方：与承包方签订协议的业主协会（VvE）。","协议：委托方与承包方之间的管理协议。"]},
-      {"h2":"第2条 — 适用范围","p":"本通用条款与条件适用于承包方的每一份报价以及所订立的每一份协议。对本条款与条件的任何偏离，仅在以书面形式明确约定的情况下方为有效。"},
-      {"h2":"第3条 — 要约与报价","p":"VvE Beheer Collectief 的所有报价均无约束力，除非另有说明，有效期为30天。协议在双方书面确认或经ALV决议后订立。"},
-      {"h2":"第4条 — 协议的履行","p":"VvE Beheer Collectief 将尽其所知所能履行协议，符合良好专业操守的要求。经理承担的是尽力义务，而非结果义务。"},
-      {"h2":"第5条 — 期限与终止","p":"管理协议按协议中所述期限订立。终止须以书面形式进行，并在合同期满前遵守3个月的通知期，除非另有约定。"},
-      {"h2":"第6条 — 费率与付款","p":"除非另有明确说明，所有所列费率均不含增值税。付款须在发票日期后30天内完成。如逾期付款，委托方即依法构成违约，并应支付法定利息。"},
-      {"h2":"第7条 — 责任","p":"VvE Beheer Collectief 的责任以相关案件中职业责任保险所赔付的金额加上免赔额为限。如保险不予赔付，则责任以承包方在导致损害的事件发生前12个月期间，因其在协议项下的工作所收取的报酬金额为限。"},
-      {"h2":"第8条 — 保密","p":"双方均有义务对在协议框架下从对方处获得的所有保密信息予以保密。该义务在协议终止后仍然适用。"},
-      {"h2":"第9条 — 投诉","p":"关于协议履行的投诉，须及时、完整且清晰地向 VvE Beheer Collectief 提出说明。投诉将在收到后14天内处理。"},
-      {"h2":"第10条 — 适用法律","p":"委托方与 VvE Beheer Collectief 之间的所有协议均适用荷兰法律。争议将提交海牙辖区的有管辖权法院处理。"}
+    "title": "通用条款与条件",
+    "articles": [
+      {
+        "h2": "第1条 — 定义",
+        "items": [
+          "承包方：VvE Beheer Collectief，位于瓦特林根，在KvK注册，注册号为 51721139。",
+          "委托方：与承包方签订协议的业主协会（VvE）。",
+          "协议：委托方与承包方之间的管理协议。"
+        ]
+      },
+      {
+        "h2": "第2条 — 适用范围",
+        "p": "本通用条款与条件适用于承包方的每一份报价以及所订立的每一份协议。对本条款与条件的任何偏离，仅在以书面形式明确约定的情况下方为有效。"
+      },
+      {
+        "h2": "第3条 — 要约与报价",
+        "p": "VvE Beheer Collectief 的所有报价均无约束力，除非另有说明，有效期为30天。协议在双方书面确认或经ALV决议后订立。"
+      },
+      {
+        "h2": "第4条 — 协议的履行",
+        "p": "VvE Beheer Collectief 将尽其所知所能履行协议，符合良好专业操守的要求。经理承担的是尽力义务，而非结果义务。"
+      },
+      {
+        "h2": "第5条 — 期限与终止",
+        "p": "管理协议按协议中所述期限订立。终止须以书面形式进行，并在合同期满前遵守3个月的通知期，除非另有约定。"
+      },
+      {
+        "h2": "第6条 — 费率与付款",
+        "p": "除非另有明确说明，所有所列费率均不含增值税。付款须在发票日期后30天内完成。如逾期付款，委托方即依法构成违约，并应支付法定利息。"
+      },
+      {
+        "h2": "第7条 — 责任",
+        "p": "VvE Beheer Collectief 的责任以相关案件中职业责任保险所赔付的金额加上免赔额为限。如保险不予赔付，则责任以承包方在导致损害的事件发生前12个月期间，因其在协议项下的工作所收取的报酬金额为限。"
+      },
+      {
+        "h2": "第8条 — 保密",
+        "p": "双方均有义务对在协议框架下从对方处获得的所有保密信息予以保密。该义务在协议终止后仍然适用。"
+      },
+      {
+        "h2": "第9条 — 投诉",
+        "p": "关于协议履行的投诉，须及时、完整且清晰地向 VvE Beheer Collectief 提出说明。投诉将在收到后14天内处理。"
+      },
+      {
+        "h2": "第10条 — 适用法律",
+        "p": "委托方与 VvE Beheer Collectief 之间的所有协议均适用荷兰法律。争议将提交海牙辖区的有管辖权法院处理。"
+      }
     ],
-    "updated":"最后更新：2025年5月"
+    "updated": "最后更新：2025年5月"
   },
   "cookies_page": {
-    "title":"Cookie声明",
-    "intro":"VvE Beheer Collectief 的本网站使用Cookie。在本Cookie声明中，您可以了解什么是Cookie、我们使用哪些Cookie以及如何管理它们。",
-    "h2_wat":"什么是Cookie？",
-    "wat_text":"Cookie是您访问网站时由浏览器存储的小型文本文件。它们用于使网站正常运行、分析网站使用情况并改善用户体验。",
-    "h2_welke":"我们使用哪些Cookie？",
-    "h3_functioneel":"功能性Cookie",
-    "functioneel_text":"这些Cookie是网站运行所必需的。例如，它们确保您的偏好设置被记住。这些Cookie不用于营销目的。",
-    "h3_analytisch":"分析性Cookie",
-    "analytisch_text":"我们可能使用分析性Cookie来衡量和改善我们网站的使用情况。这些数据以匿名方式收集，不会出于商业目的与第三方分享。",
-    "h2_beheren":"管理Cookie",
-    "beheren_intro":"您可随时通过浏览器设置更改您的Cookie偏好。请注意，屏蔽某些Cookie可能会影响网站的功能。",
-    "beheren_text":"大多数浏览器提供以下选项：",
-    "beheren_items":["查看所有已存储的Cookie","逐个或全部删除Cookie","屏蔽来自特定网站的Cookie","屏蔽所有Cookie","在关闭浏览器时删除所有Cookie"],
-    "h2_derden":"第三方Cookie",
-    "derden_text":"我们的网站可能使用第三方服务，例如用于字体排版的 Google Fonts。这些服务可能会放置其自身的Cookie。我们无法控制这些第三方对Cookie的放置和使用。如需更多信息，请参阅相关第三方的隐私政策。",
-    "h2_wijzigingen":"变更",
-    "wijzigingen_text":"VvE Beheer Collectief 保留修改本Cookie声明的权利。变更将在本页面公布。",
-    "h2_contact":"联系",
-    "contact_text":"您对我们的Cookie政策有疑问吗？请通过 info@vvebeheercollectief.nl 与我们联系。",
-    "updated":"最后更新：2025年5月"
+    "title": "Cookie声明",
+    "intro": "VvE Beheer Collectief 的本网站使用Cookie。在本Cookie声明中，您可以了解什么是Cookie、我们使用哪些Cookie以及如何管理它们。",
+    "h2_wat": "什么是Cookie？",
+    "wat_text": "Cookie是您访问网站时由浏览器存储的小型文本文件。它们用于使网站正常运行、分析网站使用情况并改善用户体验。",
+    "h2_welke": "我们使用哪些Cookie？",
+    "h3_functioneel": "功能性Cookie",
+    "functioneel_text": "这些Cookie是网站运行所必需的。例如，它们确保您的偏好设置被记住。这些Cookie不用于营销目的。",
+    "h3_analytisch": "分析性Cookie",
+    "analytisch_text": "我们可能使用分析性Cookie来衡量和改善我们网站的使用情况。这些数据以匿名方式收集，不会出于商业目的与第三方分享。",
+    "h2_beheren": "管理Cookie",
+    "beheren_intro": "您可随时通过浏览器设置更改您的Cookie偏好。请注意，屏蔽某些Cookie可能会影响网站的功能。",
+    "beheren_text": "大多数浏览器提供以下选项：",
+    "beheren_items": [
+      "查看所有已存储的Cookie",
+      "逐个或全部删除Cookie",
+      "屏蔽来自特定网站的Cookie",
+      "屏蔽所有Cookie",
+      "在关闭浏览器时删除所有Cookie"
+    ],
+    "h2_derden": "第三方Cookie",
+    "derden_text": "我们的网站可能使用第三方服务，例如用于字体排版的 Google Fonts。这些服务可能会放置其自身的Cookie。我们无法控制这些第三方对Cookie的放置和使用。如需更多信息，请参阅相关第三方的隐私政策。",
+    "h2_wijzigingen": "变更",
+    "wijzigingen_text": "VvE Beheer Collectief 保留修改本Cookie声明的权利。变更将在本页面公布。",
+    "h2_contact": "联系",
+    "contact_text": "您对我们的Cookie政策有疑问吗？请通过 info@vvebeheercollectief.nl 与我们联系。",
+    "updated": "最后更新：2025年5月"
   },
   "footer": {
-    "brand_desc":"为南荷兰省及周边地区提供个性化、透明且可靠的VvE管理。17年从业经验，管理着500多家VvE。",
-    "h_diensten":"服务",
-    "diensten_links":["行政管理","财务管理","技术管理","全包套餐"],
-    "h_bedrijf":"公司",
-    "bedrijf_links":["关于我们","工作方式","客户故事","招聘"],
-    "h_contact":"联系",
-    "locatie":"瓦特林根，南荷兰省",
-    "offerte_link":"申请报价 →",
-    "bottom_kvk":"VvE Beheer Collectief。KvK 51721139。",
-    "privacy":"隐私",
-    "voorwaarden":"条款与条件",
-    "cookies":"Cookie"
+    "brand_desc": "为南荷兰省及周边地区提供个性化、透明且可靠的VvE管理。17年从业经验，管理着500多家VvE。",
+    "h_diensten": "服务",
+    "diensten_links": [
+      "行政管理",
+      "财务管理",
+      "技术管理",
+      "全包套餐"
+    ],
+    "h_bedrijf": "公司",
+    "bedrijf_links": [
+      "关于我们",
+      "工作方式",
+      "客户故事",
+      "招聘"
+    ],
+    "h_contact": "联系",
+    "locatie": "瓦特林根，南荷兰省",
+    "offerte_link": "申请报价 →",
+    "bottom_kvk": "VvE Beheer Collectief。KvK 51721139。",
+    "privacy": "隐私",
+    "voorwaarden": "条款与条件",
+    "cookies": "Cookie"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — 南荷兰省VvE管理",
-    "diensten":"服务 — VvE Beheer Collectief",
-    "pakketten":"套餐 — VvE Beheer Collectief",
-    "overons":"关于我们 — VvE Beheer Collectief",
-    "werkwijze":"工作方式 — VvE Beheer Collectief",
-    "offerte":"申请报价 — VvE Beheer Collectief",
-    "privacy":"隐私声明 — VvE Beheer Collectief",
-    "voorwaarden":"通用条款与条件 — VvE Beheer Collectief",
-    "cookies":"Cookie声明 — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — 南荷兰省VvE管理",
+    "diensten": "服务 — VvE Beheer Collectief",
+    "pakketten": "套餐 — VvE Beheer Collectief",
+    "overons": "关于我们 — VvE Beheer Collectief",
+    "werkwijze": "工作方式 — VvE Beheer Collectief",
+    "offerte": "申请报价 — VvE Beheer Collectief",
+    "privacy": "隐私声明 — VvE Beheer Collectief",
+    "voorwaarden": "通用条款与条件 — VvE Beheer Collectief",
+    "cookies": "Cookie声明 — VvE Beheer Collectief"
   }
 }

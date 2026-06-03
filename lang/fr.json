@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "fr", "dir": "ltr", "label": "Français" },
+  "meta": {
+    "lang": "fr",
+    "dir": "ltr",
+    "label": "Français"
+  },
   "nav": {
     "home": "Accueil",
     "diensten": "Services",
@@ -14,17 +18,39 @@
     "menu_close": "Fermer le menu"
   },
   "hero": {
+    "pill": "Gestion de VvE · La Haye & Hollande-Méridionale",
     "title_1": "Ensemble, garantissons",
     "title_2": "une vie sans souci.",
-    "subtitle": "Spécialiste de la gestion de VvE pour La Haye et toute la Hollande-Méridionale. Un interlocuteur dédié, une transparence totale grâce à votre propre portail client — nous nous occupons de tout, vous vivez sereinement.",
-    "cta_primary": "Devis gratuit",
-    "cta_secondary": "Notre méthode"
+    "subtitle": "Un interlocuteur dédié, une transparence totale grâce à votre propre portail client. Nous assurons la gestion administrative, financière et technique — vous vivez sereinement.",
+    "cta_primary": "Voir nos services",
+    "cta_secondary": "Notre méthode",
+    "trust": [
+      "17+ années d'expérience",
+      "500+ VvE",
+      "Réponse < 24 heures"
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "Années d'expérience en gestion de VvE" },
-    { "icon": "buildings", "num": "500+", "label": "VvE sous notre gestion" },
-    { "icon": "users", "num": "12.000+", "label": "Propriétaires accompagnés" },
-    { "icon": "lightning", "num": "< 24u", "label": "Délai de réponse moyen" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "Années d'expérience en gestion de VvE"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "VvE sous notre gestion"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "Propriétaires accompagnés"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "Délai de réponse moyen"
+    }
   ],
   "pillars_section": {
     "eyebrow": "Nos services",
@@ -33,9 +59,39 @@
     "read_more": "En savoir plus"
   },
   "pillars": [
-    { "icon": "folders", "title": "Gestion administrative", "desc": "Organisation de l'AG, administration des membres, procès-verbaux et correspondance claire.", "bullets": ["Organisation de l'AG et procès-verbaux", "Administration des membres", "Courrier et correspondance", "Gestion de l'acte de division"] },
-    { "icon": "chart-line-up", "title": "Gestion financière", "desc": "Comptabilité, budget, fonds de réserve et comptes annuels — toujours en toute transparence.", "bullets": ["Comptabilité et comptes annuels", "Budget et cotisation VvE", "Gestion du fonds de réserve", "Recouvrement et débiteurs"] },
-    { "icon": "wrench", "title": "Gestion technique", "desc": "Entretien, plan pluriannuel, devis et inspections — proactifs et bien négociés.", "bullets": ["Plan d'entretien pluriannuel", "Devis et appels d'offres", "Déclarations de sinistres 24/7", "Inspections et réception"] }
+    {
+      "icon": "folders",
+      "title": "Gestion administrative",
+      "desc": "Organisation de l'AG, administration des membres, procès-verbaux et correspondance claire.",
+      "bullets": [
+        "Organisation de l'AG et procès-verbaux",
+        "Administration des membres",
+        "Courrier et correspondance",
+        "Gestion de l'acte de division"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "Gestion financière",
+      "desc": "Comptabilité, budget, fonds de réserve et comptes annuels — toujours en toute transparence.",
+      "bullets": [
+        "Comptabilité et comptes annuels",
+        "Budget et cotisation VvE",
+        "Gestion du fonds de réserve",
+        "Recouvrement et débiteurs"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Gestion technique",
+      "desc": "Entretien, plan pluriannuel, devis et inspections — proactifs et bien négociés.",
+      "bullets": [
+        "Plan d'entretien pluriannuel",
+        "Devis et appels d'offres",
+        "Déclarations de sinistres 24/7",
+        "Inspections et réception"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "Ce qui nous distingue",
@@ -43,27 +99,73 @@
     "subtitle": "La gestion d'une VvE repose sur la transparence et l'accessibilité. Nous avons construit notre approche autour de ces valeurs."
   },
   "diff_items": [
-    { "icon": "monitor", "title": "Portail client propre", "desc": "Tous les documents, les finances et l'entretien — accessibles 24/7 pour chaque propriétaire." },
-    { "icon": "user-circle-check", "title": "Interlocuteur dédié", "desc": "Un seul gestionnaire qui connaît votre immeuble, ses résidents et son historique. Pas d'interlocuteurs changeants." },
-    { "icon": "clock-clockwise", "title": "Délai de réponse rapide", "desc": "Réponse à votre demande sous 24 heures, déclarations de sinistres urgentes traitées immédiatement." },
-    { "icon": "package", "title": "Forfait complet", "desc": "Gestion full-service à un tarif mensuel fixe. Aucune surprise sur la facture finale." }
+    {
+      "icon": "monitor",
+      "title": "Portail client propre",
+      "desc": "Tous les documents, les finances et l'entretien — accessibles 24/7 pour chaque propriétaire."
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "Interlocuteur dédié",
+      "desc": "Un seul gestionnaire qui connaît votre immeuble, ses résidents et son historique. Pas d'interlocuteurs changeants."
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "Délai de réponse rapide",
+      "desc": "Réponse à votre demande sous 24 heures, déclarations de sinistres urgentes traitées immédiatement."
+    },
+    {
+      "icon": "package",
+      "title": "Forfait complet",
+      "desc": "Gestion full-service à un tarif mensuel fixe. Aucune surprise sur la facture finale."
+    }
   ],
-  "diff_floating": { "title": "Plan pluriannuel mis à jour", "time": "il y a 2 minutes" },
+  "diff_floating": {
+    "title": "Plan pluriannuel mis à jour",
+    "time": "il y a 2 minutes"
+  },
   "testimonials_section": {
     "eyebrow": "Expériences clients",
     "title": "Ce que disent nos clients",
     "trust_label": "Affiliations et certifications"
   },
   "testimonials": [
-    { "quote": "Enfin un gestionnaire qui répond vraiment. Une réponse en moins d'une journée, et les comptes annuels étaient à temps pour la première fois depuis des années.", "name": "Marieke van der Berg", "role": "Présidente VvE Parklaan", "location": "La Haye — 24 appartements" },
-    { "quote": "Le passage depuis notre ancien gestionnaire s'est déroulé étonnamment facilement. Le portail client nous apporte une réelle tranquillité d'esprit : tout y est, toujours accessible.", "name": "Joris Hendriks", "role": "Trésorier VvE De Linden", "location": "Wateringen — 18 appartements" },
-    { "quote": "Ce qui nous a séduits, c'est l'attention personnalisée. Nous avons un seul interlocuteur dédié qui connaît vraiment notre immeuble. Cela fait une énorme différence.", "name": "Saskia Bouman", "role": "Présidente VvE Westpoort", "location": "Rotterdam — 42 appartements" }
+    {
+      "quote": "Enfin un gestionnaire qui répond vraiment. Une réponse en moins d'une journée, et les comptes annuels étaient à temps pour la première fois depuis des années.",
+      "name": "Marieke van der Berg",
+      "role": "Présidente VvE Parklaan",
+      "location": "La Haye — 24 appartements"
+    },
+    {
+      "quote": "Le passage depuis notre ancien gestionnaire s'est déroulé étonnamment facilement. Le portail client nous apporte une réelle tranquillité d'esprit : tout y est, toujours accessible.",
+      "name": "Joris Hendriks",
+      "role": "Trésorier VvE De Linden",
+      "location": "Wateringen — 18 appartements"
+    },
+    {
+      "quote": "Ce qui nous a séduits, c'est l'attention personnalisée. Nous avons un seul interlocuteur dédié qui connaît vraiment notre immeuble. Cela fait une énorme différence.",
+      "name": "Saskia Bouman",
+      "role": "Présidente VvE Westpoort",
+      "location": "Rotterdam — 42 appartements"
+    }
   ],
   "trust_badges": [
-    { "label": "17+ années d'expérience", "icon": "calendar-check" },
-    { "label": "Association professionnelle VGM NL", "icon": "medal" },
-    { "label": "Certifié NEN-EN ISO 9001", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17+ années d'expérience",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "Association professionnelle VGM NL",
+      "icon": "medal"
+    },
+    {
+      "label": "Certifié NEN-EN ISO 9001",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "Questions fréquentes",
@@ -71,11 +173,26 @@
     "subtitle": "Vous ne trouvez pas votre question ? N'hésitez pas à nous appeler ou à planifier un entretien de présentation sans engagement."
   },
   "faq": [
-    { "q": "Combien de temps faut-il pour passer à VvE Beheer Collectief ?", "a": "Nous organisons généralement un transfert complet en 6 à 8 semaines. Nous prenons entièrement en charge le transfert administratif — de la résiliation auprès du gestionnaire actuel à la configuration de votre portail client." },
-    { "q": "Que comprend exactement le forfait Complet ?", "a": "Le forfait Complet réunit la gestion administrative, financière et technique en un tarif mensuel fixe. Y compris l'organisation de l'AG, les comptes annuels, l'entretien du plan pluriannuel, la déclaration de sinistres 24/7 et un interlocuteur dédié." },
-    { "q": "Bénéficions-nous d'un seul interlocuteur dédié ?", "a": "Oui. Chaque VvE se voit attribuer un gestionnaire dédié qui connaît votre immeuble, ses résidents et son historique. En cas d'absence, un remplaçant familier de votre dossier est toujours disponible." },
-    { "q": "Quel est le niveau de transparence du portail client ?", "a": "Total. Tous les propriétaires peuvent consulter leur propre situation financière, l'ensemble des documents de réunion, le plan pluriannuel, les travaux d'entretien en cours et la trésorerie de la VvE — disponibles 24/7, sans avoir à nous contacter." },
-    { "q": "Proposez-vous également une gestion juridique ?", "a": "Non. Pour les questions juridiques, nous collaborons avec des avocats spécialisés en VvE que nous nous ferons un plaisir de vous présenter. Vous conservez ainsi un point de contact unique pour la coordination, tout en bénéficiant d'une véritable expertise spécialisée pour le volet juridique." }
+    {
+      "q": "Combien de temps faut-il pour passer à VvE Beheer Collectief ?",
+      "a": "Nous organisons généralement un transfert complet en 6 à 8 semaines. Nous prenons entièrement en charge le transfert administratif — de la résiliation auprès du gestionnaire actuel à la configuration de votre portail client."
+    },
+    {
+      "q": "Que comprend exactement le forfait Complet ?",
+      "a": "Le forfait Complet réunit la gestion administrative, financière et technique en un tarif mensuel fixe. Y compris l'organisation de l'AG, les comptes annuels, l'entretien du plan pluriannuel, la déclaration de sinistres 24/7 et un interlocuteur dédié."
+    },
+    {
+      "q": "Bénéficions-nous d'un seul interlocuteur dédié ?",
+      "a": "Oui. Chaque VvE se voit attribuer un gestionnaire dédié qui connaît votre immeuble, ses résidents et son historique. En cas d'absence, un remplaçant familier de votre dossier est toujours disponible."
+    },
+    {
+      "q": "Quel est le niveau de transparence du portail client ?",
+      "a": "Total. Tous les propriétaires peuvent consulter leur propre situation financière, l'ensemble des documents de réunion, le plan pluriannuel, les travaux d'entretien en cours et la trésorerie de la VvE — disponibles 24/7, sans avoir à nous contacter."
+    },
+    {
+      "q": "Proposez-vous également une gestion juridique ?",
+      "a": "Non. Pour les questions juridiques, nous collaborons avec des avocats spécialisés en VvE que nous nous ferons un plaisir de vous présenter. Vous conservez ainsi un point de contact unique pour la coordination, tout en bénéficiant d'une véritable expertise spécialisée pour le volet juridique."
+    }
   ],
   "cta": {
     "eyebrow": "Devis gratuit",
@@ -84,25 +201,103 @@
     "subtitle": "Demandez un devis sans engagement adapté à votre VvE. Vous recevrez une réponse sous 2 jours ouvrés.",
     "btn_primary": "Demander un devis",
     "btn_secondary": "Appelez-nous directement",
-    "usps": ["Sans engagement et gratuit", "Réponse sous 2 jours ouvrés", "Entièrement adapté à votre VvE", "Aucun engagement"]
+    "usps": [
+      "Sans engagement et gratuit",
+      "Réponse sous 2 jours ouvrés",
+      "Entièrement adapté à votre VvE",
+      "Aucun engagement"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "Années d'expérience en gestion de VvE" },
-    { "num": "500+", "label": "VvE sous notre gestion" },
-    { "num": "12.000+", "label": "Propriétaires accompagnés" },
-    { "num": "< 24u", "label": "Délai de réponse moyen" }
+    {
+      "num": "17+",
+      "label": "Années d'expérience en gestion de VvE"
+    },
+    {
+      "num": "500+",
+      "label": "VvE sous notre gestion"
+    },
+    {
+      "num": "12.000+",
+      "label": "Propriétaires accompagnés"
+    },
+    {
+      "num": "< 24u",
+      "label": "Délai de réponse moyen"
+    }
   ],
   "diensten_page": {
     "eyebrow": "Nos services",
-    "title": "Une gestion de VvE adaptée à vos besoins",
-    "subtitle": "Choisissez des services individuels ou le forfait Complet — une gestion full-service à un tarif mensuel fixe.",
-    "pillar_label": "PILIER",
+    "title_1": "Une gestion de VvE adaptée à",
+    "title_2": "vos besoins",
+    "subtitle": "Trois piliers — administratif, financier et technique — sous un même toit et avec un seul interlocuteur dédié. Choisissez des services individuels ou laissez-nous tout prendre en charge.",
+    "pillar_label": "Pilier",
+    "result_label": "Le résultat",
+    "checklist_head": "Ce que nous organisons pour vous",
     "offerte_btn": "Demander un devis",
+    "offerte_short": "Devis",
+    "rows": [
+      {
+        "title": "Votre administration ordonnée et accessible",
+        "intro": "Nous assurons l'administration complète de votre VvE — du registre des membres et de la correspondance à l'organisation et la rédaction des procès-verbaux de l'ALV. Tout est consigné de manière centralisée et immédiatement retrouvable.",
+        "result": "Une VvE dont l'administration est entièrement en ordre, sans que le conseil ait à s'en préoccuper.",
+        "bullets": [
+          "Organisation de l'ALV et procès-verbaux",
+          "Administration des membres et registre",
+          "Courrier et correspondance",
+          "Acte de division et règlements"
+        ],
+        "tag": "Inclus dans chaque forfait"
+      },
+      {
+        "title": "Une visibilité financière, sans surprises",
+        "intro": "De la comptabilité et du recouvrement au budget, au fonds de réserve et aux comptes annuels. Nous tenons les chiffres à jour et veillons à la santé de votre fonds de réserve.",
+        "result": "Une visibilité sur la situation financière à tout moment — et des comptes annuels prêts à temps.",
+        "bullets": [
+          "Comptabilité et comptes annuels",
+          "Budget et cotisation VvE",
+          "Gestion du fonds de réserve",
+          "Recouvrement et gestion des débiteurs"
+        ],
+        "tag": "Inclus dans chaque forfait"
+      },
+      {
+        "title": "Un entretien qui anticipe les problèmes",
+        "intro": "Nous établissons le MJOP et le tenons à jour, sollicitons des devis et négocions avec rigueur, et coordonnons l'entretien et les sinistres — en cas d'urgence, nous intervenons immédiatement.",
+        "result": "Un patrimoine bien entretenu, des devis négociés avec rigueur et des factures justes.",
+        "bullets": [
+          "Plan d'entretien pluriannuel (MJOP)",
+          "Devis et appels d'offres",
+          "Déclarations de sinistres 24/7",
+          "Inspections et réception"
+        ],
+        "tag": "Inclus dans le Forfait Complet"
+      }
+    ],
     "compleet_pill": "Le plus populaire",
-    "compleet_title": "Le Forfait Complet",
-    "compleet_desc": "Gestion full-service — gestion administrative, financière et technique à un tarif mensuel fixe. Aucune surprise, aucune facture supplémentaire.",
-    "compleet_btn": "Devis pour le Forfait Complet",
-    "compleet_features": ["Toute l'administration", "Comptabilité complète", "Entretien du plan pluriannuel", "Organisation de l'AG", "Interlocuteur dédié", "Portail client", "Déclarations de sinistres 24/7", "Comptes annuels à temps"]
+    "compleet_title_1": "Tout en une seule main :",
+    "compleet_title_2": "le Forfait Complet",
+    "compleet_desc": "Combinez les trois piliers en un seul tarif mensuel fixe. Une tranquillité totale — aucune surprise, aucune facture pour travaux supplémentaires.",
+    "compleet_btn": "Comment se déroule le transfert",
+    "compleet_features": [
+      "Toute l'administration et l'ALV",
+      "Comptabilité complète",
+      "Comptes annuels à temps",
+      "MJOP et entretien",
+      "Déclarations de sinistres 24/7",
+      "Portail client propre",
+      "Un interlocuteur dédié",
+      "Devis négociés avec rigueur"
+    ],
+    "cta_eyebrow": "Devis sans engagement",
+    "cta_title": "Curieux de savoir ce que cela signifie pour votre VvE ?",
+    "cta_desc": "Demandez un devis personnalisé sans engagement. Vous recevrez une réponse d'un gestionnaire dédié sous 2 jours ouvrés.",
+    "cta_btn": "Demander un devis",
+    "cta_list": [
+      "Sans engagement et gratuit",
+      "Réponse sous 2 jours ouvrés",
+      "Entièrement adapté à votre VvE"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "Nos forfaits",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "Complet",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "Gestion administrative et financière de base pour les VvE qui souhaitent bien poser les fondations.", "price": "92,95", "features": [{"label":"Organisation de l'AG","active":true},{"label":"Administration des membres","active":true},{"label":"Comptabilité et décompte annuel","active":true},{"label":"Recouvrement des cotisations VvE","active":true},{"label":"Opérations de paiement","active":true},{"label":"Gestion technique","active":false},{"label":"Entretien du plan pluriannuel","active":false},{"label":"Service d'urgence","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Gestion administrative, financière et technique de base étendue, sous un même toit.", "price": "147,95", "features": [{"label":"Organisation de l'AG et procès-verbaux","active":true},{"label":"Administration des membres","active":true},{"label":"Comptabilité complète","active":true},{"label":"Gestion du fonds de réserve","active":true},{"label":"Gestion des assurances","active":true},{"label":"Coordination de l'entretien courant","active":true},{"label":"Déclarations de sinistres","active":true},{"label":"Entretien planifié","active":false}] },
-      { "id": "compleet", "name": "Complet", "tagline": "Gestion full-service — administrative, financière et technique à un tarif fixe.", "price": null, "features": [{"label":"Tout le forfait Start Plus","active":true},{"label":"Réunions du conseil illimitées","active":true},{"label":"Coordination juridique","active":true},{"label":"Gestion des débiteurs et relances","active":true},{"label":"Plan pluriannuel et entretien planifié","active":true},{"label":"Service d'urgence 24/7","active":true},{"label":"Inspection annuelle","active":true},{"label":"Conseil en durabilité","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "Gestion administrative et financière de base pour les VvE qui souhaitent bien poser les fondations.",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "Organisation de l'AG",
+            "active": true
+          },
+          {
+            "label": "Administration des membres",
+            "active": true
+          },
+          {
+            "label": "Comptabilité et décompte annuel",
+            "active": true
+          },
+          {
+            "label": "Recouvrement des cotisations VvE",
+            "active": true
+          },
+          {
+            "label": "Opérations de paiement",
+            "active": true
+          },
+          {
+            "label": "Gestion technique",
+            "active": false
+          },
+          {
+            "label": "Entretien du plan pluriannuel",
+            "active": false
+          },
+          {
+            "label": "Service d'urgence",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "Gestion administrative, financière et technique de base étendue, sous un même toit.",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "Organisation de l'AG et procès-verbaux",
+            "active": true
+          },
+          {
+            "label": "Administration des membres",
+            "active": true
+          },
+          {
+            "label": "Comptabilité complète",
+            "active": true
+          },
+          {
+            "label": "Gestion du fonds de réserve",
+            "active": true
+          },
+          {
+            "label": "Gestion des assurances",
+            "active": true
+          },
+          {
+            "label": "Coordination de l'entretien courant",
+            "active": true
+          },
+          {
+            "label": "Déclarations de sinistres",
+            "active": true
+          },
+          {
+            "label": "Entretien planifié",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "Complet",
+        "tagline": "Gestion full-service — administrative, financière et technique à un tarif fixe.",
+        "price": null,
+        "features": [
+          {
+            "label": "Tout le forfait Start Plus",
+            "active": true
+          },
+          {
+            "label": "Réunions du conseil illimitées",
+            "active": true
+          },
+          {
+            "label": "Coordination juridique",
+            "active": true
+          },
+          {
+            "label": "Gestion des débiteurs et relances",
+            "active": true
+          },
+          {
+            "label": "Plan pluriannuel et entretien planifié",
+            "active": true
+          },
+          {
+            "label": "Service d'urgence 24/7",
+            "active": true
+          },
+          {
+            "label": "Inspection annuelle",
+            "active": true
+          },
+          {
+            "label": "Conseil en durabilité",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"Affaires du conseil","rows":[{"label":"Préparation et participation à l'AG","start":true,"startPlus":true,"compleet":true},{"label":"Rédaction du procès-verbal de l'AG","start":false,"startPlus":true,"compleet":true},{"label":"Participation aux réunions du conseil","start":false,"startPlus":"1× par an","compleet":"Illimité"},{"label":"Rédaction du règlement intérieur","start":false,"startPlus":false,"compleet":true},{"label":"Médiation en cas de litiges","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Secrétariat","rows":[{"label":"Administration des membres","start":true,"startPlus":true,"compleet":true},{"label":"Correspondance avec les résidents","start":true,"startPlus":true,"compleet":true},{"label":"Immatriculation à la KvK","start":true,"startPlus":true,"compleet":true},{"label":"Gestion de l'acte de division","start":false,"startPlus":true,"compleet":true},{"label":"Gestion des assurances","start":false,"startPlus":true,"compleet":true},{"label":"Coordination juridique","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Financier","rows":[{"label":"Comptabilité et décompte annuel","start":true,"startPlus":true,"compleet":true},{"label":"Élaboration du budget","start":true,"startPlus":true,"compleet":true},{"label":"Recouvrement des cotisations VvE","start":true,"startPlus":true,"compleet":true},{"label":"Opérations de paiement","start":true,"startPlus":true,"compleet":true},{"label":"Gestion du fonds de réserve","start":false,"startPlus":true,"compleet":true},{"label":"Budget pluriannuel","start":false,"startPlus":true,"compleet":true},{"label":"Gestion des débiteurs et relances","start":false,"startPlus":false,"compleet":true},{"label":"Déclarations fiscales","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Entretien technique courant","rows":[{"label":"Coordination de l'entretien courant","start":false,"startPlus":true,"compleet":true},{"label":"Traitement des déclarations de sinistres","start":false,"startPlus":true,"compleet":true},{"label":"Gestion des clés","start":false,"startPlus":true,"compleet":true},{"label":"Demandes de devis d'entretien","start":false,"startPlus":false,"compleet":true},{"label":"Service d'urgence 24/7","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Entretien technique planifié","rows":[{"label":"Plan d'entretien pluriannuel (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Inspection annuelle","start":false,"startPlus":false,"compleet":true},{"label":"Supervision des gros travaux d'entretien","start":false,"startPlus":false,"compleet":true},{"label":"Appels d'offres pour l'entretien","start":false,"startPlus":false,"compleet":true},{"label":"Supervision de l'exécution","start":false,"startPlus":false,"compleet":true},{"label":"Réception et suivi","start":false,"startPlus":false,"compleet":true},{"label":"Conseil en durabilité","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "Affaires du conseil",
+        "rows": [
+          {
+            "label": "Préparation et participation à l'AG",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Rédaction du procès-verbal de l'AG",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Participation aux réunions du conseil",
+            "start": false,
+            "startPlus": "1× par an",
+            "compleet": "Illimité"
+          },
+          {
+            "label": "Rédaction du règlement intérieur",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Médiation en cas de litiges",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Secrétariat",
+        "rows": [
+          {
+            "label": "Administration des membres",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Correspondance avec les résidents",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Immatriculation à la KvK",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Gestion de l'acte de division",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Gestion des assurances",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Coordination juridique",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Financier",
+        "rows": [
+          {
+            "label": "Comptabilité et décompte annuel",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Élaboration du budget",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Recouvrement des cotisations VvE",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Opérations de paiement",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Gestion du fonds de réserve",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Budget pluriannuel",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Gestion des débiteurs et relances",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Déclarations fiscales",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Entretien technique courant",
+        "rows": [
+          {
+            "label": "Coordination de l'entretien courant",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Traitement des déclarations de sinistres",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Gestion des clés",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Demandes de devis d'entretien",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Service d'urgence 24/7",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Entretien technique planifié",
+        "rows": [
+          {
+            "label": "Plan d'entretien pluriannuel (MJOP)",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Inspection annuelle",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Supervision des gros travaux d'entretien",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Appels d'offres pour l'entretien",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Supervision de l'exécution",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Réception et suivi",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Conseil en durabilité",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "Aide à votre choix",
     "hulp_title": "Quel forfait convient à notre VvE ?",
     "hulp_subtitle": "Le bon choix dépend de la taille de votre VvE, de la situation actuelle et de vos souhaits. Nous vous conseillons volontiers — sans engagement.",
     "hulp_btn": "Demander un devis",
     "hulp_cards": [
-      {"icon":"users-three","title":"Petite VvE (< 12)","desc":"Start ou Start Plus suffit généralement pour les complexes plus petits."},
-      {"icon":"buildings","title":"VvE moyenne","desc":"Start Plus offre le juste équilibre entre autonomie et full-service."},
-      {"icon":"buildings","title":"Grande VvE (> 40)","desc":"Le Forfait Complet vous évite d'avoir à organiser vous-même la gestion technique."},
-      {"icon":"wrench","title":"Entretien différé","desc":"En cas d'entretien différé, nous recommandons le Forfait Complet avec une approche par plan pluriannuel."}
+      {
+        "icon": "users-three",
+        "title": "Petite VvE (< 12)",
+        "desc": "Start ou Start Plus suffit généralement pour les complexes plus petits."
+      },
+      {
+        "icon": "buildings",
+        "title": "VvE moyenne",
+        "desc": "Start Plus offre le juste équilibre entre autonomie et full-service."
+      },
+      {
+        "icon": "buildings",
+        "title": "Grande VvE (> 40)",
+        "desc": "Le Forfait Complet vous évite d'avoir à organiser vous-même la gestion technique."
+      },
+      {
+        "icon": "wrench",
+        "title": "Entretien différé",
+        "desc": "En cas d'entretien différé, nous recommandons le Forfait Complet avec une approche par plan pluriannuel."
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "Les personnes derrière votre VvE",
     "team_subtitle": "Une petite équipe de spécialistes expérimentés. Chaque VvE se voit attribuer un gestionnaire dédié.",
     "team": [
-      {"name":"Mark de Vries","role":"Fondateur et gestionnaire"},
-      {"name":"Linda Janssen","role":"Gestionnaire VvE senior"},
-      {"name":"Tim Bakker","role":"Gestionnaire technique"},
-      {"name":"Eva van Loon","role":"Gestionnaire financière"}
+      {
+        "name": "Mark de Vries",
+        "role": "Fondateur et gestionnaire"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "Gestionnaire VvE senior"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "Gestionnaire technique"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "Gestionnaire financière"
+      }
     ],
     "missie_eyebrow": "Notre mission",
     "missie_quote": "Une gestion de VvE qui soulage plutôt qu'elle ne complique.",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "Méthode",
-    "title": "Du devis à la gestion continue",
-    "subtitle": "Nous organisons généralement un transfert complet en 6 à 8 semaines. Voici comment cela fonctionne :",
-    "stap": "ÉTAPE",
+    "title_1": "Du devis à la",
+    "title_2": "gestion continue",
+    "subtitle": "De la première prise de contact à la gestion continue, nous prenons en charge l'intégralité du transfert — vous n'avez presque rien à faire. En six étapes, voici comment cela se présente.",
+    "stap": "Étape",
     "steps": [
-      {"num":"01","title":"Devis sans engagement","desc":"Vous remplissez le formulaire de devis ou vous nous appelez. Sous 2 jours ouvrés, vous recevez un devis personnalisé pour votre VvE."},
-      {"num":"02","title":"Entretien de présentation","desc":"Nous visitons votre VvE, examinons l'acte de division et le plan pluriannuel, et discutons de vos souhaits et préoccupations."},
-      {"num":"03","title":"Transfert sans souci","desc":"Nous organisons le transfert complet depuis votre gestionnaire actuel — résiliation, documents, finances. Vous n'avez rien à faire."},
-      {"num":"04","title":"Configuration du portail client","desc":"Tous les propriétaires obtiennent l'accès à leur propre portail client. Tous les documents, les finances et l'entretien — immédiatement accessibles."},
-      {"num":"05","title":"Première AG","desc":"Nous organisons votre première AG sous notre gestion et vous présentons votre interlocuteur dédié."},
-      {"num":"06","title":"Gestion continue","desc":"À partir de ce moment, nous nous occupons de tout. Vous gardez le contrôle via le portail et recevez des mises à jour proactives."}
+      {
+        "when": "Jour 1–2",
+        "title": "Devis sans engagement",
+        "desc": "Vous remplissez le formulaire de devis ou vous nous appelez. Sous 2 jours ouvrés, vous recevez un devis personnalisé pour votre VvE."
+      },
+      {
+        "when": "Semaine 1",
+        "title": "Entretien de présentation",
+        "desc": "Nous visitons votre VvE, examinons l'acte de division et le MJOP, et discutons de vos souhaits et préoccupations."
+      },
+      {
+        "when": "Semaine 1–6",
+        "title": "Transfert sans souci",
+        "desc": "Nous organisons le transfert complet depuis votre gestionnaire actuel — résiliation, documents, finances. Vous n'avez rien à faire."
+      },
+      {
+        "when": "Semaine 6",
+        "title": "Configuration du portail client",
+        "desc": "Tous les propriétaires obtiennent l'accès à leur propre portail client. Tous les documents, les finances et l'entretien immédiatement accessibles."
+      },
+      {
+        "when": "Semaine 7–8",
+        "title": "Première ALV",
+        "desc": "Nous organisons votre première ALV sous notre gestion et vous présentons votre interlocuteur dédié."
+      },
+      {
+        "when": "En continu",
+        "title": "Gestion continue",
+        "desc": "À partir de ce moment, nous nous occupons de tout. Vous gardez le contrôle via le portail et recevez des mises à jour proactives."
+      }
+    ],
+    "reassure": [
+      {
+        "title": "Vous ne faites pratiquement rien",
+        "desc": "Nous coordonnons l'intégralité du transfert, y compris la résiliation auprès de votre gestionnaire actuel."
+      },
+      {
+        "title": "Aucun risque",
+        "desc": "Une prise de contact sans engagement. Nous ne lançons le transfert qu'une fois votre accord obtenu."
+      },
+      {
+        "title": "Interlocuteur dédié",
+        "desc": "Dès le premier jour, vous savez à qui vous adresser — un gestionnaire qui connaît votre immeuble."
+      }
+    ],
+    "cta_eyebrow": "Devis sans engagement",
+    "cta_title": "Prêt à franchir le pas ?",
+    "cta_desc": "Demandez un devis sans engagement. Nous organisons ensuite l'intégralité du transfert — vous vivez sereinement.",
+    "cta_btn": "Demander un devis",
+    "cta_list": [
+      "Transfert en 6–8 semaines",
+      "Nous résilions auprès de votre gestionnaire actuel",
+      "Aucun risque, sans engagement"
     ]
   },
   "offerte_page": {
     "eyebrow": "Demander un devis",
     "title": "Sans engagement et adapté à votre VvE",
     "intro": "Remplissez le formulaire. Sous 2 jours ouvrés, vous recevrez un devis personnalisé — discuté par téléphone afin qu'il corresponde vraiment à votre situation.",
-    "usps": [["shield-check","Sans engagement et gratuit"],["clock","Réponse sous 2 jours ouvrés"],["user-circle","Contact direct avec un gestionnaire"],["lock","Vos données restent les vôtres"]],
+    "usps": [
+      [
+        "shield-check",
+        "Sans engagement et gratuit"
+      ],
+      [
+        "clock",
+        "Réponse sous 2 jours ouvrés"
+      ],
+      [
+        "user-circle",
+        "Contact direct avec un gestionnaire"
+      ],
+      [
+        "lock",
+        "Vos données restent les vôtres"
+      ]
+    ],
     "stap_van": "sur",
-    "step_titles": ["Parlez-nous de votre VvE","Quels services recherchez-vous ?","Votre situation actuelle","Vos coordonnées"],
-    "step1": {"vve_naam":"Nom de la VvE","vve_naam_ph":"ex. VvE Parkzicht","aantal":"Nombre d'appartements","aantal_ph":"ex. 24","bouwjaar":"Année de construction","bouwjaar_ph":"ex. 1998","adres":"Adresse / localité","adres_ph":"Ville"},
-    "step2": {"services":[["package","Forfait Complet","Les 3 piliers à un seul prix"],["folders","Administratif","AG, procès-verbaux, courrier"],["chart-line-up","Financier","Comptabilité, comptes annuels"],["wrench","Technique","Plan pluriannuel, entretien"]]},
-    "step3": {"beheerder_label":"Avez-vous actuellement un gestionnaire ?","beheerder_options":["Oui, je souhaite changer","Non, c'est la première fois","Autogestion, nous avons besoin d'aide"],"belangrijk_label":"Qu'est-ce qui compte le plus pour vous ?","belangrijk_ph":"ex. réponse plus rapide, meilleure transparence, coûts réduits..."},
-    "step4": {"voornaam":"Prénom","achternaam":"Nom","functie":"Fonction au sein de la VvE","functie_options":["Président","Trésorier","Secrétaire","Membre du conseil","Propriétaire / membre"],"email":"E-mail","telefoon":"Numéro de téléphone"},
+    "step_titles": [
+      "Parlez-nous de votre VvE",
+      "Quels services recherchez-vous ?",
+      "Votre situation actuelle",
+      "Vos coordonnées"
+    ],
+    "step1": {
+      "vve_naam": "Nom de la VvE",
+      "vve_naam_ph": "ex. VvE Parkzicht",
+      "aantal": "Nombre d'appartements",
+      "aantal_ph": "ex. 24",
+      "bouwjaar": "Année de construction",
+      "bouwjaar_ph": "ex. 1998",
+      "adres": "Adresse / localité",
+      "adres_ph": "Ville"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "Forfait Complet",
+          "Les 3 piliers à un seul prix"
+        ],
+        [
+          "folders",
+          "Administratif",
+          "AG, procès-verbaux, courrier"
+        ],
+        [
+          "chart-line-up",
+          "Financier",
+          "Comptabilité, comptes annuels"
+        ],
+        [
+          "wrench",
+          "Technique",
+          "Plan pluriannuel, entretien"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "Avez-vous actuellement un gestionnaire ?",
+      "beheerder_options": [
+        "Oui, je souhaite changer",
+        "Non, c'est la première fois",
+        "Autogestion, nous avons besoin d'aide"
+      ],
+      "belangrijk_label": "Qu'est-ce qui compte le plus pour vous ?",
+      "belangrijk_ph": "ex. réponse plus rapide, meilleure transparence, coûts réduits..."
+    },
+    "step4": {
+      "voornaam": "Prénom",
+      "achternaam": "Nom",
+      "functie": "Fonction au sein de la VvE",
+      "functie_options": [
+        "Président",
+        "Trésorier",
+        "Secrétaire",
+        "Membre du conseil",
+        "Propriétaire / membre"
+      ],
+      "email": "E-mail",
+      "telefoon": "Numéro de téléphone"
+    },
     "btn_terug": "Retour",
     "btn_volgende": "Étape suivante",
     "btn_versturen": "Envoyer la demande",
@@ -193,86 +863,148 @@
     "success_desc": "Nous avons bien reçu votre demande de devis et vous contacterons sous 2 jours ouvrés."
   },
   "privacy_page": {
-    "title":"Déclaration de confidentialité",
-    "intro":"VvE Beheer Collectief, établie à Wateringen, est responsable du traitement des données à caractère personnel tel qu'exposé dans la présente déclaration de confidentialité.",
-    "h2_contact":"Coordonnées",
-    "h2_gegevens":"Données à caractère personnel que nous traitons",
-    "gegevens_intro":"VvE Beheer Collectief traite vos données à caractère personnel parce que vous utilisez nos services et/ou parce que vous nous les fournissez vous-même. Vous trouverez ci-dessous un aperçu des données à caractère personnel que nous traitons :",
-    "gegevens_items":["Nom et prénom","Numéro de téléphone","Adresse e-mail","Nom et adresse de votre VvE","Fonction au sein de la VvE","Autres données que vous fournissez activement, par exemple via la correspondance ou le formulaire de devis"],
-    "h2_doel":"Finalité du traitement des données à caractère personnel",
-    "doel_intro":"VvE Beheer Collectief traite vos données à caractère personnel aux fins suivantes :",
-    "doel_items":["Traiter votre demande de devis","Pouvoir vous appeler ou vous envoyer un e-mail si nécessaire pour réaliser nos services","Exécuter les services de gestion de VvE pour lesquels vous nous avez mandatés","Vous informer des modifications de nos services"],
-    "h2_bewaren":"Durée de conservation des données à caractère personnel",
-    "bewaren_text":"VvE Beheer Collectief ne conserve pas vos données à caractère personnel plus longtemps qu'il n'est strictement nécessaire pour atteindre les finalités pour lesquelles vos données sont collectées. Les données issues des demandes de devis sont conservées pendant 12 mois au maximum si aucun accord n'en découle. En cas de contrat de gestion actif, les données sont conservées pour la durée du contrat et jusqu'à 7 ans après (délai légal de conservation de l'administration financière).",
-    "h2_derden":"Partage des données à caractère personnel avec des tiers",
-    "derden_text":"VvE Beheer Collectief ne partage pas vos données avec des tiers, sauf si cela est nécessaire à l'exécution de notre contrat avec vous ou pour se conformer à une obligation légale.",
-    "h2_inzien":"Consulter, modifier ou supprimer des données",
-    "inzien_text":"Vous avez le droit de consulter, de corriger ou de supprimer vos données à caractère personnel. Vous avez également le droit de retirer tout consentement au traitement des données ou de vous opposer au traitement. Vous pouvez envoyer une demande d'accès, de correction, de suppression ou de transfert de vos données à caractère personnel à info@vvebeheercollectief.nl.",
-    "h2_beveiliging":"Sécurité",
-    "beveiliging_text":"VvE Beheer Collectief prend au sérieux la protection de vos données et met en œuvre des mesures appropriées pour prévenir tout usage abusif, perte, accès non autorisé, divulgation indésirable et modification non autorisée. Si vous estimez que vos données ne sont pas correctement sécurisées ou s'il existe des indices d'usage abusif, veuillez nous contacter à info@vvebeheercollectief.nl.",
-    "updated":"Dernière mise à jour : mai 2025"
+    "title": "Déclaration de confidentialité",
+    "intro": "VvE Beheer Collectief, établie à Wateringen, est responsable du traitement des données à caractère personnel tel qu'exposé dans la présente déclaration de confidentialité.",
+    "h2_contact": "Coordonnées",
+    "h2_gegevens": "Données à caractère personnel que nous traitons",
+    "gegevens_intro": "VvE Beheer Collectief traite vos données à caractère personnel parce que vous utilisez nos services et/ou parce que vous nous les fournissez vous-même. Vous trouverez ci-dessous un aperçu des données à caractère personnel que nous traitons :",
+    "gegevens_items": [
+      "Nom et prénom",
+      "Numéro de téléphone",
+      "Adresse e-mail",
+      "Nom et adresse de votre VvE",
+      "Fonction au sein de la VvE",
+      "Autres données que vous fournissez activement, par exemple via la correspondance ou le formulaire de devis"
+    ],
+    "h2_doel": "Finalité du traitement des données à caractère personnel",
+    "doel_intro": "VvE Beheer Collectief traite vos données à caractère personnel aux fins suivantes :",
+    "doel_items": [
+      "Traiter votre demande de devis",
+      "Pouvoir vous appeler ou vous envoyer un e-mail si nécessaire pour réaliser nos services",
+      "Exécuter les services de gestion de VvE pour lesquels vous nous avez mandatés",
+      "Vous informer des modifications de nos services"
+    ],
+    "h2_bewaren": "Durée de conservation des données à caractère personnel",
+    "bewaren_text": "VvE Beheer Collectief ne conserve pas vos données à caractère personnel plus longtemps qu'il n'est strictement nécessaire pour atteindre les finalités pour lesquelles vos données sont collectées. Les données issues des demandes de devis sont conservées pendant 12 mois au maximum si aucun accord n'en découle. En cas de contrat de gestion actif, les données sont conservées pour la durée du contrat et jusqu'à 7 ans après (délai légal de conservation de l'administration financière).",
+    "h2_derden": "Partage des données à caractère personnel avec des tiers",
+    "derden_text": "VvE Beheer Collectief ne partage pas vos données avec des tiers, sauf si cela est nécessaire à l'exécution de notre contrat avec vous ou pour se conformer à une obligation légale.",
+    "h2_inzien": "Consulter, modifier ou supprimer des données",
+    "inzien_text": "Vous avez le droit de consulter, de corriger ou de supprimer vos données à caractère personnel. Vous avez également le droit de retirer tout consentement au traitement des données ou de vous opposer au traitement. Vous pouvez envoyer une demande d'accès, de correction, de suppression ou de transfert de vos données à caractère personnel à info@vvebeheercollectief.nl.",
+    "h2_beveiliging": "Sécurité",
+    "beveiliging_text": "VvE Beheer Collectief prend au sérieux la protection de vos données et met en œuvre des mesures appropriées pour prévenir tout usage abusif, perte, accès non autorisé, divulgation indésirable et modification non autorisée. Si vous estimez que vos données ne sont pas correctement sécurisées ou s'il existe des indices d'usage abusif, veuillez nous contacter à info@vvebeheercollectief.nl.",
+    "updated": "Dernière mise à jour : mai 2025"
   },
   "voorwaarden_page": {
-    "title":"Conditions générales",
-    "articles":[
-      {"h2":"Article 1 — Définitions","items":["Prestataire : VvE Beheer Collectief, établie à Wateringen, immatriculée à la KvK sous le numéro 51721139.","Client : l'Association des copropriétaires (VvE) concluant un contrat avec le Prestataire.","Contrat : le contrat de gestion entre le Client et le Prestataire."]},
-      {"h2":"Article 2 — Champ d'application","p":"Les présentes conditions générales s'appliquent à toute offre du Prestataire et à tout contrat conclu. Toute dérogation aux présentes conditions n'est valable que si elle a été expressément convenue par écrit."},
-      {"h2":"Article 3 — Offres et devis","p":"Tous les devis de VvE Beheer Collectief sont sans engagement et valables pour une durée de 30 jours, sauf indication contraire. Un contrat est conclu lors de la confirmation écrite par les deux parties ou par une décision de l'AG."},
-      {"h2":"Article 4 — Exécution du contrat","p":"VvE Beheer Collectief exécutera le contrat au mieux de ses connaissances et de ses capacités, conformément aux exigences d'un travail bien fait. Le gestionnaire est tenu à une obligation de moyens et non à une obligation de résultat."},
-      {"h2":"Article 5 — Durée et résiliation","p":"Le contrat de gestion est conclu pour la durée indiquée dans le contrat. La résiliation se fait par écrit, en respectant un préavis de 3 mois avant la fin de la période contractuelle, sauf convention contraire."},
-      {"h2":"Article 6 — Tarifs et paiement","p":"Tous les tarifs indiqués s'entendent hors TVA, sauf mention contraire expresse. Le paiement doit être effectué dans les 30 jours suivant la date de la facture. En cas de retard de paiement, le Client est en défaut de plein droit et des intérêts légaux sont dus."},
-      {"h2":"Article 7 — Responsabilité","p":"La responsabilité de VvE Beheer Collectief est limitée au montant versé par l'assurance de responsabilité professionnelle dans le cas concerné, majoré de la franchise. Si l'assurance ne verse aucune indemnité, la responsabilité est limitée au montant des honoraires que le Prestataire a perçus pour ses travaux au titre du contrat sur la période de 12 mois précédant l'événement à l'origine du dommage."},
-      {"h2":"Article 8 — Confidentialité","p":"Les deux parties sont tenues de préserver la confidentialité de toutes les informations confidentielles obtenues l'une de l'autre dans le cadre du contrat. Cette obligation s'applique également après la fin du contrat."},
-      {"h2":"Article 9 — Réclamations","p":"Les réclamations relatives à l'exécution du contrat doivent être soumises à VvE Beheer Collectief de manière diligente, complète et clairement décrite. Les réclamations sont traitées dans les 14 jours suivant leur réception."},
-      {"h2":"Article 10 — Droit applicable","p":"Le droit néerlandais s'applique à tous les contrats entre le Client et VvE Beheer Collectief. Les litiges sont soumis au tribunal compétent de l'arrondissement de La Haye."}
+    "title": "Conditions générales",
+    "articles": [
+      {
+        "h2": "Article 1 — Définitions",
+        "items": [
+          "Prestataire : VvE Beheer Collectief, établie à Wateringen, immatriculée à la KvK sous le numéro 51721139.",
+          "Client : l'Association des copropriétaires (VvE) concluant un contrat avec le Prestataire.",
+          "Contrat : le contrat de gestion entre le Client et le Prestataire."
+        ]
+      },
+      {
+        "h2": "Article 2 — Champ d'application",
+        "p": "Les présentes conditions générales s'appliquent à toute offre du Prestataire et à tout contrat conclu. Toute dérogation aux présentes conditions n'est valable que si elle a été expressément convenue par écrit."
+      },
+      {
+        "h2": "Article 3 — Offres et devis",
+        "p": "Tous les devis de VvE Beheer Collectief sont sans engagement et valables pour une durée de 30 jours, sauf indication contraire. Un contrat est conclu lors de la confirmation écrite par les deux parties ou par une décision de l'AG."
+      },
+      {
+        "h2": "Article 4 — Exécution du contrat",
+        "p": "VvE Beheer Collectief exécutera le contrat au mieux de ses connaissances et de ses capacités, conformément aux exigences d'un travail bien fait. Le gestionnaire est tenu à une obligation de moyens et non à une obligation de résultat."
+      },
+      {
+        "h2": "Article 5 — Durée et résiliation",
+        "p": "Le contrat de gestion est conclu pour la durée indiquée dans le contrat. La résiliation se fait par écrit, en respectant un préavis de 3 mois avant la fin de la période contractuelle, sauf convention contraire."
+      },
+      {
+        "h2": "Article 6 — Tarifs et paiement",
+        "p": "Tous les tarifs indiqués s'entendent hors TVA, sauf mention contraire expresse. Le paiement doit être effectué dans les 30 jours suivant la date de la facture. En cas de retard de paiement, le Client est en défaut de plein droit et des intérêts légaux sont dus."
+      },
+      {
+        "h2": "Article 7 — Responsabilité",
+        "p": "La responsabilité de VvE Beheer Collectief est limitée au montant versé par l'assurance de responsabilité professionnelle dans le cas concerné, majoré de la franchise. Si l'assurance ne verse aucune indemnité, la responsabilité est limitée au montant des honoraires que le Prestataire a perçus pour ses travaux au titre du contrat sur la période de 12 mois précédant l'événement à l'origine du dommage."
+      },
+      {
+        "h2": "Article 8 — Confidentialité",
+        "p": "Les deux parties sont tenues de préserver la confidentialité de toutes les informations confidentielles obtenues l'une de l'autre dans le cadre du contrat. Cette obligation s'applique également après la fin du contrat."
+      },
+      {
+        "h2": "Article 9 — Réclamations",
+        "p": "Les réclamations relatives à l'exécution du contrat doivent être soumises à VvE Beheer Collectief de manière diligente, complète et clairement décrite. Les réclamations sont traitées dans les 14 jours suivant leur réception."
+      },
+      {
+        "h2": "Article 10 — Droit applicable",
+        "p": "Le droit néerlandais s'applique à tous les contrats entre le Client et VvE Beheer Collectief. Les litiges sont soumis au tribunal compétent de l'arrondissement de La Haye."
+      }
     ],
-    "updated":"Dernière mise à jour : mai 2025"
+    "updated": "Dernière mise à jour : mai 2025"
   },
   "cookies_page": {
-    "title":"Déclaration relative aux cookies",
-    "intro":"Ce site web de VvE Beheer Collectief utilise des cookies. Dans cette déclaration relative aux cookies, vous pouvez lire ce que sont les cookies, quels cookies nous utilisons et comment vous pouvez les gérer.",
-    "h2_wat":"Que sont les cookies ?",
-    "wat_text":"Les cookies sont de petits fichiers texte enregistrés par votre navigateur lorsque vous visitez un site web. Ils servent à faire fonctionner correctement les sites web, à analyser l'utilisation du site et à améliorer l'expérience utilisateur.",
-    "h2_welke":"Quels cookies utilisons-nous ?",
-    "h3_functioneel":"Cookies fonctionnels",
-    "functioneel_text":"Ces cookies sont nécessaires au fonctionnement du site web. Ils garantissent par exemple que vos préférences sont mémorisées. Ces cookies ne sont pas utilisés à des fins marketing.",
-    "h3_analytisch":"Cookies analytiques",
-    "analytisch_text":"Nous pouvons utiliser des cookies analytiques pour mesurer et améliorer l'utilisation de notre site web. Ces données sont collectées de manière anonyme et ne sont pas partagées avec des tiers à des fins commerciales.",
-    "h2_beheren":"Gérer les cookies",
-    "beheren_intro":"Vous pouvez modifier à tout moment vos préférences en matière de cookies via les paramètres de votre navigateur. Veuillez noter que le blocage de certains cookies peut affecter le fonctionnement du site web.",
-    "beheren_text":"La plupart des navigateurs offrent la possibilité de :",
-    "beheren_items":["Consulter tous les cookies enregistrés","Supprimer les cookies individuellement ou en totalité","Bloquer les cookies de certains sites web","Bloquer tous les cookies","Supprimer tous les cookies à la fermeture du navigateur"],
-    "h2_derden":"Cookies de tiers",
-    "derden_text":"Notre site web peut utiliser des services de tiers, tels que Google Fonts pour la typographie. Ces services peuvent placer leurs propres cookies. Nous n'avons aucun contrôle sur le placement et l'utilisation des cookies par ces tiers. Veuillez consulter la politique de confidentialité du tiers concerné pour plus d'informations.",
-    "h2_wijzigingen":"Modifications",
-    "wijzigingen_text":"VvE Beheer Collectief se réserve le droit de modifier la présente déclaration relative aux cookies. Les modifications seront publiées sur cette page.",
-    "h2_contact":"Contact",
-    "contact_text":"Vous avez des questions sur notre politique en matière de cookies ? Contactez-nous à info@vvebeheercollectief.nl.",
-    "updated":"Dernière mise à jour : mai 2025"
+    "title": "Déclaration relative aux cookies",
+    "intro": "Ce site web de VvE Beheer Collectief utilise des cookies. Dans cette déclaration relative aux cookies, vous pouvez lire ce que sont les cookies, quels cookies nous utilisons et comment vous pouvez les gérer.",
+    "h2_wat": "Que sont les cookies ?",
+    "wat_text": "Les cookies sont de petits fichiers texte enregistrés par votre navigateur lorsque vous visitez un site web. Ils servent à faire fonctionner correctement les sites web, à analyser l'utilisation du site et à améliorer l'expérience utilisateur.",
+    "h2_welke": "Quels cookies utilisons-nous ?",
+    "h3_functioneel": "Cookies fonctionnels",
+    "functioneel_text": "Ces cookies sont nécessaires au fonctionnement du site web. Ils garantissent par exemple que vos préférences sont mémorisées. Ces cookies ne sont pas utilisés à des fins marketing.",
+    "h3_analytisch": "Cookies analytiques",
+    "analytisch_text": "Nous pouvons utiliser des cookies analytiques pour mesurer et améliorer l'utilisation de notre site web. Ces données sont collectées de manière anonyme et ne sont pas partagées avec des tiers à des fins commerciales.",
+    "h2_beheren": "Gérer les cookies",
+    "beheren_intro": "Vous pouvez modifier à tout moment vos préférences en matière de cookies via les paramètres de votre navigateur. Veuillez noter que le blocage de certains cookies peut affecter le fonctionnement du site web.",
+    "beheren_text": "La plupart des navigateurs offrent la possibilité de :",
+    "beheren_items": [
+      "Consulter tous les cookies enregistrés",
+      "Supprimer les cookies individuellement ou en totalité",
+      "Bloquer les cookies de certains sites web",
+      "Bloquer tous les cookies",
+      "Supprimer tous les cookies à la fermeture du navigateur"
+    ],
+    "h2_derden": "Cookies de tiers",
+    "derden_text": "Notre site web peut utiliser des services de tiers, tels que Google Fonts pour la typographie. Ces services peuvent placer leurs propres cookies. Nous n'avons aucun contrôle sur le placement et l'utilisation des cookies par ces tiers. Veuillez consulter la politique de confidentialité du tiers concerné pour plus d'informations.",
+    "h2_wijzigingen": "Modifications",
+    "wijzigingen_text": "VvE Beheer Collectief se réserve le droit de modifier la présente déclaration relative aux cookies. Les modifications seront publiées sur cette page.",
+    "h2_contact": "Contact",
+    "contact_text": "Vous avez des questions sur notre politique en matière de cookies ? Contactez-nous à info@vvebeheercollectief.nl.",
+    "updated": "Dernière mise à jour : mai 2025"
   },
   "footer": {
-    "brand_desc":"Une gestion de VvE personnelle, transparente et fiable pour la Hollande-Méridionale et ses environs. 17 ans d'expérience, plus de 500 VvE sous gestion.",
-    "h_diensten":"Services",
-    "diensten_links":["Gestion administrative","Gestion financière","Gestion technique","Forfait Complet"],
-    "h_bedrijf":"Entreprise",
-    "bedrijf_links":["À propos","Méthode","Témoignages clients","Offres d'emploi"],
-    "h_contact":"Contact",
-    "locatie":"Wateringen, Hollande-Méridionale",
-    "offerte_link":"Demander un devis →",
-    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
-    "privacy":"Confidentialité",
-    "voorwaarden":"Conditions générales",
-    "cookies":"Cookies"
+    "brand_desc": "Une gestion de VvE personnelle, transparente et fiable pour la Hollande-Méridionale et ses environs. 17 ans d'expérience, plus de 500 VvE sous gestion.",
+    "h_diensten": "Services",
+    "diensten_links": [
+      "Gestion administrative",
+      "Gestion financière",
+      "Gestion technique",
+      "Forfait Complet"
+    ],
+    "h_bedrijf": "Entreprise",
+    "bedrijf_links": [
+      "À propos",
+      "Méthode",
+      "Témoignages clients",
+      "Offres d'emploi"
+    ],
+    "h_contact": "Contact",
+    "locatie": "Wateringen, Hollande-Méridionale",
+    "offerte_link": "Demander un devis →",
+    "bottom_kvk": "VvE Beheer Collectief. KvK 51721139.",
+    "privacy": "Confidentialité",
+    "voorwaarden": "Conditions générales",
+    "cookies": "Cookies"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — Gestion de VvE Hollande-Méridionale",
-    "diensten":"Services — VvE Beheer Collectief",
-    "pakketten":"Forfaits — VvE Beheer Collectief",
-    "overons":"À propos — VvE Beheer Collectief",
-    "werkwijze":"Méthode — VvE Beheer Collectief",
-    "offerte":"Demander un devis — VvE Beheer Collectief",
-    "privacy":"Déclaration de confidentialité — VvE Beheer Collectief",
-    "voorwaarden":"Conditions générales — VvE Beheer Collectief",
-    "cookies":"Déclaration relative aux cookies — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — Gestion de VvE Hollande-Méridionale",
+    "diensten": "Services — VvE Beheer Collectief",
+    "pakketten": "Forfaits — VvE Beheer Collectief",
+    "overons": "À propos — VvE Beheer Collectief",
+    "werkwijze": "Méthode — VvE Beheer Collectief",
+    "offerte": "Demander un devis — VvE Beheer Collectief",
+    "privacy": "Déclaration de confidentialité — VvE Beheer Collectief",
+    "voorwaarden": "Conditions générales — VvE Beheer Collectief",
+    "cookies": "Déclaration relative aux cookies — VvE Beheer Collectief"
   }
 }

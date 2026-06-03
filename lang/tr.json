@@ -1,5 +1,9 @@
 {
-  "meta": { "lang": "tr", "dir": "ltr", "label": "Türkçe" },
+  "meta": {
+    "lang": "tr",
+    "dir": "ltr",
+    "label": "Türkçe"
+  },
   "nav": {
     "home": "Ana Sayfa",
     "diensten": "Hizmetler",
@@ -14,17 +18,39 @@
     "menu_close": "Menüyü kapat"
   },
   "hero": {
+    "pill": "VvE yönetimi · Lahey & Güney Hollanda",
     "title_1": "Birlikte sağlıyoruz",
     "title_2": "kaygısız yaşamı.",
-    "subtitle": "Lahey ve tüm Güney Hollanda için VvE yönetimi uzmanı. Tek bir sabit iletişim kişisi, kendi müşteri portalınız üzerinden tam şeffaflık — biz hallederiz, siz kaygısız yaşarsınız.",
-    "cta_primary": "Ücretsiz teklif",
-    "cta_secondary": "Çalışma yöntemimiz"
+    "subtitle": "Tek bir sabit iletişim kişisi, kendi müşteri portalınız üzerinden tam şeffaflık. İdari, mali ve teknik yönetimi biz hallederiz — siz kaygısız yaşarsınız.",
+    "cta_primary": "Hizmetlerimize göz atın",
+    "cta_secondary": "Çalışma yöntemimiz",
+    "trust": [
+      "17+ yıllık deneyim",
+      "500+ VvE",
+      "Yanıt < 24 saat"
+    ]
   },
   "hero_stats": [
-    { "icon": "users-three", "num": "17+", "label": "Yıllık VvE yönetimi deneyimi" },
-    { "icon": "buildings", "num": "500+", "label": "Yönetimimizdeki VvE sayısı" },
-    { "icon": "users", "num": "12.000+", "label": "Hizmet verilen mal sahibi" },
-    { "icon": "lightning", "num": "< 24u", "label": "Ortalama yanıt süresi" }
+    {
+      "icon": "users-three",
+      "num": "17+",
+      "label": "Yıllık VvE yönetimi deneyimi"
+    },
+    {
+      "icon": "buildings",
+      "num": "500+",
+      "label": "Yönetimimizdeki VvE sayısı"
+    },
+    {
+      "icon": "users",
+      "num": "12.000+",
+      "label": "Hizmet verilen mal sahibi"
+    },
+    {
+      "icon": "lightning",
+      "num": "< 24u",
+      "label": "Ortalama yanıt süresi"
+    }
   ],
   "pillars_section": {
     "eyebrow": "Hizmetlerimiz",
@@ -33,9 +59,39 @@
     "read_more": "Devamını oku"
   },
   "pillars": [
-    { "icon": "folders", "title": "İdari yönetim", "desc": "ALV organizasyonu, üye yönetimi, tutanaklar ve açık yazışmalar.", "bullets": ["ALV organizasyonu ve tutanaklar", "Üye yönetimi", "Posta ve yazışmalar", "Bölünme senedi yönetimi"] },
-    { "icon": "chart-line-up", "title": "Mali yönetim", "desc": "Muhasebe, bütçe, yedek akçe fonu ve yıllık hesaplar — her zaman şeffaf.", "bullets": ["Muhasebe ve yıllık hesaplar", "Bütçe ve VvE aidatı", "Yedek akçe fonu yönetimi", "Tahsilat ve borçlular"] },
-    { "icon": "wrench", "title": "Teknik yönetim", "desc": "Bakım, MJOP, teklifler ve denetimler — proaktif ve iyi müzakere edilmiş.", "bullets": ["Çok yıllık bakım planı", "Teklifler ve ihale", "Hasar bildirimleri 24/7", "Denetimler ve teslim alma"] }
+    {
+      "icon": "folders",
+      "title": "İdari yönetim",
+      "desc": "ALV organizasyonu, üye yönetimi, tutanaklar ve açık yazışmalar.",
+      "bullets": [
+        "ALV organizasyonu ve tutanaklar",
+        "Üye yönetimi",
+        "Posta ve yazışmalar",
+        "Bölünme senedi yönetimi"
+      ]
+    },
+    {
+      "icon": "chart-line-up",
+      "title": "Mali yönetim",
+      "desc": "Muhasebe, bütçe, yedek akçe fonu ve yıllık hesaplar — her zaman şeffaf.",
+      "bullets": [
+        "Muhasebe ve yıllık hesaplar",
+        "Bütçe ve VvE aidatı",
+        "Yedek akçe fonu yönetimi",
+        "Tahsilat ve borçlular"
+      ]
+    },
+    {
+      "icon": "wrench",
+      "title": "Teknik yönetim",
+      "desc": "Bakım, MJOP, teklifler ve denetimler — proaktif ve iyi müzakere edilmiş.",
+      "bullets": [
+        "Çok yıllık bakım planı",
+        "Teklifler ve ihale",
+        "Hasar bildirimleri 24/7",
+        "Denetimler ve teslim alma"
+      ]
+    }
   ],
   "diff_section": {
     "eyebrow": "Bizi farklı kılan",
@@ -43,27 +99,73 @@
     "subtitle": "Bir VvE'nin yönetimi şeffaflık ve erişilebilirlik ile ayakta durur. Çalışma yöntemimizi bunun etrafında inşa ettik."
   },
   "diff_items": [
-    { "icon": "monitor", "title": "Kendi müşteri portalınız", "desc": "Tüm belgeler, mali durum ve bakım — her mal sahibi için 7/24 erişilebilir." },
-    { "icon": "user-circle-check", "title": "Sabit iletişim kişisi", "desc": "Binanızı, sakinlerinizi ve geçmişinizi tanıyan tek bir yönetici. Değişen iletişim kişileri yok." },
-    { "icon": "clock-clockwise", "title": "Hızlı yanıt süresi", "desc": "Sorunuza 24 saat içinde yanıt, acil hasar bildirimleri anında." },
-    { "icon": "package", "title": "Komple paket", "desc": "Tek bir sabit aylık ücretle tam kapsamlı hizmet. Son hesapta sürpriz yok." }
+    {
+      "icon": "monitor",
+      "title": "Kendi müşteri portalınız",
+      "desc": "Tüm belgeler, mali durum ve bakım — her mal sahibi için 7/24 erişilebilir."
+    },
+    {
+      "icon": "user-circle-check",
+      "title": "Sabit iletişim kişisi",
+      "desc": "Binanızı, sakinlerinizi ve geçmişinizi tanıyan tek bir yönetici. Değişen iletişim kişileri yok."
+    },
+    {
+      "icon": "clock-clockwise",
+      "title": "Hızlı yanıt süresi",
+      "desc": "Sorunuza 24 saat içinde yanıt, acil hasar bildirimleri anında."
+    },
+    {
+      "icon": "package",
+      "title": "Komple paket",
+      "desc": "Tek bir sabit aylık ücretle tam kapsamlı hizmet. Son hesapta sürpriz yok."
+    }
   ],
-  "diff_floating": { "title": "MJOP güncellendi", "time": "2 dakika önce" },
+  "diff_floating": {
+    "title": "MJOP güncellendi",
+    "time": "2 dakika önce"
+  },
   "testimonials_section": {
     "eyebrow": "Müşteri deneyimleri",
     "title": "Müşterilerimiz ne diyor",
     "trust_label": "Üyelikler ve sertifikalar"
   },
   "testimonials": [
-    { "quote": "Sonunda gerçekten yanıt veren bir yönetici. Bir gün içinde geri dönüş ve yıllık hesaplar yıllar sonra ilk kez zamanında hazırdı.", "name": "Marieke van der Berg", "role": "VvE Parklaan Başkanı", "location": "Lahey — 24 daire" },
-    { "quote": "Önceki yöneticimizden geçiş şaşırtıcı derecede sorunsuz oldu. Müşteri portalı bize gerçek bir huzur veriyor: her şey orada, her zaman erişilebilir.", "name": "Joris Hendriks", "role": "VvE De Linden Saymanı", "location": "Wateringen — 18 daire" },
-    { "quote": "Bizi etkileyen şey kişisel ilgiydi. Binamızı gerçekten tanıyan tek bir sabit iletişim kişimiz var. Bu büyük fark yaratıyor.", "name": "Saskia Bouman", "role": "VvE Westpoort Başkanı", "location": "Rotterdam — 42 daire" }
+    {
+      "quote": "Sonunda gerçekten yanıt veren bir yönetici. Bir gün içinde geri dönüş ve yıllık hesaplar yıllar sonra ilk kez zamanında hazırdı.",
+      "name": "Marieke van der Berg",
+      "role": "VvE Parklaan Başkanı",
+      "location": "Lahey — 24 daire"
+    },
+    {
+      "quote": "Önceki yöneticimizden geçiş şaşırtıcı derecede sorunsuz oldu. Müşteri portalı bize gerçek bir huzur veriyor: her şey orada, her zaman erişilebilir.",
+      "name": "Joris Hendriks",
+      "role": "VvE De Linden Saymanı",
+      "location": "Wateringen — 18 daire"
+    },
+    {
+      "quote": "Bizi etkileyen şey kişisel ilgiydi. Binamızı gerçekten tanıyan tek bir sabit iletişim kişimiz var. Bu büyük fark yaratıyor.",
+      "name": "Saskia Bouman",
+      "role": "VvE Westpoort Başkanı",
+      "location": "Rotterdam — 42 daire"
+    }
   ],
   "trust_badges": [
-    { "label": "17+ yıllık deneyim", "icon": "calendar-check" },
-    { "label": "Sektör birliği VGM NL", "icon": "medal" },
-    { "label": "NEN-EN ISO 9001 sertifikalı", "icon": "certificate" },
-    { "label": "KvK 51721139", "icon": "buildings" }
+    {
+      "label": "17+ yıllık deneyim",
+      "icon": "calendar-check"
+    },
+    {
+      "label": "Sektör birliği VGM NL",
+      "icon": "medal"
+    },
+    {
+      "label": "NEN-EN ISO 9001 sertifikalı",
+      "icon": "certificate"
+    },
+    {
+      "label": "KvK 51721139",
+      "icon": "buildings"
+    }
   ],
   "faq_section": {
     "eyebrow": "Sıkça sorulan sorular",
@@ -71,11 +173,26 @@
     "subtitle": "Sorunuz burada yok mu? Bizi arayın veya ücretsiz bir tanışma görüşmesi planlayın."
   },
   "faq": [
-    { "q": "VvE Beheer Collectief'e geçiş ne kadar sürer?", "a": "Tam bir geçişi genellikle 6 ila 8 hafta içinde düzenleriz. İdari devri tamamen biz üstleniriz — mevcut yöneticinizle fesihten müşteri portalınızın kurulumuna kadar." },
-    { "q": "Komple paket tam olarak neleri içerir?", "a": "Komple paket; idari, mali ve teknik yönetimi tek bir sabit aylık ücretle birleştirir. ALV organizasyonu, yıllık hesaplar, MJOP bakımı, 7/24 hasar bildirimi ve sabit bir iletişim kişisi dahildir." },
-    { "q": "Tek bir sabit iletişim kişimiz var mı?", "a": "Evet. Her VvE'ye binanızı, sakinlerinizi ve geçmişinizi tanıyan sabit bir yönetici atanır. Yokluğunda dosyanıza hakim bir yedek her zaman hazırdır." },
-    { "q": "Müşteri portalı ne kadar şeffaf?", "a": "Tamamen. Tüm mal sahipleri kendi mali durumlarını, tüm toplantı belgelerini, MJOP'u, açık bakım kalemlerini ve VvE'nin nakit akışını görebilir — bize başvurmadan 7/24 erişilebilir." },
-    { "q": "Hukuki yönetim de sunuyor musunuz?", "a": "Hayır. Hukuki konularda size memnuniyetle tanıştıracağımız uzman VvE hukukçuları ile çalışıyoruz. Böylece koordinasyon için tek bir iletişim noktanız olur, hukuki çalışmalar için ise gerçek uzmanlık bilgisi alırsınız." }
+    {
+      "q": "VvE Beheer Collectief'e geçiş ne kadar sürer?",
+      "a": "Tam bir geçişi genellikle 6 ila 8 hafta içinde düzenleriz. İdari devri tamamen biz üstleniriz — mevcut yöneticinizle fesihten müşteri portalınızın kurulumuna kadar."
+    },
+    {
+      "q": "Komple paket tam olarak neleri içerir?",
+      "a": "Komple paket; idari, mali ve teknik yönetimi tek bir sabit aylık ücretle birleştirir. ALV organizasyonu, yıllık hesaplar, MJOP bakımı, 7/24 hasar bildirimi ve sabit bir iletişim kişisi dahildir."
+    },
+    {
+      "q": "Tek bir sabit iletişim kişimiz var mı?",
+      "a": "Evet. Her VvE'ye binanızı, sakinlerinizi ve geçmişinizi tanıyan sabit bir yönetici atanır. Yokluğunda dosyanıza hakim bir yedek her zaman hazırdır."
+    },
+    {
+      "q": "Müşteri portalı ne kadar şeffaf?",
+      "a": "Tamamen. Tüm mal sahipleri kendi mali durumlarını, tüm toplantı belgelerini, MJOP'u, açık bakım kalemlerini ve VvE'nin nakit akışını görebilir — bize başvurmadan 7/24 erişilebilir."
+    },
+    {
+      "q": "Hukuki yönetim de sunuyor musunuz?",
+      "a": "Hayır. Hukuki konularda size memnuniyetle tanıştıracağımız uzman VvE hukukçuları ile çalışıyoruz. Böylece koordinasyon için tek bir iletişim noktanız olur, hukuki çalışmalar için ise gerçek uzmanlık bilgisi alırsınız."
+    }
   ],
   "cta": {
     "eyebrow": "Ücretsiz teklif",
@@ -84,25 +201,103 @@
     "subtitle": "VvE'nize özel ücretsiz bir teklif isteyin. 2 iş günü içinde yanıt alırsınız.",
     "btn_primary": "Teklif isteyin",
     "btn_secondary": "Bizi doğrudan arayın",
-    "usps": ["Ücretsiz ve bağlayıcı değil", "2 iş günü içinde yanıt", "VvE'nize tamamen özel", "Herhangi bir yükümlülük yok"]
+    "usps": [
+      "Ücretsiz ve bağlayıcı değil",
+      "2 iş günü içinde yanıt",
+      "VvE'nize tamamen özel",
+      "Herhangi bir yükümlülük yok"
+    ]
   },
   "stats": [
-    { "num": "17+", "label": "Yıllık VvE yönetimi deneyimi" },
-    { "num": "500+", "label": "Yönetimimizdeki VvE sayısı" },
-    { "num": "12.000+", "label": "Hizmet verilen mal sahibi" },
-    { "num": "< 24u", "label": "Ortalama yanıt süresi" }
+    {
+      "num": "17+",
+      "label": "Yıllık VvE yönetimi deneyimi"
+    },
+    {
+      "num": "500+",
+      "label": "Yönetimimizdeki VvE sayısı"
+    },
+    {
+      "num": "12.000+",
+      "label": "Hizmet verilen mal sahibi"
+    },
+    {
+      "num": "< 24u",
+      "label": "Ortalama yanıt süresi"
+    }
   ],
   "diensten_page": {
     "eyebrow": "Hizmetlerimiz",
-    "title": "İhtiyaçlarınıza uygun VvE yönetimi",
-    "subtitle": "Tek tek hizmetler veya Komple paket seçin — tek bir sabit aylık ücretle tam kapsamlı hizmet.",
-    "pillar_label": "SÜTUN",
+    "title_1": "İhtiyacınıza uygun",
+    "title_2": "VvE yönetimi",
+    "subtitle": "Üç sütun — idari, mali ve teknik — tek çatı altında ve tek bir sabit iletişim kişisiyle. Tek tek hizmetleri seçin ya da her şeyi bize bırakın.",
+    "pillar_label": "Sütun",
+    "result_label": "Sonuç",
+    "checklist_head": "Sizin için neleri hallediyoruz",
     "offerte_btn": "Teklif isteyin",
+    "offerte_short": "Teklif",
+    "rows": [
+      {
+        "title": "Düzenli ve kolay erişilebilir bir idare",
+        "intro": "VvE'nizin tüm idaresini biz yürütürüz — üye kayıtlarından ve yazışmalardan ALV'nin organize edilmesine ve tutanaklarına kadar. Her şey merkezi olarak kaydedilir ve anında bulunabilir.",
+        "result": "Yönetim kurulunun hiç uğraşmadan, idari açıdan tamamen düzenli bir VvE.",
+        "bullets": [
+          "ALV organizasyonu ve tutanaklar",
+          "Üye yönetimi ve kayıt",
+          "Posta ve yazışmalar",
+          "Bölünme senedi ve yönetmelikler"
+        ],
+        "tag": "Her pakete dahil"
+      },
+      {
+        "title": "Mali şeffaflık, sürpriz yok",
+        "intro": "Muhasebe ve tahsilattan bütçe, yedek akçe fonu ve yıllık hesaba kadar. Rakamları güncel tutar ve yedek akçe fonunuzun sağlığını gözetiriz.",
+        "result": "Her an mali durumunuza dair tam görünürlük — ve zamanında hazır olan bir yıllık hesap.",
+        "bullets": [
+          "Muhasebe ve yıllık hesap",
+          "Bütçe ve VvE aidatı",
+          "Yedek akçe fonu yönetimi",
+          "Tahsilat ve borçlu yönetimi"
+        ],
+        "tag": "Her pakete dahil"
+      },
+      {
+        "title": "Sorunların önüne geçen bakım",
+        "intro": "MJOP'u hazırlar ve güncel tutar, teklif toplar ve sıkı pazarlık eder, bakım ile hasarı koordine ederiz — acil durumlarda hemen harekete geçeriz.",
+        "result": "İyi bakılmış bir gayrimenkul, uygun fiyata alınmış teklifler ve doğru faturalar.",
+        "bullets": [
+          "Çok yıllık bakım planı (MJOP)",
+          "Teklifler ve ihale",
+          "Hasar bildirimleri 24/7",
+          "Denetimler ve teslim alma"
+        ],
+        "tag": "Komple Pakete dahil"
+      }
+    ],
     "compleet_pill": "En çok tercih edilen",
-    "compleet_title": "Komple Paket",
-    "compleet_desc": "Tam kapsamlı hizmet — idari, mali ve teknik yönetim tek bir sabit aylık ücretle. Sürpriz yok, ek fatura yok.",
-    "compleet_btn": "Komple Paket teklifi",
-    "compleet_features": ["Tüm idari işler", "Tam muhasebe", "MJOP bakımı", "ALV organizasyonu", "Sabit iletişim kişisi", "Müşteri portalı", "7/24 hasar bildirimleri", "Yıllık hesaplar zamanında"]
+    "compleet_title_1": "Her şey tek elden:",
+    "compleet_title_2": "Komple Paket",
+    "compleet_desc": "Üç sütunun tamamını tek bir sabit aylık ücrette birleştirin. Tam kapsamlı hizmet — sürpriz yok, ek iş faturası yok.",
+    "compleet_btn": "Geçiş böyle ilerler",
+    "compleet_features": [
+      "Tüm idare ve ALV",
+      "Tam muhasebe",
+      "Yıllık hesap zamanında",
+      "MJOP ve bakım",
+      "24/7 hasar bildirimleri",
+      "Kendi müşteri portalı",
+      "Tek bir sabit iletişim kişisi",
+      "Uygun fiyatlı teklifler"
+    ],
+    "cta_eyebrow": "Ücretsiz teklif",
+    "cta_title": "Bunun VvE'niz için ne anlama geldiğini merak mı ediyorsunuz?",
+    "cta_desc": "Size özel ücretsiz bir teklif isteyin. 2 iş günü içinde sabit bir yöneticiden yanıt alırsınız.",
+    "cta_btn": "Teklif isteyin",
+    "cta_list": [
+      "Ücretsiz ve bağlayıcı değil",
+      "2 iş günü içinde yanıt",
+      "Tamamen VvE'nize özel"
+    ]
   },
   "pakketten_page": {
     "eyebrow": "Paketlerimiz",
@@ -122,26 +317,365 @@
     "matrix_start_aanv": "Start Plus",
     "matrix_compleet": "Komple",
     "packages": [
-      { "id": "start", "name": "Start", "tagline": "Temelleri doğru kurmak isteyen VvE'ler için idari ve mali temel yönetim.", "price": "92,95", "features": [{"label":"ALV organizasyonu","active":true},{"label":"Üye yönetimi","active":true},{"label":"Muhasebe ve yıllık hesap","active":true},{"label":"VvE aidatı tahsilatı","active":true},{"label":"Ödeme işlemleri","active":true},{"label":"Teknik yönetim","active":false},{"label":"MJOP bakımı","active":false},{"label":"Acil durum hizmeti","active":false}] },
-      { "id": "start-aanvullend", "name": "Start Plus", "tagline": "Genişletilmiş idari, mali ve temel teknik yönetim tek çatı altında.", "price": "147,95", "features": [{"label":"ALV organizasyonu ve tutanaklar","active":true},{"label":"Üye yönetimi","active":true},{"label":"Tam muhasebe","active":true},{"label":"Yedek akçe fonu yönetimi","active":true},{"label":"Sigorta yönetimi","active":true},{"label":"Küçük bakım koordinasyonu","active":true},{"label":"Hasar bildirimleri","active":true},{"label":"Planlı bakım","active":false}] },
-      { "id": "compleet", "name": "Komple", "tagline": "Tam kapsamlı hizmet — idari, mali ve teknik yönetim tek bir sabit fiyatta.", "price": null, "features": [{"label":"Start Plus'taki her şey","active":true},{"label":"Sınırsız yönetim kurulu toplantıları","active":true},{"label":"Hukuki koordinasyon","active":true},{"label":"Borçlu yönetimi ve ihtarlar","active":true},{"label":"MJOP ve planlı bakım","active":true},{"label":"7/24 acil durum hizmeti","active":true},{"label":"Yıllık denetim","active":true},{"label":"Sürdürülebilirlik danışmanlığı","active":true}] }
+      {
+        "id": "start",
+        "name": "Start",
+        "tagline": "Temelleri doğru kurmak isteyen VvE'ler için idari ve mali temel yönetim.",
+        "price": "92,95",
+        "features": [
+          {
+            "label": "ALV organizasyonu",
+            "active": true
+          },
+          {
+            "label": "Üye yönetimi",
+            "active": true
+          },
+          {
+            "label": "Muhasebe ve yıllık hesap",
+            "active": true
+          },
+          {
+            "label": "VvE aidatı tahsilatı",
+            "active": true
+          },
+          {
+            "label": "Ödeme işlemleri",
+            "active": true
+          },
+          {
+            "label": "Teknik yönetim",
+            "active": false
+          },
+          {
+            "label": "MJOP bakımı",
+            "active": false
+          },
+          {
+            "label": "Acil durum hizmeti",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "start-aanvullend",
+        "name": "Start Plus",
+        "tagline": "Genişletilmiş idari, mali ve temel teknik yönetim tek çatı altında.",
+        "price": "147,95",
+        "features": [
+          {
+            "label": "ALV organizasyonu ve tutanaklar",
+            "active": true
+          },
+          {
+            "label": "Üye yönetimi",
+            "active": true
+          },
+          {
+            "label": "Tam muhasebe",
+            "active": true
+          },
+          {
+            "label": "Yedek akçe fonu yönetimi",
+            "active": true
+          },
+          {
+            "label": "Sigorta yönetimi",
+            "active": true
+          },
+          {
+            "label": "Küçük bakım koordinasyonu",
+            "active": true
+          },
+          {
+            "label": "Hasar bildirimleri",
+            "active": true
+          },
+          {
+            "label": "Planlı bakım",
+            "active": false
+          }
+        ]
+      },
+      {
+        "id": "compleet",
+        "name": "Komple",
+        "tagline": "Tam kapsamlı hizmet — idari, mali ve teknik yönetim tek bir sabit fiyatta.",
+        "price": null,
+        "features": [
+          {
+            "label": "Start Plus'taki her şey",
+            "active": true
+          },
+          {
+            "label": "Sınırsız yönetim kurulu toplantıları",
+            "active": true
+          },
+          {
+            "label": "Hukuki koordinasyon",
+            "active": true
+          },
+          {
+            "label": "Borçlu yönetimi ve ihtarlar",
+            "active": true
+          },
+          {
+            "label": "MJOP ve planlı bakım",
+            "active": true
+          },
+          {
+            "label": "7/24 acil durum hizmeti",
+            "active": true
+          },
+          {
+            "label": "Yıllık denetim",
+            "active": true
+          },
+          {
+            "label": "Sürdürülebilirlik danışmanlığı",
+            "active": true
+          }
+        ]
+      }
     ],
     "matrix": [
-      {"group":"Yönetim kurulu işleri","rows":[{"label":"ALV hazırlama ve katılma","start":true,"startPlus":true,"compleet":true},{"label":"ALV tutanak tutma","start":false,"startPlus":true,"compleet":true},{"label":"Yönetim kurulu toplantılarına katılma","start":false,"startPlus":"1× y/y","compleet":"Sınırsız"},{"label":"İç yönetmelik hazırlama","start":false,"startPlus":false,"compleet":true},{"label":"Anlaşmazlıklarda arabuluculuk","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Sekreterlik","rows":[{"label":"Üye yönetimi","start":true,"startPlus":true,"compleet":true},{"label":"Sakinlerle yazışma","start":true,"startPlus":true,"compleet":true},{"label":"KvK kaydı","start":true,"startPlus":true,"compleet":true},{"label":"Bölünme senedi yönetimi","start":false,"startPlus":true,"compleet":true},{"label":"Sigorta yönetimi","start":false,"startPlus":true,"compleet":true},{"label":"Hukuki koordinasyon","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Mali","rows":[{"label":"Muhasebe ve yıllık hesap","start":true,"startPlus":true,"compleet":true},{"label":"Bütçe hazırlama","start":true,"startPlus":true,"compleet":true},{"label":"VvE aidatı tahsilatı","start":true,"startPlus":true,"compleet":true},{"label":"Ödeme işlemleri","start":true,"startPlus":true,"compleet":true},{"label":"Yedek akçe fonu yönetimi","start":false,"startPlus":true,"compleet":true},{"label":"Çok yıllık bütçe","start":false,"startPlus":true,"compleet":true},{"label":"Borçlu yönetimi ve ihtarlar","start":false,"startPlus":false,"compleet":true},{"label":"Vergi beyannameleri","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Günlük teknik bakım","rows":[{"label":"Küçük bakım koordinasyonu","start":false,"startPlus":true,"compleet":true},{"label":"Hasar bildirimlerinin işlenmesi","start":false,"startPlus":true,"compleet":true},{"label":"Anahtar yönetimi","start":false,"startPlus":true,"compleet":true},{"label":"Bakım teklif talepleri","start":false,"startPlus":false,"compleet":true},{"label":"7/24 acil durum hizmeti","start":false,"startPlus":false,"compleet":true}]},
-      {"group":"Planlı teknik bakım","rows":[{"label":"Çok yıllık bakım planı (MJOP)","start":false,"startPlus":false,"compleet":true},{"label":"Yıllık denetim","start":false,"startPlus":false,"compleet":true},{"label":"Büyük bakım denetimi","start":false,"startPlus":false,"compleet":true},{"label":"Bakım ihalesi","start":false,"startPlus":false,"compleet":true},{"label":"Uygulama denetimi","start":false,"startPlus":false,"compleet":true},{"label":"Teslim alma ve sonrası hizmet","start":false,"startPlus":false,"compleet":true},{"label":"Sürdürülebilirlik danışmanlığı","start":false,"startPlus":false,"compleet":true}]}
+      {
+        "group": "Yönetim kurulu işleri",
+        "rows": [
+          {
+            "label": "ALV hazırlama ve katılma",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "ALV tutanak tutma",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Yönetim kurulu toplantılarına katılma",
+            "start": false,
+            "startPlus": "1× y/y",
+            "compleet": "Sınırsız"
+          },
+          {
+            "label": "İç yönetmelik hazırlama",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Anlaşmazlıklarda arabuluculuk",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Sekreterlik",
+        "rows": [
+          {
+            "label": "Üye yönetimi",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Sakinlerle yazışma",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "KvK kaydı",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Bölünme senedi yönetimi",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Sigorta yönetimi",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Hukuki koordinasyon",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Mali",
+        "rows": [
+          {
+            "label": "Muhasebe ve yıllık hesap",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Bütçe hazırlama",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "VvE aidatı tahsilatı",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Ödeme işlemleri",
+            "start": true,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Yedek akçe fonu yönetimi",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Çok yıllık bütçe",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Borçlu yönetimi ve ihtarlar",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Vergi beyannameleri",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Günlük teknik bakım",
+        "rows": [
+          {
+            "label": "Küçük bakım koordinasyonu",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Hasar bildirimlerinin işlenmesi",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Anahtar yönetimi",
+            "start": false,
+            "startPlus": true,
+            "compleet": true
+          },
+          {
+            "label": "Bakım teklif talepleri",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "7/24 acil durum hizmeti",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      },
+      {
+        "group": "Planlı teknik bakım",
+        "rows": [
+          {
+            "label": "Çok yıllık bakım planı (MJOP)",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Yıllık denetim",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Büyük bakım denetimi",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Bakım ihalesi",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Uygulama denetimi",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Teslim alma ve sonrası hizmet",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          },
+          {
+            "label": "Sürdürülebilirlik danışmanlığı",
+            "start": false,
+            "startPlus": false,
+            "compleet": true
+          }
+        ]
+      }
     ],
     "hulp_eyebrow": "Seçiminizde yardım",
     "hulp_title": "Hangi paket VvE'mize uygun?",
     "hulp_subtitle": "Doğru seçim VvE'nizin büyüklüğüne, mevcut durumuna ve isteklerinize bağlıdır. Size memnuniyetle danışmanlık yaparız — ücretsiz.",
     "hulp_btn": "Teklif isteyin",
     "hulp_cards": [
-      {"icon":"users-three","title":"Küçük VvE (< 12)","desc":"Start veya Start Plus genellikle daha küçük siteler için yeterlidir."},
-      {"icon":"buildings","title":"Orta büyüklükte VvE","desc":"Start Plus, bağımsızlık ile tam hizmet arasında doğru dengeyi sunar."},
-      {"icon":"buildings","title":"Büyük VvE (> 40)","desc":"Komple Paket, teknik yönetimi kendiniz yapmak zorunda kalmanızı önler."},
-      {"icon":"wrench","title":"Ertelenmiş bakım","desc":"Ertelenmiş bakım durumunda MJOP yaklaşımlı Komple Paketi öneriyoruz."}
+      {
+        "icon": "users-three",
+        "title": "Küçük VvE (< 12)",
+        "desc": "Start veya Start Plus genellikle daha küçük siteler için yeterlidir."
+      },
+      {
+        "icon": "buildings",
+        "title": "Orta büyüklükte VvE",
+        "desc": "Start Plus, bağımsızlık ile tam hizmet arasında doğru dengeyi sunar."
+      },
+      {
+        "icon": "buildings",
+        "title": "Büyük VvE (> 40)",
+        "desc": "Komple Paket, teknik yönetimi kendiniz yapmak zorunda kalmanızı önler."
+      },
+      {
+        "icon": "wrench",
+        "title": "Ertelenmiş bakım",
+        "desc": "Ertelenmiş bakım durumunda MJOP yaklaşımlı Komple Paketi öneriyoruz."
+      }
     ]
   },
   "overons_page": {
@@ -152,10 +686,22 @@
     "team_title": "VvE'nizin arkasındaki insanlar",
     "team_subtitle": "Deneyimli uzmanlardan oluşan küçük bir ekip. Her VvE'ye tek bir sabit yönetici atanır.",
     "team": [
-      {"name":"Mark de Vries","role":"Kurucu ve Yönetici"},
-      {"name":"Linda Janssen","role":"Kıdemli VvE Yöneticisi"},
-      {"name":"Tim Bakker","role":"Teknik Yönetici"},
-      {"name":"Eva van Loon","role":"Mali Yönetici"}
+      {
+        "name": "Mark de Vries",
+        "role": "Kurucu ve Yönetici"
+      },
+      {
+        "name": "Linda Janssen",
+        "role": "Kıdemli VvE Yöneticisi"
+      },
+      {
+        "name": "Tim Bakker",
+        "role": "Teknik Yönetici"
+      },
+      {
+        "name": "Eva van Loon",
+        "role": "Mali Yönetici"
+      }
     ],
     "missie_eyebrow": "Misyonumuz",
     "missie_quote": "Karmaşıklaştırmak yerine rahatlatan VvE yönetimi.",
@@ -163,29 +709,153 @@
   },
   "werkwijze_page": {
     "eyebrow": "Çalışma yöntemi",
-    "title": "Tekliften sürekli yönetime",
-    "subtitle": "Tam bir geçişi genellikle 6 ila 8 hafta içinde düzenleriz. İşte böyle görünür:",
-    "stap": "ADIM",
+    "title_1": "Tekliften",
+    "title_2": "sürekli yönetime",
+    "subtitle": "İlk tanışmadan sürekli yönetime kadar tüm geçişi sizin yerinize biz hallederiz — sizin neredeyse hiçbir şey yapmanıza gerek kalmaz. Altı adımda böyle görünür.",
+    "stap": "Adım",
     "steps": [
-      {"num":"01","title":"Ücretsiz teklif","desc":"Teklif formunu doldurursunuz veya bizi ararsınız. 2 iş günü içinde VvE'nize özel bir teklif alırsınız."},
-      {"num":"02","title":"Tanışma görüşmesi","desc":"VvE'nizi ziyaret eder, bölünme senedini ve MJOP'u inceler, istek ve endişelerinizi görüşürüz."},
-      {"num":"03","title":"Sorunsuz geçiş","desc":"Mevcut yöneticinizden tam devri biz organize ederiz — fesih, belgeler, mali işler. Hiçbir şey yapmanız gerekmez."},
-      {"num":"04","title":"Müşteri portalı kurulumu","desc":"Tüm mal sahipleri kendi müşteri portallarına erişim kazanır. Tüm belgeler, mali durum ve bakım — hemen erişilebilir."},
-      {"num":"05","title":"İlk ALV","desc":"Yönetimimiz altındaki ilk ALV'nizi organize eder ve size sabit iletişim kişinizi tanıtırız."},
-      {"num":"06","title":"Sürekli yönetim","desc":"O andan itibaren her şeyi biz hallederiz. Siz portal üzerinden kontrolü elinizde tutar ve proaktif güncellemeler alırsınız."}
+      {
+        "when": "Gün 1–2",
+        "title": "Ücretsiz teklif",
+        "desc": "Teklif formunu doldurursunuz veya bizi ararsınız. 2 iş günü içinde VvE'nize özel bir teklif alırsınız."
+      },
+      {
+        "when": "Hafta 1",
+        "title": "Tanışma görüşmesi",
+        "desc": "VvE'nizi ziyaret eder, bölünme senedini ve MJOP'u inceler, istek ve endişelerinizi görüşürüz."
+      },
+      {
+        "when": "Hafta 1–6",
+        "title": "Sorunsuz geçiş",
+        "desc": "Mevcut yöneticinizden tam devri biz organize ederiz — fesih, belgeler, mali işler. Hiçbir şey yapmanıza gerek yok."
+      },
+      {
+        "when": "Hafta 6",
+        "title": "Müşteri portalı kurulumu",
+        "desc": "Tüm mal sahipleri kendi müşteri portallarına erişim kazanır. Tüm belgeler, mali durum ve bakım anında erişilebilir."
+      },
+      {
+        "when": "Hafta 7–8",
+        "title": "İlk ALV",
+        "desc": "Yönetimimiz altındaki ilk ALV'nizi organize eder ve size sabit iletişim kişinizi tanıtırız."
+      },
+      {
+        "when": "Sürekli",
+        "title": "Sürekli yönetim",
+        "desc": "O andan itibaren her şeyi biz hallederiz. Siz portal üzerinden kontrolü elinizde tutar ve proaktif güncellemeler alırsınız."
+      }
+    ],
+    "reassure": [
+      {
+        "title": "Neredeyse hiçbir şey yapmazsınız",
+        "desc": "Mevcut yöneticinizdeki fesih dahil tüm geçişi biz koordine ederiz."
+      },
+      {
+        "title": "Risk yok",
+        "desc": "Bağlayıcı olmayan bir tanışma. Devri ancak anlaştığımızda başlatırız."
+      },
+      {
+        "title": "Sabit iletişim kişisi",
+        "desc": "İlk günden itibaren kime başvuracağınızı bilirsiniz — binanızı tanıyan bir yönetici."
+      }
+    ],
+    "cta_eyebrow": "Ücretsiz teklif",
+    "cta_title": "Geçişi yapmaya hazır mısınız?",
+    "cta_desc": "Ücretsiz bir teklif isteyin. Ardından tüm devri biz hallederiz — siz kaygısız yaşarsınız.",
+    "cta_btn": "Teklif isteyin",
+    "cta_list": [
+      "6–8 haftada geçiş",
+      "Mevcut yöneticinize biz fesih veririz",
+      "Risk yok, bağlayıcı değil"
     ]
   },
   "offerte_page": {
     "eyebrow": "Teklif isteyin",
     "title": "Ücretsiz ve VvE'nize özel",
     "intro": "Formu doldurun. 2 iş günü içinde size özel bir teklif alırsınız — durumunuza gerçekten uyması için telefonla görüşülmüş.",
-    "usps": [["shield-check","Ücretsiz ve bağlayıcı değil"],["clock","2 iş günü içinde yanıt"],["user-circle","Bir yönetici ile doğrudan iletişim"],["lock","Verileriniz sizde kalır"]],
+    "usps": [
+      [
+        "shield-check",
+        "Ücretsiz ve bağlayıcı değil"
+      ],
+      [
+        "clock",
+        "2 iş günü içinde yanıt"
+      ],
+      [
+        "user-circle",
+        "Bir yönetici ile doğrudan iletişim"
+      ],
+      [
+        "lock",
+        "Verileriniz sizde kalır"
+      ]
+    ],
     "stap_van": "/",
-    "step_titles": ["VvE'niz hakkında bilgi verin","Hangi hizmetleri arıyorsunuz?","Mevcut durumunuz","İletişim bilgileriniz"],
-    "step1": {"vve_naam":"VvE adı","vve_naam_ph":"ör. VvE Parkzicht","aantal":"Daire sayısı","aantal_ph":"ör. 24","bouwjaar":"Yapım yılı","bouwjaar_ph":"ör. 1998","adres":"Adres / konum","adres_ph":"Şehir"},
-    "step2": {"services":[["package","Komple Paket","3 sütunun tamamı tek fiyata"],["folders","İdari","ALV, tutanaklar, posta"],["chart-line-up","Mali","Muhasebe, yıllık hesaplar"],["wrench","Teknik","MJOP, bakım"]]},
-    "step3": {"beheerder_label":"Şu anda bir yöneticiniz var mı?","beheerder_options":["Evet, geçiş yapmak istiyorum","Hayır, ilk kez","Kendi yönetimimiz var, yardım arıyoruz"],"belangrijk_label":"Sizin için en önemli olan nedir?","belangrijk_ph":"ör. daha hızlı yanıt, daha iyi şeffaflık, daha düşük maliyetler..."},
-    "step4": {"voornaam":"Ad","achternaam":"Soyad","functie":"VvE'deki görev","functie_options":["Başkan","Sayman","Sekreter","Yönetim kurulu üyesi","Mal sahibi / üye"],"email":"E-posta","telefoon":"Telefon numarası"},
+    "step_titles": [
+      "VvE'niz hakkında bilgi verin",
+      "Hangi hizmetleri arıyorsunuz?",
+      "Mevcut durumunuz",
+      "İletişim bilgileriniz"
+    ],
+    "step1": {
+      "vve_naam": "VvE adı",
+      "vve_naam_ph": "ör. VvE Parkzicht",
+      "aantal": "Daire sayısı",
+      "aantal_ph": "ör. 24",
+      "bouwjaar": "Yapım yılı",
+      "bouwjaar_ph": "ör. 1998",
+      "adres": "Adres / konum",
+      "adres_ph": "Şehir"
+    },
+    "step2": {
+      "services": [
+        [
+          "package",
+          "Komple Paket",
+          "3 sütunun tamamı tek fiyata"
+        ],
+        [
+          "folders",
+          "İdari",
+          "ALV, tutanaklar, posta"
+        ],
+        [
+          "chart-line-up",
+          "Mali",
+          "Muhasebe, yıllık hesaplar"
+        ],
+        [
+          "wrench",
+          "Teknik",
+          "MJOP, bakım"
+        ]
+      ]
+    },
+    "step3": {
+      "beheerder_label": "Şu anda bir yöneticiniz var mı?",
+      "beheerder_options": [
+        "Evet, geçiş yapmak istiyorum",
+        "Hayır, ilk kez",
+        "Kendi yönetimimiz var, yardım arıyoruz"
+      ],
+      "belangrijk_label": "Sizin için en önemli olan nedir?",
+      "belangrijk_ph": "ör. daha hızlı yanıt, daha iyi şeffaflık, daha düşük maliyetler..."
+    },
+    "step4": {
+      "voornaam": "Ad",
+      "achternaam": "Soyad",
+      "functie": "VvE'deki görev",
+      "functie_options": [
+        "Başkan",
+        "Sayman",
+        "Sekreter",
+        "Yönetim kurulu üyesi",
+        "Mal sahibi / üye"
+      ],
+      "email": "E-posta",
+      "telefoon": "Telefon numarası"
+    },
     "btn_terug": "Geri",
     "btn_volgende": "Sonraki adım",
     "btn_versturen": "Talebi gönder",
@@ -193,86 +863,148 @@
     "success_desc": "Teklif talebinizi aldık ve 2 iş günü içinde sizinle iletişime geçeceğiz."
   },
   "privacy_page": {
-    "title":"Gizlilik bildirimi",
-    "intro":"Wateringen merkezli VvE Beheer Collectief, bu gizlilik bildiriminde belirtildiği şekliyle kişisel verilerin işlenmesinden sorumludur.",
-    "h2_contact":"İletişim bilgileri",
-    "h2_gegevens":"İşlediğimiz kişisel veriler",
-    "gegevens_intro":"VvE Beheer Collectief, hizmetlerimizi kullandığınız ve/veya bu verileri bize kendiniz sağladığınız için kişisel verilerinizi işlemektedir. Aşağıda işlediğimiz kişisel verilere genel bir bakış bulacaksınız:",
-    "gegevens_items":["Ad ve soyad","Telefon numarası","E-posta adresi","VvE'nizin adı ve adresi","VvE'deki görev","Aktif olarak sağladığınız diğer veriler, örneğin yazışma veya teklif formu aracılığıyla"],
-    "h2_doel":"Kişisel verileri hangi amaçlarla işliyoruz",
-    "doel_intro":"VvE Beheer Collectief, kişisel verilerinizi aşağıdaki amaçlarla işlemektedir:",
-    "doel_items":["Teklif talebinizin işlenmesi","Hizmetlerimizi yerine getirmek için gerekli olduğunda sizi arayabilmek veya e-posta gönderebilmek","Bizi görevlendirdiğiniz VvE yönetim hizmetlerinin yerine getirilmesi","Hizmetlerimizdeki değişiklikler hakkında sizi bilgilendirmek"],
-    "h2_bewaren":"Kişisel verileri ne kadar süre saklıyoruz",
-    "bewaren_text":"VvE Beheer Collectief, kişisel verilerinizi, verilerinizin toplandığı amaçları gerçekleştirmek için kesinlikle gerekli olandan daha uzun süre saklamaz. Teklif taleplerinden elde edilen veriler, sözleşme yapılmaması halinde en fazla 12 ay saklanır. Aktif bir yönetim sözleşmesi durumunda veriler, sözleşme süresi boyunca ve ardından 7 yıla kadar saklanır (mali yönetim için yasal saklama süresi).",
-    "h2_derden":"Kişisel verilerin üçüncü taraflarla paylaşılması",
-    "derden_text":"VvE Beheer Collectief, sizinle yaptığımız sözleşmenin ifası için gerekli olmadıkça veya yasal bir yükümlülüğe uymak zorunda olmadıkça verilerinizi üçüncü taraflarla paylaşmaz.",
-    "h2_inzien":"Verileri görüntüleme, değiştirme veya silme",
-    "inzien_text":"Kişisel verilerinizi görüntüleme, düzeltme veya silme hakkına sahipsiniz. Ayrıca veri işleme onayınızı geri çekme veya işlemeye itiraz etme hakkına sahipsiniz. Kişisel verilerinizin erişimi, düzeltilmesi, silinmesi veya aktarılması için talebinizi info@vvebeheercollectief.nl adresine gönderebilirsiniz.",
-    "h2_beveiliging":"Güvenlik",
-    "beveiliging_text":"VvE Beheer Collectief, verilerinizin korunmasını ciddiye alır ve kötüye kullanımı, kaybı, yetkisiz erişimi, istenmeyen ifşayı ve yetkisiz değişikliği önlemek için uygun önlemler alır. Verilerinizin yeterince güvende olmadığını düşünüyor veya kötüye kullanım belirtileri varsa, lütfen info@vvebeheercollectief.nl adresinden bizimle iletişime geçin.",
-    "updated":"Son güncelleme: Mayıs 2025"
+    "title": "Gizlilik bildirimi",
+    "intro": "Wateringen merkezli VvE Beheer Collectief, bu gizlilik bildiriminde belirtildiği şekliyle kişisel verilerin işlenmesinden sorumludur.",
+    "h2_contact": "İletişim bilgileri",
+    "h2_gegevens": "İşlediğimiz kişisel veriler",
+    "gegevens_intro": "VvE Beheer Collectief, hizmetlerimizi kullandığınız ve/veya bu verileri bize kendiniz sağladığınız için kişisel verilerinizi işlemektedir. Aşağıda işlediğimiz kişisel verilere genel bir bakış bulacaksınız:",
+    "gegevens_items": [
+      "Ad ve soyad",
+      "Telefon numarası",
+      "E-posta adresi",
+      "VvE'nizin adı ve adresi",
+      "VvE'deki görev",
+      "Aktif olarak sağladığınız diğer veriler, örneğin yazışma veya teklif formu aracılığıyla"
+    ],
+    "h2_doel": "Kişisel verileri hangi amaçlarla işliyoruz",
+    "doel_intro": "VvE Beheer Collectief, kişisel verilerinizi aşağıdaki amaçlarla işlemektedir:",
+    "doel_items": [
+      "Teklif talebinizin işlenmesi",
+      "Hizmetlerimizi yerine getirmek için gerekli olduğunda sizi arayabilmek veya e-posta gönderebilmek",
+      "Bizi görevlendirdiğiniz VvE yönetim hizmetlerinin yerine getirilmesi",
+      "Hizmetlerimizdeki değişiklikler hakkında sizi bilgilendirmek"
+    ],
+    "h2_bewaren": "Kişisel verileri ne kadar süre saklıyoruz",
+    "bewaren_text": "VvE Beheer Collectief, kişisel verilerinizi, verilerinizin toplandığı amaçları gerçekleştirmek için kesinlikle gerekli olandan daha uzun süre saklamaz. Teklif taleplerinden elde edilen veriler, sözleşme yapılmaması halinde en fazla 12 ay saklanır. Aktif bir yönetim sözleşmesi durumunda veriler, sözleşme süresi boyunca ve ardından 7 yıla kadar saklanır (mali yönetim için yasal saklama süresi).",
+    "h2_derden": "Kişisel verilerin üçüncü taraflarla paylaşılması",
+    "derden_text": "VvE Beheer Collectief, sizinle yaptığımız sözleşmenin ifası için gerekli olmadıkça veya yasal bir yükümlülüğe uymak zorunda olmadıkça verilerinizi üçüncü taraflarla paylaşmaz.",
+    "h2_inzien": "Verileri görüntüleme, değiştirme veya silme",
+    "inzien_text": "Kişisel verilerinizi görüntüleme, düzeltme veya silme hakkına sahipsiniz. Ayrıca veri işleme onayınızı geri çekme veya işlemeye itiraz etme hakkına sahipsiniz. Kişisel verilerinizin erişimi, düzeltilmesi, silinmesi veya aktarılması için talebinizi info@vvebeheercollectief.nl adresine gönderebilirsiniz.",
+    "h2_beveiliging": "Güvenlik",
+    "beveiliging_text": "VvE Beheer Collectief, verilerinizin korunmasını ciddiye alır ve kötüye kullanımı, kaybı, yetkisiz erişimi, istenmeyen ifşayı ve yetkisiz değişikliği önlemek için uygun önlemler alır. Verilerinizin yeterince güvende olmadığını düşünüyor veya kötüye kullanım belirtileri varsa, lütfen info@vvebeheercollectief.nl adresinden bizimle iletişime geçin.",
+    "updated": "Son güncelleme: Mayıs 2025"
   },
   "voorwaarden_page": {
-    "title":"Genel koşullar",
-    "articles":[
-      {"h2":"Madde 1 — Tanımlar","items":["Yüklenici: Wateringen merkezli, KvK'da 51721139 numarasıyla kayıtlı VvE Beheer Collectief.","Müvekkil: Yüklenici ile sözleşme yapan Kat Malikleri Birliği (VvE).","Sözleşme: Müvekkil ile Yüklenici arasındaki yönetim sözleşmesi."]},
-      {"h2":"Madde 2 — Uygulanabilirlik","p":"Bu genel koşullar, Yüklenicinin her teklifi ve her akdedilen sözleşme için geçerlidir. Bu koşullardan sapmalar yalnızca açıkça yazılı olarak kararlaştırıldığında geçerlidir."},
-      {"h2":"Madde 3 — Teklifler ve fiyat teklifleri","p":"VvE Beheer Collectief'in tüm teklifleri bağlayıcı değildir ve aksi belirtilmedikçe 30 gün geçerlidir. Sözleşme, her iki tarafın yazılı onayı veya ALV kararı ile kurulur."},
-      {"h2":"Madde 4 — Sözleşmenin ifası","p":"VvE Beheer Collectief, sözleşmeyi en iyi bilgi ve becerisine göre, iyi mesleki uygulama gerekliliklerine uygun olarak yerine getirecektir. Yöneticinin sonuç yükümlülüğü değil, çaba yükümlülüğü vardır."},
-      {"h2":"Madde 5 — Süre ve fesih","p":"Yönetim sözleşmesi, sözleşmede belirtilen süre için akdedilir. Fesih, aksi kararlaştırılmadıkça sözleşme döneminin bitiminden 3 ay önce yazılı olarak yapılır."},
-      {"h2":"Madde 6 — Tarifeler ve ödeme","p":"Belirtilen tüm tarifeler, açıkça aksi belirtilmedikçe KDV hariçtir. Ödeme, fatura tarihinden itibaren 30 gün içinde yapılmalıdır. Geç ödemede Müvekkil kanunen temerrüde düşer ve yasal faiz uygulanır."},
-      {"h2":"Madde 7 — Sorumluluk","p":"VvE Beheer Collectief'in sorumluluğu, ilgili durumda mesleki sorumluluk sigortası tarafından ödenen tutarla sınırlıdır, artı muafiyet payı. Sigorta ödeme yapmazsa sorumluluk, Yüklenicinin zarara neden olan olaydan önceki 12 aylık dönemde sözleşme kapsamındaki çalışmaları için aldığı ücret tutarıyla sınırlıdır."},
-      {"h2":"Madde 8 — Gizlilik","p":"Her iki taraf da sözleşme kapsamında birbirlerinden edindikleri tüm gizli bilgilerin gizliliğini korumakla yükümlüdür. Bu yükümlülük sözleşmenin sona ermesinden sonra da geçerlidir."},
-      {"h2":"Madde 9 — Şikayetler","p":"Sözleşmenin ifasına ilişkin şikayetler, VvE Beheer Collectief'e zamanında, eksiksiz ve açıkça tanımlanmış şekilde iletilmelidir. Şikayetler alındıktan sonra 14 gün içinde işleme alınır."},
-      {"h2":"Madde 10 — Uygulanacak hukuk","p":"Müvekkil ile VvE Beheer Collectief arasındaki tüm sözleşmelere Hollanda hukuku uygulanır. Uyuşmazlıklar Lahey bölgesindeki yetkili mahkemeye sunulur."}
+    "title": "Genel koşullar",
+    "articles": [
+      {
+        "h2": "Madde 1 — Tanımlar",
+        "items": [
+          "Yüklenici: Wateringen merkezli, KvK'da 51721139 numarasıyla kayıtlı VvE Beheer Collectief.",
+          "Müvekkil: Yüklenici ile sözleşme yapan Kat Malikleri Birliği (VvE).",
+          "Sözleşme: Müvekkil ile Yüklenici arasındaki yönetim sözleşmesi."
+        ]
+      },
+      {
+        "h2": "Madde 2 — Uygulanabilirlik",
+        "p": "Bu genel koşullar, Yüklenicinin her teklifi ve her akdedilen sözleşme için geçerlidir. Bu koşullardan sapmalar yalnızca açıkça yazılı olarak kararlaştırıldığında geçerlidir."
+      },
+      {
+        "h2": "Madde 3 — Teklifler ve fiyat teklifleri",
+        "p": "VvE Beheer Collectief'in tüm teklifleri bağlayıcı değildir ve aksi belirtilmedikçe 30 gün geçerlidir. Sözleşme, her iki tarafın yazılı onayı veya ALV kararı ile kurulur."
+      },
+      {
+        "h2": "Madde 4 — Sözleşmenin ifası",
+        "p": "VvE Beheer Collectief, sözleşmeyi en iyi bilgi ve becerisine göre, iyi mesleki uygulama gerekliliklerine uygun olarak yerine getirecektir. Yöneticinin sonuç yükümlülüğü değil, çaba yükümlülüğü vardır."
+      },
+      {
+        "h2": "Madde 5 — Süre ve fesih",
+        "p": "Yönetim sözleşmesi, sözleşmede belirtilen süre için akdedilir. Fesih, aksi kararlaştırılmadıkça sözleşme döneminin bitiminden 3 ay önce yazılı olarak yapılır."
+      },
+      {
+        "h2": "Madde 6 — Tarifeler ve ödeme",
+        "p": "Belirtilen tüm tarifeler, açıkça aksi belirtilmedikçe KDV hariçtir. Ödeme, fatura tarihinden itibaren 30 gün içinde yapılmalıdır. Geç ödemede Müvekkil kanunen temerrüde düşer ve yasal faiz uygulanır."
+      },
+      {
+        "h2": "Madde 7 — Sorumluluk",
+        "p": "VvE Beheer Collectief'in sorumluluğu, ilgili durumda mesleki sorumluluk sigortası tarafından ödenen tutarla sınırlıdır, artı muafiyet payı. Sigorta ödeme yapmazsa sorumluluk, Yüklenicinin zarara neden olan olaydan önceki 12 aylık dönemde sözleşme kapsamındaki çalışmaları için aldığı ücret tutarıyla sınırlıdır."
+      },
+      {
+        "h2": "Madde 8 — Gizlilik",
+        "p": "Her iki taraf da sözleşme kapsamında birbirlerinden edindikleri tüm gizli bilgilerin gizliliğini korumakla yükümlüdür. Bu yükümlülük sözleşmenin sona ermesinden sonra da geçerlidir."
+      },
+      {
+        "h2": "Madde 9 — Şikayetler",
+        "p": "Sözleşmenin ifasına ilişkin şikayetler, VvE Beheer Collectief'e zamanında, eksiksiz ve açıkça tanımlanmış şekilde iletilmelidir. Şikayetler alındıktan sonra 14 gün içinde işleme alınır."
+      },
+      {
+        "h2": "Madde 10 — Uygulanacak hukuk",
+        "p": "Müvekkil ile VvE Beheer Collectief arasındaki tüm sözleşmelere Hollanda hukuku uygulanır. Uyuşmazlıklar Lahey bölgesindeki yetkili mahkemeye sunulur."
+      }
     ],
-    "updated":"Son güncelleme: Mayıs 2025"
+    "updated": "Son güncelleme: Mayıs 2025"
   },
   "cookies_page": {
-    "title":"Çerez bildirimi",
-    "intro":"VvE Beheer Collectief'in bu web sitesi çerezler kullanmaktadır. Bu çerez bildiriminde çerezlerin ne olduğunu, hangi çerezleri kullandığımızı ve bunları nasıl yönetebileceğinizi okuyabilirsiniz.",
-    "h2_wat":"Çerezler nedir?",
-    "wat_text":"Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınız tarafından saklanan küçük metin dosyalarıdır. Web sitelerinin düzgün çalışması, web sitesi kullanımının analiz edilmesi ve kullanıcı deneyiminin iyileştirilmesi için kullanılırlar.",
-    "h2_welke":"Hangi çerezleri kullanıyoruz?",
-    "h3_functioneel":"İşlevsel çerezler",
-    "functioneel_text":"Bu çerezler web sitesinin çalışması için gereklidir. Örneğin tercihlerinizin hatırlanmasını sağlarlar. Bu çerezler pazarlama amaçlı kullanılmaz.",
-    "h3_analytisch":"Analitik çerezler",
-    "analytisch_text":"Web sitemizin kullanımını ölçmek ve iyileştirmek için analitik çerezler kullanabiliriz. Bu veriler anonim olarak toplanır ve ticari amaçlarla üçüncü taraflarla paylaşılmaz.",
-    "h2_beheren":"Çerezleri yönetme",
-    "beheren_intro":"Çerez tercihlerinizi istediğiniz zaman tarayıcı ayarlarınız üzerinden değiştirebilirsiniz. Belirli çerezlerin engellenmesinin web sitesinin işlevselliğini etkileyebileceğini lütfen unutmayın.",
-    "beheren_text":"Çoğu tarayıcı şu seçenekleri sunar:",
-    "beheren_items":["Saklanan tüm çerezleri görüntüleme","Çerezleri tek tek veya tamamen silme","Belirli web sitelerinden gelen çerezleri engelleme","Tüm çerezleri engelleme","Tarayıcıyı kapattığınızda tüm çerezleri silme"],
-    "h2_derden":"Üçüncü taraf çerezleri",
-    "derden_text":"Web sitemiz, tipografi için Google Fonts gibi üçüncü taraf hizmetlerini kullanabilir. Bu hizmetler kendi çerezlerini yerleştirebilir. Bu üçüncü tarafların çerez yerleştirmesi ve kullanımı üzerinde kontrolümüz yoktur. Daha fazla bilgi için ilgili üçüncü tarafın gizlilik politikasına başvurunuz.",
-    "h2_wijzigingen":"Değişiklikler",
-    "wijzigingen_text":"VvE Beheer Collectief, bu çerez bildirimini değiştirme hakkını saklı tutar. Değişiklikler bu sayfada yayınlanacaktır.",
-    "h2_contact":"İletişim",
-    "contact_text":"Çerez politikamız hakkında sorularınız mı var? info@vvebeheercollectief.nl adresinden bizimle iletişime geçin.",
-    "updated":"Son güncelleme: Mayıs 2025"
+    "title": "Çerez bildirimi",
+    "intro": "VvE Beheer Collectief'in bu web sitesi çerezler kullanmaktadır. Bu çerez bildiriminde çerezlerin ne olduğunu, hangi çerezleri kullandığımızı ve bunları nasıl yönetebileceğinizi okuyabilirsiniz.",
+    "h2_wat": "Çerezler nedir?",
+    "wat_text": "Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınız tarafından saklanan küçük metin dosyalarıdır. Web sitelerinin düzgün çalışması, web sitesi kullanımının analiz edilmesi ve kullanıcı deneyiminin iyileştirilmesi için kullanılırlar.",
+    "h2_welke": "Hangi çerezleri kullanıyoruz?",
+    "h3_functioneel": "İşlevsel çerezler",
+    "functioneel_text": "Bu çerezler web sitesinin çalışması için gereklidir. Örneğin tercihlerinizin hatırlanmasını sağlarlar. Bu çerezler pazarlama amaçlı kullanılmaz.",
+    "h3_analytisch": "Analitik çerezler",
+    "analytisch_text": "Web sitemizin kullanımını ölçmek ve iyileştirmek için analitik çerezler kullanabiliriz. Bu veriler anonim olarak toplanır ve ticari amaçlarla üçüncü taraflarla paylaşılmaz.",
+    "h2_beheren": "Çerezleri yönetme",
+    "beheren_intro": "Çerez tercihlerinizi istediğiniz zaman tarayıcı ayarlarınız üzerinden değiştirebilirsiniz. Belirli çerezlerin engellenmesinin web sitesinin işlevselliğini etkileyebileceğini lütfen unutmayın.",
+    "beheren_text": "Çoğu tarayıcı şu seçenekleri sunar:",
+    "beheren_items": [
+      "Saklanan tüm çerezleri görüntüleme",
+      "Çerezleri tek tek veya tamamen silme",
+      "Belirli web sitelerinden gelen çerezleri engelleme",
+      "Tüm çerezleri engelleme",
+      "Tarayıcıyı kapattığınızda tüm çerezleri silme"
+    ],
+    "h2_derden": "Üçüncü taraf çerezleri",
+    "derden_text": "Web sitemiz, tipografi için Google Fonts gibi üçüncü taraf hizmetlerini kullanabilir. Bu hizmetler kendi çerezlerini yerleştirebilir. Bu üçüncü tarafların çerez yerleştirmesi ve kullanımı üzerinde kontrolümüz yoktur. Daha fazla bilgi için ilgili üçüncü tarafın gizlilik politikasına başvurunuz.",
+    "h2_wijzigingen": "Değişiklikler",
+    "wijzigingen_text": "VvE Beheer Collectief, bu çerez bildirimini değiştirme hakkını saklı tutar. Değişiklikler bu sayfada yayınlanacaktır.",
+    "h2_contact": "İletişim",
+    "contact_text": "Çerez politikamız hakkında sorularınız mı var? info@vvebeheercollectief.nl adresinden bizimle iletişime geçin.",
+    "updated": "Son güncelleme: Mayıs 2025"
   },
   "footer": {
-    "brand_desc":"Güney Hollanda ve çevresi için kişisel, şeffaf ve güvenilir VvE yönetimi. 17 yıllık deneyim, yönetimde 500+ VvE.",
-    "h_diensten":"Hizmetler",
-    "diensten_links":["İdari yönetim","Mali yönetim","Teknik yönetim","Komple Paket"],
-    "h_bedrijf":"Şirket",
-    "bedrijf_links":["Hakkımızda","Çalışma yöntemi","Müşteri hikayeleri","İş ilanları"],
-    "h_contact":"İletişim",
-    "locatie":"Wateringen, Güney Hollanda",
-    "offerte_link":"Teklif isteyin →",
-    "bottom_kvk":"VvE Beheer Collectief. KvK 51721139.",
-    "privacy":"Gizlilik",
-    "voorwaarden":"Koşullar",
-    "cookies":"Çerezler"
+    "brand_desc": "Güney Hollanda ve çevresi için kişisel, şeffaf ve güvenilir VvE yönetimi. 17 yıllık deneyim, yönetimde 500+ VvE.",
+    "h_diensten": "Hizmetler",
+    "diensten_links": [
+      "İdari yönetim",
+      "Mali yönetim",
+      "Teknik yönetim",
+      "Komple Paket"
+    ],
+    "h_bedrijf": "Şirket",
+    "bedrijf_links": [
+      "Hakkımızda",
+      "Çalışma yöntemi",
+      "Müşteri hikayeleri",
+      "İş ilanları"
+    ],
+    "h_contact": "İletişim",
+    "locatie": "Wateringen, Güney Hollanda",
+    "offerte_link": "Teklif isteyin →",
+    "bottom_kvk": "VvE Beheer Collectief. KvK 51721139.",
+    "privacy": "Gizlilik",
+    "voorwaarden": "Koşullar",
+    "cookies": "Çerezler"
   },
   "titles": {
-    "home":"VvE Beheer Collectief — VvE yönetimi Güney Hollanda",
-    "diensten":"Hizmetler — VvE Beheer Collectief",
-    "pakketten":"Paketler — VvE Beheer Collectief",
-    "overons":"Hakkımızda — VvE Beheer Collectief",
-    "werkwijze":"Çalışma yöntemi — VvE Beheer Collectief",
-    "offerte":"Teklif isteyin — VvE Beheer Collectief",
-    "privacy":"Gizlilik bildirimi — VvE Beheer Collectief",
-    "voorwaarden":"Genel koşullar — VvE Beheer Collectief",
-    "cookies":"Çerez bildirimi — VvE Beheer Collectief"
+    "home": "VvE Beheer Collectief — VvE yönetimi Güney Hollanda",
+    "diensten": "Hizmetler — VvE Beheer Collectief",
+    "pakketten": "Paketler — VvE Beheer Collectief",
+    "overons": "Hakkımızda — VvE Beheer Collectief",
+    "werkwijze": "Çalışma yöntemi — VvE Beheer Collectief",
+    "offerte": "Teklif isteyin — VvE Beheer Collectief",
+    "privacy": "Gizlilik bildirimi — VvE Beheer Collectief",
+    "voorwaarden": "Genel koşullar — VvE Beheer Collectief",
+    "cookies": "Çerez bildirimi — VvE Beheer Collectief"
   }
 }
