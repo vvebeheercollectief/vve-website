@@ -51,7 +51,7 @@ button { font-family: inherit; cursor: pointer; }
 ul { list-style: none; padding: 0; }
 
 /* Container */
-.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 
 /* Buttons */
 .btn {
@@ -144,7 +144,7 @@ section { padding: 96px 0; }
   position: sticky; top: 0; z-index: 50;
 }
 .site-header-inner {
-  display: flex; align-items: center; gap: 32px; padding: 18px 0;
+  display: flex; align-items: center; gap: 24px; padding: 18px 0;
 }
 .site-logo {
   display: flex; align-items: center; gap: 10px;
@@ -155,7 +155,8 @@ section { padding: 96px 0; }
 .site-nav { display: flex; gap: 4px; align-items: center; }
 .site-nav a {
   font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.78);
-  padding: 8px 14px; border-radius: 6px; transition: color .15s;
+  padding: 8px 12px; border-radius: 6px; transition: color .15s;
+  white-space: nowrap;
 }
 .site-nav a:hover { color: white; }
 .site-nav a.active { color: white; font-weight: 600; }
@@ -165,6 +166,7 @@ section { padding: 96px 0; }
 .site-header-phone {
   font-size: 13px; color: rgba(255,255,255,0.6);
   display: inline-flex; align-items: center; gap: 6px;
+  white-space: nowrap;
 }
 
 /* Mobile menu */
@@ -261,9 +263,18 @@ section { padding: 96px 0; }
 
 /* Mobile lang switcher */
 .mobile-lang-switcher {
-  display: flex; flex-wrap: wrap; gap: 6px;
   padding-bottom: 20px; margin-bottom: 20px;
   border-bottom: 1px solid var(--border);
+}
+.mobile-lang-toggle {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 12px 16px; border-radius: 10px; font-size: 15px; font-weight: 600;
+  border: 1px solid var(--border); background: white; color: var(--navy);
+  cursor: pointer; font-family: inherit; transition: border-color .15s;
+}
+.mobile-lang-toggle:hover { border-color: var(--teal-700); }
+.mobile-lang-grid {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
 }
 .mobile-lang-btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -299,6 +310,16 @@ section { padding: 96px 0; }
 }
 
 /* Responsive */
+/* Header collapses to hamburger earlier than the content grids, so the
+   navy bar never gets cramped on mid-width screens. */
+@media (max-width: 1099px) {
+  .site-nav { display: none; }
+  .site-header-phone { display: none; }
+  .lang-switcher { display: none; }
+  .site-header-cta .btn { display: none; }
+  .mobile-toggle { display: block; margin-left: auto; font-size: 28px !important; padding: 8px !important; }
+}
+
 @media (max-width: 1023px) {
   .lang-switcher { display: none; }
   .site-nav { display: none; }
@@ -999,15 +1020,26 @@ function LanguageSwitcher({ lang, setLang }) {
 }
 
 function MobileLangSwitcher({ lang, setLang }) {
+  const [open, setOpen] = useState(false);
+  const current = LANGUAGES.find(l => l.code === lang) || LANGUAGES[0];
   return (
     <div className="mobile-lang-switcher">
-      {LANGUAGES.map(l => (
-        <button key={l.code} className={`mobile-lang-btn ${l.code === lang ? 'active' : ''}`}
-          onClick={() => setLang(l.code)}>
-          <span>{l.flag}</span>
-          <span>{l.code.toUpperCase()}</span>
-        </button>
-      ))}
+      <button className="mobile-lang-toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <span>{current.flag}</span>
+        <span>{current.label}</span>
+        <I name={open ? 'caret-up' : 'caret-down'} size={14} style={{ marginLeft: 'auto' }} />
+      </button>
+      {open && (
+        <div className="mobile-lang-grid">
+          {LANGUAGES.map(l => (
+            <button key={l.code} className={`mobile-lang-btn ${l.code === lang ? 'active' : ''}`}
+              onClick={() => { setLang(l.code); setOpen(false); }}>
+              <span>{l.flag}</span>
+              <span>{l.code.toUpperCase()}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -1043,7 +1075,6 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
             <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
             <LanguageSwitcher lang={lang} setLang={setLang} />
             <a className="btn btn-ghost-light btn-sm" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer"><I name="sign-in" size={14} /> {navT.portaal_btn}</a>
-            <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>{navT.offerte_btn}</button>
           </div>
           <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label={navT.menu_open}>
             <I name="list" size={24} />
