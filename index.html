@@ -143,14 +143,19 @@ section { padding: 96px 0; }
 .field textarea { resize: vertical; min-height: 100px; }
 .field-error { font-size: 12px; color: var(--red); margin-top: 4px; }
 
-/* Site header — light glass variant */
+/* Site header — light glass variant.
+   --hdr (0→1) stuurt de glas-vulling. Default 1 = altijd gevuld (desktop,
+   overige pagina's, en de no-JS fallback). Op de mobiele home-hero zet JS
+   --hdr op de scroll-voortgang zodat de balk geleidelijk meevult. */
 .site-header {
+  --hdr: 1;
   background: rgba(251,252,253,0.8);
   -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   position: sticky; top: 0; z-index: 50;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
+.site-logo-name { transition: opacity .2s ease; }
 .site-header.scrolled {
   border-bottom-color: var(--border);
   box-shadow: 0 1px 0 rgba(43,53,68,0.02), 0 8px 24px -18px rgba(43,53,68,0.35);
@@ -362,6 +367,18 @@ section { padding: 96px 0; }
   .hulp-cards { grid-template-columns: 1fr 1fr !important; }
 }
 
+/* Mobiele "glas"-header die meevult bij scrollen — alleen op de home-hero.
+   Op overige mobiele pagina's blijft --hdr op 1 (gevuld). */
+@media (max-width: 900px) {
+  .site-header.is-home {
+    background: rgba(251,252,253, calc(var(--hdr) * 0.92));
+    -webkit-backdrop-filter: blur(calc(var(--hdr) * 14px)); backdrop-filter: blur(calc(var(--hdr) * 14px));
+    border-bottom-color: rgba(43,53,68, calc(var(--hdr) * 0.08));
+    box-shadow: none;
+  }
+  .site-header.is-home .site-logo-name { opacity: var(--hdr); }
+}
+
 @media (max-width: 767px) {
   .container { padding: 0 16px; }
   section { padding: 64px 0; }
@@ -428,9 +445,18 @@ section { padding: 96px 0; }
     radial-gradient(46% 50% at 6% 6%, rgba(94,234,212,0.18) 0%, rgba(94,234,212,0) 62%),
     linear-gradient(155deg,#EEF5F4 0%, #F4F8F8 46%, #E9F2F1 100%);
 }
-.dz-sky {
+/* Wrapper draagt positie + muis-parallax; de <img> draagt de entree-transform.
+   Twee aparte elementen zodat de transforms elkaar nooit overschrijven. */
+.dz-sky-wrap {
   position: absolute; bottom: 0; right: 0; width: min(46%,720px); max-height: 90%;
-  object-fit: contain; object-position: bottom right; z-index: 1; pointer-events: none;
+  z-index: 1; pointer-events: none;
+  transform: translate3d(0,0,0);
+  transition: transform .55s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
+}
+.dz-sky {
+  display: block; width: 100%; height: 100%;
+  object-fit: contain; object-position: bottom right;
   -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
   mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
   filter: drop-shadow(0 12px 26px rgba(43,53,68,0.14));
@@ -449,6 +475,31 @@ section { padding: 96px 0; }
 .dz-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .dz-tchip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.7); border: 1px solid var(--border-2); border-radius: 999px; padding: 9px 15px; font-size: 13px; font-weight: 600; color: var(--navy); }
 .dz-tchip i { color: var(--teal-700); font-size: 17px; }
+
+/* ── Hero entree-animatie (gestaffeld, op mount) ──
+   Verborgen begintoestand geldt alléén met .dz-js (JS draait); zonder JS
+   blijven elementen zichtbaar. .dz-in wordt op de panel gezet na mount. */
+.dz-js .dz-panel .dz-anim {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+}
+.dz-panel.dz-in .dz-anim { opacity: 1; transform: none; }
+.dz-panel.dz-in .dz-mob-icon { transition-delay: 0s; }
+.dz-panel.dz-in .dz-pill  { transition-delay: .05s; }
+.dz-panel.dz-in .dz-h1    { transition-delay: .16s; }
+.dz-panel.dz-in .dz-lead  { transition-delay: .28s; }
+.dz-panel.dz-in .dz-ctas  { transition-delay: .40s; }
+.dz-panel.dz-in .dz-trust { transition-delay: .50s; }
+/* Skyline-entree zit op de <img>, parallax op de wrapper */
+.dz-js .dz-sky {
+  opacity: 0; transform: translateY(14px) scale(1.04);
+  transition: opacity 1.1s cubic-bezier(.22,1,.36,1), transform 1.1s cubic-bezier(.22,1,.36,1);
+}
+.dz-panel.dz-in .dz-sky { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .dz-js .dz-panel .dz-anim,
+  .dz-js .dz-sky { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
 
 /* ── Section / page head ── */
 .dz-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal-700); text-transform: uppercase; }
@@ -535,13 +586,54 @@ section { padding: 96px 0; }
   .dz-cta { grid-template-columns: 1fr !important; }
   .dz-reassure { grid-template-columns: 1fr !important; }
 }
+/* Merkicoon alleen op mobiel (Optie E); desktop verbergt het */
+.dz-mob-icon { display: none; }
+
 @media (max-width: 767px) {
-  .dz-sky { opacity: .5; width: 62%; }
+  .dz-sky-wrap { width: 62%; }
+  .dz-sky { opacity: .5; }
   .dz-tl { padding-left: 60px; }
   .dz-rail { left: 21px; }
   .dz-tnode { left: -60px; width: 46px; height: 46px; border-radius: 14px; }
   .dz-ctas .btn { width: 100%; justify-content: center; }
 }
+
+/* ── Mobiele hero "Optie E" — merkicoon boven, gecentreerd, skyline als
+   subtiele wazige achtergrond, stats als één tekstregel ── */
+@media (max-width: 620px) {
+  .dz-panel { min-height: calc(100vh - 64px); }
+  .dz-hero-content {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    max-width: 100%; padding: 28px 0 64px; margin: 0 auto;
+  }
+  .dz-mob-icon { display: block; width: 74px; height: auto; margin: 0 auto 18px; }
+  .dz-pill { display: none !important; }
+  .dz-lead { max-width: 330px; }
+  .dz-ctas { flex-direction: column; width: 100%; gap: 11px; margin-top: 28px; }
+  .dz-ctas .btn { width: 100%; justify-content: center; }
+  /* Skyline → gecentreerde, wazige achtergrond onderaan */
+  .dz-sky-wrap {
+    left: 50%; right: auto; bottom: 0; transform: translateX(-50%) !important;
+    width: 152%; height: auto; max-height: none; transition: none !important;
+  }
+  .dz-sky {
+    object-fit: contain; object-position: bottom center;
+    filter: blur(.7px) saturate(.9);
+    opacity: .16 !important;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 60%, #000 100%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 60%, #000 100%);
+  }
+  /* Trust-chips → één strakke tekstregel met ·-scheiding */
+  .dz-trust { gap: 0; justify-content: center; align-items: center; margin-top: 20px; }
+  .dz-tchip {
+    background: none !important; border: 0 !important; box-shadow: none !important;
+    padding: 0 6px; border-radius: 0;
+    font-size: 11.5px; font-weight: 500; color: #6B7686;
+  }
+  .dz-tchip i, .dz-tchip svg { display: none !important; }
+  .dz-tchip + .dz-tchip::before { content: "·"; color: #C7D0D6; margin-right: 12px; }
+}
+
 @media (max-width: 560px) {
   .dz-compleet .grid2 { grid-template-columns: 1fr; }
 }
@@ -584,6 +676,9 @@ section { padding: 96px 0; }
 
 <script type="text/babel">
 const { useState, useEffect, useRef } = React;
+// Marker zodat de hero-entree-animatie alleen verbergt wanneer JS draait
+// (zonder JS blijven hero-elementen zichtbaar — geen opacity:0-val).
+document.documentElement.classList.add('dz-js');
 
 /* ── Data ── */
 const PHOTOS = {
@@ -1273,12 +1368,21 @@ function MobileLangSwitcher({ lang, setLang }) {
 function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const el = headerRef.current;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 10);
+      // Op de home-hero vult de balk geleidelijk mee over de eerste ~130px;
+      // elders altijd gevuld (--hdr = 1). CSS gate't het effect op mobiel.
+      const hdr = page === 'home' ? Math.min(1, Math.max(0, y / 130)) : 1;
+      if (el) el.style.setProperty('--hdr', hdr.toFixed(3));
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [page]);
   const navT = t('nav');
   const links = [
     { id: 'home', label: navT.home },
@@ -1296,11 +1400,11 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
 
   return (
     <>
-      <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
+      <header ref={headerRef} className={`site-header ${scrolled ? 'scrolled' : ''} ${page === 'home' ? 'is-home' : ''}`}>
         <div className="container site-header-inner">
           <a className="site-logo" onClick={() => setPage('home')}>
             <img src="assets/icoon-donker.png" alt="" />
-            <span>VvE Beheer Collectief</span>
+            <span className="site-logo-name">VvE Beheer Collectief</span>
           </a>
           <nav className="site-nav">{nav(false)}</nav>
           <div className="site-header-cta">
@@ -1450,17 +1554,61 @@ function HeroSection({ setPage, t, isRtl }) {
   const heroT = t('hero');
   const trust = heroT.trust || [];
   const trustIcons = ['hourglass-medium', 'buildings', 'lightning'];
+  const [entered, setEntered] = useState(false);
+  const panelRef = useRef(null);
+  const skyWrapRef = useRef(null);
+  const rafRef = useRef(0);
+
+  // Entree-animatie: na de eerste frame .dz-in zetten zodat de begintoestand
+  // (opacity:0) eerst getekend wordt en de transitie zichtbaar inkomt.
+  useEffect(() => {
+    const r = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(r);
+  }, []);
+
+  // Skyline muis-parallax — alleen op apparaten met fijne aanwijzer + hover,
+  // en niet bij prefers-reduced-motion. Parallax zit op de wrapper.
+  useEffect(() => {
+    const panel = panelRef.current, wrap = skyWrapRef.current;
+    if (!panel || !wrap || !window.matchMedia) return;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!fine || reduce) return;
+    const onMove = (e) => {
+      const r = panel.getBoundingClientRect();
+      const dx = (e.clientX - r.left) / r.width - 0.5;
+      const dy = (e.clientY - r.top) / r.height - 0.5;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        wrap.style.transform = `translate3d(${(dx * 18).toFixed(2)}px, ${(dy * 12).toFixed(2)}px, 0)`;
+      });
+    };
+    const onLeave = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      wrap.style.transform = 'translate3d(0,0,0)';
+    };
+    panel.addEventListener('mousemove', onMove);
+    panel.addEventListener('mouseleave', onLeave);
+    return () => {
+      panel.removeEventListener('mousemove', onMove);
+      panel.removeEventListener('mouseleave', onLeave);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   return (
     <section className="dz-hero">
-      <div className="dz-panel">
-        <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
+      <div className={`dz-panel ${entered ? 'dz-in' : ''}`} ref={panelRef}>
+        <div className="dz-sky-wrap" ref={skyWrapRef}>
+          <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
+        </div>
         <div className="container">
           <div className="dz-hero-content">
-            <span className="dz-pill"><I name="house-line" size={15} weight="fill" /> {heroT.pill}</span>
-            <h1 className="dz-h1">{heroT.title_1} <span>{heroT.title_2}</span></h1>
-            <p className="dz-lead">{heroT.subtitle}</p>
-            <div className="dz-ctas">
+            <img className="dz-mob-icon dz-anim" src="assets/icoon-donker.png" alt="" />
+            <span className="dz-pill dz-anim"><I name="house-line" size={15} weight="fill" /> {heroT.pill}</span>
+            <h1 className="dz-h1 dz-anim">{heroT.title_1} <span>{heroT.title_2}</span></h1>
+            <p className="dz-lead dz-anim">{heroT.subtitle}</p>
+            <div className="dz-ctas dz-anim">
               <button className="btn btn-primary btn-lg" onClick={() => setPage('diensten')}>
                 {heroT.cta_primary} <I name="arrow-right" size={16} />
               </button>
@@ -1469,7 +1617,7 @@ function HeroSection({ setPage, t, isRtl }) {
                 {heroT.cta_secondary}
               </button>
             </div>
-            <div className="dz-trust">
+            <div className="dz-trust dz-anim">
               {trust.map((label, i) => (
                 <span key={label} className="dz-tchip">
                   <I name={trustIcons[i] || 'check'} size={17} weight="duotone" /> {label}
