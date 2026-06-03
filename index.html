@@ -454,6 +454,7 @@ const NL = {
     offerte: 'Offerte',
     bel: 'Bel ons',
     offerte_btn: 'Offerte aanvragen',
+    portaal_btn: 'Klantportaal',
     menu_open: 'Menu openen',
     menu_close: 'Menu sluiten',
   },
@@ -1041,6 +1042,7 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
           <div className="site-header-cta">
             <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
             <LanguageSwitcher lang={lang} setLang={setLang} />
+            <a className="btn btn-ghost-light btn-sm" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer"><I name="sign-in" size={14} /> {navT.portaal_btn}</a>
             <button className="btn btn-primary btn-sm" onClick={() => setPage('offerte')}>{navT.offerte_btn}</button>
           </div>
           <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label={navT.menu_open}>
@@ -1063,6 +1065,7 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
         <nav>{nav(true)}</nav>
         <div className="mobile-cta">
           <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>{navT.offerte_btn}</button>
+          <a className="btn btn-secondary" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}><I name="sign-in" size={16} /> {navT.portaal_btn}</a>
           <a href="tel:+31858000605" style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
             <I name="phone" size={14} /> (085)-800 0605
           </a>
