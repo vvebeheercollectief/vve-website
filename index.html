@@ -412,25 +412,24 @@ section { padding: 96px 0; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ── Hero ── */
-.dz-hero { padding: clamp(20px,3vw,40px) 0 0; background: var(--white); }
+.dz-hero { padding: 0; background: var(--white); }
 .dz-panel {
   position: relative; overflow: hidden;
-  border-radius: clamp(24px,3vw,36px); border: 1px solid var(--border-2);
+  border: 0; border-bottom: 1px solid var(--border-2);
+  transform: translate3d(0,0,0);
   background:
     radial-gradient(60% 70% at 88% 96%, rgba(13,115,119,0.16) 0%, rgba(13,115,119,0) 60%),
     radial-gradient(46% 50% at 6% 6%, rgba(94,234,212,0.18) 0%, rgba(94,234,212,0) 62%),
     linear-gradient(155deg,#EEF5F4 0%, #F4F8F8 46%, #E9F2F1 100%);
-  box-shadow: var(--sh-lg);
 }
 .dz-sky {
-  position: absolute; bottom: 0; right: 0; width: min(50%,640px); max-height: 86%;
+  position: absolute; bottom: 0; right: 0; width: min(46%,720px); max-height: 90%;
   object-fit: contain; object-position: bottom right; z-index: 1; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 46%,#000 100%);
-  mask-image: linear-gradient(to right,transparent 0%,#000 46%,#000 100%);
+  -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
+  mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
   filter: drop-shadow(0 12px 26px rgba(43,53,68,0.14));
 }
-.dz-panel-inner { position: relative; z-index: 2; padding: clamp(40px,5vw,72px) clamp(28px,4vw,64px); }
-.dz-panel-inner > div { max-width: 600px; }
+.dz-hero-content { position: relative; z-index: 2; max-width: 600px; padding: clamp(48px,6vw,92px) 0; }
 .dz-pill {
   display: inline-flex; align-items: center; gap: 8px; background: #fff;
   border: 1px solid var(--border); color: var(--teal-900); font-size: 12.5px;
@@ -531,7 +530,7 @@ section { padding: 96px 0; }
   .dz-reassure { grid-template-columns: 1fr !important; }
 }
 @media (max-width: 767px) {
-  .dz-sky { opacity: .42; width: 64%; }
+  .dz-sky { opacity: .5; width: 62%; }
   .dz-tl { padding-left: 60px; }
   .dz-rail { left: 21px; }
   .dz-tnode { left: -60px; width: 46px; height: 46px; border-radius: 14px; }
@@ -1441,33 +1440,31 @@ function HeroSection({ setPage, t, isRtl }) {
 
   return (
     <section className="dz-hero">
-      <div className="container">
-        <Reveal className="dz-panel">
-          <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
-          <div className="dz-panel-inner">
-            <div>
-              <span className="dz-pill"><I name="house-line" size={15} weight="fill" /> {heroT.pill}</span>
-              <h1 className="dz-h1">{heroT.title_1} <span>{heroT.title_2}</span></h1>
-              <p className="dz-lead">{heroT.subtitle}</p>
-              <div className="dz-ctas">
-                <button className="btn btn-primary btn-lg" onClick={() => setPage('diensten')}>
-                  {heroT.cta_primary} <I name="arrow-right" size={16} />
-                </button>
-                <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
-                  style={{ background: '#fff', borderColor: 'var(--border)' }}>
-                  {heroT.cta_secondary}
-                </button>
-              </div>
-              <div className="dz-trust">
-                {trust.map((label, i) => (
-                  <span key={label} className="dz-tchip">
-                    <I name={trustIcons[i] || 'check'} size={17} weight="duotone" /> {label}
-                  </span>
-                ))}
-              </div>
+      <div className="dz-panel">
+        <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
+        <div className="container">
+          <div className="dz-hero-content">
+            <span className="dz-pill"><I name="house-line" size={15} weight="fill" /> {heroT.pill}</span>
+            <h1 className="dz-h1">{heroT.title_1} <span>{heroT.title_2}</span></h1>
+            <p className="dz-lead">{heroT.subtitle}</p>
+            <div className="dz-ctas">
+              <button className="btn btn-primary btn-lg" onClick={() => setPage('diensten')}>
+                {heroT.cta_primary} <I name="arrow-right" size={16} />
+              </button>
+              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
+                style={{ background: '#fff', borderColor: 'var(--border)' }}>
+                {heroT.cta_secondary}
+              </button>
+            </div>
+            <div className="dz-trust">
+              {trust.map((label, i) => (
+                <span key={label} className="dz-tchip">
+                  <I name={trustIcons[i] || 'check'} size={17} weight="duotone" /> {label}
+                </span>
+              ))}
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
