@@ -375,9 +375,10 @@ section { padding: 96px 0; }
   .site-header.is-home {
     background: rgba(251,252,253, calc(var(--hdr) * 0.92));
     -webkit-backdrop-filter: blur(calc(var(--hdr) * 14px)); backdrop-filter: blur(calc(var(--hdr) * 14px));
-    border-bottom-color: rgba(43,53,68, calc(var(--hdr) * 0.08));
+    border-bottom-color: rgba(230,234,239, var(--hdr));
     box-shadow: none;
   }
+  .site-header.is-home.scrolled { box-shadow: 0 6px 20px -16px rgba(43,53,68, calc(var(--hdr) * 0.5)); }
   .site-header.is-home .site-logo { opacity: var(--hdr); transition: opacity .12s linear; }
 }
 
@@ -606,29 +607,33 @@ section { padding: 96px 0; }
 /* ── Mobiele hero (handoff new-6) — merkicoon boven, gecentreerd, skyline als
    subtiele wazige achtergrond, stats als 3-koloms grid, blur-naar-scherp entree ── */
 @media (max-width: 620px) {
-  .dz-panel { min-height: calc(100vh - 64px); }
+  .dz-panel { min-height: calc(100vh - 64px); display: flex; flex-direction: column; }
+  .dz-panel > .container { flex: 1; display: flex; flex-direction: column; }
   .dz-hero-content {
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-    max-width: 100%; padding: 28px 0 64px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    text-align: center; flex: 1;
+    width: 100%; max-width: 360px; margin-inline: auto; padding: 72px 0 44px;
   }
-  .dz-mob-icon { display: block; width: 74px; height: auto; margin: 0 auto 18px; }
+  .dz-mob-icon { display: block; width: 74px; height: auto; margin: 0 0 16px; }
   .dz-pill { display: none !important; }
-  .dz-lead { max-width: 330px; }
-  .dz-ctas { flex-direction: column; width: 100%; gap: 11px; margin-top: 28px; }
+  .dz-h1 { margin: 18px 0 14px; }
+  .dz-lead { max-width: 330px; margin-left: auto; margin-right: auto; }
+  .dz-ctas { flex-direction: column; width: 100%; gap: 13px; margin-top: 28px; }
   .dz-ctas .btn { width: 100%; justify-content: center; }
   /* Skyline → gecentreerde, wazige achtergrond onderaan */
   .dz-sky-wrap {
-    left: 50%; right: auto; bottom: 0; transform: translateX(-50%) !important;
-    width: 152%; height: auto; max-height: none; transition: none !important;
+    left: 50%; right: auto; bottom: 0; top: auto; transform: translateX(-50%) !important;
+    width: 120%; height: auto; max-height: none; transition: none !important;
   }
   .dz-sky {
     width: 100%; height: auto;
     object-fit: contain; object-position: bottom center;
     filter: blur(.7px) saturate(.9);
-    opacity: .16 !important;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 60%, #000 100%);
-    mask-image: linear-gradient(to top, transparent 0%, #000 60%, #000 100%);
+    opacity: .12;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 60%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 60%, #000 100%);
   }
+  .dz-panel.dz-in .dz-sky { opacity: .12; }
   /* Trust-stats → strak 3-koloms grid: cijfer groot boven, label eronder,
      dunne verticale scheidingslijntjes (vervangt de oude puntjes-regel) */
   .dz-trust {
@@ -665,7 +670,7 @@ section { padding: 96px 0; }
   .dz-panel.dz-in .dz-mob-icon.dz-anim,
   .dz-panel.dz-in .dz-h1.dz-anim { transform: none; filter: none; }
   .dz-js .dz-sky {
-    transform: translateY(26px) scale(1.06);
+    transform: translateY(26px) scale(1.03);
     transition: opacity 1.4s cubic-bezier(.2,.7,.2,1), transform 1.6s cubic-bezier(.2,.7,.2,1);
   }
   .dz-panel.dz-in .dz-sky { transform: none; }
@@ -673,6 +678,7 @@ section { padding: 96px 0; }
 
 @media (max-width: 560px) {
   .dz-compleet .grid2 { grid-template-columns: 1fr; }
+  .dz-h1 { font-size: clamp(34px, 9.5vw, 46px); }
 }
 
 /* Subtle background patterns */
