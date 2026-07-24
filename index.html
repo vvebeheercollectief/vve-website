@@ -248,6 +248,36 @@ const NL = {
     btn:'Offerte aanvragen',
     reassure:['Vrijblijvend & gratis','Reactie binnen 2 werkdagen','Volledig op maat','Geen verplichtingen'],
   },
+  diensten_page: {
+    eyebrow:'Onze diensten',
+    title:'VvE-beheer dat aansluit op úw behoefte',
+    intro:'Drie pijlers — administratief, financieel en technisch — onder één dak en met één vast aanspreekpunt. Kies losse diensten of laat ons álles uit handen nemen.',
+    index: [
+      { label:'Administratief', id:'dienst-1' },
+      { label:'Financieel', id:'dienst-2' },
+      { label:'Technisch', id:'dienst-3' },
+    ],
+    wat_label:'Wat wij voor u regelen',
+    resultaat_label:'Het resultaat',
+    pijlers: [
+      { id:'dienst-1', label:'Pijler 1', title:'Uw administratie strak en vindbaar', intro:'Wij voeren de volledige administratie van uw VvE — van ledenregister en correspondentie tot het organiseren en notuleren van de ALV. Alles centraal vastgelegd en direct terug te vinden.', items:['ALV-organisatie & notulen','Ledenadministratie & register','Post & correspondentie','Splitsingsakte & reglementen'], resultaat:'Een VvE die administratief volledig op orde is, zonder dat het bestuur er omkijken naar heeft.', pakketLabel:'Inbegrepen in elk pakket' },
+      { id:'dienst-2', label:'Pijler 2', title:'Financieel inzicht, geen verrassingen', intro:'Van boekhouding en incasso tot begroting, reservefonds en jaarrekening. Wij houden de cijfers actueel en bewaken de gezondheid van uw reservefonds.', items:['Boekhouding & jaarrekening','Begroting & VvE-bijdrage','Reservefondsbeheer','Incasso & debiteurenbeheer'], resultaat:'Op elk moment inzicht in de financiële positie — en een jaarrekening die op tijd klaar is.', pakketLabel:'Inbegrepen in elk pakket' },
+      { id:'dienst-3', label:'Pijler 3', title:'Onderhoud dat vóórblijft op problemen', intro:'Wij stellen het MJOP op en houden het actueel, vragen offertes op en onderhandelen scherp, en coördineren onderhoud en schade — bij urgentie schakelen we direct.', items:['Meerjaren-onderhoudsplan (MJOP)','Offertes & aanbesteding','Schademeldingen 24/7','Inspecties & oplevering'], resultaat:'Goed onderhouden vastgoed, scherp ingekochte offertes en facturen die kloppen.', pakketLabel:'Inbegrepen in het Compleet-pakket' },
+    ],
+    compleet: {
+      badge:'Meest gekozen',
+      title:'Alles in één hand: het Compleet-pakket',
+      intro:'Combineer alle drie de pijlers in één vaste maandprijs. Volledige ontzorging — geen verrassingen, geen meerwerk-facturen.',
+      btn:'Zo verloopt de overstap',
+      punten:['Alle administratie & ALV','Volledige boekhouding','Jaarrekening op tijd','MJOP & onderhoud','24/7 schademeldingen','Eigen klantenportaal','Eén vast aanspreekpunt','Scherpe offertes'],
+    },
+    slot: {
+      eyebrow:'Vrijblijvende offerte',
+      title:'Benieuwd wat dit voor úw VvE betekent?',
+      intro:'Vraag een vrijblijvende offerte aan op maat. U ontvangt binnen 2 werkdagen reactie van een vaste beheerder.',
+      btn:'Offerte aanvragen',
+    },
+  },
   footer: {
     merkzin:'Onbezorgd wonen, samen geregeld.',
     lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
@@ -894,7 +924,82 @@ function HomePage({ t, setPage }) {
     </main>
   );
 }
-function DienstenPage({ t, setPage }) { return <PageStub title="Diensten" />; }
+function DienstenPage({ t, setPage }) {
+  const d = t('diensten_page');
+  const scrollToEl = (id) => { const el = document.getElementById(id); if (el) { const y = el.getBoundingClientRect().top + (window.pageYOffset||0) - 130; window.scrollTo({ top:y, behavior:'smooth' }); } };
+  return (
+    <main>
+      <section style={{ background:'#F5F7F9' }}>
+        <div data-r="secpad" style={{ maxWidth:820, margin:'0 auto', padding:'88px 24px', textAlign:'center' }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:16 }}>{d.eyebrow}</div>
+          <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:46, lineHeight:1.1, letterSpacing:'-0.01em', margin:'0 0 18px' }}>{d.title}</h1>
+          <p style={{ fontFamily:"'Karla'", fontSize:17.5, lineHeight:1.65, color:'#59616B', margin:'0 auto', maxWidth:600 }}>{d.intro}</p>
+        </div>
+      </section>
+
+      <div style={{ position:'sticky', top:69, zIndex:40, background:'rgba(255,255,255,0.94)', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', borderBottom:'1px solid #EEF1F4' }}>
+        <div data-r="row" style={{ maxWidth:1000, margin:'0 auto', padding:'16px 24px', display:'flex', gap:14, alignItems:'center', justifyContent:'center' }}>
+          {d.index.map((it, i) => (
+            <span key={i} onClick={() => scrollToEl(it.id)} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.14em', textTransform:'uppercase', color:'#4E6885', cursor:'pointer', padding:'6px 4px' }}>{it.label}</span>
+          ))}
+        </div>
+      </div>
+
+      <section data-r="secpad" style={{ maxWidth:1000, margin:'0 auto', padding:'70px 24px 40px', display:'flex', flexDirection:'column', gap:32 }}>
+        {d.pijlers.map((p, i) => (
+          <Reveal key={i} data-r="split" id={p.id} style={{ display:'grid', gridTemplateColumns:'1.05fr 1fr', gap:52, paddingBottom:32, borderBottom:'1px solid #EEF1F4', scrollMarginTop:140 }}>
+            <div>
+              <div style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.22em', textTransform:'uppercase', color:'#9CACBE', marginBottom:14 }}>{p.label}</div>
+              <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:28, lineHeight:1.2, margin:'0 0 16px' }}>{p.title}</h2>
+              <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.7, color:'#59616B', margin:'0 0 22px' }}>{p.intro}</p>
+              <div style={{ display:'inline-block', fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.14em', textTransform:'uppercase', color:'#4E6885', background:'#EEF3F7', padding:'9px 16px', borderRadius:4 }}>{p.pakketLabel}</div>
+            </div>
+            <div style={{ background:'#fff', border:'1px solid #ECEFF2', borderRadius:12, padding:'32px 34px', boxShadow:'0 18px 50px -36px rgba(28,36,46,0.4)' }}>
+              <div style={{ fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.22em', textTransform:'uppercase', color:'#96A0AB', marginBottom:16 }}>{d.wat_label}</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:12, marginBottom:24 }}>
+                {p.items.map((it, j) => (
+                  <div key={j} style={{ display:'flex', alignItems:'center', gap:12, fontFamily:"'Karla'", fontSize:15, color:'#3B4653' }}><span style={{ color:'#4E6885', fontWeight:700 }}>✓</span>{it}</div>
+                ))}
+              </div>
+              <div style={{ paddingTop:20, borderTop:'1px solid #EEF1F4' }}>
+                <div style={{ fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.22em', textTransform:'uppercase', color:'#96A0AB', marginBottom:8 }}>{d.resultaat_label}</div>
+                <p style={{ fontFamily:"'Source Serif 4',serif", fontWeight:400, fontSize:16.5, lineHeight:1.5, color:'#2A333D', margin:0 }}>{p.resultaat}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </section>
+
+      <section style={{ maxWidth:1000, margin:'0 auto', padding:'20px 24px 90px' }}>
+        <Reveal style={{ background:'linear-gradient(150deg,#26313E,#181F28)', borderRadius:14, padding:'52px 54px', position:'relative', overflow:'hidden' }}>
+          <img src="assets/logo.png" alt="" style={{ position:'absolute', right:-60, bottom:-80, height:300, opacity:0.05, filter:'brightness(0) invert(1)' }} />
+          <div data-r="split" style={{ position:'relative', display:'grid', gridTemplateColumns:'1fr 1fr', gap:52, alignItems:'center' }}>
+            <div>
+              <div style={{ display:'inline-block', fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.18em', textTransform:'uppercase', color:'#181F28', background:'#8AA1B8', padding:'6px 14px', borderRadius:3, marginBottom:20 }}>{d.compleet.badge}</div>
+              <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:30, lineHeight:1.2, color:'#F5F8FB', margin:'0 0 16px' }}>{d.compleet.title}</h2>
+              <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.65, color:'#AEB8C3', margin:'0 0 28px' }}>{d.compleet.intro}</p>
+              <span onClick={() => setPage('werkwijze')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer' }}>{d.compleet.btn}</span>
+            </div>
+            <div data-r="g2" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }}>
+              {d.compleet.punten.map((pt, i) => (
+                <div key={i} style={{ display:'flex', alignItems:'center', gap:11, fontFamily:"'Karla'", fontSize:14, color:'#C3CBD4' }}><span style={{ color:'#8AA1B8', fontWeight:700 }}>✓</span>{pt}</div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <section data-r="secpad" style={{ background:'#F5F7F9' }}>
+        <Reveal style={{ maxWidth:820, margin:'0 auto', padding:'80px 24px', textAlign:'center' }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.28em', textTransform:'uppercase', color:'#4E6885', marginBottom:14 }}>{d.slot.eyebrow}</div>
+          <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:32, margin:'0 0 14px' }}>{d.slot.title}</h2>
+          <p style={{ fontFamily:"'Karla'", fontSize:16.5, lineHeight:1.65, color:'#59616B', margin:'0 auto 28px', maxWidth:520 }}>{d.slot.intro}</p>
+          <span className="h-btnP" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{d.slot.btn}</span>
+        </Reveal>
+      </section>
+    </main>
+  );
+}
 function PakkettenPage({ t, setPage }) { return <PageStub title="Pakketten" />; }
 function WerkwijzePage({ t, setPage }) { return <PageStub title="Werkwijze" />; }
 function OverOnsPage({ t, setPage }) { return <PageStub title="Over ons" />; }
