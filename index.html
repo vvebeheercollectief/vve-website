@@ -681,7 +681,7 @@ function LanguageSwitcher({ lang, setLang }) {
 
   return (
     <div className="lang-switcher" ref={ref}>
-      <button className="lang-toggle" onClick={() => setOpen(!open)}>
+      <button className="lang-toggle" onClick={() => setOpen(!open)} aria-haspopup="listbox" aria-expanded={open} aria-label="Taal kiezen">
         <span>{current.flag}</span>
         <span>{current.code.toUpperCase()}</span>
         <I name={open ? 'caret-up' : 'caret-down'} size={12} />
@@ -750,6 +750,18 @@ function mailtoOfferte(f) {
   return `mailto:info@vvebeheercollectief.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(L.join('\n'))}`;
 }
 
+// Maakt een klikbaar niet-native element (span/div) toetsenbord-bedienbaar:
+// spreid {...kb(handler)} i.p.v. onClick={handler}. Voegt role=button, tabindex
+// en Enter/Spatie-afhandeling toe. Bestaande aria-* op het element blijven gelden.
+function kb(handler) {
+  return {
+    onClick: handler,
+    onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); handler(e); } },
+    role: 'button',
+    tabIndex: 0,
+  };
+}
+
 /* ── Header (Richting D) ── */
 function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -762,7 +774,7 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   return (
     <header style={{ position:'sticky', top:0, zIndex:60, background:'rgba(255,255,255,0.9)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', borderBottom:'1px solid #EEF1F4' }}>
       <div style={{ maxWidth:1160, margin:'0 auto', padding:'16px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:26 }}>
-        <div onClick={() => goTo('home')} style={{ display:'flex', alignItems:'center', gap:12, cursor:'pointer', flexShrink:0 }}>
+        <div {...kb(() => goTo('home'))} style={{ display:'flex', alignItems:'center', gap:12, cursor:'pointer', flexShrink:0 }}>
           <img src="assets/logo.png" alt="VvE Beheer Collectief" style={{ height:36 }} />
           <div style={{ lineHeight:1.2 }}>
             <div style={{ fontFamily:"'Jost'", fontWeight:300, fontSize:10.5, letterSpacing:'0.3em', textTransform:'uppercase', color:'#1C242E' }}>VvE Beheer</div>
@@ -771,16 +783,16 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
         </div>
         <nav data-r="dnav" style={{ display:'flex', gap:30, alignItems:'center' }}>
           {links.map(([k, label]) => (
-            <span key={k} className="h-nav" onClick={() => goTo(k)} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:13, letterSpacing:'0.06em', cursor:'pointer', whiteSpace:'nowrap', color: page===k ? '#4E6885' : '#59616B' }}>{label}</span>
+            <span key={k} className="h-nav" {...kb(() => goTo(k))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:13, letterSpacing:'0.06em', cursor:'pointer', whiteSpace:'nowrap', color: page===k ? '#4E6885' : '#59616B' }}>{label}</span>
           ))}
         </nav>
         <div data-r="dcta" style={{ display:'flex', alignItems:'center', gap:16, flexShrink:0 }}>
           <a href={PORTAAL_URL} target="_blank" rel="noopener noreferrer" className="h-nav" style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.06em', color:'#59616B', whiteSpace:'nowrap' }}>{nav.portaal}</a>
           <LanguageSwitcher lang={lang} setLang={setLang} />
           <a href={TEL_HREF} style={{ fontFamily:"'Karla'", fontWeight:600, fontSize:14, color:'#1C242E', whiteSpace:'nowrap' }}>{TEL_DISPLAY}</a>
-          <span className="h-btnP" onClick={() => goTo('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{nav.offerte_btn}</span>
+          <span className="h-btnP" {...kb(() => goTo('offerte'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{nav.offerte_btn}</span>
         </div>
-        <div data-r="burger" onClick={() => setMobileOpen(o => !o)} aria-label={mobileOpen ? nav.menu_close : nav.menu_open} aria-expanded={mobileOpen} role="button" tabIndex={0} style={{ width:44, height:44, alignItems:'center', justifyContent:'center', cursor:'pointer', flexDirection:'column', gap:5 }}>
+        <div data-r="burger" {...kb(() => setMobileOpen(o => !o))} aria-label={mobileOpen ? nav.menu_close : nav.menu_open} aria-expanded={mobileOpen} style={{ width:44, height:44, alignItems:'center', justifyContent:'center', cursor:'pointer', flexDirection:'column', gap:5 }}>
           <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
           <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
           <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
@@ -790,13 +802,13 @@ function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
         <div style={{ borderTop:'1px solid #EEF1F4', background:'#fff', padding:'14px 24px 22px' }}>
           <div style={{ display:'flex', flexDirection:'column' }}>
             {links.map(([k, label]) => (
-              <span key={k} onClick={() => goTo(k)} style={{ fontFamily:"'Jost'", fontSize:14, letterSpacing:'0.06em', color:'#28323E', padding:'13px 4px', borderBottom:'1px solid #F2F4F6', cursor:'pointer' }}>{label}</span>
+              <span key={k} {...kb(() => goTo(k))} style={{ fontFamily:"'Jost'", fontSize:14, letterSpacing:'0.06em', color:'#28323E', padding:'13px 4px', borderBottom:'1px solid #F2F4F6', cursor:'pointer' }}>{label}</span>
             ))}
             <a href={PORTAAL_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'Jost'", fontSize:14, letterSpacing:'0.06em', color:'#28323E', padding:'13px 4px', borderBottom:'1px solid #F2F4F6' }}>{nav.portaal}</a>
           </div>
           <MobileLangSwitcher lang={lang} setLang={setLang} />
           <div style={{ display:'flex', gap:12, marginTop:14 }}>
-            <span onClick={() => goTo('offerte')} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:5, cursor:'pointer' }}>{nav.offerte_btn}</span>
+            <span {...kb(() => goTo('offerte'))} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:5, cursor:'pointer' }}>{nav.offerte_btn}</span>
             <a href={TEL_HREF} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#28323E', border:'1px solid #CDD5DD', padding:14, borderRadius:5 }}>{nav.bel}</a>
           </div>
         </div>
@@ -815,7 +827,7 @@ function EindCTA({ setPage, t }) {
         <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:42, lineHeight:1.12, letterSpacing:'-0.01em', color:'#F5F8FB', margin:'0 0 18px' }}>{ct.title}</h2>
         <p style={{ fontFamily:"'Karla'", fontSize:17, lineHeight:1.65, color:'#AEB8C3', margin:'0 auto 34px', maxWidth:500 }}>{ct.intro}</p>
         <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap', marginBottom:32 }}>
-          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 42px', borderRadius:4, cursor:'pointer' }}>{ct.btn}</span>
+          <span className="h-btnD2" {...kb(() => setPage('offerte'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 42px', borderRadius:4, cursor:'pointer' }}>{ct.btn}</span>
         </div>
         <div style={{ display:'flex', gap:28, justifyContent:'center', flexWrap:'wrap', fontFamily:"'Karla'", fontSize:14, color:'#8891A0' }}>
           {(ct.reassure || []).map((r, i) => <span key={i}>{r}</span>)}
@@ -850,7 +862,7 @@ function SiteFooter({ setPage, t, isRtl }) {
               <div><a href="mailto:info@vvebeheercollectief.nl" className="h-link" style={{ color:'#DCE2E8' }}>{ft.email}</a></div>
               <div>{ft.locatie}</div>
             </div>
-            <span onClick={() => setPage('offerte')} style={{ display:'inline-block', marginTop:20, fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F5F8FB', border:'1px solid #4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer' }}>{ft.contact_btn}</span>
+            <span {...kb(() => setPage('offerte'))} style={{ display:'inline-block', marginTop:20, fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F5F8FB', border:'1px solid #4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer' }}>{ft.contact_btn}</span>
           </div>
         </div>
         <div data-r="g4" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:34, padding:'48px 0' }}>
@@ -869,10 +881,10 @@ function SiteFooter({ setPage, t, isRtl }) {
             <span style={{ fontFamily:"'Karla'", fontSize:12.5, color:'#8891A0' }}>{ft.kvk}</span>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:22, fontFamily:"'Karla'", fontSize:12.5, color:'#8891A0', flexWrap:'wrap' }}>
-            <span className="h-link" onClick={() => setPage('privacy')} style={{ cursor:'pointer' }}>{ft.privacy}</span>
-            <span className="h-link" onClick={() => setPage('voorwaarden')} style={{ cursor:'pointer' }}>{ft.voorwaarden}</span>
-            <span className="h-link" onClick={() => setPage('cookies')} style={{ cursor:'pointer' }}>{ft.cookies}</span>
-            <span onClick={() => setPage('offerte')} style={{ color:'#8AA1B8', cursor:'pointer' }}>{ft.offerte_link}</span>
+            <span className="h-link" {...kb(() => setPage('privacy'))} style={{ cursor:'pointer' }}>{ft.privacy}</span>
+            <span className="h-link" {...kb(() => setPage('voorwaarden'))} style={{ cursor:'pointer' }}>{ft.voorwaarden}</span>
+            <span className="h-link" {...kb(() => setPage('cookies'))} style={{ cursor:'pointer' }}>{ft.cookies}</span>
+            <span {...kb(() => setPage('offerte'))} style={{ color:'#8AA1B8', cursor:'pointer' }}>{ft.offerte_link}</span>
           </div>
         </div>
       </div>
@@ -885,7 +897,7 @@ function MobileBar({ setPage, t }) {
   const nav = t('nav');
   return (
     <div data-r="mbar" style={{ position:'fixed', left:0, right:0, bottom:0, zIndex:65, background:'rgba(255,255,255,0.96)', backdropFilter:'blur(10px)', WebkitBackdropFilter:'blur(10px)', borderTop:'1px solid #E6EAEE', padding:'12px 16px', gap:10 }}>
-      <span onClick={() => setPage('offerte')} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:6, cursor:'pointer' }}>{nav.offerte_short || nav.offerte}</span>
+      <span {...kb(() => setPage('offerte'))} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:6, cursor:'pointer' }}>{nav.offerte_short || nav.offerte}</span>
       <a href={TEL_HREF} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#28323E', border:'1px solid #CDD5DD', padding:14, borderRadius:6 }}>{nav.bel}</a>
     </div>
   );
@@ -920,8 +932,8 @@ function HomePage({ t, setPage }) {
             <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:58, lineHeight:1.07, letterSpacing:'-0.015em', margin:'0 0 24px', color:'#1C242E', animation:'omFadeUp .7s cubic-bezier(.2,.6,.2,1) .06s both' }}>{h.title_1} <span style={{ color:'#4E6885' }}>{h.title_2}</span></h1>
             <p style={{ fontFamily:"'Karla'", fontSize:18, lineHeight:1.65, color:'#59616B', margin:'0 0 34px', maxWidth:440, animation:'omFadeUp .7s cubic-bezier(.2,.6,.2,1) .13s both' }}>{h.subtitle}</p>
             <div style={{ display:'flex', gap:14, alignItems:'center', flexWrap:'wrap', marginBottom:36, animation:'omFadeUp .7s cubic-bezier(.2,.6,.2,1) .2s both' }}>
-              <span className="h-btnP2" onClick={() => setPage('diensten')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 34px', borderRadius:4, cursor:'pointer' }}>{h.cta_diensten}</span>
-              <span className="h-btnO" onClick={() => setPage('werkwijze')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#28323E', background:'rgba(255,255,255,0.7)', border:'1px solid #CDD5DD', padding:'15px 30px', borderRadius:4, cursor:'pointer' }}>{h.cta_werkwijze}</span>
+              <span className="h-btnP2" {...kb(() => setPage('diensten'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 34px', borderRadius:4, cursor:'pointer' }}>{h.cta_diensten}</span>
+              <span className="h-btnO" {...kb(() => setPage('werkwijze'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#28323E', background:'rgba(255,255,255,0.7)', border:'1px solid #CDD5DD', padding:'15px 30px', borderRadius:4, cursor:'pointer' }}>{h.cta_werkwijze}</span>
             </div>
           </div>
         </div>
@@ -967,11 +979,11 @@ function HomePage({ t, setPage }) {
                     <div key={j} style={{ display:'flex', alignItems:'center', gap:11, fontFamily:"'Karla'", fontSize:14.5, color:'#3B4653' }}><span style={{ color:'#4E6885', fontWeight:700 }}>✓</span>{it}</div>
                   ))}
                 </div>
-                <span onClick={() => setPage('diensten')} style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#4E6885', cursor:'pointer' }}>{pj.lees_meer}</span>
+                <span {...kb(() => setPage('diensten'))} style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#4E6885', cursor:'pointer' }}>{pj.lees_meer}</span>
               </div>
             ))}
           </div>
-          <div style={{ textAlign:'center', marginTop:44, fontFamily:"'Karla'", fontSize:16, color:'#59616B' }}>{pj.onder} <span onClick={() => setPage('diensten')} style={{ color:'#4E6885', cursor:'pointer', fontWeight:600 }}>{pj.onder_link}</span></div>
+          <div style={{ textAlign:'center', marginTop:44, fontFamily:"'Karla'", fontSize:16, color:'#59616B' }}>{pj.onder} <span {...kb(() => setPage('diensten'))} style={{ color:'#4E6885', cursor:'pointer', fontWeight:600 }}>{pj.onder_link}</span></div>
         </Reveal>
       </section>
 
@@ -1040,7 +1052,7 @@ function HomePage({ t, setPage }) {
               </div>
             ))}
           </div>
-          <div style={{ textAlign:'center', marginTop:30, fontFamily:"'Karla'", fontSize:16, color:'#59616B' }}>{fq.onder} <span onClick={() => setPage('offerte')} style={{ color:'#4E6885', cursor:'pointer', fontWeight:600 }}>{fq.onder_link}</span></div>
+          <div style={{ textAlign:'center', marginTop:30, fontFamily:"'Karla'", fontSize:16, color:'#59616B' }}>{fq.onder} <span {...kb(() => setPage('offerte'))} style={{ color:'#4E6885', cursor:'pointer', fontWeight:600 }}>{fq.onder_link}</span></div>
         </Reveal>
       </section>
 
@@ -1084,7 +1096,7 @@ function DienstenPage({ t, setPage }) {
       <div style={{ position:'sticky', top:69, zIndex:40, background:'rgba(255,255,255,0.94)', backdropFilter:'blur(8px)', WebkitBackdropFilter:'blur(8px)', borderBottom:'1px solid #EEF1F4' }}>
         <div data-r="row" style={{ maxWidth:1000, margin:'0 auto', padding:'16px 24px', display:'flex', gap:14, alignItems:'center', justifyContent:'center' }}>
           {d.index.map((it, i) => (
-            <span key={i} onClick={() => scrollToEl(it.id)} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.14em', textTransform:'uppercase', color:'#4E6885', cursor:'pointer', padding:'6px 4px' }}>{it.label}</span>
+            <span key={i} {...kb(() => scrollToEl(it.id))} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.14em', textTransform:'uppercase', color:'#4E6885', cursor:'pointer', padding:'6px 4px' }}>{it.label}</span>
           ))}
         </div>
       </div>
@@ -1122,7 +1134,7 @@ function DienstenPage({ t, setPage }) {
               <div style={{ display:'inline-block', fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.18em', textTransform:'uppercase', color:'#181F28', background:'#8AA1B8', padding:'6px 14px', borderRadius:3, marginBottom:20 }}>{d.compleet.badge}</div>
               <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:30, lineHeight:1.2, color:'#F5F8FB', margin:'0 0 16px' }}>{d.compleet.title}</h2>
               <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.65, color:'#AEB8C3', margin:'0 0 28px' }}>{d.compleet.intro}</p>
-              <span onClick={() => setPage('werkwijze')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer' }}>{d.compleet.btn}</span>
+              <span {...kb(() => setPage('werkwijze'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer' }}>{d.compleet.btn}</span>
             </div>
             <div data-r="g2" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }}>
               {d.compleet.punten.map((pt, i) => (
@@ -1138,7 +1150,7 @@ function DienstenPage({ t, setPage }) {
           <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.28em', textTransform:'uppercase', color:'#4E6885', marginBottom:14 }}>{d.slot.eyebrow}</div>
           <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:32, margin:'0 0 14px' }}>{d.slot.title}</h2>
           <p style={{ fontFamily:"'Karla'", fontSize:16.5, lineHeight:1.65, color:'#59616B', margin:'0 auto 28px', maxWidth:520 }}>{d.slot.intro}</p>
-          <span className="h-btnP" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{d.slot.btn}</span>
+          <span className="h-btnP" {...kb(() => setPage('offerte'))} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{d.slot.btn}</span>
         </Reveal>
       </section>
     </main>
@@ -1177,7 +1189,7 @@ function PakkettenPage({ t, setPage }) {
                   <span style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:36, color:'#1C242E', lineHeight:1 }}>{pkg.price}</span>
                 </div>
                 <div style={{ fontFamily:"'Karla'", fontSize:12.5, color:'#96A0AB', margin:'8px 0 24px', minHeight:18 }}>{pkg.sub}</div>
-                <span onClick={() => setPage('offerte')} className={pkg.featured ? 'h-btnP' : 'h-btnO'} style={{ display:'block', textAlign:'center', fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', padding:14, borderRadius:5, cursor:'pointer', color: pkg.featured ? '#F7F9FB' : '#28323E', background: pkg.featured ? '#4E6885' : 'transparent', border: pkg.featured ? 'none' : '1px solid #CDD5DD' }}>{pkg.cta}</span>
+                <span {...kb(() => setPage('offerte'))} className={pkg.featured ? 'h-btnP' : 'h-btnO'} style={{ display:'block', textAlign:'center', fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', padding:14, borderRadius:5, cursor:'pointer', color: pkg.featured ? '#F7F9FB' : '#28323E', background: pkg.featured ? '#4E6885' : 'transparent', border: pkg.featured ? 'none' : '1px solid #CDD5DD' }}>{pkg.cta}</span>
                 <div style={{ display:'flex', flexDirection:'column', gap:13, marginTop:28, paddingTop:26, borderTop:'1px solid #EEF1F4' }}>
                   {pkg.feats.map(([label, inc], j) => (
                     <div key={j} style={{ display:'flex', alignItems:'flex-start', gap:11 }}>
@@ -1235,7 +1247,7 @@ function PakkettenPage({ t, setPage }) {
             <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:14 }}>{pk.keuzehulp.eyebrow}</div>
             <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:30, lineHeight:1.2, margin:'0 0 16px' }}>{pk.keuzehulp.title}</h2>
             <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.7, color:'#59616B', margin:'0 0 26px' }}>{pk.keuzehulp.intro}</p>
-            <span className="h-btnP" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 30px', borderRadius:4, cursor:'pointer' }}>{pk.keuzehulp.btn}</span>
+            <span className="h-btnP" {...kb(() => setPage('offerte'))} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 30px', borderRadius:4, cursor:'pointer' }}>{pk.keuzehulp.btn}</span>
           </div>
           <div>
             {pk.keuzehulp.rows.map((k, i) => (
@@ -1291,7 +1303,7 @@ function WerkwijzePage({ t, setPage }) {
           <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.28em', textTransform:'uppercase', color:'#8AA1B8', marginBottom:16 }}>{w.slot.eyebrow}</div>
           <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:36, letterSpacing:'-0.01em', color:'#F5F8FB', margin:'0 0 14px' }}>{w.slot.title}</h2>
           <p style={{ fontFamily:"'Karla'", fontSize:16.5, lineHeight:1.65, color:'#AEB8C3', margin:'0 auto 30px', maxWidth:520 }}>{w.slot.intro}</p>
-          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{w.slot.btn}</span>
+          <span className="h-btnD2" {...kb(() => setPage('offerte'))} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{w.slot.btn}</span>
           <div style={{ marginTop:24, fontFamily:"'Karla'", fontSize:14, color:'#8891A0' }}>{w.slot.note}</div>
         </Reveal>
       </section>
@@ -1343,7 +1355,7 @@ function OverOnsPage({ t, setPage }) {
       <section style={{ background:'linear-gradient(180deg,#232E3A 0%,#1A212A 100%)' }}>
         <Reveal data-r="row" style={{ maxWidth:1000, margin:'0 auto', padding:'72px 24px', display:'flex', justifyContent:'space-between', alignItems:'center', gap:40, flexWrap:'wrap' }}>
           <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:28, color:'#F5F8FB', margin:0 }}>{o.cta_title}</h2>
-          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{o.cta_btn}</span>
+          <span className="h-btnD2" {...kb(() => setPage('offerte'))} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{o.cta_btn}</span>
         </Reveal>
       </section>
     </main>
@@ -1415,7 +1427,7 @@ function OffertePage({ t }) {
                     {op.step2.opts.map((o, i) => {
                       const sel = f.diensten.includes(o.t);
                       return (
-                        <div key={i} onClick={() => toggleDienst(o.t)} role="button" aria-pressed={sel} style={{ border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#F6F9FB' : '#fff', borderRadius:8, padding:20, cursor:'pointer', transition:'border-color .15s, background .15s' }}>
+                        <div key={i} {...kb(() => toggleDienst(o.t))} aria-pressed={sel} style={{ border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#F6F9FB' : '#fff', borderRadius:8, padding:20, cursor:'pointer', transition:'border-color .15s, background .15s' }}>
                           <div style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:16, color:'#1C242E', marginBottom:5 }}>{o.t}</div>
                           <div style={{ fontFamily:"'Karla'", fontSize:13, color:'#68717C' }}>{o.s}</div>
                         </div>
@@ -1432,7 +1444,7 @@ function OffertePage({ t }) {
                   <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:26 }}>
                     {op.step3.chips.map((c, i) => {
                       const sel = f.situatie === c;
-                      return <span key={i} onClick={() => set('situatie', c)} role="button" aria-pressed={sel} style={{ fontFamily:"'Karla'", fontSize:14, color: sel ? '#1C242E' : '#3B4653', border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#EEF3F7' : 'transparent', borderRadius:40, padding:'11px 20px', cursor:'pointer', fontWeight: sel ? 600 : 400 }}>{c}</span>;
+                      return <span key={i} {...kb(() => set('situatie', c))} aria-pressed={sel} style={{ fontFamily:"'Karla'", fontSize:14, color: sel ? '#1C242E' : '#3B4653', border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#EEF3F7' : 'transparent', borderRadius:40, padding:'11px 20px', cursor:'pointer', fontWeight: sel ? 600 : 400 }}>{c}</span>;
                     })}
                   </div>
                   <label style={labelStyle}>{op.step3.belang_label}</label>
@@ -1463,12 +1475,12 @@ function OffertePage({ t }) {
 
               <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginTop:32, paddingTop:26, borderTop:'1px solid #EEF1F4' }}>
                 {step > 1 ? (
-                  <span onClick={back} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#5B626C', cursor:'pointer' }}>{op.terug}</span>
+                  <span {...kb(back)} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#5B626C', cursor:'pointer' }}>{op.terug}</span>
                 ) : <span />}
                 {step < 4 ? (
-                  <span className="h-btnP" onClick={next} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.volgende}</span>
+                  <span className="h-btnP" {...kb(next)} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.volgende}</span>
                 ) : (
-                  <span onClick={submit} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#1C242E', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.versturen}</span>
+                  <span {...kb(submit)} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#1C242E', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.versturen}</span>
                 )}
               </div>
             </div>
@@ -1541,7 +1553,7 @@ function App() {
       {view}
       <SiteFooter setPage={setPage} t={t} isRtl={isRtl} />
       {showTop && (
-        <div onClick={scrollTop} aria-label="Terug naar boven" role="button" tabIndex={0} style={{ position:'fixed', right:22, bottom:96, zIndex:70, width:46, height:46, borderRadius:'50%', background:'#fff', border:'1px solid #DCE3E8', boxShadow:'0 14px 34px -14px rgba(28,36,46,0.4)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', color:'#4E6885', fontSize:18 }}>↑</div>
+        <div {...kb(scrollTop)} aria-label="Terug naar boven" style={{ position:'fixed', right:22, bottom:96, zIndex:70, width:46, height:46, borderRadius:'50%', background:'#fff', border:'1px solid #DCE3E8', boxShadow:'0 14px 34px -14px rgba(28,36,46,0.4)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', color:'#4E6885', fontSize:18 }}>↑</div>
       )}
       <MobileBar setPage={setPage} t={t} />
     </>
