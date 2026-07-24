@@ -278,6 +278,80 @@ const NL = {
       btn:'Offerte aanvragen',
     },
   },
+  pakketten_page: {
+    eyebrow:'Onze pakketten',
+    title:'Drie manieren waarop wij u ontzorgen',
+    intro:'Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.',
+    prijs_note:'Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.',
+    chips:['Vrijblijvend & gratis','Geen risico','Overstap in 6–8 weken'],
+    packages: [
+      { name:'Start', pre:'vanaf', price:'€ 92,95', sub:'per appartementsrecht per jaar · excl. btw', desc:"Administratief en financieel basisbeheer voor VvE's die de basis goed willen regelen.", featured:false, badge:'', cta:'Offerte voor Start',
+        feats:[['ALV-organisatie',1],['Ledenadministratie',1],['Boekhouding & jaarafrekening',1],['Incasso VvE-bijdragen',1],['Betalingsverkeer',1],['Technisch beheer',0],['MJOP-onderhoud',0],['Calamiteitenservice',0]] },
+      { name:'Start aanvullend', pre:'vanaf', price:'€ 147,95', sub:'per appartementsrecht per jaar · excl. btw', desc:'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.', featured:true, badge:'Meest gekozen', cta:'Offerte voor Start aanvullend',
+        feats:[['ALV-organisatie & notulen',1],['Ledenadministratie',1],['Volledige boekhouding',1],['Reservefondsbeheer',1],['Verzekeringsbeheer',1],['Coördinatie klein onderhoud',1],['Schademeldingen',1],['Planmatig onderhoud',0]] },
+      { name:'Compleet', pre:'', price:'Op aanvraag', sub:'', desc:'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.', featured:false, badge:'', cta:'Offerte voor Compleet',
+        feats:[['Alles uit Start aanvullend',1],['Bestuursvergaderingen onbeperkt',1],['Juridische coördinatie',1],['Debiteurbeheer & aanmaningen',1],['MJOP & planmatig onderhoud',1],['24/7 calamiteitenservice',1],['Jaarlijkse inspectie',1],['Verduurzamingsadvies',1]] },
+    ],
+    vergelijk: {
+      eyebrow:'Vergelijking', title:'Wat zit er in elk pakket?',
+      cols:['Functie','Start','Start aanv.','Compleet'],
+      scroll_note:'Op een klein scherm kunt u de tabel horizontaal schuiven.',
+      groups: [
+        { cat:'Bestuurlijk', rows:[
+          { func:'Voorbereiden en bijwonen ALV', cells:[true,true,true] },
+          { func:'Notuleren ALV', cells:[false,true,true] },
+          { func:'Bestuursvergaderingen bijwonen', cells:[false,'1× p/j','Onbeperkt'] },
+          { func:'Opstellen huishoudelijk reglement', cells:[false,false,true] },
+          { func:'Bemiddeling bij geschillen', cells:[false,false,true] },
+        ]},
+        { cat:'Secretarieel', rows:[
+          { func:'Ledenadministratie', cells:[true,true,true] },
+          { func:'Correspondentie bewoners', cells:[true,true,true] },
+          { func:'Inschrijving KvK', cells:[true,true,true] },
+          { func:'Beheer splitsingsakte', cells:[false,true,true] },
+          { func:'Verzekeringsbeheer', cells:[false,true,true] },
+          { func:'Juridische coördinatie', cells:[false,false,true] },
+        ]},
+        { cat:'Financieel', rows:[
+          { func:'Boekhouding & jaarafrekening', cells:[true,true,true] },
+          { func:'Opstellen begroting', cells:[true,true,true] },
+          { func:'Incasso VvE-bijdragen', cells:[true,true,true] },
+          { func:'Betalingsverkeer', cells:[true,true,true] },
+          { func:'Reservefondsbeheer', cells:[false,true,true] },
+          { func:'Meerjarenbegroting', cells:[false,true,true] },
+          { func:'Debiteurbeheer & aanmaningen', cells:[false,false,true] },
+          { func:'Fiscale aangiften', cells:[false,false,true] },
+        ]},
+        { cat:'Technisch — dagelijks onderhoud', rows:[
+          { func:'Coördinatie klein onderhoud', cells:[false,true,true] },
+          { func:'Schademeldingen afhandelen', cells:[false,true,true] },
+          { func:'Sleutelbeheer', cells:[false,true,true] },
+          { func:'Offerte-aanvragen onderhoud', cells:[false,false,true] },
+          { func:'24/7 calamiteitenservice', cells:[false,false,true] },
+        ]},
+        { cat:'Technisch — planmatig onderhoud', rows:[
+          { func:'Meerjaren-onderhoudsplan (MJOP)', cells:[false,false,true] },
+          { func:'Jaarlijkse inspectie', cells:[false,false,true] },
+          { func:'Begeleiding groot onderhoud', cells:[false,false,true] },
+          { func:'Aanbesteding onderhoud', cells:[false,false,true] },
+          { func:'Toezicht uitvoering', cells:[false,false,true] },
+          { func:'Oplevering & nazorg', cells:[false,false,true] },
+          { func:'Verduurzamingsadvies', cells:[false,false,true] },
+        ]},
+      ],
+    },
+    keuzehulp: {
+      eyebrow:'Hulp bij uw keuze', title:'Welk pakket past bij onze VvE?',
+      intro:'De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.',
+      btn:'Vraag een offerte aan',
+      rows:[
+        { s:'Kleine VvE (< 12)', a:'Start of Start aanvullend is vaak voldoende voor kleinere complexen.' },
+        { s:'Middelgrote VvE', a:'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.' },
+        { s:'Grote VvE (> 40)', a:'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.' },
+        { s:'Achterstallig onderhoud', a:'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.' },
+      ],
+    },
+  },
   footer: {
     merkzin:'Onbezorgd wonen, samen geregeld.',
     lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
@@ -1000,7 +1074,112 @@ function DienstenPage({ t, setPage }) {
     </main>
   );
 }
-function PakkettenPage({ t, setPage }) { return <PageStub title="Pakketten" />; }
+function PakkettenPage({ t, setPage }) {
+  const pk = t('pakketten_page');
+  const cell = (v, hi) => {
+    let content = v, color = '#3B4653', weight = 600;
+    if (v === true) { content = '✓'; color = '#4E6885'; weight = 700; }
+    else if (v === false) { content = '—'; color = '#C9D0D8'; weight = 400; }
+    return <div style={{ padding:'14px 12px', textAlign:'center', fontFamily:"'Karla'", fontSize:14, fontWeight:weight, color, background: hi ? '#F6F9FB' : 'transparent' }}>{content}</div>;
+  };
+  return (
+    <main>
+      <section style={{ background:'#F5F7F9' }}>
+        <div data-r="secpad" style={{ maxWidth:820, margin:'0 auto', padding:'88px 24px', textAlign:'center' }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:16 }}>{pk.eyebrow}</div>
+          <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:46, lineHeight:1.1, letterSpacing:'-0.01em', margin:'0 0 18px' }}>{pk.title}</h1>
+          <p style={{ fontFamily:"'Karla'", fontSize:17.5, lineHeight:1.65, color:'#59616B', margin:'0 auto', maxWidth:600 }}>{pk.intro}</p>
+        </div>
+      </section>
+
+      <section style={{ maxWidth:1100, margin:'0 auto', padding:'72px 24px 40px' }}>
+        <Reveal data-r="g3" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:24, alignItems:'start' }}>
+          {pk.packages.map((pkg, i) => (
+            <div key={i} style={{ position:'relative', background:'#fff', border:`1px solid ${pkg.featured ? '#4E6885' : '#ECEFF2'}`, borderRadius:14, overflow:'hidden', boxShadow: pkg.featured ? '0 46px 92px -42px rgba(28,36,46,0.6), 0 0 0 2px #4E6885' : '0 24px 60px -46px rgba(28,36,46,0.4)', marginTop: pkg.featured ? 0 : 16, zIndex: pkg.featured ? 1 : 'auto' }}>
+              {pkg.featured && (
+                <div style={{ background:'#4E6885', textAlign:'center', fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.2em', textTransform:'uppercase', color:'#F7F9FB', padding:9 }}>{pkg.badge}</div>
+              )}
+              <div style={{ padding:'36px 32px' }}>
+                <h2 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:23, margin:'0 0 8px' }}>{pkg.name}</h2>
+                <p style={{ fontFamily:"'Karla'", fontSize:14, lineHeight:1.55, color:'#68717C', margin:'0 0 24px', minHeight:62 }}>{pkg.desc}</p>
+                <div style={{ display:'flex', alignItems:'flex-end', gap:8 }}>
+                  {pkg.pre && <span style={{ fontFamily:"'Karla'", fontSize:13, color:'#96A0AB', marginBottom:9 }}>{pkg.pre}</span>}
+                  <span style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:36, color:'#1C242E', lineHeight:1 }}>{pkg.price}</span>
+                </div>
+                <div style={{ fontFamily:"'Karla'", fontSize:12.5, color:'#96A0AB', margin:'8px 0 24px', minHeight:18 }}>{pkg.sub}</div>
+                <span onClick={() => setPage('offerte')} className={pkg.featured ? 'h-btnP' : 'h-btnO'} style={{ display:'block', textAlign:'center', fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', padding:14, borderRadius:5, cursor:'pointer', color: pkg.featured ? '#F7F9FB' : '#28323E', background: pkg.featured ? '#4E6885' : 'transparent', border: pkg.featured ? 'none' : '1px solid #CDD5DD' }}>{pkg.cta}</span>
+                <div style={{ display:'flex', flexDirection:'column', gap:13, marginTop:28, paddingTop:26, borderTop:'1px solid #EEF1F4' }}>
+                  {pkg.feats.map(([label, inc], j) => (
+                    <div key={j} style={{ display:'flex', alignItems:'flex-start', gap:11 }}>
+                      <span style={{ flexShrink:0, width:20, textAlign:'center', fontFamily:"'Karla'", fontSize:15, fontWeight: inc ? 700 : 400, color: inc ? '#4E6885' : '#C9D0D8' }}>{inc ? '✓' : '—'}</span>
+                      <span style={{ fontFamily:"'Karla'", fontSize:14, lineHeight:1.45, color: inc ? '#3B4653' : '#9BA3AC' }}>{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Reveal>
+        <div style={{ marginTop:22, textAlign:'center', fontFamily:"'Karla'", fontSize:13.5, color:'#8A929B' }}>{pk.prijs_note}</div>
+        <div data-r="row" style={{ marginTop:22, display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap' }}>
+          {pk.chips.map((c, i) => (
+            <div key={i} style={{ display:'flex', alignItems:'center', gap:9, background:'#F5F7F9', border:'1px solid #E6EAEE', borderRadius:40, padding:'10px 18px', fontFamily:"'Karla'", fontSize:13.5, fontWeight:600, color:'#3B4653' }}><span style={{ color:'#4E6885', fontWeight:700 }}>✓</span>{c}</div>
+          ))}
+        </div>
+      </section>
+
+      <section data-r="secpad" style={{ background:'#F5F7F9' }}>
+        <Reveal style={{ maxWidth:1000, margin:'0 auto', padding:'90px 24px' }}>
+          <div style={{ textAlign:'center', marginBottom:16 }}>
+            <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:14 }}>{pk.vergelijk.eyebrow}</div>
+            <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:36, letterSpacing:'-0.01em', margin:0 }}>{pk.vergelijk.title}</h2>
+          </div>
+          <div data-r="scrollx">
+            <div data-r="tablemin" style={{ background:'#fff', borderRadius:12, overflow:'hidden', boxShadow:'0 30px 70px -50px rgba(28,36,46,0.5)' }}>
+              <div style={{ display:'grid', gridTemplateColumns:'1.8fr 1fr 1fr 1fr', background:'#FBFCFD', borderBottom:'1px solid #ECEFF2' }}>
+                <div style={{ padding:'18px 24px', fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.14em', textTransform:'uppercase', color:'#7A828C' }}>{pk.vergelijk.cols[0]}</div>
+                <div style={{ padding:'18px 12px', textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.08em', textTransform:'uppercase', color:'#1C242E' }}>{pk.vergelijk.cols[1]}</div>
+                <div style={{ padding:'18px 12px', textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.08em', textTransform:'uppercase', color:'#4E6885', background:'#EEF3F7' }}>{pk.vergelijk.cols[2]}</div>
+                <div style={{ padding:'18px 12px', textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.08em', textTransform:'uppercase', color:'#1C242E' }}>{pk.vergelijk.cols[3]}</div>
+              </div>
+              {pk.vergelijk.groups.map((grp, gi) => (
+                <React.Fragment key={gi}>
+                  <div style={{ padding:'18px 24px 10px', fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.18em', textTransform:'uppercase', color:'#4E6885' }}>{grp.cat}</div>
+                  {grp.rows.map((r, ri) => (
+                    <div key={ri} style={{ display:'grid', gridTemplateColumns:'1.8fr 1fr 1fr 1fr', borderTop:'1px solid #F2F4F6', alignItems:'center' }}>
+                      <div style={{ padding:'14px 24px', fontFamily:"'Karla'", fontSize:14.5, color:'#3B4653' }}>{r.func}</div>
+                      {r.cells.map((c, ci) => <React.Fragment key={ci}>{cell(c, ci === 1)}</React.Fragment>)}
+                    </div>
+                  ))}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <div style={{ textAlign:'center', marginTop:14, fontFamily:"'Karla'", fontSize:12.5, color:'#9BA3AC' }}>{pk.vergelijk.scroll_note}</div>
+        </Reveal>
+      </section>
+
+      <section data-r="secpad" style={{ maxWidth:1000, margin:'0 auto', padding:'90px 24px' }}>
+        <Reveal data-r="split" style={{ display:'grid', gridTemplateColumns:'0.85fr 1.15fr', gap:56, alignItems:'start' }}>
+          <div>
+            <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:14 }}>{pk.keuzehulp.eyebrow}</div>
+            <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:30, lineHeight:1.2, margin:'0 0 16px' }}>{pk.keuzehulp.title}</h2>
+            <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.7, color:'#59616B', margin:'0 0 26px' }}>{pk.keuzehulp.intro}</p>
+            <span className="h-btnP" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 30px', borderRadius:4, cursor:'pointer' }}>{pk.keuzehulp.btn}</span>
+          </div>
+          <div>
+            {pk.keuzehulp.rows.map((k, i) => (
+              <div key={i} data-r="row" style={{ display:'grid', gridTemplateColumns:'0.8fr 1.4fr', gap:24, padding:'22px 0', borderBottom:'1px solid #EEF1F4' }}>
+                <div style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:16, color:'#1C242E' }}>{k.s}</div>
+                <div style={{ fontFamily:"'Karla'", fontSize:15, lineHeight:1.6, color:'#68717C' }}>{k.a}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+    </main>
+  );
+}
 function WerkwijzePage({ t, setPage }) { return <PageStub title="Werkwijze" />; }
 function OverOnsPage({ t, setPage }) { return <PageStub title="Over ons" />; }
 function OffertePage({ t }) { return <PageStub title="Offerte" />; }
