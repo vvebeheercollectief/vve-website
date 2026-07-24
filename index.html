@@ -389,6 +389,28 @@ const NL = {
     cta_title:'Benieuwd wat wij voor uw VvE kunnen betekenen?',
     cta_btn:'Offerte aanvragen',
   },
+  offerte_page: {
+    eyebrow:'Offerte aanvragen',
+    title:'Vrijblijvend & op maat van uw VvE',
+    chip:'Duurt ~2 minuten · geen verplichtingen',
+    intro:'Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch afgestemd zodat hij echt past bij uw situatie.',
+    benefits:['Vrijblijvend & gratis','Binnen 2 werkdagen reactie','Direct contact met een beheerder','Uw gegevens blijven van u'],
+    bellen_label:'Liever bellen?',
+    stap_van:'Stap', van:'van',
+    step_titles:['Vertel ons over uw VvE','Welke diensten zoekt u?','Uw huidige situatie','Uw contactgegevens'],
+    step1:{ vve_naam:'Naam van de VvE', vve_naam_ph:'bv. VvE Parkzicht', aantal:'Aantal appartementen', aantal_ph:'bv. 24', bouwjaar:'Bouwjaar', bouwjaar_ph:'bv. 1998', adres:'Adres / locatie', adres_ph:'Plaats' },
+    step2:{ opts:[
+      { t:'Compleetpakket', s:'Alle 3 pijlers in één prijs' },
+      { t:'Administratief', s:'ALV, notulen, post' },
+      { t:'Financieel', s:'Boekhouding, jaarrekening' },
+      { t:'Technisch', s:'MJOP, onderhoud' },
+    ] },
+    step3:{ vraag:'Heeft u nu al een beheerder?', chips:['Ja, ik wil overstappen','Nee, voor het eerst','Zelfbeheer, we zoeken hulp'], belang_label:'Wat is voor u het belangrijkst?', belang_ph:'bv. snellere reactie, betere transparantie, lagere kosten…' },
+    step4:{ voornaam:'Voornaam', achternaam:'Achternaam', functie_label:'Functie binnen VvE', functie_opts:['Voorzitter','Penningmeester','Secretaris','Bestuurslid','Eigenaar / lid'], email:'E-mail', telefoon:'Telefoonnummer' },
+    terug:'← Terug', volgende:'Volgende stap →', versturen:'Aanvraag versturen',
+    success_title:'Bedankt voor uw aanvraag',
+    success_desc:'Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.',
+  },
   footer: {
     merkzin:'Onbezorgd wonen, samen geregeld.',
     lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
@@ -716,6 +738,26 @@ function MobileLangSwitcher({ lang, setLang }) {
 const PORTAAL_URL = 'https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL';
 const TEL_HREF = 'tel:+31858000605';
 const TEL_DISPLAY = '(085)-800 0605';
+
+// Bouwt een kant-en-klare e-mail (mailto:) met de ingevulde offertegegevens.
+function mailtoOfferte(f) {
+  const L = [
+    `Naam VvE: ${f.vveNaam || '-'}`,
+    `Aantal appartementen: ${f.aantal || '-'}`,
+    `Bouwjaar: ${f.bouwjaar || '-'}`,
+    `Adres / locatie: ${f.adres || '-'}`,
+    `Gewenste diensten: ${(f.diensten && f.diensten.length ? f.diensten.join(', ') : '-')}`,
+    `Huidige situatie: ${f.situatie || '-'}`,
+    `Belangrijkst: ${f.belang || '-'}`,
+    ``,
+    `Naam: ${((f.voornaam || '') + ' ' + (f.achternaam || '')).trim() || '-'}`,
+    `Functie: ${f.functie || '-'}`,
+    `E-mail: ${f.email || '-'}`,
+    `Telefoon: ${f.telefoon || '-'}`,
+  ];
+  const subject = `Offerteaanvraag${f.vveNaam ? ' — ' + f.vveNaam : ''}`;
+  return `mailto:info@vvebeheercollectief.nl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(L.join('\n'))}`;
+}
 
 /* ── Header (Richting D) ── */
 function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
@@ -1316,7 +1358,135 @@ function OverOnsPage({ t, setPage }) {
     </main>
   );
 }
-function OffertePage({ t }) { return <PageStub title="Offerte" />; }
+function OffertePage({ t }) {
+  const op = t('offerte_page');
+  const [step, setStep] = useState(1);
+  const [done, setDone] = useState(false);
+  const [f, setF] = useState({ vveNaam:'', aantal:'', bouwjaar:'', adres:'', diensten:[], situatie:'', belang:'', voornaam:'', achternaam:'', functie:(op.step4.functie_opts||[''])[0], email:'', telefoon:'' });
+  const set = (k, v) => setF(p => ({ ...p, [k]: v }));
+  const toggleDienst = (d) => setF(p => ({ ...p, diensten: p.diensten.includes(d) ? p.diensten.filter(x => x !== d) : [...p.diensten, d] }));
+  const next = () => setStep(s => Math.min(4, s + 1));
+  const back = () => setStep(s => Math.max(1, s - 1));
+  const submit = () => { try { window.location.href = mailtoOfferte(f); } catch (e) {} setDone(true); };
+  const inputStyle = { width:'100%', padding:'14px 16px', fontSize:15, border:'1px solid #CDD5DD', borderRadius:6, outline:'none' };
+  const labelStyle = { display:'block', fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.12em', textTransform:'uppercase', color:'#68717C', marginBottom:8 };
+  return (
+    <main style={{ background:'#F5F7F9' }}>
+      <section data-r="split" style={{ maxWidth:1080, margin:'0 auto', padding:'80px 24px', display:'grid', gridTemplateColumns:'0.85fr 1.15fr', gap:56, alignItems:'start' }}>
+        <div data-r="offsticky" style={{ position:'sticky', top:100 }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:16 }}>{op.eyebrow}</div>
+          <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:38, lineHeight:1.15, letterSpacing:'-0.01em', margin:'0 0 14px' }}>{op.title}</h1>
+          <div style={{ display:'inline-flex', alignItems:'center', gap:9, background:'#EAF0F4', border:'1px solid #D6E0E8', borderRadius:40, padding:'8px 16px', marginBottom:20 }}><span style={{ width:6, height:6, borderRadius:'50%', background:'#4E6885' }}></span><span style={{ fontFamily:"'Karla'", fontSize:13, fontWeight:600, color:'#3B4653' }}>{op.chip}</span></div>
+          <p style={{ fontFamily:"'Karla'", fontSize:16.5, lineHeight:1.7, color:'#59616B', margin:'0 0 32px' }}>{op.intro}</p>
+          <div style={{ display:'flex', flexDirection:'column', gap:15 }}>
+            {op.benefits.map((b, i) => (
+              <div key={i} style={{ display:'flex', alignItems:'center', gap:12, fontFamily:"'Karla'", fontSize:15, color:'#3B4653' }}><span style={{ color:'#4E6885', fontWeight:700 }}>✓</span>{b}</div>
+            ))}
+          </div>
+          <div style={{ marginTop:34, paddingTop:26, borderTop:'1px solid #E4E9ED' }}>
+            <div style={{ fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.18em', textTransform:'uppercase', color:'#96A0AB', marginBottom:10 }}>{op.bellen_label}</div>
+            <a href={TEL_HREF} style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:22, color:'#1C242E' }}>{TEL_DISPLAY}</a>
+          </div>
+        </div>
+
+        <div style={{ background:'#fff', borderRadius:14, padding:'44px 46px', boxShadow:'0 40px 80px -54px rgba(28,36,46,0.5)' }}>
+          {done ? (
+            <div style={{ padding:'36px 0', textAlign:'center' }}>
+              <img src="assets/logo.png" alt="" style={{ height:46, marginBottom:24, marginLeft:'auto', marginRight:'auto' }} />
+              <h2 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:27, margin:'0 0 12px' }}>{op.success_title}</h2>
+              <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.7, color:'#59616B', margin:'0 auto', maxWidth:400 }}>{op.success_desc}</p>
+            </div>
+          ) : (
+            <div>
+              <div style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#4E6885', marginBottom:12 }}>{op.stap_van} {step} {op.van} 4</div>
+              <div style={{ display:'flex', gap:8, marginBottom:32 }}>
+                {[1,2,3,4].map(n => <div key={n} style={{ flex:1, height:4, borderRadius:2, background: n <= step ? '#4E6885' : '#E4E9ED' }} />)}
+              </div>
+
+              {step === 1 && (
+                <div>
+                  <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:21, margin:'0 0 24px' }}>{op.step_titles[0]}</h3>
+                  <div style={{ display:'flex', flexDirection:'column', gap:18 }}>
+                    <div><label style={labelStyle}>{op.step1.vve_naam}</label><input value={f.vveNaam} onChange={e => set('vveNaam', e.target.value)} placeholder={op.step1.vve_naam_ph} style={inputStyle} /></div>
+                    <div data-r="row" style={{ display:'flex', gap:16 }}>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step1.aantal}</label><input value={f.aantal} onChange={e => set('aantal', e.target.value)} placeholder={op.step1.aantal_ph} style={inputStyle} /></div>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step1.bouwjaar}</label><input value={f.bouwjaar} onChange={e => set('bouwjaar', e.target.value)} placeholder={op.step1.bouwjaar_ph} style={inputStyle} /></div>
+                    </div>
+                    <div><label style={labelStyle}>{op.step1.adres}</label><input value={f.adres} onChange={e => set('adres', e.target.value)} placeholder={op.step1.adres_ph} style={inputStyle} /></div>
+                  </div>
+                </div>
+              )}
+
+              {step === 2 && (
+                <div>
+                  <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:21, margin:'0 0 24px' }}>{op.step_titles[1]}</h3>
+                  <div data-r="g2" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }}>
+                    {op.step2.opts.map((o, i) => {
+                      const sel = f.diensten.includes(o.t);
+                      return (
+                        <div key={i} onClick={() => toggleDienst(o.t)} role="button" aria-pressed={sel} style={{ border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#F6F9FB' : '#fff', borderRadius:8, padding:20, cursor:'pointer', transition:'border-color .15s, background .15s' }}>
+                          <div style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:16, color:'#1C242E', marginBottom:5 }}>{o.t}</div>
+                          <div style={{ fontFamily:"'Karla'", fontSize:13, color:'#68717C' }}>{o.s}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {step === 3 && (
+                <div>
+                  <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:21, margin:'0 0 24px' }}>{op.step_titles[2]}</h3>
+                  <label style={{ ...labelStyle, marginBottom:12 }}>{op.step3.vraag}</label>
+                  <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:26 }}>
+                    {op.step3.chips.map((c, i) => {
+                      const sel = f.situatie === c;
+                      return <span key={i} onClick={() => set('situatie', c)} role="button" aria-pressed={sel} style={{ fontFamily:"'Karla'", fontSize:14, color: sel ? '#1C242E' : '#3B4653', border:`1px solid ${sel ? '#4E6885' : '#CDD5DD'}`, background: sel ? '#EEF3F7' : 'transparent', borderRadius:40, padding:'11px 20px', cursor:'pointer', fontWeight: sel ? 600 : 400 }}>{c}</span>;
+                    })}
+                  </div>
+                  <label style={labelStyle}>{op.step3.belang_label}</label>
+                  <textarea value={f.belang} onChange={e => set('belang', e.target.value)} placeholder={op.step3.belang_ph} style={{ ...inputStyle, minHeight:100, resize:'vertical' }} />
+                </div>
+              )}
+
+              {step === 4 && (
+                <div>
+                  <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:21, margin:'0 0 24px' }}>{op.step_titles[3]}</h3>
+                  <div style={{ display:'flex', flexDirection:'column', gap:18 }}>
+                    <div data-r="row" style={{ display:'flex', gap:16 }}>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step4.voornaam}</label><input value={f.voornaam} onChange={e => set('voornaam', e.target.value)} style={inputStyle} /></div>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step4.achternaam}</label><input value={f.achternaam} onChange={e => set('achternaam', e.target.value)} style={inputStyle} /></div>
+                    </div>
+                    <div><label style={labelStyle}>{op.step4.functie_label}</label>
+                      <select value={f.functie} onChange={e => set('functie', e.target.value)} style={{ ...inputStyle, background:'#fff', color:'#1C242E' }}>
+                        {op.step4.functie_opts.map((fo, i) => <option key={i} value={fo}>{fo}</option>)}
+                      </select>
+                    </div>
+                    <div data-r="row" style={{ display:'flex', gap:16 }}>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step4.email}</label><input type="email" value={f.email} onChange={e => set('email', e.target.value)} style={inputStyle} /></div>
+                      <div style={{ flex:1 }}><label style={labelStyle}>{op.step4.telefoon}</label><input value={f.telefoon} onChange={e => set('telefoon', e.target.value)} style={inputStyle} /></div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginTop:32, paddingTop:26, borderTop:'1px solid #EEF1F4' }}>
+                {step > 1 ? (
+                  <span onClick={back} style={{ fontFamily:"'Jost'", fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#5B626C', cursor:'pointer' }}>{op.terug}</span>
+                ) : <span />}
+                {step < 4 ? (
+                  <span className="h-btnP" onClick={next} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.volgende}</span>
+                ) : (
+                  <span onClick={submit} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#1C242E', padding:'14px 30px', borderRadius:4, cursor:'pointer' }}>{op.versturen}</span>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+}
 
 /* ── Juridische pagina (volledige body volgt in T8) ── */
 function LegalPage({ t, section }) {
