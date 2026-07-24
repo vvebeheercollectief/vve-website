@@ -352,6 +352,31 @@ const NL = {
       ],
     },
   },
+  werkwijze_page: {
+    eyebrow:'Werkwijze',
+    title:'Van offerte tot doorlopend beheer',
+    intro:'Van de eerste kennismaking tot doorlopend beheer nemen wij de volledige overstap uit handen — u hoeft er nauwelijks iets voor te doen. In zes stappen ziet dat er zo uit.',
+    steps: [
+      { when:'Dag 1–2', title:'Vrijblijvende offerte', text:'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
+      { when:'Week 1', title:'Kennismakingsgesprek', text:'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
+      { when:'Week 1–6', title:'Overstap zonder gedoe', text:'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
+      { when:'Week 6', title:'Inrichting klantenportaal', text:'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud meteen inzichtelijk.' },
+      { when:'Week 7–8', title:'Eerste ALV', text:'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
+      { when:'Doorlopend', title:'Doorlopend beheer', text:'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
+    ],
+    geruststelling: [
+      { t:'U doet vrijwel niets', s:'Wij coördineren de volledige overstap, inclusief opzegging bij uw huidige beheerder.' },
+      { t:'Geen risico', s:'Vrijblijvend kennismaken. Pas bij akkoord starten we de overdracht.' },
+      { t:'Vast aanspreekpunt', s:'Vanaf dag één weet u bij wie u terecht kunt — een beheerder die uw gebouw kent.' },
+    ],
+    slot: {
+      eyebrow:'Vrijblijvende offerte',
+      title:'Klaar om de overstap te maken?',
+      intro:'Vraag een vrijblijvende offerte aan. Wij regelen daarna de volledige overdracht — u woont onbezorgd.',
+      btn:'Offerte aanvragen',
+      note:'Overstap in 6–8 weken · Wij zeggen op bij uw huidige beheerder · Geen risico, vrijblijvend',
+    },
+  },
   footer: {
     merkzin:'Onbezorgd wonen, samen geregeld.',
     lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
@@ -1180,7 +1205,54 @@ function PakkettenPage({ t, setPage }) {
     </main>
   );
 }
-function WerkwijzePage({ t, setPage }) { return <PageStub title="Werkwijze" />; }
+function WerkwijzePage({ t, setPage }) {
+  const w = t('werkwijze_page');
+  return (
+    <main>
+      <section style={{ background:'#F5F7F9' }}>
+        <div data-r="secpad" style={{ maxWidth:820, margin:'0 auto', padding:'88px 24px', textAlign:'center' }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:16 }}>{w.eyebrow}</div>
+          <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:46, lineHeight:1.1, letterSpacing:'-0.01em', margin:'0 0 18px' }}>{w.title}</h1>
+          <p style={{ fontFamily:"'Karla'", fontSize:17.5, lineHeight:1.65, color:'#59616B', margin:'0 auto', maxWidth:600 }}>{w.intro}</p>
+        </div>
+      </section>
+
+      <section style={{ maxWidth:760, margin:'0 auto', padding:'80px 24px 50px' }}>
+        <Reveal style={{ borderLeft:'2px solid #E4E9ED', marginLeft:14 }}>
+          {w.steps.map((s, i) => (
+            <div key={i} style={{ position:'relative', padding:'0 0 44px 46px' }}>
+              <div style={{ position:'absolute', left:-13, top:0, width:24, height:24, borderRadius:'50%', background:'#4E6885', color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:"'Jost'", fontSize:12, border:'4px solid #FFFFFF' }}>{i+1}</div>
+              <div style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.18em', textTransform:'uppercase', color:'#4E6885', marginBottom:8 }}>{s.when}</div>
+              <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:23, margin:'0 0 8px' }}>{s.title}</h3>
+              <p style={{ fontFamily:"'Karla'", fontSize:16, lineHeight:1.7, color:'#59616B', margin:0 }}>{s.text}</p>
+            </div>
+          ))}
+        </Reveal>
+      </section>
+
+      <section style={{ maxWidth:1000, margin:'0 auto', padding:'20px 24px 90px' }}>
+        <Reveal data-r="g3" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:22 }}>
+          {w.geruststelling.map((g, i) => (
+            <div key={i} style={{ background:'#F5F7F9', borderRadius:12, padding:'32px 34px' }}>
+              <h3 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:19, margin:'0 0 10px' }}>{g.t}</h3>
+              <p style={{ fontFamily:"'Karla'", fontSize:15, lineHeight:1.65, color:'#68717C', margin:0 }}>{g.s}</p>
+            </div>
+          ))}
+        </Reveal>
+      </section>
+
+      <section style={{ background:'linear-gradient(180deg,#232E3A 0%,#1A212A 100%)' }}>
+        <Reveal style={{ maxWidth:820, margin:'0 auto', padding:'96px 24px 84px', textAlign:'center' }}>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.28em', textTransform:'uppercase', color:'#8AA1B8', marginBottom:16 }}>{w.slot.eyebrow}</div>
+          <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:36, letterSpacing:'-0.01em', color:'#F5F8FB', margin:'0 0 14px' }}>{w.slot.title}</h2>
+          <p style={{ fontFamily:"'Karla'", fontSize:16.5, lineHeight:1.65, color:'#AEB8C3', margin:'0 auto 30px', maxWidth:520 }}>{w.slot.intro}</p>
+          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ display:'inline-block', fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 36px', borderRadius:4, cursor:'pointer' }}>{w.slot.btn}</span>
+          <div style={{ marginTop:24, fontFamily:"'Karla'", fontSize:14, color:'#8891A0' }}>{w.slot.note}</div>
+        </Reveal>
+      </section>
+    </main>
+  );
+}
 function OverOnsPage({ t, setPage }) { return <PageStub title="Over ons" />; }
 function OffertePage({ t }) { return <PageStub title="Offerte" />; }
 
