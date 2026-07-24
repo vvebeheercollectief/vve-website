@@ -8,850 +8,116 @@
 <link rel="icon" href="assets/favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Karla:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 <style>
 :root {
-  --navy: #2B3544;
-  --navy-dark: #1E2530;
-  --white: #FFFFFF;
-  --gray-bg: #F0F2F5;
-  --teal-900: #064E50;
-  --teal-700: #0D7377;
-  --teal-500: #14B8A6;
-  --teal-300: #5EEAD4;
-  --teal-100: #CCFBF1;
-  --green: #059669;
-  --amber: #D97706;
-  --red: #DC2626;
-  --muted: #64748B;
-  --border: #E2E8F0;
-  --teal-50: #EAF7F5;
-  --ink: #404B5A;
-  --border-2: rgba(43,53,68,0.08);
-  --sh-sm: 0 2px 8px rgba(43,53,68,0.05);
-  --sh-md: 0 18px 40px -24px rgba(43,53,68,0.28);
-  --sh-lg: 0 40px 80px -44px rgba(43,53,68,0.40);
-  --font: 'DM Sans', system-ui, Arial, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
+  /* Richting D-tokens */
+  --leisteen:#222B36; --navy:#1C242E; --staal:#4E6885; --staal-hover:#3F566F; --staal-donker:#5A7796;
+  --papier:#FBFCFD; --sectie:#F5F7F9; --muted:#59616B; --muted2:#68717C; --muted3:#7A828C;
+  --line:#EEF1F4; --line2:#ECEFF2; --line3:#E1E6EB;
+  /* compat-aliassen voor behouden helpers (o.a. PkgCheck) */
+  --teal-700:#4E6885; --border:#E1E6EB; --gray-bg:#F5F7F9; --font:'Karla',system-ui,Arial,sans-serif;
 }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:#FFFFFF; color:#1C242E; font-family:'Karla',system-ui,-apple-system,Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+img { max-width:100%; display:block; }
+a { color:#4E6885; text-decoration:none; }
+a:hover { color:#3b5069; }
+button { font-family:inherit; cursor:pointer; }
+h1,h2,h3,h4 { margin:0; }
+p { margin:0; }
+ul { list-style:none; margin:0; padding:0; }
+input, textarea, select { font-family:'Karla',sans-serif; }
+::placeholder { color:#AAB2BB; }
+input:focus, textarea:focus, select:focus { outline:none; border-color:#4E6885 !important; box-shadow:0 0 0 3px rgba(78,104,133,0.15); }
+:focus-visible { outline:2px solid #4E6885; outline-offset:2px; }
+.container { max-width:1160px; margin:0 auto; padding:0 24px; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* entree-reveal (voor de <Reveal>-component) */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+.reveal.in { opacity:1; transform:none; }
 
-html { scroll-behavior: smooth; }
+/* keyframes (voor [data-reveal] / skyline-fade) */
+@keyframes omFadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes omFade { from { opacity:0; } to { opacity:1; } }
+@keyframes omFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+[data-reveal] { animation:omFadeUp .7s cubic-bezier(.2,.6,.2,1) both; }
 
-body {
-  font-family: var(--font);
-  color: var(--navy);
-  background: var(--white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.55;
-}
+/* hover-utilities (vervangen de style-hover uit de mockup) */
+.h-btnP { transition:background .2s ease, transform .2s ease; }
+.h-btnP:hover { background:#3F566F !important; transform:translateY(-1px); }
+.h-btnP2 { transition:background .2s ease, transform .2s ease; }
+.h-btnP2:hover { background:#3F566F !important; transform:translateY(-2px); }
+.h-btnD2 { transition:background .2s ease, transform .2s ease; }
+.h-btnD2:hover { background:#5A7796 !important; transform:translateY(-2px); }
+.h-btnO { transition:border-color .2s ease, transform .2s ease; }
+.h-btnO:hover { border-color:#4E6885 !important; transform:translateY(-2px); }
+.h-card { transition:transform .25s ease, box-shadow .25s ease; }
+.h-card:hover { transform:translateY(-5px); box-shadow:0 34px 70px -34px rgba(28,36,46,.5) !important; }
+.h-card4 { transition:transform .25s ease, box-shadow .25s ease; }
+.h-card4:hover { transform:translateY(-4px); box-shadow:0 30px 60px -40px rgba(28,36,46,.45) !important; }
+.h-row { transition:padding-left .25s ease, background .25s ease; }
+.h-row:hover { padding-left:16px !important; background:rgba(78,104,133,.03) !important; }
+.h-nav { transition:color .2s ease; }
+.h-nav:hover { color:#4E6885 !important; }
+.h-link { transition:color .2s ease; }
+.h-link:hover { color:#3F566F !important; }
+.h-tint { transition:color .2s ease, background .2s ease; }
 
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; cursor: pointer; }
-button { font-family: inherit; cursor: pointer; }
-ul { list-style: none; padding: 0; }
+/* formuliervelden (offerte-wizard) */
+.field { margin-bottom:16px; }
+.field label { display:block; font-family:'Jost'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#68717C; margin-bottom:7px; }
+.field input, .field textarea, .field select { width:100%; padding:13px 15px; border:1px solid #CDD5DD; border-radius:6px; font-size:15px; color:#1C242E; background:#fff; }
+.field textarea { min-height:110px; resize:vertical; }
 
-/* Container */
-.container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+/* taalknop (Richting D) */
+.lang-switcher { position:relative; }
+.lang-toggle { display:flex; align-items:center; gap:7px; background:none; border:1px solid #CDD5DD; border-radius:4px; padding:8px 11px; font-family:'Jost'; font-size:12px; letter-spacing:0.06em; color:#28323E; cursor:pointer; transition:border-color .2s; }
+.lang-toggle:hover { border-color:#4E6885; color:#1C242E; }
+.lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; background:#fff; border:1px solid #E1E6EB; border-radius:8px; box-shadow:0 18px 50px -30px rgba(28,36,46,.4); padding:6px; min-width:190px; opacity:0; pointer-events:none; transform:translateY(-6px); transition:.18s; z-index:80; max-height:340px; overflow:auto; }
+.lang-dropdown.open { opacity:1; pointer-events:all; transform:translateY(0); }
+.lang-option { display:flex; align-items:center; gap:9px; width:100%; text-align:left; background:none; border:none; padding:9px 10px; border-radius:6px; font-family:'Karla'; font-size:14px; color:#28323E; cursor:pointer; }
+.lang-option:hover { background:#F5F7F9; }
+.lang-option.active { background:#EEF3F7; color:#1C242E; font-weight:600; }
+.lang-option-code { margin-left:auto; font-size:11px; color:#96A0AB; font-family:'Jost'; }
 
-/* Buttons */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 22px; border-radius: 10px; font-size: 15px;
-  font-weight: 600; border: 1px solid transparent;
-  transition: all .15s ease; cursor: pointer;
-  text-decoration: none; font-family: inherit; line-height: 1.2;
-}
-.btn-primary { background: var(--teal-700); color: white; }
-.btn-primary:hover { background: var(--teal-900); }
-.btn-secondary { background: transparent; color: var(--navy); border-color: var(--border); }
-.btn-secondary:hover { border-color: var(--teal-700); color: var(--teal-700); }
-.btn-dark { background: var(--navy); color: white; }
-.btn-dark:hover { background: var(--navy-dark); }
-.btn-ghost-light { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
-.btn-ghost-light:hover { border-color: white; }
-.btn-lg { padding: 18px 28px; font-size: 16px; }
-.btn-sm { padding: 10px 16px; font-size: 13px; }
+/* mobiele taalknop */
+.mobile-lang-switcher { margin:6px 0 4px; }
+.mobile-lang-toggle { display:flex; align-items:center; gap:9px; width:100%; background:none; border:1px solid #E1E6EB; border-radius:8px; padding:12px 14px; font-family:'Karla'; font-size:14px; color:#28323E; cursor:pointer; }
+.mobile-lang-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px; }
+.mobile-lang-btn { display:flex; align-items:center; justify-content:center; gap:6px; background:#F5F7F9; border:1px solid #E7ECF0; border-radius:7px; padding:10px; font-family:'Jost'; font-size:12px; color:#28323E; cursor:pointer; }
+.mobile-lang-btn.active { background:#EEF3F7; border-color:#4E6885; color:#1C242E; font-weight:600; }
 
-/* Pill */
-.pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--teal-100); color: var(--teal-900);
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 6px 12px; border-radius: 100px;
+/* responsive (mockup data-r-hooks) */
+[data-r="burger"] { display:none; }
+[data-r="mbar"] { display:none; }
+@media (max-width:900px) {
+  [data-r="dnav"], [data-r="dcta"], [data-r="dlang"] { display:none !important; }
+  [data-r="burger"] { display:flex !important; }
+  [data-r="mbar"] { display:flex !important; }
+  [data-r="split"] { grid-template-columns:1fr !important; gap:36px !important; }
+  [data-r="g3"], [data-r="g2"] { grid-template-columns:1fr !important; }
+  [data-r="g4"] { grid-template-columns:1fr 1fr !important; }
+  [data-r="row"] { flex-direction:column !important; align-items:flex-start !important; }
+  [data-r="hero"] { min-height:0 !important; padding-top:60px !important; padding-bottom:220px !important; }
+  [data-r="sky"] { width:150% !important; right:-26% !important; opacity:0.4 !important; }
+  [data-r="h1"] { font-size:38px !important; }
+  [data-r="h2"] { font-size:30px !important; }
+  [data-r="scrollx"] { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  [data-r="tablemin"] { min-width:680px !important; }
+  [data-r="offsticky"] { position:static !important; }
+  [data-r="secpad"] { padding-top:64px !important; padding-bottom:64px !important; }
+  p, li { line-height:1.75; }
 }
-.pill-dark { background: rgba(255,255,255,0.1); color: white; }
-
-/* Section helpers */
-section { padding: 96px 0; }
-.section-narrow { padding: 64px 0; }
-.section-eyebrow {
-  font-size: 12px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.12em; color: var(--teal-700); margin-bottom: 16px;
-}
-.section-title {
-  font-size: 40px; line-height: 1.1; font-weight: 700;
-  letter-spacing: -0.02em; color: var(--navy); margin: 0 0 16px;
-}
-.section-sub {
-  font-size: 18px; line-height: 1.5; color: var(--muted);
-  max-width: 640px; margin: 0;
-}
-
-/* Stats */
-.stat-num {
-  font-size: 48px; font-weight: 800; letter-spacing: -0.03em;
-  color: var(--teal-700); line-height: 1;
-}
-.stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
-
-/* Card */
-.card {
-  background: white; border: 1px solid var(--border);
-  border-radius: 14px; padding: 28px; transition: all .2s ease;
-}
-.card-hover:hover {
-  border-color: var(--teal-700); transform: translateY(-2px);
-  box-shadow: 0 12px 32px -16px rgba(43, 53, 68, 0.18);
-}
-
-/* Photo */
-.photo {
-  background: var(--gray-bg); background-size: cover;
-  background-position: center; position: relative; overflow: hidden;
-}
-
-/* Form */
-.field { margin-bottom: 18px; }
-.field label {
-  display: block; font-size: 13px; font-weight: 600;
-  margin-bottom: 6px; color: var(--navy);
-}
-.field input, .field textarea, .field select {
-  width: 100%; padding: 12px 14px; border: 1px solid var(--border);
-  border-radius: 8px; font-family: inherit; font-size: 14px;
-  color: var(--navy); background: white; transition: border-color .15s ease;
-}
-.field input:focus, .field textarea:focus, .field select:focus {
-  outline: none; border-color: var(--teal-700);
-}
-.field textarea { resize: vertical; min-height: 100px; }
-.field-error { font-size: 12px; color: var(--red); margin-top: 4px; }
-
-/* Site header — light glass variant.
-   --hdr (0→1) stuurt de glas-vulling. Default 1 = altijd gevuld (desktop,
-   overige pagina's, en de no-JS fallback). Op de mobiele home-hero zet JS
-   --hdr op de scroll-voortgang zodat de balk geleidelijk meevult. */
-.site-header {
-  --hdr: 1;
-  background: rgba(251,252,253,0.8);
-  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-  border-bottom: 1px solid transparent;
-  position: sticky; top: 0; z-index: 50;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
-.site-logo-name { transition: opacity .2s ease; }
-.site-header.scrolled {
-  border-bottom-color: var(--border);
-  box-shadow: 0 1px 0 rgba(43,53,68,0.02), 0 8px 24px -18px rgba(43,53,68,0.35);
-}
-.site-header-inner {
-  display: flex; align-items: center; gap: 24px; padding-top: 18px; padding-bottom: 18px;
-}
-.site-logo {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 800; font-size: 16px; letter-spacing: -0.01em;
-  color: var(--navy); cursor: pointer; white-space: nowrap;
-}
-.site-logo img { width: 32px; height: 32px; }
-.site-nav { display: flex; gap: 2px; align-items: center; }
-.site-nav a {
-  font-size: 14px; font-weight: 500; color: var(--ink);
-  padding: 9px 15px; border-radius: 999px; transition: all .15s ease;
-  white-space: nowrap;
-}
-.site-nav a:hover { background: rgba(13,115,119,0.06); color: var(--teal-900); }
-.site-nav a.active { background: var(--navy); color: #fff; font-weight: 600; }
-.site-header-cta {
-  margin-left: auto; display: flex; gap: 12px; align-items: center;
-}
-.site-header-phone {
-  font-size: 13px; color: var(--muted);
-  display: inline-flex; align-items: center; gap: 6px;
-  white-space: nowrap;
-}
-
-/* Mobile menu */
-.mobile-toggle {
-  display: none; align-items: center; justify-content: center;
-  width: 42px; height: 42px; padding: 0;
-  background: #fff; border: 1px solid var(--border); border-radius: 11px;
-  color: var(--navy); font-size: 22px; cursor: pointer;
-}
-.mobile-menu {
-  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: white; z-index: 100; flex-direction: column;
-  padding: 24px 32px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 32px;
-}
-.mobile-menu-close {
-  background: none; border: none; font-size: 24px;
-  color: var(--navy); cursor: pointer;
-}
-.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
-.mobile-menu nav a {
-  font-size: 18px; font-weight: 500; color: var(--navy);
-  padding: 14px 0; border-bottom: 1px solid var(--border);
-}
-.mobile-menu nav a.active { color: var(--teal-700); font-weight: 600; }
-.mobile-menu .mobile-cta {
-  margin-top: 32px; display: flex; flex-direction: column; gap: 12px;
-}
-
-/* Footer */
-.site-footer {
-  background: var(--navy); color: rgba(255,255,255,0.7);
-  padding: 64px 0 32px;
-}
-.site-footer h4 {
-  color: white; font-size: 13px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 18px;
-}
-.site-footer a { display: block; padding: 4px 0; font-size: 14px; transition: color .15s; }
-.site-footer a:hover { color: white; }
-.site-footer-grid {
-  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
-}
-.site-footer-brand img { width: 40px; margin-bottom: 16px; }
-.site-footer-brand p { font-size: 14px; line-height: 1.6; margin: 0 0 16px; max-width: 320px; }
-.site-footer-bottom {
-  margin-top: 48px; padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  display: flex; justify-content: space-between; font-size: 12px;
-  color: rgba(255,255,255,0.5); flex-wrap: wrap; gap: 12px;
-}
-.social-icon {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(255,255,255,0.08);
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: background .15s;
-}
-.social-icon:hover { background: rgba(255,255,255,0.15); }
-
-/* Language switcher */
-.lang-switcher {
-  position: relative;
-}
-.lang-toggle {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: #fff; border: 1px solid var(--border);
-  color: var(--navy); font-size: 13px; font-weight: 600;
-  padding: 7px 12px; border-radius: 8px; cursor: pointer;
-  font-family: inherit; transition: all .15s ease;
-  white-space: nowrap;
-}
-.lang-toggle:hover { border-color: var(--teal-700); color: var(--teal-900); }
-.lang-dropdown {
-  position: absolute; top: calc(100% + 8px); right: 0;
-  background: white; border: 1px solid var(--border);
-  border-radius: 12px; box-shadow: 0 16px 40px -12px rgba(43,53,68,0.25);
-  min-width: 200px; padding: 6px; z-index: 200;
-  opacity: 0; pointer-events: none; transform: translateY(-4px);
-  transition: all .15s ease;
-}
-.lang-dropdown.open { opacity: 1; pointer-events: all; transform: translateY(0); }
-.lang-option {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; border-radius: 8px; cursor: pointer;
-  font-size: 14px; color: var(--navy); transition: background .1s;
-  border: none; background: none; width: 100%; text-align: left;
-  font-family: inherit;
-}
-.lang-option:hover { background: var(--gray-bg); }
-.lang-option.active { background: var(--teal-100); color: var(--teal-900); font-weight: 600; }
-.lang-option-code { font-size: 11px; color: var(--muted); margin-left: auto; font-weight: 600; }
-
-/* Mobile lang switcher */
-.mobile-lang-switcher {
-  padding-bottom: 20px; margin-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-.mobile-lang-toggle {
-  display: flex; align-items: center; gap: 10px; width: 100%;
-  padding: 12px 16px; border-radius: 10px; font-size: 15px; font-weight: 600;
-  border: 1px solid var(--border); background: white; color: var(--navy);
-  cursor: pointer; font-family: inherit; transition: border-color .15s;
-}
-.mobile-lang-toggle:hover { border-color: var(--teal-700); }
-.mobile-lang-grid {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
-}
-.mobile-lang-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 12px; border-radius: 8px; font-size: 13px;
-  font-weight: 500; border: 1px solid var(--border);
-  background: white; color: var(--navy); cursor: pointer;
-  font-family: inherit; transition: all .15s;
-}
-.mobile-lang-btn:hover { border-color: var(--teal-700); }
-.mobile-lang-btn.active {
-  background: var(--teal-100); border-color: var(--teal-700);
-  color: var(--teal-900); font-weight: 600;
-}
-
-/* RTL text support (Arabic) */
-[dir="rtl"] .section-title,
-[dir="rtl"] .section-sub,
-[dir="rtl"] .section-eyebrow,
-[dir="rtl"] p,
-[dir="rtl"] li,
-[dir="rtl"] label,
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4,
-[dir="rtl"] .card,
-[dir="rtl"] .field input,
-[dir="rtl"] .field textarea,
-[dir="rtl"] .field select {
-  text-align: right;
-  direction: rtl;
-}
-[dir="rtl"] .site-footer a,
-[dir="rtl"] .mobile-menu nav a {
-  text-align: right;
-}
-
-/* Responsive */
-/* Header collapses to hamburger earlier than the content grids, so the
-   navy bar never gets cramped on mid-width screens. */
-@media (max-width: 1099px) {
-  .site-nav { display: none; }
-  .site-header-phone { display: none; }
-  .lang-switcher { display: none; }
-  .site-header-cta .btn { display: none; }
-  .mobile-toggle { display: flex; margin-left: auto; }
-}
-
-@media (max-width: 1023px) {
-  .lang-switcher { display: none; }
-  .site-nav { display: none; }
-  .site-header-phone { display: none; }
-  .site-header-cta .btn { display: none; }
-  .mobile-toggle { display: flex; margin-left: auto; }
-  .site-header-inner { padding-top: 16px !important; padding-bottom: 16px !important; }
-  .hero-stats-bar { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; padding: 24px 28px !important; }
-  .pillars-grid { grid-template-columns: 1fr 1fr !important; }
-  .diff-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-  .testimonials-grid { grid-template-columns: 1fr 1fr !important; }
-  .faq-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-  .cta-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px !important; }
-  .diensten-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .diensten-grid > div { direction: ltr !important; }
-  .compleet-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .overons-header-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .stats-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
-  .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .werkwijze-grid { grid-template-columns: 1fr !important; }
-  .offerte-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .site-footer-grid { grid-template-columns: 1fr 1fr; }
-  .trust-strip { gap: 24px !important; }
-  .pakketten-cards { grid-template-columns: 1fr !important; }
-  .pakketten-cards > div:last-child { transform: none !important; }
-  .matrix-grid { font-size: 13px !important; }
-  .hulp-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .hulp-cards { grid-template-columns: 1fr 1fr !important; }
-}
-
-/* Mobiele "glas"-header die meevult bij scrollen — alleen op de home-hero.
-   Op overige mobiele pagina's blijft --hdr op 1 (gevuld). */
-@media (max-width: 900px) {
-  .site-header.is-home {
-    background: rgba(251,252,253, calc(var(--hdr) * 0.92));
-    -webkit-backdrop-filter: blur(calc(var(--hdr) * 14px)); backdrop-filter: blur(calc(var(--hdr) * 14px));
-    border-bottom-color: rgba(230,234,239, var(--hdr));
-    box-shadow: none;
-  }
-  .site-header.is-home.scrolled { box-shadow: 0 6px 20px -16px rgba(43,53,68, calc(var(--hdr) * 0.5)); }
-  .site-header.is-home .site-logo { opacity: var(--hdr); transition: opacity .12s linear; }
-
-  /* De hero schuift áchter de transparante glas-header, zodat er bovenaan
-     geen witte balk staat — je ziet alleen de hamburger op het hero-vlak.
-     De content krijgt de headerhoogte als extra top-padding terug, zodat hij
-     op exact dezelfde plek blijft staan. */
-  .dz-hero { margin-top: calc(-1 * var(--hdr-h, 64px)); }
-  .dz-hero-content { padding-top: calc(var(--hdr-h, 64px) + clamp(48px, 6vw, 92px)); }
-}
-
-@media (max-width: 767px) {
-  .container { padding: 0 16px; }
-  section { padding: 64px 0; }
-  .section-title { font-size: 28px; }
-  .section-sub { font-size: 16px; }
-  .site-logo { font-size: 15px !important; }
-  .site-logo img { width: 30px !important; height: 30px !important; }
-  .hero-h1 { font-size: 36px !important; }
-  .hero-sub { max-width: 100% !important; }
-  .hero-buttons { flex-direction: column !important; }
-  .hero-buttons .btn { width: 100% !important; justify-content: center; }
-  .hero-skyline { display: none !important; }
-  .hero-content { padding: 48px 16px 80px !important; min-height: auto !important; }
-  .hero-bg {
-    background:
-      radial-gradient(ellipse 80% 70% at 60% 80%, rgba(13,115,119,0.18) 0%, rgba(13,115,119,0) 60%),
-      radial-gradient(ellipse 70% 60% at 30% 20%, rgba(244,239,229,0.85) 0%, rgba(244,239,229,0) 70%),
-      linear-gradient(150deg, #F6F2EA 0%, #E7EFEF 50%, #C5DBDC 100%) !important;
-  }
-  .hero-stats-wrapper .hero-stats-bar { margin-top: -28px !important; }
-  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; gap: 12px !important; padding: 16px !important; border-radius: 12px !important; }
-  .hero-stat-item { border-left: none !important; background: var(--gray-bg); border-radius: 10px; padding: 12px 14px !important; }
-  .hero-stats-bar .hero-stat-icon { width: 36px; height: 36px; border-radius: 10px; }
-  .hero-stats-bar .stat-num { font-size: 24px !important; }
-  .pillars-grid { grid-template-columns: 1fr !important; }
-  .testimonials-grid { grid-template-columns: 1fr !important; }
-  .diff-usps { grid-template-columns: 1fr !important; }
-  .stats-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
-  .cta-grid { padding: 28px !important; }
-  .cta-grid h2 { font-size: 28px !important; }
-  .compleet-features { grid-template-columns: 1fr !important; }
-  .offerte-services { grid-template-columns: 1fr !important; }
-  .site-footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .site-footer-bottom { flex-direction: column; text-align: center; }
-  .page-h1 { font-size: 36px !important; }
-  .btn-lg { padding: 14px 22px; font-size: 15px; }
-  .trust-strip { flex-direction: column; align-items: flex-start !important; gap: 16px !important; }
-  .pakketten-cards > div { padding: 28px !important; }
-  .matrix-header, .matrix-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; }
-  .hulp-cards { grid-template-columns: 1fr !important; }
-}
-
-@media (max-width: 479px) {
-  .hero-h1 { font-size: 32px !important; }
-  .hero-stats-bar { grid-template-columns: 1fr 1fr !important; }
-  .hero-stats-bar .stat-num { font-size: 22px !important; }
-}
-
-/* ════════════════════════════════════════════════════════════
-   NIEUW ONTWERP — Hero (home), Diensten & Werkwijze (richting "Helder")
-   ════════════════════════════════════════════════════════════ */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-/* ── Hero ── */
-.dz-hero { padding: 0; background: var(--white); }
-.dz-panel {
-  position: relative; overflow: hidden;
-  border: 0; border-bottom: 1px solid var(--border-2);
-  transform: translate3d(0,0,0);
-  background:
-    radial-gradient(60% 70% at 88% 96%, rgba(13,115,119,0.16) 0%, rgba(13,115,119,0) 60%),
-    radial-gradient(46% 50% at 6% 6%, rgba(94,234,212,0.18) 0%, rgba(94,234,212,0) 62%),
-    linear-gradient(155deg,#EEF5F4 0%, #F4F8F8 46%, #E9F2F1 100%);
-}
-/* Wrapper draagt positie + muis-parallax; de <img> draagt de entree-transform.
-   Twee aparte elementen zodat de transforms elkaar nooit overschrijven. */
-.dz-sky-wrap {
-  position: absolute; bottom: 0; right: 0; width: min(46%,720px); max-height: 90%;
-  z-index: 1; pointer-events: none;
-  transform: translate3d(0,0,0);
-  transition: transform .55s cubic-bezier(.22,1,.36,1);
-  will-change: transform;
-}
-.dz-sky {
-  display: block; width: 100%; height: 100%;
-  object-fit: contain; object-position: bottom right;
-  -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
-  mask-image: linear-gradient(to right,transparent 0%,#000 40%,#000 100%);
-  filter: drop-shadow(0 12px 26px rgba(43,53,68,0.14));
-}
-.dz-hero-content { position: relative; z-index: 2; max-width: 600px; padding: clamp(48px,6vw,92px) 0; }
-.dz-pill {
-  display: inline-flex; align-items: center; gap: 8px; background: #fff;
-  border: 1px solid var(--border); color: var(--teal-900); font-size: 12.5px;
-  font-weight: 600; padding: 8px 15px; border-radius: 999px; box-shadow: var(--sh-sm); white-space: nowrap;
-}
-.dz-pill i { color: var(--teal-700); }
-.dz-h1 { font-size: clamp(38px,5.4vw,64px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; color: var(--navy); margin: 20px 0 22px; text-wrap: balance; }
-.dz-h1 span { color: var(--teal-900); }
-.dz-lead { font-size: clamp(16px,1.5vw,19px); line-height: 1.6; color: var(--ink); max-width: 460px; margin: 0 0 30px; }
-.dz-ctas { display: flex; gap: 13px; flex-wrap: wrap; }
-.dz-ctas .btn { border-radius: 999px; }
-.dz-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-.dz-tchip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.7); border: 1px solid var(--border-2); border-radius: 999px; padding: 9px 15px; font-size: 13px; font-weight: 600; color: var(--navy); }
-.dz-tchip i { color: var(--teal-700); font-size: 17px; }
-.dz-tt { display: inline; }
-.dz-tt-num { white-space: nowrap; }
-
-/* ── Hero entree-animatie (gestaffeld, op mount) ──
-   Verborgen begintoestand geldt alléén met .dz-js (JS draait); zonder JS
-   blijven elementen zichtbaar. .dz-in wordt op de panel gezet na mount. */
-.dz-js .dz-panel .dz-anim {
-  opacity: 0; transform: translateY(16px);
-  transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
-}
-.dz-panel.dz-in .dz-anim { opacity: 1; transform: none; }
-.dz-panel.dz-in .dz-mob-icon { transition-delay: 0s; }
-.dz-panel.dz-in .dz-pill  { transition-delay: .05s; }
-.dz-panel.dz-in .dz-h1    { transition-delay: .16s; }
-.dz-panel.dz-in .dz-lead  { transition-delay: .28s; }
-.dz-panel.dz-in .dz-ctas  { transition-delay: .40s; }
-.dz-panel.dz-in .dz-trust { transition-delay: .50s; }
-/* Skyline-entree zit op de <img>, parallax op de wrapper */
-.dz-js .dz-sky {
-  opacity: 0; transform: translateY(14px) scale(1.04);
-  transition: opacity 1.1s cubic-bezier(.22,1,.36,1), transform 1.1s cubic-bezier(.22,1,.36,1);
-}
-.dz-panel.dz-in .dz-sky { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  .dz-js .dz-panel .dz-anim,
-  .dz-js .dz-sky { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+  .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+  [data-reveal] { animation:none !important; opacity:1 !important; transform:none !important; }
+  * { animation-duration:.001s !important; scroll-behavior:auto !important; }
 }
-
-/* ── Section / page head ── */
-.dz-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal-700); text-transform: uppercase; }
-.dz-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal-700); }
-.dz-head { max-width: 720px; }
-.dz-head.center { margin: 0 auto; text-align: center; }
-.dz-head.center .dz-eyebrow { justify-content: center; }
-.dz-head h2 { font-size: clamp(34px,4.6vw,56px); line-height: 1.05; font-weight: 800; letter-spacing: -0.03em; color: var(--navy); margin: 16px 0 0; text-wrap: balance; }
-.dz-head h2 span { color: var(--teal-900); }
-.dz-head p { font-size: clamp(16px,1.4vw,18px); line-height: 1.6; color: var(--muted); margin: 18px 0 0; }
-.dz-head.center p { margin-left: auto; margin-right: auto; max-width: 680px; }
-
-/* ── Diensten detail rows ── */
-.dz-drow { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,76px); align-items: center; padding: clamp(36px,4vw,60px) 0; }
-.dz-drow + .dz-drow { border-top: 1px solid var(--border); }
-.dz-dchip { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.dz-dchip .ic { width: 54px; height: 54px; border-radius: 15px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.dz-dchip .nm { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal-700); text-transform: uppercase; }
-.dz-drow h3 { font-size: clamp(25px,3vw,34px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 14px; }
-.dz-intro { font-size: 16.5px; line-height: 1.65; color: var(--ink); max-width: 470px; margin: 0 0 22px; }
-.dz-result { display: flex; gap: 13px; background: var(--teal-50); border: 1px solid rgba(13,115,119,0.14); border-radius: 16px; padding: 16px 18px; max-width: 470px; margin-bottom: 24px; }
-.dz-result i { color: var(--teal-700); flex-shrink: 0; margin-top: 1px; font-size: 22px; }
-.dz-result b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-900); margin-bottom: 3px; }
-.dz-result span { font-size: 14.5px; line-height: 1.5; color: var(--teal-900); }
-.dz-checklist { background: #fff; border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--sh-md); overflow: hidden; }
-.dz-ch-head { padding: 20px 26px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); }
-.dz-ch-head i { color: var(--teal-700); font-size: 20px; }
-.dz-checklist ul { list-style: none; margin: 0; padding: 8px 26px; }
-.dz-checklist li { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-top: 1px solid var(--border); font-size: 15.5px; font-weight: 500; color: var(--navy); }
-.dz-checklist li:first-child { border-top: none; }
-.dz-checklist li i { color: var(--teal-700); flex-shrink: 0; font-size: 22px; }
-.dz-ch-foot { padding: 16px 26px; background: var(--gray-bg); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.dz-ch-foot .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--navy); }
-.dz-ch-foot .tag i { color: var(--teal-700); }
-.dz-ch-foot a { font-size: 13px; font-weight: 600; color: var(--teal-700); display: inline-flex; align-items: center; gap: 6px; }
-
-/* ── Compleet-pakket blok ── */
-.dz-compleet { background: linear-gradient(150deg,var(--navy) 0%,var(--navy-dark) 100%); color: #fff; border-radius: 28px; padding: clamp(34px,4vw,56px); display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px,4vw,54px); align-items: center; position: relative; overflow: hidden; box-shadow: var(--sh-lg); }
-.dz-compleet::after { content: ""; position: absolute; top: -130px; right: -110px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle,rgba(13,115,119,0.45),transparent 70%); }
-.dz-compleet h2 { color: #fff; font-size: clamp(28px,3.4vw,42px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin: 18px 0 14px; position: relative; }
-.dz-compleet > div > p { color: rgba(255,255,255,0.78); font-size: 16.5px; line-height: 1.6; margin: 0 0 26px; position: relative; max-width: 380px; }
-.dz-compleet .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; }
-.dz-compleet .grid2 div { display: flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 13px 15px; font-size: 13.5px; }
-.dz-compleet .grid2 i { color: var(--teal-300); flex-shrink: 0; }
-.dz-pill-dark { background: rgba(255,255,255,0.12); border: none; color: #fff; box-shadow: none; }
-.dz-pill-dark i { color: var(--teal-300); }
-
-/* ── Werkwijze tijdlijn ── */
-.dz-tl { position: relative; max-width: 780px; margin: 0 auto; padding-left: 78px; }
-.dz-rail { position: absolute; left: 27px; top: 6px; bottom: 6px; width: 2px; background: var(--border); border-radius: 2px; }
-.dz-rail-fill { position: absolute; left: 0; top: 0; width: 100%; height: 0; background: linear-gradient(180deg,var(--teal-500),var(--teal-700)); border-radius: 2px; }
-.dz-tstep { position: relative; padding-bottom: 22px; }
-.dz-tstep:last-child { padding-bottom: 0; }
-.dz-tnode { position: absolute; left: -78px; top: 0; width: 56px; height: 56px; border-radius: 17px; background: #fff; border: 1px solid var(--border); box-shadow: var(--sh-sm); display: flex; align-items: center; justify-content: center; color: var(--muted); transition: .3s; z-index: 2; }
-.dz-tstep.on .dz-tnode { background: var(--navy); color: #fff; border-color: var(--navy); transform: scale(1.04); }
-.dz-tcard { background: #fff; border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--sh-sm); padding: 24px 28px; transition: .3s; }
-.dz-tstep.on .dz-tcard { box-shadow: var(--sh-md); border-color: rgba(13,115,119,0.2); }
-.dz-tmeta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
-.dz-tnum { font-size: 13px; font-weight: 700; color: var(--teal-700); }
-.dz-twhen { background: var(--teal-50); color: var(--teal-900); text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; }
-.dz-tcard h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 0 0 8px; }
-.dz-tcard p { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
-
-/* ── Reassure kaarten ── */
-.dz-reassure { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin: 54px auto 0; max-width: 980px; }
-.dz-reassure > div { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 26px; box-shadow: var(--sh-sm); }
-.dz-reassure i { color: var(--teal-700); font-size: 27px; }
-.dz-reassure b { display: block; font-size: 17px; font-weight: 700; color: var(--navy); margin: 13px 0 6px; }
-.dz-reassure p { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 0; }
-
-/* ── Gedeeld CTA-blok (Diensten/Werkwijze) ── */
-.dz-cta { background: #fff; border: 1px solid var(--border); border-radius: 28px; padding: clamp(34px,4vw,56px); display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px,4vw,54px); align-items: center; box-shadow: var(--sh-md); }
-.dz-cta h2 { font-size: clamp(28px,3.4vw,40px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; color: var(--navy); margin: 14px 0; }
-.dz-cta > div > p { font-size: 16.5px; color: var(--ink); line-height: 1.6; margin: 0 0 24px; max-width: 380px; }
-.dz-cta-list { display: flex; flex-direction: column; gap: 12px; }
-.dz-cta-list div { display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: var(--gray-bg); border-radius: 14px; font-size: 14px; font-weight: 500; color: var(--navy); }
-.dz-cta-list i { color: var(--teal-700); font-size: 20px; }
-
-/* ── Responsive (nieuw ontwerp) ── */
-@media (max-width: 1023px) {
-  .dz-drow { grid-template-columns: 1fr !important; gap: 40px !important; direction: ltr !important; }
-  .dz-drow > div { direction: ltr !important; }
-  .dz-compleet { grid-template-columns: 1fr !important; }
-  .dz-cta { grid-template-columns: 1fr !important; }
-  .dz-reassure { grid-template-columns: 1fr !important; }
-}
-/* Merkicoon alleen op mobiel (Optie E); desktop verbergt het */
-.dz-mob-icon { display: none; }
-
-@media (max-width: 767px) {
-  .dz-sky-wrap { width: 62%; }
-  .dz-sky { opacity: .5; }
-  .dz-tl { padding-left: 60px; }
-  .dz-rail { left: 21px; }
-  .dz-tnode { left: -60px; width: 46px; height: 46px; border-radius: 14px; }
-  .dz-ctas .btn { width: 100%; justify-content: center; }
-}
-
-/* ── Mobiele hero (handoff new-6) — merkicoon boven, gecentreerd, skyline als
-   subtiele wazige achtergrond, stats als 3-koloms grid, blur-naar-scherp entree ── */
-@media (max-width: 620px) {
-  .dz-panel { min-height: 100vh; display: flex; flex-direction: column; }
-  .dz-panel > .container { flex: 1; display: flex; flex-direction: column; }
-  .dz-hero-content {
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    text-align: center; flex: 1;
-    width: 100%; max-width: 360px; margin-inline: auto;
-    padding: calc(var(--hdr-h, 64px) + 72px) 0 44px;
-  }
-  .dz-mob-icon { display: block; width: 74px; height: auto; margin: 0 0 16px; }
-  .dz-pill { display: none !important; }
-  .dz-h1 { margin: 18px 0 14px; }
-  .dz-lead { max-width: 330px; margin-left: auto; margin-right: auto; }
-  .dz-ctas { flex-direction: column; width: 100%; gap: 13px; margin-top: 28px; }
-  .dz-ctas .btn { width: 100%; justify-content: center; }
-  /* Skyline → gecentreerde, wazige achtergrond onderaan */
-  .dz-sky-wrap {
-    left: 50%; right: auto; bottom: 0; top: auto; transform: translateX(-50%) !important;
-    width: 120%; height: auto; max-height: none; transition: none !important;
-  }
-  .dz-sky {
-    width: 100%; height: auto;
-    object-fit: contain; object-position: bottom center;
-    filter: blur(.7px) saturate(.9);
-    opacity: .12;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 60%, #000 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 60%, #000 100%);
-  }
-  .dz-panel.dz-in .dz-sky { opacity: .12; }
-  /* Trust-stats → strak 3-koloms grid: cijfer groot boven, label eronder,
-     dunne verticale scheidingslijntjes (vervangt de oude puntjes-regel) */
-  .dz-trust {
-    display: grid; grid-template-columns: repeat(3, 1fr); align-items: stretch;
-    gap: 0; margin: 24px auto 0; width: 100%; max-width: 330px;
-  }
-  .dz-tchip {
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    background: none; border: 0; box-shadow: none;
-    padding: 2px 8px; border-radius: 0;
-    font-size: 11px; font-weight: 500; color: var(--muted);
-    white-space: normal; text-align: center; line-height: 1.3;
-  }
-  .dz-tchip i, .dz-tchip svg { display: none !important; }
-  .dz-tchip:not(:last-child) { border-right: 1px solid #E2E8EC; }
-  .dz-tt { display: block; }
-  .dz-tt-num {
-    display: block; font-size: 18px; font-weight: 800; color: var(--navy);
-    letter-spacing: -.01em; line-height: 1; margin-bottom: 5px; white-space: nowrap;
-  }
-
-  /* Verrijkte "blur-naar-scherp" entree-cascade (alleen mobiel) */
-  .dz-js .dz-panel .dz-anim {
-    transform: translateY(30px) scale(.985); filter: blur(7px);
-    transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1.05s cubic-bezier(.2,.7,.2,1), filter .9s cubic-bezier(.2,.7,.2,1);
-  }
-  .dz-panel.dz-in .dz-anim { transform: none; filter: none; }
-  .dz-js .dz-panel .dz-mob-icon.dz-anim {
-    transform: translateY(8px) scale(.72); filter: blur(4px);
-    transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.34,1.4,.5,1), filter .8s ease;
-  }
-  .dz-js .dz-panel .dz-h1.dz-anim { transform: translateY(34px) scale(.97); filter: blur(9px); }
-  /* Reset met gelijke specificiteit zodat de per-element blur netjes opklaart */
-  .dz-panel.dz-in .dz-mob-icon.dz-anim,
-  .dz-panel.dz-in .dz-h1.dz-anim { transform: none; filter: none; }
-  .dz-js .dz-sky {
-    transform: translateY(26px) scale(1.03);
-    transition: opacity 1.4s cubic-bezier(.2,.7,.2,1), transform 1.6s cubic-bezier(.2,.7,.2,1);
-  }
-  .dz-panel.dz-in .dz-sky { transform: none; }
-}
-
-@media (max-width: 560px) {
-  .dz-compleet .grid2 { grid-template-columns: 1fr; }
-  .dz-h1 { font-size: clamp(34px, 9.5vw, 46px); }
-}
-
-/* Subtle background patterns */
-.bg-subtle {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(43,53,68,0.04) 1px, transparent 1px),
-    radial-gradient(ellipse at 30% 80%, #FFFFFF 0%, #F7F8FA 100%);
-  background-size: 24px 24px, 100% 100%;
-}
-/* Hero stat number & label base styles */
-.stat-num {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--teal-700);
-  line-height: 1.1;
-}
-
-.stat-label {
-  font-size: 12.5px;
-  color: var(--muted);
-  margin-top: 2px;
-  line-height: 1.3;
-}
-
-/* ════════════════════════════════════════════════════════════
-   NIEUW ONTWERP v3 — Landingspagina-secties + footer ("Helder")
-   ════════════════════════════════════════════════════════════ */
-
-/* Section bands (ritme) */
-.dz-band { background: #FBFCFD; border-top: 1px solid var(--border-2); }
-.dz-band-tint { background: linear-gradient(180deg,#EFF6F5 0%,#E7F2F0 100%); border-top: 1px solid rgba(13,115,119,0.10); border-bottom: 1px solid rgba(13,115,119,0.10); }
-.dz-band-dark { background: linear-gradient(150deg,var(--navy) 0%,var(--navy-dark) 100%); position: relative; overflow: hidden; }
-.dz-band-dark::after { content:""; position:absolute; top:-180px; right:4%; width:460px; height:460px; border-radius:50%; background: radial-gradient(circle,rgba(13,115,119,0.42),transparent 70%); pointer-events:none; }
-.dz-band-dark .container { position: relative; z-index: 1; }
-
-/* "Sinds 2008" marker (vervangt de hero-pill op desktop) */
-.dz-since { display:inline-flex; align-items:center; gap:14px; margin-bottom:4px; }
-.dz-since::before, .dz-since::after { content:""; height:1px; width:34px; background:linear-gradient(90deg,transparent,var(--teal-300)); }
-.dz-since::after { background:linear-gradient(90deg,var(--teal-300),transparent); }
-.dz-since b { font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-700); white-space:nowrap; }
-.dz-panel.dz-in .dz-since { transition-delay: .05s; }
-
-/* Pillars (Wat doen wij) */
-.dz-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-.dz-pcard { background:#fff; border:1px solid var(--border); border-radius:22px; padding:32px; box-shadow:var(--sh-sm); transition:.2s; display:flex; flex-direction:column; }
-.dz-pcard:hover { transform:translateY(-4px); box-shadow:var(--sh-md); border-color:rgba(13,115,119,0.25); }
-.dz-pico { width:58px; height:58px; border-radius:16px; background:var(--teal-50); color:var(--teal-700); display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
-.dz-pcard h3 { font-size:21px; font-weight:700; letter-spacing:-0.01em; color:var(--navy); margin:0 0 10px; }
-.dz-pcard > p { font-size:14.5px; line-height:1.6; color:var(--muted); margin:0 0 18px; }
-.dz-pcard ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
-.dz-pcard li { display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:500; color:var(--ink); }
-.dz-pcard li i { color:var(--teal-700); flex-shrink:0; }
-.dz-pcard .dz-more { display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:700; color:var(--teal-700); margin-top:22px; padding-top:20px; border-top:1px solid var(--border); transition:gap .15s,color .15s; cursor:pointer; }
-.dz-pcard .dz-more:hover { gap:11px; color:var(--teal-900); }
-
-/* Afsluitbalk onder de pijlers */
-.dz-svc-note { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; margin-top:24px; padding:20px 28px; background:var(--teal-50); border:1px solid var(--teal-100); border-radius:18px; }
-.dz-svc-note .lead { display:flex; align-items:center; gap:13px; font-size:15.5px; font-weight:600; color:var(--teal-900); }
-.dz-svc-note .lead i { font-size:24px; color:var(--teal-700); flex-shrink:0; }
-.dz-svc-note a { display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:700; color:var(--teal-700); white-space:nowrap; cursor:pointer; }
-.dz-svc-note a:hover { color:var(--teal-900); }
-
-/* Reasons (Waarom kiezen) — 4 kaarten */
-.dz-reasons { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
-.dz-rcard { background:#fff; border:1px solid var(--border); border-radius:20px; padding:30px 26px; box-shadow:var(--sh-sm); transition:.2s; }
-.dz-rcard:hover { transform:translateY(-4px); box-shadow:var(--sh-md); border-color:rgba(13,115,119,0.22); }
-.dz-rcard .ic { width:54px; height:54px; border-radius:15px; background:var(--teal-50); color:var(--teal-700); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
-.dz-rcard h4 { font-size:17px; font-weight:700; letter-spacing:-0.02em; color:var(--navy); margin:0 0 9px; }
-.dz-rcard p { font-size:13.5px; line-height:1.6; color:var(--muted); margin:0; }
-
-/* Donkere CTA-variant (flush band) — hergebruikt .dz-cta */
-.dz-cta-dark { background:none; box-shadow:none; border:0; border-radius:0; padding:0; color:#fff; }
-.dz-cta-dark h2 { color:#fff; }
-.dz-cta-dark > div > p { color:rgba(255,255,255,0.78); }
-.dz-cta-dark .dz-eyebrow { color:var(--teal-300); }
-.dz-cta-dark .dz-eyebrow::before { background:var(--teal-300); }
-.dz-cta-dark .dz-cta-list div { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#fff; }
-.dz-cta-dark .dz-cta-list i { color:var(--teal-300); }
-
-/* FAQ accordion */
-.dz-faq { max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
-.dz-faq-item { background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow:var(--sh-sm); overflow:hidden; transition:border-color .2s,box-shadow .2s; }
-.dz-faq-item.open { border-color:rgba(13,115,119,0.28); box-shadow:var(--sh-md); }
-.dz-faq-q { display:flex; align-items:center; gap:16px; width:100%; padding:21px 24px; background:none; border:0; text-align:left; font-family:inherit; font-size:16.5px; font-weight:700; color:var(--navy); letter-spacing:-0.01em; cursor:pointer; line-height:1.35; }
-.dz-faq-q .ic { margin-left:auto; flex-shrink:0; width:30px; height:30px; border-radius:9px; background:var(--teal-50); color:var(--teal-700); display:flex; align-items:center; justify-content:center; transition:transform .25s cubic-bezier(.22,1,.36,1),background .2s,color .2s; }
-.dz-faq-item.open .dz-faq-q .ic { transform:rotate(45deg); background:var(--teal-700); color:#fff; }
-.dz-faq-a { max-height:0; overflow:hidden; transition:max-height .3s cubic-bezier(.22,1,.36,1); }
-.dz-faq-item.open .dz-faq-a { max-height:600px; }
-.dz-faq-a-inner { padding:0 24px 22px; font-size:15px; line-height:1.65; color:var(--muted); max-width:660px; }
-.dz-faq-foot { text-align:center; margin-top:34px; font-size:15px; color:var(--muted); }
-.dz-faq-foot a { color:var(--teal-700); font-weight:700; cursor:pointer; }
-.dz-faq-foot a:hover { color:var(--teal-900); }
-
-/* Reviews — lichte kaarten met avatar */
-.dz-reviews { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-.dz-review { background:#fff; border:1px solid var(--border); border-radius:22px; padding:30px; box-shadow:var(--sh-sm); margin:0; display:flex; flex-direction:column; transition:.2s; }
-.dz-review:hover { transform:translateY(-4px); box-shadow:var(--sh-md); border-color:rgba(13,115,119,0.22); }
-.dz-stars { display:flex; gap:3px; color:var(--teal-700); font-size:18px; margin-bottom:16px; }
-.dz-review blockquote { margin:0 0 22px; font-size:16px; line-height:1.6; color:var(--ink); font-weight:500; flex:1; }
-.dz-review figcaption { display:flex; align-items:center; gap:13px; }
-.dz-av { width:46px; height:46px; border-radius:50%; background:var(--teal-50); color:var(--teal-900); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; letter-spacing:-0.02em; }
-.dz-review .who b { display:block; font-size:15px; font-weight:700; color:var(--navy); line-height:1.2; }
-.dz-review .who span { display:block; font-size:12.5px; color:var(--muted); margin-top:2px; }
-
-/* Newsletter */
-.dz-news { background:linear-gradient(150deg,#EEF5F4 0%,#F3F8F7 52%,#E7F2F0 100%); border:1px solid rgba(13,115,119,0.14); border-radius:28px; padding:clamp(34px,4vw,56px); display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,54px); align-items:center; position:relative; overflow:hidden; box-shadow:var(--sh-sm); }
-.dz-news::after { content:""; position:absolute; top:-120px; right:-90px; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle,rgba(94,234,212,0.28),transparent 70%); pointer-events:none; }
-.dz-news > div { position:relative; }
-.dz-news h2 { font-size:clamp(26px,3vw,38px); font-weight:800; line-height:1.08; letter-spacing:-0.02em; color:var(--navy); margin:0 0 12px; }
-.dz-news h2 span { color:var(--teal-900); }
-.dz-news > div > p { font-size:16px; line-height:1.6; color:var(--ink); margin:0; max-width:400px; }
-.dz-news-form { position:relative; display:flex; flex-direction:column; gap:12px; }
-.dz-news-row { display:flex; gap:10px; }
-.dz-news-form input { flex:1; min-width:0; height:54px; padding:0 18px; border:1px solid var(--border); border-radius:14px; background:#fff; font-family:inherit; font-size:15px; color:var(--navy); transition:.15s; }
-.dz-news-form input:focus { outline:none; border-color:var(--teal-700); box-shadow:0 0 0 4px var(--teal-50); }
-.dz-news-form .btn { flex-shrink:0; border-radius:14px; }
-.dz-news-form small { display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--muted); }
-.dz-news-form small i { color:var(--teal-700); font-size:15px; }
-.dz-news-success { display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600; color:var(--teal-900); }
-.dz-news-success i { color:var(--teal-700); font-size:22px; }
-
-/* Footer (editorial, licht) */
-.dz-footer { background:#EEF2F3; color:var(--ink); }
-.dz-foot-hero { display:grid; grid-template-columns:1.3fr 0.9fr; gap:clamp(32px,5vw,72px); align-items:center; padding:clamp(48px,6vw,64px) 0 clamp(34px,4vw,44px); }
-.dz-foot-bigname { font-size:clamp(30px,4.4vw,56px); font-weight:800; letter-spacing:-0.04em; line-height:1.02; color:var(--navy); margin:0 0 16px; }
-.dz-foot-bigname span { color:var(--teal-900); }
-.dz-foot-lead { font-size:15.5px; line-height:1.65; color:var(--muted); max-width:420px; margin:0; }
-.dz-foot-card { background:#fff; border:1px solid var(--border); border-radius:20px; box-shadow:var(--sh-md); padding:26px 28px; }
-.dz-foot-card .lab { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--teal-700); margin-bottom:14px; }
-.dz-foot-card .crow { display:flex; align-items:center; gap:10px; padding:9px 0; font-size:14px; font-weight:500; color:var(--navy); }
-.dz-foot-card .crow i { font-size:17px; color:var(--teal-700); flex-shrink:0; }
-.dz-foot-card .btn { width:100%; justify-content:center; margin-top:14px; }
-.dz-foot-in { display:grid; grid-template-columns:repeat(4,1fr); gap:44px; padding:clamp(32px,4vw,40px) 0 0; border-top:1px solid var(--border); }
-.dz-footer h4 { color:var(--navy); font-size:12px; text-transform:uppercase; letter-spacing:0.09em; margin:0 0 16px; font-weight:700; }
-.dz-foot-in a { display:block; padding:6px 0; font-size:14px; color:var(--ink); transition:.14s; cursor:pointer; }
-.dz-foot-in a:hover { color:var(--teal-900); transform:translateX(2px); }
-.dz-foot-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--border); margin-top:clamp(34px,4vw,44px); padding:22px 0; }
-.dz-foot-bottom a { transition:.14s; cursor:pointer; }
-.dz-foot-bottom a:hover { color:var(--teal-900); }
-
-/* Responsive — v3 secties + footer */
-@media (max-width: 1023px) {
-  .dz-pillars { grid-template-columns:1fr; }
-  .dz-reasons { grid-template-columns:1fr 1fr; }
-  .dz-reviews { grid-template-columns:1fr; }
-  .dz-news { grid-template-columns:1fr; gap:24px; }
-  .dz-foot-hero { grid-template-columns:1fr; gap:30px; }
-  .dz-foot-in { grid-template-columns:1fr 1fr; gap:30px; }
-}
-@media (max-width: 620px) {
-  .dz-since { display:none !important; }
-}
-@media (max-width: 560px) {
-  .dz-reasons { grid-template-columns:1fr; }
-  .dz-foot-in { grid-template-columns:1fr; }
-  .dz-news-row { flex-direction:column; }
-  .dz-news-form .btn { width:100%; justify-content:center; }
-  .dz-svc-note { flex-direction:column; align-items:flex-start; }
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-thumb { background: #c8cdd4; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #a4adb8; }
 </style>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
@@ -904,393 +170,101 @@ const LANGUAGES = [
 ];
 
 const NL = {
-  meta: { lang: 'nl', dir: 'ltr', label: 'Nederlands' },
   nav: {
-    home: 'Home',
-    diensten: 'Diensten',
-    pakketten: 'Pakketten',
-    werkwijze: 'Werkwijze',
-    overons: 'Over ons',
-    offerte: 'Offerte',
-    bel: 'Bel ons',
-    offerte_btn: 'Offerte aanvragen',
-    portaal_btn: 'Klantportaal',
-    menu_open: 'Menu openen',
-    menu_close: 'Menu sluiten',
+    home:'Home', diensten:'Diensten', pakketten:'Pakketten', werkwijze:'Werkwijze', overons:'Over ons', offerte:'Offerte',
+    offerte_btn:'Offerte aanvragen', offerte_short:'Offerte', bel:'Bel ons', portaal:'Klantenportaal',
+    menu_open:'Menu openen', menu_close:'Menu sluiten',
   },
   hero: {
-    pill: 'VvE-beheer · Den Haag & Zuid-Holland',
-    since: 'Sinds 2008',
-    title_1: 'Welkom bij',
-    title_2: 'VvE Beheer Collectief',
-    subtitle: 'Wij zorgen dat u onbezorgd kunt wonen. Alles transparant en één vast aanspreekpunt.',
-    cta_primary: 'Bekijk onze diensten',
-    cta_secondary: 'Onze werkwijze',
-    trust: ['jaar ervaring', "VvE's in beheer", 'reactietijd'],
+    eyebrow:'Sinds 2008 · Zuid-Holland',
+    title_1:'Welkom bij', title_2:'VvE Beheer Collectief',
+    subtitle:'Wij zorgen dat u onbezorgd kunt wonen. Alles transparant en één vast aanspreekpunt.',
+    cta_diensten:'Bekijk onze diensten →', cta_werkwijze:'Onze werkwijze',
   },
-  hero_stats: [
-    { icon: 'users-three', num: '17+', label: 'Jaar ervaring in VvE-beheer' },
-    { icon: 'buildings', num: '500+', label: "VvE's onder ons beheer" },
-    { icon: 'users', num: '12.000+', label: 'Eigenaren bediend' },
-    { icon: 'lightning', num: '< 24u', label: 'Gemiddelde reactietijd' },
+  kpis: [
+    { v:'18+', l:'Jaar ervaring in VvE-beheer' },
+    { v:'500+', l:"VvE's onder ons beheer" },
+    { v:'12.000+', l:'Eigenaren bediend' },
+    { v:'< 24u', l:'Gemiddelde reactietijd' },
   ],
-  pillars_section: {
-    eyebrow: 'Onze dienstverlening',
-    title: 'Drie pijlers — één vast aanspreekpunt',
-    subtitle: 'Administratief, financieel en technisch beheer onder één dak. U krijgt geen wisselende contactpersonen, maar één beheerder die uw gebouw kent.',
-    read_more: 'Lees meer',
-    note: 'Niet zeker welk beheer past bij uw VvE? Wij denken vrijblijvend met u mee.',
-    note_link: 'Bekijk alle diensten',
+  regio: { label:'Actief in uw regio', plaatsen:'Den Haag · Rijswijk · Delft · Wateringen · heel Zuid-Holland' },
+  pijlers: {
+    eyebrow:'01 — Onze dienstverlening',
+    title:'Drie pijlers, één vast aanspreekpunt',
+    intro:'Administratief, financieel en technisch beheer onder één dak. U krijgt geen wisselende contactpersonen, maar één beheerder die uw gebouw kent.',
+    lees_meer:'Lees meer →',
+    onder:'Niet zeker welk beheer past bij uw VvE?', onder_link:'Bekijk alle diensten →',
+    items: [
+      { n:'01', title:'Administratief beheer', desc:'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.', items:['ALV-organisatie & notulen','Ledenadministratie','Post & correspondentie','Splitsingsakte beheer'] },
+      { n:'02', title:'Financieel beheer', desc:'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.', items:['Boekhouding & jaarrekening','Begroting & VvE-bijdrage','Reservefondsbeheer','Incasso & debiteuren'] },
+      { n:'03', title:'Technisch beheer', desc:'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.', items:['Meerjaren-onderhoudsplan','Offertes & aanbesteding','Schademeldingen 24/7','Inspecties & oplevering'] },
+    ],
   },
-  reasons_section: {
-    eyebrow: 'Wat ons onderscheidt',
-    title_1: 'Waarom eigenaren',
-    title_2: 'voor ons kiezen',
-    subtitle: 'Het beheer van een VvE staat of valt met transparantie en bereikbaarheid. Daar bouwden wij onze hele werkwijze omheen.',
-  },
-  pillars: [
-    { icon: 'folders', title: 'Administratief beheer', desc: 'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.', bullets: ['ALV-organisatie & notulen', 'Ledenadministratie', 'Post & correspondentie', 'Splitsingsakte beheer'] },
-    { icon: 'chart-line-up', title: 'Financieel beheer', desc: 'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.', bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteuren'] },
-    { icon: 'wrench', title: 'Technisch beheer', desc: 'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.', bullets: ['Meerjaren-onderhoudsplan', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'] },
-  ],
-  diff_section: {
-    eyebrow: 'Wat ons onderscheidt',
-    title: "Waarom 500+ VvE's voor ons kozen",
-    subtitle: 'Het beheer van een VvE staat of valt met transparantie en bereikbaarheid. Wij bouwden daar een werkwijze omheen.',
-  },
-  diff_items: [
-    { icon: 'monitor', title: 'Eigen klantenportaal', desc: 'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.' },
-    { icon: 'user-circle-check', title: 'Vast aanspreekpunt', desc: 'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.' },
-    { icon: 'clock-clockwise', title: 'Snelle reactietijd', desc: 'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.' },
-    { icon: 'package', title: 'Compleetpakket', desc: 'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
-  ],
-  diff_floating: { title: 'MJOP geactualiseerd', time: '2 minuten geleden' },
-  testimonials_section: {
-    eyebrow: 'Klantervaringen',
-    title: 'Wat onze klanten zeggen',
-    trust_label: 'Lidmaatschappen & certificeringen',
-  },
-  testimonials: [
-    { quote: 'Eindelijk een beheerder die ook écht reageert. Binnen een dag een terugkoppeling, en de jaarrekening was voor het eerst in jaren op tijd.', name: 'Marieke van der Berg', role: 'Voorzitter VvE Parklaan', location: 'Den Haag — 24 appartementen' },
-    { quote: 'De overstap vanaf onze vorige beheerder verliep verrassend soepel. Het klantenportaal geeft ons echt rust: alles staat erin, altijd inzichtelijk.', name: 'Joris Hendriks', role: 'Penningmeester VvE De Linden', location: 'Wateringen — 18 appartementen' },
-    { quote: 'Wat ons aansprak was de persoonlijke aandacht. We hebben één vast aanspreekpunt die ons gebouw écht kent. Dat scheelt enorm.', name: 'Saskia Bouman', role: 'Voorzitter VvE Westpoort', location: 'Rotterdam — 42 appartementen' },
-  ],
-  trust_badges: [
-    { label: '17+ jaar ervaring', icon: 'calendar-check' },
-    { label: 'Branchevereniging VGM NL', icon: 'medal' },
-    { label: 'NEN-EN ISO 9001 gecertificeerd', icon: 'certificate' },
-    { label: 'KvK 51721139', icon: 'buildings' },
-  ],
-  reviews_section: {
-    eyebrow: 'Wat klanten zeggen',
-    title_1: 'Vertrouwd door bestuurders',
-    title_2: 'en eigenaren',
-  },
-  reviews: [
-    { av: 'MK', quote: 'Eindelijk één vast aanspreekpunt die ons gebouw echt kent. De overstap verliep vlekkeloos en alles is nu inzichtelijk via het portaal.', name: 'Marian Koster', role: 'Voorzitter VvE, Den Haag' },
-    { av: 'RJ', quote: 'Reactie binnen een dag, een jaarrekening die klopt en op tijd is. Voor het eerst hebben we als bestuur echt rust.', name: 'Robert de Jong', role: 'Penningmeester VvE, Rijswijk' },
-    { av: 'SE', quote: 'Transparant, persoonlijk en proactief. Onderhoud wordt geregeld vóórdat het problemen worden — precies wat we zochten.', name: 'Sandra Elzinga', role: 'Eigenaar, Delft' },
-  ],
-  newsletter: {
-    eyebrow: 'Nieuwsbrief',
-    title_1: 'Blijf',
-    title_2: 'op de hoogte',
-    subtitle: 'Praktische tips over VvE-beheer, wetswijzigingen en onderhoud. Een paar keer per jaar in uw inbox — nooit spam.',
-    placeholder: 'Uw e-mailadres',
-    btn: 'Inschrijven',
-    note: 'Wij gaan zorgvuldig om met uw gegevens. Uitschrijven kan altijd.',
-    success: 'Bedankt! U bent ingeschreven voor onze nieuwsbrief.',
-  },
-  faq_section: {
-    eyebrow: 'Veelgestelde vragen',
-    title_1: 'Antwoord op de',
-    title_2: 'meestgestelde vragen',
-    title: 'Antwoorden op de vragen die u stelt',
-    subtitle: 'Staat uw vraag er niet bij? Bel ons gerust of plan een vrijblijvend kennismakingsgesprek in.',
-    foot_text: 'Staat uw vraag er niet bij?',
-    foot_link: 'Stel uw vraag →',
-  },
-  faq: [
-    { q: 'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?', a: 'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.' },
-    { q: 'Wat houdt het Compleetpakket precies in?', a: 'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.' },
-    { q: 'Hebben wij één vast aanspreekpunt?', a: 'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.' },
-    { q: 'Hoe transparant is het klantenportaal?', a: 'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.' },
-    { q: 'Bieden jullie ook juridisch beheer?', a: 'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.' },
-  ],
-  cta: {
-    eyebrow: 'Vrijblijvende offerte',
-    title_1: 'Klaar voor een',
-    title_2: 'betere VvE-ervaring?',
-    subtitle: 'Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.',
-    btn_primary: 'Offerte aanvragen',
-    btn_secondary: 'Bel ons direct',
-    usps: ['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE', 'Geen verplichtingen'],
-  },
-  stats: [
-    { num: '17+', label: 'Jaar ervaring in VvE-beheer' },
-    { num: '500+', label: "VvE's onder ons beheer" },
-    { num: '12.000+', label: 'Eigenaren bediend' },
-    { num: '< 24u', label: 'Gemiddelde reactietijd' },
-  ],
-  diensten_page: {
-    eyebrow: 'Onze diensten',
-    title_1: 'VvE-beheer dat aansluit op',
-    title_2: 'úw behoefte',
-    subtitle: 'Drie pijlers — administratief, financieel en technisch — onder één dak en met één vast aanspreekpunt. Kies losse diensten of laat ons álles uit handen nemen.',
-    pillar_label: 'Pijler',
-    result_label: 'Het resultaat',
-    checklist_head: 'Wat wij voor u regelen',
-    offerte_btn: 'Vraag een offerte aan',
-    offerte_short: 'Offerte',
+  waarom: {
+    eyebrow:'02 — Wat ons onderscheidt',
+    title:'Waarom eigenaren voor ons kiezen',
+    intro:'Het beheer van een VvE staat of valt met transparantie en bereikbaarheid. Daar bouwden wij onze hele werkwijze omheen.',
     rows: [
-      {
-        title: 'Uw administratie strak en vindbaar',
-        intro: 'Wij voeren de volledige administratie van uw VvE — van ledenregister en correspondentie tot het organiseren en notuleren van de ALV. Alles centraal vastgelegd en direct terug te vinden.',
-        result: 'Een VvE die administratief volledig op orde is, zonder dat het bestuur er omkijken naar heeft.',
-        bullets: ['ALV-organisatie & notulen', 'Ledenadministratie & register', 'Post & correspondentie', 'Splitsingsakte & reglementen'],
-        tag: 'Inbegrepen in elk pakket',
-      },
-      {
-        title: 'Financieel inzicht, geen verrassingen',
-        intro: 'Van boekhouding en incasso tot begroting, reservefonds en jaarrekening. Wij houden de cijfers actueel en bewaken de gezondheid van uw reservefonds.',
-        result: 'Op elk moment inzicht in de financiële positie — en een jaarrekening die op tijd klaar is.',
-        bullets: ['Boekhouding & jaarrekening', 'Begroting & VvE-bijdrage', 'Reservefondsbeheer', 'Incasso & debiteurenbeheer'],
-        tag: 'Inbegrepen in elk pakket',
-      },
-      {
-        title: 'Onderhoud dat vóórblijft op problemen',
-        intro: 'Wij stellen het MJOP op en houden het actueel, vragen offertes op en onderhandelen scherp, en coördineren onderhoud en schade — bij urgentie schakelen we direct.',
-        result: 'Goed onderhouden vastgoed, scherp ingekochte offertes en facturen die kloppen.',
-        bullets: ['Meerjaren-onderhoudsplan (MJOP)', 'Offertes & aanbesteding', 'Schademeldingen 24/7', 'Inspecties & oplevering'],
-        tag: 'Inbegrepen in het Compleet-pakket',
-      },
-    ],
-    compleet_pill: 'Meest gekozen',
-    compleet_title_1: 'Alles in één hand:',
-    compleet_title_2: 'het Compleet-pakket',
-    compleet_desc: 'Combineer alle drie de pijlers in één vaste maandprijs. Volledige ontzorging — geen verrassingen, geen meerwerk-facturen.',
-    compleet_btn: 'Zo verloopt de overstap',
-    compleet_features: ['Alle administratie & ALV', 'Volledige boekhouding', 'Jaarrekening op tijd', 'MJOP & onderhoud', '24/7 schademeldingen', 'Eigen klantenportaal', 'Eén vast aanspreekpunt', 'Scherpe offertes'],
-    cta_eyebrow: 'Vrijblijvende offerte',
-    cta_title: 'Benieuwd wat dit voor úw VvE betekent?',
-    cta_desc: 'Vraag een vrijblijvende offerte aan op maat. U ontvangt binnen 2 werkdagen reactie van een vaste beheerder.',
-    cta_btn: 'Offerte aanvragen',
-    cta_list: ['Vrijblijvend & gratis', 'Reactie binnen 2 werkdagen', 'Volledig op maat van uw VvE'],
-  },
-  pakketten_page: {
-    eyebrow: 'Onze pakketten',
-    title: 'Drie manieren waarop wij u ontzorgen',
-    subtitle: 'Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.',
-    pakket_label: 'PAKKET',
-    meest_gekozen: 'Meest gekozen',
-    vanaf: 'vanaf',
-    op_aanvraag: 'Op aanvraag',
-    prijs_label: 'per appartementsrecht per jaar · excl. btw',
-    prijs_note: 'Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.',
-    offerte_voor: 'Offerte voor',
-    vergelijking_eyebrow: 'Vergelijking',
-    vergelijking_title: 'Wat zit er in elk pakket?',
-    matrix_functie: 'Functie',
-    matrix_start: 'Start',
-    matrix_start_aanv: 'Start aanv.',
-    matrix_compleet: 'Compleet',
-    packages: [
-      {
-        id: 'start', name: 'Start',
-        tagline: "Administratief en financieel basisbeheer voor VvE's die de basis goed willen regelen.",
-        price: '92,95',
-        features: [
-          { label: 'ALV-organisatie', active: true },
-          { label: 'Ledenadministratie', active: true },
-          { label: 'Boekhouding & jaarafrekening', active: true },
-          { label: 'Incasso VvE-bijdragen', active: true },
-          { label: 'Betalingsverkeer', active: true },
-          { label: 'Technisch beheer', active: false },
-          { label: 'MJOP-onderhoud', active: false },
-          { label: 'Calamiteitenservice', active: false },
-        ],
-      },
-      {
-        id: 'start-aanvullend', name: 'Start aanvullend',
-        tagline: 'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.',
-        price: '147,95',
-        features: [
-          { label: 'ALV-organisatie & notulen', active: true },
-          { label: 'Ledenadministratie', active: true },
-          { label: 'Volledige boekhouding', active: true },
-          { label: 'Reservefondsbeheer', active: true },
-          { label: 'Verzekeringsbeheer', active: true },
-          { label: 'Coördinatie klein onderhoud', active: true },
-          { label: 'Schademeldingen', active: true },
-          { label: 'Planmatig onderhoud', active: false },
-        ],
-      },
-      {
-        id: 'compleet', name: 'Compleet',
-        tagline: 'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.',
-        price: null,
-        features: [
-          { label: 'Alles uit Start aanvullend', active: true },
-          { label: 'Bestuursvergaderingen onbeperkt', active: true },
-          { label: 'Juridische coördinatie', active: true },
-          { label: 'Debiteurbeheer & aanmaningen', active: true },
-          { label: 'MJOP & planmatig onderhoud', active: true },
-          { label: '24/7 calamiteitenservice', active: true },
-          { label: 'Jaarlijkse inspectie', active: true },
-          { label: 'Verduurzamingsadvies', active: true },
-        ],
-      },
-    ],
-    matrix: [
-      { group: 'Bestuurlijk', rows: [
-        { label: 'Voorbereiden en bijwonen ALV', start: true, startPlus: true, compleet: true },
-        { label: 'Notuleren ALV', start: false, startPlus: true, compleet: true },
-        { label: 'Bestuursvergaderingen bijwonen', start: false, startPlus: '1× p/j', compleet: 'Onbeperkt' },
-        { label: 'Opstellen huishoudelijk reglement', start: false, startPlus: false, compleet: true },
-        { label: 'Bemiddeling bij geschillen', start: false, startPlus: false, compleet: true },
-      ]},
-      { group: 'Secretarieel', rows: [
-        { label: 'Ledenadministratie', start: true, startPlus: true, compleet: true },
-        { label: 'Correspondentie bewoners', start: true, startPlus: true, compleet: true },
-        { label: 'Inschrijving KvK', start: true, startPlus: true, compleet: true },
-        { label: 'Beheer splitsingsakte', start: false, startPlus: true, compleet: true },
-        { label: 'Verzekeringsbeheer', start: false, startPlus: true, compleet: true },
-        { label: 'Juridische coördinatie', start: false, startPlus: false, compleet: true },
-      ]},
-      { group: 'Financieel', rows: [
-        { label: 'Boekhouding & jaarafrekening', start: true, startPlus: true, compleet: true },
-        { label: 'Opstellen begroting', start: true, startPlus: true, compleet: true },
-        { label: 'Incasso VvE-bijdragen', start: true, startPlus: true, compleet: true },
-        { label: 'Betalingsverkeer', start: true, startPlus: true, compleet: true },
-        { label: 'Reservefondsbeheer', start: false, startPlus: true, compleet: true },
-        { label: 'Meerjarenbegroting', start: false, startPlus: true, compleet: true },
-        { label: 'Debiteurbeheer & aanmaningen', start: false, startPlus: false, compleet: true },
-        { label: 'Fiscale aangiften', start: false, startPlus: false, compleet: true },
-      ]},
-      { group: 'Technisch dagelijks onderhoud', rows: [
-        { label: 'Coördinatie klein onderhoud', start: false, startPlus: true, compleet: true },
-        { label: 'Schademeldingen afhandelen', start: false, startPlus: true, compleet: true },
-        { label: 'Sleutelbeheer', start: false, startPlus: true, compleet: true },
-        { label: 'Offerte-aanvragen onderhoud', start: false, startPlus: false, compleet: true },
-        { label: '24/7 calamiteitenservice', start: false, startPlus: false, compleet: true },
-      ]},
-      { group: 'Technisch planmatig onderhoud', rows: [
-        { label: 'Meerjaren-onderhoudsplan (MJOP)', start: false, startPlus: false, compleet: true },
-        { label: 'Jaarlijkse inspectie', start: false, startPlus: false, compleet: true },
-        { label: 'Begeleiding groot onderhoud', start: false, startPlus: false, compleet: true },
-        { label: 'Aanbesteding onderhoud', start: false, startPlus: false, compleet: true },
-        { label: 'Toezicht uitvoering', start: false, startPlus: false, compleet: true },
-        { label: 'Oplevering & nazorg', start: false, startPlus: false, compleet: true },
-        { label: 'Verduurzamingsadvies', start: false, startPlus: false, compleet: true },
-      ]},
-    ],
-    hulp_eyebrow: 'Hulp bij uw keuze',
-    hulp_title: 'Welk pakket past bij onze VvE?',
-    hulp_subtitle: 'De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.',
-    hulp_btn: 'Vraag een offerte aan',
-    hulp_cards: [
-      { icon: 'users-three', title: 'Kleine VvE (< 12)', desc: 'Start of Start aanvullend is vaak voldoende voor kleinere complexen.' },
-      { icon: 'buildings', title: 'Middelgrote VvE', desc: 'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.' },
-      { icon: 'buildings', title: 'Grote VvE (> 40)', desc: 'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.' },
-      { icon: 'wrench', title: 'Achterstallig onderhoud', desc: 'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.' },
+      { title:'Eigen klantenportaal', text:'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.' },
+      { title:'Vast aanspreekpunt', text:'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.' },
+      { title:'Snelle reactietijd', text:'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.' },
+      { title:'Compleetpakket', text:'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.' },
     ],
   },
-  overons_page: {
-    eyebrow: 'Over ons',
-    title: 'Gevestigd in Wateringen, actief in heel Zuid-Holland',
-    desc: 'VvE Beheer Collectief is opgericht in 2009 vanuit de overtuiging dat VvE-beheer persoonlijker, transparanter en proactiever kan. In de afgelopen 17 jaar groeiden we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE\'s onder beheer.',
-    team_eyebrow: 'Het team',
-    team_title: 'De mensen achter uw VvE',
-    team_subtitle: 'Een klein team van ervaren specialisten. Elke VvE krijgt één vaste beheerder toegewezen.',
-    team: [
-      { name: 'Mark de Vries', role: 'Oprichter & Beheerder' },
-      { name: 'Linda Janssen', role: 'Senior VvE-beheerder' },
-      { name: 'Tim Bakker', role: 'Technisch beheerder' },
-      { name: 'Eva van Loon', role: 'Financieel beheerder' },
+  testimonials: {
+    eyebrow:'03 — Wat klanten zeggen',
+    title:'Vertrouwd door bestuurders en eigenaren',
+    items: [
+      { quote:'Eindelijk één vast aanspreekpunt die ons gebouw echt kent. De overstap verliep vlekkeloos en alles is nu inzichtelijk via het portaal.', name:'Marian Koster', role:'Voorzitter VvE, Den Haag' },
+      { quote:'Reactie binnen een dag, een jaarrekening die klopt en op tijd is. Voor het eerst hebben we als bestuur echt rust.', name:'Robert de Jong', role:'Penningmeester VvE, Rijswijk' },
+      { quote:'Transparant, persoonlijk en proactief. Onderhoud wordt geregeld vóórdat het problemen worden — precies wat we zochten.', name:'Sandra Elzinga', role:'Eigenaar, Delft' },
     ],
-    missie_eyebrow: 'Onze missie',
-    missie_quote: 'VvE-beheer dat ontzorgt in plaats van compliceert.',
-    missie_desc: 'Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers, geen automatische antwoorden — wel een team dat uw gebouw kent.',
+    note:'Voorbeeldcitaten — te vervangen door echte klantcitaten vóór publicatie.',
   },
-  werkwijze_page: {
-    eyebrow: 'Werkwijze',
-    title_1: 'Van offerte tot',
-    title_2: 'doorlopend beheer',
-    subtitle: 'Van de eerste kennismaking tot doorlopend beheer nemen wij de volledige overstap uit handen — u hoeft er nauwelijks iets voor te doen. In zes stappen ziet dat er zo uit.',
-    stap: 'Stap',
-    steps: [
-      { when: 'Dag 1–2', title: 'Vrijblijvende offerte', desc: 'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.' },
-      { when: 'Week 1', title: 'Kennismakingsgesprek', desc: 'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.' },
-      { when: 'Week 1–6', title: 'Overstap zonder gedoe', desc: 'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.' },
-      { when: 'Week 6', title: 'Inrichting klantenportaal', desc: 'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud meteen inzichtelijk.' },
-      { when: 'Week 7–8', title: 'Eerste ALV', desc: 'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.' },
-      { when: 'Doorlopend', title: 'Doorlopend beheer', desc: 'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.' },
+  faq: {
+    eyebrow:'04 — Veelgestelde vragen',
+    title:'Antwoord op de meestgestelde vragen',
+    onder:'Staat uw vraag er niet bij?', onder_link:'Stel uw vraag →',
+    items: [
+      { q:'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?', a:'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.' },
+      { q:'Wat houdt het Compleetpakket precies in?', a:'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.' },
+      { q:'Hebben wij één vast aanspreekpunt?', a:'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.' },
+      { q:'Hoe transparant is het klantenportaal?', a:'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.' },
+      { q:'Bieden jullie ook juridisch beheer?', a:'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.' },
     ],
-    reassure: [
-      { title: 'U doet vrijwel niets', desc: 'Wij coördineren de volledige overstap, inclusief opzegging bij uw huidige beheerder.' },
-      { title: 'Geen risico', desc: 'Vrijblijvend kennismaken. Pas bij akkoord starten we de overdracht.' },
-      { title: 'Vast aanspreekpunt', desc: 'Vanaf dag één weet u bij wie u terecht kunt — een beheerder die uw gebouw kent.' },
-    ],
-    cta_eyebrow: 'Vrijblijvende offerte',
-    cta_title: 'Klaar om de overstap te maken?',
-    cta_desc: 'Vraag een vrijblijvende offerte aan. Wij regelen daarna de volledige overdracht — u woont onbezorgd.',
-    cta_btn: 'Offerte aanvragen',
-    cta_list: ['Overstap in 6–8 weken', 'Wij zeggen op bij uw huidige beheerder', 'Geen risico, vrijblijvend'],
   },
-  offerte_page: {
-    eyebrow: 'Offerte aanvragen',
-    title: 'Vrijblijvend & op maat van uw VvE',
-    intro: 'Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch afgestemd zodat hij echt past bij uw situatie.',
-    usps: [
-      ['shield-check', 'Vrijblijvend & gratis'],
-      ['clock', 'Binnen 2 werkdagen reactie'],
-      ['user-circle', 'Direct contact met een beheerder'],
-      ['lock', 'Uw gegevens blijven van u'],
+  nieuwsbrief: {
+    eyebrow:'Nieuwsbrief',
+    title:'Blijf op de hoogte',
+    intro:'Praktische tips over VvE-beheer, wetswijzigingen en onderhoud. Een paar keer per jaar in uw inbox — nooit spam.',
+    placeholder:'Uw e-mailadres', btn:'Inschrijven',
+    done:'Bedankt! U bent ingeschreven voor onze nieuwsbrief.',
+    note:'Wij gaan zorgvuldig om met uw gegevens. Uitschrijven kan altijd.',
+  },
+  cta: {
+    eyebrow:'Vrijblijvende offerte',
+    title:'Klaar voor een betere VvE-ervaring?',
+    intro:'Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.',
+    btn:'Offerte aanvragen',
+    reassure:['Vrijblijvend & gratis','Reactie binnen 2 werkdagen','Volledig op maat','Geen verplichtingen'],
+  },
+  footer: {
+    merkzin:'Onbezorgd wonen, samen geregeld.',
+    lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
+    contact_label:'Direct contact',
+    phone_display:'(085)-800 0605',
+    email:'info@vvebeheercollectief.nl',
+    locatie:'Wateringen, Zuid-Holland',
+    contact_btn:'Neem direct contact op',
+    cols: [
+      { h:'Diensten', links:['Administratief beheer','Financieel beheer','Technisch beheer','Compleetpakket'] },
+      { h:'Bedrijf', links:['Over ons','Werkwijze','Klantverhalen','Veelgestelde vragen'] },
+      { h:'Service', links:['Klantenportaal','Schade melden','Veelgestelde vragen','Documenten'] },
+      { h:'Volg ons', links:['LinkedIn','Nieuwsbrief'] },
     ],
-    stap_van: 'van',
-    step_titles: [
-      'Vertel ons over uw VvE',
-      'Welke diensten zoekt u?',
-      'Uw huidige situatie',
-      'Uw contactgegevens',
-    ],
-    step1: {
-      vve_naam: 'Naam van de VvE',
-      vve_naam_ph: 'bv. VvE Parkzicht',
-      aantal: 'Aantal appartementen',
-      aantal_ph: 'bv. 24',
-      bouwjaar: 'Bouwjaar',
-      bouwjaar_ph: 'bv. 1998',
-      adres: 'Adres / locatie',
-      adres_ph: 'Plaats',
-    },
-    step2: {
-      services: [
-        ['package', 'Compleetpakket', 'Alle 3 pijlers in één prijs'],
-        ['folders', 'Administratief', 'ALV, notulen, post'],
-        ['chart-line-up', 'Financieel', 'Boekhouding, jaarrekening'],
-        ['wrench', 'Technisch', 'MJOP, onderhoud'],
-      ],
-    },
-    step3: {
-      beheerder_label: 'Heeft u nu al een beheerder?',
-      beheerder_options: ['Ja, ik wil overstappen', 'Nee, voor het eerst', 'Zelfbeheer, we zoeken hulp'],
-      belangrijk_label: 'Wat is voor u het belangrijkst?',
-      belangrijk_ph: 'bv. snellere reactie, betere transparantie, lagere kosten…',
-    },
-    step4: {
-      voornaam: 'Voornaam',
-      achternaam: 'Achternaam',
-      functie: 'Functie binnen VvE',
-      functie_options: ['Voorzitter', 'Penningmeester', 'Secretaris', 'Bestuurslid', 'Eigenaar / lid'],
-      email: 'E-mail',
-      telefoon: 'Telefoonnummer',
-    },
-    btn_terug: 'Terug',
-    btn_volgende: 'Volgende stap',
-    btn_versturen: 'Aanvraag versturen',
-    success_title: 'Bedankt voor uw aanvraag',
-    success_desc: 'Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.',
+    kvk:'VvE Beheer Collectief · KvK 51721139',
+    privacy:'Privacy', voorwaarden:'Voorwaarden', cookies:'Cookies',
+    offerte_link:'Offerte aanvragen →',
   },
   privacy_page: {
     title: 'Privacyverklaring',
@@ -1360,31 +334,6 @@ const NL = {
     contact_text: 'Heeft u vragen over ons cookiebeleid? Neem contact met ons op via info@vvebeheercollectief.nl.',
     updated: 'Laatst bijgewerkt: mei 2025',
   },
-  footer: {
-    brand_desc: "Persoonlijk, transparant en betrouwbaar VvE-beheer voor Zuid-Holland en omstreken. 17 jaar ervaring, 500+ VvE's in beheer.",
-    bigname_1: 'Onbezorgd wonen,',
-    bigname_2: 'samen geregeld.',
-    lead: "Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 17 jaar ervaring, 500+ VvE's in beheer.",
-    contact_label: 'Direct contact',
-    phone_display: '(085)-800 0605',
-    email: 'info@vvebeheercollectief.nl',
-    contact_btn: 'Neem direct contact op',
-    h_diensten: 'Diensten',
-    diensten_links: ['Administratief beheer', 'Financieel beheer', 'Technisch beheer', 'Compleetpakket'],
-    h_bedrijf: 'Bedrijf',
-    bedrijf_links: ['Over ons', 'Werkwijze', 'Klantverhalen', 'Veelgestelde vragen'],
-    h_service: 'Service',
-    service_links: ['Klantenportaal', 'Schade melden', 'Veelgestelde vragen', 'Documenten'],
-    h_volg: 'Volg ons',
-    volg_links: ['LinkedIn', 'Nieuwsbrief'],
-    h_contact: 'Contact',
-    locatie: 'Wateringen, Zuid-Holland',
-    offerte_link: 'Offerte aanvragen →',
-    bottom_kvk: 'VvE Beheer Collectief · KvK 51721139',
-    privacy: 'Privacy',
-    voorwaarden: 'Voorwaarden',
-    cookies: 'Cookies',
-  },
   titles: {
     home: 'VvE Beheer Collectief — VvE-beheer Zuid-Holland',
     diensten: 'Diensten — VvE Beheer Collectief',
@@ -1435,11 +384,20 @@ function useLanguage() {
   }, [lang]);
 
   const t = (section, key) => {
-    const source = lang === 'nl' ? NL : (translations[lang] || NL);
-    const val = source[section];
-    if (val === undefined) return key ? NL[section]?.[key] : NL[section];
-    if (key === undefined) return val;
-    return val[key] !== undefined ? val[key] : NL[section]?.[key];
+    const nlSec = NL[section];
+    const transSec = lang === 'nl' ? nlSec : (translations[lang] ? translations[lang][section] : undefined);
+    if (key === undefined) {
+      // Eén-arg: geef het sectie-object terug met NL als basis, zodat nog niet
+      // vertaalde (nieuwe) sleutels netjes terugvallen op het Nederlands.
+      if (transSec && typeof transSec === 'object' && !Array.isArray(transSec) &&
+          nlSec && typeof nlSec === 'object' && !Array.isArray(nlSec)) {
+        return { ...nlSec, ...transSec };
+      }
+      return transSec !== undefined ? transSec : nlSec;
+    }
+    // Twee-arg: per sleutel met NL-terugval.
+    const v = transSec ? transSec[key] : undefined;
+    return v !== undefined ? v : (nlSec ? nlSec[key] : undefined);
   };
 
   const isRtl = LANGUAGES.find(l => l.code === lang)?.dir === 'rtl';
@@ -1613,148 +571,134 @@ function MobileLangSwitcher({ lang, setLang }) {
   );
 }
 
-/* ── SiteHeader (navy) ── */
+/* ── Constanten ── */
+const PORTAAL_URL = 'https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL';
+const TEL_HREF = 'tel:+31858000605';
+const TEL_DISPLAY = '(085)-800 0605';
+
+/* ── Header (Richting D) ── */
 function SiteHeader({ page, setPage, lang, setLang, t, isRtl }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const headerRef = useRef(null);
-  useEffect(() => {
-    const el = headerRef.current;
-    // Exacte headerhoogte publiceren als --hdr-h op de root, zodat de mobiele
-    // hero er precies achter kan schuiven (geen witte balk/sliver bovenaan).
-    const setHeaderH = () => {
-      if (el) document.documentElement.style.setProperty('--hdr-h', el.offsetHeight + 'px');
-    };
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 10);
-      // Op de home-hero vult de balk geleidelijk mee over de eerste ~130px;
-      // elders altijd gevuld (--hdr = 1). CSS gate't het effect op mobiel.
-      const hdr = page === 'home' ? Math.min(1, Math.max(0, y / 130)) : 1;
-      if (el) el.style.setProperty('--hdr', hdr.toFixed(3));
-    };
-    setHeaderH();
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', setHeaderH, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', setHeaderH);
-    };
-  }, [page]);
-  const navT = t('nav');
+  const nav = t('nav');
   const links = [
-    { id: 'home', label: navT.home },
-    { id: 'diensten', label: navT.diensten },
-    { id: 'pakketten', label: navT.pakketten },
-    { id: 'werkwijze', label: navT.werkwijze },
-    { id: 'overons', label: navT.overons },
-    { id: 'offerte', label: navT.offerte },
+    ['home', nav.home], ['diensten', nav.diensten], ['pakketten', nav.pakketten],
+    ['werkwijze', nav.werkwijze], ['overons', nav.overons], ['offerte', nav.offerte],
   ];
-  const nav = (isMobile) => links.map(l => (
-    <a key={l.id} className={page === l.id ? 'active' : ''} onClick={() => { setPage(l.id); if (isMobile) setMobileOpen(false); }}>
-      {l.label}
-    </a>
-  ));
-
+  const goTo = (k) => { setPage(k); setMobileOpen(false); };
   return (
-    <>
-      <header ref={headerRef} className={`site-header ${scrolled ? 'scrolled' : ''} ${page === 'home' ? 'is-home' : ''}`}>
-        <div className="container site-header-inner">
-          <a className="site-logo" onClick={() => setPage('home')}>
-            <img src="assets/icoon-donker.png" alt="" />
-            <span className="site-logo-name">VvE Beheer Collectief</span>
-          </a>
-          <nav className="site-nav">{nav(false)}</nav>
-          <div className="site-header-cta">
-            <a href="tel:+31858000605" className="site-header-phone"><I name="phone" size={14} /> (085)-800 0605</a>
-            <LanguageSwitcher lang={lang} setLang={setLang} />
-            <a className="btn btn-secondary btn-sm" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer"><I name="sign-in" size={14} /> {navT.portaal_btn}</a>
+    <header style={{ position:'sticky', top:0, zIndex:60, background:'rgba(255,255,255,0.9)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', borderBottom:'1px solid #EEF1F4' }}>
+      <div style={{ maxWidth:1160, margin:'0 auto', padding:'16px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:26 }}>
+        <div onClick={() => goTo('home')} style={{ display:'flex', alignItems:'center', gap:12, cursor:'pointer', flexShrink:0 }}>
+          <img src="assets/logo.png" alt="VvE Beheer Collectief" style={{ height:36 }} />
+          <div style={{ lineHeight:1.2 }}>
+            <div style={{ fontFamily:"'Jost'", fontWeight:300, fontSize:10.5, letterSpacing:'0.3em', textTransform:'uppercase', color:'#1C242E' }}>VvE Beheer</div>
+            <div style={{ fontFamily:"'Jost'", fontWeight:500, fontSize:10.5, letterSpacing:'0.3em', textTransform:'uppercase', color:'#1C242E' }}>Collectief</div>
           </div>
-          <button className="mobile-toggle" onClick={() => setMobileOpen(true)} aria-label={navT.menu_open}>
-            <I name="list" size={24} />
-          </button>
         </div>
-      </header>
-
-      <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
-        <div className="mobile-menu-header">
-          <a className="site-logo" onClick={() => { setPage('home'); setMobileOpen(false); }} style={{ color: 'var(--navy)' }}>
-            <img src="assets/icoon-donker.png" alt="" style={{ width: 32, height: 32 }} />
-            <span>VvE Beheer Collectief</span>
-          </a>
-          <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label={navT.menu_close}>
-            <I name="x" size={24} />
-          </button>
+        <nav data-r="dnav" style={{ display:'flex', gap:30, alignItems:'center' }}>
+          {links.map(([k, label]) => (
+            <span key={k} className="h-nav" onClick={() => goTo(k)} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:13, letterSpacing:'0.06em', cursor:'pointer', whiteSpace:'nowrap', color: page===k ? '#4E6885' : '#59616B' }}>{label}</span>
+          ))}
+        </nav>
+        <div data-r="dcta" style={{ display:'flex', alignItems:'center', gap:16, flexShrink:0 }}>
+          <a href={PORTAAL_URL} target="_blank" rel="noopener noreferrer" className="h-nav" style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.06em', color:'#59616B', whiteSpace:'nowrap' }}>{nav.portaal}</a>
+          <LanguageSwitcher lang={lang} setLang={setLang} />
+          <a href={TEL_HREF} style={{ fontFamily:"'Karla'", fontWeight:600, fontSize:14, color:'#1C242E', whiteSpace:'nowrap' }}>{TEL_DISPLAY}</a>
+          <span className="h-btnP" onClick={() => goTo('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{nav.offerte_btn}</span>
         </div>
-        <MobileLangSwitcher lang={lang} setLang={setLang} />
-        <nav>{nav(true)}</nav>
-        <div className="mobile-cta">
-          <button className="btn btn-primary" onClick={() => { setPage('offerte'); setMobileOpen(false); }}>{navT.offerte_btn}</button>
-          <a className="btn btn-secondary" href="https://vvebeheercollectief.twinq.nl/apex/f?p=TPL:101:::NO::TPL_APP:EPL" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}><I name="sign-in" size={16} /> {navT.portaal_btn}</a>
-          <a href="tel:+31858000605" style={{ fontSize: 14, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <I name="phone" size={14} /> (085)-800 0605
-          </a>
+        <div data-r="burger" onClick={() => setMobileOpen(o => !o)} aria-label={mobileOpen ? nav.menu_close : nav.menu_open} aria-expanded={mobileOpen} role="button" tabIndex={0} style={{ width:44, height:44, alignItems:'center', justifyContent:'center', cursor:'pointer', flexDirection:'column', gap:5 }}>
+          <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
+          <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
+          <span style={{ width:22, height:2, background:'#1C242E', display:'block' }}></span>
         </div>
       </div>
-    </>
+      {mobileOpen && (
+        <div style={{ borderTop:'1px solid #EEF1F4', background:'#fff', padding:'14px 24px 22px' }}>
+          <div style={{ display:'flex', flexDirection:'column' }}>
+            {links.map(([k, label]) => (
+              <span key={k} onClick={() => goTo(k)} style={{ fontFamily:"'Jost'", fontSize:14, letterSpacing:'0.06em', color:'#28323E', padding:'13px 4px', borderBottom:'1px solid #F2F4F6', cursor:'pointer' }}>{label}</span>
+            ))}
+            <a href={PORTAAL_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'Jost'", fontSize:14, letterSpacing:'0.06em', color:'#28323E', padding:'13px 4px', borderBottom:'1px solid #F2F4F6' }}>{nav.portaal}</a>
+          </div>
+          <MobileLangSwitcher lang={lang} setLang={setLang} />
+          <div style={{ display:'flex', gap:12, marginTop:14 }}>
+            <span onClick={() => goTo('offerte')} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:5, cursor:'pointer' }}>{nav.offerte_btn}</span>
+            <a href={TEL_HREF} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#28323E', border:'1px solid #CDD5DD', padding:14, borderRadius:5 }}>{nav.bel}</a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
 
-/* ── SiteFooter ── */
+/* ── Eind-CTA (donker, herbruikbaar) ── */
+function EindCTA({ setPage, t }) {
+  const ct = t('cta');
+  return (
+    <section style={{ background:'linear-gradient(180deg,#232E3A 0%,#1A212A 100%)' }}>
+      <Reveal style={{ maxWidth:820, margin:'0 auto', padding:'104px 24px 84px', textAlign:'center' }}>
+        <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.28em', textTransform:'uppercase', color:'#8AA1B8', marginBottom:18 }}>{ct.eyebrow}</div>
+        <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:42, lineHeight:1.12, letterSpacing:'-0.01em', color:'#F5F8FB', margin:'0 0 18px' }}>{ct.title}</h2>
+        <p style={{ fontFamily:"'Karla'", fontSize:17, lineHeight:1.65, color:'#AEB8C3', margin:'0 auto 34px', maxWidth:500 }}>{ct.intro}</p>
+        <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap', marginBottom:32 }}>
+          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'16px 42px', borderRadius:4, cursor:'pointer' }}>{ct.btn}</span>
+        </div>
+        <div style={{ display:'flex', gap:28, justifyContent:'center', flexWrap:'wrap', fontFamily:"'Karla'", fontSize:14, color:'#8891A0' }}>
+          {(ct.reassure || []).map((r, i) => <span key={i}>{r}</span>)}
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+/* ── Footer (donker) ── */
 function SiteFooter({ setPage, t, isRtl }) {
   const ft = t('footer');
+  const nav = t('nav');
+  const linkEl = (l, key) => {
+    if (l === nav.portaal || l === 'Klantenportaal') {
+      return <a key={key} href={PORTAAL_URL} target="_blank" rel="noopener noreferrer" className="h-link" style={{ fontFamily:"'Karla'", fontSize:14, color:'#B4BCC6' }}>{l}</a>;
+    }
+    return <span key={key} style={{ fontFamily:"'Karla'", fontSize:14, color:'#B4BCC6' }}>{l}</span>;
+  };
   return (
-    <footer className="dz-footer">
-      <div className="container">
-        <div className="dz-foot-hero">
+    <footer style={{ backgroundColor:'#1A212A', color:'#C3CBD4' }}>
+      <div style={{ maxWidth:1160, margin:'0 auto', padding:'80px 24px 32px' }}>
+        <div data-r="split" style={{ display:'grid', gridTemplateColumns:'1.5fr 1fr', gap:64, paddingBottom:52, borderBottom:'1px solid rgba(138,161,184,0.16)' }}>
           <div>
-            <div className="dz-foot-bigname">{ft.bigname_1}<br /><span>{ft.bigname_2}</span></div>
-            <p className="dz-foot-lead">{ft.lead}</p>
+            <h2 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:30, color:'#F5F8FB', margin:'0 0 16px', letterSpacing:'-0.01em' }}>{ft.merkzin}</h2>
+            <p style={{ fontFamily:"'Karla'", fontSize:15, lineHeight:1.7, color:'#AEB8C3', margin:0, maxWidth:440 }}>{ft.lead}</p>
           </div>
-          <div className="dz-foot-card">
-            <div className="lab">{ft.contact_label}</div>
-            <a className="crow" href="tel:+31858000605"><I name="phone" size={17} /> {ft.phone_display}</a>
-            <a className="crow" href="mailto:info@vvebeheercollectief.nl"><I name="envelope-simple" size={17} /> {ft.email}</a>
-            <div className="crow"><I name="map-pin" size={17} /> {ft.locatie}</div>
-            <button className="btn btn-primary" onClick={() => setPage('offerte')}>
-              {ft.contact_btn} <I name="arrow-right" size={16} />
-            </button>
+          <div>
+            <div style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.2em', textTransform:'uppercase', color:'#8AA1B8', marginBottom:16 }}>{ft.contact_label}</div>
+            <div style={{ fontFamily:"'Karla'", fontSize:15, lineHeight:1.9, color:'#DCE2E8' }}>
+              <div>{ft.phone_display}</div>
+              <div><a href="mailto:info@vvebeheercollectief.nl" className="h-link" style={{ color:'#DCE2E8' }}>{ft.email}</a></div>
+              <div>{ft.locatie}</div>
+            </div>
+            <span onClick={() => setPage('offerte')} style={{ display:'inline-block', marginTop:20, fontFamily:"'Jost'", fontWeight:400, fontSize:11.5, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F5F8FB', border:'1px solid #4E6885', padding:'12px 24px', borderRadius:4, cursor:'pointer' }}>{ft.contact_btn}</span>
           </div>
         </div>
-        <div className="dz-foot-in">
-          <div>
-            <h4>{ft.h_diensten}</h4>
-            {ft.diensten_links.map(label => (
-              <a key={label} onClick={() => setPage('diensten')}>{label}</a>
-            ))}
-          </div>
-          <div>
-            <h4>{ft.h_bedrijf}</h4>
-            <a onClick={() => setPage('overons')}>{ft.bedrijf_links[0]}</a>
-            <a onClick={() => setPage('werkwijze')}>{ft.bedrijf_links[1]}</a>
-            <a onClick={() => setPage('overons')}>{ft.bedrijf_links[2]}</a>
-            <a onClick={() => setPage('home')}>{ft.bedrijf_links[3]}</a>
-          </div>
-          <div>
-            <h4>{ft.h_service}</h4>
-            {ft.service_links.map(label => (
-              <a key={label}>{label}</a>
-            ))}
-          </div>
-          <div>
-            <h4>{ft.h_volg}</h4>
-            {ft.volg_links.map(label => (
-              <a key={label}>{label}</a>
-            ))}
-          </div>
+        <div data-r="g4" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:34, padding:'48px 0' }}>
+          {(ft.cols || []).map((col, ci) => (
+            <div key={ci}>
+              <div style={{ fontFamily:"'Jost'", fontSize:11, letterSpacing:'0.2em', textTransform:'uppercase', color:'#8AA1B8', marginBottom:18 }}>{col.h}</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:11 }}>
+                {col.links.map((l, li) => linkEl(l, li))}
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="dz-foot-bottom">
-          <div>&copy; {new Date().getFullYear()} {ft.bottom_kvk}</div>
-          <div style={{ display: 'flex', gap: 22 }}>
-            <a onClick={() => setPage('privacy')}>{ft.privacy}</a>
-            <a onClick={() => setPage('voorwaarden')}>{ft.voorwaarden}</a>
-            <a onClick={() => setPage('cookies')}>{ft.cookies}</a>
+        <div data-r="row" style={{ display:'flex', justifyContent:'space-between', alignItems:'center', gap:24, paddingTop:26, borderTop:'1px solid rgba(138,161,184,0.16)', flexWrap:'wrap' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:14 }}>
+            <img src="assets/logo.png" alt="" style={{ height:26, filter:'brightness(0) invert(1)' }} />
+            <span style={{ fontFamily:"'Karla'", fontSize:12.5, color:'#8891A0' }}>{ft.kvk}</span>
+          </div>
+          <div style={{ display:'flex', alignItems:'center', gap:22, fontFamily:"'Karla'", fontSize:12.5, color:'#8891A0', flexWrap:'wrap' }}>
+            <span className="h-link" onClick={() => setPage('privacy')} style={{ cursor:'pointer' }}>{ft.privacy}</span>
+            <span className="h-link" onClick={() => setPage('voorwaarden')} style={{ cursor:'pointer' }}>{ft.voorwaarden}</span>
+            <span className="h-link" onClick={() => setPage('cookies')} style={{ cursor:'pointer' }}>{ft.cookies}</span>
+            <span onClick={() => setPage('offerte')} style={{ color:'#8AA1B8', cursor:'pointer' }}>{ft.offerte_link}</span>
           </div>
         </div>
       </div>
@@ -1762,1077 +706,83 @@ function SiteFooter({ setPage, t, isRtl }) {
   );
 }
 
-/* ── Shared CTA block ── */
-function CTABlock({ setPage, t, isRtl }) {
-  const ct = t('cta');
+/* ── Mobiele actiebalk ── */
+function MobileBar({ setPage, t }) {
+  const nav = t('nav');
   return (
-    <section style={{ background: 'var(--gray-bg)' }}>
-      <div className="container">
-        <div className="cta-grid" style={{ background: 'white', borderRadius: 16, padding: 64, display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 56, alignItems: 'center' }}>
-          <div>
-            <div className="section-eyebrow">{ct.eyebrow}</div>
-            <h2 className="section-title">{ct.title_1}<br />{ct.title_2}</h2>
-            <p className="section-sub" style={{ marginBottom: 24 }}>{ct.subtitle}</p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                {ct.btn_primary} <I name="arrow-right" size={16} />
-              </button>
-              <a href="tel:+31858000605" className="btn btn-secondary btn-lg">{ct.btn_secondary}</a>
-            </div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {ct.usps.map(item => (
-              <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'var(--gray-bg)', borderRadius: 10 }}>
-                <I name="check-circle" size={20} weight="fill" style={{ color: 'var(--teal-700)' }} />
-                <span style={{ fontSize: 14, fontWeight: 500 }}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <div data-r="mbar" style={{ position:'fixed', left:0, right:0, bottom:0, zIndex:65, background:'rgba(255,255,255,0.96)', backdropFilter:'blur(10px)', WebkitBackdropFilter:'blur(10px)', borderTop:'1px solid #E6EAEE', padding:'12px 16px', gap:10 }}>
+      <span onClick={() => setPage('offerte')} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:14, borderRadius:6, cursor:'pointer' }}>{nav.offerte_short || nav.offerte}</span>
+      <a href={TEL_HREF} style={{ flex:1, textAlign:'center', fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.14em', textTransform:'uppercase', color:'#28323E', border:'1px solid #CDD5DD', padding:14, borderRadius:6 }}>{nav.bel}</a>
+    </div>
   );
 }
 
-/* Gedeeld CTA-blok voor Diensten & Werkwijze (nieuw ontwerp) */
-function DzCTA({ data, setPage }) {
+/* ── Pagina-stubs (worden in T2–T8 vervangen) ── */
+function PageStub({ title }) {
   return (
-    <Reveal className="dz-cta">
-      <div>
-        <span className="dz-eyebrow">{data.cta_eyebrow}</span>
-        <h2>{data.cta_title}</h2>
-        <p>{data.cta_desc}</p>
-        <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-          {data.cta_btn} <I name="arrow-right" size={16} />
-        </button>
-      </div>
-      <div className="dz-cta-list">
-        {(data.cta_list || []).map(item => (
-          <div key={item}><I name="check-circle" size={20} weight="fill" /> {item}</div>
-        ))}
-      </div>
-    </Reveal>
+    <main className="container" style={{ padding:'120px 24px', minHeight:'52vh' }}>
+      <h1 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:40, color:'#1C242E' }}>{title}</h1>
+      <p style={{ marginTop:12, color:'#59616B', fontFamily:"'Karla'" }}>Deze pagina wordt in de volgende stap opgebouwd.</p>
+    </main>
+  );
+}
+function HomePage({ t, setPage }) { return <PageStub title="Home" />; }
+function DienstenPage({ t, setPage }) { return <PageStub title="Diensten" />; }
+function PakkettenPage({ t, setPage }) { return <PageStub title="Pakketten" />; }
+function WerkwijzePage({ t, setPage }) { return <PageStub title="Werkwijze" />; }
+function OverOnsPage({ t, setPage }) { return <PageStub title="Over ons" />; }
+function OffertePage({ t }) { return <PageStub title="Offerte" />; }
+
+/* ── Juridische pagina (volledige body volgt in T8) ── */
+function LegalPage({ t, section }) {
+  const p = t(section) || {};
+  return (
+    <main className="container" style={{ maxWidth:820, padding:'96px 24px', minHeight:'52vh' }}>
+      <h1 style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:40, color:'#1C242E', marginBottom:16 }}>{p.title}</h1>
+      {p.intro && <p style={{ color:'#59616B', fontFamily:"'Karla'", lineHeight:1.7 }}>{p.intro}</p>}
+    </main>
   );
 }
 
-/* ══════════════════════════════════════════════
-   HOME PAGE
-   ══════════════════════════════════════════════ */
-
-function HeroSection({ setPage, t, isRtl }) {
-  const heroT = t('hero');
-  const trust = heroT.trust || [];
-  const trustIcons = ['hourglass-medium', 'buildings', 'lightning'];
-  const TRUST_NUMS = ['17+', '500+', '< 24u'];
-  const [entered, setEntered] = useState(false);
-  const panelRef = useRef(null);
-  const skyWrapRef = useRef(null);
-  const rafRef = useRef(0);
-
-  // Entree-animatie: na de eerste frame .dz-in zetten zodat de begintoestand
-  // (opacity:0) eerst getekend wordt en de transitie zichtbaar inkomt.
-  useEffect(() => {
-    const r = requestAnimationFrame(() => setEntered(true));
-    return () => cancelAnimationFrame(r);
-  }, []);
-
-  // Skyline muis-parallax — alleen op apparaten met fijne aanwijzer + hover,
-  // en niet bij prefers-reduced-motion. Parallax zit op de wrapper.
-  useEffect(() => {
-    const panel = panelRef.current, wrap = skyWrapRef.current;
-    if (!panel || !wrap || !window.matchMedia) return;
-    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!fine || reduce) return;
-    const onMove = (e) => {
-      const r = panel.getBoundingClientRect();
-      const dx = (e.clientX - r.left) / r.width - 0.5;
-      const dy = (e.clientY - r.top) / r.height - 0.5;
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = requestAnimationFrame(() => {
-        wrap.style.transform = `translate3d(${(dx * 18).toFixed(2)}px, ${(dy * 12).toFixed(2)}px, 0)`;
-      });
-    };
-    const onLeave = () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      wrap.style.transform = 'translate3d(0,0,0)';
-    };
-    panel.addEventListener('mousemove', onMove);
-    panel.addEventListener('mouseleave', onLeave);
-    return () => {
-      panel.removeEventListener('mousemove', onMove);
-      panel.removeEventListener('mouseleave', onLeave);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
-
-  return (
-    <section className="dz-hero">
-      <div className={`dz-panel ${entered ? 'dz-in' : ''}`} ref={panelRef}>
-        <div className="dz-sky-wrap" ref={skyWrapRef}>
-          <img className="dz-sky" src={PHOTOS.skyline} alt="Den Haag skyline" />
-        </div>
-        <div className="container">
-          <div className="dz-hero-content">
-            <img className="dz-mob-icon dz-anim" src="assets/icoon-donker.png" alt="" />
-            <span className="dz-since dz-anim"><b>{heroT.since}</b></span>
-            <h1 className="dz-h1 dz-anim">{heroT.title_1} <span>{heroT.title_2}</span></h1>
-            <p className="dz-lead dz-anim">{heroT.subtitle}</p>
-            <div className="dz-ctas dz-anim">
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('diensten')}>
-                {heroT.cta_primary} <I name="arrow-right" size={16} />
-              </button>
-              <button className="btn btn-secondary btn-lg" onClick={() => setPage('werkwijze')}
-                style={{ background: '#fff', borderColor: 'var(--border)' }}>
-                {heroT.cta_secondary}
-              </button>
-            </div>
-            <div className="dz-trust dz-anim">
-              {trust.map((label, i) => (
-                <span key={i} className="dz-tchip">
-                  <I name={trustIcons[i] || 'check'} size={17} weight="duotone" />{' '}
-                  <span className="dz-tt">
-                    <span className="dz-tt-num">
-                      <CountUp value={TRUST_NUMS[i]} duration={1200} delay={700} threshold={0.5} />
-                    </span>{' '}{label}
-                  </span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PillarsSection({ setPage, t, isRtl }) {
-  const ps = t('pillars_section');
-  const pillars = t('pillars');
-  return (
-    <section className="dz-band">
-      <div className="container">
-        <Reveal className="dz-head" style={{ marginBottom: 50 }}>
-          <span className="dz-eyebrow">{ps.eyebrow}</span>
-          <h2>{ps.title}</h2>
-          <p>{ps.subtitle}</p>
-        </Reveal>
-        <Reveal className="dz-pillars">
-          {pillars.map(p => (
-            <div key={p.title} className="dz-pcard">
-              <div className="dz-pico"><I name={p.icon} size={26} weight="duotone" /></div>
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-              <ul>
-                {p.bullets.slice(0, 3).map(b => (
-                  <li key={b}><I name="check" size={15} /> {b}</li>
-                ))}
-              </ul>
-              <a className="dz-more" onClick={() => setPage('diensten')}>
-                {ps.read_more} <I name="arrow-right" size={13} />
-              </a>
-            </div>
-          ))}
-        </Reveal>
-        <Reveal className="dz-svc-note">
-          <span className="lead"><I name="handshake" size={24} weight="duotone" /> {ps.note}</span>
-          <a onClick={() => setPage('diensten')}>{ps.note_link} <I name="arrow-right" size={14} /></a>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function ReasonsSection({ t, isRtl }) {
-  const rs = t('reasons_section');
-  const reasons = t('diff_items');
-  return (
-    <section className="dz-band-tint">
-      <div className="container">
-        <Reveal className="dz-head" style={{ marginBottom: 50 }}>
-          <span className="dz-eyebrow">{rs.eyebrow}</span>
-          <h2>{rs.title_1} <span>{rs.title_2}</span></h2>
-          <p>{rs.subtitle}</p>
-        </Reveal>
-        <Reveal className="dz-reasons">
-          {reasons.map(it => (
-            <div key={it.title} className="dz-rcard">
-              <div className="ic"><I name={it.icon} size={26} weight="duotone" /></div>
-              <h4>{it.title}</h4>
-              <p>{it.desc}</p>
-            </div>
-          ))}
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function ReviewsSection({ t, isRtl }) {
-  const rs = t('reviews_section');
-  const reviews = t('reviews');
-  return (
-    <section className="dz-band-tint">
-      <div className="container">
-        <Reveal className="dz-head center" style={{ marginBottom: 50 }}>
-          <span className="dz-eyebrow">{rs.eyebrow}</span>
-          <h2>{rs.title_1} <span>{rs.title_2}</span></h2>
-        </Reveal>
-        <Reveal className="dz-reviews">
-          {reviews.map(item => (
-            <figure key={item.name} className="dz-review">
-              <div className="dz-stars">
-                {[1,2,3,4,5].map(i => <I key={i} name="star" size={18} weight="fill" />)}
-              </div>
-              <blockquote>“{item.quote}”</blockquote>
-              <figcaption>
-                <div className="dz-av">{item.av}</div>
-                <div className="who"><b>{item.name}</b><span>{item.role}</span></div>
-              </figcaption>
-            </figure>
-          ))}
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function FAQSection({ setPage, t, isRtl }) {
-  const [open, setOpen] = useState([]);
-  const fs = t('faq_section');
-  const faqItems = t('faq');
-  const toggle = (i) => setOpen(prev => prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]);
-  return (
-    <section className="dz-band">
-      <div className="container">
-        <Reveal className="dz-head center" style={{ marginBottom: 50 }}>
-          <span className="dz-eyebrow">{fs.eyebrow}</span>
-          <h2>{fs.title_1} <span>{fs.title_2}</span></h2>
-        </Reveal>
-        <Reveal className="dz-faq">
-          {faqItems.map((f, i) => (
-            <div key={f.q} className={`dz-faq-item ${open.includes(i) ? 'open' : ''}`}>
-              <button className="dz-faq-q" onClick={() => toggle(i)} aria-expanded={open.includes(i)}>
-                {f.q}<span className="ic"><I name="plus" size={18} /></span>
-              </button>
-              <div className="dz-faq-a"><div className="dz-faq-a-inner">{f.a}</div></div>
-            </div>
-          ))}
-        </Reveal>
-        <Reveal className="dz-faq-foot" as="p">
-          {fs.foot_text} <a onClick={() => setPage('offerte')}>{fs.foot_link}</a>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function DarkCTASection({ setPage, t, isRtl }) {
-  const ct = t('cta');
-  return (
-    <section className="dz-band-dark">
-      <div className="container">
-        <Reveal className="dz-cta dz-cta-dark">
-          <div>
-            <span className="dz-eyebrow">{ct.eyebrow}</span>
-            <h2>{ct.title_1} {ct.title_2}</h2>
-            <p>{ct.subtitle}</p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('offerte')}>
-                {ct.btn_primary} <I name="arrow-right" size={16} />
-              </button>
-              <a href="tel:+31858000605" className="btn btn-ghost-light btn-lg">{ct.btn_secondary}</a>
-            </div>
-          </div>
-          <div className="dz-cta-list">
-            {ct.usps.map(item => (
-              <div key={item}><I name="check-circle" size={20} weight="fill" /> {item}</div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function NewsletterSection({ t, isRtl }) {
-  const nl = t('newsletter');
-  const [done, setDone] = useState(false);
-  const [email, setEmail] = useState('');
-  return (
-    <section className="dz-band">
-      <div className="container">
-        <Reveal className="dz-news">
-          <div>
-            <span className="dz-eyebrow">{nl.eyebrow}</span>
-            <h2>{nl.title_1} <span>{nl.title_2}</span></h2>
-            <p>{nl.subtitle}</p>
-          </div>
-          {done ? (
-            <div className="dz-news-success"><I name="check-circle" size={22} weight="fill" /> {nl.success}</div>
-          ) : (
-            <form className="dz-news-form" onSubmit={(e) => { e.preventDefault(); if (email.trim()) setDone(true); }}>
-              <div className="dz-news-row">
-                <input type="email" required placeholder={nl.placeholder} aria-label={nl.placeholder}
-                  value={email} onChange={(e) => setEmail(e.target.value)} />
-                <button className="btn btn-primary btn-lg" type="submit">{nl.btn}</button>
-              </div>
-              <small><I name="lock-simple" size={15} weight="fill" /> {nl.note}</small>
-            </form>
-          )}
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function HomePage({ setPage, t, isRtl }) {
-  return (
-    <>
-      <HeroSection setPage={setPage} t={t} isRtl={isRtl} />
-      <PillarsSection setPage={setPage} t={t} isRtl={isRtl} />
-      <ReasonsSection t={t} isRtl={isRtl} />
-      <DarkCTASection setPage={setPage} t={t} isRtl={isRtl} />
-      <FAQSection setPage={setPage} t={t} isRtl={isRtl} />
-      <ReviewsSection t={t} isRtl={isRtl} />
-      <NewsletterSection t={t} isRtl={isRtl} />
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   DIENSTEN PAGE
-   ══════════════════════════════════════════════ */
-function DienstenPage({ setPage, t, isRtl }) {
-  const dp = t('diensten_page');
-  const rows = dp.rows || [];
-  const rowIcons = ['folders', 'chart-line-up', 'wrench'];
-  return (
-    <>
-      {/* Paginakop */}
-      <section style={{ paddingBottom: 'clamp(28px,3vw,44px)' }}>
-        <div className="container">
-          <Reveal className="dz-head">
-            <span className="dz-eyebrow">{dp.eyebrow}</span>
-            <h2>{dp.title_1} <span>{dp.title_2}</span></h2>
-            <p>{dp.subtitle}</p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Drie dienst-detailrijen (alternerend) */}
-      <section style={{ paddingTop: 0 }}>
-        <div className="container">
-          {rows.map((r, idx) => (
-            <Reveal key={idx} className="dz-drow" style={{ direction: idx % 2 === 1 ? 'rtl' : 'ltr' }}>
-              <div style={{ direction: 'ltr' }}>
-                <div className="dz-dchip">
-                  <div className="ic"><I name={rowIcons[idx] || 'folders'} size={26} weight="duotone" /></div>
-                  <span className="nm">{dp.pillar_label} 0{idx + 1}</span>
-                </div>
-                <h3>{r.title}</h3>
-                <p className="dz-intro">{r.intro}</p>
-                <div className="dz-result">
-                  <I name="seal-check" size={22} weight="fill" />
-                  <div><b>{dp.result_label}</b><span>{r.result}</span></div>
-                </div>
-                <button className="btn btn-secondary" onClick={() => setPage('offerte')}>
-                  {dp.offerte_btn} <I name="arrow-right" size={14} />
-                </button>
-              </div>
-              <div style={{ direction: 'ltr' }}>
-                <div className="dz-checklist">
-                  <div className="dz-ch-head"><I name="list-checks" size={20} /> {dp.checklist_head}</div>
-                  <ul>
-                    {(r.bullets || []).map(b => (
-                      <li key={b}><I name="check-circle" size={22} weight="fill" /> {b}</li>
-                    ))}
-                  </ul>
-                  <div className="dz-ch-foot">
-                    <span className="tag"><I name="package" size={18} weight="duotone" /> {r.tag}</span>
-                    <a onClick={() => setPage('offerte')}>{dp.offerte_short} <I name="arrow-right" size={14} /></a>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Compleet-pakket */}
-      <section style={{ paddingTop: 0 }}>
-        <div className="container">
-          <Reveal className="dz-compleet">
-            <div>
-              <span className="dz-pill dz-pill-dark"><I name="star" size={14} weight="fill" /> {dp.compleet_pill}</span>
-              <h2>{dp.compleet_title_1}<br />{dp.compleet_title_2}</h2>
-              <p>{dp.compleet_desc}</p>
-              <button className="btn btn-primary btn-lg" onClick={() => setPage('werkwijze')}>
-                {dp.compleet_btn} <I name="arrow-right" size={16} />
-              </button>
-            </div>
-            <div className="grid2">
-              {(dp.compleet_features || []).map(f => (
-                <div key={f}><I name="check" size={16} /> {f}</div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={{ paddingTop: 0 }}>
-        <div className="container">
-          <DzCTA data={dp} setPage={setPage} />
-        </div>
-      </section>
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   PAKKETTEN PAGE — NIEUW
-   ══════════════════════════════════════════════ */
-function PakkettenPage({ setPage, t, isRtl }) {
-  const pp = t('pakketten_page');
-  const packages = pp.packages;
-
-  return (
-    <>
-      {/* Hero */}
-      <section style={{ background: 'var(--gray-bg)', padding: '64px 0 56px' }}>
-        <div className="container">
-          <div className="section-eyebrow">{pp.eyebrow}</div>
-          <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px', maxWidth: 720 }}>
-            {pp.title}
-          </h1>
-          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, margin: 0, lineHeight: 1.55 }}>
-            {pp.subtitle}
-          </p>
-        </div>
-      </section>
-
-      {/* Pricing cards */}
-      <section style={{ paddingTop: 0, marginTop: -32 }}>
-        <div className="container">
-          <div className="pakketten-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'stretch' }}>
-            {packages.map(pkg => {
-              const dark = pkg.id === 'compleet';
-              return (
-              <div key={pkg.id} style={{
-                position: 'relative', padding: '36px 32px 32px', borderRadius: 16,
-                background: dark ? 'var(--navy)' : 'white',
-                color: dark ? 'white' : 'var(--navy)',
-                border: dark ? 'none' : '1px solid var(--border)',
-                transform: dark ? 'translateY(-8px)' : 'none',
-                boxShadow: dark ? '0 28px 56px -20px rgba(43,53,68,0.35)' : '0 4px 16px -8px rgba(43,53,68,0.1)',
-                display: 'flex', flexDirection: 'column',
-              }}>
-                {dark && (
-                  <span className="pill" style={{ position: 'absolute', top: -14, left: 32 }}>{pp.meest_gekozen}</span>
-                )}
-                <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: dark ? 'var(--teal-300)' : 'var(--teal-700)', marginBottom: 8 }}>{pp.pakket_label}</div>
-                <h2 style={{ fontSize: 30, fontWeight: 700, margin: '0 0 8px', color: dark ? 'white' : 'var(--navy)' }}>{pkg.name}</h2>
-                <p style={{ fontSize: 14.5, lineHeight: 1.55, color: dark ? 'rgba(255,255,255,0.75)' : 'var(--muted)', minHeight: 64, margin: '0 0 24px' }}>{pkg.tagline}</p>
-
-                <div style={{ borderTop: `1px solid ${dark ? 'rgba(255,255,255,0.12)' : 'var(--border)'}`, paddingTop: 24, marginBottom: 24 }}>
-                  {pkg.price ? (
-                    <>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
-                        <span style={{ fontSize: 14, color: dark ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}>{pp.vanaf}</span>
-                        <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 4 }}>€</span>
-                        <span style={{ fontSize: 44, fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>{pkg.price}</span>
-                      </div>
-                      <div style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pp.prijs_label}</div>
-                    </>
-                  ) : (
-                    <>
-                      <div style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.02em' }}>{pp.op_aanvraag}</div>
-                      <div style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.5)' : 'var(--muted)', marginTop: 4 }}>{pp.prijs_label}</div>
-                    </>
-                  )}
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 28, flex: 1 }}>
-                  {pkg.features.map(f => (
-                    <div key={f.label} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      {f.active
-                        ? <I name="check" size={16} style={{ color: dark ? 'var(--teal-300)' : 'var(--teal-700)', flexShrink: 0 }} />
-                        : <I name="minus" size={16} style={{ color: dark ? 'rgba(255,255,255,0.25)' : 'var(--border)', flexShrink: 0 }} />
-                      }
-                      <span style={{
-                        fontSize: 14,
-                        color: f.active ? (dark ? 'rgba(255,255,255,0.9)' : 'var(--navy)') : (dark ? 'rgba(255,255,255,0.35)' : 'var(--muted)'),
-                        textDecoration: f.active ? 'none' : 'line-through',
-                      }}>{f.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  className={`btn ${dark ? 'btn-primary' : 'btn-secondary'}`}
-                  style={{ width: '100%', justifyContent: 'center' }}
-                  onClick={() => setPage('offerte')}
-                >
-                  {pp.offerte_voor} {pkg.name} <I name="arrow-right" size={14} />
-                </button>
-              </div>
-              );
-            })}
-          </div>
-          <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--muted)', marginTop: 24, fontStyle: 'italic' }}>
-            {pp.prijs_note}
-          </p>
-        </div>
-      </section>
-
-      {/* Comparison matrix */}
-      <section>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div className="section-eyebrow">{pp.vergelijking_eyebrow}</div>
-            <h2 className="section-title" style={{ margin: '0 auto' }}>{pp.vergelijking_title}</h2>
-          </div>
-          <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden' }}>
-            {/* Matrix header */}
-            <div className="matrix-header" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', background: 'var(--gray-bg)', padding: '18px 24px', gap: 0 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)' }}>{pp.matrix_functie}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>{pp.matrix_start}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', textAlign: 'center' }}>{pp.matrix_start_aanv}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--teal-700)', textAlign: 'center' }}>{pp.matrix_compleet}</div>
-            </div>
-
-            {pp.matrix.map(group => (
-              <div key={group.group}>
-                <div style={{ padding: '20px 24px 10px', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--teal-700)' }}>
-                  {group.group}
-                </div>
-                {group.rows.map((row, ri) => (
-                  <div className="matrix-row" key={row.label} style={{
-                    display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr',
-                    padding: '14px 24px', borderTop: '1px solid var(--border)',
-                    fontSize: 14, alignItems: 'center',
-                  }}>
-                    <div style={{ color: 'var(--navy)' }}>{row.label}</div>
-                    <div style={{ textAlign: 'center' }}><PkgCheck value={row.start} /></div>
-                    <div style={{ textAlign: 'center' }}><PkgCheck value={row.startPlus} /></div>
-                    <div style={{ textAlign: 'center', background: 'rgba(13,115,119,0.04)', margin: '-14px 0', padding: '14px 0' }}><PkgCheck value={row.compleet} /></div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Hulp bij keuze */}
-      <section style={{ background: 'var(--gray-bg)' }}>
-        <div className="container">
-          <div className="hulp-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-            <div>
-              <div className="section-eyebrow">{pp.hulp_eyebrow}</div>
-              <h2 className="section-title">{pp.hulp_title}</h2>
-              <p className="section-sub" style={{ marginBottom: 28 }}>
-                {pp.hulp_subtitle}
-              </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <button className="btn btn-primary" onClick={() => setPage('offerte')}>
-                  {pp.hulp_btn} <I name="arrow-right" size={14} />
-                </button>
-                <a href="tel:+31858000605" className="btn btn-secondary">
-                  <I name="phone" size={14} /> (085)-800 0605
-                </a>
-              </div>
-            </div>
-            <div className="hulp-cards" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {pp.hulp_cards.map(h => (
-                <div key={h.title} style={{ background: 'white', padding: 20, borderRadius: 12, border: '1px solid var(--border)' }}>
-                  <I name={h.icon} size={22} weight="duotone" style={{ color: 'var(--teal-700)', marginBottom: 12, display: 'block' }} />
-                  <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{h.title}</div>
-                  <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5 }}>{h.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   OVER ONS PAGE
-   ══════════════════════════════════════════════ */
-function OverOnsPage({ setPage, t, isRtl }) {
-  const op = t('overons_page');
-  const stats = t('stats');
-  const teamImgs = [PHOTOS.portraitM, PHOTOS.portraitW, PHOTOS.portraitM2, PHOTOS.portraitW2];
-  const teamData = op.team.map((m, i) => ({ ...m, img: teamImgs[i] }));
-  return (
-    <>
-      <section style={{ background: 'var(--gray-bg)', padding: '64px 0' }}>
-        <div className="container">
-          <div className="overons-header-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
-            <div>
-              <div className="section-eyebrow">{op.eyebrow}</div>
-              <h1 className="page-h1" style={{ fontSize: 52, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 24px' }}>
-                {op.title}
-              </h1>
-              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--muted)', margin: 0 }}>
-                {op.desc}
-              </p>
-            </div>
-            <Photo src={PHOTOS.modernFacade} alt="Kantoor Wateringen" style={{ width: '100%', aspectRatio: '4 / 3', borderRadius: 14 }} />
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: '64px 0' }}>
-        <div className="container">
-          <div className="stats-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, padding: '32px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-            {stats.map(s => (
-              <div key={s.label}>
-                <div className="stat-num"><CountUp value={s.num} /></div>
-                <div className="stat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="section-eyebrow">{op.team_eyebrow}</div>
-          <h2 className="section-title">{op.team_title}</h2>
-          <p className="section-sub" style={{ marginBottom: 48 }}>
-            {op.team_subtitle}
-          </p>
-          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-            {teamData.map(m => (
-              <div key={m.name}>
-                <Photo src={m.img} alt={m.name} style={{ width: '100%', aspectRatio: '4 / 5', borderRadius: 12, marginBottom: 16 }} />
-                <div style={{ fontSize: 16, fontWeight: 700 }}>{m.name}</div>
-                <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 4 }}>{m.role}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: 'var(--gray-bg)' }}>
-        <div className="container">
-          <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
-            <div className="section-eyebrow">{op.missie_eyebrow}</div>
-            <h2 style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 24px' }}>
-              "{op.missie_quote}"
-            </h2>
-            <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
-              {op.missie_desc}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <CTABlock setPage={setPage} t={t} isRtl={isRtl} />
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   WERKWIJZE PAGE
-   ══════════════════════════════════════════════ */
-function WerkwijzePage({ setPage, t, isRtl }) {
-  const wp = t('werkwijze_page');
-  const steps = wp.steps || [];
-  const reassure = wp.reassure || [];
-  const stepIcons = ['note-pencil', 'chats-circle', 'arrows-left-right', 'monitor', 'users-three', 'shield-check'];
-  const reassureIcons = ['hand-palm', 'lock-key', 'user-circle-check'];
-  const railRef = useRef(null);
-  const fillRef = useRef(null);
-  const stepRefs = useRef([]);
-
-  useEffect(() => {
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) {
-      stepRefs.current.forEach(el => el && el.classList.add('on'));
-      if (fillRef.current) fillRef.current.style.height = '100%';
-      return;
-    }
-    const onScroll = () => {
-      const vh = window.innerHeight;
-      stepRefs.current.forEach(el => {
-        if (el) el.classList.toggle('on', el.getBoundingClientRect().top < vh * 0.55);
-      });
-      const rail = railRef.current, fill = fillRef.current;
-      if (rail && fill) {
-        const r = rail.getBoundingClientRect();
-        const p = (vh * 0.5 - r.top) / (r.height || 1);
-        fill.style.height = Math.max(0, Math.min(1, p)) * 100 + '%';
-      }
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-    };
-  }, [steps.length]);
-
-  return (
-    <>
-      {/* Paginakop (gecentreerd) */}
-      <section style={{ paddingBottom: 'clamp(28px,3vw,48px)' }}>
-        <div className="container">
-          <Reveal className="dz-head center">
-            <span className="dz-eyebrow">{wp.eyebrow}</span>
-            <h2>{wp.title_1} <span>{wp.title_2}</span></h2>
-            <p>{wp.subtitle}</p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Verticale tijdlijn + reassure */}
-      <section style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="dz-tl">
-            <div className="dz-rail" ref={railRef}><div className="dz-rail-fill" ref={fillRef} /></div>
-            {steps.map((s, idx) => (
-              <div key={idx} className="dz-tstep" ref={el => { stepRefs.current[idx] = el; }}>
-                <div className="dz-tnode"><I name={stepIcons[idx] || 'check'} size={24} weight="duotone" /></div>
-                <div className="dz-tcard">
-                  <div className="dz-tmeta">
-                    <span className="dz-tnum">{wp.stap} 0{idx + 1}</span>
-                    <span className="dz-twhen">{s.when}</span>
-                  </div>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="dz-reassure">
-            {reassure.map((r, idx) => (
-              <Reveal key={idx}>
-                <I name={reassureIcons[idx] || 'check'} size={27} weight="duotone" />
-                <b>{r.title}</b>
-                <p>{r.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={{ paddingTop: 0 }}>
-        <div className="container">
-          <DzCTA data={wp} setPage={setPage} />
-        </div>
-      </section>
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   OFFERTE PAGE
-   ══════════════════════════════════════════════ */
-function OffertePage({ t, isRtl }) {
-  const [step, setStep] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
-  const next = () => setStep(Math.min(4, step + 1));
-  const back = () => setStep(Math.max(1, step - 1));
-  const ofp = t('offerte_page');
-
-  if (submitted) {
-    return (
-      <section style={{ padding: '96px 0', background: 'var(--gray-bg)', minHeight: 500 }}>
-        <div className="container" style={{ maxWidth: 640, textAlign: 'center' }}>
-          <div style={{ width: 64, height: 64, borderRadius: 32, background: 'var(--teal-100)', color: 'var(--teal-700)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
-            <I name="check-circle" size={32} weight="fill" />
-          </div>
-          <h1 style={{ fontSize: 36, fontWeight: 700, margin: '0 0 16px' }}>{ofp.success_title}</h1>
-          <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6 }}>
-            {ofp.success_desc}
-          </p>
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section style={{ padding: '64px 0 96px', background: 'var(--gray-bg)', minHeight: 700 }}>
-      <div className="container" style={{ maxWidth: 1080 }}>
-        <div className="offerte-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 56 }}>
-          <div>
-            <div className="section-eyebrow">{ofp.eyebrow}</div>
-            <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 20px' }}>
-              {ofp.title}
-            </h1>
-            <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 32 }}>
-              {ofp.intro}
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              {ofp.usps.map(([ic, label]) => (
-                <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                  <I name={ic} size={18} weight="duotone" style={{ color: 'var(--teal-700)' }} />
-                  <span style={{ fontSize: 14 }}>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="card" style={{ padding: 36 }}>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 28 }}>
-              {[1,2,3,4].map(n => (
-                <div key={n} style={{ flex: 1, height: 4, borderRadius: 4, background: n <= step ? 'var(--teal-700)' : 'var(--border)' }} />
-              ))}
-            </div>
-            <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6 }}>{step} {ofp.stap_van} 4</div>
-            <h3 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 24px' }}>
-              {ofp.step_titles[step - 1]}
-            </h3>
-
-            {step === 1 && (
-              <>
-                <div className="field"><label>{ofp.step1.vve_naam}</label><input placeholder={ofp.step1.vve_naam_ph} /></div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                  <div className="field"><label>{ofp.step1.aantal}</label><input type="number" placeholder={ofp.step1.aantal_ph} /></div>
-                  <div className="field"><label>{ofp.step1.bouwjaar}</label><input type="number" placeholder={ofp.step1.bouwjaar_ph} /></div>
-                </div>
-                <div className="field"><label>{ofp.step1.adres}</label><input placeholder={ofp.step1.adres_ph} /></div>
-              </>
-            )}
-
-            {step === 2 && (
-              <div className="offerte-services" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                {ofp.step2.services.map(([ic, svcLabel, desc]) => (
-                  <label key={svcLabel} style={{ display: 'block', padding: 18, border: '1.5px solid var(--border)', borderRadius: 10, cursor: 'pointer', transition: 'border-color .15s' }}>
-                    <input type="checkbox" style={{ marginBottom: 10 }} />
-                    <I name={ic} size={22} weight="duotone" style={{ color: 'var(--teal-700)', display: 'block', marginBottom: 8 }} />
-                    <div style={{ fontSize: 14, fontWeight: 700 }}>{svcLabel}</div>
-                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{desc}</div>
-                  </label>
-                ))}
-              </div>
-            )}
-
-            {step === 3 && (
-              <>
-                <div className="field"><label>{ofp.step3.beheerder_label}</label>
-                  <select>{ofp.step3.beheerder_options.map(opt => <option key={opt}>{opt}</option>)}</select>
-                </div>
-                <div className="field"><label>{ofp.step3.belangrijk_label}</label>
-                  <textarea placeholder={ofp.step3.belangrijk_ph} />
-                </div>
-              </>
-            )}
-
-            {step === 4 && (
-              <>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                  <div className="field"><label>{ofp.step4.voornaam}</label><input /></div>
-                  <div className="field"><label>{ofp.step4.achternaam}</label><input /></div>
-                </div>
-                <div className="field"><label>{ofp.step4.functie}</label>
-                  <select>{ofp.step4.functie_options.map(opt => <option key={opt}>{opt}</option>)}</select>
-                </div>
-                <div className="field"><label>{ofp.step4.email}</label><input type="email" /></div>
-                <div className="field"><label>{ofp.step4.telefoon}</label><input type="tel" /></div>
-              </>
-            )}
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
-              <button className="btn btn-secondary" onClick={back} disabled={step === 1} style={{ opacity: step === 1 ? 0.4 : 1 }}>
-                <I name="arrow-left" size={14} /> {ofp.btn_terug}
-              </button>
-              {step < 4 ? (
-                <button className="btn btn-primary" onClick={next}>{ofp.btn_volgende} <I name="arrow-right" size={14} /></button>
-              ) : (
-                <button className="btn btn-primary" onClick={() => setSubmitted(true)}>{ofp.btn_versturen} <I name="paper-plane-tilt" size={14} /></button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   LEGAL PAGES
-   ══════════════════════════════════════════════ */
-
-function LegalPageLayout({ title, children }) {
-  return (
-    <section style={{ padding: '64px 0 96px', background: 'var(--gray-bg)', minHeight: 600 }}>
-      <div className="container" style={{ maxWidth: 820 }}>
-        <h1 style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '0 0 32px' }}>{title}</h1>
-        <div style={{ background: 'white', borderRadius: 14, border: '1px solid var(--border)', padding: '40px 48px' }}>
-          <div style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--navy)' }}>
-            {children}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LegalH2({ children }) {
-  return <h2 style={{ fontSize: 20, fontWeight: 700, margin: '32px 0 12px', color: 'var(--navy)' }}>{children}</h2>;
-}
-function LegalH3({ children }) {
-  return <h3 style={{ fontSize: 16, fontWeight: 700, margin: '20px 0 8px', color: 'var(--navy)' }}>{children}</h3>;
-}
-function LegalP({ children }) {
-  return <p style={{ margin: '0 0 12px' }}>{children}</p>;
-}
-function LegalUl({ children }) {
-  return <ul style={{ margin: '8px 0 16px', paddingLeft: 24, listStyle: 'disc', display: 'flex', flexDirection: 'column', gap: 4 }}>{children}</ul>;
-}
-
-function PrivacyPage({ t, isRtl }) {
-  const pp = t('privacy_page');
-  return (
-    <LegalPageLayout title={pp.title}>
-      <LegalP>{pp.intro}</LegalP>
-
-      <LegalH2>{pp.h2_contact}</LegalH2>
-      <LegalP>
-        VvE Beheer Collectief<br />
-        Wateringen, Zuid-Holland<br />
-        <a href="tel:+31858000605" style={{ color: 'var(--teal-700)' }}>(085)-800 0605</a><br />
-        <a href="mailto:info@vvebeheercollectief.nl" style={{ color: 'var(--teal-700)' }}>info@vvebeheercollectief.nl</a><br />
-        KvK: 51721139
-      </LegalP>
-
-      <LegalH2>{pp.h2_gegevens}</LegalH2>
-      <LegalP>{pp.gegevens_intro}</LegalP>
-      <LegalUl>
-        {pp.gegevens_items.map(item => <li key={item}>{item}</li>)}
-      </LegalUl>
-
-      <LegalH2>{pp.h2_doel}</LegalH2>
-      <LegalP>{pp.doel_intro}</LegalP>
-      <LegalUl>
-        {pp.doel_items.map(item => <li key={item}>{item}</li>)}
-      </LegalUl>
-
-      <LegalH2>{pp.h2_bewaren}</LegalH2>
-      <LegalP>{pp.bewaren_text}</LegalP>
-
-      <LegalH2>{pp.h2_derden}</LegalH2>
-      <LegalP>{pp.derden_text}</LegalP>
-
-      <LegalH2>{pp.h2_inzien}</LegalH2>
-      <LegalP>{pp.inzien_text}</LegalP>
-
-      <LegalH2>{pp.h2_beveiliging}</LegalH2>
-      <LegalP>{pp.beveiliging_text}</LegalP>
-
-      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        {pp.updated}
-      </div>
-    </LegalPageLayout>
-  );
-}
-
-function VoorwaardenPage({ t, isRtl }) {
-  const vw = t('voorwaarden_page');
-  return (
-    <LegalPageLayout title={vw.title}>
-      {vw.articles.map(art => (
-        <React.Fragment key={art.h2}>
-          <LegalH2>{art.h2}</LegalH2>
-          {art.items ? (
-            <LegalUl>
-              {art.items.map(item => <li key={item}>{item}</li>)}
-            </LegalUl>
-          ) : (
-            <LegalP>{art.p}</LegalP>
-          )}
-        </React.Fragment>
-      ))}
-
-      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        {vw.updated}
-      </div>
-    </LegalPageLayout>
-  );
-}
-
-function CookiesPage({ t, isRtl }) {
-  const cp = t('cookies_page');
-  return (
-    <LegalPageLayout title={cp.title}>
-      <LegalP>{cp.intro}</LegalP>
-
-      <LegalH2>{cp.h2_wat}</LegalH2>
-      <LegalP>{cp.wat_text}</LegalP>
-
-      <LegalH2>{cp.h2_welke}</LegalH2>
-
-      <LegalH3>{cp.h3_functioneel}</LegalH3>
-      <LegalP>{cp.functioneel_text}</LegalP>
-
-      <LegalH3>{cp.h3_analytisch}</LegalH3>
-      <LegalP>{cp.analytisch_text}</LegalP>
-
-      <LegalH2>{cp.h2_beheren}</LegalH2>
-      <LegalP>{cp.beheren_intro}</LegalP>
-      <LegalP>{cp.beheren_text}</LegalP>
-      <LegalUl>
-        {cp.beheren_items.map(item => <li key={item}>{item}</li>)}
-      </LegalUl>
-
-      <LegalH2>{cp.h2_derden}</LegalH2>
-      <LegalP>{cp.derden_text}</LegalP>
-
-      <LegalH2>{cp.h2_wijzigingen}</LegalH2>
-      <LegalP>{cp.wijzigingen_text}</LegalP>
-
-      <LegalH2>{cp.h2_contact}</LegalH2>
-      <LegalP>{cp.contact_text}</LegalP>
-
-      <div style={{ marginTop: 32, padding: '16px 20px', background: 'var(--gray-bg)', borderRadius: 8, fontSize: 13, color: 'var(--muted)' }}>
-        {cp.updated}
-      </div>
-    </LegalPageLayout>
-  );
-}
-
-/* ══════════════════════════════════════════════
-   APP
-   ══════════════════════════════════════════════ */
+/* ── App ── */
 function App() {
-  const [page, setPageRaw] = useState('home');
-  const { lang, setLang, t, isRtl, loading } = useLanguage();
-
-  const setPage = (p) => {
-    setPageRaw(p);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const { lang, setLang, t, isRtl } = useLanguage();
+  const [page, setPage] = useState('home');
+  const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
-    const titles = t('titles');
-    document.title = titles[page] || titles.home;
+    const onScroll = () => setShowTop((window.pageYOffset || document.documentElement.scrollTop || 0) > 620);
+    window.addEventListener('scroll', onScroll, { passive:true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  useEffect(() => {
+    const titles = t('titles') || {};
+    if (titles[page]) document.title = titles[page];
+    try { window.scrollTo(0, 0); } catch (e) {}
   }, [page, lang]);
+
+  const scrollTop = () => { try { window.scrollTo({ top:0, behavior:'smooth' }); } catch (e) { window.scrollTo(0,0); } };
+
+  let view;
+  if (page === 'diensten') view = <DienstenPage t={t} setPage={setPage} />;
+  else if (page === 'pakketten') view = <PakkettenPage t={t} setPage={setPage} />;
+  else if (page === 'werkwijze') view = <WerkwijzePage t={t} setPage={setPage} />;
+  else if (page === 'overons') view = <OverOnsPage t={t} setPage={setPage} />;
+  else if (page === 'offerte') view = <OffertePage t={t} />;
+  else if (page === 'privacy') view = <LegalPage t={t} section="privacy_page" />;
+  else if (page === 'voorwaarden') view = <LegalPage t={t} section="voorwaarden_page" />;
+  else if (page === 'cookies') view = <LegalPage t={t} section="cookies_page" />;
+  else view = <HomePage t={t} setPage={setPage} />;
 
   return (
     <>
       <SiteHeader page={page} setPage={setPage} lang={lang} setLang={setLang} t={t} isRtl={isRtl} />
-      {page === 'home' && <HomePage setPage={setPage} t={t} isRtl={isRtl} />}
-      {page === 'diensten' && <DienstenPage setPage={setPage} t={t} isRtl={isRtl} />}
-      {page === 'pakketten' && <PakkettenPage setPage={setPage} t={t} isRtl={isRtl} />}
-      {page === 'overons' && <OverOnsPage setPage={setPage} t={t} isRtl={isRtl} />}
-      {page === 'werkwijze' && <WerkwijzePage setPage={setPage} t={t} isRtl={isRtl} />}
-      {page === 'offerte' && <OffertePage t={t} isRtl={isRtl} />}
-      {page === 'privacy' && <PrivacyPage t={t} isRtl={isRtl} />}
-      {page === 'voorwaarden' && <VoorwaardenPage t={t} isRtl={isRtl} />}
-      {page === 'cookies' && <CookiesPage t={t} isRtl={isRtl} />}
+      {view}
       <SiteFooter setPage={setPage} t={t} isRtl={isRtl} />
+      {showTop && (
+        <div onClick={scrollTop} aria-label="Terug naar boven" role="button" tabIndex={0} style={{ position:'fixed', right:22, bottom:96, zIndex:70, width:46, height:46, borderRadius:'50%', background:'#fff', border:'1px solid #DCE3E8', boxShadow:'0 14px 34px -14px rgba(28,36,46,0.4)', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', color:'#4E6885', fontSize:18 }}>↑</div>
+      )}
+      <MobileBar setPage={setPage} t={t} />
     </>
   );
 }
