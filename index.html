@@ -501,9 +501,10 @@ function useLanguage() {
   };
 
   useEffect(() => {
+    const _def = LANGUAGES.find(l => l.code === lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = _def && _def.dir ? _def.dir : 'ltr';
     if (lang === 'nl') {
-      document.documentElement.lang = 'nl';
-      document.documentElement.dir = 'ltr';
       return;
     }
     if (translations[lang]) return;
@@ -523,20 +524,33 @@ function useLanguage() {
       });
   }, [lang]);
 
+  const isObj = (x) => x !== null && typeof x === 'object';
   const t = (section, key) => {
     const nlSec = NL[section];
-    const transSec = lang === 'nl' ? nlSec : (translations[lang] ? translations[lang][section] : undefined);
+    let transSec = lang === 'nl' ? nlSec : (translations[lang] ? translations[lang][section] : undefined);
+    // Vorm-mismatch op sectieniveau (array/object/tekst) — door de herstructurering
+    // kan een oude vertaling een andere vorm hebben. Dan negeren en terugvallen op NL.
+    if (transSec !== undefined && nlSec !== undefined &&
+        (isObj(nlSec) !== isObj(transSec) || Array.isArray(nlSec) !== Array.isArray(transSec))) {
+      transSec = nlSec;
+    }
     if (key === undefined) {
-      // Eén-arg: geef het sectie-object terug met NL als basis, zodat nog niet
-      // vertaalde (nieuwe) sleutels netjes terugvallen op het Nederlands.
-      if (transSec && typeof transSec === 'object' && !Array.isArray(transSec) &&
-          nlSec && typeof nlSec === 'object' && !Array.isArray(nlSec)) {
-        return { ...nlSec, ...transSec };
+      if (isObj(nlSec) && isObj(transSec) && !Array.isArray(nlSec) && !Array.isArray(transSec)) {
+        // Merge: een vertaling mag alleen tekstwaarden overschrijven; de structuur
+        // (lijsten/objecten) blijft uit NL, zodat een verouderde vertaling nooit de
+        // nieuwe opzet breekt. Nog niet vertaalde sleutels vallen terug op het Nederlands.
+        const out = { ...nlSec };
+        for (const k in transSec) {
+          const tv = transSec[k];
+          if (!isObj(tv)) out[k] = tv;
+          else if (nlSec[k] === undefined) out[k] = tv;
+        }
+        return out;
       }
       return transSec !== undefined ? transSec : nlSec;
     }
-    // Twee-arg: per sleutel met NL-terugval.
-    const v = transSec ? transSec[key] : undefined;
+    // Twee-arg: alleen een tekstwaarde overnemen, anders NL.
+    const v = transSec && !isObj(transSec[key]) ? transSec[key] : undefined;
     return v !== undefined ? v : (nlSec ? nlSec[key] : undefined);
   };
 
