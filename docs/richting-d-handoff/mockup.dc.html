@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Karla:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#FFFFFF; }
+  a { color:#4E6885; text-decoration:none; }
+  a:hover { color:#3b5069; }
+  input, textarea, select { font-family:'Karla',sans-serif; }
+  ::placeholder { color:#AAB2BB; }
+  input:focus, textarea:focus, select:focus { border-color:#4E6885 !important; box-shadow:0 0 0 3px rgba(78,104,133,0.15); }
+  @keyframes omFadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes omFade { from { opacity:0; } to { opacity:1; } }
+  @keyframes omFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  [data-reveal] { animation:omFadeUp .7s cubic-bezier(.2,.6,.2,1) both; }
+  [data-r="burger"] { display:none; }
+  [data-r="mbar"] { display:none; }
+  @media (max-width:900px) {
+    [data-r="dnav"], [data-r="dcta"] { display:none !important; }
+    [data-r="burger"] { display:flex !important; }
+    [data-r="mbar"] { display:flex !important; }
+    [data-r="split"] { grid-template-columns:1fr !important; gap:36px !important; }
+    [data-r="g3"], [data-r="g2"] { grid-template-columns:1fr !important; }
+    [data-r="g4"] { grid-template-columns:1fr 1fr !important; }
+    [data-r="row"] { flex-direction:column !important; align-items:flex-start !important; }
+    [data-r="hero"] { min-height:0 !important; padding-top:60px !important; padding-bottom:220px !important; }
+    [data-r="sky"] { width:150% !important; right:-26% !important; opacity:0.4 !important; }
+    [data-r="h1"] { font-size:38px !important; }
+    [data-r="h2"] { font-size:30px !important; }
+    [data-r="scrollx"] { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    [data-r="tablemin"] { min-width:680px !important; }
+    [data-r="offsticky"] { position:static !important; }
+    [data-r="secpad"] { padding-top:64px !important; padding-bottom:64px !important; }
+    p, li { line-height:1.75; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity:1 !important; transform:none !important; transition:none !important; }
+    * { animation-duration:.001s !important; animation-iteration-count:1 !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Karla',sans-serif; color:#1C242E; background:#FFFFFF;">
+
+  <!-- ================= HEADER ================= -->
+  <header style="position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.9); backdrop-filter:blur(12px); border-bottom:1px solid #EEF1F4;">
+    <div style="max-width:1160px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:26px;">
+      <div onClick="{{ goHome }}" style="display:flex; align-items:center; gap:12px; cursor:pointer; flex-shrink:0;">
+        <img src="assets/logo.png" alt="VvE Beheer Collectief" style="height:36px;">
+        <div style="line-height:1.2;">
+          <div style="font-family:'Jost'; font-weight:300; font-size:10.5px; letter-spacing:0.3em; text-transform:uppercase; color:#1C242E;">VvE Beheer</div>
+          <div style="font-family:'Jost'; font-weight:500; font-size:10.5px; letter-spacing:0.3em; text-transform:uppercase; color:#1C242E;">Collectief</div>
+        </div>
+      </div>
+      <nav data-r="dnav" style="display:flex; gap:30px; align-items:center;">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <span onClick="{{ item.on }}" style="{{ item.style }}">{{ item.label }}</span>
+        </sc-for>
+      </nav>
+      <div data-r="dcta" style="display:flex; align-items:center; gap:20px; flex-shrink:0;">
+        <a href="{{ telHref }}" style="font-family:'Karla'; font-weight:600; font-size:14px; color:#1C242E;">(085)-800 0605</a>
+        <span onClick="{{ goOfferte }}" style="font-family:'Jost'; font-weight:400; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:12px 24px; border-radius:4px; cursor:pointer; white-space:nowrap; transition:background .2s ease, transform .2s ease;" style-hover="background:#3F566F; transform:translateY(-1px);">Offerte aanvragen</span>
+      </div>
+      <div data-r="burger" onClick="{{ toggleMenu }}" aria-label="{{ menuLabel }}" role="button" style="width:44px; height:44px; align-items:center; justify-content:center; cursor:pointer; flex-direction:column; gap:5px;">
+        <span style="width:22px; height:2px; background:#1C242E; display:block;"></span>
+        <span style="width:22px; height:2px; background:#1C242E; display:block;"></span>
+        <span style="width:22px; height:2px; background:#1C242E; display:block;"></span>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid #EEF1F4; background:#FFFFFF; padding:14px 24px 22px;">
+        <div style="display:flex; flex-direction:column;">
+          <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+            <span onClick="{{ item.on }}" style="font-family:'Jost'; font-size:14px; letter-spacing:0.06em; color:#28323E; padding:13px 4px; border-bottom:1px solid #F2F4F6; cursor:pointer;">{{ item.label }}</span>
+          </sc-for>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:18px;">
+          <span onClick="{{ goOfferte }}" style="flex:1; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:14px; border-radius:5px; cursor:pointer;">Offerte aanvragen</span>
+          <a href="{{ telHref }}" style="flex:1; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#28323E; border:1px solid #CDD5DD; padding:14px; border-radius:5px;">Bel ons</a>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ================= HOME ================= -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <!-- hero -->
+    <section style="position:relative; overflow:hidden; background:linear-gradient(115deg,#E4EDF0 0%,#EFF4F6 40%,#FBFCFD 100%);">
+      <img data-r="sky" src="assets/skyline.png" alt="Skyline Den Haag" style="position:absolute; right:0; bottom:0; width:56%; max-width:840px; height:auto; -webkit-mask-image:linear-gradient(to right, transparent 0%, #000 36%); mask-image:linear-gradient(to right, transparent 0%, #000 36%); animation:omFade 1.1s ease both; pointer-events:none;">
+      <div data-r="hero" style="position:relative; max-width:1160px; margin:0 auto; padding:110px 24px; min-height:580px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="max-width:600px;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px; animation:omFadeUp .6s cubic-bezier(.2,.6,.2,1) both;">
+            <span style="width:30px; height:2px; background:#4E6885;"></span>
+            <span style="font-family:'Jost'; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#4E6885;">Sinds 2008 · Zuid-Holland</span>
+          </div>
+          <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:58px; line-height:1.07; letter-spacing:-0.015em; margin:0 0 24px; color:#1C242E; animation:omFadeUp .7s cubic-bezier(.2,.6,.2,1) .06s both;">Welkom bij <span style="color:#4E6885;">VvE Beheer Collectief</span></h1>
+          <p style="font-family:'Karla'; font-size:18px; line-height:1.65; color:#59616B; margin:0 0 34px; max-width:440px; animation:omFadeUp .7s cubic-bezier(.2,.6,.2,1) .13s both;">Wij zorgen dat u onbezorgd kunt wonen. Alles transparant en één vast aanspreekpunt.</p>
+          <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:36px; animation:omFadeUp .7s cubic-bezier(.2,.6,.2,1) .2s both;">
+            <span onClick="{{ goDiensten }}" style="font-family:'Jost'; font-weight:400; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:16px 34px; border-radius:4px; cursor:pointer; transition:transform .2s ease, background .2s ease;" style-hover="transform:translateY(-2px); background:#3F566F;">Bekijk onze diensten →</span>
+            <span onClick="{{ goWerkwijze }}" style="font-family:'Jost'; font-weight:400; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#28323E; background:rgba(255,255,255,0.7); border:1px solid #CDD5DD; padding:15px 30px; border-radius:4px; cursor:pointer; transition:transform .2s ease, border-color .2s ease;" style-hover="transform:translateY(-2px); border-color:#4E6885;">Onze werkwijze</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stats strip -->
+    <section style="border-bottom:1px solid #EEF1F4;">
+      <div data-reveal data-r="g4" style="max-width:1160px; margin:0 auto; padding:44px 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+        <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'Source Serif 4',serif; font-weight:600; font-size:34px; color:#1C242E;">{{ k.v }}</div>
+            <div style="font-family:'Karla'; font-size:14px; color:#7A828C; margin-top:4px;">{{ k.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- regio trust strip -->
+    <section style="background:#FBFCFD; border-bottom:1px solid #EEF1F4;">
+      <div data-reveal data-r="row" style="max-width:1160px; margin:0 auto; padding:20px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;">
+        <span style="font-family:'Jost'; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#4E6885; white-space:nowrap;">Actief in uw regio</span>
+        <span style="width:1px; height:14px; background:#DCE3E8;"></span>
+        <span style="font-family:'Karla'; font-size:14px; font-weight:600; color:#59616B;">Den Haag&nbsp;&nbsp;·&nbsp;&nbsp;Rijswijk&nbsp;&nbsp;·&nbsp;&nbsp;Delft&nbsp;&nbsp;·&nbsp;&nbsp;Wateringen&nbsp;&nbsp;·&nbsp;&nbsp;heel Zuid-Holland</span>
+      </div>
+    </section>
+
+    <!-- drie pijlers -->
+    <section data-r="secpad">
+      <div data-reveal style="max-width:1160px; margin:0 auto; padding:104px 24px;">
+        <div style="max-width:640px; margin:0 auto 56px; text-align:center;">
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">01 — Onze dienstverlening</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:40px; line-height:1.12; letter-spacing:-0.01em; margin:0 0 18px;">Drie pijlers, één vast aanspreekpunt</h2>
+          <p style="font-family:'Karla'; font-size:17px; line-height:1.7; color:#59616B; margin:0;">Administratief, financieel en technisch beheer onder één dak. U krijgt geen wisselende contactpersonen, maar één beheerder die uw gebouw kent.</p>
+        </div>
+        <div data-r="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+          <sc-for list="{{ pijlersHome }}" as="p" hint-placeholder-count="3">
+            <div style="background:#FFFFFF; border:1px solid #ECEFF2; border-radius:12px; padding:38px 34px; box-shadow:0 18px 50px -34px rgba(28,36,46,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-5px); box-shadow:0 34px 70px -34px rgba(28,36,46,0.5);">
+              <div style="width:38px; height:38px; border-radius:8px; background:#4E6885; display:flex; align-items:center; justify-content:center; font-family:'Jost'; font-size:14px; color:#FFFFFF; margin-bottom:22px;">{{ p.n }}</div>
+              <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:22px; margin:0 0 12px;">{{ p.title }}</h3>
+              <p style="font-family:'Karla'; font-size:15px; line-height:1.65; color:#68717C; margin:0 0 22px;">{{ p.desc }}</p>
+              <div style="display:flex; flex-direction:column; gap:11px; margin-bottom:26px;">
+                <sc-for list="{{ p.items }}" as="it" hint-placeholder-count="4">
+                  <div style="display:flex; align-items:center; gap:11px; font-family:'Karla'; font-size:14.5px; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>{{ it }}</div>
+                </sc-for>
+              </div>
+              <span onClick="{{ goDiensten }}" style="font-family:'Jost'; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4E6885; cursor:pointer;">Lees meer →</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="text-align:center; margin-top:44px; font-family:'Karla'; font-size:16px; color:#59616B;">Niet zeker welk beheer past bij uw VvE? <span onClick="{{ goDiensten }}" style="color:#4E6885; cursor:pointer; font-weight:600;">Bekijk alle diensten →</span></div>
+      </div>
+    </section>
+
+    <!-- waarom -->
+    <section data-r="secpad" style="background:#F5F7F9;">
+      <div data-reveal data-r="split" style="max-width:1160px; margin:0 auto; padding:104px 24px; display:grid; grid-template-columns:0.82fr 1.18fr; gap:64px; align-items:start;">
+        <div data-r="offsticky" style="position:sticky; top:110px;">
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">02 — Wat ons onderscheidt</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:38px; line-height:1.14; letter-spacing:-0.01em; margin:0 0 18px;">Waarom eigenaren voor ons kiezen</h2>
+          <p style="font-family:'Karla'; font-size:16.5px; line-height:1.7; color:#59616B; margin:0;">Het beheer van een VvE staat of valt met transparantie en bereikbaarheid. Daar bouwden wij onze hele werkwijze omheen.</p>
+        </div>
+        <div style="border-bottom:1px solid #E1E6EB;">
+          <sc-for list="{{ waarom }}" as="w" hint-placeholder-count="4">
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:26px; padding:28px 4px; border-top:1px solid #E1E6EB; transition:padding-left .25s ease, background .25s ease;" style-hover="padding-left:16px; background:rgba(78,104,133,0.03);">
+              <div style="font-family:'Source Serif 4',serif; font-weight:600; font-size:26px; color:#9CACBE; line-height:1;">{{ w.n }}</div>
+              <div>
+                <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:20px; margin:0 0 8px; color:#1C242E;">{{ w.title }}</h3>
+                <p style="font-family:'Karla'; font-size:15.5px; line-height:1.7; color:#68717C; margin:0;">{{ w.text }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- klantervaringen -->
+    <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+    <section data-r="secpad">
+      <div data-reveal style="max-width:1160px; margin:0 auto; padding:104px 24px;">
+        <div style="max-width:640px; margin:0 auto 56px; text-align:center;">
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">03 — Wat klanten zeggen</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:40px; line-height:1.12; letter-spacing:-0.01em; margin:0;">Vertrouwd door bestuurders en eigenaren</h2>
+        </div>
+        <div data-r="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <div style="background:#FFFFFF; border:1px solid #ECEFF2; border-radius:12px; padding:34px 32px; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 30px 60px -40px rgba(28,36,46,0.45);">
+              <p style="font-family:'Source Serif 4',serif; font-weight:400; font-size:18px; line-height:1.55; color:#2A333D; margin:0 0 26px;">“{{ t.quote }}”</p>
+              <div style="margin-top:auto;">
+                <div style="font-family:'Karla'; font-weight:700; font-size:14.5px; color:#1C242E;">{{ t.name }}</div>
+                <div style="font-family:'Karla'; font-size:13.5px; color:#7A828C; margin-top:3px;">{{ t.role }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="text-align:center; margin-top:22px; font-family:'Karla'; font-size:12.5px; color:#9BA3AC; font-style:italic;">Voorbeeldcitaten — te vervangen door echte klantcitaten vóór publicatie.</div>
+      </div>
+    </section>
+    </sc-if>
+
+    <!-- faq -->
+    <section data-r="secpad" style="background:#F5F7F9;">
+      <div data-reveal style="max-width:820px; margin:0 auto; padding:104px 24px;">
+        <div style="text-align:center; margin-bottom:52px;">
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">04 — Veelgestelde vragen</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:40px; line-height:1.12; letter-spacing:-0.01em; margin:0;">Antwoord op de meestgestelde vragen</h2>
+        </div>
+        <div>
+          <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5">
+            <div style="background:#FFFFFF; border-radius:10px; padding:6px 32px; margin-bottom:14px; box-shadow:0 14px 40px -34px rgba(28,36,46,0.4);">
+              <div onClick="{{ f.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:20px; cursor:pointer; padding:22px 0;">
+                <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:18.5px; margin:0; color:#1C242E;">{{ f.q }}</h3>
+                <span style="{{ f.iconStyle }}">⌄</span>
+              </div>
+              <sc-if value="{{ f.open }}" hint-placeholder-val="{{ f.hint }}">
+                <p style="font-family:'Karla'; font-size:15.5px; line-height:1.7; color:#59616B; margin:0; padding:0 0 24px;">{{ f.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="text-align:center; margin-top:30px; font-family:'Karla'; font-size:16px; color:#59616B;">Staat uw vraag er niet bij? <span onClick="{{ goOfferte }}" style="color:#4E6885; cursor:pointer; font-weight:600;">Stel uw vraag →</span></div>
+      </div>
+    </section>
+
+    <!-- nieuwsbrief -->
+    <section>
+      <div data-reveal style="max-width:820px; margin:0 auto; padding:96px 24px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Nieuwsbrief</div>
+        <h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:34px; margin:0 0 14px;">Blijf op de hoogte</h2>
+        <p style="font-family:'Karla'; font-size:16.5px; line-height:1.65; color:#59616B; margin:0 auto 30px; max-width:520px;">Praktische tips over VvE-beheer, wetswijzigingen en onderhoud. Een paar keer per jaar in uw inbox — nooit spam.</p>
+        <sc-if value="{{ nlDone }}" hint-placeholder-val="{{ false }}">
+          <div style="display:inline-block; background:#EEF3F7; border:1px solid #C6D0DA; border-radius:6px; padding:16px 28px; font-family:'Karla'; font-size:15.5px; color:#2A333D;">Bedankt! U bent ingeschreven voor onze nieuwsbrief.</div>
+        </sc-if>
+        <sc-if value="{{ notNlDone }}" hint-placeholder-val="{{ true }}">
+          <div data-r="row" style="max-width:480px; margin:0 auto;">
+            <div style="display:flex; gap:12px;">
+              <input type="email" placeholder="Uw e-mailadres" style="flex:1; padding:15px 18px; font-size:15px; border:1px solid #CDD5DD; border-radius:5px; outline:none;">
+              <span onClick="{{ submitNl }}" style="font-family:'Jost'; font-weight:400; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:15px 28px; border-radius:5px; cursor:pointer; display:flex; align-items:center; white-space:nowrap;">Inschrijven</span>
+            </div>
+            <div style="font-family:'Karla'; font-size:12.5px; color:#96A0AB; margin-top:14px;">Wij gaan zorgvuldig om met uw gegevens. Uitschrijven kan altijd.</div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- slotoproep + footer = één donkere afsluiting -->
+    <section style="background:linear-gradient(180deg,#232E3A 0%,#1A212A 100%);">
+      <div data-reveal style="max-width:820px; margin:0 auto; padding:104px 24px 84px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#8AA1B8; margin-bottom:18px;">Vrijblijvende offerte</div>
+        <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:42px; line-height:1.12; letter-spacing:-0.01em; color:#F5F8FB; margin:0 0 18px;">Klaar voor een betere VvE-ervaring?</h2>
+        <p style="font-family:'Karla'; font-size:17px; line-height:1.65; color:#AEB8C3; margin:0 auto 34px; max-width:500px;">Vraag een vrijblijvende offerte aan op maat van uw VvE. U ontvangt binnen 2 werkdagen reactie.</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;">
+          <span onClick="{{ goOfferte }}" style="font-family:'Jost'; font-weight:400; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:16px 42px; border-radius:4px; cursor:pointer; transition:transform .2s ease, background .2s ease;" style-hover="transform:translateY(-2px); background:#5A7796;">Offerte aanvragen</span>
+        </div>
+        <div style="display:flex; gap:28px; justify-content:center; flex-wrap:wrap; font-family:'Karla'; font-size:14px; color:#8891A0;">
+          <span>Vrijblijvend &amp; gratis</span><span>Reactie binnen 2 werkdagen</span><span>Volledig op maat</span><span>Geen verplichtingen</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= DIENSTEN ================= -->
+  <sc-if value="{{ isDiensten }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="background:#F5F7F9;">
+      <div data-r="secpad" style="max-width:820px; margin:0 auto; padding:88px 24px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Onze diensten</div>
+        <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:46px; line-height:1.1; letter-spacing:-0.01em; margin:0 0 18px;">VvE-beheer dat aansluit op úw behoefte</h1>
+        <p style="font-family:'Karla'; font-size:17.5px; line-height:1.65; color:#59616B; margin:0 auto; max-width:600px;">Drie pijlers — administratief, financieel en technisch — onder één dak en met één vast aanspreekpunt. Kies losse diensten of laat ons álles uit handen nemen.</p>
+      </div>
+    </section>
+
+    <div style="position:sticky; top:69px; z-index:40; background:rgba(255,255,255,0.94); backdrop-filter:blur(8px); border-bottom:1px solid #EEF1F4;">
+      <div data-r="row" style="max-width:1000px; margin:0 auto; padding:16px 24px; display:flex; gap:14px; align-items:center; justify-content:center;">
+        <sc-for list="{{ dienstIndex }}" as="d" hint-placeholder-count="3">
+          <span onClick="{{ d.on }}" style="font-family:'Jost'; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#4E6885; cursor:pointer; padding:6px 4px;">{{ d.label }}</span>
+        </sc-for>
+      </div>
+    </div>
+
+    <section data-r="secpad" style="max-width:1000px; margin:0 auto; padding:70px 24px 40px; display:flex; flex-direction:column; gap:32px;">
+      <sc-for list="{{ dienstenPijlers }}" as="p" hint-placeholder-count="3">
+        <div data-reveal data-r="split" id="{{ p.id }}" style="display:grid; grid-template-columns:1.05fr 1fr; gap:52px; padding-bottom:32px; border-bottom:1px solid #EEF1F4; scroll-margin-top:140px;">
+          <div>
+            <div style="font-family:'Jost'; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#9CACBE; margin-bottom:14px;">{{ p.label }}</div>
+            <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:28px; line-height:1.2; margin:0 0 16px;">{{ p.title }}</h2>
+            <p style="font-family:'Karla'; font-size:16px; line-height:1.7; color:#59616B; margin:0 0 22px;">{{ p.intro }}</p>
+            <div style="display:inline-block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#4E6885; background:#EEF3F7; padding:9px 16px; border-radius:4px;">{{ p.pakketLabel }}</div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #ECEFF2; border-radius:12px; padding:32px 34px; box-shadow:0 18px 50px -36px rgba(28,36,46,0.4);">
+            <div style="font-family:'Jost'; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#96A0AB; margin-bottom:16px;">Wat wij voor u regelen</div>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+              <sc-for list="{{ p.items }}" as="it" hint-placeholder-count="4">
+                <div style="display:flex; align-items:center; gap:12px; font-family:'Karla'; font-size:15px; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>{{ it }}</div>
+              </sc-for>
+            </div>
+            <div style="padding-top:20px; border-top:1px solid #EEF1F4;">
+              <div style="font-family:'Jost'; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#96A0AB; margin-bottom:8px;">Het resultaat</div>
+              <p style="font-family:'Source Serif 4',serif; font-weight:400; font-size:16.5px; line-height:1.5; color:#2A333D; margin:0;">{{ p.resultaat }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="max-width:1000px; margin:0 auto; padding:20px 24px 90px;">
+      <div data-reveal style="background:linear-gradient(150deg,#26313E,#181F28); border-radius:14px; padding:52px 54px; position:relative; overflow:hidden;">
+        <img src="assets/logo.png" alt="" style="position:absolute; right:-60px; bottom:-80px; height:300px; opacity:0.05; filter:brightness(0) invert(1);">
+        <div data-r="split" style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;">
+          <div>
+            <div style="display:inline-block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:#181F28; background:#8AA1B8; padding:6px 14px; border-radius:3px; margin-bottom:20px;">Meest gekozen</div>
+            <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:30px; line-height:1.2; color:#F5F8FB; margin:0 0 16px;">Alles in één hand: het Compleet-pakket</h2>
+            <p style="font-family:'Karla'; font-size:16px; line-height:1.65; color:#AEB8C3; margin:0 0 28px;">Combineer alle drie de pijlers in één vaste maandprijs. Volledige ontzorging — geen verrassingen, geen meerwerk-facturen.</p>
+            <span onClick="{{ goWerkwijze }}" style="font-family:'Jost'; font-weight:400; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:15px 32px; border-radius:4px; cursor:pointer;">Zo verloopt de overstap</span>
+          </div>
+          <div data-r="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <sc-for list="{{ compleetPunten }}" as="pt" hint-placeholder-count="8">
+              <div style="display:flex; align-items:center; gap:11px; font-family:'Karla'; font-size:14px; color:#C3CBD4;"><span style="color:#8AA1B8; font-weight:700;">✓</span>{{ pt }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-r="secpad" style="background:#F5F7F9;">
+      <div data-reveal style="max-width:820px; margin:0 auto; padding:80px 24px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#4E6885; margin-bottom:14px;">Vrijblijvende offerte</div>
+        <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; margin:0 0 14px;">Benieuwd wat dit voor úw VvE betekent?</h2>
+        <p style="font-family:'Karla'; font-size:16.5px; line-height:1.65; color:#59616B; margin:0 auto 28px; max-width:520px;">Vraag een vrijblijvende offerte aan op maat. U ontvangt binnen 2 werkdagen reactie van een vaste beheerder.</p>
+        <span onClick="{{ goOfferte }}" style="display:inline-block; font-family:'Jost'; font-weight:400; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:16px 36px; border-radius:4px; cursor:pointer;">Offerte aanvragen</span>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= PAKKETTEN ================= -->
+  <sc-if value="{{ isPakketten }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="background:#F5F7F9;">
+      <div data-r="secpad" style="max-width:820px; margin:0 auto; padding:88px 24px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Onze pakketten</div>
+        <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:46px; line-height:1.1; letter-spacing:-0.01em; margin:0 0 18px;">Drie manieren waarop wij u ontzorgen</h1>
+        <p style="font-family:'Karla'; font-size:17.5px; line-height:1.65; color:#59616B; margin:0 auto; max-width:600px;">Van basisbeheer tot volledige ontzorging. Kies het pakket dat past bij de omvang en wensen van uw VvE — of vraag een offerte op maat.</p>
+      </div>
+    </section>
+
+    <section style="max-width:1100px; margin:0 auto; padding:72px 24px 40px;">
+      <div data-reveal data-r="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:start;">
+        <sc-for list="{{ packages }}" as="pkg" hint-placeholder-count="3">
+          <div style="{{ pkg.cardStyle }}" style-hover="transform:translateY(-6px); box-shadow:0 50px 90px -40px rgba(28,36,46,0.55);">
+            <sc-if value="{{ pkg.featured }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#4E6885; text-align:center; font-family:'Jost'; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#F7F9FB; padding:9px;">{{ pkg.badge }}</div>
+            </sc-if>
+            <div style="padding:36px 32px;">
+              <h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:23px; margin:0 0 8px;">{{ pkg.name }}</h2>
+              <p style="font-family:'Karla'; font-size:14px; line-height:1.55; color:#68717C; margin:0 0 24px; min-height:62px;">{{ pkg.desc }}</p>
+              <div style="display:flex; align-items:flex-end; gap:8px;">
+                <sc-if value="{{ pkg.pre }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Karla'; font-size:13px; color:#96A0AB; margin-bottom:9px;">{{ pkg.pre }}</span></sc-if>
+                <span style="font-family:'Source Serif 4',serif; font-weight:600; font-size:36px; color:#1C242E; line-height:1;">{{ pkg.price }}</span>
+              </div>
+              <div style="font-family:'Karla'; font-size:12.5px; color:#96A0AB; margin:8px 0 24px; min-height:18px;">{{ pkg.sub }}</div>
+              <span onClick="{{ goOfferte }}" style="{{ pkg.btnStyle }}">{{ pkg.cta }}</span>
+              <div style="display:flex; flex-direction:column; gap:13px; margin-top:28px; padding-top:26px; border-top:1px solid #EEF1F4;">
+                <sc-for list="{{ pkg.feats }}" as="f" hint-placeholder-count="8">
+                  <div style="display:flex; align-items:flex-start; gap:11px;"><span style="{{ f.mark.style }}">{{ f.mark.t }}</span><span style="{{ f.textStyle }}">{{ f.label }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:22px; text-align:center; font-family:'Karla'; font-size:13.5px; color:#8A929B;">Tarieven excl. 21% btw. U ontvangt altijd een offerte op maat van uw VvE — vrijblijvend.</div>
+      <div data-r="row" style="margin-top:22px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:9px; background:#F5F7F9; border:1px solid #E6EAEE; border-radius:40px; padding:10px 18px; font-family:'Karla'; font-size:13.5px; font-weight:600; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>Vrijblijvend &amp; gratis</div>
+        <div style="display:flex; align-items:center; gap:9px; background:#F5F7F9; border:1px solid #E6EAEE; border-radius:40px; padding:10px 18px; font-family:'Karla'; font-size:13.5px; font-weight:600; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>Geen risico</div>
+        <div style="display:flex; align-items:center; gap:9px; background:#F5F7F9; border:1px solid #E6EAEE; border-radius:40px; padding:10px 18px; font-family:'Karla'; font-size:13.5px; font-weight:600; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>Overstap in 6–8 weken</div>
+      </div>
+    </section>
+
+    <!-- vergelijkingstabel -->
+    <section data-r="secpad" style="background:#F5F7F9;">
+      <div data-reveal style="max-width:1000px; margin:0 auto; padding:90px 24px;">
+        <div style="text-align:center; margin-bottom:16px;">
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:14px;">Vergelijking</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:36px; letter-spacing:-0.01em; margin:0;">Wat zit er in elk pakket?</h2>
+        </div>
+        <div data-r="scrollx">
+          <div data-r="tablemin" style="background:#FFFFFF; border-radius:12px; overflow:hidden; box-shadow:0 30px 70px -50px rgba(28,36,46,0.5);">
+            <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; background:#FBFCFD; border-bottom:1px solid #ECEFF2;">
+              <div style="padding:18px 24px; font-family:'Jost'; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7A828C;">Functie</div>
+              <div style="padding:18px 12px; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#1C242E;">Start</div>
+              <div style="padding:18px 12px; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#4E6885; background:#EEF3F7;">Start aanv.</div>
+              <div style="padding:18px 12px; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#1C242E;">Compleet</div>
+            </div>
+            <sc-for list="{{ compare }}" as="grp" hint-placeholder-count="5">
+              <div style="padding:18px 24px 10px; font-family:'Jost'; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#4E6885;">{{ grp.cat }}</div>
+              <sc-for list="{{ grp.rows }}" as="r" hint-placeholder-count="4">
+                <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-top:1px solid #F2F4F6; align-items:center;">
+                  <div style="padding:14px 24px; font-family:'Karla'; font-size:14.5px; color:#3B4653;">{{ r.func }}</div>
+                  <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3">
+                    <div style="{{ c.style }}">{{ c.t }}</div>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </sc-for>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:14px; font-family:'Karla'; font-size:12.5px; color:#9BA3AC;">Op een klein scherm kunt u de tabel horizontaal schuiven.</div>
+      </div>
+    </section>
+
+    <section data-r="secpad" style="max-width:1000px; margin:0 auto; padding:90px 24px;">
+      <div data-reveal data-r="split" style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:start;">
+        <div>
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:14px;">Hulp bij uw keuze</div>
+          <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:30px; line-height:1.2; margin:0 0 16px;">Welk pakket past bij onze VvE?</h2>
+          <p style="font-family:'Karla'; font-size:16px; line-height:1.7; color:#59616B; margin:0 0 26px;">De juiste keuze hangt af van de omvang van uw VvE, de huidige situatie en uw wensen. Wij adviseren u graag — vrijblijvend.</p>
+          <span onClick="{{ goOfferte }}" style="display:inline-block; font-family:'Jost'; font-weight:400; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:15px 30px; border-radius:4px; cursor:pointer;">Vraag een offerte aan</span>
+        </div>
+        <div>
+          <sc-for list="{{ keuzehulp }}" as="k" hint-placeholder-count="4">
+            <div data-r="row" style="display:grid; grid-template-columns:0.8fr 1.4fr; gap:24px; padding:22px 0; border-bottom:1px solid #EEF1F4;">
+              <div style="font-family:'Source Serif 4',serif; font-weight:600; font-size:16px; color:#1C242E;">{{ k.s }}</div>
+              <div style="font-family:'Karla'; font-size:15px; line-height:1.6; color:#68717C;">{{ k.a }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= WERKWIJZE ================= -->
+  <sc-if value="{{ isWerkwijze }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="background:#F5F7F9;">
+      <div data-r="secpad" style="max-width:820px; margin:0 auto; padding:88px 24px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Werkwijze</div>
+        <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:46px; line-height:1.1; letter-spacing:-0.01em; margin:0 0 18px;">Van offerte tot doorlopend beheer</h1>
+        <p style="font-family:'Karla'; font-size:17.5px; line-height:1.65; color:#59616B; margin:0 auto; max-width:600px;">Van de eerste kennismaking tot doorlopend beheer nemen wij de volledige overstap uit handen — u hoeft er nauwelijks iets voor te doen. In zes stappen ziet dat er zo uit.</p>
+      </div>
+    </section>
+
+    <section style="max-width:760px; margin:0 auto; padding:80px 24px 50px;">
+      <div data-reveal style="border-left:2px solid #E4E9ED; margin-left:14px;">
+        <sc-for list="{{ werkwijze }}" as="s" hint-placeholder-count="6">
+          <div style="position:relative; padding:0 0 44px 46px;">
+            <div style="position:absolute; left:-13px; top:0; width:24px; height:24px; border-radius:50%; background:#4E6885; color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Jost'; font-size:12px; border:4px solid #FFFFFF;">{{ s.idx }}</div>
+            <div style="font-family:'Jost'; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#4E6885; margin-bottom:8px;">{{ s.when }}</div>
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:23px; margin:0 0 8px;">{{ s.title }}</h3>
+            <p style="font-family:'Karla'; font-size:16px; line-height:1.7; color:#59616B; margin:0;">{{ s.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1000px; margin:0 auto; padding:20px 24px 90px;">
+      <div data-reveal data-r="g3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+        <sc-for list="{{ geruststelling }}" as="g" hint-placeholder-count="3">
+          <div style="background:#F5F7F9; border-radius:12px; padding:32px 34px;">
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:19px; margin:0 0 10px;">{{ g.t }}</h3>
+            <p style="font-family:'Karla'; font-size:15px; line-height:1.65; color:#68717C; margin:0;">{{ g.s }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:linear-gradient(180deg,#232E3A 0%,#1A212A 100%);">
+      <div data-reveal style="max-width:820px; margin:0 auto; padding:96px 24px 84px; text-align:center;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:#8AA1B8; margin-bottom:16px;">Vrijblijvende offerte</div>
+        <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:36px; letter-spacing:-0.01em; color:#F5F8FB; margin:0 0 14px;">Klaar om de overstap te maken?</h2>
+        <p style="font-family:'Karla'; font-size:16.5px; line-height:1.65; color:#AEB8C3; margin:0 auto 30px; max-width:520px;">Vraag een vrijblijvende offerte aan. Wij regelen daarna de volledige overdracht — u woont onbezorgd.</p>
+        <span onClick="{{ goOfferte }}" style="display:inline-block; font-family:'Jost'; font-weight:400; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:16px 36px; border-radius:4px; cursor:pointer;">Offerte aanvragen</span>
+        <div style="margin-top:24px; font-family:'Karla'; font-size:14px; color:#8891A0;">Overstap in 6–8 weken · Wij zeggen op bij uw huidige beheerder · Geen risico, vrijblijvend</div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= OVER ONS ================= -->
+  <sc-if value="{{ isOverons }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="max-width:1000px; margin:0 auto; padding:96px 24px 72px;">
+      <div data-reveal data-r="split" style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;">
+        <div>
+          <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Over ons</div>
+          <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:40px; line-height:1.15; letter-spacing:-0.01em; margin:0 0 22px;">Gevestigd in Wateringen, actief in heel Zuid-Holland</h1>
+          <p style="font-family:'Karla'; font-size:17px; line-height:1.75; color:#59616B; margin:0 0 26px;">VvE Beheer Collectief is opgericht in 2008 vanuit de overtuiging dat VvE-beheer persoonlijker, transparanter en proactiever kan. In de jaren daarna groeiden we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE's onder beheer.</p>
+          <div style="display:flex; gap:22px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:6px; height:6px; border-radius:50%; background:#4E6885;"></span><span style="font-family:'Karla'; font-size:14.5px; font-weight:600; color:#3B4653;">Den Haag</span></div>
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:6px; height:6px; border-radius:50%; background:#4E6885;"></span><span style="font-family:'Karla'; font-size:14.5px; font-weight:600; color:#3B4653;">Wateringen</span></div>
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:6px; height:6px; border-radius:50%; background:#4E6885;"></span><span style="font-family:'Karla'; font-size:14.5px; font-weight:600; color:#3B4653;">Heel Zuid-Holland</span></div>
+          </div>
+        </div>
+        <div style="aspect-ratio:1/1; border-radius:14px; background:linear-gradient(160deg,#EEF2F5,#D6DEE6); display:flex; align-items:flex-end; justify-content:flex-start; padding:22px; box-shadow:0 40px 80px -54px rgba(28,36,46,0.6);">
+          <sc-if value="{{ showPhotoLabels }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Jost'; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#8A94A0;">Fotografie — kantoor / regio</span></sc-if>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#F5F7F9;">
+      <div data-reveal data-r="g4" style="max-width:1000px; margin:0 auto; padding:66px 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+        <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'Source Serif 4',serif; font-weight:600; font-size:38px; color:#1C242E;">{{ k.v }}</div>
+            <div style="font-family:'Karla'; font-size:14px; color:#7A828C; margin-top:6px;">{{ k.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section data-r="secpad" style="max-width:820px; margin:0 auto; padding:96px 24px;">
+      <div data-reveal>
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:22px;">Onze missie</div>
+        <p data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:400; font-size:34px; line-height:1.3; letter-spacing:-0.01em; color:#1C242E; margin:0 0 28px; text-wrap:pretty;">VvE-beheer dat ontzorgt in plaats van compliceert.</p>
+        <p style="font-family:'Karla'; font-size:17px; line-height:1.75; color:#59616B; margin:0;">Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers, geen automatische antwoorden — wel een team dat uw gebouw kent.</p>
+      </div>
+    </section>
+
+    <section style="background:linear-gradient(180deg,#232E3A 0%,#1A212A 100%);">
+      <div data-reveal data-r="row" style="max-width:1000px; margin:0 auto; padding:72px 24px; display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap;">
+        <h2 data-r="h2" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:28px; color:#F5F8FB; margin:0;">Benieuwd wat wij voor uw VvE kunnen betekenen?</h2>
+        <span onClick="{{ goOfferte }}" style="font-family:'Jost'; font-weight:400; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:15px 32px; border-radius:4px; cursor:pointer; white-space:nowrap;">Offerte aanvragen</span>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= OFFERTE ================= -->
+  <sc-if value="{{ isOfferte }}" hint-placeholder-val="{{ false }}">
+  <main style="background:#F5F7F9;">
+    <section data-r="split" style="max-width:1080px; margin:0 auto; padding:80px 24px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:start;">
+      <div data-r="offsticky" style="position:sticky; top:100px;">
+        <div style="font-family:'Jost'; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#4E6885; margin-bottom:16px;">Offerte aanvragen</div>
+        <h1 data-r="h1" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:38px; line-height:1.15; letter-spacing:-0.01em; margin:0 0 14px;">Vrijblijvend &amp; op maat van uw VvE</h1>
+        <div style="display:inline-flex; align-items:center; gap:9px; background:#EAF0F4; border:1px solid #D6E0E8; border-radius:40px; padding:8px 16px; margin-bottom:20px;"><span style="width:6px; height:6px; border-radius:50%; background:#4E6885;"></span><span style="font-family:'Karla'; font-size:13px; font-weight:600; color:#3B4653;">Duurt ~2 minuten · geen verplichtingen</span></div>
+        <p style="font-family:'Karla'; font-size:16.5px; line-height:1.7; color:#59616B; margin:0 0 32px;">Vul het formulier in. Binnen 2 werkdagen ontvangt u een offerte op maat — telefonisch afgestemd zodat hij echt past bij uw situatie.</p>
+        <div style="display:flex; flex-direction:column; gap:15px;">
+          <sc-for list="{{ offerteBenefits }}" as="b" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:12px; font-family:'Karla'; font-size:15px; color:#3B4653;"><span style="color:#4E6885; font-weight:700;">✓</span>{{ b }}</div>
+          </sc-for>
+        </div>
+        <div style="margin-top:34px; padding-top:26px; border-top:1px solid #E4E9ED;">
+          <div style="font-family:'Jost'; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:#96A0AB; margin-bottom:10px;">Liever bellen?</div>
+          <a href="{{ telHref }}" style="font-family:'Source Serif 4',serif; font-weight:600; font-size:22px; color:#1C242E;">(085)-800 0605</a>
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF; border-radius:14px; padding:44px 46px; box-shadow:0 40px 80px -54px rgba(28,36,46,0.5);">
+        <sc-if value="{{ formDone }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:36px 0; text-align:center;">
+            <img src="assets/logo.png" alt="" style="height:46px; margin-bottom:24px;">
+            <h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:27px; margin:0 0 12px;">Bedankt voor uw aanvraag</h2>
+            <p style="font-family:'Karla'; font-size:16px; line-height:1.7; color:#59616B; margin:0 auto; max-width:400px;">Wij hebben uw offerteaanvraag ontvangen en nemen binnen 2 werkdagen contact met u op.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notFormDone }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="font-family:'Jost'; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4E6885; margin-bottom:12px;">{{ offLabel }}</div>
+          <div style="display:flex; gap:8px; margin-bottom:32px;">
+            <sc-for list="{{ progressSteps }}" as="ps" hint-placeholder-count="4"><div style="{{ ps.style }}"></div></sc-for>
+          </div>
+
+          <sc-if value="{{ st1 }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:21px; margin:0 0 24px;">Vertel ons over uw VvE</h3>
+            <div style="display:flex; flex-direction:column; gap:18px;">
+              <div><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Naam van de VvE</label><input placeholder="bv. VvE Parkzicht" style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+              <div data-r="row" style="display:flex; gap:16px;">
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Aantal appartementen</label><input placeholder="bv. 24" style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Bouwjaar</label><input placeholder="bv. 1998" style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+              </div>
+              <div><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Adres / locatie</label><input placeholder="Plaats" style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ st2 }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:21px; margin:0 0 24px;">Welke diensten zoekt u?</h3>
+            <div data-r="g2" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <sc-for list="{{ step2opts }}" as="o" hint-placeholder-count="4">
+                <div style="border:1px solid #CDD5DD; border-radius:8px; padding:20px; cursor:pointer;" style-hover="border-color:#4E6885; background:#F6F9FB;">
+                  <div style="font-family:'Source Serif 4',serif; font-weight:600; font-size:16px; color:#1C242E; margin-bottom:5px;">{{ o.t }}</div>
+                  <div style="font-family:'Karla'; font-size:13px; color:#68717C;">{{ o.s }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ st3 }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:21px; margin:0 0 24px;">Uw huidige situatie</h3>
+            <label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:12px;">Heeft u nu al een beheerder?</label>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:26px;">
+              <span style="font-family:'Karla'; font-size:14px; color:#3B4653; border:1px solid #CDD5DD; border-radius:40px; padding:11px 20px; cursor:pointer;" style-hover="border-color:#4E6885;">Ja, ik wil overstappen</span>
+              <span style="font-family:'Karla'; font-size:14px; color:#3B4653; border:1px solid #CDD5DD; border-radius:40px; padding:11px 20px; cursor:pointer;" style-hover="border-color:#4E6885;">Nee, voor het eerst</span>
+              <span style="font-family:'Karla'; font-size:14px; color:#3B4653; border:1px solid #CDD5DD; border-radius:40px; padding:11px 20px; cursor:pointer;" style-hover="border-color:#4E6885;">Zelfbeheer, we zoeken hulp</span>
+            </div>
+            <label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Wat is voor u het belangrijkst?</label>
+            <textarea placeholder="bv. snellere reactie, betere transparantie, lagere kosten…" style="width:100%; min-height:100px; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none; resize:vertical;"></textarea>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ st4 }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h3 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:21px; margin:0 0 24px;">Uw contactgegevens</h3>
+            <div style="display:flex; flex-direction:column; gap:18px;">
+              <div data-r="row" style="display:flex; gap:16px;">
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Voornaam</label><input style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Achternaam</label><input style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+              </div>
+              <div><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Functie binnen VvE</label>
+                <select style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none; background:#fff; color:#1C242E;">
+                  <sc-for list="{{ functieOpts }}" as="fo" hint-placeholder-count="5"><option>{{ fo }}</option></sc-for>
+                </select>
+              </div>
+              <div data-r="row" style="display:flex; gap:16px;">
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">E-mail</label><input type="email" style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+                <div style="flex:1;"><label style="display:block; font-family:'Jost'; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#68717C; margin-bottom:8px;">Telefoonnummer</label><input style="width:100%; padding:14px 16px; font-size:15px; border:1px solid #CDD5DD; border-radius:6px; outline:none;"></div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:32px; padding-top:26px; border-top:1px solid #EEF1F4;">
+            <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+              <span onClick="{{ back }}" style="font-family:'Jost'; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#5B626C; cursor:pointer;">← Terug</span>
+            </sc-if>
+            <sc-if value="{{ canBack }}" hint-placeholder-val="{{ true }}"><span></span></sc-if>
+            <sc-if value="{{ notLast }}" hint-placeholder-val="{{ true }}">
+              <span onClick="{{ next }}" style="font-family:'Jost'; font-weight:400; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:14px 30px; border-radius:4px; cursor:pointer;">Volgende stap →</span>
+            </sc-if>
+            <sc-if value="{{ isLast }}" hint-placeholder-val="{{ false }}">
+              <span onClick="{{ submitForm }}" style="font-family:'Jost'; font-weight:400; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F7F9FB; background:#1C242E; padding:14px 30px; border-radius:4px; cursor:pointer;">Aanvraag versturen</span>
+            </sc-if>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="background-color:#1A212A; color:#C3CBD4;">
+    <div style="max-width:1160px; margin:0 auto; padding:80px 24px 32px;">
+      <div data-r="split" style="display:grid; grid-template-columns:1.5fr 1fr; gap:64px; padding-bottom:52px; border-bottom:1px solid rgba(138,161,184,0.16);">
+        <div>
+          <h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:30px; color:#F5F8FB; margin:0 0 16px; letter-spacing:-0.01em;">Onbezorgd wonen, samen geregeld.</h2>
+          <p style="font-family:'Karla'; font-size:15px; line-height:1.7; color:#AEB8C3; margin:0; max-width:440px;">Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.</p>
+        </div>
+        <div>
+          <div style="font-family:'Jost'; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#8AA1B8; margin-bottom:16px;">Direct contact</div>
+          <div style="font-family:'Karla'; font-size:15px; line-height:1.9; color:#DCE2E8;">
+            <div>(085)-800 0605</div>
+            <div>info@vvebeheercollectief.nl</div>
+            <div>Wateringen, Zuid-Holland</div>
+          </div>
+          <span onClick="{{ goOfferte }}" style="display:inline-block; margin-top:20px; font-family:'Jost'; font-weight:400; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F5F8FB; border:1px solid #4E6885; padding:12px 24px; border-radius:4px; cursor:pointer;">Neem direct contact op</span>
+        </div>
+      </div>
+
+      <div data-r="g4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:34px; padding:48px 0;">
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'Jost'; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#8AA1B8; margin-bottom:18px;">{{ col.h }}</div>
+            <div style="display:flex; flex-direction:column; gap:11px;">
+              <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4">
+                <span style="font-family:'Karla'; font-size:14px; color:#B4BCC6; cursor:pointer;">{{ l }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div data-r="row" style="display:flex; justify-content:space-between; align-items:center; gap:24px; padding-top:26px; border-top:1px solid rgba(138,161,184,0.16); flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img src="assets/logo.png" alt="" style="height:26px; filter:brightness(0) invert(1);">
+          <span style="font-family:'Karla'; font-size:12.5px; color:#8891A0;">VvE Beheer Collectief · KvK 51721139</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:22px; font-family:'Karla'; font-size:12.5px; color:#8891A0; flex-wrap:wrap;">
+          <span style="cursor:pointer;">Privacy</span>
+          <span style="cursor:pointer;">Voorwaarden</span>
+          <span style="cursor:pointer;">Cookies</span>
+          <span onClick="{{ goOfferte }}" style="color:#8AA1B8; cursor:pointer;">Offerte aanvragen →</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- back to top -->
+  <sc-if value="{{ showTop }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ scrollTop }}" aria-label="Terug naar boven" role="button" style="position:fixed; right:22px; bottom:96px; z-index:70; width:46px; height:46px; border-radius:50%; background:#FFFFFF; border:1px solid #DCE3E8; box-shadow:0 14px 34px -14px rgba(28,36,46,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; color:#4E6885; font-size:18px;">↑</div>
+  </sc-if>
+
+  <!-- mobile sticky action bar -->
+  <div data-r="mbar" style="position:fixed; left:0; right:0; bottom:0; z-index:65; background:rgba(255,255,255,0.96); backdrop-filter:blur(10px); border-top:1px solid #E6EAEE; padding:12px 16px; gap:10px;">
+    <span onClick="{{ goOfferte }}" style="flex:1; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#F7F9FB; background:#4E6885; padding:14px; border-radius:6px; cursor:pointer;">Offerte</span>
+    <a href="{{ telHref }}" style="flex:1; text-align:center; font-family:'Jost'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#28323E; border:1px solid #CDD5DD; padding:14px; border-radius:6px;">Bel ons</a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Inhoud&quot;},&quot;showPhotoLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Inhoud&quot;}}">
+class Component extends DCLogic {
+  state = { page:'home', offStep:1, formDone:false, nlDone:false, menuOpen:false, openFaq:0, showTop:false };
+  go(k){ this.setState({ page:k, offStep:1, formDone:false, menuOpen:false }); try{ window.scrollTo(0,0); }catch(e){} }
+  next(){ this.setState(s=>({ offStep: Math.min(4, s.offStep+1) })); }
+  back(){ this.setState(s=>({ offStep: Math.max(1, s.offStep-1) })); }
+  submitForm(){ this.setState({ formDone:true }); }
+  submitNl(e){ if(e&&e.preventDefault) e.preventDefault(); this.setState({ nlDone:true }); }
+  toggleMenu(){ this.setState(s=>({ menuOpen:!s.menuOpen })); }
+  setFaq(i){ this.setState(s=>({ openFaq: s.openFaq===i ? -1 : i })); }
+  scrollTop(){ try{ window.scrollTo({ top:0, behavior:'smooth' }); }catch(e){ window.scrollTo(0,0); } }
+  scrollToEl(id){ try{ const el=document.getElementById(id); if(el){ const y=el.getBoundingClientRect().top + (window.pageYOffset||0) - 130; window.scrollTo({ top:y, behavior:'smooth' }); } }catch(e){} }
+  componentDidMount(){
+    this._onScroll = ()=>{ const y = window.pageYOffset || document.documentElement.scrollTop || 0; const v = y > 620; if(v !== this.state.showTop) this.setState({ showTop:v }); };
+    window.addEventListener('scroll', this._onScroll, { passive:true });
+  }
+  componentWillUnmount(){ if(this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+  renderVals(){
+    const P = this.state.page;
+    const navDef = [['home','Home'],['diensten','Diensten'],['pakketten','Pakketten'],['werkwijze','Werkwijze'],['overons','Over ons'],['offerte','Offerte']];
+    const navItems = navDef.map(([key,label])=>({ key, label, on:()=>this.go(key),
+      style:`font-family:'Jost';font-weight:400;font-size:13px;letter-spacing:0.06em;cursor:pointer;white-space:nowrap;transition:color .2s ease;color:${P===key?'#4E6885':'#59616B'};` }));
+
+    const chk={t:'✓',c:'#4E6885',w:700}, no={t:'—',c:'#C9D0D8',w:400};
+    const tv=s=>({t:s,c:'#3B4653',w:600});
+    const cell=(v,hi)=>({ t:v.t, style:`padding:14px 12px;text-align:center;font-family:'Karla';font-size:14px;font-weight:${v.w};color:${v.c};${hi?'background:#F6F9FB;':''}` });
+    const row=(f,a,b,c)=>({ func:f, cells:[cell(a,0),cell(b,1),cell(c,0)] });
+    const compare=[
+      {cat:'Bestuurlijk', rows:[
+        row('Voorbereiden en bijwonen ALV',chk,chk,chk),
+        row('Notuleren ALV',no,chk,chk),
+        row('Bestuursvergaderingen bijwonen',no,tv('1× p/j'),tv('Onbeperkt')),
+        row('Opstellen huishoudelijk reglement',no,no,chk),
+        row('Bemiddeling bij geschillen',no,no,chk) ]},
+      {cat:'Secretarieel', rows:[
+        row('Ledenadministratie',chk,chk,chk),
+        row('Correspondentie bewoners',chk,chk,chk),
+        row('Inschrijving KvK',chk,chk,chk),
+        row('Beheer splitsingsakte',no,chk,chk),
+        row('Verzekeringsbeheer',no,chk,chk),
+        row('Juridische coördinatie',no,no,chk) ]},
+      {cat:'Financieel', rows:[
+        row('Boekhouding & jaarafrekening',chk,chk,chk),
+        row('Opstellen begroting',chk,chk,chk),
+        row('Incasso VvE-bijdragen',chk,chk,chk),
+        row('Betalingsverkeer',chk,chk,chk),
+        row('Reservefondsbeheer',no,chk,chk),
+        row('Meerjarenbegroting',no,chk,chk),
+        row('Debiteurbeheer & aanmaningen',no,no,chk),
+        row('Fiscale aangiften',no,no,chk) ]},
+      {cat:'Technisch — dagelijks onderhoud', rows:[
+        row('Coördinatie klein onderhoud',no,chk,chk),
+        row('Schademeldingen afhandelen',no,chk,chk),
+        row('Sleutelbeheer',no,chk,chk),
+        row('Offerte-aanvragen onderhoud',no,no,chk),
+        row('24/7 calamiteitenservice',no,no,chk) ]},
+      {cat:'Technisch — planmatig onderhoud', rows:[
+        row('Meerjaren-onderhoudsplan (MJOP)',no,no,chk),
+        row('Jaarlijkse inspectie',no,no,chk),
+        row('Begeleiding groot onderhoud',no,no,chk),
+        row('Aanbesteding onderhoud',no,no,chk),
+        row('Toezicht uitvoering',no,no,chk),
+        row('Oplevering & nazorg',no,no,chk),
+        row('Verduurzamingsadvies',no,no,chk) ]},
+    ];
+
+    const mk=(inc)=>({ t: inc?'✓':'—', style:`flex-shrink:0;width:20px;text-align:center;font-family:'Karla';font-size:15px;font-weight:${inc?700:400};color:${inc?'#4E6885':'#C9D0D8'};` });
+    const feat=(label,inc)=>({ label, mark:mk(inc), textStyle:`font-family:'Karla';font-size:14px;line-height:1.45;color:${inc?'#3B4653':'#9BA3AC'};` });
+    const btn=(dark)=>`display:block;text-align:center;font-family:'Jost';font-weight:400;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;padding:14px;border-radius:5px;cursor:pointer;color:${dark?'#F7F9FB':'#28323E'};background:${dark?'#4E6885':'transparent'};${dark?'':'border:1px solid #CDD5DD;'}`;
+    const packages=[
+      { name:'Start', pre:'vanaf', price:'€ 92,95', sub:'per appartementsrecht per jaar · excl. btw', desc:"Administratief en financieel basisbeheer voor VvE's die de basis goed willen regelen.", featured:false, badge:'', cta:'Offerte voor Start', btnStyle:btn(false),
+        feats:[feat('ALV-organisatie',1),feat('Ledenadministratie',1),feat('Boekhouding & jaarafrekening',1),feat('Incasso VvE-bijdragen',1),feat('Betalingsverkeer',1),feat('Technisch beheer',0),feat('MJOP-onderhoud',0),feat('Calamiteitenservice',0)] },
+      { name:'Start aanvullend', pre:'vanaf', price:'€ 147,95', sub:'per appartementsrecht per jaar · excl. btw', desc:'Uitgebreid administratief, financieel én basis technisch beheer onder één dak.', featured:true, badge:'Meest gekozen', cta:'Offerte voor Start aanvullend', btnStyle:btn(true),
+        feats:[feat('ALV-organisatie & notulen',1),feat('Ledenadministratie',1),feat('Volledige boekhouding',1),feat('Reservefondsbeheer',1),feat('Verzekeringsbeheer',1),feat('Coördinatie klein onderhoud',1),feat('Schademeldingen',1),feat('Planmatig onderhoud',0)] },
+      { name:'Compleet', pre:'', price:'Op aanvraag', sub:'', desc:'Volledige ontzorging — administratief, financieel én technisch in één vaste prijs.', featured:false, badge:'', cta:'Offerte voor Compleet', btnStyle:btn(false),
+        feats:[feat('Alles uit Start aanvullend',1),feat('Bestuursvergaderingen onbeperkt',1),feat('Juridische coördinatie',1),feat('Debiteurbeheer & aanmaningen',1),feat('MJOP & planmatig onderhoud',1),feat('24/7 calamiteitenservice',1),feat('Jaarlijkse inspectie',1),feat('Verduurzamingsadvies',1)] },
+    ];
+    packages.forEach(p=>{ p.cardStyle = `position:relative;background:#FFFFFF;border:1px solid ${p.featured?'#4E6885':'#ECEFF2'};border-radius:14px;overflow:hidden;box-shadow:${p.featured?'0 46px 92px -42px rgba(28,36,46,0.6), 0 0 0 2px #4E6885':'0 24px 60px -46px rgba(28,36,46,0.4)'};${p.featured?'z-index:1;':'margin-top:16px;'}transition:transform .25s ease, box-shadow .25s ease;`; });
+
+    const pijlersHome=[
+      {n:'01',title:'Administratief beheer',desc:'ALV-organisatie, ledenadministratie, notulen en heldere correspondentie.',items:['ALV-organisatie & notulen','Ledenadministratie','Post & correspondentie','Splitsingsakte beheer']},
+      {n:'02',title:'Financieel beheer',desc:'Boekhouding, begroting, reservefonds en jaarrekening — altijd inzichtelijk.',items:['Boekhouding & jaarrekening','Begroting & VvE-bijdrage','Reservefondsbeheer','Incasso & debiteuren']},
+      {n:'03',title:'Technisch beheer',desc:'Onderhoud, MJOP, offertes en inspecties — proactief en goed onderhandeld.',items:['Meerjaren-onderhoudsplan','Offertes & aanbesteding','Schademeldingen 24/7','Inspecties & oplevering']},
+    ];
+    const waarom=[
+      {title:'Eigen klantenportaal',text:'Alle stukken, financiën en onderhoud — 24/7 inzichtelijk voor iedere eigenaar.'},
+      {title:'Vast aanspreekpunt',text:'Eén beheerder die uw gebouw, bewoners en geschiedenis kent. Geen wisselende contactpersonen.'},
+      {title:'Snelle reactietijd',text:'Binnen 24 uur reactie op uw vraag, urgente schademeldingen direct.'},
+      {title:'Compleetpakket',text:'Volledige ontzorging in één vaste maandprijs. Geen verrassingen op de eindafrekening.'},
+    ].map((w,i)=>({ ...w, n:String(i+1).padStart(2,'0') }));
+    const faqRaw=[
+      {q:'Hoe lang duurt het om over te stappen naar VvE Beheer Collectief?',a:'Een complete overstap regelen we doorgaans binnen 6 tot 8 weken. We nemen de administratieve overdracht volledig uit handen — van opzegging bij de huidige beheerder tot het inrichten van uw klantenportaal.'},
+      {q:'Wat houdt het Compleetpakket precies in?',a:'Het Compleetpakket combineert administratief, financieel en technisch beheer in één vaste prijs per maand. Inclusief ALV-organisatie, jaarrekening, MJOP-onderhoud, 24/7 schademelding en een vast aanspreekpunt.'},
+      {q:'Hebben wij één vast aanspreekpunt?',a:'Ja. Elke VvE krijgt een vaste beheerder toegewezen die uw gebouw, bewoners en geschiedenis kent. Bij afwezigheid is er altijd een vervanger ingewerkt op uw dossier.'},
+      {q:'Hoe transparant is het klantenportaal?',a:'Volledig. Alle eigenaren zien hun eigen financiële positie, alle vergaderstukken, het MJOP, openstaande onderhoudspunten en de cashflow van de VvE — 24/7 beschikbaar, zonder verzoek aan ons.'},
+      {q:'Bieden jullie ook juridisch beheer?',a:'Nee. Voor juridische zaken werken we samen met gespecialiseerde VvE-juristen waar wij u graag aan voorstellen. Zo houdt u één aanspreekpunt voor de coördinatie, maar krijgt u echte specialistische kennis voor het juridische werk.'},
+    ];
+    const faq=faqRaw.map((f,i)=>({ q:f.q, a:f.a, open:this.state.openFaq===i, hint:i===0, toggle:()=>this.setFaq(i),
+      iconStyle:`font-family:'Jost';font-size:20px;color:#4E6885;transition:transform .25s ease;transform:rotate(${this.state.openFaq===i?180:0}deg);` }));
+    const testimonials=[
+      {quote:'Eindelijk één vast aanspreekpunt die ons gebouw echt kent. De overstap verliep vlekkeloos en alles is nu inzichtelijk via het portaal.',name:'Marian Koster',role:'Voorzitter VvE, Den Haag'},
+      {quote:'Reactie binnen een dag, een jaarrekening die klopt en op tijd is. Voor het eerst hebben we als bestuur echt rust.',name:'Robert de Jong',role:'Penningmeester VvE, Rijswijk'},
+      {quote:'Transparant, persoonlijk en proactief. Onderhoud wordt geregeld vóórdat het problemen worden — precies wat we zochten.',name:'Sandra Elzinga',role:'Eigenaar, Delft'},
+    ];
+    const dienstenPijlers=[
+      {id:'dienst-1',label:'Pijler 1',title:'Uw administratie strak en vindbaar',intro:'Wij voeren de volledige administratie van uw VvE — van ledenregister en correspondentie tot het organiseren en notuleren van de ALV. Alles centraal vastgelegd en direct terug te vinden.',items:['ALV-organisatie & notulen','Ledenadministratie & register','Post & correspondentie','Splitsingsakte & reglementen'],resultaat:'Een VvE die administratief volledig op orde is, zonder dat het bestuur er omkijken naar heeft.',pakketLabel:'Inbegrepen in elk pakket'},
+      {id:'dienst-2',label:'Pijler 2',title:'Financieel inzicht, geen verrassingen',intro:'Van boekhouding en incasso tot begroting, reservefonds en jaarrekening. Wij houden de cijfers actueel en bewaken de gezondheid van uw reservefonds.',items:['Boekhouding & jaarrekening','Begroting & VvE-bijdrage','Reservefondsbeheer','Incasso & debiteurenbeheer'],resultaat:'Op elk moment inzicht in de financiële positie — en een jaarrekening die op tijd klaar is.',pakketLabel:'Inbegrepen in elk pakket'},
+      {id:'dienst-3',label:'Pijler 3',title:'Onderhoud dat vóórblijft op problemen',intro:'Wij stellen het MJOP op en houden het actueel, vragen offertes op en onderhandelen scherp, en coördineren onderhoud en schade — bij urgentie schakelen we direct.',items:['Meerjaren-onderhoudsplan (MJOP)','Offertes & aanbesteding','Schademeldingen 24/7','Inspecties & oplevering'],resultaat:'Goed onderhouden vastgoed, scherp ingekochte offertes en facturen die kloppen.',pakketLabel:'Inbegrepen in het Compleet-pakket'},
+    ];
+    const dienstIndex=[
+      {label:'Administratief', on:()=>this.scrollToEl('dienst-1')},
+      {label:'Financieel', on:()=>this.scrollToEl('dienst-2')},
+      {label:'Technisch', on:()=>this.scrollToEl('dienst-3')},
+    ];
+    const compleetPunten=['Alle administratie & ALV','Volledige boekhouding','Jaarrekening op tijd','MJOP & onderhoud','24/7 schademeldingen','Eigen klantenportaal','Eén vast aanspreekpunt','Scherpe offertes'];
+    const keuzehulp=[
+      {s:'Kleine VvE (< 12)',a:'Start of Start aanvullend is vaak voldoende voor kleinere complexen.'},
+      {s:'Middelgrote VvE',a:'Start aanvullend biedt de juiste balans tussen zelfstandigheid en ontzorging.'},
+      {s:'Grote VvE (> 40)',a:'Het Compleetpakket voorkomt dat u alsnog zelf technisch beheer moet regelen.'},
+      {s:'Achterstallig onderhoud',a:'Bij achterstallig onderhoud adviseren wij het Compleetpakket met MJOP-aanpak.'},
+    ];
+    const werkwijze=[
+      {when:'Dag 1–2',title:'Vrijblijvende offerte',text:'U vult het offerteformulier in of belt ons. Binnen 2 werkdagen ontvangt u een offerte op maat van uw VvE.'},
+      {when:'Week 1',title:'Kennismakingsgesprek',text:'We bezoeken uw VvE, lopen de splitsingsakte en het MJOP door, en bespreken uw wensen en zorgen.'},
+      {when:'Week 1–6',title:'Overstap zonder gedoe',text:'Wij regelen de complete overdracht van uw huidige beheerder — opzegging, stukken, financiën. U hoeft niets te doen.'},
+      {when:'Week 6',title:'Inrichting klantenportaal',text:'Alle eigenaren krijgen toegang tot hun eigen klantenportaal. Alle stukken, financiën en onderhoud meteen inzichtelijk.'},
+      {when:'Week 7–8',title:'Eerste ALV',text:'We organiseren uw eerste ALV onder ons beheer en stellen u uw vaste contactpersoon voor.'},
+      {when:'Doorlopend',title:'Doorlopend beheer',text:'Vanaf dat moment regelen wij alles. U houdt regie via het portaal en ontvangt proactieve updates.'},
+    ].map((s,i)=>({ ...s, idx:i+1 }));
+    const geruststelling=[
+      {t:'U doet vrijwel niets',s:'Wij coördineren de volledige overstap, inclusief opzegging bij uw huidige beheerder.'},
+      {t:'Geen risico',s:'Vrijblijvend kennismaken. Pas bij akkoord starten we de overdracht.'},
+      {t:'Vast aanspreekpunt',s:'Vanaf dag één weet u bij wie u terecht kunt — een beheerder die uw gebouw kent.'},
+    ];
+    const kpis=[
+      {v:'18+',l:'Jaar ervaring in VvE-beheer'},
+      {v:'500+',l:"VvE's onder ons beheer"},
+      {v:'12.000+',l:'Eigenaren bediend'},
+      {v:'< 24u',l:'Gemiddelde reactietijd'},
+    ];
+    const footerCols=[
+      {h:'Diensten',links:['Administratief beheer','Financieel beheer','Technisch beheer','Compleetpakket']},
+      {h:'Bedrijf',links:['Over ons','Werkwijze','Klantverhalen','Veelgestelde vragen']},
+      {h:'Service',links:['Klantenportaal','Schade melden','Veelgestelde vragen','Documenten']},
+      {h:'Volg ons',links:['LinkedIn','Nieuwsbrief']},
+    ];
+    const step2opts=[
+      {t:'Compleetpakket',s:'Alle 3 pijlers in één prijs'},
+      {t:'Administratief',s:'ALV, notulen, post'},
+      {t:'Financieel',s:'Boekhouding, jaarrekening'},
+      {t:'Technisch',s:'MJOP, onderhoud'},
+    ];
+    const offerteBenefits=['Vrijblijvend & gratis','Binnen 2 werkdagen reactie','Direct contact met een beheerder','Uw gegevens blijven van u'];
+    const functieOpts=['Voorzitter','Penningmeester','Secretaris','Bestuurslid','Eigenaar / lid'];
+    const progressSteps=[1,2,3,4].map(n=>({ n, style:`flex:1;height:4px;border-radius:2px;background:${n<=this.state.offStep?'#4E6885':'#E4E9ED'};` }));
+
+    return {
+      isHome:P==='home', isDiensten:P==='diensten', isPakketten:P==='pakketten', isWerkwijze:P==='werkwijze', isOverons:P==='overons', isOfferte:P==='offerte',
+      navItems, kpis, pijlersHome, waarom, faq, testimonials,
+      dienstenPijlers, dienstIndex, compleetPunten, packages, compare, keuzehulp, werkwijze, geruststelling, footerCols,
+      step2opts, offerteBenefits, functieOpts, progressSteps,
+      showTestimonials: this.props.showTestimonials !== false,
+      showPhotoLabels: this.props.showPhotoLabels !== false,
+      goHome:()=>this.go('home'), goDiensten:()=>this.go('diensten'), goPakketten:()=>this.go('pakketten'),
+      goWerkwijze:()=>this.go('werkwijze'), goOverons:()=>this.go('overons'), goOfferte:()=>this.go('offerte'),
+      next:()=>this.next(), back:()=>this.back(), submitForm:()=>this.submitForm(), submitNl:(e)=>this.submitNl(e),
+      toggleMenu:()=>this.toggleMenu(), menuOpen:this.state.menuOpen, menuLabel:this.state.menuOpen?'Menu sluiten':'Menu openen',
+      showTop:this.state.showTop, scrollTop:()=>this.scrollTop(),
+      telHref:'tel:+31858000605',
+      offLabel:`Stap ${this.state.offStep} van 4`,
+      st1:this.state.offStep===1, st2:this.state.offStep===2, st3:this.state.offStep===3, st4:this.state.offStep===4,
+      canBack:this.state.offStep>1, notLast:this.state.offStep<4, isLast:this.state.offStep===4,
+      formDone:this.state.formDone, nlDone:this.state.nlDone,
+      notFormDone:!this.state.formDone, notNlDone:!this.state.nlDone,
+    };
+  }
+}
+</script>
+</body>
+</html>
