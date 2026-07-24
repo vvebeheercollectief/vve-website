@@ -377,6 +377,18 @@ const NL = {
       note:'Overstap in 6–8 weken · Wij zeggen op bij uw huidige beheerder · Geen risico, vrijblijvend',
     },
   },
+  overons_page: {
+    eyebrow:'Over ons',
+    title:'Gevestigd in Wateringen, actief in heel Zuid-Holland',
+    intro:"VvE Beheer Collectief is opgericht in 2008 vanuit de overtuiging dat VvE-beheer persoonlijker, transparanter en proactiever kan. In de jaren daarna groeiden we uit tot één van de gevestigde namen in de regio, met meer dan 500 VvE's onder beheer.",
+    bullets:['Den Haag','Wateringen','Heel Zuid-Holland'],
+    foto_label:'Fotografie — kantoor / regio',
+    missie_eyebrow:'Onze missie',
+    missie:'VvE-beheer dat ontzorgt in plaats van compliceert.',
+    missie_text:'Wij zien VvE-beheer als een vertrouwensrelatie. Daarom investeren we in kleine portefeuilles per beheerder, een eigen klantenportaal en korte communicatielijnen. Geen call-centers, geen automatische antwoorden — wel een team dat uw gebouw kent.',
+    cta_title:'Benieuwd wat wij voor uw VvE kunnen betekenen?',
+    cta_btn:'Offerte aanvragen',
+  },
   footer: {
     merkzin:'Onbezorgd wonen, samen geregeld.',
     lead:"Persoonlijk, transparant en betrouwbaar VvE-beheer voor Den Haag en heel Zuid-Holland. 18 jaar ervaring, 500+ VvE's in beheer.",
@@ -1253,7 +1265,57 @@ function WerkwijzePage({ t, setPage }) {
     </main>
   );
 }
-function OverOnsPage({ t, setPage }) { return <PageStub title="Over ons" />; }
+function OverOnsPage({ t, setPage }) {
+  const o = t('overons_page');
+  const kpis = t('kpis');
+  return (
+    <main>
+      <section style={{ maxWidth:1000, margin:'0 auto', padding:'96px 24px 72px' }}>
+        <Reveal data-r="split" style={{ display:'grid', gridTemplateColumns:'1.05fr 0.95fr', gap:60, alignItems:'center' }}>
+          <div>
+            <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:16 }}>{o.eyebrow}</div>
+            <h1 data-r="h1" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:40, lineHeight:1.15, letterSpacing:'-0.01em', margin:'0 0 22px' }}>{o.title}</h1>
+            <p style={{ fontFamily:"'Karla'", fontSize:17, lineHeight:1.75, color:'#59616B', margin:'0 0 26px' }}>{o.intro}</p>
+            <div style={{ display:'flex', gap:22, flexWrap:'wrap' }}>
+              {o.bullets.map((b, i) => (
+                <div key={i} style={{ display:'flex', alignItems:'center', gap:9 }}><span style={{ width:6, height:6, borderRadius:'50%', background:'#4E6885' }}></span><span style={{ fontFamily:"'Karla'", fontSize:14.5, fontWeight:600, color:'#3B4653' }}>{b}</span></div>
+              ))}
+            </div>
+          </div>
+          <div style={{ aspectRatio:'1/1', borderRadius:14, background:'linear-gradient(160deg,#EEF2F5,#D6DEE6)', display:'flex', alignItems:'flex-end', justifyContent:'flex-start', padding:22, boxShadow:'0 40px 80px -54px rgba(28,36,46,0.6)' }}>
+            <span style={{ fontFamily:"'Jost'", fontSize:10.5, letterSpacing:'0.22em', textTransform:'uppercase', color:'#8A94A0' }}>{o.foto_label}</span>
+          </div>
+        </Reveal>
+      </section>
+
+      <section style={{ background:'#F5F7F9' }}>
+        <Reveal data-r="g4" style={{ maxWidth:1000, margin:'0 auto', padding:'66px 24px', display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:32 }}>
+          {kpis.map((k, i) => (
+            <div key={i}>
+              <div style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:38, color:'#1C242E' }}><CountUp value={k.v} /></div>
+              <div style={{ fontFamily:"'Karla'", fontSize:14, color:'#7A828C', marginTop:6 }}>{k.l}</div>
+            </div>
+          ))}
+        </Reveal>
+      </section>
+
+      <section data-r="secpad" style={{ maxWidth:820, margin:'0 auto', padding:'96px 24px' }}>
+        <Reveal>
+          <div style={{ fontFamily:"'Jost'", fontSize:12, letterSpacing:'0.24em', textTransform:'uppercase', color:'#4E6885', marginBottom:22 }}>{o.missie_eyebrow}</div>
+          <p data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:400, fontSize:34, lineHeight:1.3, letterSpacing:'-0.01em', color:'#1C242E', margin:'0 0 28px' }}>{o.missie}</p>
+          <p style={{ fontFamily:"'Karla'", fontSize:17, lineHeight:1.75, color:'#59616B', margin:0 }}>{o.missie_text}</p>
+        </Reveal>
+      </section>
+
+      <section style={{ background:'linear-gradient(180deg,#232E3A 0%,#1A212A 100%)' }}>
+        <Reveal data-r="row" style={{ maxWidth:1000, margin:'0 auto', padding:'72px 24px', display:'flex', justifyContent:'space-between', alignItems:'center', gap:40, flexWrap:'wrap' }}>
+          <h2 data-r="h2" style={{ fontFamily:"'Source Serif 4',serif", fontWeight:600, fontSize:28, color:'#F5F8FB', margin:0 }}>{o.cta_title}</h2>
+          <span className="h-btnD2" onClick={() => setPage('offerte')} style={{ fontFamily:"'Jost'", fontWeight:400, fontSize:12, letterSpacing:'0.16em', textTransform:'uppercase', color:'#F7F9FB', background:'#4E6885', padding:'15px 32px', borderRadius:4, cursor:'pointer', whiteSpace:'nowrap' }}>{o.cta_btn}</span>
+        </Reveal>
+      </section>
+    </main>
+  );
+}
 function OffertePage({ t }) { return <PageStub title="Offerte" />; }
 
 /* ── Juridische pagina (volledige body volgt in T8) ── */
